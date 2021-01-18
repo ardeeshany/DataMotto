@@ -3,7 +3,7 @@ title: "Data Motto"
 description: |
   A web platform to create high quality summary of
   experiencing with Data!
-output_dir: "_site"
+output_dir: "docs"
 exclude: "README.md"
 base_url: https://www.datamotto.com
 favicon: images/logo.png
