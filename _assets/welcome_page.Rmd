@@ -49,7 +49,7 @@ h1 {
 <br> <br> <br> <br> <br> <br>
 
 <div style="text-align: center; letter-spacing: 2px; line-height: 4rem;">
-<span style="font-size: 55px; color: #044f6b; line-height:10px; font-family: 'Noto Serif JP';">Share Efficiently <br> Your Data Experience</span>
+<span style="font-size: 55px; color: #044f6b; line-height:10px; font-family: 'Noto Serif JP';">Share Efficiently <br> Your Data and Code Experience</span>
 <br>
 
 <span style="letter-spacing: 2px;">
