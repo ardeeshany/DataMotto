@@ -1,0 +1,18 @@
+---
+title: "asd"
+site: distill::distill_website
+---
+
+```{css}
+header nav, d-title{
+  display: none;
+}
+d-article {
+  margin-top: 0;
+  padding-top: 0;
+}
+```
+
+```{r, layout = "l-screen"}
+htmltools::includeHTML("resources/welcome_page.html")
+```

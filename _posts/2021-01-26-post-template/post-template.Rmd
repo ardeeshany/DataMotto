@@ -1,0 +1,46 @@
+---
+title: "Post Template"
+description: |
+  Here is a .html template for Dotto!
+author: Pedram
+date: 01-26-2021
+output:
+  html_document:
+  # distill::distill_article:
+  #   self_contained: false
+  #   theme: null
+  #   highlight: null
+  #   highlight_downlit: false
+    css: ../../resources/css/style.css
+    # includes:
+    #   before_body: ../../resources/post.html
+---
+
+```{css, echo = F}
+
+[role=banner] {
+  display: none;
+}
+
+d-title, d-byline {
+  display: none;
+}
+
+# d-article {
+#   display: none;
+# }
+
+d-appendix {
+  margin-top: -10px;
+}
+
+.article-footer {
+  text-align: center;
+}
+
+```
+
+```{r, results='asis'}
+#htmltools::includeCSS(here::here("resources","css","style.css"))
+htmltools::includeHTML(here::here("resources","post.html"))
+```

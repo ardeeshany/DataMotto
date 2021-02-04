@@ -1,0 +1,73 @@
+{
+ "analyzing-covid19-in-usa": {
+ "title": [ "Analyzing COVID19 in USA" ],
+"description": [ "Analyzing Covid 19 reports\n" ],
+"author": [
+ {
+ "name": [ "Ardalan Mirshani" ],
+"affiliation": [ "Novartis" ],
+"url": [ "https://mirshani.com" ] 
+} 
+],
+"date": [ "2021-01-11" ],
+"base_url": [ "https://www.datamotto.com" ],
+"output": {
+ "distill::distill_article": {
+ "self_contained": [ false ] 
+} 
+},
+"packages": [ "ggplot2", "forcats" ],
+"categories": [ "Visualization", "Modeling" ],
+"tech": [ "R", "SqL", "Python" ],
+"bibliography": [ "bibliography.bib" ],
+"draft": [ false ],
+"twitter": {
+ "site": [ "@DataMotto" ],
+"creator": [ "@DataMotto" ] 
+},
+"preview": [ "unnamed-chunk-7-1.png" ] 
+},
+"new-york-taxi-fare-rate": {
+ "title": [ "New York Taxi fare rate" ],
+"description": [ "A short description of the post.\n" ],
+"author": [
+ {
+ "name": [ "Nora Jones" ],
+"url": [ "https://example.com/norajones" ] 
+} 
+],
+"date": [ "2020-12-03" ],
+"tech": [ "Python" ],
+"packages": [ "Matplotlib" ],
+"categories": [ "Visualization" ],
+"base_url": [ "https://datamotto.com" ],
+"output": {
+ "distill::distill_article": {
+ "self_contained": [ false ] 
+} 
+},
+"preview": [ "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png" ] 
+},
+"post-template": {
+ "title": [ "Post Template" ],
+"description": [ "Here is a .html template for Dotto!\n" ],
+"author": [ "Pedram" ],
+"date": [ "01-26-2021" ],
+"output": {
+ "distill::distill_article": {
+ "self_contained": [ false ] 
+} 
+} 
+},
+"forcats-for-categorical-data": {
+ "title": [ "Forcats for Categorical Data" ],
+"description": [ "A short description of the post.\n" ],
+"author": [ "Ardalan Mirshani" ],
+"date": [ "02-03-2021" ],
+"output": {
+ "distill::distill_article": {
+ "self_contained": [ false ] 
+} 
+} 
+} 
+}

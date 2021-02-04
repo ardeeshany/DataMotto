@@ -5,6 +5,7 @@ description: |
   experiencing with Data!
 output_dir: "docs"
 exclude: "README.md"
+include: "_posts"
 base_url: https://www.datamotto.com
 favicon: images/logo.png
 google_analytics: "G-WZMEMQM0Y2"
@@ -58,7 +59,7 @@ output:
     toc: true
     toc_depth: 2
     toc_float: false
-    css: mystyle.css
+    css: resources/css/style.css
     # includes:
     #   in_header: header.html
     #   before_body: doc_prefix.html

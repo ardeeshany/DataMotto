@@ -1,0 +1,90 @@
+---
+title: "New York Taxi fare rate"
+description: |
+  A short description of the post.
+author:
+  - name: Nora Jones
+    url: https://example.com/norajones
+# preview: https://www.jfkairport.com/static/JFK/image/jfk_taxi_new.jpg
+date: 2020-12-03
+tech: [["Python"]]
+packages: [Matplotlib]
+categories: [Visualization]
+base_url: https://datamotto.com
+output:
+  distill::distill_article:
+    self_contained: false
+preview: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
+---
+
+::: {.l-page}
+```{r, child= here::here("_assets", "article_header.Rmd")}
+```
+
+::: {.panelset}
+::: {.panel}
+#### 🟣 Intro
+
+<h2>Question: How seasonality affects the Taxi Fare in Manhattan?</h2>
+
+<h3>Hints:</h3>
+- library(matplotlib)
+
+:::
+
+::: {.panel}
+#### 🔵 Data
+```{r, layout="l-screen"}
+library(rmarkdown)
+paged_table(mtcars)
+```
+:::
+
+::: {.panel}
+#### 🟢 Cleaning
+```{python, eval = F, echo = T}
+import matplotlib.pyplot as plt
+import numpy as np 
+import pandas as pd
+df = pd.DataFrame(
+  np.random.randn(1000, 4), columns=["A", "B", "C", "D"]
+  )
+df = df.cumsum()
+plt.figure()
+df.plot()
+plt.legend(loc='best')
+```
+:::
+
+
+
+::: {.panel}
+#### 🔴 Visualization
+```{r iris, echo=F, out.width="50%", preview = T}
+library(ggplot2)
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, col = Species)) +
+  geom_point() +
+  labs(title = "A Nice Iris Dataset Graphic", x = "Sepal Length", y = "Sepal Width") +
+  theme_minimal()
+```
+:::
+
+::: {.panel}
+#### 🔴 Visualization
+```{python, echo = F}
+import matplotlib.pyplot as plt
+import numpy as np 
+import pandas as pd
+df = pd.DataFrame(
+  np.random.randn(1000, 3), columns=["B", "C", "D"]
+  )
+df = df.cumsum()
+plt.figure()
+df.plot()
+plt.legend(loc='best')
+```
+:::
+
+
+:::
+:::

@@ -1,0 +1,30 @@
+---
+title: "Post Template"
+description: |
+  Here is a .html template for Dotto!
+author: Pedram
+date: 01-26-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{css}
+d-title, d-byline {
+  display: none;
+}
+
+d-appendix {
+  margin-top: -10px;
+}
+
+.article-footer {
+  text-align: center;
+}
+```
+
+```{r, layout = 'l-screen'}
+htmltools::includeHTML(here::here("resources","post.html"))
+```
+
+
