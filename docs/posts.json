@@ -54,8 +54,8 @@
 "author": [ "Pedram" ],
 "date": [ "01-26-2021" ],
 "output": {
- "distill::distill_article": {
- "self_contained": [ false ] 
+ "html_document": {
+ "css": [ "../../resources/css/style.css" ] 
 } 
 } 
 },
