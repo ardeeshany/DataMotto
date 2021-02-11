@@ -5,7 +5,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
 
 
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
 
+.spin {
+  animation-name: spin;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  pointer-events: none;
+}
 
 
 /* background-image for fade-to-white color of navbar */
@@ -227,6 +242,12 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
     top: -15px;
 }
 
+@media all and (max-width: 576px) {
+	.dm-posts:hover {
+    top: 0;
+}
+}
+
 .dm-posts:hover .card {
     background-color: #fbfbfb;
 }
@@ -291,7 +312,7 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 
 #dotto {
     position: relative;
-    margin-top: 55px;
+    margin-top: 65px;
 }
 
 #dotto > ul.hasDotto::after {
@@ -339,6 +360,7 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 .dotto-container ul.nav li a {
     position: relative;
     color: #c7c7c7;
+	cursor: pointer;
 }
 
 .dotto-container ul.nav li a.active {
@@ -365,14 +387,14 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
     margin: auto;
     margin-top: 10px;
 	transition: .3s all ease;
+	cursor: pointer;
 }
-
 .dotto-container > ul::after {
     content: "";
     width: 100%;
     position: absolute;
     left: -5px;
-    bottom: 0;
+    top: 47px;
     background: #58b0d7;
     height: 1px;
     z-index: -1;
@@ -391,7 +413,14 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 .dm-rep-btn {
     color: gray;
     cursor: pointer;
-	transition: .3s all ease;
+    transition: .3s all ease;
+    display: none;
+}
+
+.dm-rep-btn-loading.spin {
+    font-size: 14px;
+    pointer-events: none;
+    color: #afafaf;
 }
 
 
@@ -416,13 +445,79 @@ section#dm-post {
 }
 
 
+.dm-rep-btn.btn-disabled {
+    pointer-events: none;
+}
 
+	nav#dm-nav > ul {
+		display: none;
+	}
 
+	div#dm-mobile-content {
+    left: unset!important;
+    right: 0px;
+    top: 40px!important;
+    transform: unset!important;
+}
 
+.dm-dot-content {
+    display: none;
+    padding: 30px 15px 15px 15px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+.dm-dot-content.active {
+	display: block;
+}
 
+#dm-mo-nav {
+    display: none;
+}
 
+@media all and (max-width: 576px) {
+	#dm-title h1 {
+		font-size: 30px;
+	}
+nav#dm-nav {
+    float: none;
+    float: right!important;
+}
+.dottos {
+    display: block;
+    margin: auto;
+}
+#dm-middle span {
+    top: -17px;
+}
+button#get-started {
+    display: none;
+}
+#dotto {
+	margin-top: 0px;
+}
+#dm-mo-nav {
+    display: block;
+}
 
-
+.dotto-container > ul {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    white-space: nowrap;
+    overflow: -moz-scrollbars-none;
+	padding-bottom: 25px;
+}
+.dotto-container > ul > li {
+	display: inline-block;
+}
+.dotto-container > ul::after {
+	bottom: 15px;
+	width: 200%;
+}
+}
 
 
 

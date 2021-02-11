@@ -4,23 +4,25 @@ description: |
   Here is a .html template for Dotto!
 author: Pedram
 date: 01-26-2021
+# output:
+#   html_fragment
 output:
-  html_document:
-  # distill::distill_article:
-  #   self_contained: false
+  # html_document
+  distill::distill_article:
+    self_contained: false
   #   theme: null
-  #   highlight: null
+ #   highlight: null
   #   highlight_downlit: false
-    css: ../../resources/css/style.css
-    # includes:
-    #   before_body: ../../resources/post.html
+#   #  css: ../../resources/css/style.css
+#     includes:
+#       before_body: ../../resources/post.html
 ---
 
 ```{css, echo = F}
 
-[role=banner] {
-  display: none;
-}
+# [role=banner] {
+#   display: none;
+# }
 
 d-title, d-byline {
   display: none;
@@ -40,7 +42,22 @@ d-appendix {
 
 ```
 
-```{r, results='asis'}
-#htmltools::includeCSS(here::here("resources","css","style.css"))
-htmltools::includeHTML(here::here("resources","post.html"))
+
+```{r}
+htmltools::tagList(
+  htmltools::htmlDependency(name = "Datamotto", version = "0.1.0", 
+        package = "Datamotto", src = "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/Datamotto/post", script = "post.js", 
+        stylesheet = "post.css")
+)
+
 ```
+
+
+```{r setup, include=FALSE}
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+```{r, layout="l-screen", echo=FALSE}
+htmltools::includeHTML("../../inst/resources/post/post.html")
+```
+

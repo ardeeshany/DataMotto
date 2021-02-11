@@ -12,8 +12,8 @@ output:
   #   highlight: null
   #   highlight_downlit: false
     css: ../../resources/css/style.css
-    # includes:
-    #   before_body: ../../resources/post.html
+    includes:
+      before_body: ../../resources/post.html
 ---
 
 ```{css, echo = F}
@@ -40,7 +40,3 @@ d-appendix {
 
 ```
 
-```{r, results='asis'}
-#htmltools::includeCSS(here::here("resources","css","style.css"))
-htmltools::includeHTML(here::here("resources","post.html"))
-```

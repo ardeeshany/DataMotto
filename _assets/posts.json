@@ -46,6 +46,7 @@
  "self_contained": [ false ]
 }
 },
+"link": [ "https://datamotto.com/New-York-Taxi-Fare-Rate" ],
 "preview": [ "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png" ]
 },
 "post-template": {
@@ -53,17 +54,6 @@
 "description": [ "Here is a .html template for Dotto!\n" ],
 "author": [ "Pedram" ],
 "date": [ "01-26-2021" ],
-"output": {
- "html_document": {
- "css": [ "../../resources/css/style.css" ]
-}
-}
-},
-"forcats-for-categorical-data": {
- "title": [ "Forcats for Categorical Data" ],
-"description": [ "A short description of the post.\n" ],
-"author": [ "Ardalan Mirshani" ],
-"date": [ "02-03-2021" ],
 "output": {
  "distill::distill_article": {
  "self_contained": [ false ]
