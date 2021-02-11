@@ -1,4 +1,4 @@
-$(document).ready(function(){
+	$(document).ready(function(){
 		$('#dotto ul li').each(function(){
 		var bu = $(this);
 		var id = $(this).data('id');
@@ -138,7 +138,7 @@ if(dottos <= 1){
 	});
 	});
 
-	// tab and pill
+// tab and pill
 
 	$('.dm-dot-title').click(function(){
 	$('.dm-dot-title').removeClass('active');
@@ -147,4 +147,4 @@ if(dottos <= 1){
 		$(this).siblings('.dm-dot-content').addClass('active');
 	});
 
-});
+	});

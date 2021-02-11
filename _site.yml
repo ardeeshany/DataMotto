@@ -59,7 +59,7 @@ output:
     toc: true
     toc_depth: 2
     toc_float: false
-    css: resources/css/style.css
+    css: inst/resources/css/style.css
     # includes:
     #   in_header: header.html
     #   before_body: doc_prefix.html
