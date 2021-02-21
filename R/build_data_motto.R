@@ -7,7 +7,7 @@
 #' @importFrom usethis ui_done
 #' @export
 build_data_motto <- function() {
-  config_posts(path = here::here("posts.json"))
+  #config_posts(path = here::here("posts.json"))
   rmarkdown::render_site(encoding = 'UTF-8', quiet = T)
   usethis::ui_done("Site is generated at 'docs' folder.")
 }

@@ -4,7 +4,7 @@
 #'  all the high level information (`metadata`) of posts.
 #'
 #'  @importFrom here here
-#'  @import RJSONIO
+#'  @importFrom jsonlite toJSON
 #'  @import rmarkdown
 #'  @importFrom glue glue
 #' @export
@@ -17,6 +17,9 @@ config_posts <- function(path) {
     all_metadata[[i]] <- rmarkdown::yaml_front_matter(rmd_path)
   }
 
-  exportJson <- RJSONIO::toJSON(all_metadata, asIs = T)
-  write(exportJson, path)
+  return(all_metadata)
+  # exportJson <- jsonlite::toJSON(all_metadata,
+  #                                auto_unbox = TRUE,
+  #                                pretty = TRUE)
+  # write(exportJson, path)
 }

@@ -72,6 +72,13 @@ Index_page_dependency <- function() {
   htmltools::htmlDependency(name = "Index_page",
                             version = "0.1.0",
                             src = system.file("templates/Index_page", package = "DataMotto"),
+                            head = paste0(
+                              "<script> var json =",
+                              jsonlite::toJSON(config_posts(),
+                                               auto_unbox = F,
+                                               pretty = TRUE),
+                              "</script>"
+                            ),
                             script = "Index_page.js",
                             stylesheet = "Index_page.css")
 }

@@ -1,5 +1,4 @@
-$(document).ready(function(){
-
+/*
 var json = {
  "analyzing-covid19-in-usa": {
  "title": [ "Analyzing COVID19 in USA" ],
@@ -67,6 +66,100 @@ var json = {
 "cover_image_url": [ null ]
 }
 };
+
+
+var json = {
+"analyzing-covid19-in-usa": {
+    "title": "Analyzing COVID19 in USA",
+    "description": "Analyzing Covid 19 reports\n",
+    "author": [
+      {
+        "name": "Ardalan Mirshani",
+        "affiliation": "Novartis",
+        "url": "https://mirshani.com"
+      }
+    ],
+    "date": "2021-01-11",
+    "base_url": "https://www.datamotto.com",
+    "output": {
+      "distill::distill_article": {
+        "self_contained": false
+      }
+    },
+    "packages": ["ggplot2", "forcats"],
+    "categories": ["Visualization", "Modeling"],
+    "tech": ["R", "SqL", "Python"],
+    "bibliography": "bibliography.bib",
+    "draft": false,
+    "twitter": {
+      "site": "@DataMotto",
+      "creator": "@DataMotto"
+    },
+    "preview": "unnamed-chunk-7-1.png"
+  },
+"new-york-taxi-fare-rate": {
+    "title": "New York Taxi fare rate",
+    "description": "A short description of the post.\n",
+    "author": [
+      {
+        "name": "Nora Jones",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2020-12-03",
+    "tech": "Python",
+    "packages": "Matplotlib",
+    "categories": "Visualization",
+    "base_url": "https://datamotto.com",
+    "output": {
+      "distill::distill_article": {
+        "self_contained": false
+      }
+    },
+    "preview": "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
+  },
+"post-template": {
+    "title": "My new blue Dotto",
+    "description": "A new format of panelset",
+    "author": "Ardeeshany",
+    "date": "02-11-2021",
+    "output": {
+      "html_document": {
+        "template": {}
+      }
+    }
+  },
+"forcats": {
+    "title": "Forcats",
+    "description": "A short description of the post.\n",
+    "author": [
+      {
+        "name": "Ardalan Mirshani",
+        "url": "mirshani.com"
+      }
+    ],
+    "date": "2020-12-03",
+    "tech": "Python",
+    "packages": "Matplotlib",
+    "categories": "Visualization",
+    "base_url": "https://datamotto.com",
+    "output": "DataMotto::Dotto",
+    "preview": "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
+  },
+"sdf": {
+    "title": "sdf",
+    "author": "Ardalan Mirshani",
+    "date": "2/20/2021",
+    "output": {
+      "rmdformats::html_clean": {
+        "self_contained": false
+      }
+    }
+  }
+}
+*/
+
+$(document).ready(function(){
 // end json
 var j = 0;
 var more = 8; // default cart
@@ -336,3 +429,5 @@ $('#dm-filter-menu').on('click', function(e) {
     e.stopPropagation();
 });
 });
+
+

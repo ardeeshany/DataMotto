@@ -4,7 +4,7 @@ description: |
   A web platform to create high quality summary of
   experiencing with Data!
 output_dir: "docs"
-exclude: "README.md"
+exclude: ["README.md", "inst"]
 include: "_posts"
 base_url: https://www.datamotto.com
 #favicon: images/logo.png
