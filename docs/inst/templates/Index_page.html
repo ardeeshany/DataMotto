@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$
+
+    $if(date-meta)$
+    <meta name="date" content="$date-meta$" />
+    $endif$
+
+    $for(header-includes)$
+    $header-includes$
+    $endfor$
+
+</head>
+
+<body>
+
+   $for(include-before)$
+   $include-before$
+   $endfor$
+
+  <section id="dm-splash">
+	<div class="container">
+	<div class="row clear">
+		<div class="col-md-6 pt-md-5 mt-5" id="dm-title">
+			<h1>Share Efficiently<br/>
+			Your Data Experience
+			</h1>
+			<p>Data science is an inter-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from many structural and unstructured data. Data science is related to data mining, machine learning and big data.</p>
+			<button class="btn gradient-button text-white rounded-pill">LEARN MORE</button>
+		</div>
+		<div class="col-md-6" id="dm-splash-img">
+			<img class="w-100" src="./resources/images/splash-main.jpg"/>
+		</div>
+	</div>
+	</div>
+</section>
+
+
+
+<!-- Section Our Dottos ------------------------>
+
+<section id="dm-middle" class="pt-5 pb-5">
+<div class="container">
+<h2>OUR DOTTOS</h2>
+<br/>
+<div class="dottos"><i class="fab fa-r-project"></i></div> <span>1</span> <div class="dottos"><i class="fab fa-python"></i></div> <span>1</span>
+</div>
+</section>
+
+<!-- start cart -->
+<section id="dm-post-section" class="pt-3 pb-5">
+<div class="container">
+<div class="dropdown pull-right">
+  <button type="button" class="btn gradient-button text-white rounded-pill dropdown-toggle" data-toggle="dropdown">
+    <i class="fas fa-filter"></i> Filter
+  </button>
+
+<div class="dropdown-menu p-1" id="dm-filter-menu">
+	<div class="row">
+	<div class="col-6" id="dm-filter-cat" data-kind="categories">
+	<div class="dropdown-header"><b>CATEGORIES</b></div>
+    <a class="dropdown-item"><label><input type="checkbox" class="form-check-input" name="Articles"> Articles</label></a>
+    <a class="dropdown-item"><label><input type="checkbox" class="form-check-input" name="Modeling"> Modeling</label></a>
+    <a class="dropdown-item"><label><input type="checkbox" class="form-check-input" name="Visualization"> Visualization</label></a>
+	</div>
+	<div class="col-6" id="dm-filter-lang" data-kind="languages">
+	<div class="dropdown-header"><b>LANGUAGE</b></div>
+	<a class="dropdown-item"><label><input type="checkbox" class="form-check-input" name="R"> <i class="fab fa-r-project"></i> R</label></a>
+	<a class="dropdown-item"><label><input type="checkbox" class="form-check-input" name="Python"> <i class="fab fa-python"></i> Python</label></a>
+	</div>
+	</div>
+	<button class="btn btn-info" id="do-filter">Go!</button>
+  </div>
+</div>
+
+<br/>
+<!-- post generate -->
+  <div class="row" id="dm-post"></div>
+  <button type="button" class="btn gradient-button text-white rounded-pill" id="dm-more-btn">MORE</button>
+
+</section>
+<!-- end cart-->
+   $for(include-after)$
+   $include-after$
+   $endfor$
+<!-- Don't indent these lines or it will mess pre blocks indentation -->
+
+</body>
+</html>

@@ -31,9 +31,10 @@ Dotto <- function(fig_width = 6,
                        lightbox = TRUE,
                        thumbnails = TRUE,
                        pandoc_args = NULL,
-                       md_extensions = NULL,
+                       md_extensions = "-autolink_bare_uris",
+                       self_contained = FALSE,
                        ...) {
-  Dotto_template(
+  default_template(
     template_name = "Dotto",
     template_path = "templates/Dotto.html",
     template_dependencies = list(
@@ -47,12 +48,13 @@ Dotto <- function(fig_width = 6,
     lightbox = lightbox,
     thumbnails = thumbnails,
     md_extensions = md_extensions,
+    self_contained = self_contained,
     # mathjax = mathjax,
     ...
   )
 }
 
-# dotto js and css
+# Dependency added manually (not from a library)
 Dotto_dependency <- function() {
   htmltools::htmlDependency(name = "Dotto",
                             version = "0.1.0",

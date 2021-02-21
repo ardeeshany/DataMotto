@@ -1,0 +1,11 @@
+---
+title: "Index Page"
+description: |
+  A short description of the post.
+author:
+  - name: "Ardalan Mirshani"
+    url: "mirshani.com"
+date: 2020-12-03
+output: DataMotto::Index
+---
+

@@ -7,7 +7,7 @@ output_dir: "docs"
 exclude: "README.md"
 include: "_posts"
 base_url: https://www.datamotto.com
-favicon: images/logo.png
+#favicon: images/logo.png
 google_analytics: "G-WZMEMQM0Y2"
 collections:
   posts:
@@ -31,35 +31,34 @@ rss:
 twitter:
   site: "@DataMotto"
   creator: "@DataMotto"
-navbar:
-  title: "Data Motto"
-  logo:
-    image: images/logo.gif
-    href: https://www.datamotto.com
-  search: false
-  source_url: false # https://github.com/ardeeshany/DataMotto
-  right:
-    - text: "The Whole game!"
-      href: about.html
-    # - text: "All"
-    #   href: index.html
-    - text: "R"
-      href: R.html
-    - text: "Python"
-      href: Python.html
-    - icon: fa fa-slack fa-1x
-      href: https://datamotto.slack.com
-    - icon: fa fa-github fa-1x
-      href: https://github.com/ardeeshany/DataMotto
-    - icon: fa fa-rss fa-1x
-      href: index.xml
-output:
-  distill::distill_article:
-    highlight: rstudio
-    toc: true
-    toc_depth: 2
-    toc_float: false
-    css: inst/resources/css/style.css
+# navbar:
+#   title: "Data Motto"
+#   logo:
+#     image: images/logo.gif
+#     href: https://www.datamotto.com
+#   search: false
+#   source_url: false # https://github.com/ardeeshany/DataMotto
+#   right:
+#     - text: "The Whole game!"
+#       href: about.html
+#     # - text: "All"
+#     #   href: index.html
+#     - text: "R"
+#       href: R.html
+#     - text: "Python"
+#       href: Python.html
+#     - icon: fa fa-slack fa-1x
+#       href: https://datamotto.slack.com
+#     - icon: fa fa-github fa-1x
+#       href: https://github.com/ardeeshany/DataMotto
+#     - icon: fa fa-rss fa-1x
+#       href: index.xml
+output: rmarkdown::html_document
+    # highlight: rstudio
+    # toc: true
+    # toc_depth: 2
+    # toc_float: false
+    #css: inst/templates/Dotto/Dotto.css
     # includes:
     #   in_header: header.html
     #   before_body: doc_prefix.html

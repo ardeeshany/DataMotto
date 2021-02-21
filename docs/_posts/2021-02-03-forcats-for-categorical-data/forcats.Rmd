@@ -4,8 +4,7 @@ description: |
   A short description of the post.
 author:
   - name: "Ardalan Mirshani"
-    url: "https://example.com/norajones"
-# preview: https://www.jfkairport.com/static/JFK/image/jfk_taxi_new.jpg
+    url: "mirshani.com"
 date: 2020-12-03
 tech: [["Python"]]
 packages: [Matplotlib]
@@ -17,17 +16,30 @@ preview: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/fig
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+knitr::knit_hooks$set(Dot = function(before, options){
+  if(before){
+    paste(
+      '<li class="nav-item">',
+      sprintf('<a class="nav-link dm-dot-title">%s</a>', options$Dot),
+      '<div class="dm-dot-content">', 
+      sep = "\n"
+    )
+  } else {
+    paste(
+    '</div>',
+    '</li>',
+    sep = "\n"
+    )
+  }
+})
+
 ```
 
-<li class="nav-item">
-<a class="nav-link dm-dot-title">Report</a>
-<div class="dm-dot-content">
 
-Write your `Dotto` Here
+<ul class="nav nav-tabs">
 
-```{r, echo = T, out.width="30%"}
-# heloo world
-getwd()
+```{r, Dot = "GGplot2"}
 library(ggplot2)
 theme_set(theme_bw())  # pre-set the bw theme.
 data("midwest", package = "ggplot2")
@@ -47,14 +59,53 @@ gg <- ggplot(midwest, aes(x=area, y=poptotal)) +
 
 plot(gg)
 ```
-</div>
-</li>
 
-<li class="nav-item">
-<a class="nav-link dm-dot-title">Summary</a>
-<div class="dm-dot-content">
-```{r, echo = F, out.width="30%"}
-plot(1:3, 1:3)
+
+
+```{python, echo = F, Dot = "Python"}
+import matplotlib.pyplot as plt
+import numpy as np
+t = 1 + np.arange(0, 2, 0.01)
+s = 1 + np.sin(2*np.pi*t)
+plt.plot(t,s)
+plt.show()
 ```
-</div>
-</li>
+
+</ul>
+
+
+<ul class="nav nav-tabs">
+
+```{r, Dot = "GGplot2"}
+library(ggplot2)
+theme_set(theme_bw())  # pre-set the bw theme.
+data("midwest", package = "ggplot2")
+# midwest <- read.csv("http://goo.gl/G1K41K")  # bkup data source
+
+# Scatterplot
+gg <- ggplot(midwest, aes(x=area, y=poptotal)) + 
+  geom_point(aes(col=state, size=popdensity)) + 
+  geom_smooth(method="loess", se=F) + 
+  xlim(c(0, 0.1)) + 
+  ylim(c(0, 500000)) + 
+  labs(subtitle="Area Vs Population", 
+       y="Population", 
+       x="Area", 
+       title="Scatterplot", 
+       caption = "Source: midwest")
+
+plot(gg)
+```
+
+
+
+```{python, echo = F, Dot = "Python"}
+import matplotlib.pyplot as plt
+import numpy as np
+t = 1 + np.arange(0, 2, 0.01)
+s = 1 + np.sin(2*np.pi*t)
+plt.plot(t,s)
+plt.show()
+```
+
+</ul>

@@ -4,6 +4,7 @@
 #'  website based on the updated `posts` folder.
 #' @importFrom rmarkdown render_site
 #' @importFrom here here
+#' @importFrom usethis ui_done
 #' @export
 build_data_motto <- function() {
   config_posts(path = here::here("posts.json"))
