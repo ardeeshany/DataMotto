@@ -1,11 +1,11 @@
 ---
-title: "Index Page"
+title: "Data Motto"
 description: |
   A short description of the post.
 author:
   - name: "Ardalan Mirshani"
     url: "mirshani.com"
-date: 2020-12-03
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: DataMotto::Index
 ---
 

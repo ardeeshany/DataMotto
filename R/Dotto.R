@@ -33,6 +33,7 @@ Dotto <- function(fig_width = 6,
                        pandoc_args = NULL,
                        md_extensions = "-autolink_bare_uris",
                        self_contained = FALSE,
+                       in_header = NULL,
                        before_body = here::here("./resources/header_post.html"),
                        after_body = here::here("./resources/footer.html"),
                        ...) {
@@ -51,6 +52,7 @@ Dotto <- function(fig_width = 6,
     thumbnails = thumbnails,
     md_extensions = md_extensions,
     self_contained = self_contained,
+    in_header = in_header,
     before_body = before_body,
     after_body = after_body,
     # mathjax = mathjax,
@@ -63,6 +65,9 @@ Dotto_dependency <- function() {
   htmltools::htmlDependency(name = "Dotto",
                             version = "0.1.0",
                             src = system.file("templates/Dotto", package = "DataMotto"),
+                            head = list(paste0(
+                              '<link rel="shortcut icon" href="../../',rmarkdown::site_config(input = here::here())$favicon,'">'
+                            )),
                             script = c("Dotto.js", "Dotto_firebase.js"),
                             stylesheet = "Dotto.css")
 }

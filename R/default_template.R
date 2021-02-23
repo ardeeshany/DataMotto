@@ -5,6 +5,7 @@ default_template <- function(
   template_path,
   template_dependencies,
   pandoc_args,
+  in_header,
   before_body,
   after_body,
   ...) {
@@ -60,7 +61,7 @@ default_template <- function(
     template = system.file(template_path, package = "DataMotto"),
     extra_dependencies = extra_dependencies,
     pandoc_args = pandoc_args,
-    includes = list(before_body = before_body, after_body = after_body)
+    includes = list(in_header = in_header, before_body = before_body, after_body = after_body)
   )
   html_document_args <- append(html_document_args, args)
 

@@ -18,8 +18,8 @@ config_posts <- function(path) {
     post_slug <- ifelse(is.null(rmarkdown::yaml_front_matter(rmd_path)$slug), file_name, rmarkdown::yaml_front_matter(rmd_path)$slug)
     names(all_metadata)[i] <- gsub(pattern = "\\.Rmd$", "", basename(rmd_path))
     all_metadata[[i]] <- c(rmarkdown::yaml_front_matter(rmd_path),
-                           list(base_url = rmarkdown::site_config()$base_url,
-                                twitter_site = rmarkdown::site_config()$twitter$site),
+                           list(base_url = rmarkdown::site_config(here::here())$base_url,
+                                twitter_site = rmarkdown::site_config(here::here())$twitter$site),
                            list(file_name = file_name,
                                 dir_name = dir_name,
                                 post_slug = post_slug,

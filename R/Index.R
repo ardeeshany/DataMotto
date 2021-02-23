@@ -33,6 +33,7 @@ Index <- function(fig_width = 6,
                        pandoc_args = NULL,
                        md_extensions = "-autolink_bare_uris",
                        self_contained = FALSE,
+                       in_header = NULL,
                        before_body = here::here("./resources/header.html"),
                        after_body = here::here("./resources/footer.html"),
                        ...) {
@@ -51,6 +52,7 @@ Index <- function(fig_width = 6,
     thumbnails = thumbnails,
     md_extensions = md_extensions,
     self_contained = self_contained,
+    in_header = in_header,
     before_body = before_body,
     after_body = after_body,
     # mathjax = mathjax,
@@ -58,26 +60,20 @@ Index <- function(fig_width = 6,
   )
 }
 
-# dotto js and css
-Index_page_dependency <- function() {
-  htmltools::htmlDependency(name = "Index_page",
-                            version = "0.1.0",
-                            src = system.file("templates/Index_page", package = "DataMotto"),
-                            script = "Index_page.js",
-                            stylesheet = "Index_page.css")
-}
 
 # Dependency added manually (not from a library)
 Index_page_dependency <- function() {
   htmltools::htmlDependency(name = "Index_page",
                             version = "0.1.0",
                             src = system.file("templates/Index_page", package = "DataMotto"),
-                            head = paste0(
+                            head = list(paste0(
                               "<script> var json =",
                               jsonlite::toJSON(config_posts(),
                                                auto_unbox = F,
                                                pretty = TRUE),
-                              "</script>"),
+                              "</script>",
+                              '<link rel="shortcut icon" href="',rmarkdown::site_config(input = here::here())$favicon,'">'
+                              )),
                             script = "Index_page.js",
                             stylesheet = "Index_page.css")
 }
