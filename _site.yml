@@ -7,7 +7,7 @@ output_dir: "docs"
 exclude: ["README.md", "inst", "R"]
 #include: "_posts"
 base_url: https://www.datamotto.com
-#favicon: images/logo.png
+favicon: resources/images/Category_icon.png
 google_analytics: "G-WZMEMQM0Y2"
 collections:
   posts:
@@ -31,8 +31,8 @@ rss:
 twitter:
   site: "@DataMotto"
   creator: "@DataMotto"
-# navbar:
-#   title: "Data Motto"
+navbar:
+  title: "Data Motto"
 #   logo:
 #     image: images/logo.gif
 #     href: https://www.datamotto.com
