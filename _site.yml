@@ -5,7 +5,7 @@ description: |
   experiencing with Data!
 output_dir: "docs"
 exclude: ["README.md", "inst", "R"]
-include: "_posts"
+#include: "_posts"
 base_url: https://www.datamotto.com
 #favicon: images/logo.png
 google_analytics: "G-WZMEMQM0Y2"
