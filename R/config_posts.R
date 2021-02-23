@@ -9,7 +9,7 @@
 #'  @importFrom glue glue
 #' @export
 config_posts <- function(path) {
-  path_posts <- list.dirs(here::here("_posts"), recursive = F)
+  path_posts <- list.dirs(here::here("posts"), recursive = F)
   all_metadata <- rep(list(NA), length(path_posts))
   for(i in 1:length(path_posts)){
     rmd_path <- glue::glue("{path_posts[i]}/{list.files(path = path_posts[i],pattern = '*.Rmd$')}")
@@ -23,7 +23,7 @@ config_posts <- function(path) {
                            list(file_name = file_name,
                                 dir_name = dir_name,
                                 post_slug = post_slug,
-                                link = glue::glue("./_posts/{dir_name}/{post_slug}.html"))
+                                link = glue::glue("./posts/{dir_name}/{post_slug}.html"))
                            )
   }
 

@@ -1,0 +1,75 @@
+---
+title: "Forcats"
+description: |
+  A short description of the post.
+author:
+  - name: "Ardalan Mirshani"
+    url: "mirshani.com"
+date: 2020-12-03
+tech: [["Python"]]
+packages: [Matplotlib]
+categories: [Visualization]
+preview: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
+cover_image_url: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
+output: DataMotto::Dotto
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+knitr::knit_hooks$set(Dot = function(before, options){
+  if(before){
+    paste(
+      '<li class="nav-item">',
+      sprintf('<a class="nav-link dm-dot-title">%s</a>', options$Dot),
+      '<div class="dm-dot-content">', 
+      sep = "\n"
+    )
+  } else {
+    paste(
+    '</div>',
+    '</li>',
+    sep = "\n"
+    )
+  }
+})
+
+```
+
+
+<ul class="nav nav-tabs">
+
+```{r, Dot = "GGplot2"}
+library(ggplot2)
+theme_set(theme_bw())  # pre-set the bw theme.
+data("midwest", package = "ggplot2")
+# midwest <- read.csv("http://goo.gl/G1K41K")  # bkup data source
+
+# Scatterplot
+gg <- ggplot(midwest, aes(x=area, y=poptotal)) + 
+  geom_point(aes(col=state, size=popdensity)) + 
+  geom_smooth(method="loess", se=F) + 
+  xlim(c(0, 0.1)) + 
+  ylim(c(0, 500000)) + 
+  labs(subtitle="Area Vs Population", 
+       y="Population", 
+       x="Area", 
+       title="Scatterplot", 
+       caption = "Source: midwest")
+
+plot(gg)
+```
+
+
+
+```{python, echo = F, Dot = "Python"}
+import matplotlib.pyplot as plt
+import numpy as np
+t = 1 + np.arange(0, 2, 0.01)
+s = 1 + np.sin(2*np.pi*t)
+plt.plot(t,s)
+plt.show()
+```
+
+</ul>
+
