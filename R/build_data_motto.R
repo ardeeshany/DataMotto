@@ -11,7 +11,7 @@ build_data_motto <- function() {
 
   cli::cat_rule("Site is being created")
   suppressWarnings(suppressMessages(
-    rmarkdown::render_site(encoding = 'UTF-8', quiet = T)
+    rmarkdown::render_site(input = here::here() ,encoding = 'UTF-8', quiet = T)
   ))
   usethis::ui_done(glue::glue('Data Motto website is generated at {usethis::ui_path("docs")} folder.'))
 }

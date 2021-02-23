@@ -33,7 +33,7 @@ Dotto <- function(fig_width = 6,
                        pandoc_args = NULL,
                        md_extensions = "-autolink_bare_uris",
                        self_contained = FALSE,
-                       before_body = here::here("./resources/header.html"),
+                       before_body = here::here("./resources/header_post.html"),
                        after_body = here::here("./resources/footer.html"),
                        ...) {
   default_template(
