@@ -1,10 +1,10 @@
 ---
-title: "Forcats"
+title: "My Forcats"
 description: |
   A short description of the post.
 author:
   - name: "Ardalan Mirshani"
-    url: "mirshani.com"
+    url: "https://mirshani.com"
 date: 2020-12-03
 tech: [["Python"]]
 packages: [Matplotlib]
