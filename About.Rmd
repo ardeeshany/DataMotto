@@ -1,14 +1,14 @@
 ---
-title: "Index Page"
+title: "About"
 description: |
-  A short description of the post.
+  About us page
 author:
   - name: "Ardalan Mirshani"
     url: "mirshani.com"
-date: 2020-12-03
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: DataMotto::Index
 ---
 
 ```{r, echo = F}
-htmltools::includeHTML("resources/index_body.html")
+htmltools::includeHTML("resources/about.html")
 ```

@@ -1,0 +1,14 @@
+---
+title: "About"
+description: |
+  How to contribute
+author:
+  - name: "Ardalan Mirshani"
+    url: "mirshani.com"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: DataMotto::Index
+---
+
+```{r, echo = F}
+htmltools::includeHTML("resources/contributing.html")
+```

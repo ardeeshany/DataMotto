@@ -33,6 +33,8 @@ Dotto <- function(fig_width = 6,
                        pandoc_args = NULL,
                        md_extensions = "-autolink_bare_uris",
                        self_contained = FALSE,
+                       before_body = here::here("resources/header.html"),
+                       after_body = here::here("resources/footer.html"),
                        ...) {
   default_template(
     template_name = "Dotto",
@@ -49,6 +51,8 @@ Dotto <- function(fig_width = 6,
     thumbnails = thumbnails,
     md_extensions = md_extensions,
     self_contained = self_contained,
+    before_body = before_body,
+    after_body = after_body,
     # mathjax = mathjax,
     ...
   )

@@ -1,0 +1,14 @@
+---
+title: "Get Started"
+description: |
+  Get Started
+author:
+  - name: "Ardalan Mirshani"
+    url: "mirshani.com"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: DataMotto::Index
+---
+
+```{r, echo = F}
+htmltools::includeHTML("resources/Get_started.html")
+```

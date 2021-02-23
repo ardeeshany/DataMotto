@@ -77,8 +77,7 @@ Index_page_dependency <- function() {
                               jsonlite::toJSON(config_posts(),
                                                auto_unbox = F,
                                                pretty = TRUE),
-                              "</script>"
-                            ),
+                              "</script>"),
                             script = "Index_page.js",
                             stylesheet = "Index_page.css")
 }

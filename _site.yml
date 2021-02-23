@@ -4,7 +4,7 @@ description: |
   A web platform to create high quality summary of
   experiencing with Data!
 output_dir: "docs"
-exclude: ["README.md", "inst"]
+exclude: ["README.md", "inst", "R"]
 include: "_posts"
 base_url: https://www.datamotto.com
 #favicon: images/logo.png
@@ -53,8 +53,9 @@ twitter:
 #       href: https://github.com/ardeeshany/DataMotto
 #     - icon: fa fa-rss fa-1x
 #       href: index.xml
-output: rmarkdown::html_document
-    # highlight: rstudio
+output:
+  rmarkdown::html_document:
+    highlight: kate
     # toc: true
     # toc_depth: 2
     # toc_float: false
