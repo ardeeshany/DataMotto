@@ -1,5 +1,5 @@
 ---
-title: "Data Motto"
+title: "`r  paste0(rmarkdown::site_config(input = here::here())$title)`"
 description: |
   A short description of the post.
 author:

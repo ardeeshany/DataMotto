@@ -1,48 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:300, 300i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
-
-
-@keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
-}
-
-.spin {
-  animation-name: spin;
-  animation-duration: 500ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  pointer-events: none;
-}
-
-
-/* background-image for fade-to-white color of navbar */
-.distill-site-header{
-  padding: 0px 0px;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255,255,255,0));
-  background-color: transparent;
-  font-size: 16px;
-  font-family: 'Source Code Pro', monospace;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #044f6b;
-}
-
-
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,500;0,700;1,500&display=swap');
 
 /*----- Pedram ----*/
 
 html, body {
     margin:0;
     padding:0;
+    /*font-family: 'Work Sans', sans-serif;*/
 }
+
 h1 {
     margin:0;
 }

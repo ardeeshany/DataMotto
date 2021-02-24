@@ -1,5 +1,5 @@
 ---
-title: "Get Started"
+title: "`r  paste0(rmarkdown::site_config(input = here::here())$title, ':', ' Get Started')`"
 description: |
   Get Started
 author:

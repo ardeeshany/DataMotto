@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "`r  paste0(rmarkdown::site_config(input = here::here())$title, ':', ' Contributing')`"
 description: |
   How to contribute
 author:
