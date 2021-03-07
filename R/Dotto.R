@@ -63,10 +63,10 @@ Dotto <- function(fig_width = 6,
 Dotto_dependency <- function() {
   htmltools::htmlDependency(name = "Dotto",
                             version = "0.1.0",
-                            src = system.file("templates/Dotto", package = "DataMotto"),
+                            src = system.file("templates/DataMotto", package = "DataMotto"),
                             head = list(paste0(
                               '<link rel="shortcut icon" href="../../',rmarkdown::site_config(input = here::here())$favicon,'">'
                             )),
                             script = c("Dotto.js", "Dotto_firebase.js"),
-                            stylesheet = "Dotto.css")
+                            stylesheet = "site.css")
 }

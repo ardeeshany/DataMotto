@@ -337,7 +337,7 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
     background: #58b0d7;
     width: 18px;
     height: 18px;
-    /*margin-top: 7px;*/
+    margin-top: 7px;
 }
 
 .dotto-container ul.nav li a.dot-li::after {
@@ -351,7 +351,7 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
     left: 0;
     right: 0;
     margin: auto;
-    /*margin-top: 10px;*/
+    margin-top: 10px;
 	transition: .3s all ease;
 	cursor: pointer;
 }

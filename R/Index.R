@@ -64,7 +64,7 @@ Index <- function(fig_width = 6,
 Index_page_dependency <- function() {
   htmltools::htmlDependency(name = "Index_page",
                             version = "0.1.0",
-                            src = system.file("templates/Index_page", package = "DataMotto"),
+                            src = system.file("templates/DataMotto", package = "DataMotto"),
                             head = list(paste0(
                               "<script> var json =",
                               jsonlite::toJSON(config_posts(),
@@ -74,6 +74,5 @@ Index_page_dependency <- function() {
                               '<link rel="shortcut icon" href="',rmarkdown::site_config(input = here::here())$favicon,'">'
                               )),
                             script = "Index_page.js",
-                            stylesheet = "Index_page.css")
+                            stylesheet = "site.css")
 }
-

@@ -19,42 +19,19 @@ categories: [Visualization, Modeling]
 preview: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
 cover_image_url: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
 output: DataMotto::Dotto
-knit: (function(input, ...) {
-    rmarkdown::render(
-      input,
-      output_file = paste0(
-        xfun::sans_ext(input), '-', Sys.Date(), '.html'
-      ),
-      envir = globalenv()
-    )
-  })
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
-knitr::knit_hooks$set(Dot = function(before, options){
-  if(before){
-    paste(
-      '<li class="nav-item">',
-      sprintf('<a class="nav-link dm-dot-title">%s</a>', options$Dot),
-      '<div class="dm-dot-content">', 
-      sep = "\n"
-    )
-  } else {
-    paste(
-    '</div>',
-    '</li>',
-    sep = "\n"
-    )
-  }
-})
-
+library(dplyr)
 ```
 
-<ul class="nav nav-tabs">
+```{r datamotto_dotto, echo=FALSE}
+DataMotto::use_dotto()
+```
 
-```{r, Dot = "GGplot2"}
+
+```{r, mygg, Dot_title = "GGplot2", Dot_active = TRUE}
 library(ggplot2)
 theme_set(theme_bw())  # pre-set the bw theme.
 data("midwest", package = "ggplot2")
@@ -75,7 +52,7 @@ gg <- ggplot(midwest, aes(x=area, y=poptotal)) +
 plot(gg)
 ```
 
-```{python, echo = F, Dot = "Python"}
+```{python, mypy, echo=T, Dot_title = "Python"}
 import matplotlib.pyplot as plt
 import numpy as np
 t = 1 + np.arange(0, 2, 0.01)
@@ -84,4 +61,3 @@ plt.plot(t,s)
 plt.show()
 ```
 
-</ul>

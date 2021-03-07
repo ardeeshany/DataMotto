@@ -2,16 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,500;0,700;1,500&display=swap');
 
 /*----- Pedram ----*/
 
 html, body {
     margin:0;
     padding:0;
-    /*font-family: 'Work Sans', sans-serif;*/
 }
-
 h1 {
     margin:0;
 }
@@ -95,7 +92,7 @@ section#dm-splash, #dm-post-header {
 nav#dm-nav ul li a {
     text-decoration: none;
     color: #1b4ea7;
-	  transition: .3s all ease;
+	transition: .3s all ease;
 }
 
 #dm-nav ul li a::after {
@@ -106,9 +103,9 @@ nav#dm-nav ul li a {
     background: #58b0d7;
     border-radius: 50%;
     margin: auto;
-	  transform: scale(0.1);
-	  transition: .3s all ease;
-	  margin-top: 5px;
+	transform: scale(0.1);
+	transition: .3s all ease;
+	margin-top: 5px;
 }
 
 #dm-nav ul li:hover a::after {
@@ -137,7 +134,6 @@ section#dm-middle h2 {
 footer#dm-footer {
     background: white;
 }
-
 #dm-social a {
     text-decoration: none;
     color: #1b4ea7;
@@ -327,24 +323,24 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 }
 
 
-.dotto-container ul.nav li a {
+.dotto-container ul.nav li a.dot-li {
     position: relative;
     color: #c7c7c7;
 	cursor: pointer;
 }
 
-.dotto-container ul.nav li a.active {
+.dotto-container ul.nav li a.dot-li.active {
 	color: #58b0d7;
 }
 
-.dotto-container ul.nav li a.active::after {
+.dotto-container ul.nav li a.dot-li.active::after {
     background: #58b0d7;
     width: 18px;
     height: 18px;
     margin-top: 7px;
 }
 
-.dotto-container ul.nav li a::after {
+.dotto-container ul.nav li a.dot-li::after {
     content: "";
     display: block;
     position: absolute;

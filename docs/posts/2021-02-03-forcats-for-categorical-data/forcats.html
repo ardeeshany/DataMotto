@@ -12,7 +12,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
-        <script src="forcats_files/header-attrs-2.6.4/header-attrs.js"></script>
+        <script src="forcats_files/header-attrs-2.7.3/header-attrs.js"></script>
         <script src="forcats_files/jquery-3.5.1/jquery-3.5.1.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link href="forcats_files/bootstrap-4.5.3/css/bootstrap.min.css" rel="stylesheet" />
@@ -21,7 +21,7 @@
         <script src="forcats_files/bootstrap_js-4.3.1/bootstrap.min.js"></script>
         <link href="forcats_files/font-awesome-5.15.2/css/all.css" rel="stylesheet" />
         <link href="forcats_files/font-awesome-5.15.2/css/v4-shims.css" rel="stylesheet" />
-        <link href="forcats_files/Dotto-0.1.0/Dotto.css" rel="stylesheet" />
+        <link href="forcats_files/Dotto-0.1.0/site.css" rel="stylesheet" />
         <script src="forcats_files/Dotto-0.1.0/Dotto.js"></script>
         <script src="forcats_files/Dotto-0.1.0/Dotto_firebase.js"></script>
         <link rel="shortcut icon" href="../../resources/images/Category_icon.png">
@@ -128,11 +128,10 @@
 </div>
 
 <!-- Body main: ul -------------------------------->
-
 <ul class="nav nav-tabs">
-<li class="nav-item">
-<a class="nav-link dm-dot-title">GGplot2</a>
-<div class="dm-dot-content">
+<li class="nav-item dot-li">
+<a class="dot-li nav-link active dm-dot-title"> GGplot2 </a>
+<div class="dm-dot-content active">
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())  <span class="co"># pre-set the bw theme.</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;midwest&quot;</span>, <span class="at">package =</span> <span class="st">&quot;ggplot2&quot;</span>)</span>
@@ -152,20 +151,24 @@
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gg)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning: Removed 15 rows containing non-finite values
-## (stat_smooth).</code></pre>
+<pre><code>## Warning: Removed 15 rows containing non-finite values (stat_smooth).</code></pre>
 <pre><code>## Warning: Removed 15 rows containing missing values (geom_point).</code></pre>
-<img src="forcats_files/figure-html/unnamed-chunk-1-1.png" width="576" />
+<img src="forcats_files/figure-html/mygg-1.png" width="576" />
 </div>
 </li>
-<li class="nav-item">
-<a class="nav-link dm-dot-title">Python</a>
+<li class="nav-item dot-li">
+<a class="dot-li nav-link  dm-dot-title"> Python </a>
 <div class="dm-dot-content">
-<img src="forcats_files/figure-html/unnamed-chunk-2-1.png" width="576" />
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> np.sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>t)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.plot(t,s)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<img src="forcats_files/figure-html/mypy-1.png" width="576" />
 </div>
 </li>
 </ul>
-
 <!-- End of Body main: ul ------------------------>
 
 </div>
