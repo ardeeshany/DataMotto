@@ -31,7 +31,7 @@ DataMotto::use_dotto()
 ```
 
 
-```{r, mygg, Dot_title = "GGplot2"}
+```{r, mygg, Dot_title = "GGplot2", Dot_active = TRUE}
 library(ggplot2)
 theme_set(theme_bw())  # pre-set the bw theme.
 data("midwest", package = "ggplot2")

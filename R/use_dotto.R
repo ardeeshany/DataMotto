@@ -21,8 +21,8 @@ use_dotto <- function() {
   knitr::knit_hooks$set(Dot_title = function(before, options){
     if(before){
       paste(
-        '<li class="nav-item">',
-        glue::glue('<a class="nav-link {ifelse(options$Dot_active, "active", "")} dm-dot-title"> {options$Dot_title} </a>'),
+        '<li class="nav-item dot-li">',
+        glue::glue('<a class="dot-li nav-link {ifelse(options$Dot_active, "active", "")} dm-dot-title"> {options$Dot_title} </a>'),
         glue::glue('<div class="dm-dot-content {ifelse(options$Dot_active, "active", "")}">'),
         sep = "\n"
       )
