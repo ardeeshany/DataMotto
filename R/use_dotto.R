@@ -9,6 +9,7 @@
 #'         ```}
 #' @importFrom htmltools HTML
 #' @importFrom knitr knit_hooks
+#' @importFrom glue glue
 #' @export
 #'
 #'@examples
@@ -16,12 +17,13 @@
 #' DataMotto::use_dotto()
 #'}
 use_dotto <- function() {
+  knitr::opts_chunk$set(Dot_active = FALSE)
   knitr::knit_hooks$set(Dot_title = function(before, options){
     if(before){
       paste(
         '<li class="nav-item">',
-        sprintf('<a class="nav-link dm-dot-title">%s</a>', options$Dot_title),
-        '<div class="dm-dot-content">',
+        glue::glue('<a class="nav-link {ifelse(options$Dot_active, "active", "")} dm-dot-title"> {options$Dot_title} </a>'),
+        glue::glue('<div class="dm-dot-content {ifelse(options$Dot_active, "active", "")}">'),
         sep = "\n"
       )
     } else {

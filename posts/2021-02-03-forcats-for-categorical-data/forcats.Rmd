@@ -52,7 +52,7 @@ gg <- ggplot(midwest, aes(x=area, y=poptotal)) +
 plot(gg)
 ```
 
-```{python, mypy, echo=T, Dot_title = "Python", engine.path = "/Users/ardalanmirshani/Library/r-miniconda/envs/r-reticulate/bin/python"}
+```{python, mypy, echo=T, Dot_title = "Python"}
 import matplotlib.pyplot as plt
 import numpy as np
 t = 1 + np.arange(0, 2, 0.01)
