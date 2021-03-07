@@ -62,14 +62,21 @@ $endfor$
 	$endif$
 	</div>
 	<div class="col-md-4">
-<div id="dm-techs">
-<i class="fab fa-python"></i>
-</div>
-<div id="dm-tags" class="pt-2">
-$if(categories)$
-<span class="badge badge-pill badge-info">$categories$</span>
-$endif$
-</div>
+
+  <div class="row">
+  $for(techs)$
+  <div class='dm-techs'>
+    $techs.icon$
+    <br/>
+  </div>
+  $endfor$
+  </div>
+
+  <div id="dm-tags" class="pt-2">
+  $if(categories)$
+  <span class="badge badge-pill badge-info">$categories$</span>
+  $endif$
+  </div>
 
   </div>
 	<div class="col-md-2">
@@ -86,10 +93,10 @@ $sep$, $endfor$
 </div>
 </div>
 
-<!-- Body main: ul ------------------------------>
-
+<!-- Body main: ul -------------------------------->
+<ul class="nav nav-tabs">
 $body$
-
+</ul>
 <!-- End of Body main: ul ------------------------>
 
 </div>

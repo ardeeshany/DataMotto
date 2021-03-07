@@ -9,6 +9,9 @@ default_template(
   template_path,
   template_dependencies,
   pandoc_args,
+  in_header,
+  before_body,
+  after_body,
   ...
 )
 }

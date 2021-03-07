@@ -6,12 +6,28 @@ author:
   - name: "Ardalan Mirshani"
     url: "https://mirshani.com"
 date: 2020-12-03
-tech: [["Python"]]
-packages: [Matplotlib]
-categories: [Visualization]
+techs:
+  - lang: R
+    pkg: ggplot2
+    icon: '<i class="fab fa-r-project"></i>'
+  - lang: Python
+    pkg: matplotlib
+    icon: '<i class="fab fa-python"></i>'
+tech: [Python, R]
+packages: [Matplotlib, ggplot2]
+categories: [Visualization, Modeling]
 preview: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
 cover_image_url: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
 output: DataMotto::Dotto
+knit: (function(input, ...) {
+    rmarkdown::render(
+      input,
+      output_file = paste0(
+        xfun::sans_ext(input), '-', Sys.Date(), '.html'
+      ),
+      envir = globalenv()
+    )
+  })
 ---
 
 ```{r setup, include=FALSE}
@@ -36,7 +52,6 @@ knitr::knit_hooks$set(Dot = function(before, options){
 
 ```
 
-
 <ul class="nav nav-tabs">
 
 ```{r, Dot = "GGplot2"}
@@ -60,8 +75,6 @@ gg <- ggplot(midwest, aes(x=area, y=poptotal)) +
 plot(gg)
 ```
 
-
-
 ```{python, echo = F, Dot = "Python"}
 import matplotlib.pyplot as plt
 import numpy as np
@@ -72,4 +85,3 @@ plt.show()
 ```
 
 </ul>
-

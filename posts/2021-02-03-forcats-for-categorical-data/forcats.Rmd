@@ -6,9 +6,16 @@ author:
   - name: "Ardalan Mirshani"
     url: "https://mirshani.com"
 date: 2020-12-03
-tech: [["Python"]]
-packages: [Matplotlib]
-categories: [Visualization]
+techs:
+  - lang: R
+    pkg: ggplot2
+    icon: '<i class="fab fa-r-project"></i>'
+  - lang: Python
+    pkg: matplotlib
+    icon: '<i class="fab fa-python"></i>'
+tech: [Python, R]
+packages: [Matplotlib, ggplot2]
+categories: [Visualization, Modeling]
 preview: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
 cover_image_url: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
 output: DataMotto::Dotto
@@ -16,30 +23,15 @@ output: DataMotto::Dotto
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+```
 
-knitr::knit_hooks$set(Dot = function(before, options){
-  if(before){
-    paste(
-      '<li class="nav-item">',
-      sprintf('<a class="nav-link dm-dot-title">%s</a>', options$Dot),
-      '<div class="dm-dot-content">', 
-      sep = "\n"
-    )
-  } else {
-    paste(
-    '</div>',
-    '</li>',
-    sep = "\n"
-    )
-  }
-})
-
+```{r datamotto_dotto, echo=FALSE}
+DataMotto::use_dotto()
 ```
 
 
-<ul class="nav nav-tabs">
-
-```{r, Dot = "GGplot2"}
+```{r, mygg, Dot_title = "GGplot2"}
 library(ggplot2)
 theme_set(theme_bw())  # pre-set the bw theme.
 data("midwest", package = "ggplot2")
@@ -60,9 +52,7 @@ gg <- ggplot(midwest, aes(x=area, y=poptotal)) +
 plot(gg)
 ```
 
-
-
-```{python, echo = F, Dot = "Python"}
+```{python, mypy, echo=T, Dot_title = "Python", engine.path = "/Users/ardalanmirshani/Library/r-miniconda/envs/r-reticulate/bin/python"}
 import matplotlib.pyplot as plt
 import numpy as np
 t = 1 + np.arange(0, 2, 0.01)
@@ -70,6 +60,4 @@ s = 1 + np.sin(2*np.pi*t)
 plt.plot(t,s)
 plt.show()
 ```
-
-</ul>
 

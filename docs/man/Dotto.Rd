@@ -14,6 +14,9 @@ Dotto(
   pandoc_args = NULL,
   md_extensions = "-autolink_bare_uris",
   self_contained = FALSE,
+  in_header = NULL,
+  before_body = here::here("./resources/header_post.html"),
+  after_body = here::here("./resources/footer.html"),
   ...
 )
 }
@@ -43,7 +46,7 @@ highlighting.}
 R Markdown output format to pass to \code{\link[rmarkdown]{render}}
 }
 \description{
-Format for converting from R Markdown to an HTML document.
+Format for converting from R Markdown to a \code{Dotto} document.
 }
 \details{
 Styling and features are very similar to the ones from the great

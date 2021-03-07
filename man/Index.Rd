@@ -14,6 +14,9 @@ Index(
   pandoc_args = NULL,
   md_extensions = "-autolink_bare_uris",
   self_contained = FALSE,
+  in_header = NULL,
+  before_body = here::here("./resources/header.html"),
+  after_body = here::here("./resources/footer.html"),
   ...
 )
 }

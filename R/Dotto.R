@@ -1,6 +1,6 @@
 #' Convert to a Dotto template
 #'
-#' Format for converting from R Markdown to an HTML document.
+#' Format for converting from R Markdown to a `Dotto` document.
 #'
 #' @details
 #' Styling and features are very similar to the ones from the great
@@ -21,7 +21,6 @@
 #' @param ... Additional function arguments passed to R Markdown \code{\link[rmarkdown]{html_document}}
 #' @return R Markdown output format to pass to \code{\link[rmarkdown]{render}}
 #' @import rmarkdown
-#' @import bookdown
 #' @importFrom htmltools htmlDependency
 #' @export
 Dotto <- function(fig_width = 6,

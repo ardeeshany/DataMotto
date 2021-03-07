@@ -11,7 +11,7 @@ It creates a \code{posts.json} file in the root the package with
 all the high level information (\code{metadata}) of posts.
 
 @importFrom here here
-@import RJSONIO
+@importFrom jsonlite toJSON
 @import rmarkdown
 @importFrom glue glue
 }

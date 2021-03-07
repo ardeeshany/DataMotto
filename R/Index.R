@@ -21,7 +21,6 @@
 #' @param ... Additional function arguments passed to R Markdown \code{\link[rmarkdown]{html_document}}
 #' @return R Markdown output format to pass to \code{\link[rmarkdown]{render}}
 #' @import rmarkdown
-#' @import bookdown
 #' @importFrom htmltools htmlDependency
 #' @export
 Index <- function(fig_width = 6,
