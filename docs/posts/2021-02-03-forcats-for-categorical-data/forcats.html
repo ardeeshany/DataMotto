@@ -181,16 +181,16 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">;</span> y <span class="op">=</span> rand(<span class="fl">10</span>)<span class="op">;</span> <span class="co"># These are the plotting data</span></span></code></pre></div>
 <pre><code>## 10-element Array{Float64,1}:
-##  0.8987397036666687
-##  0.8780179075628616
-##  0.514651718390122
-##  0.3120249188803763
-##  0.7935129184530416
-##  0.9843572788575357
-##  0.05775901772450953
-##  0.4128417849618786
-##  0.12298006456197741
-##  0.028381983457052673</code></pre>
+##  0.48325436540667543
+##  0.8215760172311719
+##  0.901328661491603
+##  0.9604400135014144
+##  0.9263195598693772
+##  0.392332030940852
+##  0.4955278179935998
+##  0.43054440629079593
+##  0.5443469120999869
+##  0.04798128026847026</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot(x<span class="op">,</span> y)</span></code></pre></div>
 <img src="forcats_files/figure-html/myjulia-J1.png" width="300" />
 </div>
@@ -366,9 +366,9 @@
 <li class="nav-item dot-li">
 <a class="dot-li nav-link  dot-li-js dm-dot-title"> JS </a>
 <div class="dm-dot-content">
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Hello&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Hello&quot;</span></span></code></pre></div>
 <script type="text/javascript">
-print("Hello")
+"Hello"
 </script>
 </div>
 </li>
@@ -381,26 +381,33 @@ print("Hello")
 </div>
 </li>
 <!-------------------------------------------------->
-<li class="nav-item dot-li">
-<a class="dot-li nav-link  dot-li-d3 dm-dot-title"> d3 </a>
-<div class="dm-dot-content ">
-
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(r2d3)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>bars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span></code></pre></div>
-<p>102030numericsvgorangevar d3Script = function(d3, r2d3, data, svg, width, height, options, theme, console) { this.d3 = d3;</p>
-<p>svg = d3.select(svg.node()); svg.selectAll(‘rect’) .data(data) .enter() .append(‘rect’) .attr(‘width’, function(d) { return d * 10; }) .attr(‘height’, ‘20px’) .attr(‘y’, function(d, i) { return i * 22; }) .attr(‘fill’, options.color); };5#FFFFFF#000000#FFFFFF#000000TRUETRUEFALSETRUEFALSETRUEd3v55.9.2/Library/Frameworks/R.framework/Versions/4.0/Resources/library/r2d3/www/d3/5.9.2d3.min.jsTRUE</p>
+<!-- # ```{r setup, Dot_title = "d3", Dot_color = "d3", Dot_close = F} -->
+<!-- #  library(r2d3) -->
+<!-- #  bars <- c(10, 20, 30) -->
+<!-- # ``` -->
+<!-- #  -->
+<!-- # ```{d3 data=bars, options=list(color = 'orange'), Dot_open = F} -->
+<!-- #  svg.selectAll('rect') -->
+<!-- #    .data(data) -->
+<!-- #    .enter() -->
+<!-- #      .append('rect') -->
+<!-- #        .attr('width', function(d) { return d * 10; }) -->
+<!-- #        .attr('height', '20px') -->
+<!-- #        .attr('y', function(d, i) { return i * 22; }) -->
+<!-- #        .attr('fill', options.color); -->
+<!-- # ``` -->
 <!-------------------------------------------------->
 <li class="nav-item dot-li">
 <a class="dot-li nav-link  dot-li-Rcpp dm-dot-title"> Rcpp </a>
 <div class="dm-dot-content ">
 
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Rcpp)</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;Rcpp.h&gt;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">// [[Rcpp::export]]</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> timesTwo(<span class="dt">int</span> x) {</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x * <span class="dv">2</span>;</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Rcpp)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;Rcpp.h&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">// [[Rcpp::export]]</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> timesTwo(<span class="dt">int</span> x) {</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x * <span class="dv">2</span>;</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div id="hello-rcpp" class="section level2">
 <h2>Hello <code>Rcpp</code>!</h2>
 <pre><code>## [1] 10</code></pre>
@@ -416,8 +423,8 @@ model {
   y[1] ~ normal(0, 1);
   y[2] ~ double_exponential(0, 2);
 }</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstan)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">=</span> <span class="fu">sampling</span>(ex1)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstan)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">=</span> <span class="fu">sampling</span>(ex1)</span></code></pre></div>
 <pre><code>## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 1).
 ## Chain 1: 
@@ -439,15 +446,15 @@ model {
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 0.011629 seconds (Warm-up)
-## Chain 1:                0.010811 seconds (Sampling)
-## Chain 1:                0.02244 seconds (Total)
+## Chain 1:  Elapsed Time: 0.010452 seconds (Warm-up)
+## Chain 1:                0.009836 seconds (Sampling)
+## Chain 1:                0.020288 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 2).
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 1e-05 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
+## Chain 2: Gradient evaluation took 6e-06 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -464,15 +471,15 @@ model {
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 0.013142 seconds (Warm-up)
-## Chain 2:                0.009189 seconds (Sampling)
-## Chain 2:                0.022331 seconds (Total)
+## Chain 2:  Elapsed Time: 0.011024 seconds (Warm-up)
+## Chain 2:                0.01311 seconds (Sampling)
+## Chain 2:                0.024134 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 3).
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 9e-06 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
+## Chain 3: Gradient evaluation took 3.4e-05 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.34 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -489,15 +496,15 @@ model {
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 0.011481 seconds (Warm-up)
-## Chain 3:                0.010909 seconds (Sampling)
-## Chain 3:                0.02239 seconds (Total)
+## Chain 3:  Elapsed Time: 0.012731 seconds (Warm-up)
+## Chain 3:                0.011187 seconds (Sampling)
+## Chain 3:                0.023918 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 4).
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 8e-06 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
+## Chain 4: Gradient evaluation took 3.6e-05 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.36 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -514,21 +521,21 @@ model {
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 0.011372 seconds (Warm-up)
-## Chain 4:                0.009231 seconds (Sampling)
-## Chain 4:                0.020603 seconds (Total)
+## Chain 4:  Elapsed Time: 0.011591 seconds (Warm-up)
+## Chain 4:                0.00994 seconds (Sampling)
+## Chain 4:                0.021531 seconds (Total)
 ## Chain 4:</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>fit</span></code></pre></div>
 <pre><code>## Inference for Stan model: 6c400a2ac89dae0e85da9f7673dc5d1c.
 ## 4 chains, each with iter=2000; warmup=1000; thin=1; 
 ## post-warmup draws per chain=1000, total post-warmup draws=4000.
 ## 
 ##       mean se_mean   sd  2.5%   25%   50%   75% 97.5% n_eff Rhat
-## y[1]  0.03    0.02 1.01 -1.93 -0.61  0.02  0.73  1.99  1957    1
-## y[2]  0.07    0.06 2.77 -5.67 -1.28  0.02  1.46  6.23  1989    1
-## lp__ -1.50    0.03 1.18 -4.55 -2.07 -1.23 -0.61 -0.10  1410    1
+## y[1] -0.03    0.02 1.01 -2.02 -0.71 -0.02  0.65  1.93  2064    1
+## y[2] -0.06    0.06 2.72 -5.95 -1.44 -0.05  1.38  5.49  2103    1
+## lp__ -1.49    0.03 1.19 -4.42 -2.08 -1.17 -0.61 -0.11  1385    1
 ## 
-## Samples were drawn using NUTS(diag_e) at Wed Mar 10 00:51:17 2021.
+## Samples were drawn using NUTS(diag_e) at Wed Mar 10 01:04:34 2021.
 ## For each parameter, n_eff is a crude measure of effective sample size,
 ## and Rhat is the potential scale reduction factor on split chains (at 
 ## convergence, Rhat=1).</code></pre>
