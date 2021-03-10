@@ -57,3 +57,15 @@ Dotto_dependency_bootstrap_js <- function() {
                             script = "bootstrap.min.js"
                             )
 }
+
+# https://github.com/twbs/bootstrap/releases/download/v4.3.1/bootstrap-4.3.1-dist.zip
+Dotto_dependency_PrismJS <- function() {
+  htmltools::htmlDependency(name = "highlightjs",
+                            version = "10.6.0",
+                            src = system.file("templates/highlightjs-10.6.0", package = "DataMotto"),
+                            head = list('<script>hljs.initHighlightingOnLoad();</script>'),
+                            script = "highlight.pack.js",
+                            stylesheet = "xcode.css"
+  )
+}
+

@@ -28,7 +28,12 @@ default_template <- function(
       Dotto_dependency_popper(),
       Dotto_dependency_bootstrap_js(),
       Dotto_dependency_bootstrap(),
-      Dotto_dependency_font_awesome()
+      Dotto_dependency_font_awesome(),
+      Dotto_dependency_PrismJS()
+      # html_dependency_navigation(
+      #   code_menu = code_menu,
+      #   source_embed = code_download
+      # )
     ),
     template_dependencies
   )
@@ -37,10 +42,11 @@ default_template <- function(
   if ("extra_dependencies" %in% names(args)) {
     extra_dependencies <- append(extra_dependencies, args[["extra_dependencies"]])
     args[["extra_dependencies"]] <- NULL
-    #args[["mathjax"]] <- NULL
+    # args[["mathjax"]] <- NULL
   }
 
-  # ## Force mathjax arguments
+
+  ## Force mathjax arguments
   # if (!is.null(args[["mathjax"]])) {
   #   pandoc_args <- c(pandoc_args,
   #                    "--mathjax",
@@ -55,7 +61,16 @@ default_template <- function(
   if (args[["thumbnails"]]) {
     pandoc_args <- c(pandoc_args, "--variable", "thumbnails:true")
   }
-
+  # if (args[["gallery"]]) {
+  #   pandoc_args <- c(pandoc_args, "--variable", "gallery:true")
+  # } else {
+  #   pandoc_args <- c(pandoc_args, "--variable", "gallery:false")
+  # }
+  # if (!is.null(args[["cards"]])) {
+  #   if (args[["cards"]]) {
+  #     pandoc_args <- c(pandoc_args, "--variable", "cards:true")
+  #   }
+  # }
   ## Call rmarkdown::html_document
   html_document_args <- list(
     template = system.file(template_path, package = "DataMotto"),
