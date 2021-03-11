@@ -13,19 +13,12 @@ build_data_motto <- function() {
   suppressWarnings(suppressMessages(
     rmarkdown::render_site(input = here::here() ,encoding = 'UTF-8', quiet = T)
   ))
-  usethis::ui_done(glue::glue('Data Motto website is generated at {usethis::ui_path("docs")} folder.'))
-}
+  list_all_htmls <- list.files(here::here("docs/posts"),
+                               pattern = "\\.html$",
+                               full.names = T,
+                               recursive = T)
 
-#' Custom Knit function for RStudio
-#'
-#' @export
-knit_with_date <- function(input, ...) {
-  rmarkdown::render(
-    input,
-    # output_file = paste0(
-    #   xfun::sans_ext(input), '-', Sys.Date(), '.',
-    #   xfun::file_ext(input)
-    # ),
-    envir = globalenv()
-  )
+  purrr::walk(list_all_htmls, ~ file.rename(.x, paste0(dirname(.x),"/","index.html")))
+
+  usethis::ui_done(glue::glue('Data Motto website is generated at {usethis::ui_path("docs")} folder.'))
 }

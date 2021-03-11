@@ -58,7 +58,7 @@ Dotto_dependency_bootstrap_js <- function() {
                             )
 }
 
-# https://github.com/twbs/bootstrap/releases/download/v4.3.1/bootstrap-4.3.1-dist.zip
+# https://highlightjs.org/
 Dotto_dependency_PrismJS <- function() {
   htmltools::htmlDependency(name = "highlightjs",
                             version = "10.6.0",

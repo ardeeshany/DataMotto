@@ -1,5 +1,5 @@
 ---
-title: "My Forcats"
+title: "Forcats Package"
 description: |
   A short description of the post.
 author:

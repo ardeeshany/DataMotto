@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:300, 300i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+/*----- Pedram ----*/
+
+html, body {
+    margin:0;
+    padding:0;
+}
+h1 {
+    margin:0;
+}
+
+
+
+.total-likes {
+    position: absolute;
+    top: 37px;
+    font-size: 15px;
+    left: -19px;
+    text-align: center;
+}
+.dm-posts h2 {
+    font-size: 17px;
+}
+
+.dm-posts-desc {
+    font-size: 11px;
+    color: gray;
+}
+
+.dm-posts .badge {
+    font-size: 10px;
+}
+
+#dm-filter-menu {
+    background: #fbfbfb;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+section#dm-splash, #dm-post-header {
+    background: #f1f4fd;
+}
+
+.dm-logo-dot {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dm-logo-dot:nth-child(1) {
+    background: #58b0d7;
+}
+
+.dm-logo-dot:nth-child(2) {
+    background: #fcb400;
+}
+
+.dm-logo-dot:nth-child(3) {
+    background: #df4897;
+}
+
+#dm-logo span {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 7px;
+}
+
+#dm-title h1 {
+    font-weight: bold;
+    font-size: 45px;
+    color: #1b4ea7;
+}
+
+#dm-title p {
+    text-align: justify;
+    font-size: 17px;
+    padding: 20px;
+    line-height: 30px;
+}
+
+.clear {
+	clear: both;
+}
+
+.gradient-button {
+    background: #509ef3;
+}
+
+nav#dm-nav ul li a {
+    text-decoration: none;
+    color: #1b4ea7;
+	transition: .3s all ease;
+}
+
+#dm-nav ul li a::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #58b0d7;
+    border-radius: 50%;
+    margin: auto;
+	transform: scale(0.1);
+	transition: .3s all ease;
+	margin-top: 5px;
+}
+
+#dm-nav ul li:hover a::after {
+	transform: scale(1.0);
+}
+
+#dm-nav ul li:hover a {
+	color: #58b0d7;
+}
+
+#dm-post-section {
+	background: #fbfbfb;
+}
+
+#dm-middle {
+    text-align: center;
+    font-size: 35px;
+    background: #f5f7fd;
+}
+
+section#dm-middle h2 {
+    color: #1b4ea7;
+    font-weight: bold;
+}
+
+footer#dm-footer {
+    background: white;
+}
+#dm-social a {
+    text-decoration: none;
+    color: #1b4ea7;
+    font-size: 20px;
+    margin: 0 5px 0 5px;
+    display: inline-block;
+	transition: .3s all ease;
+}
+
+#dm-social a:hover {
+    transform: scale(1.5);
+    color: gray;
+}
+
+#dm-copy {
+    color: gray;
+}
+
+
+section#dm-post h1 {
+    color: #1b4ea7;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#dm-techs {
+    font-size: 22px;
+    width: 30px;
+    height: 30px;
+    background: black;
+    text-align: center;
+    /*padding-top: 3px;*/
+    border-radius: 50%;
+    color: white;
+}
+
+.dm-proj-r {
+    background: #509ef3;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 15px;
+    color: white;
+}
+
+button#dm-more-btn {
+    margin: auto;
+    margin-top: 30px;
+}
+
+button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
+    font-size: 17px;
+}
+
+.dm-posts .card {
+    transition: .3s all ease;
+    min-height: 100%;
+}
+
+.dm-posts-img img {
+    min-height: 160px;
+}
+
+.dm-posts {
+	top: 0;
+	transition: .3s all ease;
+}
+
+.dm-posts:hover {
+    top: -15px;
+}
+
+@media all and (max-width: 576px) {
+	.dm-posts:hover {
+    top: 0;
+}
+}
+
+.dm-posts:hover .card {
+    background-color: #fbfbfb;
+}
+
+.dottos {
+    background: #509ef3;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding-top: 25px;
+    font-size: 50px;
+    color: white;
+}
+
+#dm-middle span {
+    background: #fcb400;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 25px;
+    color: white;
+    position: relative;
+    left: -27px;
+}
+
+
+/**/
+
+
+
+#dotto > ul > li > .dotto-dots {
+    content: "";
+    background: #dee2e6;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    cursor: pointer;
+	transition: .3s all ease;
+}
+
+#dotto > ul > li.dotto-active .dotto-dots{
+    background: #58b0d7;
+}
+
+#dotto > ul > li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.dotto-container {
+    display: none;
+}
+
+#dotto > ul > li {
+    position: relative;
+    min-height: 80px;
+}
+
+#dotto {
+    position: relative;
+    margin-top: 65px;
+}
+
+#dotto > ul.hasDotto::after {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #58b0d7;
+    position: absolute;
+    left: 65px;
+    top: 50px;
+    z-index: -1;
+}
+
+/*#dotto li h2 {
+    position: absolute;
+    left: -110px;
+    font-size: 12px;
+    top: 50%;
+    width: 104px;
+    background: #cacaca;
+    color: white;
+    padding: 5px 17px 5px 5px;
+    border-radius: 5px;
+	transition: .3s all ease;
+}*/
+
+#dotto li.dotto-active h2 {
+    background: #58b0d7;
+}
+
+.dotto-container li a {
+    border: none!important;
+	background-color: transparent!important;
+}
+
+.dotto-container ul {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+	border: none!important;
+}
+
+
+.dotto-container ul.nav li a.dot-li {
+  position: relative;
+  color: #c7c7c7;
+	cursor: pointer;
+}
+
+.dotto-container ul.nav li a.dot-li.active {
+	color: #444444;
+}
+
+.dotto-container ul.nav li a.dot-li.active::after {
+  /*background: #58b0d7;*/
+  width: 18px;
+  height: 18px;
+  margin-top: 7px;
+}
+
+.dotto-container ul.nav li a.dot-li::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    /*background: #dee2e6;*/
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 10px;
+  	transition: .3s all ease;
+  	cursor: pointer;
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-R::after {
+  background: hsla(209, 30%, 72%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-R.active::after {
+  background: hsla(209, 59%, 66% ,1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-python::after {
+  background: hsla(48, 30%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-python.active::after {
+  background: hsla(48, 96%, 62%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-julia::after {
+  background: hsla(281, 30%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-julia.active::after {
+  background: hsla(281, 37%, 52%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-sql::after {
+  background: hsla(37, 30%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-sql.active::after {
+  background: hsla(37, 98%, 45%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-node::after {
+  background: hsla(106, 30%,75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-node.active::after {
+  background: hsla(106, 29%, 52%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-Rcpp::after {
+  background: hsla(215, 30%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-Rcpp.active::after {
+  background: hsla(215, 72%, 30%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-js::after {
+  background: hsla(53, 98%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-js.active::after {
+  background: hhsla(53, 98%, 50%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-d3::after {
+  background: hsla(11, 30%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-d3.active::after {
+  background: hsla(11, 58%, 56%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-bash::after {
+  background: hsla(195, 9%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-bash.active::after {
+  background: hsla(195, 9%, 27%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-stan::after {
+  background: hsla(350, 100%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-stan.active::after {
+  background: hsla(350, 100%, 34%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-others::after {
+  background: hsla(0, 30%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-others.active::after {
+  background: hsla(0, 0%, 43.1%, 1);
+}
+
+
+
+.dotto-container > ul::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: -5px;
+    top: 47px;
+    background: #58b0d7;
+    height: 1px;
+    z-index: -1;
+}
+.dm-author a {
+    color: gray;
+}
+
+.dm-rep {
+    position: absolute;
+    left: -45px;
+    top: 34px;
+    font-size: 30px;
+}
+
+.dm-rep-btn {
+    color: gray;
+    cursor: pointer;
+    transition: .3s all ease;
+    display: none;
+}
+
+.dm-rep-btn-loading.spin {
+    font-size: 14px;
+    pointer-events: none;
+    color: #afafaf;
+}
+
+
+.dm-rep-btn.liked {
+	color: #58b0d7;
+}
+
+section#dm-post {
+    min-height: 600px;
+}
+
+#dotto-content h2 {
+    font-size: 17px;
+}
+
+#dm-filter-menu label {
+	cursor: pointer;
+}
+
+#dm-logo {
+    text-decoration: none;
+}
+
+
+.dm-rep-btn.btn-disabled {
+    pointer-events: none;
+}
+
+	nav#dm-nav > ul {
+		display: none;
+	}
+
+	div#dm-mobile-content {
+    left: unset!important;
+    right: 0px;
+    top: 40px!important;
+    transform: unset!important;
+}
+
+.dm-dot-content {
+    display: none;
+    padding: 30px 15px 15px 15px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+.dm-dot-content.active {
+	display: block;
+}
+
+#dm-mo-nav {
+    display: none;
+}
+
+@media all and (max-width: 576px) {
+	#dm-title h1 {
+		font-size: 30px;
+	}
+nav#dm-nav {
+    float: none;
+    float: right!important;
+}
+.dottos {
+    display: block;
+    margin: auto;
+}
+#dm-middle span {
+    top: -17px;
+}
+button#get-started {
+    display: none;
+}
+#dotto {
+	margin-top: 0px;
+}
+#dm-mo-nav {
+    display: block;
+}
+
+.dotto-container > ul {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    white-space: nowrap;
+    overflow: -moz-scrollbars-none;
+	padding-bottom: 25px;
+}
+.dotto-container > ul > li {
+	display: inline-block;
+}
+.dotto-container > ul::after {
+	bottom: 15px;
+	width: 200%;
+}
+}
+
+
