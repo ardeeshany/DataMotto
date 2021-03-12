@@ -16,7 +16,7 @@
 #'\dontrun{
 #' DataMotto::use_dotto()
 #'}
-use_dotto <- function() {
+use_dotto <- function(metadata) {
   default_engines <- c("R", "python", "julia", "sql", "bash", "js", "node", "d3", "Rcpp", "stan")
   knitr::opts_chunk$set(Dot_title = NULL,
                         Dot_active = FALSE,
@@ -46,4 +46,86 @@ use_dotto <- function() {
       )}
     }
   })
+  return(knitr::asis_output(Dotto_banner(metadata)))
 }
+
+
+
+
+#' Add banner card on top of Dotto
+Dotto_banner <- function(metadata){
+
+
+col_1 <- sprintf('
+<div id="dm-desc">
+<div class="row">
+<div class="col-md-6">
+<h2>%s</h2>
+<p>%s</p>
+</div>
+', metadata$title, metadata$description)
+
+dotto_authors <- function(authors){
+a <- rep(NA, length(authors))
+for(i in 1:length(authors)){
+a[i] <- sprintf('
+<i class="far fa-user"></i> <a href=%s target="_blank"> %s</a>
+', authors[[i]]$url, authors[[i]]$name)
+}
+  return(paste0(a, collapse = ","))
+}
+
+col_3 <- sprintf('
+<div class="col-md-3">
+<div class="dm-posts-desc">
+<span class="pr-1"> <i class="far fa-clock"></i>%s</span>
+<br/> <br/>
+<span>%s</span>
+</div>
+</div>
+', metadata$date, dotto_authors(metadata$author))
+
+
+return(glue::glue('
+  {col_1}
+  {col_3}
+  </div>
+  </div>
+  <ul class="nav nav-tabs">
+'))
+
+#glue::glue("<span><i class=\'far fa-user\'></i><a href={dotto_yml$author[[i]]$name} target=\'_blank\'> {dotto_yml$author[[i]]$url}</a></span>")
+# date
+
+# <div class="col-md-4">
+#
+# <div class="row">
+# $for(techs)$
+# <div class="dm-techs">
+# $techs.icon$
+# <br/>
+# </div>
+# $endfor$
+# </div>
+#
+# <div id="dm-tags" class="pt-2">
+# $if(categories)$
+# <span class="badge badge-pill badge-info">$categories$</span>
+# $endif$
+# </div>
+# </div>
+
+
+# <div class="col-md-2">
+# <div class="dm-posts-desc">
+# $if(date)$
+# <span class="pr-1"><i class="far fa-clock"></i> $date$</span>
+# $endif$
+# <br/>
+# $for(author)$
+# $if(author.name)$ <span><i class="far fa-user"></i><a href=$author.url$ target="_blank"> $author.name$</a></span> $endif$
+# $sep$, $endfor$
+# </div>
+# </div>
+}
+

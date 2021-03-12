@@ -73,3 +73,50 @@ open_file <- function(file) {
     utils::file.edit(file)
   }
 }
+
+
+
+# Find an appropriate cover image
+resolve_cover_image <- function(rmd_path, default_img_path = "resources/images/default_dotto.jpg") {
+
+  cover_image <- rmarkdown::yaml_front_matter(rmd_path)$cover_image
+
+  if(length(cover_image) > 1){
+    stop("cover_image tag must be an string with length 1.")
+  }
+
+  rmd_name <- stringr::str_remove(basename(rmd_path), pattern = "\\.Rmd$")
+  rmd_folder <- basename(dirname(rmd_path))
+  image_path <- glue::glue("{dirname(rmd_path)}/{rmd_name}_files/figure-html")
+  list_images <- list.files(image_path, full.names = F)
+
+  if(is.null(cover_image)){
+    if(length(list_images) != 0 ){
+    selected_image <- list_images[1]
+    } else {
+      selected_image <- default_img_path
+    }
+  } else if((dirname(cover_image) == ".") && file.exists(glue::glue("{image_path}/{cover_image}"))) {
+    selected_image <- glue::glue("./posts/{rmd_folder}/{rmd_name}_files/figure-html/{cover_image}")
+  } else if(tryCatch(httr::GET(cover_image), error = function(e) list(status_code = 404))$status_code == 200){
+    selected_image <- cover_image
+  } else {
+    selected_image <- default_img_path
+  }
+
+  return(selected_image)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

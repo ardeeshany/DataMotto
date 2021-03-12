@@ -9,8 +9,7 @@ date: 2021-03-19
 tech: [R, Python]
 packages: [pkg1, pkg2]
 categories: [Visualization, Modeling]
-preview: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
-cover_image_url: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
+cover_image: "R-Dot-1.png"
 slug: data-wrangling with Pandas
 output: DataMotto::Dotto
 ---

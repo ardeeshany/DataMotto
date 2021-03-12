@@ -51,50 +51,8 @@ $endfor$
 
 <div id="dotto-content" class="col-md-11 pr-md-0 pl-md-0">
 <div class="dotto-container" style="display: block;" data-id="1">
-<div id="dm-desc">
-<div class="row">
-	<div class="col-md-6">
-	$if(title)$
-	<h2>$title$</h2>
-	$endif$
-	$if(description)$
-	<p>$description$</p>
-	$endif$
-	</div>
-	<div class="col-md-4">
 
-  <div class="row">
-  $for(techs)$
-  <div class='dm-techs'>
-    $techs.icon$
-    <br/>
-  </div>
-  $endfor$
-  </div>
 
-  <div id="dm-tags" class="pt-2">
-  $if(categories)$
-  <span class="badge badge-pill badge-info">$categories$</span>
-  $endif$
-  </div>
-
-  </div>
-	<div class="col-md-2">
-<div class="dm-posts-desc">
-$if(date)$
-<span class="pr-1"><i class="far fa-clock"></i> $date$</span>
-$endif$
-<br/>
-$for(author)$
-$if(author.name)$ <span><i class="far fa-user"></i><a href=$author.url$ target="_blank"> $author.name$</a></span> $endif$
-$sep$, $endfor$
-</div>
-	</div>
-</div>
-</div>
-
-<!-- Body main: ul -------------------------------->
-<ul class="nav nav-tabs">
 $body$
 </ul>
 <!-- End of Body main: ul ------------------------>

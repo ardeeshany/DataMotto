@@ -5,6 +5,8 @@ description: |
 author:
   - name: "Ardalan Mirshani"
     url: "https://mirshani.com"
+  - name: "Pedram B."
+    url: "https://google.com"
 date: 2020-12-03
 techs:
   - lang: R
@@ -16,12 +18,13 @@ techs:
 tech: [Python, R]
 packages: [Matplotlib, ggplot2]
 categories: [Visualization, Modeling]
-preview: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
-cover_image_url: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
+cover_image: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
 output: DataMotto::Dotto
 ---
 
+
 ```{r datamotto_dotto, echo=FALSE}
+knitr::asis_output(Dotto_banner(rmarkdown::metadata))
 DataMotto::use_dotto()
 ```
 

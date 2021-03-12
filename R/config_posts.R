@@ -15,24 +15,17 @@ config_posts <- function(path) {
     rmd_path <- glue::glue("{path_posts[i]}/{list.files(path = path_posts[i],pattern = '*.Rmd$')}")
     file_name <- stringr::str_remove(basename(rmd_path), pattern = ".Rmd")
     dir_name <- basename(dirname(rmd_path))
-    # date_prefix <- resolve_date_prefix(rmarkdown::yaml_front_matter(rmd_path)$date)
-    # post_slug <- resolve_slug(title = rmarkdown::yaml_front_matter(rmd_path)$title,
-    #                           slug = rmarkdown::yaml_front_matter(rmd_path)$slug)
+    cover_image_url <- resolve_cover_image(rmd_path)
     names(all_metadata)[i] <- gsub(pattern = "\\.Rmd$", "", basename(rmd_path))
     all_metadata[[i]] <- c(rmarkdown::yaml_front_matter(rmd_path),
                            list(base_url = rmarkdown::site_config(here::here())$base_url,
                                 twitter_site = rmarkdown::site_config(here::here())$twitter$site),
                            list(file_name = file_name,
                                 dir_name = dir_name,
-                                #date_prefix = date_prefix,
-                                #post_slug = post_slug,
+                                cover_image_url = cover_image_url,
                                 link = glue::glue("./posts/{dir_name}/index.html"))
                            )
   }
 
   return(all_metadata)
-  # exportJson <- jsonlite::toJSON(all_metadata,
-  #                                auto_unbox = TRUE,
-  #                                pretty = TRUE)
-  # write(exportJson, path)
 }

@@ -20,5 +20,5 @@ build_data_motto <- function() {
 
   purrr::walk(list_all_htmls, ~ file.rename(.x, paste0(dirname(.x),"/","index.html")))
 
-  usethis::ui_done(glue::glue('Data Motto website is generated at {usethis::ui_path("docs")} folder.'))
+  usethis::ui_done(glue::glue('Data Motto website is generated at "docs" folder.'))
 }
