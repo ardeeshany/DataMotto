@@ -63,13 +63,13 @@ Dotto_banner <- function(metadata){
 # title and description -------------------------------
 col_1 <- sprintf('
 <div class="row">
-<div class="col-md-5">
+<div class="col-md-6">
 <h2>%s</h2>
 <p>%s</p>
 </div>
 ', metadata$title, metadata$description)
 
-# techs and categories -------------------------------
+# categories -------------------------------
 col_2 <- sprintf('
 <div class="col-md-2">
 <div class="row">
@@ -77,6 +77,8 @@ col_2 <- sprintf('
 </div>
 </div>
 ',dotto_categories(metadata))
+
+# techs ------------------------------------
 
 col_3 <- sprintf('
 <div class="col-md-2">
@@ -90,7 +92,7 @@ col_3 <- sprintf('
 
 # date and author ------------------------------------
 col_4 <- sprintf('
-<div class="col-md-3">
+<div class="col-md-2">
 <div class="dm-posts-desc">
 <div class="row pt-1">
 %s
@@ -133,40 +135,62 @@ dotto_categories <- function(metadata){
   vec <- rep(NA, length(metadata$categories))
   for(i in 1:length(metadata$categories)){
     vec[i] <- sprintf('
-<span class="badge badge-pill badge-info" style="margin-right: 2px; font-size:11px; background:#1d9b9f;">%s</span>
+<span class="badge badge-pill badge-info mr-1" style="font-size:11px; background:#1d9b9f;">%s</span>
 ', metadata$categories[i])
   }
   return(paste0(vec, collapse = ""))
 }
 
 
-tech_html_icon <- function(lang) {
-  if(tolower(lang) == "r"){
-    icon <- '<i class="fab fa-r-project" style="padding: 5px;"></i>'
-  } else if(tolower(lang) == "python"){
-    icon <- '<i class="fab fa-python" style="padding: 5px"></i>'
-  } else {
-    icon <- NULL
-  }
-  return(icon)
-}
-
 #' Extract tech information in HTML format
 #' @noRd
+# dotto_techs <- function(metadata){
+#   vec <- rep(NA, length(metadata$techs))
+#   for(i in 1:length(metadata$techs)){
+#     vec[i] <- sprintf('
+# <span class="dm-dot-icon" style="margin-right: 0.4em;">%s</span>
+# ', tech_html_icon(metadata$techs[[i]]$lang))
+#   }
+#   return(paste0(vec, collapse = ""))
+# }
+
+
 dotto_techs <- function(metadata){
   vec <- rep(NA, length(metadata$techs))
   for(i in 1:length(metadata$techs)){
     vec[i] <- sprintf('
-<span id="dm-techs" style="margin-right: 0.4em;">%s</span>
-', tech_html_icon(metadata$techs[[i]]$lang))
+<div class="dm-dot-icon %s-color mr-1" title="%s">%s</div>
+', metadata$techs[[i]]$lang %>% tolower(),
+                      metadata$techs[[i]]$lang %>% toupper(),
+                      tech_html_icon(metadata$techs[[i]]$lang %>% tolower()))
   }
   return(paste0(vec, collapse = ""))
 }
 
-# cc <- rmarkdown::yaml_front_matter(paste(getwd(), "forcats.Rmd", sep = "/"))
-# cc$categories
-# '<i class="fab fa-r-project"></i>'
-#
-
-
-
+# engine icons -----------------------
+tech_html_icon <- function(lang, full_name = F) {
+  if(tolower(lang) == "r"){
+    icon <- '<i class="fab fa-r-project"></i>'
+  } else if(tolower(lang) == "python"){
+    icon <- '<i class="fab fa-python"></i>'
+  } else if(tolower(lang) == "julia"){
+    icon <- ifelse(full_name, 'Julia', 'Jul')
+  } else if(tolower(lang) == "sql"){
+    icon <- '<i class="fas fa-database"></i>'
+  } else if(tolower(lang) == "rcpp"){
+    icon <- ifelse(full_name, 'Rcpp', 'Rc')
+  } else if(tolower(lang) == "node"){
+    icon <- '<i class="fab fa-node-js"></i>'
+  } else if(tolower(lang) == "bash"){
+    icon <- '<i class="fas fa-terminal"></i>'
+  } else if(tolower(lang) == "js"){
+    icon <- 'JS'
+  } else if(tolower(lang) == "d3"){
+    icon <- 'd3'
+  } else if(tolower(lang) == "stan"){
+    icon <- ifelse(full_name, 'Stan', 'St')
+  } else {
+    icon <- lang
+  }
+  return(icon)
+}

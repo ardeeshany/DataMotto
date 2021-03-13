@@ -8,7 +8,7 @@
 #'  @import rmarkdown
 #'  @importFrom glue glue
 #' @export
-config_posts <- function(path) {
+config_posts <- function() {
   path_posts <- list.dirs(here::here("posts"), recursive = F)
   all_metadata <- rep(list(NA), length(path_posts))
   for(i in 1:length(path_posts)){

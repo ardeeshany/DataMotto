@@ -207,11 +207,23 @@ $.each(json, function(i, v){
 	} else if(y === 'python') {
 		techn += '<div class="dm-dot-icon python-color mr-1" title="Python"><i class="fab fa-python"></i></div>';
 		} else if(y === 'julia') {
-		techn += '<div class="dm-dot-icon julia-color mr-1" title="Julia">j</div>';
+		techn += '<div class="dm-dot-icon julia-color mr-1" title="Julia">Jul</div>';
 		} else if(y === 'sql') {
 		techn += '<div class="dm-dot-icon sql-color mr-1" title="SqL"><i class="fas fa-database"></i></div>';
+	} else if(y === 'rcpp') {
+		techn += '<div class="dm-dot-icon rcpp-color mr-1" title="Rcpp">Rc</i></div>';
+	} else if(y === 'node') {
+		techn += '<div class="dm-dot-icon node-color mr-1" title="Node"><i class="fab fa-node-js"></i></div>';
+	} else if(y === 'bash') {
+		techn += '<div class="dm-dot-icon bash-color mr-1" title="Bash"><i class="fas fa-terminal"></i></div>';
+	} else if(y === 'js') {
+		techn += '<div class="dm-dot-icon js-color mr-1" title="Js">JS</div>';
+	} else if(y === 'd3') {
+		techn += '<div class="dm-dot-icon d3-color mr-1" title="D3">d3</i></div>';
+	} else if(y === 'stan') {
+		techn += '<div class="dm-dot-icon stan-color mr-1" title="Stan">St</i></div>';
 	} else {
-		techn += '<span>'+y+'</span>';
+		techn += '<div class="dm-dot-icon others-color mr-1" title="Others">'+y+'</div>';
 	}
 
 	});
@@ -337,17 +349,29 @@ $.each(result, function(i, v){
 		tags += '<span class="badge badge-pill badge-info mr-1">'+t+'</span>';
 	});
 
-	$.each(tech, function(x,y){
+		$.each(tech, function(x,y){
 	if(y === 'r'){
 		techn += '<div class="dm-dot-icon r-color mr-1" title="R"><i class="fab fa-r-project"></i></div>';
 	} else if(y === 'python') {
 		techn += '<div class="dm-dot-icon python-color mr-1" title="Python"><i class="fab fa-python"></i></div>';
 		} else if(y === 'julia') {
-		techn += '<div class="dm-dot-icon julia-color mr-1" title="Julia">j</div>';
+		techn += '<div class="dm-dot-icon julia-color mr-1" title="Julia">Jul</div>';
 		} else if(y === 'sql') {
 		techn += '<div class="dm-dot-icon sql-color mr-1" title="SqL"><i class="fas fa-database"></i></div>';
+	} else if(y === 'rcpp') {
+		techn += '<div class="dm-dot-icon rcpp-color mr-1" title="Rcpp">Rc</i></div>';
+	} else if(y === 'node') {
+		techn += '<div class="dm-dot-icon node-color mr-1" title="Node"><i class="fab fa-node-js"></i></div>';
+	} else if(y === 'bash') {
+		techn += '<div class="dm-dot-icon bash-color mr-1" title="Bash"><i class="fas fa-terminal"></i></div>';
+	} else if(y === 'js') {
+		techn += '<div class="dm-dot-icon js-color mr-1" title="Js">JS</div>';
+	} else if(y === 'd3') {
+		techn += '<div class="dm-dot-icon d3-color mr-1" title="D3">d3</i></div>';
+	} else if(y === 'stan') {
+		techn += '<div class="dm-dot-icon stan-color mr-1" title="Stan">St</i></div>';
 	} else {
-		techn += '<span>'+y+'</span>';
+		techn += '<div class="dm-dot-icon others-color mr-1" title="Others">'+y+'</div>';
 	}
 
 	});
