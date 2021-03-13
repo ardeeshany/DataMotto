@@ -13,7 +13,7 @@ techs:
     pkg: [ggplot2, forcats]
   - lang: Python
     pkg: matplotlib
-tech: [Python, R]
+  - lang: Julia
 packages: [Matplotlib, ggplot2]
 categories: [Visualization, Modeling]
 cover_image: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"

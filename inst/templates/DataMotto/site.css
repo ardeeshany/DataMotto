@@ -57,7 +57,7 @@ section#dm-splash, #dm-post-header {
     border-radius: 50%;
     display: inline-block;
 }
-
+/*
 .dm-logo-dot:nth-child(1) {
     background: #58b0d7;
 }
@@ -69,7 +69,7 @@ section#dm-splash, #dm-post-header {
 .dm-logo-dot:nth-child(3) {
     background: #df4897;
 }
-
+*/
 #dm-logo span {
     display: block;
     font-size: 12px;
@@ -363,6 +363,64 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
   	transition: .3s all ease;
   	cursor: pointer;
 }
+
+/* dot background color */
+
+.dm-dot-icon {
+    width: 25px;
+    /*height: 25px;*/
+    border-radius: 50%;
+    text-align: center;
+    /*padding-top: 5px;*/
+    /*font-size: 15px;*/
+    color: white;
+}
+
+.r-color {
+  background: hsla(203, 69%, 58% ,1);
+}
+
+.python-color {
+  background: hsla(47, 88%, 47%, 1);
+}
+
+.julia-color {
+  background: hsla(281, 37%, 52%, 1);
+}
+
+.sql-color {
+  background: hsla(190, 100%, 28%, 1);
+}
+
+.node-color {
+  background: hsla(106, 29%, 52%, 1);
+}
+
+.rcpp-color {
+  background: hsla(215, 72%, 30%, 1);
+}
+
+.js-color {
+  background: hhsla(53, 98%, 50%, 1);
+}
+
+.d3-color {
+  background: hsla(11, 58%, 56%, 1);
+}
+
+.bash-color {
+  background: hsla(195, 9%, 27%, 1);
+}
+
+.stan-color {
+  background: hsla(350, 100%, 34%, 1);
+}
+
+.others-color {
+  background: hsla(0, 0%, 43.1%, 1);
+}
+
+/* dot colors in Dotto page */
 
 .dotto-container ul.nav li a.dot-li.dot-li-R::after {
   background: hsla(209, 30%, 72%, 1);

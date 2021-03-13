@@ -6,7 +6,12 @@ author:
   - name: "Your name"
     url: "https://YOUR_URL"
 date: 2021-03-19
-tech: [R, Python]
+techs:
+  - lang: R
+    pkg: [ggplot2, forcats]
+  - lang: SQL
+    pkg: matplotlib
+  - lang: pyTHON
 packages: [pkg1, pkg2]
 categories: [Visualization, Modeling]
 cover_image: "R-Dot-1.png"

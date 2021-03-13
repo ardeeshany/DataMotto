@@ -201,13 +201,15 @@ $.each(json, function(i, v){
 		tags += '<span class="badge badge-pill badge-info mr-1">'+t+'</span>';
 	});
 
-	$.each(tech, function(x,y){
-	if(y === 'R'){
-		techn += '<div class="dm-proj-r mr-1" title="R"><i class="fab fa-r-project"></i></div>';
-	} else if(y === 'Python') {
-		techn += '<div class="dm-proj-r mr-1" title="Python"><i class="fab fa-python"></i></div>';
-		} else if(y === 'SqL') {
-		techn += '<div class="dm-proj-r mr-1" title="SqL"><i class="fas fa-database"></i></div>';
+		$.each(tech, function(x,y){
+	if(y === 'r'){
+		techn += '<div class="dm-dot-icon r-color mr-1" title="R"><i class="fab fa-r-project"></i></div>';
+	} else if(y === 'python') {
+		techn += '<div class="dm-dot-icon python-color mr-1" title="Python"><i class="fab fa-python"></i></div>';
+		} else if(y === 'julia') {
+		techn += '<div class="dm-dot-icon julia-color mr-1" title="Julia">j</div>';
+		} else if(y === 'sql') {
+		techn += '<div class="dm-dot-icon sql-color mr-1" title="SqL"><i class="fas fa-database"></i></div>';
 	} else {
 		techn += '<span>'+y+'</span>';
 	}
@@ -336,12 +338,14 @@ $.each(result, function(i, v){
 	});
 
 	$.each(tech, function(x,y){
-	if(y === 'R'){
-		techn += '<div class="dm-proj-r mr-1" title="R"><i class="fab fa-r-project"></i></div>';
-	} else if(y === 'Python') {
-		techn += '<div class="dm-proj-r mr-1" title="Python"><i class="fab fa-python"></i></div>';
-		} else if(y === 'SqL') {
-		techn += '<div class="dm-proj-r mr-1" title="SqL"><i class="fas fa-database"></i></div>';
+	if(y === 'r'){
+		techn += '<div class="dm-dot-icon r-color mr-1" title="R"><i class="fab fa-r-project"></i></div>';
+	} else if(y === 'python') {
+		techn += '<div class="dm-dot-icon python-color mr-1" title="Python"><i class="fab fa-python"></i></div>';
+		} else if(y === 'julia') {
+		techn += '<div class="dm-dot-icon julia-color mr-1" title="Julia">j</div>';
+		} else if(y === 'sql') {
+		techn += '<div class="dm-dot-icon sql-color mr-1" title="SqL"><i class="fas fa-database"></i></div>';
 	} else {
 		techn += '<span>'+y+'</span>';
 	}
