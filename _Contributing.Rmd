@@ -1,10 +1,10 @@
 ---
 title: "`r  paste0(rmarkdown::site_config(input = here::here())$title, ':', ' Contributing')`"
 description: |
-  How to contribute
+  How to contribute in Data Motto
 author:
   - name: "Ardalan Mirshani"
-    url: "mirshani.com"
+    url: "https:://mirshani.com"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: DataMotto::Index
 ---

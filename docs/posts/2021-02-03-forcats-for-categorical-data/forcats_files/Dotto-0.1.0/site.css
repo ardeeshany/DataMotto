@@ -168,10 +168,10 @@ section#dm-post h1 {
 }
 
 #dm-techs {
-    font-size: 22px;
-    width: 30px;
-    height: 30px;
-    background: black;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    background: #364a63;
     text-align: center;
     /*padding-top: 3px;*/
     border-radius: 50%;

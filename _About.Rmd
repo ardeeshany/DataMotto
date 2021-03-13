@@ -6,7 +6,9 @@ author:
   - name: "Ardalan Mirshani"
     url: "mirshani.com"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: DataMotto::Index
+output: 
+  DataMotto::Index:
+    self_contained: false
 ---
 
 ```{r, echo = F}
