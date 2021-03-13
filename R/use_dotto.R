@@ -62,9 +62,8 @@ Dotto_banner <- function(metadata){
 
 # title and description -------------------------------
 col_1 <- sprintf('
-<div id="dm-desc">
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-5">
 <h2>%s</h2>
 <p>%s</p>
 </div>
@@ -72,76 +71,47 @@ col_1 <- sprintf('
 
 # techs and categories -------------------------------
 col_2 <- sprintf('
-<div class="col-md-3">
-<div class="dm-posts-techs">
-<div class="row">
-%s
-</div>
+<div class="col-md-2">
 <div class="row">
 %s
 </div>
 </div>
+',dotto_categories(metadata))
+
+col_3 <- sprintf('
+<div class="col-md-2">
+<div class="row">
+%s
 </div>
-',dotto_techs(metadata) ,dotto_categories(metadata))
+</div>
+',dotto_techs(metadata))
+
 
 
 # date and author ------------------------------------
-col_3 <- sprintf('
+col_4 <- sprintf('
 <div class="col-md-3">
 <div class="dm-posts-desc">
-<div class="row">
-<span class="pr-1"> <i class="far fa-clock" style="margin: 2px;"></i> %s </span>
-</div>
-<div class="row">
+<div class="row pt-1">
 %s
 </div>
+<div class="row">
+<span> <i class="far fa-clock" class="pr-1"></i> %s </span>
 </div>
 </div>
-', metadata$date, dotto_authors(metadata))
+</div>
+', dotto_authors(metadata), metadata$date)
 
 return(sprintf(
 '
 %s
 %s
 %s
-</div>
+%s
 </div>
 <ul class="nav nav-tabs">
-', col_1, col_2, col_3))
+', col_1, col_2, col_3, col_4))
 
-#glue::glue("<span><i class=\'far fa-user\'></i><a href={dotto_yml$author[[i]]$name} target=\'_blank\'> {dotto_yml$author[[i]]$url}</a></span>")
-# date
-
-# <div class="col-md-4">
-#
-# <div class="row">
-# $for(techs)$
-# <div class="dm-techs">
-# $techs.icon$
-# <br/>
-# </div>
-# $endfor$
-# </div>
-#
-# <div id="dm-tags" class="pt-2">
-# $if(categories)$
-# <span class="badge badge-pill badge-info">$categories$</span>
-# $endif$
-# </div>
-# </div>
-
-
-# <div class="col-md-2">
-# <div class="dm-posts-desc">
-# $if(date)$
-# <span class="pr-1"><i class="far fa-clock"></i> $date$</span>
-# $endif$
-# <br/>
-# $for(author)$
-# $if(author.name)$ <span><i class="far fa-user"></i><a href=$author.url$ target="_blank"> $author.name$</a></span> $endif$
-# $sep$, $endfor$
-# </div>
-# </div>
 }
 
 #' Extract category information in HTML format
@@ -163,7 +133,7 @@ dotto_categories <- function(metadata){
   vec <- rep(NA, length(metadata$categories))
   for(i in 1:length(metadata$categories)){
     vec[i] <- sprintf('
-<span class="badge badge-pill badge-info" style="margin-right: 2px; font-size:11px;">%s</span>
+<span class="badge badge-pill badge-info" style="margin-right: 2px; font-size:11px; background:#1d9b9f;">%s</span>
 ', metadata$categories[i])
   }
   return(paste0(vec, collapse = ""))
@@ -172,9 +142,9 @@ dotto_categories <- function(metadata){
 
 tech_html_icon <- function(lang) {
   if(tolower(lang) == "r"){
-    icon <- '<i class="fab fa-r-project fa-lg" style="margin: 0"></i>'
+    icon <- '<i class="fab fa-r-project" style="padding: 5px;"></i>'
   } else if(tolower(lang) == "python"){
-    icon <- '<i class="fab fa-python fa-lg" style="margin: 0"></i>'
+    icon <- '<i class="fab fa-python" style="padding: 5px"></i>'
   } else {
     icon <- NULL
   }
@@ -187,7 +157,7 @@ dotto_techs <- function(metadata){
   vec <- rep(NA, length(metadata$techs))
   for(i in 1:length(metadata$techs)){
     vec[i] <- sprintf('
-<span style="margin-right: 0.5em;">%s</span>
+<span id="dm-techs" style="margin-right: 0.4em;">%s</span>
 ', tech_html_icon(metadata$techs[[i]]$lang))
   }
   return(paste0(vec, collapse = ""))
