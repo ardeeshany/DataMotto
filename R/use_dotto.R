@@ -46,16 +46,21 @@ use_dotto <- function(metadata) {
       )}
     }
   })
-  return(knitr::asis_output(Dotto_banner(metadata)))
+  knitr::asis_output(Dotto_banner(metadata))
+  #return(knitr::asis_output(Dotto_banner(metadata)))
 }
 
 
 
 
 #' Add banner card on top of Dotto
+#'
+#' @description This includes the meta information related the Dotto, such as title,
+#'   description, date, authors, etc.
+#' @noRd
 Dotto_banner <- function(metadata){
 
-
+# title and description -------------------------------
 col_1 <- sprintf('
 <div id="dm-desc">
 <div class="row">
@@ -65,34 +70,44 @@ col_1 <- sprintf('
 </div>
 ', metadata$title, metadata$description)
 
-dotto_authors <- function(authors){
-a <- rep(NA, length(authors))
-for(i in 1:length(authors)){
-a[i] <- sprintf('
-<i class="far fa-user"></i> <a href=%s target="_blank"> %s</a>
-', authors[[i]]$url, authors[[i]]$name)
-}
-  return(paste0(a, collapse = ","))
-}
+# techs and categories -------------------------------
+col_2 <- sprintf('
+<div class="col-md-3">
+<div class="dm-posts-techs">
+<div class="row">
+%s
+</div>
+<div class="row">
+%s
+</div>
+</div>
+</div>
+',dotto_techs(metadata) ,dotto_categories(metadata))
 
+
+# date and author ------------------------------------
 col_3 <- sprintf('
 <div class="col-md-3">
 <div class="dm-posts-desc">
-<span class="pr-1"> <i class="far fa-clock"></i>%s</span>
-<br/> <br/>
-<span>%s</span>
+<div class="row">
+<span class="pr-1"> <i class="far fa-clock" style="margin: 2px;"></i> %s </span>
+</div>
+<div class="row">
+%s
 </div>
 </div>
-', metadata$date, dotto_authors(metadata$author))
+</div>
+', metadata$date, dotto_authors(metadata))
 
-
-return(glue::glue('
-  {col_1}
-  {col_3}
-  </div>
-  </div>
-  <ul class="nav nav-tabs">
-'))
+return(sprintf(
+'
+%s
+%s
+%s
+</div>
+</div>
+<ul class="nav nav-tabs">
+', col_1, col_2, col_3))
 
 #glue::glue("<span><i class=\'far fa-user\'></i><a href={dotto_yml$author[[i]]$name} target=\'_blank\'> {dotto_yml$author[[i]]$url}</a></span>")
 # date
@@ -128,4 +143,60 @@ return(glue::glue('
 # </div>
 # </div>
 }
+
+#' Extract category information in HTML format
+#' @noRd
+dotto_authors <- function(metadata){
+  vec <- rep(NA, length(metadata$author))
+  for(i in 1:length(metadata$author)){
+    vec[i] <- sprintf('
+<span style="margin-right: .75em;"> <i class="far fa-user"></i> <a href=%s target="_blank"> %s</a></span>
+', metadata$author[[i]]$url, metadata$author[[i]]$name)
+  }
+  return(paste0(vec, collapse = ""))
+}
+
+
+#' Extract categories in HTML format
+#' @noRd
+dotto_categories <- function(metadata){
+  vec <- rep(NA, length(metadata$categories))
+  for(i in 1:length(metadata$categories)){
+    vec[i] <- sprintf('
+<span class="badge badge-pill badge-info" style="margin-right: 2px; font-size:11px;">%s</span>
+', metadata$categories[i])
+  }
+  return(paste0(vec, collapse = ""))
+}
+
+
+tech_html_icon <- function(lang) {
+  if(tolower(lang) == "r"){
+    icon <- '<i class="fab fa-r-project fa-lg" style="margin: 0"></i>'
+  } else if(tolower(lang) == "python"){
+    icon <- '<i class="fab fa-python fa-lg" style="margin: 0"></i>'
+  } else {
+    icon <- NULL
+  }
+  return(icon)
+}
+
+#' Extract tech information in HTML format
+#' @noRd
+dotto_techs <- function(metadata){
+  vec <- rep(NA, length(metadata$techs))
+  for(i in 1:length(metadata$techs)){
+    vec[i] <- sprintf('
+<span style="margin-right: 0.5em;">%s</span>
+', tech_html_icon(metadata$techs[[i]]$lang))
+  }
+  return(paste0(vec, collapse = ""))
+}
+
+# cc <- rmarkdown::yaml_front_matter(paste(getwd(), "forcats.Rmd", sep = "/"))
+# cc$categories
+# '<i class="fab fa-r-project"></i>'
+#
+
+
 

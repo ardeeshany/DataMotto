@@ -10,11 +10,9 @@ author:
 date: 2020-12-03
 techs:
   - lang: R
-    pkg: ggplot2
-    icon: '<i class="fab fa-r-project"></i>'
+    pkg: [ggplot2, forcats]
   - lang: Python
     pkg: matplotlib
-    icon: '<i class="fab fa-python"></i>'
 tech: [Python, R]
 packages: [Matplotlib, ggplot2]
 categories: [Visualization, Modeling]

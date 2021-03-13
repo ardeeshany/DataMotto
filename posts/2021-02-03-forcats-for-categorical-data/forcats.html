@@ -109,8 +109,26 @@ A short description of the post.
 </p>
 </div>
 <div class="col-md-3">
+<div class="dm-posts-techs">
+<div class="row">
+<p><span style="margin-right: 0.5em;"><i class="fab fa-r-project fa-lg" style="margin: 0"></i></span></p>
+<p><span style="margin-right: 0.5em;"><i class="fab fa-python fa-lg" style="margin: 0"></i></span></p>
+</div>
+<div class="row">
+<p><span class="badge badge-pill badge-info" style="margin-right: 2px; font-size:11px;">Visualization</span></p>
+<p><span class="badge badge-pill badge-info" style="margin-right: 2px; font-size:11px;">Modeling</span></p>
+</div>
+</div>
+</div>
+<div class="col-md-3">
 <div class="dm-posts-desc">
-<p><span class="pr-1"> <i class="far fa-clock"></i>2020-12-03</span> <br/> <br/> <span> <i class="far fa-user"></i> <a href=https://mirshani.com target="_blank"> Ardalan Mirshani</a> , <i class="far fa-user"></i> <a href=https://google.com target="_blank"> Pedram B.</a> </span></p>
+<div class="row">
+<p><span class="pr-1"> <i class="far fa-clock" style="margin: 2px;"></i> 2020-12-03 </span></p>
+</div>
+<div class="row">
+<p><span style="margin-right: .75em;"> <i class="far fa-user"></i> <a href=https://mirshani.com target="_blank"> Ardalan Mirshani</a></span></p>
+<p><span style="margin-right: .75em;"> <i class="far fa-user"></i> <a href=https://google.com target="_blank"> Pedram B.</a></span></p>
+</div>
 </div>
 </div>
 </div>
@@ -165,16 +183,16 @@ A short description of the post.
 <div class="sourceCode" id="cb6"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">;</span> y <span class="op">=</span> rand(<span class="fl">10</span>)<span class="op">;</span> <span class="co"># These are the plotting data</span></span></code></pre></div>
 <pre><code>## 10-element Array{Float64,1}:
-##  0.12116575039142186
-##  0.4667167786111901
-##  0.6300312199432119
-##  0.9354870720311665
-##  0.039839930137728574
-##  0.1295285975986571
-##  0.38105218673972896
-##  0.4314857196143709
-##  0.3337738251658171
-##  0.8510598223234587</code></pre>
+##  0.8918212506591199
+##  0.5344988562651563
+##  0.038932039568353005
+##  0.9805483931916694
+##  0.7175195723430003
+##  0.4158139859499308
+##  0.15483403230923587
+##  0.36968262237855876
+##  0.6001927963395264
+##  0.4957454722446577</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot(x<span class="op">,</span> y)</span></code></pre></div>
 <img src="forcats_files/figure-html/myjulia-J1.png" width="300" />
 </div>
@@ -412,8 +430,8 @@ model {
 <pre><code>## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 1).
 ## Chain 1: 
-## Chain 1: Gradient evaluation took 1.4e-05 seconds
-## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.14 seconds.
+## Chain 1: Gradient evaluation took 1.1e-05 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.11 seconds.
 ## Chain 1: Adjust your expectations accordingly!
 ## Chain 1: 
 ## Chain 1: 
@@ -430,15 +448,15 @@ model {
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 0.010294 seconds (Warm-up)
-## Chain 1:                0.009797 seconds (Sampling)
-## Chain 1:                0.020091 seconds (Total)
+## Chain 1:  Elapsed Time: 0.011205 seconds (Warm-up)
+## Chain 1:                0.009998 seconds (Sampling)
+## Chain 1:                0.021203 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 2).
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 5e-06 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.05 seconds.
+## Chain 2: Gradient evaluation took 8e-06 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -455,15 +473,15 @@ model {
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 0.012452 seconds (Warm-up)
-## Chain 2:                0.011521 seconds (Sampling)
-## Chain 2:                0.023973 seconds (Total)
+## Chain 2:  Elapsed Time: 0.010535 seconds (Warm-up)
+## Chain 2:                0.009847 seconds (Sampling)
+## Chain 2:                0.020382 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 3).
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 7e-06 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.
+## Chain 3: Gradient evaluation took 9e-06 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -480,9 +498,9 @@ model {
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 0.011054 seconds (Warm-up)
-## Chain 3:                0.010658 seconds (Sampling)
-## Chain 3:                0.021712 seconds (Total)
+## Chain 3:  Elapsed Time: 0.012388 seconds (Warm-up)
+## Chain 3:                0.009872 seconds (Sampling)
+## Chain 3:                0.02226 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 4).
@@ -505,9 +523,9 @@ model {
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 0.012544 seconds (Warm-up)
-## Chain 4:                0.010951 seconds (Sampling)
-## Chain 4:                0.023495 seconds (Total)
+## Chain 4:  Elapsed Time: 0.010535 seconds (Warm-up)
+## Chain 4:                0.010892 seconds (Sampling)
+## Chain 4:                0.021427 seconds (Total)
 ## Chain 4:</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>fit</span></code></pre></div>
 <pre><code>## Inference for Stan model: 6c400a2ac89dae0e85da9f7673dc5d1c.
@@ -515,11 +533,11 @@ model {
 ## post-warmup draws per chain=1000, total post-warmup draws=4000.
 ## 
 ##       mean se_mean   sd  2.5%   25%   50%   75% 97.5% n_eff Rhat
-## y[1] -0.01    0.02 1.00 -1.99 -0.68 -0.02  0.67  1.91  1918    1
-## y[2] -0.04    0.07 2.94 -6.22 -1.52 -0.04  1.43  6.17  1746    1
-## lp__ -1.55    0.03 1.23 -4.75 -2.12 -1.24 -0.65 -0.12  1284    1
+## y[1]  0.01    0.02 1.00 -1.93 -0.67 -0.01  0.69  1.97  1861    1
+## y[2] -0.02    0.06 2.78 -6.02 -1.38 -0.04  1.38  5.56  2028    1
+## lp__ -1.48    0.03 1.19 -4.45 -2.05 -1.19 -0.60 -0.11  1346    1
 ## 
-## Samples were drawn using NUTS(diag_e) at Fri Mar 12 15:43:07 2021.
+## Samples were drawn using NUTS(diag_e) at Fri Mar 12 19:56:38 2021.
 ## For each parameter, n_eff is a crude measure of effective sample size,
 ## and Rhat is the potential scale reduction factor on split chains (at 
 ## convergence, Rhat=1).</code></pre>
