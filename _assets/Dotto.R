@@ -110,7 +110,7 @@ header_dotto <- htmltools::HTML("
 
 
 
-#### -----------------------------
+# -----------------------------
 main_dotto <- htmltools::HTML("
 <ul class='nav nav-tabs'>
 
@@ -141,7 +141,7 @@ Visulization
 </li>
 ")
 
-#### ---------------------------------
+# ---------------------------------
 footer_dotto <- htmltools::HTML("
 <footer id='dm-footer' class='pt-3 pb-3'>
 <div class='container'>
@@ -155,9 +155,7 @@ footer_dotto <- htmltools::HTML("
 </footer>
 ")
 
-
-
-#### -------------------------
+# -------------------------
 htmltools::tagList(htmltools::tags$script(src="https://www.gstatic.com/firebasejs/8.2.4/firebase.js"),
                    htmltools::tags$script(src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"),
                    htmltools::includeScript(here::here("inst","dotto","dotto.js")),
@@ -167,38 +165,3 @@ htmltools::tagList(htmltools::tags$script(src="https://www.gstatic.com/firebasej
                    #footer_dotto,
                    html_dependency_dotto())
 }
-
-# register_panelset_knitr_hooks <- function() {
-#   # if (!knitr::is_html_output()) {
-#   #   return()
-#   # }
-#
-#   hook_source_original <- knitr::knit_hooks$get("source")
-#   hook_output_original <- knitr::knit_hooks$get("output")
-#
-#   # in_xaringan <- output_is_xaringan(in_xaringan)
-#
-#   knitr::knit_hooks$set(source = function(x, options) {
-#     if (is.null(options$panelset) || identical(options$panelset, FALSE)) {
-#       return(hook_source_original(x, options))
-#     }
-#
-#     panel_names <- panelset_source_opts(options$panelset)
-#
-#     # TODO: check that result was set by user, if not assume 'hold' as default
-#     if (identical(options$results, "hold")) {
-#       x <- paste(x, collapse = "\n")
-#     }
-#
-#     if (isTRUE(in_xaringan)) {
-#       panelset_chunk_before_xaringan(x, panel_names)
-#     } else {
-#       panelset_chunk_before_html(x, panel_names)
-#     }
-#   })
-#
-#   knitr::knit_hooks$set(panelset = function(before, options, ...) {
-#     if (before) return()
-#     if (isTRUE(in_xaringan)) "\n\n]" else "\n\n</div>"
-#   })
-# }

@@ -148,17 +148,6 @@ dotto_categories <- function(metadata){
 
 #' Extract tech information in HTML format
 #' @noRd
-# dotto_techs <- function(metadata){
-#   vec <- rep(NA, length(metadata$techs))
-#   for(i in 1:length(metadata$techs)){
-#     vec[i] <- sprintf('
-# <span class="dm-dot-icon" style="margin-right: 0.4em;">%s</span>
-# ', tech_html_icon(metadata$techs[[i]]$lang))
-#   }
-#   return(paste0(vec, collapse = ""))
-# }
-
-
 dotto_techs <- function(metadata){
   vec <- rep(NA, length(metadata$techs))
   for(i in 1:length(metadata$techs)){
