@@ -100,6 +100,10 @@ col_4 <- sprintf('
 <div class="row">
 <span> <i class="far fa-clock" class="pr-1"></i> %s </span>
 </div>
+<!-- LikeBtn.com BEGIN -->
+<span class="likebtn-wrapper" data-theme="review" data-identifier="12-2-4" data-dislike_enabled="false"></span>
+<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+<!-- LikeBtn.com END -->
 </div>
 </div>
 ', dotto_authors(metadata), metadata$date)
