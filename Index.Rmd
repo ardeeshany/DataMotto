@@ -38,6 +38,11 @@ all_dottos <- paste0(dotto_vec, collapse = "")
 ```
 
 
+```{r index_github_stars, echo = F}
+htmltools::includeHTML("resources/index_github_stars.html")
+```
+
+
 ```{r index_dottos, echo=F, results='asis'}
 htmltools::HTML(sprintf('
 <section id="dm-middle" class="pt-5 pb-5">

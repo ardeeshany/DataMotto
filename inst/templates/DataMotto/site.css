@@ -47,6 +47,8 @@ h1 {
     margin-top: 5px;
 }
 
+
+
 section#dm-splash, #dm-post-header {
     background: #f1f4fd;
 }
@@ -125,7 +127,15 @@ nav#dm-nav ul li a {
 }
 
 #dm-post-section {
-	background: #fbfbfb;
+	background: #f1f4fd;
+}
+
+#github-star-section {
+  background: #edebff;
+}
+
+#github-star-section h2 {
+  color: #1c4ea7;
 }
 
 #dm-middle {
