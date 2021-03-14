@@ -8,7 +8,7 @@
     
         <meta name="date" content="2020-12-03" />
     
-    <title>Forcats Package</title>
+    <title>Forcats Package with a connection to tidyverse worlds: stringr, dplyr and ggplot2</title>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
@@ -102,10 +102,10 @@
 <div class="row">
 <div class="col-md-6">
 <h2>
-Forcats Package
+Forcats Package with a connection to tidyverse worlds: stringr, dplyr and ggplot2
 </h2>
 <p>
-A short description of the post.
+Data science is an inter-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from many structural and unstructured data. Data science is related to data mining, machine learning and big data.
 </p>
 </div>
 <div class="col-md-2">
@@ -214,16 +214,16 @@ St
 <div class="sourceCode" id="cb6"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">;</span> y <span class="op">=</span> rand(<span class="fl">10</span>)<span class="op">;</span> <span class="co"># These are the plotting data</span></span></code></pre></div>
 <pre><code>## 10-element Array{Float64,1}:
-##  0.11277145031267777
-##  0.4754567909936862
-##  0.3725526234199943
-##  0.964307297981265
-##  0.008298272502518245
-##  0.33419178950307615
-##  0.4172366319011356
-##  0.5598175748003544
-##  0.9091656578136089
-##  0.8381883869098832</code></pre>
+##  0.6013974250879695
+##  0.8583726562349647
+##  0.4529402455441247
+##  0.043253876208847464
+##  0.10017247606631452
+##  0.7911246932030787
+##  0.14951949150057753
+##  0.9057906631941237
+##  0.6320501273610388
+##  0.2820365798696074</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot(x<span class="op">,</span> y)</span></code></pre></div>
 <img src="forcats_files/figure-html/myjulia-J1.png" width="300" />
 </div>
@@ -479,9 +479,9 @@ model {
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 0.01059 seconds (Warm-up)
-## Chain 1:                0.009554 seconds (Sampling)
-## Chain 1:                0.020144 seconds (Total)
+## Chain 1:  Elapsed Time: 0.010148 seconds (Warm-up)
+## Chain 1:                0.010339 seconds (Sampling)
+## Chain 1:                0.020487 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 2).
@@ -504,9 +504,9 @@ model {
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 0.010677 seconds (Warm-up)
-## Chain 2:                0.010086 seconds (Sampling)
-## Chain 2:                0.020763 seconds (Total)
+## Chain 2:  Elapsed Time: 0.010613 seconds (Warm-up)
+## Chain 2:                0.010067 seconds (Sampling)
+## Chain 2:                0.02068 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 3).
@@ -529,15 +529,15 @@ model {
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 0.012992 seconds (Warm-up)
-## Chain 3:                0.012934 seconds (Sampling)
-## Chain 3:                0.025926 seconds (Total)
+## Chain 3:  Elapsed Time: 0.012257 seconds (Warm-up)
+## Chain 3:                0.011244 seconds (Sampling)
+## Chain 3:                0.023501 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 4).
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 1e-05 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
+## Chain 4: Gradient evaluation took 9e-06 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -554,9 +554,9 @@ model {
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 0.011432 seconds (Warm-up)
-## Chain 4:                0.010174 seconds (Sampling)
-## Chain 4:                0.021606 seconds (Total)
+## Chain 4:  Elapsed Time: 0.010689 seconds (Warm-up)
+## Chain 4:                0.010722 seconds (Sampling)
+## Chain 4:                0.021411 seconds (Total)
 ## Chain 4:</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>fit</span></code></pre></div>
 <pre><code>## Inference for Stan model: 6c400a2ac89dae0e85da9f7673dc5d1c.
@@ -564,11 +564,11 @@ model {
 ## post-warmup draws per chain=1000, total post-warmup draws=4000.
 ## 
 ##       mean se_mean   sd  2.5%   25%   50%   75% 97.5% n_eff Rhat
-## y[1]  0.00    0.02 0.98 -1.94 -0.66  0.00  0.66  1.90  1750    1
-## y[2] -0.10    0.06 2.74 -6.15 -1.43 -0.03  1.37  5.34  2060    1
-## lp__ -1.46    0.04 1.18 -4.45 -2.02 -1.16 -0.59 -0.11  1118    1
+## y[1] -0.01    0.02 0.98 -1.86 -0.67 -0.04  0.66  1.98  1659    1
+## y[2]  0.09    0.06 2.73 -5.69 -1.28  0.04  1.37  6.08  2252    1
+## lp__ -1.44    0.03 1.18 -4.62 -1.97 -1.12 -0.59 -0.11  1222    1
 ## 
-## Samples were drawn using NUTS(diag_e) at Sun Mar 14 00:34:26 2021.
+## Samples were drawn using NUTS(diag_e) at Sun Mar 14 10:20:55 2021.
 ## For each parameter, n_eff is a crude measure of effective sample size,
 ## and Rhat is the potential scale reduction factor on split chains (at 
 ## convergence, Rhat=1).</code></pre>
