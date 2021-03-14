@@ -31,7 +31,7 @@ build_data_motto <- function() {
   purrr::walk(list_all_rmds, ~ file.remove(.x))
 
   # run static _foo.Rmd in the root path ------------------
-  run_root_rmds_if_needed(here::here())
+  #run_root_rmds_if_needed(here::here())
 
   usethis::ui_done(glue::glue('Data Motto website is generated at "docs" folder.'))
 }
