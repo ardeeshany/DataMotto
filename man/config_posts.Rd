@@ -4,7 +4,7 @@
 \alias{config_posts}
 \title{Config all posts}
 \usage{
-config_posts(path)
+config_posts()
 }
 \description{
 It creates a \code{posts.json} file in the root the package with

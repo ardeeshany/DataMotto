@@ -17,7 +17,9 @@ htmltools::includeHTML("resources/index_welcome.html")
 configs <- jsonlite::toJSON(config_posts(),
                  auto_unbox = F,
                  pretty = TRUE) %>% jsonlite::fromJSON(flatten = T)
-all_techs <- langs %>% unlist() %>% 
+
+all_techs <- purrr::map(configs, ~ .x$tech) %>% 
+  unlist() %>%
   table() %>% 
   data.frame() %>% 
   rename("tech" = ".") %>%

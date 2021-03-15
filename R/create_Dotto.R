@@ -33,25 +33,23 @@ author:
   - name: "Your name"
     url: "https://YOUR_URL"
 date: %s
-tech: [R, Python]
-packages: [pkg1, pkg2]
+techs:
+  - lang: R
+    pkg: [ggplot2, forcats]
+  - lang: Python
+    pkg: matplotlib
 categories: [Visualization, Modeling]
-preview: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
-cover_image_url: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
+cover_image:
 slug: %s
+dont_touch_id: %s
 output: DataMotto::Dotto
----', title, date_prefix, slug)
+---', title, date_prefix, slug, uuid::UUIDgenerate(use.time = T))
 
 # body ---------------
 body <-
 '
-<!--
-Data Motto is a Multi-lingual Data Science Website.
-Check Data Motto at <https://DataMotto.com>.
--->
-
 ```{r datamotto_dotto, echo=FALSE}
-DataMotto::use_dotto()
+DataMotto::use_dotto(rmarkdown::metadata)
 ```
 
 <!-- Dot 1 ------------------------------------------------>

@@ -147,7 +147,7 @@ dotto_categories <- function(metadata){
 
 
 #' Extract tech information in HTML format
-#' @noRd
+#' @import dplyr
 dotto_techs <- function(metadata){
   vec <- rep(NA, length(metadata$techs))
   for(i in 1:length(metadata$techs)){

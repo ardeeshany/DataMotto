@@ -1,0 +1,33 @@
+---
+title: "Scale coors with ggplot2"
+description: |
+  A short description of the Dotto.
+author:
+  - name: "Your name"
+    url: "https://YOUR_URL"
+date: 2021-03-14
+techs:
+  - lang: R
+    pkg: [ggplot2, forcats]
+  - lang: Python
+    pkg: matplotlib
+categories: [Visualization, Modeling]
+cover_image:
+slug: scale-coors-with-ggplot2
+dont_touch_id: b9e40bd2-8525-11eb-ac9e-acbc32baed85
+output: DataMotto::Dotto
+---
+
+```{r datamotto_dotto, echo=FALSE}
+DataMotto::use_dotto(rmarkdown::metadata)
+```
+
+<!-- Dot 1 ------------------------------------------------>
+
+```{r, R-Dot, echo = T, Dot_title = "R", Dot_active = TRUE, Dot_open = T, Dot_close = T}
+cars %>% 
+  ggplot() + 
+  geom_point(aes(x = speed, y = dist, col = as.factor(speed)))
+```
+
+

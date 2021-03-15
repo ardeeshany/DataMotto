@@ -4,7 +4,7 @@
 \alias{use_dotto}
 \title{Dotto extensions}
 \usage{
-use_dotto()
+use_dotto(metadata)
 }
 \description{
 Adds required extensions that are necessary for setting up
