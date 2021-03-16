@@ -1,0 +1,30 @@
+---
+title: "styling visualization with bootstrap"
+description: |
+  A short description of the Dotto.
+author:
+  - name: "Your name"
+    url: "https://YOUR_URL"
+date: 2021-03-16
+techs:
+  - lang: R
+    pkg: [ggplot2, forcats]
+  - lang: Python
+    pkg: matplotlib
+categories: [Visualization, Modeling]
+cover_image: "https://miro.medium.com/max/700/1*f8jKCd8c6dctd1QqO2P_sA.png"
+slug: styling-visualization-with-bootstrap
+output: DataMotto::Dotto
+---
+
+```{r datamotto_dotto, echo=FALSE}
+DataMotto::use_dotto(rmarkdown::metadata)
+```
+
+<!-- Dot 1 ------------------------------------------------>
+
+```{r, R-Dot, echo = T, Dot_title = "R", Dot_active = TRUE, Dot_open = T, Dot_close = T}
+plot(cars)
+```
+
+

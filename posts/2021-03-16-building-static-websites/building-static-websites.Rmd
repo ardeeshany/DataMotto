@@ -1,0 +1,30 @@
+---
+title: "Building Static Websites"
+description: |
+  A short description of the Dotto.
+author:
+  - name: "Your name"
+    url: "https://YOUR_URL"
+date: 2021-03-16
+techs:
+  - lang: R
+    pkg: [ggplot2, forcats]
+  - lang: Python
+    pkg: matplotlib
+categories: [Visualization, Modeling]
+cover_image: "https://i1.wp.com/jozef.io/img/r915-01-blogdown-hugo-le.png?w=578&ssl=1"
+slug: building-static-websites
+output: DataMotto::Dotto
+---
+
+```{r datamotto_dotto, echo=FALSE}
+DataMotto::use_dotto(rmarkdown::metadata)
+```
+
+<!-- Dot 1 ------------------------------------------------>
+
+```{r, R-Dot, echo = T, Dot_title = "R", Dot_active = TRUE, Dot_open = T, Dot_close = T}
+plot(cars)
+```
+
+

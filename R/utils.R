@@ -40,7 +40,7 @@ YN <- function(question) {
 create_path_if_not_exist <- function(path){
   lets_create_path <- T
   if(dir.exists(path)){
-    lets_create_path <- YN(glue::glue("{path} exists, override?"), path)
+    lets_create_path <- YN(glue::glue("{path} exists, override?"))
   }
 
   if(lets_create_path){
@@ -55,7 +55,7 @@ create_path_if_not_exist <- function(path){
 create_file_if_not_exist <- function(path){
   lets_create_file <- T
   if(file.exists(path)){
-    lets_create_file <- YN(glue::glue("{path} exists, override?"), path)
+    lets_create_file <- YN(glue::glue("{path} exists, override?"))
   }
 
   if(lets_create_file){
@@ -91,11 +91,12 @@ resolve_cover_image <- function(rmd_path, default_img_path = "resources/images/d
   list_images <- list.files(image_path, full.names = F)
 
   if(is.null(cover_image)){
-    if(length(list_images) != 0 ){
-    selected_image <- list_images[1]
-    } else {
+    #if(length(list_images) != 0 ){
+    #cove_image <- list_images[1]
+    #selected_image <- glue::glue("./posts/{rmd_folder}/{rmd_name}_files/figure-html/{cover_image}")
+    #} else {
       selected_image <- default_img_path
-    }
+    #}
   } else if((dirname(cover_image) == ".") && file.exists(glue::glue("{image_path}/{cover_image}"))) {
     selected_image <- glue::glue("./posts/{rmd_folder}/{rmd_name}_files/figure-html/{cover_image}")
   } else if(tryCatch(httr::GET(cover_image), error = function(e) list(status_code = 404))$status_code == 200){

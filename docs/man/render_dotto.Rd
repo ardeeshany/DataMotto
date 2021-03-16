@@ -4,13 +4,11 @@
 \alias{render_dotto}
 \title{Render Dotto with more relax path and remove unnecessary libs}
 \usage{
-render_dotto(path = NULL, remove_libs = c("bootstrap-3.3.5", "jquery-1.11.3"))
+render_dotto(path = NULL)
 }
 \arguments{
 \item{path}{the path to the .Rmd file. If \code{NULL}, it automatically detect the .Rmd file in
 the current work directory (in case there is only one .Rmd file).}
-
-\item{remove_libs}{the vector of unnecessary libs good to be removed from the \verb{_files} folder.}
 }
 \value{
 

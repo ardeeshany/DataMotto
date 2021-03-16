@@ -53,6 +53,7 @@ gg <- ggplot(midwest, aes(x=area, y=poptotal)) +
        caption = "Source: midwest")
 
 plot(gg)
+
 ```
 
 <!-------------------------------------------------->

@@ -17,12 +17,15 @@
 #' DataMotto::use_dotto()
 #'}
 use_dotto <- function(metadata) {
+
   default_engines <- c("R", "python", "julia", "sql", "bash", "js", "node", "d3", "Rcpp", "stan")
+
   knitr::opts_chunk$set(Dot_title = NULL,
                         Dot_active = FALSE,
                         Dot_color = NULL,
                         Dot_open = T,
                         Dot_close = T)
+
   knitr::knit_hooks$set(Dot_title = function(before, options){
     if(before){
       if(options$Dot_open){
@@ -46,6 +49,7 @@ use_dotto <- function(metadata) {
       )}
     }
   })
+
   knitr::asis_output(Dotto_banner(metadata))
   #return(knitr::asis_output(Dotto_banner(metadata)))
 }
@@ -101,12 +105,12 @@ col_4 <- sprintf('
 <span> <i class="far fa-clock" class="pr-1"></i> %s </span>
 </div>
 <!-- LikeBtn.com BEGIN -->
-<span class="likebtn-wrapper" data-theme="review" data-identifier="12-2-4" data-dislike_enabled="false"></span>
+<span class="likebtn-wrapper" data-identifier="%s" data-site_id="604e13966fd08bbf03672c5b"></span>
 <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
 <!-- LikeBtn.com END -->
 </div>
 </div>
-', dotto_authors(metadata), metadata$date)
+', dotto_authors(metadata), metadata$date, readLines('.id') %>% paste0(collapse = ""))
 
 return(sprintf(
 '

@@ -7,7 +7,7 @@
 #' @importFrom here here
 #' @importFrom glue glue
 #' @export
-create_Dotto <- function(title = NULL, open = T) {
+create_dotto <- function(title = NULL, open = T) {
 
   if(is.null(title)){
     stop('\n argument "title" is missing, with no default')
@@ -22,6 +22,19 @@ create_Dotto <- function(title = NULL, open = T) {
 
   create_path_if_not_exist(glue::glue("{post_parent}/{dotto_folder_name}"))
   create_file_if_not_exist(dotto_path)
+
+# create id ---------------------
+  id_path <- glue::glue("{post_parent}/{dotto_folder_name}/.id")
+
+  res <- T
+  if(file.exists(id_path)){
+  res <- YN("Uniq id is already exists, override?")
+  }
+  if(res) {
+    con <- file(id_path, open = "w", encoding = "UTF-8")
+    xfun::write_utf8(uuid::UUIDgenerate(use.time = T), con)
+    close(con)
+}
 
 # yaml --------------------------
 yaml <- sprintf(
@@ -41,9 +54,8 @@ techs:
 categories: [Visualization, Modeling]
 cover_image:
 slug: %s
-dont_touch_id: %s
 output: DataMotto::Dotto
----', title, date_prefix, slug, uuid::UUIDgenerate(use.time = T))
+---', title, date_prefix, slug)
 
 # body ---------------
 body <-
@@ -67,5 +79,9 @@ xfun::write_utf8(body, con)
 
 open_file(dotto_path)
 
+setwd(dirname(dotto_path))
+usethis::ui_done(cli::col_cyan(glue::glue("set working directory into {dirname(dotto_path)}")))
+
+return(invisible(NULL))
 
 }
