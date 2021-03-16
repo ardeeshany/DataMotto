@@ -162,12 +162,12 @@ var json = {
 $(document).ready(function(){
 // end json
 var j = 0;
-var more = 8; // default cart
+var more = 4; // default cart
 
 function getPost(kind, category, language){
 
 let arr_post = [];
-more = more + 8; // add 8 cart for more
+more = more + 4; // add 8 cart for more
 let inte = 0;
 
 $.each(json, function(i, v){

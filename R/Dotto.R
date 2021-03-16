@@ -67,7 +67,7 @@ Dotto_dependency <- function() {
                             head = list(paste0(
                               '<link rel="shortcut icon" href="../../',rmarkdown::site_config(input = here::here())$favicon,'">'
                             )),
-                            script = c("Dotto.js", "Dotto_firebase.js"),
+                            script = c("Dotto.js"),
                             stylesheet = "site.css",
                             all_files = F)
 }

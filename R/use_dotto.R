@@ -105,7 +105,7 @@ col_4 <- sprintf('
 <span> <i class="far fa-clock" class="pr-1"></i> %s </span>
 </div>
 <!-- LikeBtn.com BEGIN -->
-<span class="likebtn-wrapper" data-identifier="%s" data-site_id="604e13966fd08bbf03672c5b"></span>
+<span class="likebtn-wrapper" data-theme="nero" data-i18n_like="Like Dotto" data-white_label="true" data-identifier="%s" data-show_like_label="false" data-dislike_enabled="false" data-counter_frmt="comma" data-popup_html="I like the Dotto!" data-share_size="large" data-site_id="604e13966fd08bbf03672c5b" data-i18n_like_tooltip="Like Dotto"></span>
 <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
 <!-- LikeBtn.com END -->
 </div>
