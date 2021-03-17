@@ -24,9 +24,19 @@
         <script>hljs.initHighlightingOnLoad();</script>
         <link href="forcats_files/Dotto-0.1.0/site.css" rel="stylesheet" />
         <script src="forcats_files/Dotto-0.1.0/Dotto.js"></script>
-        <link rel="shortcut icon" href="../../resources/images/Category_icon.png">
+        <link rel="shortcut icon" href="../../resources/images/datamotto_logo.jpg">
         <script src="forcats_files/navigation-1.1/tabsets.js"></script>
     
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=257470850"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+
 </head>
 
 <body>
@@ -172,7 +182,7 @@ St
 <!-------------------------------------------------->
 <li class="nav-item dot-li">
 <a class="dot-li nav-link active dot-li-R dm-dot-title"> R </a>
-<div class="dm-dot-content dot-scroll-400 active">
+<div class="dm-dot-content dot-scroll-800 active">
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())  <span class="co"># pre-set the bw theme.</span></span>
@@ -193,17 +203,15 @@ St
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gg)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning: Removed 15 rows containing non-finite values
-## (stat_smooth).</code></pre>
-<pre><code>## Warning: Removed 15 rows containing missing values
-## (geom_point).</code></pre>
+<pre><code>## Warning: Removed 15 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>## Warning: Removed 15 rows containing missing values (geom_point).</code></pre>
 <img src="forcats_files/figure-html/mygg-1.png" width="576" />
 </div>
 </li>
 <!-------------------------------------------------->
 <li class="nav-item dot-li">
 <a class="dot-li nav-link  dot-li-python dm-dot-title"> Python </a>
-<div class="dm-dot-content dot-scroll-400">
+<div class="dm-dot-content dot-scroll-800">
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
@@ -216,20 +224,20 @@ St
 <!-------------------------------------------------->
 <li class="nav-item dot-li">
 <a class="dot-li nav-link  dot-li-julia dm-dot-title"> Julia </a>
-<div class="dm-dot-content dot-scroll-400">
+<div class="dm-dot-content dot-scroll-800">
 <div class="sourceCode" id="cb6"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">;</span> y <span class="op">=</span> rand(<span class="fl">10</span>)<span class="op">;</span> <span class="co"># These are the plotting data</span></span></code></pre></div>
 <pre><code>## 10-element Array{Float64,1}:
-##  0.5166854799542213
-##  0.6682172494279992
-##  0.5410703024170449
-##  0.9176341544277451
-##  0.3462529915272643
-##  0.8327892284343454
-##  0.9826565727018484
-##  0.16325878588874332
-##  0.2261181565514483
-##  0.5606437894366896</code></pre>
+##  0.8169207891732451
+##  0.4554403289673923
+##  0.10066177851799529
+##  0.3255499283980039
+##  0.28078534813284595
+##  0.4420977733535143
+##  0.8428440319352792
+##  0.4990561910185958
+##  0.5031203550708219
+##  0.8613001239062619</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot(x<span class="op">,</span> y)</span></code></pre></div>
 <img src="forcats_files/figure-html/myjulia-J1.png" width="300" />
 </div>
@@ -237,7 +245,7 @@ St
 <!-------------------------------------------------->
 <li class="nav-item dot-li">
 <a class="dot-li nav-link  dot-li-sql dm-dot-title"> SQL </a>
-<div class="dm-dot-content dot-scroll-400">
+<div class="dm-dot-content dot-scroll-800">
 <div class="sourceCode" id="cb9"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> mtcars</span></code></pre></div>
 <div class="knitsql-table">
 <table>
@@ -396,7 +404,7 @@ St
 <!-------------------------------------------------->
 <li class="nav-item dot-li">
 <a class="dot-li nav-link  dot-li-bash dm-dot-title"> bash </a>
-<div class="dm-dot-content dot-scroll-400">
+<div class="dm-dot-content dot-scroll-800">
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Hello Bash!&quot;</span></span></code></pre></div>
 <pre><code>## Hello Bash!</code></pre>
 </div>
@@ -404,7 +412,7 @@ St
 <!-------------------------------------------------->
 <li class="nav-item dot-li">
 <a class="dot-li nav-link  dot-li-js dm-dot-title"> JS </a>
-<div class="dm-dot-content dot-scroll-400">
+<div class="dm-dot-content dot-scroll-800">
 <div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Hello&quot;</span></span></code></pre></div>
 <script type="text/javascript">
 "Hello"
@@ -414,7 +422,7 @@ St
 <!-------------------------------------------------->
 <li class="nav-item dot-li">
 <a class="dot-li nav-link  dot-li-node dm-dot-title"> node </a>
-<div class="dm-dot-content dot-scroll-400">
+<div class="dm-dot-content dot-scroll-800">
 <div class="sourceCode" id="cb13"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## 6</code></pre>
 </div>
@@ -438,7 +446,7 @@ St
 <!-------------------------------------------------->
 <li class="nav-item dot-li">
 <a class="dot-li nav-link  dot-li-Rcpp dm-dot-title"> Rcpp </a>
-<div class="dm-dot-content dot-scroll-400 ">
+<div class="dm-dot-content dot-scroll-800 ">
 
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Rcpp)</span></code></pre></div>
 <div class="sourceCode" id="cb16"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;Rcpp.h&gt;</span></span>
@@ -453,7 +461,7 @@ St
 <!-------------------------------------------------->
 <li class="nav-item dot-li">
 <a class="dot-li nav-link  dot-li-stan dm-dot-title"> stan </a>
-<div class="dm-dot-content dot-scroll-400 ">
+<div class="dm-dot-content dot-scroll-800 ">
 
 <pre class="stan"><code>parameters {
   real y[2];
@@ -467,8 +475,8 @@ model {
 <pre><code>## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 1).
 ## Chain 1: 
-## Chain 1: Gradient evaluation took 1.1e-05 seconds
-## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.11 seconds.
+## Chain 1: Gradient evaluation took 1e-05 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
 ## Chain 1: Adjust your expectations accordingly!
 ## Chain 1: 
 ## Chain 1: 
@@ -485,15 +493,15 @@ model {
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 0.017084 seconds (Warm-up)
-## Chain 1:                0.012107 seconds (Sampling)
-## Chain 1:                0.029191 seconds (Total)
+## Chain 1:  Elapsed Time: 0.010922 seconds (Warm-up)
+## Chain 1:                0.008893 seconds (Sampling)
+## Chain 1:                0.019815 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 2).
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 8e-06 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
+## Chain 2: Gradient evaluation took 6e-06 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -510,15 +518,15 @@ model {
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 0.010879 seconds (Warm-up)
-## Chain 2:                0.011376 seconds (Sampling)
-## Chain 2:                0.022255 seconds (Total)
+## Chain 2:  Elapsed Time: 0.011644 seconds (Warm-up)
+## Chain 2:                0.013004 seconds (Sampling)
+## Chain 2:                0.024648 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 3).
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 8e-06 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
+## Chain 3: Gradient evaluation took 3.1e-05 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.31 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -535,15 +543,15 @@ model {
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 0.010534 seconds (Warm-up)
-## Chain 3:                0.009554 seconds (Sampling)
-## Chain 3:                0.020088 seconds (Total)
+## Chain 3:  Elapsed Time: 0.011801 seconds (Warm-up)
+## Chain 3:                0.010541 seconds (Sampling)
+## Chain 3:                0.022342 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 4).
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 6e-06 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
+## Chain 4: Gradient evaluation took 5e-06 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.05 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -560,25 +568,21 @@ model {
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 0.011409 seconds (Warm-up)
-## Chain 4:                0.010347 seconds (Sampling)
-## Chain 4:                0.021756 seconds (Total)
+## Chain 4:  Elapsed Time: 0.011833 seconds (Warm-up)
+## Chain 4:                0.009764 seconds (Sampling)
+## Chain 4:                0.021597 seconds (Total)
 ## Chain 4:</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>fit</span></code></pre></div>
 <pre><code>## Inference for Stan model: 6c400a2ac89dae0e85da9f7673dc5d1c.
 ## 4 chains, each with iter=2000; warmup=1000; thin=1; 
 ## post-warmup draws per chain=1000, total post-warmup draws=4000.
 ## 
-##       mean se_mean   sd  2.5%   25%   50%   75% 97.5% n_eff
-## y[1]  0.02    0.02 1.02 -2.07 -0.62  0.04  0.69  2.04  2176
-## y[2]  0.12    0.06 2.69 -5.21 -1.33  0.05  1.46  5.92  1963
-## lp__ -1.49    0.03 1.21 -4.77 -2.01 -1.18 -0.60 -0.11  1301
-##      Rhat
-## y[1]    1
-## y[2]    1
-## lp__    1
+##       mean se_mean   sd  2.5%   25%   50%   75% 97.5% n_eff Rhat
+## y[1] -0.01    0.02 1.01 -1.98 -0.69  0.01  0.67  1.90  1812    1
+## y[2] -0.13    0.07 3.02 -7.15 -1.49 -0.03  1.35  6.18  1682    1
+## lp__ -1.57    0.04 1.29 -4.93 -2.14 -1.24 -0.62 -0.12  1053    1
 ## 
-## Samples were drawn using NUTS(diag_e) at Tue Mar 16 21:33:09 2021.
+## Samples were drawn using NUTS(diag_e) at Tue Mar 16 23:39:31 2021.
 ## For each parameter, n_eff is a crude measure of effective sample size,
 ## and Rhat is the potential scale reduction factor on split chains (at 
 ## convergence, Rhat=1).</code></pre>
@@ -594,6 +598,8 @@ model {
 
 <!-- Body Footer ----------------------------------->
 
+    <section class="mt-5 pt-5">
+    <div class="container">
     <div id="disqus_thread"></div>
     <script>
     var disqus_config = function () {
@@ -610,6 +616,8 @@ model {
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
+</div>
+</section>
   
 <footer id="dm-footer" class="pt-3 pb-3">
 	<div class="container">
