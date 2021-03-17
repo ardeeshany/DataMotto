@@ -703,3 +703,8 @@ button#get-started {
 }
 
 
+.dot-scroll-400 {
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: inherit;
+}

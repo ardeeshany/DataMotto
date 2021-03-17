@@ -612,7 +612,7 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 }
 
 section#dm-post {
-    min-height: 600px;
+    min-height: 1000px;
 }
 
 #dotto-content h2 {
@@ -703,3 +703,8 @@ button#get-started {
 }
 
 
+.dot-scroll-800 {
+  max-height: 800px;
+  overflow-y: auto;
+  background-color: inherit;
+}

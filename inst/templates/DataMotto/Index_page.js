@@ -172,9 +172,9 @@ let inte = 0;
 
 $.each(json, function(i, v){
 	j++;
-	let title = v.title;
+	let title = v.title_on_cards;
 	let img = v.cover_image_url[0];
-	let desc = v.description;
+	let desc = v.desc_on_cards;
 	let author = v.author[0].name;
 	let aff = v.author[0].affiliation;
 	let authUrl = v.author[0].url;
@@ -251,7 +251,7 @@ $.each(json, function(i, v){
 	} else if(kind == 'more') {
 	inte++;
 		if(inte == more){
-	$('#dm-post').append('<div class="col-md-3 col-sm-6 dm-posts pr-md-1 mb-1">'+
+	$('#dm-post').append('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
    '<div class="card rounded">'+
 	'<div class="card-body">'+
 	 '<div class="row">'+
@@ -281,7 +281,7 @@ $.each(json, function(i, v){
 		}
 	} else {
 	if(j <= more){
-	$('#dm-post').prepend('<div class="col-md-3 col-sm-6 dm-posts pr-md-1 mb-1">'+
+	$('#dm-post').prepend('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
    '<div class="card rounded">'+
 	'<div class="card-body">'+
 	 '<div class="row">'+
@@ -326,9 +326,9 @@ $.each(arr_post, function (i, e) {
 if(kind == 'filter'){
 if(result.length){
 $.each(result, function(i, v){
-	let title = v.title;
+	let title = v.title_on_cards;
 	let img = v.cover_image_url[0];
-	let desc = v.description;
+	let desc = v.desc_on_cards;
 	let author = v.author[0].name;
 	let aff = v.author[0].affiliation;
 	let authUrl = v.author[0].url;
@@ -376,7 +376,7 @@ $.each(result, function(i, v){
 
 	});
 
-	$('#dm-post').prepend('<div class="col-md-3 col-sm-6 dm-posts pr-md-1 mb-1">'+
+	$('#dm-post').prepend('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
    '<div class="card rounded">'+
 	'<div class="card-body">'+
 	 '<div class="row">'+

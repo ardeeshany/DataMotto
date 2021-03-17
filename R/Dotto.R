@@ -79,6 +79,8 @@ discus_dotto <- function() {
   temp_file <- tempfile()
   con <- file(temp_file, open = "w", encoding = "UTF-8")
   disc_codes <- sprintf('
+    <section class="mt-5 pt-5">
+    <div class="container">
     <div id="disqus_thread"></div>
     <script>
     var disqus_config = function () {
@@ -95,6 +97,8 @@ discus_dotto <- function() {
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
+</div>
+</section>
   ', glue::glue("https://datamotto.com/posts/{dir_name}/index.html"),
    readLines('.id') %>% paste0(collapse = ""))
   xfun::write_utf8(disc_codes, con)

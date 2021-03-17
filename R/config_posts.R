@@ -18,8 +18,12 @@ config_posts <- function() {
     cover_image_url <- resolve_cover_image(rmd_path)
     tech <- purrr::map_chr(rmarkdown::yaml_front_matter(rmd_path)$techs, ~ .x$lang) %>% tolower()
     names(all_metadata)[i] <- gsub(pattern = "\\.Rmd$", "", basename(rmd_path))
+    title_on_cards <- stringr::str_trunc(rmarkdown::yaml_front_matter(rmd_path)$title, width = 150)
+    desc_on_cards <- stringr::str_trunc(rmarkdown::yaml_front_matter(rmd_path)$description, width = 100)
     #id <- readLines(glue::glue('{dirname(rmd_path)}/.id')) %>% paste0(collapse = "")
     all_metadata[[i]] <- c(rmarkdown::yaml_front_matter(rmd_path),
+                           list(title_on_cards = title_on_cards,
+                                desc_on_cards = desc_on_cards),
                            list(base_url = rmarkdown::site_config(here::here())$base_url,
                                 twitter_site = rmarkdown::site_config(here::here())$twitter$site),
                            list(file_name = file_name,
