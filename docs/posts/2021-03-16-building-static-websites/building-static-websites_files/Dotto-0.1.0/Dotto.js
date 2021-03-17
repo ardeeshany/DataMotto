@@ -12,3 +12,20 @@ $(document).ready(function(){
 		});
 	});
 });
+
+$(document).ready(function(){
+
+let dottos = $('#dotto ul li').length;
+if(dottos <= 1){
+$('#dotto ul').removeClass('hasDotto');
+}
+// tab and pill
+
+$('.dm-dot-title').click(function(){
+$('.dm-dot-title').removeClass('active');
+$('.dm-dot-content').removeClass('active');
+	$(this).addClass('active');
+	$(this).siblings('.dm-dot-content').addClass('active');
+});
+
+});

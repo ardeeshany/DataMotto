@@ -186,8 +186,7 @@ St
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gg)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning: Removed 15 rows containing non-finite values
-## (stat_smooth).</code></pre>
+<pre><code>## Warning: Removed 15 rows containing non-finite values (stat_smooth).</code></pre>
 <pre><code>## Warning: Removed 15 rows containing missing values (geom_point).</code></pre>
 <img src="forcats_files/figure-html/mygg-1.png" width="576" />
 </div>
@@ -212,16 +211,16 @@ St
 <div class="sourceCode" id="cb6"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">;</span> y <span class="op">=</span> rand(<span class="fl">10</span>)<span class="op">;</span> <span class="co"># These are the plotting data</span></span></code></pre></div>
 <pre><code>## 10-element Array{Float64,1}:
-##  0.6209152288652993
-##  0.15697483182008432
-##  0.7810272634947251
-##  0.4299084946847398
-##  0.9808525446350391
-##  0.06903549673105625
-##  0.561500955869799
-##  0.3900647799053496
-##  0.3327213445626931
-##  0.045048497790308284</code></pre>
+##  0.15979769140482136
+##  0.4228926395897614
+##  0.948204368981904
+##  0.4459141012311263
+##  0.8791179708879937
+##  0.8140539313486275
+##  0.18542361647844796
+##  0.12261045494764478
+##  0.2836377778115853
+##  0.27164845116480385</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot(x<span class="op">,</span> y)</span></code></pre></div>
 <img src="forcats_files/figure-html/myjulia-J1.png" width="300" />
 </div>
@@ -459,8 +458,8 @@ model {
 <pre><code>## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 1).
 ## Chain 1: 
-## Chain 1: Gradient evaluation took 1.2e-05 seconds
-## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.12 seconds.
+## Chain 1: Gradient evaluation took 1.5e-05 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.15 seconds.
 ## Chain 1: Adjust your expectations accordingly!
 ## Chain 1: 
 ## Chain 1: 
@@ -477,15 +476,15 @@ model {
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 0.010874 seconds (Warm-up)
-## Chain 1:                0.00974 seconds (Sampling)
-## Chain 1:                0.020614 seconds (Total)
+## Chain 1:  Elapsed Time: 0.010713 seconds (Warm-up)
+## Chain 1:                0.009784 seconds (Sampling)
+## Chain 1:                0.020497 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 2).
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 7e-06 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.
+## Chain 2: Gradient evaluation took 9e-06 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -502,15 +501,15 @@ model {
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 0.011149 seconds (Warm-up)
-## Chain 2:                0.009657 seconds (Sampling)
-## Chain 2:                0.020806 seconds (Total)
+## Chain 2:  Elapsed Time: 0.010093 seconds (Warm-up)
+## Chain 2:                0.00936 seconds (Sampling)
+## Chain 2:                0.019453 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 3).
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 6e-06 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
+## Chain 3: Gradient evaluation took 7e-06 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -527,15 +526,15 @@ model {
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 0.010622 seconds (Warm-up)
-## Chain 3:                0.011182 seconds (Sampling)
-## Chain 3:                0.021804 seconds (Total)
+## Chain 3:  Elapsed Time: 0.010453 seconds (Warm-up)
+## Chain 3:                0.008973 seconds (Sampling)
+## Chain 3:                0.019426 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;6c400a2ac89dae0e85da9f7673dc5d1c&#39; NOW (CHAIN 4).
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 7e-06 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.
+## Chain 4: Gradient evaluation took 6e-06 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -552,25 +551,21 @@ model {
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 0.01015 seconds (Warm-up)
-## Chain 4:                0.009686 seconds (Sampling)
-## Chain 4:                0.019836 seconds (Total)
+## Chain 4:  Elapsed Time: 0.011355 seconds (Warm-up)
+## Chain 4:                0.009634 seconds (Sampling)
+## Chain 4:                0.020989 seconds (Total)
 ## Chain 4:</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>fit</span></code></pre></div>
 <pre><code>## Inference for Stan model: 6c400a2ac89dae0e85da9f7673dc5d1c.
 ## 4 chains, each with iter=2000; warmup=1000; thin=1; 
 ## post-warmup draws per chain=1000, total post-warmup draws=4000.
 ## 
-##       mean se_mean   sd  2.5%   25%   50%   75% 97.5% n_eff
-## y[1] -0.05    0.02 1.00 -2.04 -0.71 -0.05  0.62  1.91  1832
-## y[2]  0.01    0.06 2.69 -5.58 -1.31  0.01  1.37  5.68  1948
-## lp__ -1.46    0.03 1.17 -4.47 -2.03 -1.16 -0.60 -0.10  1319
-##      Rhat
-## y[1]    1
-## y[2]    1
-## lp__    1
+##       mean se_mean   sd  2.5%   25%   50%   75% 97.5% n_eff Rhat
+## y[1] -0.01    0.02 1.02 -1.99 -0.69 -0.03  0.66  1.96  1834    1
+## y[2]  0.05    0.06 2.93 -6.12 -1.43 -0.01  1.46  6.37  2115    1
+## lp__ -1.55    0.04 1.23 -4.72 -2.12 -1.22 -0.65 -0.13  1196    1
 ## 
-## Samples were drawn using NUTS(diag_e) at Tue Mar 16 11:07:23 2021.
+## Samples were drawn using NUTS(diag_e) at Tue Mar 16 20:29:41 2021.
 ## For each parameter, n_eff is a crude measure of effective sample size,
 ## and Rhat is the potential scale reduction factor on split chains (at 
 ## convergence, Rhat=1).</code></pre>
@@ -585,6 +580,24 @@ model {
 </section>
 
 <!-- Body Footer ----------------------------------->
+
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_config = function () {
+      this.page.url = "https://datamotto.com/posts/2021-02-03-forcats-for-categorical-data/index.html";
+      this.page.identifier = "e610b6b8-8617-11eb-8868-acbc32baed85";
+    };
+
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://datamotto-com.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
+  
 <footer id="dm-footer" class="pt-3 pb-3">
 	<div class="container">
 	<div id="dm-social" class="text-center">

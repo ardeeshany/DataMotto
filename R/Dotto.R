@@ -33,8 +33,9 @@ Dotto <- function(fig_width = 6,
                        md_extensions = "-autolink_bare_uris",
                        self_contained = FALSE,
                        in_header = NULL,
-                       before_body = here::here("./resources/header_post.html"),
-                       after_body = here::here("./resources/footer.html"),
+                       before_body = here::here("resources/header_post.html"),
+                       after_body = c(discus_dotto(),
+                                      here::here("resources/footer.html")),
                        ...) {
   default_template(
     template_name = "Dotto",
@@ -70,4 +71,33 @@ Dotto_dependency <- function() {
                             script = c("Dotto.js"),
                             stylesheet = "site.css",
                             all_files = F)
+}
+
+# Add a discus widget to the Dotto page
+discus_dotto <- function() {
+  dir_name <- basename(getwd())
+  temp_file <- tempfile()
+  con <- file(temp_file, open = "w", encoding = "UTF-8")
+  disc_codes <- sprintf('
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_config = function () {
+      this.page.url = "%s";
+      this.page.identifier = "%s";
+    };
+
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://datamotto-com.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
+  ', glue::glue("https://datamotto.com/posts/{dir_name}/index.html"),
+   readLines('.id') %>% paste0(collapse = ""))
+  xfun::write_utf8(disc_codes, con)
+  close(con)
+  return(temp_file)
 }

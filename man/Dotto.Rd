@@ -15,8 +15,8 @@ Dotto(
   md_extensions = "-autolink_bare_uris",
   self_contained = FALSE,
   in_header = NULL,
-  before_body = here::here("./resources/header_post.html"),
-  after_body = here::here("./resources/footer.html"),
+  before_body = here::here("resources/header_post.html"),
+  after_body = c(discus_dotto(), here::here("resources/footer.html")),
   ...
 )
 }

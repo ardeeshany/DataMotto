@@ -18,6 +18,7 @@ config_posts <- function() {
     cover_image_url <- resolve_cover_image(rmd_path)
     tech <- purrr::map_chr(rmarkdown::yaml_front_matter(rmd_path)$techs, ~ .x$lang) %>% tolower()
     names(all_metadata)[i] <- gsub(pattern = "\\.Rmd$", "", basename(rmd_path))
+    #id <- readLines(glue::glue('{dirname(rmd_path)}/.id')) %>% paste0(collapse = "")
     all_metadata[[i]] <- c(rmarkdown::yaml_front_matter(rmd_path),
                            list(base_url = rmarkdown::site_config(here::here())$base_url,
                                 twitter_site = rmarkdown::site_config(here::here())$twitter$site),
@@ -25,6 +26,7 @@ config_posts <- function() {
                                 dir_name = dir_name,
                                 cover_image_url = cover_image_url,
                                 tech = tech,
+                                #id = id,
                                 link = glue::glue("./posts/{dir_name}/index.html"))
                            )
   }
