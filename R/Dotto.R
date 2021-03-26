@@ -99,7 +99,7 @@ discus_dotto <- function() {
 <script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
 </div>
 </section>
-  ', glue::glue("https://datamotto.com/posts/{dir_name}/index.html"),
+  ', glue::glue("https://datamotto.com/posts/Dotto/{dir_name}/index.html"),
    readLines('.id') %>% paste0(collapse = ""))
   xfun::write_utf8(disc_codes, con)
   close(con)

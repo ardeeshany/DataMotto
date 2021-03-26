@@ -15,7 +15,7 @@ build_data_motto <- function() {
   ))
 
   # rename all foo.html to index.html ----------------------
-  list_all_htmls <- list.files(here::here("docs/posts"),
+  list_all_htmls <- list.files(here::here("docs/posts/Dotto"),
                                pattern = "\\.html$",
                                full.names = T,
                                recursive = T)
@@ -23,7 +23,7 @@ build_data_motto <- function() {
   purrr::walk(list_all_htmls, ~ file.rename(.x, paste0(dirname(.x),"/","index.html")))
 
   # delete .Rmd files -------------------------------------
-  list_all_rmds <- list.files(here::here("docs/posts"),
+  list_all_rmds <- list.files(here::here("docs/posts/Dotto"),
                                pattern = "\\.Rmd$",
                                full.names = T,
                                recursive = T)

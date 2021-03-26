@@ -1,4 +1,4 @@
-#' Config all posts
+#' Config all posts (Dottos)
 #'
 #' @description It creates a `posts.json` file in the root the package with
 #'  all the high level information (`metadata`) of posts.
@@ -9,7 +9,7 @@
 #'  @importFrom glue glue
 #' @export
 config_posts <- function() {
-  path_posts <- list.dirs(here::here("posts"), recursive = F)
+  path_posts <- list.dirs(here::here("posts/Dotto"), recursive = F)
   all_metadata <- rep(list(NA), length(path_posts))
   for(i in 1:length(path_posts)){
     rmd_path <- glue::glue("{path_posts[i]}/{list.files(path = path_posts[i],pattern = '*.Rmd$')}")
@@ -31,7 +31,7 @@ config_posts <- function() {
                                 cover_image_url = cover_image_url,
                                 tech = tech,
                                 #id = id,
-                                link = glue::glue("./posts/{dir_name}/index.html"))
+                                link = glue::glue("./posts/Dotto/{dir_name}/index.html"))
                            )
   }
 
