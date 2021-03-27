@@ -1,5 +1,5 @@
 ---
-title: "My next city"
+title: "What is the next coming Conference"
 description: "Here we go"
 author:
   - name: "Ardal"
@@ -21,7 +21,7 @@ DataMotto::use_Dotto(rmarkdown::metadata)
 <!-- Dot 1 ------------------------------------------------>
 
 ```{r, R-Dot, echo = T, Dot_title = "R", Dot_active = TRUE, Dot_open = T, Dot_close = T}
-plot(cars, col = "blue")
+plot(cars, col = "green")
 ```
 
 
