@@ -84,7 +84,9 @@ social_card_protocol_dotto <- function() {
   canonical_link = paste0(base_url, glue::glue("/posts/dotto/{dir_name}/"))
   # ---
   cover_image_url <- resolve_cover_image(rmd_path) %>% stringr::str_remove("^\\.")
-  canonical_img_url <- paste0(base_url, cover_image_url)
+  canonical_img_url <- ifelse(stringr::str_detect(cover_image_url, pattern = "^posts"),
+                              paste0(base_url, cover_image_url),
+                              cover_image_url)
 
   # --- Open Graph Card
   og_codes <- sprintf('

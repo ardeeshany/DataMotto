@@ -1,5 +1,5 @@
 ---
-title: "Find the most famous cafe in NY"
+title: "Most famous cafe in NY"
 description: |
   A short description of the Dotto.
 author:
