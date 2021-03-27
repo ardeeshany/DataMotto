@@ -88,9 +88,10 @@ open_graph_dotto <- function() {
   og_codes <- sprintf('
   <meta property="og:title" content="%s" />
   <meta property="og:type" content="article">
+  <meta property="og:description" content="%s" />
   <meta property="og:url" content="%s" />
   <meta property="og:image" content="%s" />
-  ', all_yml_metadata$title, canonical_link, canonical_img_url)
+  ', all_yml_metadata$title, all_yml_metadata$description, canonical_link, canonical_img_url)
   # ---
   temp_file <- tempfile()
   con <- file(temp_file, open = "w", encoding = "UTF-8")

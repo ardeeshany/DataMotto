@@ -1,5 +1,5 @@
 ---
-title: "Game Winner"
+title: "Game Winners"
 description: |
   A short description of the Dotto.
 author:
