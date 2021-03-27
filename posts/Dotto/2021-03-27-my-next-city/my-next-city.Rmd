@@ -9,7 +9,7 @@ techs:
   - lang: Julia
     pkg: [ggplot2, forcats]
 categories: [Modeling]
-cover_image:
+cover_image: R-Dot-1.png
 slug: my-next-city
 output: DataMotto::Dotto
 ---
