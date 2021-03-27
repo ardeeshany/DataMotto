@@ -1,17 +1,26 @@
-resolve_slug <- function(title, slug) {
+#' Create a valid slug from a text
+#'
+#' @description This function modify the text as follows:
+#'   - change to lowecase
+#'   - remove any characters outside a-z A-Z 0-9 and -
+#'   - remove multile hyphens
+#'   - trim hyphen from the start and end of text
+#'   @note Idea from rstudio/distill
+#' @export
+create_slug <- function(title, slug = NULL) {
 
   if (is.null(slug))
     slug <- title
 
-  # from Rstudio/distill
-  slug <- tolower(slug)                        # convert to lowercase
-  slug <- gsub("\\s+", "-", slug)              # replace spaces with -
-  slug <- gsub("[^a-zA-Z0-9\\-]+", "", slug)   # remove all non-word chars
-  slug <- gsub("\\-{2,}", "-", slug)           # replace multiple - with single -
-  slug <- gsub("^-+", "", slug)                # trim - from start of text
-  slug <- gsub("-+$", "", slug)                # trim - from end of text
 
-  slug
+  slug %>%
+    tolower() %>%
+    stringr::str_replace(pattern = "\\s+", replacement = "-") %>%
+    stringr::str_replace(pattern = "[^a-zA-Z0-9\\-]+", replacement = "-") %>%
+    stringr::str_replace(pattern = "\\-{2,}", replacement = "-") %>%
+    stringr::str_replace(pattern = "^-+", replacement = "-") %>%
+    stringr::str_replace(pattern = "-+$", replacement = "-")
+
 
 }
 
@@ -66,11 +75,13 @@ create_file_if_not_exist <- function(path){
 }
 
 # Open a file in Rstudio (from Rstudio/distill)
-open_file <- function(file) {
+open_file <- function(file, open = T) {
+  if(open){
   if (rstudioapi::hasFun("navigateToFile"))
     rstudioapi::navigateToFile(file)
   else {
     utils::file.edit(file)
+  }
   }
 }
 

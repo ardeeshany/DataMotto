@@ -1,9 +1,25 @@
 #' Update Dotto file and folder names based on updated `slug`
 #'
+#' @description The Dotto url is created based on the name on the Dotto folder, which
+#'   follows the format `D#-date-slug`, e.g. `D112-2020-11-21-data-sampling`. As the Dotto
+#'   file and folder names are created originally by `slug`, for changing the file/folder
+#'   names, it is recommended to change `slug` first, then run `update_Dotto()`.
+#' @details for creating a valid `slug`, you can use `DataMotto::create_slug("foo")`
+#'
 #' @param path a path to the Dotto `.Rmd` file.
 #' @param clean_Dotto_deps Delete all the files and folders in Dotto and only keep .Rmd file. Default is `FALSE`.
 #' @export
-update_Dotto <- function(path, clean_dotto_deps = T){
+update_Dotto <- function(path = NULL, clean_dotto_deps = T){
+
+  if(is.null(path)){
+    res <- YN(question = paste0("Current path is ", getwd(), ", override?"))
+    if(res){
+      path <- getwd()
+    } else {
+      usethis::ui_done("Nothing is updated! Change the path and try again.")
+      return(invisible(NULL))
+    }
+  }
 
   path <- here::here(path)
 
@@ -27,8 +43,9 @@ update_Dotto <- function(path, clean_dotto_deps = T){
   new_Dotto_date <- format(as.Date(Dotto_yaml$date), "%Y-%m-%d")
   new_Dotto_slug <- Dotto_yaml$slug
 
-  new_Dotto_name <- resolve_slug(new_Dotto_title, new_Dotto_slug)
-  new_Dotto_folder <- paste0(new_Dotto_date, "-", new_Dotto_name)
+  new_Dotto_name <- create_slug(new_Dotto_title, new_Dotto_slug)
+  Dotto_label <- yaml::read_yaml(glue::glue("{dirname(path)}/.yml"))$dotto_label
+  new_Dotto_folder <- paste0(Dotto_label, "-", new_Dotto_date, "-", new_Dotto_name)
 
   # check to update ---------------------------------------
   if(current_Dotto_name != new_Dotto_name | current_Dotto_folder != new_Dotto_folder) {

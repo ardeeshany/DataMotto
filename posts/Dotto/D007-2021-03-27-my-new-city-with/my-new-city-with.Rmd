@@ -10,7 +10,7 @@ techs:
     pkg: [ggplot2, forcats]
 categories: [Modeling]
 cover_image: R-Dot-1.png
-slug: my-next-city
+slug: my-new-city-with
 output: DataMotto::Dotto
 ---
 
