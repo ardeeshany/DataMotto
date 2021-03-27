@@ -75,7 +75,7 @@ output: DataMotto::Dotto
 body <-
 '
 ```{r datamotto_dotto, echo=FALSE}
-DataMotto::use_dotto(rmarkdown::metadata)
+DataMotto::use_Dotto(rmarkdown::metadata)
 ```
 
 <!-- Dot 1 ------------------------------------------------>
