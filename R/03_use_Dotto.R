@@ -5,7 +5,7 @@
 #'
 #' @details Add the following code chunk to your Rmarkdown file with output \code{DataMotto::Dotto}.
 #'   \code{```{r datamotto_dotto, echo=FALSE}
-#'         DataMotto::use_dotto()
+#'         DataMotto::use_Dotto()
 #'         ```}
 #' @importFrom htmltools HTML
 #' @importFrom knitr knit_hooks
@@ -14,9 +14,9 @@
 #'
 #'@examples
 #'\dontrun{
-#' DataMotto::use_dotto()
+#' DataMotto::use_Dotto()
 #'}
-use_dotto <- function(metadata) {
+use_Dotto <- function(metadata) {
 
   default_engines <- c("R", "python", "julia", "sql", "bash", "js", "node", "d3", "Rcpp", "stan")
 
@@ -110,7 +110,7 @@ col_4 <- sprintf('
 <!-- LikeBtn.com END -->
 </div>
 </div>
-', dotto_authors(metadata), metadata$date, readLines('.id') %>% paste0(collapse = ""))
+', dotto_authors(metadata), metadata$date, yaml::read_yaml(".yml")$dotto_id)
 
 return(sprintf(
 '

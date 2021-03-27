@@ -32,7 +32,7 @@ Dotto <- function(fig_width = 6,
                        pandoc_args = NULL,
                        md_extensions = "-autolink_bare_uris",
                        self_contained = FALSE,
-                       in_header = NULL,
+                       in_header = c(open_graph_dotto()),
                        before_body = here::here("resources/header_post.html"),
                        after_body = c(discus_dotto(),
                                       here::here("resources/footer.html")),
@@ -73,11 +73,36 @@ Dotto_dependency <- function() {
                             all_files = F)
 }
 
+# Open Graph Protocol
+open_graph_dotto <- function() {
+  dir_name <- basename(getwd())
+  base_url <- rmarkdown::site_config(here::here())$base_url
+  rmd_path <- list.files(getwd(), full.names = T, pattern = "\\.Rmd$")
+  all_yml_metadata <- rmarkdown::yaml_front_matter(rmd_path)
+  # ---
+  canonical_link = paste0(base_url, glue::glue("/posts/Dotto/{dir_name}/index.html"))
+  # ---
+  cover_image_url <- resolve_cover_image(rmd_path) %>% stringr::str_remove("^\\.")
+  canonical_img_url <- paste0(base_url, cover_image_url)
+
+  og_codes <- sprintf('
+  <meta property="og:title" content="%s" />
+  <meta property="og:url" content="%s" />
+  <meta property="og:image" content="%s" />
+  ', all_yml_metadata$title, canonical_link, canonical_img_url)
+  # ---
+  temp_file <- tempfile()
+  con <- file(temp_file, open = "w", encoding = "UTF-8")
+  xfun::write_utf8(og_codes, con)
+  close(con)
+  return(temp_file)
+
+}
+
+
 # Add a discus widget to the Dotto page
 discus_dotto <- function() {
   dir_name <- basename(getwd())
-  temp_file <- tempfile()
-  con <- file(temp_file, open = "w", encoding = "UTF-8")
   disc_codes <- sprintf('
     <section class="mt-5 pt-5">
     <div class="container">
@@ -100,7 +125,10 @@ discus_dotto <- function() {
 </div>
 </section>
   ', glue::glue("https://datamotto.com/posts/Dotto/{dir_name}/index.html"),
-   readLines('.id') %>% paste0(collapse = ""))
+  yaml::read_yaml(".yml")$dotto_id)
+  # ---
+  temp_file <- tempfile()
+  con <- file(temp_file, open = "w", encoding = "UTF-8")
   xfun::write_utf8(disc_codes, con)
   close(con)
   return(temp_file)

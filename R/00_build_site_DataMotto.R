@@ -7,7 +7,7 @@
 #' @importFrom usethis ui_done
 #' @importFrom cli cat_rule
 #' @export
-build_data_motto <- function() {
+build_site_DataMotto <- function() {
 
   cli::cat_rule("Site is being created")
   suppressWarnings(suppressMessages(
@@ -59,7 +59,7 @@ run_root_rmds_if_needed <- function(path){
   return(invisible(NULL))
 }
 
-#' Rename a Rmd file precedent with `_` to and html without the character.
+#' Rename a Rmd file precedent with `_` to an html without the character.
 #' @noRd
 rmd_to_html <- function(path) {
   output_file <- basename(path) %>%

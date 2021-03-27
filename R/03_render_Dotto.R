@@ -6,7 +6,7 @@
 #' @return
 #' @export
 #'
-render_dotto <- function(path = NULL) {
+render_Dotto <- function(path = NULL) {
   if(is.null(path)){
     path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
     if(length(path) > 1){

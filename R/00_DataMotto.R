@@ -5,9 +5,6 @@
 #' custom css/js. It also provides many utility functions that help creating the website
 #' more interactive.
 #'
-#' @section config posts:
-#' The \code{\link{config_posts}} function automatically creates a .json file derives the index.page
-#'
 #' @docType package
 #' @name DataMotto
 NULL

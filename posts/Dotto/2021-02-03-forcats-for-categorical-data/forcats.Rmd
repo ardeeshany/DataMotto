@@ -28,7 +28,7 @@ output: DataMotto::Dotto
 
 
 ```{r datamotto_dotto, echo=FALSE}
-DataMotto::use_dotto(rmarkdown::metadata)
+DataMotto::use_Dotto(rmarkdown::metadata)
 ```
 
 ```{css, echo=FALSE}

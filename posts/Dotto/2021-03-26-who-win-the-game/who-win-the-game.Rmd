@@ -1,9 +1,9 @@
 ---
-title: "Who win the game?"
+title: "Game Winner"
 description: |
   A short description of the Dotto.
 author:
-  - name: "Your name"
+  - name: "Ardalan"
     url: "https://YOUR_URL"
 date: 2021-03-26
 techs:
@@ -12,13 +12,13 @@ techs:
   - lang: Python
     pkg: matplotlib
 categories: [Visualization, Modeling]
-cover_image:
+cover_image: "R-Dot-1.png"
 slug: who-win-the-game
 output: DataMotto::Dotto
 ---
 
 ```{r datamotto_dotto, echo=FALSE}
-DataMotto::use_dotto(rmarkdown::metadata)
+DataMotto::use_Dotto(rmarkdown::metadata)
 ```
 
 <!-- Dot 1 ------------------------------------------------>

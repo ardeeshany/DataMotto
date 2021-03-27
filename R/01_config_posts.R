@@ -3,12 +3,14 @@
 #' @description It creates a `posts.json` file in the root the package with
 #'  all the high level information (`metadata`) of posts.
 #'
+#'  @param title_width numeric. The maximum width of title shows in the card of index page. Default is `50` characters.
+#'  @param desc_width numeric. The maximum width of description shows in the card of index page. Default is `150` characters.
 #'  @importFrom here here
 #'  @importFrom jsonlite toJSON
 #'  @import rmarkdown
 #'  @importFrom glue glue
 #' @export
-config_posts <- function() {
+config_posts <- function(title_width = 50, desc_width = 150) {
   path_posts <- list.dirs(here::here("posts/Dotto"), recursive = F)
   all_metadata <- rep(list(NA), length(path_posts))
   for(i in 1:length(path_posts)){
@@ -16,11 +18,10 @@ config_posts <- function() {
     file_name <- stringr::str_remove(basename(rmd_path), pattern = ".Rmd")
     dir_name <- basename(dirname(rmd_path))
     cover_image_url <- resolve_cover_image(rmd_path)
-    tech <- purrr::map_chr(rmarkdown::yaml_front_matter(rmd_path)$techs, ~ .x$lang) %>% tolower()
+    lang <- purrr::map_chr(rmarkdown::yaml_front_matter(rmd_path)$techs, ~ .x$lang) %>% tolower()
     names(all_metadata)[i] <- gsub(pattern = "\\.Rmd$", "", basename(rmd_path))
-    title_on_cards <- stringr::str_trunc(rmarkdown::yaml_front_matter(rmd_path)$title, width = 150)
-    desc_on_cards <- stringr::str_trunc(rmarkdown::yaml_front_matter(rmd_path)$description, width = 100)
-    #id <- readLines(glue::glue('{dirname(rmd_path)}/.id')) %>% paste0(collapse = "")
+    title_on_cards <- stringr::str_trunc(rmarkdown::yaml_front_matter(rmd_path)$title, width = title_width)
+    desc_on_cards <- stringr::str_trunc(rmarkdown::yaml_front_matter(rmd_path)$description, width = desc_width)
     all_metadata[[i]] <- c(rmarkdown::yaml_front_matter(rmd_path),
                            list(title_on_cards = title_on_cards,
                                 desc_on_cards = desc_on_cards),
@@ -29,8 +30,7 @@ config_posts <- function() {
                            list(file_name = file_name,
                                 dir_name = dir_name,
                                 cover_image_url = cover_image_url,
-                                tech = tech,
-                                #id = id,
+                                tech = lang,
                                 link = glue::glue("./posts/Dotto/{dir_name}/index.html"))
                            )
   }
