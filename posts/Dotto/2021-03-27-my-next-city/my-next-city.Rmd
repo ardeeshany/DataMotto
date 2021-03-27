@@ -1,0 +1,27 @@
+---
+title: "My next city"
+description: "Here we go"
+author:
+  - name: "Ardal"
+    url: "mirshani.com"
+date: 2021-03-27
+techs:
+  - lang: Julia
+    pkg: [ggplot2, forcats]
+categories: [Modeling]
+cover_image: R-Dot-1.png
+slug: my-next-city
+output: DataMotto::Dotto
+---
+
+```{r datamotto_dotto, echo=FALSE}
+DataMotto::use_Dotto(rmarkdown::metadata)
+```
+
+<!-- Dot 1 ------------------------------------------------>
+
+```{r, R-Dot, echo = T, Dot_title = "R", Dot_active = TRUE, Dot_open = T, Dot_close = T}
+plot(cars, col = "blue")
+```
+
+
