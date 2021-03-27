@@ -6,7 +6,7 @@ description: |
 output_dir: "docs"
 exclude: ["README.md", "inst", "R"]
 #include: "_posts"
-base_url: https://datamotto.com
+base_url: https://DataMotto.com
 favicon: resources/images/datamotto_logo.png
 google_analytics: "G-WZMEMQM0Y2"
 collections:
