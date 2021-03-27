@@ -12,5 +12,12 @@ update_Dotto(path, clean_dotto_deps = T)
 \item{clean_Dotto_deps}{Delete all the files and folders in Dotto and only keep .Rmd file. Default is \code{FALSE}.}
 }
 \description{
-Update Dotto file and folder names based on updated \code{slug}
+The Dotto url is created based on the name on the Dotto folder, which
+follows the format \code{D#-date-slug}, e.g. \code{D112-2020-11-21-data-sampling}. As the Dotto
+file and folder names are created originally by \code{slug}, for changing the file/folder
+names, it is recommended to change \code{slug} first, then run \code{update_Dotto()}.
+}
+\details{
+Be careful to choosing a short slug, maximum to 4 5 words, with no
+\code{space} and \code{underline} and make them all lowercase.
 }
