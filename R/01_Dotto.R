@@ -81,7 +81,7 @@ social_card_protocol_dotto <- function() {
   rmd_path <- list.files(getwd(), full.names = T, pattern = "\\.Rmd$")
   all_yml_metadata <- rmarkdown::yaml_front_matter(rmd_path)
   # ---
-  canonical_link = paste0(base_url, glue::glue("/posts/Dotto/{dir_name}/"))
+  canonical_link = paste0(base_url, glue::glue("/posts/dotto/{dir_name}/"))
   # ---
   cover_image_url <- resolve_cover_image(rmd_path) %>% stringr::str_remove("^\\.")
   canonical_img_url <- paste0(base_url, cover_image_url)
