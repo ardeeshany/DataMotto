@@ -1,0 +1,28 @@
+---
+title: "Find the most vital sign in the society"
+description: |
+  Machine Learning method for subgrouping in society with JavaScript!
+author:
+  - name: "Ardalan Mirshani"
+    url: "https://mirshani.com"
+date: 2021-03-27
+techs:
+  - lang: Node
+    pkg: [NLP]
+categories: [Visualization, Modeling]
+cover_image: "https://miro.medium.com/max/1200/1*qOr64sncMeniCyu4G0nE_Q.png"
+slug: find-the-most-vital-sign-in-the-society
+output: DataMotto::Dotto
+---
+
+```{r datamotto_dotto, echo=FALSE}
+DataMotto::use_Dotto(rmarkdown::metadata)
+```
+
+<!-- Dot 1 ------------------------------------------------>
+
+```{node, R-Dot, echo = T, Dot_title = "R", Dot_active = TRUE, Dot_open = T, Dot_close = T}
+1+2
+```
+
+
