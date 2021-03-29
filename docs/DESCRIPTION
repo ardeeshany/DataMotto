@@ -22,4 +22,7 @@ Imports:
     htmltools,
     rmarkdown,
     usethis,
-    stringr
+    stringr,
+    dplyr,
+    knitr,
+    urltools

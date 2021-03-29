@@ -196,12 +196,15 @@ tech_html_icon <- function(lang, full_name = F) {
 #' Resolve url with embedding a valid schema
 #' @importFrom urltools url_parse
 resolve_url <- function(url){
-  url_p <- urltools::url_parse(url)
+  if(is.null(url)) {
+    return("")
+  } else{
+    url_p <- urltools::url_parse(url)
 
-  if(is.na(url_p['scheme'] %>% as.character())){
-    return(paste0("https://", url))
-  } else {
-    return(url)
+    if(is.na(url_p['scheme'] %>% as.character())){
+      return(paste0("https://", url))
+    } else {
+      return(url)
+    }
   }
-
 }

@@ -4,9 +4,13 @@
 \alias{create_family}
 \title{Create a \code{Dotto} family be generating a new \code{Dotto} based on another existing \code{Dotto}.}
 \usage{
-create_family(open = T)
+create_family(Dotto_base_label, open = T)
 }
 \arguments{
+\item{Dotto_base_label}{The label (or path) of the \code{Dotto}'s folder whom we want to make a family with. This can
+be the Dotto's label ( e.g., \code{D001}) or the full address
+(e.g., \code{path/to/D001-2020-11-21-foo}).}
+
 \item{open}{If open the dotto file in Rstudio or not. Default is \code{TRUE}.}
 }
 \description{

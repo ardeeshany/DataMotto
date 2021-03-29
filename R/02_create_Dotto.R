@@ -132,7 +132,7 @@ h1("Dot description:")
 ```
 
 ```{%s, Dot3-code, Dot_open = F, Dot_close = T}
-plot(cars)
+"Write your code here"
 ```
 
 ', lang, lang)
