@@ -13,7 +13,7 @@ techs:
     pkg: NULL
 categories: "Manipulation"  # ["Importing-Cleaning", ... ]
 applications: NULL          # ["Finance", "Pharma"]
-cover_image:
+cover_image: "https://cdn.theculturetrip.com/wp-content/uploads/2016/10/le-pure-caf-in-paris--wolfb1958-e1477857945716.jpg"
 slug: "cafe-in-paris"
 output: DataMotto::Dotto
 ---
