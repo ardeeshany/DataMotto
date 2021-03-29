@@ -8,7 +8,6 @@ exclude: ["README.md", "inst", "R"]
 #include: "_posts"
 base_url: https://datamotto.com
 favicon: resources/images/datamotto_logo.png
-google_analytics: "G-WZMEMQM0Y2"
 collections:
   posts:
     # creative_commons: CC BY-NC; # will be incuded in _assets/article_header.Rmd
