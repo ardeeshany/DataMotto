@@ -15,11 +15,11 @@ create_slug <- function(title, slug = NULL) {
 
   slug %>%
     tolower() %>%
-    stringr::str_replace(pattern = "\\s+", replacement = "-") %>%
-    stringr::str_replace(pattern = "[^a-zA-Z0-9\\-]+", replacement = "-") %>%
-    stringr::str_replace(pattern = "\\-{2,}", replacement = "-") %>%
-    stringr::str_replace(pattern = "^-+", replacement = "-") %>%
-    stringr::str_replace(pattern = "-+$", replacement = "-")
+    stringr::str_replace_all(pattern = "\\s+", replacement = "-") %>%
+    stringr::str_replace_all(pattern = "[^a-zA-Z0-9\\-]+", replacement = "-") %>%
+    stringr::str_replace_all(pattern = "\\-{2,}", replacement = "-") %>%
+    stringr::str_replace_all(pattern = "^-+", replacement = "-") %>%
+    stringr::str_replace_all(pattern = "-+$", replacement = "-")
 
 
 }

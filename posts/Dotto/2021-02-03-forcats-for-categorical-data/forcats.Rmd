@@ -85,7 +85,7 @@ plot(x, y)
 
 <!-------------------------------------------------->
 
-```{r, init-sql, include=FALSE, Dot_open = F, Dot_clode = F}
+```{r, init-sql, include=FALSE, Dot_open = F, Dot_close = F}
 library(DBI)
 db = DBI::dbConnect(RSQLite::SQLite(), dbname = ":memory:")
 dbWriteTable(db, "mtcars", mtcars)

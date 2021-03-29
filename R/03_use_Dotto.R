@@ -131,7 +131,7 @@ dotto_authors <- function(metadata){
   for(i in 1:length(metadata$author)){
     vec[i] <- sprintf('
 <span style="margin-right: .75em;"> <i class="far fa-user"></i> <a href=%s target="_blank"> %s</a></span>
-', metadata$author[[i]]$url, metadata$author[[i]]$name)
+', metadata$author[[i]]$url %>% resolve_url(), metadata$author[[i]]$name)
   }
   return(paste0(vec, collapse = ""))
 }
@@ -190,4 +190,18 @@ tech_html_icon <- function(lang, full_name = F) {
     icon <- lang
   }
   return(icon)
+}
+
+
+#' Resolve url with embedding a valid schema
+#' @importFrom urltools url_parse
+resolve_url <- function(url){
+  url_p <- urltools::url_parse(url)
+
+  if(is.na(url_p['scheme'] %>% as.character())){
+    return(paste0("https://", url))
+  } else {
+    return(url)
+  }
+
 }

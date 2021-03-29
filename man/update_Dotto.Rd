@@ -4,7 +4,7 @@
 \alias{update_Dotto}
 \title{Update Dotto file and folder names based on updated \code{slug}}
 \usage{
-update_Dotto(path, clean_dotto_deps = T)
+update_Dotto(path = NULL, clean_dotto_deps = T)
 }
 \arguments{
 \item{path}{a path to the Dotto \code{.Rmd} file.}
@@ -18,6 +18,5 @@ file and folder names are created originally by \code{slug}, for changing the fi
 names, it is recommended to change \code{slug} first, then run \code{update_Dotto()}.
 }
 \details{
-Be careful to choosing a short slug, maximum to 4 5 words, with no
-\code{space} and \code{underline} and make them all lowercase.
+for creating a valid \code{slug}, you can use \code{DataMotto::create_slug("foo")}
 }
