@@ -12,7 +12,9 @@ build_site_DataMotto <- function() {
   cli::cat_rule("Site is being created")
 
   suppressWarnings(suppressMessages(
-    rmarkdown::render_site(input = here::here() ,encoding = 'UTF-8', quiet = T)
+    rmarkdown::render_site(input = here::here() ,
+                           encoding = 'UTF-8',
+                           quiet = T)
   ))
   # rename all foo.html to index.html ----------------------
   list_all_htmls <- list.files(here::here("docs/posts/Dotto"),
@@ -29,6 +31,13 @@ build_site_DataMotto <- function() {
                                recursive = T)
 
   purrr::walk(list_all_rmds, ~ file.remove(.x))
+
+  if(TRUE){ # for dev purpose
+    file.copy(from = here::here("docs/site_libs"),
+              to = here::here(""),
+              recursive = T,
+              overwrite = T)
+  }
 
   # run static _foo.Rmd in the root path ------------------
   # run_root_rmds_if_needed(here::here())
