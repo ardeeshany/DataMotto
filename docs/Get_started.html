@@ -18,6 +18,11 @@
   gtag('config', 'G-WZMEMQM0Y2');
 </script>
 
+        <!--
+        the site_libs for rendering in devs is different with site_libs in docs
+        The root site_libs will not be pasted into docs (added into _site.yml/exclude),
+        but the other one will be created from DataMotto::Index.
+        -->
         <script src="site_libs/header-attrs-2.7.3/header-attrs.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link href="site_libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet" />
@@ -36,7 +41,7 @@
         <script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
         <script>
         $(function(){
-          $("#header").load("./header.html");
+          $("#header").load("resources/header.html");
           $("#footer").load("resources/footer.html");
         });
         </script>
@@ -44,7 +49,9 @@
 
 <body>
 <div id="header"></div>
-<p>Get started</p>
+<br>
+<p class="text-center alert alert-info">Get started</p>
+<br>
 <div id="footer"></div>
 </body>
 </html>
