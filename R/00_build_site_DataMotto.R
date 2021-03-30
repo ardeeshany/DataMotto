@@ -10,10 +10,10 @@
 build_site_DataMotto <- function() {
 
   cli::cat_rule("Site is being created")
+
   suppressWarnings(suppressMessages(
     rmarkdown::render_site(input = here::here() ,encoding = 'UTF-8', quiet = T)
   ))
-
   # rename all foo.html to index.html ----------------------
   list_all_htmls <- list.files(here::here("docs/posts/Dotto"),
                                pattern = "\\.html$",
@@ -31,7 +31,7 @@ build_site_DataMotto <- function() {
   purrr::walk(list_all_rmds, ~ file.remove(.x))
 
   # run static _foo.Rmd in the root path ------------------
-  #run_root_rmds_if_needed(here::here())
+  # run_root_rmds_if_needed(here::here())
 
   usethis::ui_done(glue::glue('Data Motto website is generated at "docs" folder.'))
 }
@@ -49,6 +49,7 @@ run_root_rmds_if_needed <- function(path){
     if((!file.exists(rmd_to_html(all_special_rmds[i]))) || (cr_time(all_special_rmds[i]) > cr_time(rmd_to_html(all_special_rmds[i])))) {
       suppressWarnings(suppressMessages(
         rmarkdown::render(input = all_special_rmds[i],
+                          output_format = DataMotto::Index(),
                           output_file = basename(rmd_to_html(all_special_rmds[i])),
                           quiet = T)
       ))

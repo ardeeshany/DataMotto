@@ -1,11 +1,6 @@
-#' Convert to a Dotto template
+#' Create the Index page of DataMotto.com
 #'
 #' Format for converting from R Markdown to an HTML document.
-#'
-#' @details
-#' Styling and features are very similar to the ones from the great
-#' knitrBootstrap package by Jim Hester :
-#' \url{https://github.com/jimhester/knitrBootstrap}
 #'
 #' @param fig_width Default width (in inches) for figures
 #' @param fig_height Default width (in inches) for figures
@@ -69,7 +64,7 @@ Index_page_dependency <- function() {
                               "<script> var json =",
                               jsonlite::toJSON(config_posts(),
                                                auto_unbox = F,
-                                               pretty = TRUE),
+                                               pretty = T),
                               "</script>",
                               '<link rel="shortcut icon" href="',rmarkdown::site_config(input = here::here())$favicon,'">'
                               )),
