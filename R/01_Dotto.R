@@ -128,8 +128,8 @@ discus_dotto <- function() {
     <strong class="count">
     <span class="disqus-comment-count" data-disqus-url="%s" data-disqus-identifier="%s"></span>
     </strong>
-    <span class="suffix">for this cheatsheet.</span>
-    <span class="fauxlink">Write yours!</span>
+    <span>for this Dotto.</span>
+    <span class="pill">Write yours here!</span>
     </summary>
     <div id="disqus_thread"></div>
     <script>

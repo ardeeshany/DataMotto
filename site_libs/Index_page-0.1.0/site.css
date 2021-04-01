@@ -663,9 +663,19 @@ section#dm-post {
 	display: block;
 }
 
-#dm-mo-nav {
+@media all and (min-width: 576px) {
+  #dm-mo-nav {
     display: none;
 }
+}
+
+@media all and (max-width: 576px) {
+  #dm-mo-nav-full {
+    display: none;
+}
+}
+
+
 
 @media all and (max-width: 576px) {
 	#dm-title h1 {
@@ -688,9 +698,7 @@ button#get-started {
 #dotto {
 	margin-top: 0px;
 }
-#dm-mo-nav {
-    display: block;
-}
+
 
 .dotto-container > ul {
     display: block;
