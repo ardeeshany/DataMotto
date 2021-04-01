@@ -21,24 +21,11 @@ $('#dotto ul').removeClass('hasDotto');
 }
 // tab and pill
 
-$('.dotto-container ul.nav li a.dot-li.active').each(function(){
-	let h = $(this).siblings('.dm-dot-content').height();
-	$('section#dm-post').css('minHeight', h + 300);
-	if($(window).width() <= 576){
-		$(this).parents('ul').css('paddingBottom', h + 300);
-	}
-});
-
 $('.dm-dot-title').click(function(){
 $('.dm-dot-title').removeClass('active');
 $('.dm-dot-content').removeClass('active');
 	$(this).addClass('active');
 	$(this).siblings('.dm-dot-content').addClass('active');
-	let h = $(this).siblings('.dm-dot-content').height();
-	$('section#dm-post').css('minHeight', h + 300);
-	if($(window).width() <= 576){
-		$(this).parents('ul').css('paddingBottom', h + 300);
-	}
 });
 
 });

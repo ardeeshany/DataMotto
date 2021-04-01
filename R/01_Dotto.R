@@ -121,8 +121,16 @@ social_card_protocol_dotto <- function() {
 discus_dotto <- function() {
   dir_name <- basename(getwd())
   disc_codes <- sprintf('
-    <section class="mt-5 pt-5">
+    <section class="mt-2 pt-2">
     <div class="container">
+    <details class="comments-details">
+    <summary>
+    <strong class="count">
+    <span class="disqus-comment-count" data-disqus-url="%s" data-disqus-identifier="%s"></span>
+    </strong>
+    <span class="suffix">for this cheatsheet.</span>
+    <span class="fauxlink">Write yours!</span>
+    </summary>
     <div id="disqus_thread"></div>
     <script>
     var disqus_config = function () {
@@ -139,6 +147,7 @@ discus_dotto <- function() {
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
+</details>
 </div>
 </section>
   ', glue::glue("https://datamotto.com/posts/Dotto/{dir_name}/index.html"),
