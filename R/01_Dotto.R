@@ -124,12 +124,12 @@ discus_dotto <- function() {
     <section class="mt-2 pt-2">
     <div class="container">
     <details class="comments-details">
-    <summary>
-    <strong class="count">
+    <summary class="col-sm-12 alert alert-info">
+    <strong><i class="fas fa-comments fa-lg"></i>
     <span class="disqus-comment-count" data-disqus-url="%s" data-disqus-identifier="%s"></span>
     </strong>
-    <span>for this Dotto.</span>
-    <span class="pill">Write yours here!</span>
+    <span class="pl-2">for this Dotto.</span>
+    <span>Write yours here!</span>
     </summary>
     <div id="disqus_thread"></div>
     <script>
