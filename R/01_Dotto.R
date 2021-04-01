@@ -150,8 +150,11 @@ discus_dotto <- function() {
 </details>
 </div>
 </section>
-  ', glue::glue("https://datamotto.com/posts/Dotto/{dir_name}/index.html"),
-  yaml::read_yaml(".yml")$dotto_id)
+  ',
+glue::glue("https://datamotto.com/posts/Dotto/{dir_name}/index.html"),
+yaml::read_yaml(".yml")$dotto_id,
+glue::glue("https://datamotto.com/posts/Dotto/{dir_name}/index.html"),
+yaml::read_yaml(".yml")$dotto_id)
   # ---
   temp_file <- tempfile()
   con <- file(temp_file, open = "w", encoding = "UTF-8")
