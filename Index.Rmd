@@ -30,7 +30,7 @@ dotto_vec <- rep(NA, nrow(all_techs))
 
 for(i in 1:length(dotto_vec)){
 dotto_vec[i] <- sprintf('
-<div class="dottos %s-color">%s</div> <span>%s</span>', 
+<div class="dottos %s-color">%s <span>%s</span></div>', 
 all_techs[i, 'tech'],
 tech_html_icon(all_techs[i, 'tech'], full_name = F), 
 all_techs[i, 'Freq'])
@@ -50,8 +50,9 @@ htmltools::HTML(sprintf('
 <section id="dm-middle" class="pt-5 pb-5">
 <div class="container">
 <h2>OUR DOTTOS</h2>
-<br/>
+<div class="pt-5 row justify-content-center">
 %s
+</div>
 </div>
 </section>
 ', all_dottos))

@@ -1,180 +1,20 @@
-/*
-var json = {
- "analyzing-covid19-in-usa": {
- "title": [ "Analyzing COVID19 in USA" ],
-"description": [ "Analyzing Covid 19 reports\n" ],
-"author": [
- {
- "name": [ "Ardalan Mirshani" ],
-"affiliation": [ "Novartis" ],
-"url": [ "https://mirshani.com" ]
-}
-],
-"date": [ "2021-01-11" ],
-"base_url": [ "https://www.datamotto.com" ],
-"output": {
- "distill::distill_article": {
- "self_contained": [ false ]
-}
-},
-"packages": [ "ggplot2", "forcats" ],
-"categories": [ "Visualization", "Modeling" ],
-"tech": [ "R", "SqL", "Python" ],
-"bibliography": [ "bibliography.bib" ],
-"draft": [ false ],
-"twitter": {
- "site": [ "@DataMotto" ],
-"creator": [ "@DataMotto" ]
-},
-"link": [ "https://datamotto.com/analyzing-covid19-in-usa" ],
-"preview": [ "analyzing-covid19-in-usa_files/figure-html5/unnamed-chunk-7-1.png" ],
-"cover_image_url": [ "https://datamotto.com/posts/2020-12-30-analyzing-covid19-in-usa/analyzing-covid19-in-usa_files/figure-html5/unnamed-chunk-7-1.png" ]
-},
-"new-york-taxi-fare-rate": {
- "title": [ "New York Taxi fare rate" ],
-"description": [ "A short description of the post.\n" ],
-"author": [
- {
- "name": [ "Nora Jones" ],
-"url": [ "https://example.com/norajones" ]
-}
-],
-"date": [ "2020-12-03" ],
-"tech": [ "Python" ],
-"packages": [ "Matplotlib" ],
-"categories": [ "Visualization" ],
-"base_url": [ "https://datamotto.com" ],
-"output": {
- "distill::distill_article": {
- "self_contained": [ false ]
-}
-},
-"link": [ "https://datamotto.com/New-York-Taxi-Fare-Rate" ],
-"preview": [ "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png" ],
-"cover_image_url": [ "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png" ]
-},
-"post-template": {
- "title": [ "Post Template" ],
-"description": [ "Here is a .html template for Dotto!\n" ],
-"author": [ "Pedram" ],
-"date": [ "01-26-2021" ],
-"output": {
- "distill::distill_article": {
- "self_contained": [ false ]
-}
-},
-"cover_image_url": [ null ]
-}
-};
-
-
-var json = {
-"analyzing-covid19-in-usa": {
-    "title": "Analyzing COVID19 in USA",
-    "description": "Analyzing Covid 19 reports\n",
-    "author": [
-      {
-        "name": "Ardalan Mirshani",
-        "affiliation": "Novartis",
-        "url": "https://mirshani.com"
-      }
-    ],
-    "date": "2021-01-11",
-    "base_url": "https://www.datamotto.com",
-    "output": {
-      "distill::distill_article": {
-        "self_contained": false
-      }
-    },
-    "packages": ["ggplot2", "forcats"],
-    "categories": ["Visualization", "Modeling"],
-    "tech": ["R", "SqL", "Python"],
-    "bibliography": "bibliography.bib",
-    "draft": false,
-    "twitter": {
-      "site": "@DataMotto",
-      "creator": "@DataMotto"
-    },
-    "preview": "unnamed-chunk-7-1.png"
-  },
-"new-york-taxi-fare-rate": {
-    "title": "New York Taxi fare rate",
-    "description": "A short description of the post.\n",
-    "author": [
-      {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
-      }
-    ],
-    "date": "2020-12-03",
-    "tech": "Python",
-    "packages": "Matplotlib",
-    "categories": "Visualization",
-    "base_url": "https://datamotto.com",
-    "output": {
-      "distill::distill_article": {
-        "self_contained": false
-      }
-    },
-    "preview": "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
-  },
-"post-template": {
-    "title": "My new blue Dotto",
-    "description": "A new format of panelset",
-    "author": "Ardeeshany",
-    "date": "02-11-2021",
-    "output": {
-      "html_document": {
-        "template": {}
-      }
-    }
-  },
-"forcats": {
-    "title": "Forcats",
-    "description": "A short description of the post.\n",
-    "author": [
-      {
-        "name": "Ardalan Mirshani",
-        "url": "mirshani.com"
-      }
-    ],
-    "date": "2020-12-03",
-    "tech": "Python",
-    "packages": "Matplotlib",
-    "categories": "Visualization",
-    "base_url": "https://datamotto.com",
-    "output": "DataMotto::Dotto",
-    "preview": "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
-  },
-"sdf": {
-    "title": "sdf",
-    "author": "Ardalan Mirshani",
-    "date": "2/20/2021",
-    "output": {
-      "rmdformats::html_clean": {
-        "self_contained": false
-      }
-    }
-  }
-}
-*/
-
 $(document).ready(function(){
-// end json
+
 var j = 0;
-var more = 4; // default cart
+var more = 3; // default cart
+
 
 function getPost(kind, category, language){
 
 let arr_post = [];
-more = more + 4; // add 8 cart for more
 let inte = 0;
+var currentPost = $('.dm-posts').length;
 
 $.each(json, function(i, v){
 	j++;
-	let title = v.title_on_cards;
+	let title = v.title;
 	let img = v.cover_image_url[0];
-	let desc = v.desc_on_cards;
+	let desc = v.description;
 	let author = v.author[0].name;
 	let aff = v.author[0].affiliation;
 	let authUrl = v.author[0].url;
@@ -250,7 +90,10 @@ $.each(json, function(i, v){
 
 	} else if(kind == 'more') {
 	inte++;
-		if(inte == more){
+		if(currentPost <= inte){
+			let c = 1;
+			c++;
+			if(c <= more){
 	$('#dm-post').append('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
    '<div class="card rounded">'+
 	'<div class="card-body">'+
@@ -277,7 +120,8 @@ $.each(json, function(i, v){
 	  '</div>'+
 	'</div>'+
    '</div>'+
-'</div>');;
+'</div>');
+		}
 		}
 	} else {
 	if(j <= more){
@@ -326,9 +170,9 @@ $.each(arr_post, function (i, e) {
 if(kind == 'filter'){
 if(result.length){
 $.each(result, function(i, v){
-	let title = v.title_on_cards;
+	let title = v.title;
 	let img = v.cover_image_url[0];
-	let desc = v.desc_on_cards;
+	let desc = v.description;
 	let author = v.author[0].name;
 	let aff = v.author[0].affiliation;
 	let authUrl = v.author[0].url;
@@ -337,7 +181,13 @@ $.each(result, function(i, v){
 	let tech = v.tech;
 	let tags = '';
 	let techn = '';
+	let link = v.link;
 
+	if(link){
+		link = link;
+	} else {
+		link = '#';
+	}
 
 	if(img == null){
 		img = 'resources/images/default.jpg';
@@ -384,10 +234,10 @@ $.each(result, function(i, v){
 		  '<img class="w-100" src="'+img+'"/>'+
 		'</div>'+
 		'<div class="col-md-12">'+
-		'<h2>'+title+'</h2>'+
+		'<a href="'+link+'"><h2>'+title+'</h2></a>'+
 	  '<ul class="row dm-posts-desc pl-3">'+
 		'<li class="d-inline-block pr-1"><i class="far fa-clock"></i> '+date+'</li>'+
-		'<li class="d-inline-block dm-author"><i class="far fa-user"></i> <a target="_blank" href="'+authUrl+'">'+author+' ('+aff+')</a></li>'+
+		'<li class="d-inline-block dm-author"><i class="far fa-user"></i> <a target="_blank" href="'+authUrl+'">'+author+'</a></li>'+
 	  '</ul>'+
 	  '<p>'+desc+'</p>'+
 	  '<div class="row">'+

@@ -47,11 +47,7 @@ h1 {
     margin-top: 5px;
 }
 
-.dm-posts-img {
-    height: 200px;
-    overflow: hidden;
-    line-height: 200px;
-}
+
 
 section#dm-splash, #dm-post-header {
     background: #f1f4fd;
@@ -217,8 +213,8 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
     min-height: 100%;
 }
 
-.dm-posts-img > img {
-    max-height: 200px;
+.dm-posts-img img {
+    min-height: 160px;
 }
 
 .dm-posts {
@@ -241,32 +237,27 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 }
 
 .dottos {
-    width: 104px;
-    height: 104px;
+    /*background: #509ef3;*/
+    display: inline-block;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    font-size: 60px;
     color: white;
-    line-height: 104px;
-    font-size: 40px;
-    position: relative;
-    margin: 5px;
-}
-
-.dottos i {
-    font-size: 45px!important;
-    position: relative;
-    top: 3px;
 }
 
 #dm-middle span {
     background: #022126;
+    display: inline-block;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     font-size: 20px;
     color: white;
-    position: absolute;
-    right: 0;
-    line-height: 25px!important;
+    position: relative;
+    left: -27px;
 }
 
 
@@ -621,7 +612,7 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 }
 
 section#dm-post {
-
+    min-height: 1000px;
 }
 
 #dotto-content h2 {
@@ -712,3 +703,8 @@ button#get-started {
 }
 
 
+.dot-scroll-800 {
+  max-height: 800px;
+  overflow-y: auto;
+  background-color: inherit;
+}
