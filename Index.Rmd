@@ -13,6 +13,10 @@ output: DataMotto::Index
 htmltools::includeHTML("resources/index_welcome.html")
 ```
 
+```{r index_github_stars, echo = F}
+htmltools::includeHTML("resources/index_github_stars.html")
+```
+
 ```{r count_dottos, include=FALSE}
 configs <- jsonlite::toJSON(config_posts(),
                  auto_unbox = F,
@@ -40,11 +44,6 @@ all_dottos <- paste0(dotto_vec, collapse = "")
 ```
 
 
-```{r index_github_stars, echo = F}
-htmltools::includeHTML("resources/index_github_stars.html")
-```
-
-
 ```{r index_dottos, echo=F, results='asis'}
 htmltools::HTML(sprintf('
 <section id="dm-middle" class="pt-5 pb-5">
@@ -59,8 +58,6 @@ htmltools::HTML(sprintf('
 ```
 
 <!-- Section Our Dottos ------------------------>
-
-
 
 ```{r index_cards, echo = F}
 htmltools::includeHTML("resources/index_cards.html")

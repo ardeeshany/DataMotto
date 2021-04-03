@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?dfth7n');
+  src:  url('fonts/icomoon.eot?dfth7n#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?dfth7n') format('truetype'),
+    url('fonts/icomoon.woff?dfth7n') format('woff'),
+    url('fonts/icomoon.svg?dfth7n#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-data:before {
+  content: "\e906";
+}
+.icon-julialang-icon .path1:before {
+  content: "\e903";
+  color: rgb(202, 60, 50);
+}
+.icon-julialang-icon .path2:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(146, 89, 163);
+}
+.icon-julialang-icon .path3:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(57, 151, 70);
+}
+.icon-file-sql:before {
+  content: "\e900";
+}
+.icon-javascript:before {
+  content: "\e901";
+  color: #f7df1e;
+}
+.icon-d3-dot-js:before {
+  content: "\e902";
+  color: #f9a03c;
+}
+.icon-terminal:before {
+  content: "\ea81";
+}

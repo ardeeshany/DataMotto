@@ -161,15 +161,17 @@ var json = {
 
 $(document).ready(function(){
 
+
+function getPost(kind, category, language){
 var j = 0;
 var more = 3; // default cart
 
-
-function getPost(kind, category, language){
-
 let arr_post = [];
 let inte = 0;
+var c = 0;
 var currentPost = $('.dm-posts').length;
+
+
 
 $.each(json, function(i, v){
 	j++;
@@ -202,7 +204,7 @@ $.each(json, function(i, v){
 		tags += '<span class="badge badge-pill badge-info mr-1">'+t+'</span>';
 	});
 
-		$.each(tech, function(x,y){
+	$.each(tech, function(x,y){
 	if(y === 'r'){
 		techn += '<div class="dm-dot-icon r-color mr-1" title="R"><i class="fab fa-r-project"></i></div>';
 	} else if(y === 'python') {
@@ -251,12 +253,12 @@ $.each(json, function(i, v){
 
 	} else if(kind == 'more') {
 	inte++;
-		if(currentPost <= inte){
-			let c = 1;
+
+		if(inte >= currentPost + 1){
 			c++;
-			if(c <= more){
-	$('#dm-post').append('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
-   '<div class="card rounded">'+
+		if(c <= more){
+$('#dm-post').append('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
+'<div class="card rounded">'+
 	'<div class="card-body">'+
 	 '<div class="row">'+
 		'<div class="col-md-12 dm-posts-img mb-4">'+
@@ -286,7 +288,7 @@ $.each(json, function(i, v){
 		}
 	} else {
 	if(j <= more){
-	$('#dm-post').prepend('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
+	$('#dm-post').append('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
    '<div class="card rounded">'+
 	'<div class="card-body">'+
 	 '<div class="row">'+
@@ -468,3 +470,5 @@ $('#dm-filter-menu').on('click', function(e) {
     e.stopPropagation();
 });
 });
+
+
