@@ -44,7 +44,7 @@ create_family <- function(Dotto_base_label, lang = NULL, open = T) {
 
   post_parent <- here::here("posts/Dotto")
   date_prefix <- format(Sys.Date(), "%Y-%m-%d")
-  slug <- create_slug(title = Dotto_yml_base$title, slug = NULL)
+  slug <- create_slug(title = Dotto_yml_base$title, slug = Dotto_yml_base$slug)
   dotto_number <- list.files(here::here("posts/Dotto"), full.names = F) %>% length() + 1
   dotto_label <- paste0("D", stringr::str_pad(3, string = dotto_number, pad = "0"))
   dotto_folder_name <- paste0(dotto_label, "-", date_prefix, "-", slug, "-", lang)
