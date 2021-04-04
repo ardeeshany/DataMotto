@@ -1,0 +1,62 @@
+---
+title: "Time Series Exploration with reticulate"
+description: |
+  The reticulate package provides a comprehensive set of tools for interoperability between Python and R. 
+author:
+  - name: "Ardal Miri"
+    occupation: "statistical Software Developer and Machine-Learning consultant"
+    affiliation: "Novartis Institutes for BioMedical Research"
+    url: "twitter.com/ArdalanMirshani"
+date: "2021-04-04"
+techs:
+  - lang: "python"               # "r" "python" "julia" "sql" ...
+    pkg: ["pandas", "matplotlib"]
+categories: "Manipulation"  # ["Importing-Cleaning", ... ]
+applications: "Finance"
+cover_image: "Dot3-ts-1.png"
+slug: "time-series-exploration"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto(rmarkdown::metadata)
+```
+
+```{r set-up, include=F}
+knitr::opts_chunk$set(echo = T,
+                      eval = T)
+library(htmltools)
+```
+
+<!-- Dot 1 ------------------------------------------------>
+
+```{r, Dot1-intro, echo = F, Dot_title = "Intro", Dot_active = TRUE, Dot_color="python"}
+h1("Description:")
+HTML(
+"Time series is a sequence of observations recorded at regular time intervals. This guide walks you through the process of analyzing the characteristics of a given time series in python."
+)
+```
+<!-- Dot 2 ------------------------------------------------>
+
+```{r, Dot2-highlight, eval = F, Dot_title = "Highlight", Dot_color="python"}
+h1("Highligh:")
+matplotlib
+np.arrange
+plt.plot
+```
+<!-- Dot 3 ------------------------------------------------>
+
+```{r, Dot3-desc, Dot_title = "Title", Dot_open = T, Dot_close = F, Dot_color="python"}
+HTML("Here we are creating a time series plot as follows:")
+```
+
+```{python, Dot3-ts, Dot_open = F, Dot_close = T}
+import matplotlib.pyplot as plt
+import numpy as np
+t = 1 + np.arange(0, 2, 0.01)
+s = 1 + np.sin(2*np.pi*t)
+plt.plot(t,s)
+plt.show()
+```
+
+

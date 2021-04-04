@@ -115,15 +115,20 @@ library(htmltools)
 
 ```{r, Dot1-intro, echo = F, Dot_title = "Intro", Dot_active = TRUE}
 h1("Description:")
+HTML(
 "Here is a sample for your description and details."
+)
 ```
 <!-- Dot 2 ------------------------------------------------>
 
 ```{r, Dot2-highlight, eval = F, Dot_title = "Highlight"}
 h1("Highligh:")
+# Step 1 -----------------
 ggplot +
 geom_point +
 scale for coloring
+# Step 2 -----------------
+
 ```
 <!-- Dot 3 ------------------------------------------------>
 

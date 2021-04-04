@@ -42,8 +42,9 @@ update_Dotto <- function(path = NULL, clean_dotto_deps = T){
   new_Dotto_title <- Dotto_yaml$title
   new_Dotto_date <- format(as.Date(Dotto_yaml$date), "%Y-%m-%d")
   new_Dotto_slug <- Dotto_yaml$slug
+  lang <- (Dotto_yaml$techs %>% unlist())['lang']
 
-  new_Dotto_name <- create_slug(new_Dotto_title, new_Dotto_slug)
+  new_Dotto_name <- paste0(create_slug(new_Dotto_title, new_Dotto_slug),  "-", lang)
   Dotto_label <- yaml::read_yaml(glue::glue("{dirname(path)}/.yml"))$dotto_label
   new_Dotto_folder <- paste0(Dotto_label, "-", new_Dotto_date, "-", new_Dotto_name)
 
