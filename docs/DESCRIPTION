@@ -25,4 +25,5 @@ Imports:
     stringr,
     dplyr,
     knitr,
-    urltools
+    urltools,
+    httr

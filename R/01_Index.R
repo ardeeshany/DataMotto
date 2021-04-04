@@ -61,6 +61,11 @@ Index_page_dependency <- function() {
                             version = "0.1.0",
                             src = system.file("templates/DataMotto", package = "DataMotto"),
                             head = list(paste0(
+                              "<script> var likebtn =",
+                              jsonlite::toJSON(get_likebtn(),
+                                               auto_unbox = F,
+                                               pretty = T),
+                              "</script>",
                               "<script> var json =",
                               jsonlite::toJSON(config_posts(),
                                                auto_unbox = F,
@@ -75,3 +80,12 @@ Index_page_dependency <- function() {
 
 
 
+#' GET like numbers from LikeBtn API
+#'
+#' @importFrom httr GET
+#' @importFrom jsonlite fromJSON
+get_likebtn <- function() {
+  likebtn_url <- "https://api.likebtn.com/api/?action=stat&email=ardeeshany@gmail.com&api_key=d3c37a0cc65e905b9128141de89253db&site_id=604e13966fd08bbf03672c5b&output=json&sort=likes"
+  likebtn_json <- httr::GET(likebtn_url)
+  jsonlite::fromJSON(content(likebtn_json, "text"),simplifyDataFrame = T)
+}
