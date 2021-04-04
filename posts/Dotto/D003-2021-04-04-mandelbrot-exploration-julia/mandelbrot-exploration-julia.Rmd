@@ -13,7 +13,7 @@ techs:
     pkg: ["pkg", "pkg2"]
 categories: ["Importing-Cleaning", "Visualization", "Machine Learning", "Statistical Learning", "Reporting"]
 applications: NULL          # ["Finance", "Pharma"]
-cover_image: "Dot3-vis-1.png"
+cover_image: "Dot3-vis-J1.png"
 slug: "mandelbrot-exploration"
 output: DataMotto::Dotto
 ---
