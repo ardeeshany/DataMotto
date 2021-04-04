@@ -29,6 +29,7 @@ default_template <- function(
       Dotto_dependency_bootstrap_js(),
       Dotto_dependency_bootstrap(),
       Dotto_dependency_font_awesome(),
+      Dotto_dependency_icons(),
       Dotto_dependency_PrismJS()
       # html_dependency_navigation(
       #   code_menu = code_menu,

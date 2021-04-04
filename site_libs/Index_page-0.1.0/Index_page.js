@@ -1,14 +1,16 @@
 $(document).ready(function(){
 
+
+function getPost(kind, category, language){
 var j = 0;
 var more = 3; // default cart
 
-
-function getPost(kind, category, language){
-
 let arr_post = [];
 let inte = 0;
+var c = 0;
 var currentPost = $('.dm-posts').length;
+
+
 
 $.each(json, function(i, v){
 	j++;
@@ -47,9 +49,9 @@ $.each(json, function(i, v){
 	} else if(y === 'python') {
 		techn += '<div class="dm-dot-icon python-color mr-1" title="Python"><i class="fab fa-python"></i></div>';
 		} else if(y === 'julia') {
-		techn += '<div class="dm-dot-icon julia-color mr-1" title="Julia">Jul</div>';
+		techn += '<div class="dm-dot-icon julia-color mr-1" title="Julia"><i class="icon-julialang-icon"><i class="path1"></i><i class="path2"></i><i class="path3"></i></i></div>';
 		} else if(y === 'sql') {
-		techn += '<div class="dm-dot-icon sql-color mr-1" title="SqL"><i class="fas fa-database"></i></div>';
+		techn += '<div class="dm-dot-icon sql-color mr-1" title="SqL"><i class="icon-file-sql"></i></div>';
 	} else if(y === 'rcpp') {
 		techn += '<div class="dm-dot-icon rcpp-color mr-1" title="Rcpp">Rc</i></div>';
 	} else if(y === 'node') {
@@ -57,9 +59,9 @@ $.each(json, function(i, v){
 	} else if(y === 'bash') {
 		techn += '<div class="dm-dot-icon bash-color mr-1" title="Bash"><i class="fas fa-terminal"></i></div>';
 	} else if(y === 'js') {
-		techn += '<div class="dm-dot-icon js-color mr-1" title="Js">JS</div>';
+		techn += '<div class="dm-dot-icon js-color mr-1" title="Js"><i class="icon-javascript"></i></div>';
 	} else if(y === 'd3') {
-		techn += '<div class="dm-dot-icon d3-color mr-1" title="D3">d3</i></div>';
+		techn += '<div class="dm-dot-icon d3-color mr-1" title="D3"><i class="icon-d3-dot-js"></i></div>';
 	} else if(y === 'stan') {
 		techn += '<div class="dm-dot-icon stan-color mr-1" title="Stan">St</i></div>';
 	} else {
@@ -90,12 +92,12 @@ $.each(json, function(i, v){
 
 	} else if(kind == 'more') {
 	inte++;
-		if(currentPost <= inte){
-			let c = 1;
+
+		if(inte >= currentPost + 1){
 			c++;
-			if(c <= more){
-	$('#dm-post').append('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
-   '<div class="card rounded">'+
+		if(c <= more){
+$('#dm-post').append('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
+'<div class="card rounded">'+
 	'<div class="card-body">'+
 	 '<div class="row">'+
 		'<div class="col-md-12 dm-posts-img mb-4">'+
@@ -125,7 +127,7 @@ $.each(json, function(i, v){
 		}
 	} else {
 	if(j <= more){
-	$('#dm-post').prepend('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
+	$('#dm-post').append('<div class="col-md-4 col-sm-6 dm-posts pr-md-1 mb-1">'+
    '<div class="card rounded">'+
 	'<div class="card-body">'+
 	 '<div class="row">'+
@@ -205,9 +207,9 @@ $.each(result, function(i, v){
 	} else if(y === 'python') {
 		techn += '<div class="dm-dot-icon python-color mr-1" title="Python"><i class="fab fa-python"></i></div>';
 		} else if(y === 'julia') {
-		techn += '<div class="dm-dot-icon julia-color mr-1" title="Julia">Jul</div>';
+		techn += '<div class="dm-dot-icon julia-color mr-1" title="Julia"><i class="icon-julialang-icon"><i class="path1"></i><i class="path2"></i><i class="path3"></i></i></div>';
 		} else if(y === 'sql') {
-		techn += '<div class="dm-dot-icon sql-color mr-1" title="SqL"><i class="fas fa-database"></i></div>';
+		techn += '<div class="dm-dot-icon sql-color mr-1" title="SqL"><i class="icon-file-sql"></i></div>';
 	} else if(y === 'rcpp') {
 		techn += '<div class="dm-dot-icon rcpp-color mr-1" title="Rcpp">Rc</i></div>';
 	} else if(y === 'node') {
@@ -215,9 +217,9 @@ $.each(result, function(i, v){
 	} else if(y === 'bash') {
 		techn += '<div class="dm-dot-icon bash-color mr-1" title="Bash"><i class="fas fa-terminal"></i></div>';
 	} else if(y === 'js') {
-		techn += '<div class="dm-dot-icon js-color mr-1" title="Js">JS</div>';
+		techn += '<div class="dm-dot-icon js-color mr-1" title="Js"><i class="icon-javascript"></i></div>';
 	} else if(y === 'd3') {
-		techn += '<div class="dm-dot-icon d3-color mr-1" title="D3">d3</i></div>';
+		techn += '<div class="dm-dot-icon d3-color mr-1" title="D3"><i class="icon-d3-dot-js"></i></div>';
 	} else if(y === 'stan') {
 		techn += '<div class="dm-dot-icon stan-color mr-1" title="Stan">St</i></div>';
 	} else {
@@ -307,3 +309,5 @@ $('#dm-filter-menu').on('click', function(e) {
     e.stopPropagation();
 });
 });
+
+

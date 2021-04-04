@@ -171,9 +171,10 @@ tech_html_icon <- function(lang, full_name = F) {
   } else if(tolower(lang) == "python"){
     icon <- '<i class="fab fa-python"></i>'
   } else if(tolower(lang) == "julia"){
-    icon <- ifelse(full_name, 'Julia', 'Jul')
+    # icon <- ifelse(full_name, 'Julia', 'Jul')
+    icon <- '<i class="icon-julialang-icon"><i class="path1"></i><i class="path2"></i><i class="path3"></i></i>'
   } else if(tolower(lang) == "sql"){
-    icon <- '<i class="fas fa-database"></i>'
+    icon <- '<i class="icon-file-sql"></i>'
   } else if(tolower(lang) == "rcpp"){
     icon <- ifelse(full_name, 'Rcpp', 'Rc')
   } else if(tolower(lang) == "node"){
@@ -181,9 +182,9 @@ tech_html_icon <- function(lang, full_name = F) {
   } else if(tolower(lang) == "bash"){
     icon <- '<i class="fas fa-terminal"></i>'
   } else if(tolower(lang) == "js"){
-    icon <- 'JS'
+    icon <- '<i class="icon-javascript"></i>'
   } else if(tolower(lang) == "d3"){
-    icon <- 'd3'
+    icon <- '<i class="icon-d3-dot-js"></i>'
   } else if(tolower(lang) == "stan"){
     icon <- ifelse(full_name, 'Stan', 'St')
   } else {

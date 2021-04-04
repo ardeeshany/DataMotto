@@ -73,3 +73,22 @@ Dotto_dependency_PrismJS <- function() {
                             all_files = F)
 }
 
+
+
+# icomoon: Add font-awesome-style icons for julia, sql, etc
+Dotto_dependency_icons <- function() {
+  htmltools::htmlDependency(name = "icons",
+                            version = "0.1.0",
+                            src = system.file("templates/icons", package = "DataMotto"),
+                            stylesheet = "style.css",
+                            all_files = T)
+}
+
+
+
+
+
+
+
+
+

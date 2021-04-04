@@ -31,7 +31,6 @@ all_techs <- purrr::map(configs, ~ .x$tech) %>%
 
 
 dotto_vec <- rep(NA, nrow(all_techs))
-
 for(i in 1:length(dotto_vec)){
 dotto_vec[i] <- sprintf('
 <div class="dottos %s-color">%s <span>%s</span></div>', 

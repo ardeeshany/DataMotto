@@ -442,15 +442,15 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 
 
 .julia-color {
-  background: hsla(281, 37%, 52%, 1);
+  background: hsla(280.5,37%,21.2%, 1);
 }
 
 .dotto-container ul.nav li a.dot-li.dot-li-julia::after {
-  background: hsla(281, 37%, 52%, 1);
+  background: hsla(280.5,37%,75%, 1);
 }
 
 .dotto-container ul.nav li a.dot-li.dot-li-julia.active::after {
-  background: hsla(281, 37%, 52%, 1);
+  background: hsla(280.5,37%,21.2%, 1);
 }
 
 
@@ -462,7 +462,7 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 }
 
 .dotto-container ul.nav li a.dot-li.dot-li-sql::after {
-  background: hsla(190, 100%, 28%, 1);
+  background: hsla(190, 100%, 75%, 1);
 }
 
 .dotto-container ul.nav li a.dot-li.dot-li-sql.active::after {
@@ -518,15 +518,15 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 
 
 .js-color {
-  background: hsla(53, 98%, 50%, 1);
+  background: hsla(53.7,95%,7.8%, 1);
 }
 
 .dotto-container ul.nav li a.dot-li.dot-li-js::after {
-  background: hsla(53, 98%, 75%, 1);
+  background: hsla(53.7,95%,65.8%, 1);
 }
 
 .dotto-container ul.nav li a.dot-li.dot-li-js.active::after {
-  background: hhsla(53, 98%, 50%, 1);
+  background: hsla(53.7,95%,7.8%, 1);
 }
 
 
@@ -720,3 +720,6 @@ button#get-started {
 }
 
 
+.bg-black {
+  background-color: black;
+}
