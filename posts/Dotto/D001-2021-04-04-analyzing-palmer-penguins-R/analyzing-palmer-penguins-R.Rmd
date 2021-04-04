@@ -1,0 +1,116 @@
+---
+title: "Analyzing Palmer Penguins"
+description: |
+  The data for 344 penguins. There are 3 different species of penguins in this dataset, collected from 3 islands in the Palmer Archipelago, Antarctica.
+author:
+  - name: "Ardalan Mirshani"
+    occupation: "Sr Expert Data Scientist"
+    affiliation: "Novartis"
+    url: "https://mirshani.com"
+date: "2021-04-04"
+techs:
+  - lang: "R"               # "r" "python" "julia" "sql" ...
+    pkg: ["palmerpenguins", "ggplot2", "dplyr"]
+categories: ["Importing-Cleaning", "Manipulation", "Visualization" ]
+applications: NULL          # ["Finance", "Pharma"]
+cover_image: "https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png"
+slug: "analyzing-palmer-penguins"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto(rmarkdown::metadata)
+```
+
+```{r set-up, include=F}
+knitr::opts_chunk$set(echo = T,
+                      eval = T)
+library(htmltools)
+library(palmerpenguins)
+library(ggplot2)
+library(dplyr)
+library(DT)
+```
+
+<!-- Dot 1 ------------------------------------------------>
+
+```{r, Dot1-intro, echo = F, Dot_title = "Intro", Dot_active = TRUE, Dot_close = F}
+h1("Details:")
+HTML(
+"The palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. Here we want to check the missing values"
+)
+```
+
+```{r, Dot1-intro-code, echo = T, eval =FALSE, Dot_title = "Intro", Dot_open = F}
+h2("Required Libraries:")
+library(palmerpenguins)
+library(ggplot2)
+library(dplyr)
+library(DT)
+```
+
+
+<!-- Dot 2 ------------------------------------------------>
+
+```{r, Dot2-highlight, eval = F, Dot_title = "Highlight"}
+h1("Highligh:")
+# Step 1 --------------------------
+penguins %>%
+  count(species)
+# Step 2 --------------------------
+ggplot(penguins, aes(x = island, fill = species)) +
+  geom_bar(alpha = 0.8) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4"),
+                    guide = FALSE) +
+  theme_minimal() +
+  facet_wrap(~species, ncol = 1) +
+  coord_flip()
+# Step 3 --------------------------
+## Scatterplot example 2: penguin bill length versus bill depth
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 2)  +
+  scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+<!-- Dot 3 ------------------------------------------------>
+
+```{r, Dot3-exp, echo = T, eval = T, Dot_title = "Data Structure"}
+library(DT)
+DT::datatable(penguins)
+```
+
+<!-- Dot 4 ------------------------------------------------>
+
+```{r, Dot4-vis, echo = T, Dot_title = "Exploring scatterplots"}
+# Scatterplot example 1: penguin flipper length versus body mass
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 2) +
+  scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+
+
+<!-- Dot 5 ------------------------------------------------>
+
+```{r, Dot5-vis, echo = T, Dot_title = "Exploring distribution"}
+# Jitter plot example: bill length by species
+ggplot(data = penguins, aes(x = species, y = bill_length_mm)) +
+  geom_jitter(aes(color = species),
+              width = 0.1,
+              alpha = 0.7,
+              show.legend = FALSE) +
+  scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+
+
+<!-- Dot 6 ------------------------------------------------>
+
+```{r, Dot6-vis, echo = T, Dot_title = "Exploring Length"}
+# Histogram example: flipper length by species
+ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(aes(fill = species), alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+
