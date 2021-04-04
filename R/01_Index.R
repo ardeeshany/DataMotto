@@ -82,7 +82,7 @@ Index_page_dependency <- function() {
 
 #' GET like numbers from LikeBtn API
 #'
-#' @importFrom httr GET
+#' @importFrom httr GET content
 #' @importFrom jsonlite fromJSON
 get_likebtn <- function() {
   likebtn_url <- "https://api.likebtn.com/api/?action=stat&email=ardeeshany@gmail.com&api_key=d3c37a0cc65e905b9128141de89253db&site_id=604e13966fd08bbf03672c5b&output=json&sort=likes"

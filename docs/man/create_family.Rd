@@ -4,7 +4,7 @@
 \alias{create_family}
 \title{Create a \code{Dotto} family be generating a new \code{Dotto} based on another existing \code{Dotto}.}
 \usage{
-create_family(Dotto_base_label, open = T)
+create_family(Dotto_base_label, lang = NULL, open = T)
 }
 \arguments{
 \item{Dotto_base_label}{The label (or path) of the \code{Dotto}'s folder whom we want to make a family with. This can

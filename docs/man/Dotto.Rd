@@ -2,7 +2,7 @@
 % Please edit documentation in R/01_Dotto.R
 \name{Dotto}
 \alias{Dotto}
-\title{Convert to a Dotto template}
+\title{Create the \code{Dotto} page of DataMotto.com}
 \usage{
 Dotto(
   fig_width = 6,
@@ -48,9 +48,4 @@ R Markdown output format to pass to \code{\link[rmarkdown]{render}}
 }
 \description{
 Format for converting from R Markdown to a \code{Dotto} document.
-}
-\details{
-Styling and features are very similar to the ones from the great
-knitrBootstrap package by Jim Hester :
-\url{https://github.com/jimhester/knitrBootstrap}
 }
