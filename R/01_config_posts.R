@@ -28,11 +28,15 @@ config_posts <- function(title_width = 50, desc_width = 150) {
                             yaml::read_yaml(paste0(dirname(rmd_path),"/.yml"))
       } else {
         list(dotto_id = NULL)
-        }
-
+      }
+    # all metadata ----------------
+    Dotto_metadata <- rmarkdown::yaml_front_matter(rmd_path)
+    author_meta <- (Dotto_metadata$author)[[1]]
+    author_meta$url <- (author_meta$url) %>% resolve_url()
+    Dotto_metadata$author <- list(author_meta)
 
     # output ----------------------
-    all_metadata[[i]] <- c(rmarkdown::yaml_front_matter(rmd_path),
+    all_metadata[[i]] <- c(Dotto_metadata,
                            list(title_on_cards = title_on_cards,
                                 desc_on_cards = desc_on_cards),
                            list(base_url = rmarkdown::site_config(here::here())$base_url,

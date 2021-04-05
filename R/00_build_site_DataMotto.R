@@ -2,12 +2,14 @@
 #'
 #' @details It re-generate a `posts.json`, update the `index.html`, and create the whole
 #'  website based on the updated `posts` folder.
+#'
+#' @param open A logical value that opens the Index page of site in the browser. Default is `TRUE`.
 #' @importFrom rmarkdown render_site
 #' @importFrom here here
 #' @importFrom usethis ui_done
 #' @importFrom cli cat_rule
 #' @export
-build_site_DataMotto <- function() {
+build_site_DataMotto <- function(open = T) {
 
   cli::cat_rule("Site is being created")
 
@@ -16,6 +18,7 @@ build_site_DataMotto <- function() {
                            encoding = 'UTF-8',
                            quiet = T)
   ))
+
   # rename all foo.html to index.html ----------------------
   list_all_htmls <- list.files(here::here("docs/posts/Dotto"),
                                pattern = "\\.html$",
@@ -32,7 +35,7 @@ build_site_DataMotto <- function() {
 
   purrr::walk(list_all_rmds, ~ file.remove(.x))
 
-  if(TRUE){ # for dev purpose
+  if(TRUE){ # copy site_libs into root folder for dev purposes
     file.copy(from = here::here("docs/site_libs"),
               to = here::here(""),
               recursive = T,
@@ -43,6 +46,11 @@ build_site_DataMotto <- function() {
   # run_root_rmds_if_needed(here::here())
 
   usethis::ui_done(glue::glue('Data Motto website is generated at "docs" folder.'))
+
+  if(open){
+    browseURL(here::here("docs/Index.html"))
+  }
+
 }
 
 

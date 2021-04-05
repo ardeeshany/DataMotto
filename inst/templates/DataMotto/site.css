@@ -442,18 +442,16 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 
 
 .julia-color {
-  background: hsla(280.5,37%,21.2%, 1);
+  background: hsla(281, 37%, 52%, 1);
 }
 
 .dotto-container ul.nav li a.dot-li.dot-li-julia::after {
-  background: hsla(280.5,37%,75%, 1);
+  background: hsla(281, 37%, 75%, 1);
 }
 
 .dotto-container ul.nav li a.dot-li.dot-li-julia.active::after {
-  background: hsla(280.5,37%,21.2%, 1);
+  background: hsla(281, 37%, 52%, 1);
 }
-
-
 
 
 

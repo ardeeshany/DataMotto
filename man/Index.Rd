@@ -13,7 +13,7 @@ Index(
   thumbnails = TRUE,
   pandoc_args = NULL,
   md_extensions = "-autolink_bare_uris",
-  self_contained = FALSE,
+  self_contained = F,
   in_header = NULL,
   before_body = here::here("./resources/header.html"),
   after_body = here::here("./resources/footer.html"),

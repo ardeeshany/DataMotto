@@ -30,19 +30,23 @@
 }
 .icon-julialang-icon .path1:before {
   content: "\e903";
-  color: rgb(202, 60, 50);
+  /*color: rgb(202, 60, 50);*/
+  color: white;
 }
 .icon-julialang-icon .path2:before {
   content: "\e904";
   margin-left: -1em;
-  color: rgb(146, 89, 163);
+  /*color: rgb(146, 89, 163);*/
+  color: white;
 }
 .icon-julialang-icon .path3:before {
   content: "\e905";
   margin-left: -1em;
-  color: rgb(57, 151, 70);
+  /*color: rgb(57, 151, 70);*/
+  color: white;
 }
 .icon-file-sql:before {
+  font-size: 25px;
   content: "\e900";
 }
 .icon-javascript:before {
