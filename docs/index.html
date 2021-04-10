@@ -721,10 +721,10 @@
           <!-- <img class="card-img-top" style="height: 192px;" :src="item.cover_image_url[0]" alt="Card image cap"> -->
           <div class="card-body p-4">
             <a class="cursor-pointer" style="text-decoration: none;" :href=`${item.base_url[0]}${item.link[0]}`>
-              <h3 class="card-title text-muted mb-4">{{item.title_on_cards[0]}}</h3>
+              <h3 class="card-title text-muted mb-4" style="height: 50px;">{{item.title_on_cards[0]}}</h3>
               <p class="card-text text-muted" style="height: 112px;">{{item.description[0]}}</p>
             </a>
-            <div class="mb-3">
+            <div class="mb-3" style="height: 80px;">
               <span v-for="(tech, index) in item.techs" :key="index" class="icon-back">
                 <i v-if="tech.lang[0] == 'R'" class="fab fa-r-project mt-1"></i>
                 <i v-if="tech.lang[0] == 'Python'" class="fab fa-python mt-1"></i>
