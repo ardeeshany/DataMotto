@@ -30,24 +30,24 @@
 }
 .icon-julialang-icon .path1:before {
   content: "\e903";
-  color: rgb(202, 60, 50);
+  color: #ffffff;
 }
 .icon-julialang-icon .path2:before {
   content: "\e904";
   margin-left: -1em;
-  color: rgb(146, 89, 163);
+  color: #ffffff;
 }
 .icon-julialang-icon .path3:before {
   content: "\e905";
   margin-left: -1em;
-  color: rgb(57, 151, 70);
+  color: #ffffff;
 }
 .icon-file-sql:before {
   content: "\e900";
 }
 .icon-javascript:before {
   content: "\e901";
-  color: #f7df1e;
+  color: #ffffff;
 }
 .icon-d3-dot-js:before {
   content: "\e902";
