@@ -27,9 +27,12 @@ rss:
     # categories:   # to create dedicated feeds that map to particular categories
     # - portfolios
     # - forecasting
-twitter:
-  site: "@DataMotto"
-  creator: "@DataMotto"
+social_networks:
+  twitter: "https://twitter.com/DataMotto"
+  linkedin: "https://www.linkedin.com/company/datamotto"
+# twitter:
+#   site: "@DataMotto"
+#   creator: "@DataMotto"
 #navbar:
 #  title: "Data Motto"
 #   logo:

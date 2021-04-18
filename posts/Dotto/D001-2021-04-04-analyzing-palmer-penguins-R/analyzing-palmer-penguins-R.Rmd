@@ -6,11 +6,20 @@ author:
   - name: "Ardalan Mirshani"
     occupation: "Sr Expert Data Scientist"
     affiliation: "Novartis"
-    url: "https://mirshani.com"
-date: "2021-04-04"
-techs:
-  - lang: "R"               # "r" "python" "julia" "sql" ...
-    pkg: ["palmerpenguins", "ggplot2", "dplyr"]
+    site: "mirshani.com"
+    img_url: "files/ardalan.png"
+    lang: "R"
+    pkgs: ["ggplot2", "dplyr"]
+  - name: "Amin Zamani"
+    occupation: "Software developer"
+    affiliation: "DataMotto"
+    site: "Aminzamani.com"
+    img_url: "files/amin.jpg"
+    lang: "python"
+    pkgs: ["pandas", "plotly"]  
+date: 
+  created: "2021-04-04"
+  last_update: "2021-04-12"
 categories: ["Importing-Cleaning", "Manipulation", "Visualization" ]
 applications: NULL          # ["Finance", "Pharma"]
 cover_image: "https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png"

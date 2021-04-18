@@ -52,3 +52,29 @@ config_posts <- function(title_width = 50, desc_width = 150) {
 
   return(all_metadata)
 }
+
+
+
+#' Create a config json file for an specific Dotto
+config_Dotto <- function(rmd_path) {
+
+    file_name <- stringr::str_remove(basename(rmd_path), pattern = ".Rmd")
+    dir_name <- basename(dirname(rmd_path))
+    # identifiers from .yml -------
+    list_ids_from_yml <- if(file.exists(paste0(dirname(rmd_path),"/.yml"))){
+      yaml::read_yaml(paste0(dirname(rmd_path),"/.yml"))
+    } else {
+      list(dotto_id = NULL)
+    }
+    # all metadata ----------------
+    Dotto_metadata <- rmarkdown::yaml_front_matter(rmd_path)
+
+    return(c(list(file_name = file_name,
+           dir_name = dir_name,
+           cover_image_url = resolve_cover_image(rmd_path),
+           link = glue::glue("./posts/Dotto/{dir_name}/index.html"),
+           base_url = rmarkdown::site_config(here::here())$base_url,
+           social_networks_datamotto = rmarkdown::site_config(here::here())$social_networks),
+           list_ids_from_yml,
+           Dotto_metadata))
+}

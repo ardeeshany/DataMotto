@@ -24,8 +24,10 @@ techs:
 categories: [Visualization, Modeling]
 cover_image: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
 output: DataMotto::Dotto
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
-
 
 ```{r datamotto_dotto, echo=FALSE}
 DataMotto::use_Dotto(rmarkdown::metadata)
@@ -63,6 +65,8 @@ gg <- ggplot(midwest, aes(x=area, y=poptotal)) +
 plot(gg)
 
 ```
+
+
 
 <!-------------------------------------------------->
 
@@ -105,19 +109,33 @@ console.log(1 + 2 + 3)
 <!-------------------------------------------------->
 
 <!-- # ```{r setup, Dot_title = "d3", Dot_color = "d3", Dot_close = F} -->
+
 <!-- #  library(r2d3) -->
+
 <!-- #  bars <- c(10, 20, 30) -->
+
 <!-- # ``` -->
+
 <!-- #  -->
+
 <!-- # ```{d3 data=bars, options=list(color = 'orange'), Dot_open = F} -->
+
 <!-- #  svg.selectAll('rect') -->
+
 <!-- #    .data(data) -->
+
 <!-- #    .enter() -->
+
 <!-- #      .append('rect') -->
+
 <!-- #        .attr('width', function(d) { return d * 10; }) -->
+
 <!-- #        .attr('height', '20px') -->
+
 <!-- #        .attr('y', function(d, i) { return i * 22; }) -->
+
 <!-- #        .attr('fill', options.color); -->
+
 <!-- # ``` -->
 
 <!-------------------------------------------------->

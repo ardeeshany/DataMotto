@@ -1,0 +1,58 @@
+---
+title: "Netflix data analysis"
+description: |
+  A short description of the Dotto.
+author:
+  - name: "First Last"
+    occupation: NULL
+    affiliation: NULL
+    site: NULL
+    img_url: NULL
+    lang: R
+    pkgs: NULL
+date:
+  created: "2021-04-18"
+  last_updated: "2021-04-18"
+categories: NULL
+applications: NULL
+cover_image: NULL
+slug: "netflix-data-analysis"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto(rmarkdown::metadata)
+```
+
+```{r set-up, include=F}
+knitr::opts_chunk$set(echo = T,
+                      eval = F)
+```
+<!-- Dot 1, lang: R ------------------------------------------------>
+
+```{asis asdf, type = "pt-2", Dot = 1, part = "Introduction"}
+sdf
+```
+
+```{block fdgs, Dot = 1, part = "Instruction"}
+# Introduction
+- Hi sdfthere
+1. assfdf
+1. aS aasfsa
+```
+
+```{r adsaf, echo = T, eval = F, Dot = 1, part = "Code"}
+2+2
+```
+
+```{r ghhj, Dot = 1, part = "Result"}
+2+2
+```
+
+```{block hjut, Dot = 1, part = "Interpretation"}
+sf asdf 
+```
+
+
+
+

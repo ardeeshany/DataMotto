@@ -162,12 +162,3 @@ yaml::read_yaml(".yml")$dotto_id)
   close(con)
   return(temp_file)
 }
-
-
-
-
-
-
-Make_Dotto <- function(){
-
-}

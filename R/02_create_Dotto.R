@@ -1,12 +1,14 @@
 #' Create a new Dotto
 #'
-#' @description It creates a dotto (.Rmd) based on a default `slug`, created automatically based on title.
+#' @description It creates a `Dotto` (.Rmd) template based on a title and engine language.
 #'
-#' @details In the `yml` section, here is the avaialbe values for some tags:
-#'   - `lang`: `R`, `python`, `julia`, `sql`, `bash`, `js`, `node`, `d3`, `Rcpp`, `stan`
-#'   - `categories`: `Importing-Cleaning`, `Manipulation`, `Visualization`, `Machine-Learning`, `Statistical-Learning`, `Reporting`, `Data-Engineering`
-#'   - `url`: A personal url address that can be for: your persoanl website, twitter account, linkedin, etc.
-#'   - `applications`: Having an specific applications on files `Finance`, `Pharma`.
+#' @details For the `yml` metadata, here are more details about some tags:
+#'   - `lang`: `R`, `python`, `julia`, `sql`, `bash`, `node`, etc.
+#'   - `categories`: `Importing", "Cleaning`, `Manipulation`, `Visualization`, `Machine-Learning`, `Statistical-Learning`, `Reporting`, `Data-Engineering`
+#'   - `site`: A personal url address, e.g., a personal website, twitter account, linkedin, etc.
+#'   - `img_url`: A canonical link into your img that should be saved under `_files` dir.
+#'   - `applications`: Sector specific application require domain knowledge expertise like `Finance`, `Healthcare`, `Insurance`, etc.
+#'   - `cover_image`: An external/internal link to the img that will be displayed in the cards.
 #'
 #' @param title Title of the dotto post.
 #' @param lang The programming language for writing the Dotto. Default is `R`. Other
@@ -31,8 +33,10 @@ create_Dotto <- function(title = NULL, lang = "r", open = T) {
   slug <- create_slug(title = title, slug = NULL)
   dotto_number <- list.files(here::here("posts/Dotto"), full.names = F) %>% length() + 1
   dotto_label <- paste0("D", stringr::str_pad(3, string = dotto_number, pad = "0"))
-  dotto_folder_name <- paste0(dotto_label, "-", date_prefix, "-", slug, "-", lang)
-  dotto_file_name <- paste0(slug, "-", lang, ".Rmd")
+  #dotto_folder_name <- paste0(dotto_label, "-", date_prefix, "-", slug, "-", lang)
+  dotto_folder_name <- paste0(dotto_label, "-", date_prefix, "-", slug)
+  #dotto_file_name <- paste0(slug, "-", lang, ".Rmd")
+  dotto_file_name <- paste0(slug, ".Rmd")
   dotto_path <- glue::glue("{post_parent}/{dotto_folder_name}/{dotto_file_name}")
 
   create_path_if_not_exist(glue::glue("{post_parent}/{dotto_folder_name}"))
@@ -42,8 +46,8 @@ create_Dotto <- function(title = NULL, lang = "r", open = T) {
   yml_id_path <- glue::glue("{post_parent}/{dotto_folder_name}/.yml")
 
   dotto_id <- uuid::UUIDgenerate(use.time = T)
-  family_id <- uuid::UUIDgenerate(use.time = T)
-  line_ids <- family_id
+  #family_id <- uuid::UUIDgenerate(use.time = T)
+  #line_ids <- family_id
 
   res <- T
   if(file.exists(yml_id_path)){
@@ -57,21 +61,10 @@ create_Dotto <- function(title = NULL, lang = "r", open = T) {
 dotto_number: %s
 dotto_label: "%s"
 dotto_id: "%s"
-family_id: "%s"
-# ------------------
-dotto_label_base_in_family: "%s"
-dotto_id_base_in_family: "%s"
-# ------------------
-line_ids: ["%s"]
 ',
 dotto_number,
 dotto_label,
-dotto_id,
-family_id,
-dotto_label,
-family_id,
-line_ids
-), con)
+dotto_id), con)
 close(con)
 }
 
@@ -85,17 +78,19 @@ author:
   - name: "First Last"
     occupation: NULL
     affiliation: NULL
-    url: NULL
-date: "%s"
-techs:
-  - lang: "%s"               # "r" "python" "julia" "sql" ...
-    pkg: NULL
-categories: "Manipulation"  # ["Importing-Cleaning", ... ]
-applications: NULL          # ["Finance", "Pharma"]
-cover_image:
+    site: NULL
+    img_url: NULL
+    lang: %s
+    pkgs: NULL
+date:
+  created: "%s"
+  last_updated: "%s"
+categories: NULL
+applications: NULL
+cover_image: NULL
 slug: "%s"
 output: DataMotto::Dotto
----', title, date_prefix, lang, slug)
+---', title, lang, date_prefix, date_prefix, slug)
 
 # body ---------------
 body <-
@@ -106,41 +101,34 @@ DataMotto::use_Dotto(rmarkdown::metadata)
 ```
 
 ```{r set-up, include=F}
-knitr::opts_chunk$set(echo = T,
+knitr::opts_chunk$set(echo = F,
                       eval = T)
-library(htmltools)
+```
+<!-- Dot 1, lang: %s ------------------------------------------------>
+
+```{block2, Dot = 1, part = "Introduction"}
+
 ```
 
-<!-- Dot 1 ------------------------------------------------>
-
-```{r, Dot1-intro, echo = F, Dot_title = "Intro", Dot_active = TRUE}
-h1("Description:")
-HTML(
-"Here is a sample for your description and details."
-)
-```
-<!-- Dot 2 ------------------------------------------------>
-
-```{r, Dot2-highlight, eval = F, Dot_title = "Highlight"}
-h1("Highligh:")
-# Step 1 -----------------
-ggplot +
-geom_point +
-scale for coloring
-# Step 2 -----------------
+```{block2, Dot = 1, part = "Instruction"}
 
 ```
-<!-- Dot 3 ------------------------------------------------>
 
-```{r, Dot3-desc, Dot_title = "Title", Dot_open = T, Dot_close = F}
-h1("Dot description:")
+```{%s, echo = T, eval = F, Dot = 1, part = "Code"}
+
 ```
 
-```{%s, Dot3-code, Dot_open = F, Dot_close = T}
-"Write your code here"
+```{%s, Dot = 1, part = "Result"}
+
 ```
 
-', lang, lang)
+```{block2, Dot = 1, part = "Interpretation"}
+
+```
+
+
+
+', lang, lang, lang)
 
 con <- file(dotto_path, open = "w", encoding = "UTF-8")
 on.exit(close(con), add = TRUE)
@@ -160,6 +148,7 @@ return(invisible(NULL))
 
 
 #' Convert a technology language to valid engine name
+#' @family utility
 #' @noRd
 resolve_lang <- function(lang) {
   default_engines <- c("R", "python", "julia", "sql", "bash", "js", "node", "d3", "Rcpp", "stan")
