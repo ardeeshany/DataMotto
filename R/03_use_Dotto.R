@@ -28,11 +28,11 @@ use_Dotto <- function(metadata) {
 
   knitr::knit_hooks$set(Dot = function(before, options){
     if(before){
-        glue::glue("<!--dot:start; Dot: {options$Dot}, Part: {options$part}, Lang: {options$engine}, ----->")
+        glue::glue("<!--dot-start; Dot: {options$Dot}, Part: {options$part}, Lang: {options$engine}, ----->")
     } else {
       paste(
         "\n",
-        glue::glue("<!--dot:end; Dot: {options$Dot}, Part: {options$part}, Lang: {options$engine}, ----->"),
+        glue::glue("<!--dot-end; Dot: {options$Dot}, Part: {options$part}, Lang: {options$engine}, ----->"),
         sep="\n")
     }
   })

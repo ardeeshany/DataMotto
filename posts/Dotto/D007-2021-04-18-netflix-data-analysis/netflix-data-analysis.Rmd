@@ -17,7 +17,7 @@ categories: NULL
 applications: NULL
 cover_image: NULL
 slug: "netflix-data-analysis"
-output: DataMotto::Dotto
+output: DataMotto::Make_Dotto
 ---
 
 ```{r DataMotto, echo=FALSE}
@@ -45,8 +45,8 @@ sdf
 2+2
 ```
 
-```{r ghhj, Dot = 1, part = "Result"}
-2+2
+```{r ghhj, scho = F, eval = T, Dot = 1, part = "Result"}
+plot(cars)
 ```
 
 ```{block hjut, Dot = 1, part = "Interpretation"}

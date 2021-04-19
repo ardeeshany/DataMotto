@@ -33,6 +33,7 @@ Dotto <- function(fig_width = 6,
                        after_body = c(discus_dotto(),
                                       here::here("resources/footer.html")),
                        ...) {
+
   default_template(
     template_name = "Dotto",
     template_path = "templates/Dotto.html",
@@ -169,5 +170,15 @@ yaml::read_yaml(".yml")$dotto_id)
 
 
 Make_Dotto <- function(){
+  #rmd_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
+  #rmarkdown::render(input = rmd_path,output_format = "html_document",output_file = "sdf",
+  #                  clean = F)
+  #DataMotto::Dotto()
+  rmarkdown::render(list.files(getwd(), pattern = "\\.Rmd$", full.names = T),
+                    html_document(self_contained = F))
+  con <- file(paste0(getwd(),"/.json"), open = "w", encoding = "UTF-8")
+  xfun::write_utf8(Config_Dotto_to_json(getwd()), con = con)
+  close(con)
+  DataMotto::Dotto()
 
 }
