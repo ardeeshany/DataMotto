@@ -106,10 +106,6 @@ knitr::opts_chunk$set(echo = F,
 ```
 <!-- Dot 1, lang: %s ------------------------------------------------>
 
-```{block2, Dot = 1, part = "Introduction"}
-
-```
-
 ```{block2, Dot = 1, part = "Instruction"}
 
 ```

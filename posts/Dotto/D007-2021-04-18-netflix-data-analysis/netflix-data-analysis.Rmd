@@ -30,28 +30,23 @@ knitr::opts_chunk$set(echo = T,
 ```
 <!-- Dot 1, lang: R ------------------------------------------------>
 
-```{asis asdf, type = "pt-2", Dot = 1, part = "Introduction"}
-sdf
-```
-
-```{block fdgs, Dot = 1, part = "Instruction"}
+```{block, Dot = 1, part = "Intro"}
 # Introduction
 - Hi sdfthere
 1. assfdf
 1. aS aasfsa
 ```
 
-```{r adsaf, echo = T, eval = F, Dot = 1, part = "Code"}
+```{r, Dot = 1, part = "Code"}
 2+2
-```
-
-```{r ghhj, scho = F, eval = T, Dot = 1, part = "Result"}
 plot(cars)
 ```
 
-```{block hjut, Dot = 1, part = "Interpretation"}
-sf asdf 
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
+2+2
+plot(cars)
 ```
+
 
 
 

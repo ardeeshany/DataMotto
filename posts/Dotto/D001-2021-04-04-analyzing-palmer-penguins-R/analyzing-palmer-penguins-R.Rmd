@@ -20,11 +20,11 @@ author:
 date: 
   created: "2021-04-04"
   last_update: "2021-04-12"
-categories: ["Importing-Cleaning", "Manipulation", "Visualization" ]
-applications: NULL          # ["Finance", "Pharma"]
+categories: ["Importing", "Cleaning", "Manipulation", "Visualization", "Reporting"]
+applications: ["Finance", "Pharma"]
 cover_image: "https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png"
 slug: "analyzing-palmer-penguins"
-output: DataMotto::Dotto
+output: DataMotto::Make_Dotto
 ---
 
 ```{r DataMotto, echo=FALSE}
@@ -33,36 +33,27 @@ DataMotto::use_Dotto(rmarkdown::metadata)
 
 ```{r set-up, include=F}
 knitr::opts_chunk$set(echo = T,
-                      eval = T)
-library(htmltools)
+                      eval = F)
+```
+
+
+<!-- Dot 1, lang: R ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = 'r'}
+
+## R
+
+The palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. Here we want to check the missing values
+
+## Instruction
 library(palmerpenguins)
 library(ggplot2)
 library(dplyr)
 library(DT)
 ```
 
-<!-- Dot 1 ------------------------------------------------>
 
-```{r, Dot1-intro, echo = F, Dot_title = "Intro", Dot_active = TRUE, Dot_close = F}
-h1("Details:")
-HTML(
-"The palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. Here we want to check the missing values"
-)
-```
-
-```{r, Dot1-intro-code, echo = T, eval =FALSE, Dot_title = "Intro", Dot_open = F}
-h2("Required Libraries:")
-library(palmerpenguins)
-library(ggplot2)
-library(dplyr)
-library(DT)
-```
-
-
-<!-- Dot 2 ------------------------------------------------>
-
-```{r, Dot2-highlight, eval = F, Dot_title = "Highlight"}
-h1("Highligh:")
+```{r, Dot = 1, part = "Code"}
 # Step 1 --------------------------
 penguins %>%
   count(species)
@@ -82,16 +73,104 @@ ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
              size = 2)  +
   scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
-<!-- Dot 3 ------------------------------------------------>
 
-```{r, Dot3-exp, echo = T, eval = T, Dot_title = "Data Structure"}
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
+library(palmerpenguins)
+library(ggplot2)
+library(dplyr)
 library(DT)
+# Step 1 --------------------------
+penguins %>%
+  count(species)
+# Step 2 --------------------------
+ggplot(penguins, aes(x = island, fill = species)) +
+  geom_bar(alpha = 0.8) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4"),
+                    guide = FALSE) +
+  theme_minimal() +
+  facet_wrap(~species, ncol = 1) +
+  coord_flip()
+# Step 3 --------------------------
+## Scatterplot example 2: penguin bill length versus bill depth
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 2)  +
+  scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+
+
+<!-- Dot 1, lang: python ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = 'python'}
+
+## Python
+
+The palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. These data were
+
+## Instruction
+package `pandas`
+```
+
+
+```{python, Dot = 1, part = "Code"}
+import matplotlib.pyplot as plt
+import numpy as np
+t = 1 + np.arange(0, 2, 0.01)
+s = 1 + np.sin(2*np.pi*t)
+plt.plot(t,s)
+plt.show()
+```
+
+```{python, Dot = 1, part = "Result", echo = F, eval = T}
+import matplotlib.pyplot as plt
+import numpy as np
+t = 1 + np.arange(0, 2, 0.01)
+s = 1 + np.sin(2*np.pi*t)
+plt.plot(t,s)
+plt.show()
+```
+
+
+
+
+<!-- Dot 2, lang: R ------------------------------------------------>
+
+```{block, Dot = 2, part = "Instruction", lang = 'r'}
+These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. The data were imported directly from the Environmental Data Initiative (EDI) Data Portal, and are available for use by CC0 license (“No Rights Reserved”) in accordance with the Palmer Station Data Policy.
+
+## Instruction
+- Import Data from `CRAN`
+- Remove missing data
+- Visualize data with ![ggplot2](https://ggplot2.tidyverse.org/)
+```
+
+```{r, Dot = 2, part = "Code"}
 DT::datatable(penguins)
 ```
 
-<!-- Dot 4 ------------------------------------------------>
+```{r, Dot = 2, part = "Result", echo = F, eval = T}
+DT::datatable(penguins)
+```
 
-```{r, Dot4-vis, echo = T, Dot_title = "Exploring scatterplots"}
+
+<!-- Dot 3, lang: R ------------------------------------------------>
+
+```{block, Dot = 3, part = "Instruction", lang = 'r'}
+The palmerpenguins R package contains two datasets that we believe are a viable alternative to Anderson’s Iris data (see datasets::iris). In this introductory vignette, we’ll highlight some of the properties of these datasets that make them useful for statistics and data science education, as well as software documentation and testing.
+```
+
+
+```{r, Dot = 3, part = "Code"}
+# Scatterplot example 1: penguin flipper length versus body mass
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 2) +
+  scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+
+```{r, Dot = 3, part = "Result", echo = F, eval = T}
 # Scatterplot example 1: penguin flipper length versus body mass
 ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
   geom_point(aes(color = species,
@@ -101,9 +180,13 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 ```
 
 
-<!-- Dot 5 ------------------------------------------------>
+<!-- Dot 4, lang: R ------------------------------------------------>
 
-```{r, Dot5-vis, echo = T, Dot_title = "Exploring distribution"}
+```{block, Dot = 4, part = "Instruction", lang = 'r'}
+You can add color and/or shape aesthetics in ggplot2 to layer in factor levels like we did above. With three factor variables to work with, you can add another factor layer with facets, like the plot below.
+```
+
+```{r, Dot = 4, part = "Code"}
 # Jitter plot example: bill length by species
 ggplot(data = penguins, aes(x = species, y = bill_length_mm)) +
   geom_jitter(aes(color = species),
@@ -113,13 +196,13 @@ ggplot(data = penguins, aes(x = species, y = bill_length_mm)) +
   scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
 
-
-<!-- Dot 6 ------------------------------------------------>
-
-```{r, Dot6-vis, echo = T, Dot_title = "Exploring Length"}
-# Histogram example: flipper length by species
-ggplot(data = penguins, aes(x = flipper_length_mm)) +
-  geom_histogram(aes(fill = species), alpha = 0.5, position = "identity") +
-  scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
+```{r, Dot = 4, part = "Result", echo = F, eval = T}
+# Jitter plot example: bill length by species
+ggplot(data = penguins, aes(x = species, y = bill_length_mm)) +
+  geom_jitter(aes(color = species),
+              width = 0.1,
+              alpha = 0.7,
+              show.legend = FALSE) +
+  scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
 

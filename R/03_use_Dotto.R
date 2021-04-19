@@ -28,14 +28,33 @@ use_Dotto <- function(metadata) {
 
   knitr::knit_hooks$set(Dot = function(before, options){
     if(before){
-        glue::glue("<!--dot-start; Dot: {options$Dot}, Part: {options$part}, Lang: {options$engine}, ----->")
-    } else {
+      # if(tolower(options$part) == tolower("Result")){
+      #   glue::glue("<!--dot-start; Dot: {options$Dot}, Part: Code, Lang: {options$engine}, ----->")
+      #   paste(
+      #     glue::glue("```\\{{options$engine}, echo = T, eval = F \\}"),
+      #     paste(options$source, collapse = "\n"),
+      #     "```",
+      #     sep = "\n"
+      #   )
+      #   glue::glue("<!--dot-end; Dot: {options$Dot}, Part: Code, Lang: {options$engine}, ----->")
+      #   # hook_source <- knitr::knit_hooks$get('source')
+      #   #   knitr::knit_hooks$set(source = function(x, options) {
+      #   #     x <- paste(
+      #   #       glue::glue("<!--dot-start; Dot: {options$Dot}, Part: Code, Lang: {options$engine}, ----->"),
+      #   #       paste(x, collapse = "\n"),
+      #   #       glue::glue("<!--dot-end; Dot: {options$Dot}, Part: Code, Lang: {options$engine}, ----->"))
+      #   #     hook_source(x, options)
+      #   #   })
+      #
+      # }
+        glue::glue("<!--dot-start; Dot: {options$Dot}, Part: {options$part}, Lang: {ifelse(options$engine == 'block', resolve_lang(options$lang), options$engine)}, ----->")
+      } else {
       paste(
         "\n",
-        glue::glue("<!--dot-end; Dot: {options$Dot}, Part: {options$part}, Lang: {options$engine}, ----->"),
+        glue::glue("<!--dot-end; Dot: {options$Dot}, Part: {options$part}, Lang: {ifelse(options$engine == 'block', resolve_lang(options$lang), options$engine)}, ----->"),
         sep="\n")
-    }
-  })
+  }}
+  )
 
   #knitr::asis_output(Dotto_banner(metadata))
 }

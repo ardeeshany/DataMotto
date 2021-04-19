@@ -36,41 +36,25 @@
   "1": [
     {
       "dot": "1",
-      "part": "introduction",
-      "lang": "asis",
-      "html_chunk": "<!--dot-start; Dot: 1, Part: Introduction, Lang: asis, ----->\n<p>sdf<\/p>\n<!--dot-end; Dot: 1, Part: Introduction, Lang: asis, ----->"
+      "part": "intro",
+      "lang": "block",
+      "html_chunk": "<!--dot-start; Dot: 1, Part: Intro, Lang: block, ----->\n<div id=\"introduction\" class=\"section level1\">\n<h1>Introduction<\/h1>\n<ul>\n<li>Hi sdfthere<\/li>\n<\/ul>\n<ol style=\"list-style-type: decimal\">\n<li>assfdf<\/li>\n<li>aS aasfsa<\/li>\n<\/ol>\n<!--dot-end; Dot: 1, Part: Intro, Lang: block, ----->"
     }
   ],
   "2": [
     {
       "dot": "1",
-      "part": "instruction",
-      "lang": "block",
-      "html_chunk": "<!--dot-start; Dot: 1, Part: Instruction, Lang: block, ----->\n<div id=\"introduction\" class=\"section level1\">\n<h1>Introduction<\/h1>\n<ul>\n<li>Hi sdfthere<\/li>\n<\/ul>\n<ol style=\"list-style-type: decimal\">\n<li>assfdf<\/li>\n<li>aS aasfsa<\/li>\n<\/ol>\n<!--dot-end; Dot: 1, Part: Instruction, Lang: block, ----->"
+      "part": "code",
+      "lang": "r",
+      "html_chunk": "<!--dot-start; Dot: 1, Part: Code, Lang: R, ----->\n<pre class=\"r\"><code>2+2\nplot(cars)<\/code><\/pre>\n<!--dot-end; Dot: 1, Part: Code, Lang: R, ----->"
     }
   ],
   "3": [
     {
       "dot": "1",
-      "part": "code",
-      "lang": "r",
-      "html_chunk": "<!--dot-start; Dot: 1, Part: Code, Lang: R, ----->\n<pre class=\"r\"><code>2+2<\/code><\/pre>\n<!--dot-end; Dot: 1, Part: Code, Lang: R, ----->"
-    }
-  ],
-  "4": [
-    {
-      "dot": "1",
       "part": "result",
       "lang": "r",
-      "html_chunk": "<!--dot-start; Dot: 1, Part: Result, Lang: R, ----->\n<pre class=\"r\"><code>plot(cars)<\/code><\/pre>\n<p><img src=\"netflix-data-analysis_files/figure-html/ghhj-1.png\" width=\"672\" /><\/p>\n<!--dot-end; Dot: 1, Part: Result, Lang: R, ----->"
-    }
-  ],
-  "5": [
-    {
-      "dot": "1",
-      "part": "interpretation",
-      "lang": "block",
-      "html_chunk": "<!--dot-start; Dot: 1, Part: Interpretation, Lang: block, ----->\n<p>sf asdf<\/p>\n<!--dot-end; Dot: 1, Part: Interpretation, Lang: block, ----->"
+      "html_chunk": "<!--dot-start; Dot: 1, Part: Result, Lang: R, ----->\n<pre><code>## [1] 4<\/code><\/pre>\n<p><img src=\"netflix-data-analysis_files/figure-html/unnamed-chunk-3-1.png\" width=\"672\" /><\/p>\n<!--dot-end; Dot: 1, Part: Result, Lang: R, ----->"
     }
   ]
 }
