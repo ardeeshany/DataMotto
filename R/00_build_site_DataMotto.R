@@ -35,7 +35,7 @@ build_site_DataMotto <- function(open = T) {
 
   purrr::walk(list_all_rmds, ~ file.remove(.x))
 
-  if(TRUE){ # copy site_libs into root folder for dev purposes
+  if(TRUE){ # copy site_libs deps into root folder for dev purposes
     file.copy(from = here::here("docs/site_libs"),
               to = here::here(""),
               recursive = T,

@@ -8,10 +8,6 @@
 #'   will be saved as a json object and will be passed to Dotto creation function for applying the style.
 Config_Dotto_to_json <- function(path){
 
-  #path <- "/Users/ardalanmirshani/rsites/DataMotto/posts/Dotto/D001-2021-04-04-analyzing-palmer-penguins-R/analyzing-palmer-penguins-R.Rmd"
-
-  #rmarkdown::render(path)
-
   html_codes <- readLines(list.files(path, pattern = "\\.html$", full.names = T)) %>%
     tibble() %>%
     rename("line" = ".") %>%
@@ -57,6 +53,11 @@ Config_Dotto_to_json <- function(path){
 
 
 #' Create a config json file for an specific Dotto
+#'
+#' @description It creates the json file based on the Dotto yaml metadata and
+#'   the `.yml` file, plus some customized site level information.
+#' @family utility
+#' @noRd
 config_Dotto <- function(rmd_path) {
 
   file_name <- stringr::str_remove(basename(rmd_path), pattern = ".Rmd")
@@ -89,6 +90,9 @@ lower_nospace <- function(text) {
 }
 
 #' Extract Pattern
+#'
+#' @description To indentify the Dot number, Dot part, and Dot lang from the
+#'   html special comment.
 #' @family utility
 #' @noRd
 extract_pat <- function(text, pat) {

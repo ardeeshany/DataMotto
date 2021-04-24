@@ -13,6 +13,13 @@
 #' @export
 create_family <- function(Dotto_base_label, lang = NULL, open = T) {
 
+  if(TRUE){
+    usethis::ui_warn("'create_family' is deprecated.
+                     The `family` concept is resolved into the `Line`.
+                     Please call 'DataMotto::create_Dotto()'.")
+    return(invisible(NULL))
+    }
+
   lang <- resolve_lang(lang)
 
   all_rmds <- list.files(here::here("posts/Dotto"),

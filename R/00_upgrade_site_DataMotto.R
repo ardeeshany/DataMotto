@@ -17,7 +17,7 @@ upgrade_site_DataMotto <- function(path = NULL, keep_original_site_libs = T, ope
   if(is.null(path)){
     path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
     if(length(path) > 1){
-      stop("There is more than one .Rmd file in this path. Provide your file path in 'path'.")
+      stop("There is more than one .Rmd file in this path. Provide a file path in 'path'.")
     }
   }
 
