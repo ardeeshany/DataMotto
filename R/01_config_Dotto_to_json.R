@@ -43,7 +43,7 @@ Config_Dotto_to_json <- function(path){
 
   # ----
   config_json <- c(config_Dotto(list.files(getwd(), pattern = "\\.Rmd$", full.names = T)),
-                 dots_chunks) %>%
+                 list("dots_chunks" = dots_chunks)) %>%
     jsonlite::toJSON(auto_unbox = F,
                      pretty = T)
 

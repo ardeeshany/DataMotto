@@ -78,9 +78,11 @@ author:
   - name: "First Last"
     occupation: NULL
     affiliation: NULL
-    site: NULL
-    img_url: NULL
+    url: NULL
+    img: NULL
     lang: %s
+tech:
+  - lang: %s
     pkgs: NULL
 date:
   created: "%s"
@@ -90,7 +92,7 @@ applications: NULL
 cover_image: NULL
 slug: "%s"
 output: DataMotto::Dotto
----', title, lang, date_prefix, date_prefix, slug)
+---', title, lang, lang, date_prefix, date_prefix, slug)
 
 # body ---------------
 body <-

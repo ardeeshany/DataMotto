@@ -182,3 +182,383 @@ Make_Dotto <- function(){
   DataMotto::Dotto()
 
 }
+
+
+
+# Make Dotto from the config json -------------
+
+Dotto_top_header <- function(metadata) {
+
+  # Datamotto logo part ------
+  col_1 <- sprintf('
+<div class="col-1 d-flex justify-content-start align-items-center header-logo">
+<img id="logo" src="../../../assets/img/logo.svg" />
+</div>
+')
+
+  # Title, Description, categories ------
+  col_2 <- sprintf('
+<div class="col-6 col-sm-7">
+<div class="header-title">
+<h6 class="dotto-header-maintitle">
+%s
+</h6>
+<p class="dotto-header-description">
+%s
+</p>
+<p class="dotto-header-tags">
+<i class="fas fa-tags"></i>&nbsp; %s
+</p>
+</div>
+</div>
+',
+metadata$title,
+metadata$description,
+paste0(metadata$categories, collapse = ""))
+
+  # Dotto Star -------
+  col_3 <- sprintf('
+<div class="col-1 d-flex justify-content-center align-items-center">
+<button class="btn btn-primary btn-block header-like-btn" type="button">
+<i class="fa fa-star"></i>&nbsp;
+<!-- LikeBtn.com BEGIN -->
+<span class="likebtn-wrapper" data-theme="nero" data-i18n_like="Like Dotto" data-white_label="true" data-identifier="%s" data-addthis_service_codes="twitter, facebook, linkedin, gmail, email, slack, telegram" data-show_like_label="false" data-dislike_enabled="false" data-counter_frmt="comma" data-popup_html="I like the Dotto!" data-share_size="large" data-site_id="604e13966fd08bbf03672c5b" data-i18n_like_tooltip="Like Dotto"></span>
+<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+<!-- LikeBtn.com END -->
+</button>
+</div>
+',
+yaml::read_yaml(".yml")$dotto_id)
+
+  # Authors ---------
+  author_list <- metadata$author
+  sub_col_4 <- rep(list(NA), length(author_list))
+  for(i in 1:length(author_list)){
+    sub_clo_4[[i]] <- sprintf('
+<div class="col-1 d-flex flex-column mx-auto dotto-header-user">
+<div class="row">
+<div @click="%s = true" type="button"
+class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center dotto-header-user-icon">
+<img class="img-fluid user-image border-warning %s" src="%s" />
+</div>
+</div>
+<h6 class="d-flex justify-content-end dotto-header-user-name">
+%s
+</h6>
+</div>
+',
+i,
+(author_list[[i]])$lang,
+(author_list[[i]])$img,
+(author_list[[i]])$name)
+  }
+
+  col_4 <- paste(sub_clo_4, collapse = "\n")
+
+  # Author Modals -----
+  sub_modals <- rep(list(NA), length(author_list))
+  for(i in 1:length(author_list)){
+    sub_modals[[i]] <- sprintf('
+<div v-if="%s" class="modal">
+<!-- Modal content -->
+<div class="modal-content">
+<span @click="%s = false" class="close">&times;</span>
+<div class="card" style="max-width: 540px">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="%s" class="img-fluid" />
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<h5 class="card-title mb-0">%s</h5>
+<p class="card-text mb-0">%s</p>
+<p class="card-text mb-0">%s</p>
+<p class="card-text">
+<small class="text-muted">%s</small>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+',
+i,
+i,
+(author_list[[i]])$img,
+(author_list[[i]])$name,
+(author_list[[i]])$occupation,
+(author_list[[i]])$affiliation,
+(author_list[[i]])$url)
+  }
+
+  modals <- paste(sub_modals, collapse = "\n")
+
+  return(sprintf(
+    '
+<section id="dotto-row-header">
+<div class="row dotto-header">
+%s
+%s
+%s
+%s
+</div>
+</section>
+%s
+',
+col_1,
+col_2,
+col_3,
+col_4,
+modals))
+
+}
+
+
+
+Dotto_sub_header <- function(metadata){
+
+  sub_lang <- rep(list(NA), length(metadata$tech))
+
+  for(i in 1:length(sub_lang)){
+    sub_lang[[i]] <- sprintf('
+<i type="button" @click="activeLang = \'%s\'"
+class="%s"
+:class="{\'%s\': activeLang === \'%s\'}">
+</i>
+',
+(metadata$tech[[i]])$lang,
+lang_icon_class((metadata$tech[[i]])$lang),
+"text-warning",
+(metadata$tech[[i]])$lang)
+  }
+
+  scol_1 <- sprintf('
+<div class="col-4 d-flex flex-grow-0 justify-content-start align-items-center align-items-xl-center">
+<div class="d-flex justify-content-around align-items-center bg-social-icons">
+%s
+</div>
+</div>
+', paste(sub_lang, collapse = "\n"))
+
+  # -------
+
+  scol_2 <- sprintf('
+<div
+class="col-8 d-flex justify-content-end align-items-center" style="padding-right: 15px">
+<div class="d-flex justify-content-center align-items-center align-content-center bg-social-icons"
+style="margin-right: 7px; width: 146.3px">
+<span class="d-flex justify-content-lg-center align-items-lg-center" style="width: 133.7px">
+<i class="fas fa-music" style="padding-right: 12px"> </i>
+</span>
+</div>
+<div class="d-flex justify-content-around align-items-center bg-social-icons">
+<i class="fa fa-linkedin-square"></i>
+<i class="fab fa-twitter"></i>
+</div>
+<div class="text-nowrap d-flex justify-content-around align-items-center bg-social-icons bg-bugs-icons">
+<i class="fab fa-github header-social-icon"></i>
+<i class="fas fa-bug header-social-icon"></i>
+</div>
+</div>
+')
+
+
+  # -------
+
+  return(sprintf('
+<section>
+<div id="dotto-row-info" class="d-flex">
+%s
+</div>
+</section>
+',
+scol_1,
+scol_2))
+
+}
+
+# Main Dotto part -------------
+
+Dotto_main <- function(metadata, config_path) {
+  config_path <- paste0(getwd(),"/.json")
+  config <- jsonlite::fromJSON(config_path, simplifyDataFrame = T)
+
+  index_chunks <- which(names(config) %in% "dots_chunks")
+  meta <- config[-index_chunks]
+
+  # ---------
+  dots <- config[[index_chunks]] %>%
+    dplyr::bind_rows() %>%
+    tibble::tibble()
+
+  num_lang <- dots %>%
+    pull(lang) %>%
+    unique() %>%
+    length()
+
+  num_dot <- dots %>%
+    pull(dot) %>%
+    unique() %>%
+    length()
+
+  # dot sidebar ---------
+  scol <- rep(list(NA), num_dot)
+
+  for(i in 1:length(scol)){
+    scol[[i]] <- sprintf('
+<button type="button" @click="activeMotto = \'%s\'"
+class="btn dotto-main-dot-shape"
+:class="{\'btn-light\': activeMotto === \'%s\', \'btn-outline-light\': activeMotto !== \'%s\'}">%s</button>
+', i, i, i, i)
+
+  }
+
+
+  # dot contents --------
+  dcol <- rep(list(NA), num_dot)
+
+  for(i in 1:length(dcol)){
+
+    # dot=i: `instruction` section for all langs -----------------
+    sub_col_intro <- rep(list(NA), num_lang)
+    for(l in (dots %>% pull(lang) %>% unique())){
+
+      dot_intro <- dots %>%
+        filter(dot == i, part == "instruction", lang == l) %>%
+        pull(html_chunk)
+
+      if(is.null(dot_intro)){
+        dot_intro <- (dots %>%
+                        filter(dot == i, part == "instruction") %>%
+                        pull(html_chunk))[1]
+      }
+
+      sub_col_intro <- sprintf('
+<div v-if="activeLang === \'%s\'" class="mx-2">
+%s
+</div>
+', l, dot_intro)
+
+    }
+
+
+    # dot=i: `code` section for all langs ------------------------
+    sub_col_code <- rep(list(NA), num_lang)
+    for(l in (dots %>% pull(lang) %>% unique())){
+
+      dot_code <- dots %>%
+        filter(dot == i, part == "code", lang == l) %>%
+        pull(html_chunk)
+
+      if(is.null(dot_code)){
+        dot_code <- ""
+      }
+
+      sub_col_code <- sprintf('
+<div v-if="activeLang === \'%s\'" class="mx-2">
+%s
+</div>
+',
+l,
+dot_code)
+
+    }
+
+
+    # dot=i: `result` section for all langs ---------------
+    sub_col_result <- rep(list(NA), num_lang)
+    for(l in (dots %>% pull(lang) %>% unique())){
+
+      dot_result <- dots %>%
+        filter(dot == i, part == "result", lang == l) %>%
+        pull(html_chunk)
+
+      if(is.null(dot_result)){
+        dot_result <- ""
+      }
+
+      sub_col_result <- sprintf('
+<div v-if="activeLang === \'%s\'" class="mx-2">
+%s
+</div>
+',
+l,
+dot_result)
+
+    }
+
+
+
+
+
+    # Create the full dot ----------------------------------------
+    dcol[[i]] <- sprintf('
+<div v-if="activeMotto === \'%s\'"
+class="col-12 col-lg-11 d-flex p-0 wrapper">
+%s
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main dotto-main-codes">
+<h3>&nbsp; Codes</h3>
+%s
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main dotto-main-output">
+<h3>&nbsp;Outputs</h3>
+%s
+</div>
+</div>
+</div>
+',
+i,
+paste(sub_col_intro, collapse = "\n"),
+paste(sub_col_code, collapse = "\n"),
+paste(sub_col_result, collapse = "\n"))
+
+  }
+
+
+
+  # ----------
+  return(sprintf('
+<section v-if="activeDotto === \'1\'"
+class="text-left d-flex flex-row flex-grow-1 flex-wrap" id="dotto-row-main">
+<div class="col-12 col-lg-1" id="dotto-main-dots">
+%s
+</div>
+%s
+</section>
+',
+paste(scol, collapse = "\n"),
+paste(dcol, collapse = "\n")
+  ))
+
+}
+
+
+
+# Single Dotto footer ---------
+Dotto_footer <- function(metadata) {
+
+  sprintf('
+<section id="dotto-footer">
+<div class="col-12 col-md-8">
+<div class="d-flex" id="dotto-row-lines">
+<i type="button" class="icon ion-ios-circle-filled d-sm-flex justify-content-sm-center dotto-lines-icons" >
+</i>
+</div>
+</div>
+<div class="col-12 col-md-4" id="dotto-comment" style="padding-top: 13px">
+<div class="alert alert-danger dotto-alert-comment" role="alert">
+%s
+</div>
+</div>
+</section>
+',
+discus_dotto())
+
+}
+
+
+

@@ -87,7 +87,7 @@ open_file <- function(file, open = T) {
 
 
 
-# Find an appropriate cover image
+# Find the appropriate cover image
 resolve_cover_image <- function(rmd_path, default_img_path = "resources/images/default_dotto.jpg") {
 
   cover_image <- rmarkdown::yaml_front_matter(rmd_path)$cover_image

@@ -62,6 +62,7 @@ use_Dotto <- function(metadata) {
 
 
 
+
 #' Add banner card on top of Dotto
 #'
 #' @description This includes the meta information related the Dotto, such as title,
@@ -198,6 +199,17 @@ tech_html_icon <- function(lang, full_name = F) {
   return(icon)
 }
 
+
+lang_icon_class <- function(lang, full_name = F) {
+  if(tolower(lang) == "r"){
+    icon <- "fab fa-r-project"
+  } else if(tolower(lang) == "python"){
+    icon <- "fab fa-python"
+  } else if(tolower(lang) == "sql"){
+    icon <- "icon-file-sql"
+  }
+  return(icon)
+}
 
 #' Resolve url with embedding a valid schema
 #' @importFrom urltools url_parse

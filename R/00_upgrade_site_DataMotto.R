@@ -6,7 +6,7 @@
 #'   and there exists only one `.Rmd` there, it automatically update the path to
 #'   select the Dotto Rmd file. Default is `NULL` that selects the current working directory.
 #' @param keep_original_site_libs a logical value that keeps the original `site_libs` folder, created by \link[build_site_DataMotto]
-#'   rather than adding a new `site_libs` created by rendering `Index.page`. Deafult is `TRUE`.
+#'   rather than adding a new `site_libs` created by rendering `Index.Rmd`. Default is `TRUE`.
 #' @param open A logical value that opens the Index page of site in the browser. Default is `TRUE`.
 #' @importFrom fs dir_copy dir_delete
 #' @importFrom here here
@@ -44,7 +44,7 @@ upgrade_site_DataMotto <- function(path = NULL, keep_original_site_libs = T, ope
   if(keep_original_site_libs){
   usethis::ui_done("The Dotto is added into docs/posts/Dotto")
   }
-  # render index page
+  # render index.Rmd page ===============
   file.rename(from = here::here("docs/site_libs"), to = here::here("docs/site_libs_temp"))
   rmarkdown::render(input = here::here("Index.Rmd"),
                     output_format = DataMotto::Index(lib_dir = "docs/site_libs"),

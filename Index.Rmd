@@ -4,7 +4,7 @@ description: |
   The main page of Data Motto.
 author:
   - name: "Ardalan Mirshani"
-    url: "mirshani.com"
+    url: "https://www.mirshani.com"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: DataMotto::Index
 ---
