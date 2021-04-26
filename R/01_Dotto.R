@@ -29,9 +29,11 @@ Dotto <- function(fig_width = 6,
                        self_contained = FALSE,
                        in_header = c(social_card_protocol_dotto()$open_graph,
                                      social_card_protocol_dotto()$twitter),
-                       before_body = here::here("resources/header_post.html"),
-                       after_body = c(discus_dotto(),
-                                      here::here("resources/footer.html")),
+                       before_body = NULL,
+                       #before_body = here::here("resources/header_post.html"),
+                       after_body = NULL,
+                       # after_body = c(discus_dotto(),
+                       #                here::here("resources/footer.html")),
                        ...) {
 
   default_template(
@@ -118,86 +120,56 @@ social_card_protocol_dotto <- function() {
 }
 
 
-# Add a discus widget to the Dotto page
-discus_dotto <- function() {
-  dir_name <- basename(getwd())
-  disc_codes <- sprintf('
-    <section class="mt-2 pt-2">
-    <div class="container">
-    <details class="comments-details">
-    <summary class="col-sm-12 alert alert-info">
-    <strong><i class="fas fa-comments fa-lg"></i>
-    <span class="disqus-comment-count" data-disqus-url="%s" data-disqus-identifier="%s"></span>
-    </strong>
-    <span class="pl-2">for this Dotto.</span>
-    <span>Write yours here!</span>
-    </summary>
-    <div id="disqus_thread"></div>
-    <script>
-    var disqus_config = function () {
-      this.page.url = "%s";
-      this.page.identifier = "%s";
-    };
-
-  (function() {
-    var d = document, s = d.createElement("script");
-    s.src = "https://datamotto-com.disqus.com/embed.js";
-    s.setAttribute("data-timestamp", +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
-</details>
-</div>
-</section>
-  ',
-glue::glue("https://datamotto.com/posts/Dotto/{dir_name}/index.html"),
-yaml::read_yaml(".yml")$dotto_id,
-glue::glue("https://datamotto.com/posts/Dotto/{dir_name}/index.html"),
-yaml::read_yaml(".yml")$dotto_id)
-  # ---
-  temp_file <- tempfile()
-  con <- file(temp_file, open = "w", encoding = "UTF-8")
-  xfun::write_utf8(disc_codes, con)
-  close(con)
-  return(temp_file)
-}
 
 
 
+Make_Dotto <- function(Dotto_path = NULL){
 
+  if(is.null(Dotto_path)){
+    Dotto_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
+    if(length(Dotto_path) != 1){
+      stop("There is not a unique Dotto. Provide a path into `Dotto_path`.")
+    }
+  }
 
-
-Make_Dotto <- function(){
-  #rmd_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
-  #rmarkdown::render(input = rmd_path,output_format = "html_document",output_file = "sdf",
-  #                  clean = F)
-  #DataMotto::Dotto()
-  rmarkdown::render(list.files(getwd(), pattern = "\\.Rmd$", full.names = T),
+  Dotto_folder <- dirname(Dotto_path)
+  rmarkdown::render(Dotto_path,
                     html_document(self_contained = F))
-  con <- file(paste0(getwd(),"/.json"), open = "w", encoding = "UTF-8")
-  xfun::write_utf8(Config_Dotto_to_json(getwd()), con = con)
+  con <- file(paste0(Dotto_folder,"/.json"), open = "w", encoding = "UTF-8")
+  xfun::write_utf8(Config_Dotto_to_json(Dotto_folder), con = con)
   close(con)
-  DataMotto::Dotto()
-
+  #DataMotto::Dotto()
+  generated_Dotto <- generate_Dotto(Dotto_path)
+  print(generated_Dotto)
+  con <- file(paste0(Dotto_folder,"/index.html"), open = "w", encoding = "UTF-8")
+  xfun::write_utf8(generated_Dotto, con = con)
+  close(con)
+  utils::browseURL(paste0(Dotto_folder,"/index.html"))
 }
 
 
 
-# Make Dotto from the config json -------------
 
-Dotto_top_header <- function(metadata) {
 
-  # Datamotto logo part ------
-  col_1 <- sprintf('
+
+
+################################################################################
+#                                                                              #
+#                      Generate Dotto from a config json                       #
+#                                                                              #
+################################################################################
+
+Dotto_top_header <- function(meta) {
+
+  # Datamotto logo part ------------------------------------
+col_1 <- sprintf('
 <div class="col-1 d-flex justify-content-start align-items-center header-logo">
 <img id="logo" src="../../../assets/img/logo.svg" />
 </div>
 ')
 
-  # Title, Description, categories ------
-  col_2 <- sprintf('
+  # Title, Description, categories --------------------------
+col_2 <- sprintf('
 <div class="col-6 col-sm-7">
 <div class="header-title">
 <h6 class="dotto-header-maintitle">
@@ -212,11 +184,11 @@ Dotto_top_header <- function(metadata) {
 </div>
 </div>
 ',
-metadata$title,
-metadata$description,
-paste0(metadata$categories, collapse = ""))
+meta$title,
+meta$description,
+paste0(meta$categories, collapse = ", "))
 
-  # Dotto Star -------
+  # Dotto Star ---------------------------------------------------------
   col_3 <- sprintf('
 <div class="col-1 d-flex justify-content-center align-items-center">
 <button class="btn btn-primary btn-block header-like-btn" type="button">
@@ -228,13 +200,15 @@ paste0(metadata$categories, collapse = ""))
 </button>
 </div>
 ',
-yaml::read_yaml(".yml")$dotto_id)
+meta$dotto_id)
 
-  # Authors ---------
-  author_list <- metadata$author
-  sub_col_4 <- rep(list(NA), length(author_list))
-  for(i in 1:length(author_list)){
-    sub_clo_4[[i]] <- sprintf('
+  # Authors -----------------------------------------------------------
+  author_list <- meta$author %>%
+    mutate_all(~as.character(.))
+
+  sub_col_4 <- rep(list(NA), nrow(author_list))
+  for(i in 1:nrow(author_list)){
+    sub_col_4[[i]] <- sprintf('
 <div class="col-1 d-flex flex-column mx-auto dotto-header-user">
 <div class="row">
 <div @click="%s = true" type="button"
@@ -247,17 +221,18 @@ class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-
 </h6>
 </div>
 ',
-i,
-(author_list[[i]])$lang,
-(author_list[[i]])$img,
-(author_list[[i]])$name)
-  }
+authorModal(i),
+author_list[i, 'lang'],
+resolve_author_img(author_list[i, 'img']),
+author_list[i, 'name']
+)
+}
 
-  col_4 <- paste(sub_clo_4, collapse = "\n")
+  col_4 <- paste(sub_col_4, collapse = "\n")
 
-  # Author Modals -----
-  sub_modals <- rep(list(NA), length(author_list))
-  for(i in 1:length(author_list)){
+  # Author Modals -------------------------------------------------------
+  sub_modals <- rep(list(NA), nrow(author_list))
+  for(i in 1:nrow(author_list)){
     sub_modals[[i]] <- sprintf('
 <div v-if="%s" class="modal">
 <!-- Modal content -->
@@ -283,13 +258,14 @@ i,
 </div>
 </div>
 ',
-i,
-i,
-(author_list[[i]])$img,
-(author_list[[i]])$name,
-(author_list[[i]])$occupation,
-(author_list[[i]])$affiliation,
-(author_list[[i]])$url)
+authorModal(i),
+authorModal(i),
+resolve_author_img(author_list[i, 'img']),
+author_list[i, 'name'],
+author_list[i, 'occupation'],
+author_list[i, 'affiliation'],
+author_list[i, 'url']
+)
   }
 
   modals <- paste(sub_modals, collapse = "\n")
@@ -316,9 +292,12 @@ modals))
 
 
 
-Dotto_sub_header <- function(metadata){
+Dotto_sub_header <- function(meta){
 
-  sub_lang <- rep(list(NA), length(metadata$tech))
+  tech <- meta$tech %>%
+    mutate(lang = as.character(lang))
+
+  sub_lang <- rep(list(NA), nrow(tech))
 
   for(i in 1:length(sub_lang)){
     sub_lang[[i]] <- sprintf('
@@ -327,10 +306,11 @@ class="%s"
 :class="{\'%s\': activeLang === \'%s\'}">
 </i>
 ',
-(metadata$tech[[i]])$lang,
-lang_icon_class((metadata$tech[[i]])$lang),
+tech[i, "lang"],
+lang_icon_class(tech[i, "lang"]),
 "text-warning",
-(metadata$tech[[i]])$lang)
+tech[i, "lang"]
+)
   }
 
   scol_1 <- sprintf('
@@ -364,11 +344,11 @@ style="margin-right: 7px; width: 146.3px">
 ')
 
 
-  # -------
-
-  return(sprintf('
+# -------------------------------------------------------------------
+return(sprintf('
 <section>
 <div id="dotto-row-info" class="d-flex">
+%s
 %s
 </div>
 </section>
@@ -378,19 +358,10 @@ scol_2))
 
 }
 
-# Main Dotto part -------------
+# Main Dotto part -----------------------------------------------------
 
-Dotto_main <- function(metadata, config_path) {
-  config_path <- paste0(getwd(),"/.json")
-  config <- jsonlite::fromJSON(config_path, simplifyDataFrame = T)
+Dotto_main <- function(dots) {
 
-  index_chunks <- which(names(config) %in% "dots_chunks")
-  meta <- config[-index_chunks]
-
-  # ---------
-  dots <- config[[index_chunks]] %>%
-    dplyr::bind_rows() %>%
-    tibble::tibble()
 
   num_lang <- dots %>%
     pull(lang) %>%
@@ -402,8 +373,8 @@ Dotto_main <- function(metadata, config_path) {
     unique() %>%
     length()
 
-  # dot sidebar ---------
-  scol <- rep(list(NA), num_dot)
+# dot sidebar -----------------------------------------------------------
+scol <- rep(list(NA), num_dot)
 
   for(i in 1:length(scol)){
     scol[[i]] <- sprintf('
@@ -415,76 +386,80 @@ class="btn dotto-main-dot-shape"
   }
 
 
-  # dot contents --------
-  dcol <- rep(list(NA), num_dot)
+# dot contents ----------------------------------------------------------
+dcol <- rep(list(NA), num_dot)
 
   for(i in 1:length(dcol)){
 
-    # dot=i: `instruction` section for all langs -----------------
-    sub_col_intro <- rep(list(NA), num_lang)
-    for(l in (dots %>% pull(lang) %>% unique())){
+# dot=i: `instruction` section for all langs -----------------
+  sub_col_intro <- rep(list(NA), num_lang)
+
+    for(l in 1:num_lang){
+
+      thisLang <- (dots %>% pull(lang) %>% unique())[l]
 
       dot_intro <- dots %>%
-        filter(dot == i, part == "instruction", lang == l) %>%
-        pull(html_chunk)
+        dplyr::filter(dot == i, part == "instruction", lang == thisLang) %>%
+        dplyr::pull(html_chunk)
 
-      if(is.null(dot_intro)){
-        dot_intro <- (dots %>%
-                        filter(dot == i, part == "instruction") %>%
-                        pull(html_chunk))[1]
+      if(length(dot_intro) == 0){
+        dot_intro <- ""
       }
 
-      sub_col_intro <- sprintf('
+      sub_col_intro[[l]] <- sprintf('
 <div v-if="activeLang === \'%s\'" class="mx-2">
 %s
 </div>
-', l, dot_intro)
+', thisLang, dot_intro)
 
     }
 
 
-    # dot=i: `code` section for all langs ------------------------
-    sub_col_code <- rep(list(NA), num_lang)
-    for(l in (dots %>% pull(lang) %>% unique())){
+# dot=i: `code` section for all langs ------------------------
+sub_col_code <- rep(list(NA), num_lang)
+
+   for(l in 1:num_lang){
+
+      thisLang <- (dots %>% pull(lang) %>% unique())[l]
 
       dot_code <- dots %>%
-        filter(dot == i, part == "code", lang == l) %>%
-        pull(html_chunk)
+        dplyr::filter(dot == i, part == "code", lang == thisLang) %>%
+        dplyr::pull(html_chunk)
 
-      if(is.null(dot_code)){
+      if(length(dot_code) == 0){
         dot_code <- ""
       }
 
-      sub_col_code <- sprintf('
+      sub_col_code[[l]] <- sprintf('
 <div v-if="activeLang === \'%s\'" class="mx-2">
 %s
 </div>
-',
-l,
-dot_code)
+', thisLang, dot_code)
 
     }
 
 
-    # dot=i: `result` section for all langs ---------------
-    sub_col_result <- rep(list(NA), num_lang)
-    for(l in (dots %>% pull(lang) %>% unique())){
+# dot=i: `result` section for all langs ---------------
+sub_col_result <- rep(list(NA), num_lang)
+
+
+  for(l in 1:num_lang){
+
+      thisLang <- (dots %>% pull(lang) %>% unique())[l]
 
       dot_result <- dots %>%
-        filter(dot == i, part == "result", lang == l) %>%
-        pull(html_chunk)
+        dplyr::filter(dot == i, part == "result", lang == thisLang) %>%
+        dplyr::pull(html_chunk)
 
-      if(is.null(dot_result)){
+      if(length(dot_result) == 0){
         dot_result <- ""
       }
 
-      sub_col_result <- sprintf('
+      sub_col_result[[l]] <- sprintf('
 <div v-if="activeLang === \'%s\'" class="mx-2">
 %s
 </div>
-',
-l,
-dot_result)
+', thisLang, dot_result)
 
     }
 
@@ -492,11 +467,13 @@ dot_result)
 
 
 
-    # Create the full dot ----------------------------------------
-    dcol[[i]] <- sprintf('
+# Create the full dot ----------------------------------------
+dcol[[i]] <- sprintf('
 <div v-if="activeMotto === \'%s\'"
 class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box dotto-main-intro">
 %s
+</div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
 <div class="box2 dotto-main dotto-main-codes">
@@ -516,12 +493,13 @@ paste(sub_col_intro, collapse = "\n"),
 paste(sub_col_code, collapse = "\n"),
 paste(sub_col_result, collapse = "\n"))
 
-  }
+
+}
 
 
 
-  # ----------
-  return(sprintf('
+# ------------------------------------------------------------
+return(sprintf('
 <section v-if="activeDotto === \'1\'"
 class="text-left d-flex flex-row flex-grow-1 flex-wrap" id="dotto-row-main">
 <div class="col-12 col-lg-1" id="dotto-main-dots">
@@ -538,10 +516,10 @@ paste(dcol, collapse = "\n")
 
 
 
-# Single Dotto footer ---------
-Dotto_footer <- function(metadata) {
+# Single Dotto footer ---------------------------------------
+Dotto_footer <- function(meta) {
 
-  sprintf('
+sprintf('
 <section id="dotto-footer">
 <div class="col-12 col-md-8">
 <div class="d-flex" id="dotto-row-lines">
@@ -556,9 +534,161 @@ Dotto_footer <- function(metadata) {
 </div>
 </section>
 ',
-discus_dotto())
+discus_Dotto(meta))
+
+}
+
+
+# Add a discus widget to the Dotto page
+discus_Dotto <- function(meta) {
+  # dir_name <- basename(getwd())
+  disc_codes <- sprintf('
+    <section class="mt-2 pt-2">
+    <div class="container">
+    <details class="comments-details">
+    <summary class="col-sm-12 alert alert-info">
+    <strong><i class="fas fa-comments fa-lg"></i>
+    <span class="disqus-comment-count" data-disqus-url="%s" data-disqus-identifier="%s"></span>
+    </strong>
+    <span class="pl-2">for this Dotto.</span>
+    <span>Write yours here!</span>
+    </summary>
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_config = function () {
+      this.page.url = "%s";
+      this.page.identifier = "%s";
+    };
+
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://datamotto-com.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
+</details>
+</div>
+</section>
+',
+glue::glue("https://datamotto.com/{meta$link}"),
+meta$dotto_id,
+glue::glue("https://datamotto.com/{meta$link}"),
+meta$dotto_id)
+
+  return(disc_codes)
+  # ---
+  # temp_file <- tempfile()
+  # con <- file(temp_file, open = "w", encoding = "UTF-8")
+  # xfun::write_utf8(disc_codes, con)
+  # close(con)
+  # return(temp_file)
+}
+
+
+
+#' Generate Dotto
+#'
+#' @description It generates Dotto page with all the DataMotto styles
+#'   from a config `.json` file
+#' @param Dotto_path the path of the Dotto `.Rmd` file
+generate_Dotto <- function(Dotto_path = NULL) {
+
+  if(is.null(Dotto_path)){
+    Dotto_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
+    if(length(Dotto_path) != 1){
+      stop("There is not a unique .Rmd file in the working directory. Explicitly provide the Dotto .Rmd path in the `Dotto_path` parameter.")
+    }
+  }
+
+  config_path <- paste0(dirname(Dotto_path),"/.json")
+  config <- jsonlite::fromJSON(config_path, simplifyDataFrame = T)
+
+  index_chunks <- which(names(config) %in% "dots_chunks")
+  meta <- config[-index_chunks]
+
+  dots <- config[[index_chunks]] %>%
+    dplyr::bind_rows() %>%
+    tibble::tibble()
+
+
+sprintf('
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+<title>Home</title>
+<link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Brands.css" />
+<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Free.css" />
+<link rel="stylesheet" href="../../../assets/css/icomoon.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
+<link rel="stylesheet" href="../../../assets/fonts/fontawesome-all.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/font-awesome.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/ionicons.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/fontawesome5-overrides.min.css" />
+<link rel="stylesheet" href="../../../assets/css/Footer-Basic.css" />
+<link rel="stylesheet" href="../../../assets/css/home-cards.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+<link rel="stylesheet" href="../../../assets/css/site.css" />
+<link rel="stylesheet" href="../../../assets/css/style.css" />
+<link rel="stylesheet" href="../../../assets/css/styles.css" />
+<link rel="stylesheet" href="../../../assets/css/Team-Boxed.css" />
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+<script src="../../../assets/js/vue.js"></script>
+</head>
+
+<body>
+<div class="d-flex flex-column" id="all_page">
+%s
+%s
+%s
+%s
+</div>
+<script src="../../../assets/js/vue.js"></script>
+<script src="../../../assets/js/post.js"></script>
+<script src="../../../assets/js/jquery.min.js"></script>
+<script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/bs-init.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="../../../assets/js/carts.js"></script>
+<script src="../../../assets/js/Index_page.js"></script>
+<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+</body>
+</html>
+',
+Dotto_top_header(meta),
+Dotto_sub_header(meta),
+Dotto_main(dots),
+Dotto_footer(meta))
 
 }
 
 
 
+# utility functions -------
+resolve_author_img <- function(img_path){
+  if(!is.null(img_path) && file.exists(img_path)){
+    return(img_path)
+  } else {
+    return("../../../assets/img/dotto.png")
+  }
+}
+
+
+authorModal <- function(i) {
+  if(i == 1){
+    return("authorOneModal")
+  }
+  if(i == 2){
+    return("authorTwoModal")
+  }
+  if(i == 3){
+    return("authorThreeModal")
+  }
+}

@@ -1,0 +1,727 @@
+/* ----- Pedram ---- */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.total-likes {
+  position: absolute;
+  top: 37px;
+  font-size: 15px;
+  left: -19px;
+  text-align: center;
+}
+
+.dm-posts h2 {
+  font-size: 17px;
+}
+
+.dm-posts-desc {
+  font-size: 11px;
+  color: gray;
+}
+
+.dm-posts-techs {
+  font-size: 12px;
+  color: #004464;
+}
+
+.dm-posts .badge {
+  font-size: 10px;
+}
+
+#dm-filter-menu {
+  background: #fbfbfb;
+  margin-left: 10px;
+  margin-top: 5px;
+  min-width: 300px;
+}
+
+.dm-posts-img {
+  height: 200px;
+  overflow: hidden;
+  line-height: 200px;
+}
+
+section#dm-splash, #dm-post-header {
+  background: #f1f4fd;
+}
+
+.dm-logo-dot {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* .dm-logo-dot:nth-child(1) {
+    background: #58b0d7;
+}
+
+.dm-logo-dot:nth-child(2) {
+    background: #fcb400;
+}
+
+.dm-logo-dot:nth-child(3) {
+    background: #df4897;
+} */
+
+#dm-logo span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 7px;
+}
+
+#dm-title h1 {
+  font-weight: bold;
+  font-size: 45px;
+  color: #1b4ea7;
+}
+
+#dm-title p {
+  text-align: justify;
+  font-size: 17px;
+  padding: 20px;
+  line-height: 30px;
+}
+
+.clear {
+  clear: both;
+}
+
+.gradient-button {
+  background: #509ef3;
+}
+
+nav#dm-nav ul li a {
+  text-decoration: none;
+  color: #1b4ea7;
+  transition: .3s all ease;
+}
+
+#dm-nav ul li a::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #58b0d7;
+  border-radius: 50%;
+  margin: auto;
+  transform: scale(0.1);
+  transition: .3s all ease;
+  margin-top: 5px;
+}
+
+#dm-nav ul li:hover a::after {
+  transform: scale(1.0);
+}
+
+#dm-nav ul li:hover a {
+  color: #58b0d7;
+}
+
+#dm-post-section {
+  background: #f1f4fd;
+}
+
+#github-star-section {
+  background: #edebff;
+}
+
+#github-star-section h2 {
+  color: #1c4ea7;
+}
+
+#dm-middle {
+  text-align: center;
+  font-size: 35px;
+  margin-top: 10px 0px;
+}
+
+section#dm-middle h2 {
+  color: #1b4ea7;
+  font-weight: bold;
+}
+
+footer#dm-footer {
+  background: white;
+}
+
+#dm-social a {
+  text-decoration: none;
+  color: #1b4ea7;
+  font-size: 20px;
+  margin: 0 5px 0 5px;
+  display: inline-block;
+  transition: .3s all ease;
+}
+
+#dm-social a:hover {
+  transform: scale(1.5);
+  color: gray;
+}
+
+#dm-copy {
+  color: gray;
+}
+
+section#dm-post h1 {
+  color: #1b4ea7;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#dm-techs {
+  font-size: 18px;
+  width: 35px;
+  height: 35px;
+  background: #364a63;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+}
+
+.dm-proj-r {
+  background: #509ef3;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 15px;
+  color: white;
+}
+
+button#dm-more-btn {
+  margin: auto;
+  margin-top: 30px;
+}
+
+button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
+  font-size: 17px;
+}
+
+.dm-posts .card {
+  transition: .3s all ease;
+  min-height: 100%;
+}
+
+.dm-posts-img > img {
+  max-height: 200px;
+}
+
+.dm-posts {
+  top: 0;
+  transition: .3s all ease;
+}
+
+.dm-posts:hover {
+  top: -15px;
+}
+
+@media all and (max-width: 576px) {
+  .dm-posts:hover {
+    top: 0;
+  }
+}
+
+.dm-posts:hover .card {
+  background-color: #fbfbfb;
+}
+
+.dottos {
+  background: #44475a !important;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  color: white;
+  line-height: 104px;
+  font-size: 40px;
+  position: relative;
+  margin: 5px;
+}
+
+.dottos i {
+  font-size: 45px!important;
+  position: relative;
+  top: 3px;
+}
+
+#dm-middle span {
+  background: #022126;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  right: 0;
+  line-height: 25px!important;
+}
+
+/*  */
+
+#dotto_circle {
+  content: "";
+  background: #dee2e6;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+
+#dotto > ul > li > .dotto-dots {
+  content: "";
+  background: #dee2e6;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+
+#dotto > ul > li.dotto-active .dotto-dots {
+  background: #58b0d7;
+}
+
+#dotto > ul > li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.dotto-container {
+  display: none;
+}
+
+#dotto > ul > li {
+  position: relative;
+  min-height: 80px;
+}
+
+#dotto {
+  position: relative;
+  margin-top: 65px;
+}
+
+#dotto > ul.hasDotto::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background: #58b0d7;
+  position: absolute;
+  left: 65px;
+  top: 50px;
+  z-index: -1;
+}
+
+/* #dotto li h2 {
+    position: absolute;
+    left: -110px;
+    font-size: 12px;
+    top: 50%;
+    width: 104px;
+    background: #cacaca;
+    color: white;
+    padding: 5px 17px 5px 5px;
+    border-radius: 5px;
+	transition: .3s all ease;
+} */
+
+#dotto li.dotto-active h2 {
+  background: #58b0d7;
+}
+
+.dotto-container li a {
+  border: none!important;
+  background-color: transparent!important;
+}
+
+.dotto-container ul {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+  border: none!important;
+}
+
+.dotto-container ul.nav li a.dot-li {
+  position: relative;
+  color: #c7c7c7;
+  cursor: pointer;
+}
+
+.dotto-container ul.nav li a.dot-li.active {
+  color: #444444;
+}
+
+/* dot background color */
+
+.dotto-container ul.nav li a.dot-li.active::after {
+  width: 18px;
+  height: 18px;
+  margin-top: 7px;
+}
+
+.dotto-container ul.nav li a.dot-li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 10px;
+  transition: .3s all ease;
+  cursor: pointer;
+}
+
+.dm-dot-icon {
+  width: 32px;
+  height: 32px;
+  padding: 3px;
+  margin-bottom: 5px;
+  margin-left: 4px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+}
+
+/* dot colors in Dotto page */
+
+.r-color {
+  background: #908bca;
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-R::after {
+  background: hsla(20 3, 69%, 58% ,1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-R.active::after {
+  background: hsla(203, 69%, 58% ,1);
+}
+
+.python-color {
+  background: #908bca;
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-python::after {
+  background: hsla(47, 88%, 47%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-python.active::after {
+  background: hsla(47, 88%, 47%, 1);
+}
+
+.julia-color {
+  background: #908bca;
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-julia::after {
+  background: hsla(280.5,37%,75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-julia.active::after {
+  background: hsla(280.5,37%,21.2%, 1);
+}
+
+.sql-color {
+  background: #908bca;
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-sql::after {
+  background: hsla(190, 100%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-sql.active::after {
+  background: hsla(190, 100%, 28%, 1);
+}
+
+.rcpp-color {
+  background: #908bca;
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-Rcpp::after {
+  background: hsla(215, 30%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-Rcpp.active::after {
+  background: hsla(215, 72%, 30%, 1);
+}
+
+.node-color {
+  background: #908bca;
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-node::after {
+  background: hsla(106, 30%,75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-node.active::after {
+  background: hsla(106, 29%, 52%, 1);
+}
+
+.bash-color {
+  background: #908bca;
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-bash::after {
+  background: hsla(195, 9%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-bash.active::after {
+  background: hsla(195, 9%, 27%, 1);
+}
+
+.js-color {
+  background: #908bca;
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-js::after {
+  background: hsla(53.7,95%,65.8%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-js.active::after {
+  background: hsla(53.7,95%,7.8%, 1);
+}
+
+.d3-color {
+  background: #908bca;
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-d3::after {
+  background: hsla(11, 30%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-d3.active::after {
+  background: hsla(11, 58%, 56%, 1);
+}
+
+.stan-color {
+  background: #908bca;
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-stan::after {
+  background: hsla(350, 100%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-stan.active::after {
+  background: hsla(350, 100%, 34%, 1);
+}
+
+.others-color {
+  background: hsla(0, 0%, 43.1%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-others::after {
+  background: hsla(0, 30%, 75%, 1);
+}
+
+.dotto-container ul.nav li a.dot-li.dot-li-others.active::after {
+  background: hsla(0, 0%, 43.1%, 1);
+}
+
+.dotto-container > ul::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: -5px;
+  top: 47px;
+  background: #58b0d7;
+  height: 1px;
+  z-index: -1;
+}
+
+.dm-author a {
+  color: gray;
+}
+
+.dm-rep {
+  position: absolute;
+  left: -45px;
+  top: 34px;
+  font-size: 30px;
+}
+
+.dm-rep-btn {
+  color: gray;
+  cursor: pointer;
+  transition: .3s all ease;
+  display: none;
+}
+
+.dm-rep-btn-loading.spin {
+  font-size: 14px;
+  pointer-events: none;
+  color: #afafaf;
+}
+
+.dm-rep-btn.liked {
+  color: #58b0d7;
+}
+
+section#dm-post {
+}
+
+#dotto-content h2 {
+  font-size: 17px;
+}
+
+#dm-filter-menu label {
+  cursor: pointer;
+}
+
+#dm-logo {
+  text-decoration: none;
+}
+
+.dm-rep-btn.btn-disabled {
+  pointer-events: none;
+}
+
+nav#dm-nav > ul {
+  display: none;
+}
+
+div#dm-mobile-content {
+  left: unset!important;
+  right: 0px;
+  top: 40px!important;
+  transform: unset!important;
+}
+
+.dm-dot-content {
+  display: none;
+  padding: 30px 15px 15px 15px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.dm-dot-content.active {
+  display: block;
+}
+
+@media all and (min-width: 576px) {
+  #dm-mo-nav {
+    display: none;
+  }
+}
+
+@media all and (max-width: 576px) {
+  #dm-mo-nav-full {
+    display: none;
+  }
+}
+
+@media all and (max-width: 576px) {
+  #dm-title h1 {
+    font-size: 30px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  nav#dm-nav {
+    float: none;
+    float: right!important;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .dottos {
+    display: block;
+    margin: auto;
+  }
+}
+
+@media all and (max-width: 576px) {
+  #dm-middle span {
+    top: -17px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  button#get-started {
+    display: none;
+  }
+}
+
+@media all and (max-width: 576px) {
+  #dotto {
+    margin-top: 0px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .dotto-container > ul {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    white-space: nowrap;
+    overflow: -moz-scrollbars-none;
+    padding-bottom: 25px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .dotto-container > ul > li {
+    display: inline-block;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .dotto-container > ul::after {
+    bottom: 15px;
+    width: 200%;
+  }
+}
+
+.first-logo {
+  background-color: #03a9f4;
+}
+
+.second-logo {
+  background-color: #e1b40e;
+}
+
+.third-logo {
+  background-color: #9557b2;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.navbar-icon-color {
+  color: white;
+  font-size: 22px;
+}
+
+.nav-link {
+}
+
+#navcol-1 {
+  font-size: 18px;
+}
+
+.navbar-middle-items {
+  color: white!important;
+}
+
+.home-support-us-cards {
+  font-size: 20px;
+}
+

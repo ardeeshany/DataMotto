@@ -74,7 +74,7 @@ config_Dotto <- function(rmd_path) {
   return(c(list(file_name = file_name,
                 dir_name = dir_name,
                 cover_image_url = resolve_cover_image(rmd_path),
-                link = glue::glue("./posts/Dotto/{dir_name}/index.html"),
+                link = glue::glue("posts/Dotto/{dir_name}/index.html"),
                 base_url = rmarkdown::site_config(here::here())$base_url,
                 social_networks_datamotto = rmarkdown::site_config(here::here())$social_networks),
            list_ids_from_yml,

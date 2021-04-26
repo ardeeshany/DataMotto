@@ -6,14 +6,14 @@ author:
   - name: "Ardalan Mirshani"
     occupation: "Sr Expert Data Scientist"
     affiliation: "Novartis"
-    site: "mirshani.com"
-    img_url: "files/ardalan.png"
+    url: "mirshani.com"
+    img: "files/ardalan.png"
     lang: "R"
   - name: "Amin Zamani"
     occupation: "Software developer"
     affiliation: "DataMotto"
-    site: "Aminzamani.com"
-    img_url: "files/amin.jpg"
+    url: "Aminzamani.com"
+    img: "files/amin.jpg"
     lang: "python"
 tech:
   - lang: R
@@ -27,7 +27,9 @@ categories: ["Importing", "Cleaning", "Manipulation", "Visualization", "Reportin
 applications: ["Finance", "Pharma"]
 cover_image: "https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png"
 slug: "analyzing-palmer-penguins"
-output: DataMotto::Make_Dotto
+output: 
+  html_document:
+    self_contained: false
 ---
 
 ```{r DataMotto, echo=FALSE}
@@ -43,16 +45,15 @@ knitr::opts_chunk$set(echo = T,
 <!-- Dot 1, lang: R ------------------------------------------------>
 
 ```{block, Dot = 1, part = "Instruction", lang = 'r'}
-
-## R
-
 The palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. Here we want to check the missing values
 
-## Instruction
-library(palmerpenguins)
-library(ggplot2)
-library(dplyr)
-library(DT)
+- library(palmerpenguins)
+- library(ggplot2)
+- library(dplyr)
+- library(DT)
+
+More information.
+
 ```
 
 
@@ -107,12 +108,15 @@ ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 
 ```{block, Dot = 1, part = "Instruction", lang = 'python'}
 
-## Python
+Python. The palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. Here we want to check the missing values
 
-The palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. These data were
+- library(palmerpenguins)
+- library(ggplot2)
+- library(dplyr)
+- library(DT)
 
-## Instruction
-package `pandas`
+More information.
+
 ```
 
 
