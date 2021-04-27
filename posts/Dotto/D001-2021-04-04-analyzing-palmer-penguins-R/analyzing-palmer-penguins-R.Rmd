@@ -16,7 +16,7 @@ author:
     img: "files/amin.jpg"
     lang: "python"
 tech:
-  - lang: R
+  - lang: r
     pkgs: ["ggplot2", "dplyr"]
   - lang: python
     pkgs: ["pandas"]
@@ -27,13 +27,11 @@ categories: ["Importing", "Cleaning", "Manipulation", "Visualization", "Reportin
 applications: ["Finance", "Pharma"]
 cover_image: "https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png"
 slug: "analyzing-palmer-penguins"
-output: 
-  html_document:
-    self_contained: false
+output: DataMotto::Dotto
 ---
 
 ```{r DataMotto, echo=FALSE}
-DataMotto::use_Dotto(rmarkdown::metadata)
+DataMotto::use_Dotto()
 ```
 
 ```{r set-up, include=F}

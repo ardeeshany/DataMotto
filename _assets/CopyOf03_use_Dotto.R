@@ -16,7 +16,7 @@
 #'\dontrun{
 #' DataMotto::use_Dotto()
 #'}
-use_Dotto <- function() {
+use_Dotto <- function(metadata) {
 
   #default_engines <- c("R", "python", "julia", "sql", "bash", "js", "node", "d3", "Rcpp", "stan")
 
@@ -25,14 +25,6 @@ use_Dotto <- function() {
   #                       Dot_color = NULL,
   #                       Dot_open = T,
   #                       Dot_close = T)
-
-  metadata <- config_Dotto(list.files(getwd(), pattern = "\\.Rmd$", full.names = T)) %>%
-    jsonlite::toJSON(auto_unbox = F,
-                     pretty = T)
-  con <- file(".json", open = "w", encoding = "UTF-8")
-  xfun::write_utf8(text = metadata, con = con)
-  close(con)
-  meta <- jsonlite::fromJSON(".json", simplifyDataFrame = T)
 
   knitr::knit_hooks$set(Dot = function(before, options){
     if(before){
@@ -64,10 +56,9 @@ use_Dotto <- function() {
   }}
   )
 
-  knitr::asis_output(htmltools::htmlPreserve(paste(Dotto_top_header(meta),
-                           Dotto_sub_header(meta), collapse = "\n ")))
   #knitr::asis_output(Dotto_banner(metadata))
 }
+
 
 
 

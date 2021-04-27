@@ -27,7 +27,6 @@ Dotto <- function(fig_width = 6,
                        pandoc_args = NULL,
                        md_extensions = "-autolink_bare_uris",
                        self_contained = FALSE,
-                       mathjax = TRUE,
                        in_header = c(social_card_protocol_dotto()$open_graph,
                                      social_card_protocol_dotto()$twitter),
                        before_body = NULL,
@@ -37,37 +36,27 @@ Dotto <- function(fig_width = 6,
                        #                here::here("resources/footer.html")),
                        ...) {
 
-  html_document(#template = system.file("templates/Dotto.html", package = "DataMotto"),
-                template = here::here("inst/templates/Dotto.html"),
-                includes = list(in_header = in_header,
-                                before_body = before_body,
-                                after_body = after_body),
-                highlight = highlight,
-                mathjax = mathjax,
-                self_contained = self_contained)
-
-
-  # default_template(
-  #   template_name = "Dotto",
-  #   template_path = "templates/Dotto.html",
-  #   template_dependencies = list(
-  #     Dotto_dependency()
-  #   ),
-  #   pandoc_args = pandoc_args,
-  #   fig_width = fig_width,
-  #   fig_height = fig_height,
-  #   fig_caption = fig_caption,
-  #   highlight = highlight,
-  #   lightbox = lightbox,
-  #   thumbnails = thumbnails,
-  #   md_extensions = md_extensions,
-  #   self_contained = self_contained,
-  #   in_header = in_header,
-  #   before_body = before_body,
-  #   after_body = after_body,
-  #   # mathjax = mathjax,
-  #   ...
-  # )
+  default_template(
+    template_name = "Dotto",
+    template_path = "templates/Dotto.html",
+    template_dependencies = list(
+      Dotto_dependency()
+    ),
+    pandoc_args = pandoc_args,
+    fig_width = fig_width,
+    fig_height = fig_height,
+    fig_caption = fig_caption,
+    highlight = highlight,
+    lightbox = lightbox,
+    thumbnails = thumbnails,
+    md_extensions = md_extensions,
+    self_contained = self_contained,
+    in_header = in_header,
+    before_body = before_body,
+    after_body = after_body,
+    # mathjax = mathjax,
+    ...
+  )
 }
 
 # Dependency added manually (not from a library)
@@ -310,20 +299,19 @@ Dotto_sub_header <- function(meta){
 
   sub_lang <- rep(list(NA), nrow(tech))
 
-for(i in 1:length(sub_lang)){
-sub_lang[[i]] <- sprintf("
-<div>
-  <i type=\"button\" @click=\"activeLang = \'%s\'\"
-class=\"%s\"
-:class=\"{\'text-warning\': activeLang === \'%s\'}\" >
-  </i>
-</div>
-",
+  for(i in 1:length(sub_lang)){
+    sub_lang[[i]] <- sprintf('
+<i type="button" @click="activeLang = \'%s\'"
+class="%s"
+:class="{\'%s\': activeLang === \'%s\'}">
+</i>
+',
 tech[i, "lang"],
 lang_icon_class(tech[i, "lang"]),
+"text-warning",
 tech[i, "lang"]
 )
-}
+  }
 
   scol_1 <- sprintf('
 <div class="col-4 d-flex flex-grow-0 justify-content-start align-items-center align-items-xl-center">
