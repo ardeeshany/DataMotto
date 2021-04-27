@@ -64,9 +64,9 @@ use_Dotto <- function() {
   }}
   )
 
-  knitr::asis_output(htmltools::htmlPreserve(paste(Dotto_top_header(meta),
-                           Dotto_sub_header(meta), collapse = "\n ")))
-  #knitr::asis_output(Dotto_banner(metadata))
+  # knitr::asis_output(htmltools::htmlPreserve(paste(Dotto_top_header(meta),
+  #                          Dotto_sub_header(meta), collapse = "\n ")))
+
 }
 
 

@@ -30,7 +30,8 @@ Dotto <- function(fig_width = 6,
                        mathjax = TRUE,
                        in_header = c(social_card_protocol_dotto()$open_graph,
                                      social_card_protocol_dotto()$twitter),
-                       before_body = NULL,
+                       before_body = c(Dotto_top_header(),
+                                       Dotto_sub_header()),
                        #before_body = here::here("resources/header_post.html"),
                        after_body = Dotto_footer(),
                        # after_body = c(discus_dotto(),
@@ -170,7 +171,12 @@ Make_Dotto <- function(Dotto_path = NULL){
 #                                                                              #
 ################################################################################
 
-Dotto_top_header <- function(meta) {
+Dotto_top_header <- function(meta = NULL) {
+
+  if(is.null(meta)){
+    config_path <- paste0(getwd(), "/.json")
+    meta <- jsonlite::fromJSON(config_path, simplifyDataFrame = T)
+  }
 
   # Datamotto logo part ------------------------------------
 col_1 <- sprintf('
@@ -281,8 +287,7 @@ author_list[i, 'url']
 
   modals <- paste(sub_modals, collapse = "\n")
 
-  return(sprintf(
-    '
+top_header <- sprintf('
 <section id="dotto-row-header">
 <div class="row dotto-header">
 %s
@@ -297,13 +302,25 @@ col_1,
 col_2,
 col_3,
 col_4,
-modals))
+modals)
+
+
+temp_file <- tempfile()
+con <- file(temp_file, open = "w", encoding = "UTF-8")
+xfun::write_utf8(top_header, con)
+close(con)
+return(temp_file)
 
 }
 
 
 
-Dotto_sub_header <- function(meta){
+Dotto_sub_header <- function(meta = NULL){
+
+  if(is.null(meta)){
+    config_path <- paste0(getwd(), "/.json")
+    meta <- jsonlite::fromJSON(config_path, simplifyDataFrame = T)
+  }
 
   tech <- meta$tech %>%
     mutate(lang = as.character(lang))
@@ -357,7 +374,7 @@ style="margin-right: 7px; width: 146.3px">
 
 
 # -------------------------------------------------------------------
-return(sprintf('
+sub_header <- sprintf('
 <section>
 <div id="dotto-row-info" class="d-flex">
 %s
@@ -366,7 +383,13 @@ return(sprintf('
 </section>
 ',
 scol_1,
-scol_2))
+scol_2)
+
+temp_file <- tempfile()
+con <- file(temp_file, open = "w", encoding = "UTF-8")
+xfun::write_utf8(sub_header, con)
+close(con)
+return(temp_file)
 
 }
 
