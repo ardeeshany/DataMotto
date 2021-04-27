@@ -32,7 +32,7 @@ Dotto <- function(fig_width = 6,
                                      social_card_protocol_dotto()$twitter),
                        before_body = NULL,
                        #before_body = here::here("resources/header_post.html"),
-                       after_body = NULL,
+                       after_body = Dotto_footer(),
                        # after_body = c(discus_dotto(),
                        #                here::here("resources/footer.html")),
                        ...) {
@@ -325,7 +325,7 @@ tech[i, "lang"]
 )
 }
 
-  scol_1 <- sprintf('
+scol_1 <- sprintf('
 <div class="col-4 d-flex flex-grow-0 justify-content-start align-items-center align-items-xl-center">
 <div class="d-flex justify-content-around align-items-center bg-social-icons">
 %s
@@ -529,9 +529,14 @@ paste(dcol, collapse = "\n")
 
 
 # Single Dotto footer ---------------------------------------
-Dotto_footer <- function(meta) {
+Dotto_footer <- function(meta = NULL) {
 
-sprintf('
+  if(is.null(meta)){
+    config_path <- paste0(getwd(), "/.json")
+    meta <- jsonlite::fromJSON(config_path, simplifyDataFrame = T)
+  }
+
+footer <- sprintf('
 <section id="dotto-footer">
 <div class="col-12 col-md-8">
 <div class="d-flex" id="dotto-row-lines">
@@ -548,6 +553,13 @@ sprintf('
 ',
 discus_Dotto(meta))
 
+temp_file <- tempfile()
+con <- file(temp_file, open = "w", encoding = "UTF-8")
+xfun::write_utf8(footer, con)
+close(con)
+return(temp_file)
+
+
 }
 
 
@@ -555,29 +567,29 @@ discus_Dotto(meta))
 discus_Dotto <- function(meta) {
   # dir_name <- basename(getwd())
   disc_codes <- sprintf('
-    <section class="mt-2 pt-2">
-    <div class="container">
-    <details class="comments-details">
-    <summary class="col-sm-12 alert alert-info">
-    <strong><i class="fas fa-comments fa-lg"></i>
-    <span class="disqus-comment-count" data-disqus-url="%s" data-disqus-identifier="%s"></span>
-    </strong>
-    <span class="pl-2">for this Dotto.</span>
-    <span>Write yours here!</span>
-    </summary>
-    <div id="disqus_thread"></div>
-    <script>
-    var disqus_config = function () {
-      this.page.url = "%s";
-      this.page.identifier = "%s";
-    };
+<section class="mt-2 pt-2">
+<div class="container">
+<details class="comments-details">
+<summary class="col-sm-12 alert alert-info">
+<strong><i class="fas fa-comments fa-lg"></i>
+<span class="disqus-comment-count" data-disqus-url="%s" data-disqus-identifier="%s"></span>
+</strong>
+<span class="pl-2">for this Dotto.</span>
+<span>Write yours here!</span>
+</summary>
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+  this.page.url = "%s";
+  this.page.identifier = "%s";
+};
 
-  (function() {
-    var d = document, s = d.createElement("script");
-    s.src = "https://datamotto-com.disqus.com/embed.js";
-    s.setAttribute("data-timestamp", +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
+(function() {
+var d = document, s = d.createElement("script");
+s.src = "https://datamotto-com.disqus.com/embed.js";
+s.setAttribute("data-timestamp", +new Date());
+(d.head || d.body).appendChild(s);
+})();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
@@ -591,12 +603,6 @@ glue::glue("https://datamotto.com/{meta$link}"),
 meta$dotto_id)
 
   return(disc_codes)
-  # ---
-  # temp_file <- tempfile()
-  # con <- file(temp_file, open = "w", encoding = "UTF-8")
-  # xfun::write_utf8(disc_codes, con)
-  # close(con)
-  # return(temp_file)
 }
 
 
