@@ -1,0 +1,101 @@
+---
+title: "Coffee Market in Paris"
+description: |
+  A short description of the Dotto.
+author:
+  - name: "Audrey Hepburn"
+    occupation: "Actress"
+    affiliation: "Warner Brothers"
+    url: "https://en.wikipedia.org/wiki/Audrey_Hepburn"
+    img: "audrey.jpeg"
+    lang: ["r", "julia"]
+tech:
+  - lang: r
+    pkgs: "dplyr"
+  - lang: "julia"
+    pkgs: NULL
+date:
+  created: "2021-04-28"
+  last_updated: "2021-04-28"
+categories: "visualization"
+applications: "cinema"
+cover_image: NULL
+slug: "coffee-market-in-paris"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto()
+```
+
+```{r set-up, include=F}
+knitr::opts_chunk$set(echo = T,
+                      eval = F)
+```
+
+<!-- Dot 1, lang: R ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = 'r'}
+Audrey Hepburn was born as Audrey Kathleen Ruston on May 4, 1929 in Ixelles, Brussels, Belgium. Her mother, Baroness Ella Van Heemstra, was a Dutch noblewoman, while her father, Joseph Victor Anthony Ruston, was born in Úzice, Bohemia, to English and Austrian parents. After her parents' divorce, Audrey went to London with her mother where she went
+```
+
+```{block, Dot = 1, part = "Instruction", lang = 'julia'}
+Here is the sample intro
+Here is the sample intro
+Here is the sample intro
+```
+
+```{r, echo = T, eval = F, Dot = 1, part = "Code"}
+plot(cars)
+```
+
+```{julia,  echo = T, eval = F, Dot = 1, part = "Code"}
+using Plots
+x = 1:10; y = rand(10); # These are the plotting data
+plot(x, y)
+```
+
+
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
+plot(cars)
+```
+
+```{julia, Dot = 1, part = "Result", echo = F, eval = T}
+using Plots
+x = 1:10; y = rand(10); # These are the plotting data
+plot(x, y)
+```
+
+<!-- Dot 2, lang: R ------------------------------------------------>
+
+```{block, Dot = 2, part = "Instruction", lang = 'r'}
+Audrey Hepburn was a British actress and humanitarian. Recognised as both a film and fashion icon, she was ranked by the American Film Institute as the third-greatest female screen legend from the Golden Age of Hollywood, and was inducted into the International Best Dressed List Hall of Fame.
+```
+
+```{block, Dot = 2, part = "Instruction", lang = 'julia'}
+Audrey Hepburn was a British actress and humanitarian. Recognised as both a film and fashion icon, she was ranked by the American Film Institute as the third-greatest female screen legend from the Golden Age of Hollywood, and was inducted into the International Best Dressed List Hall of Fame.
+```
+
+```{r, echo = T, eval = F, Dot = 2, part = "Code"}
+LETTERS[1:20]
+```
+
+```{julia,  echo = T, eval = F, Dot = 2, part = "Code"}
+using Plots
+x = 1:20; y = rand(20); # These are the plotting data
+plot(x, y)
+```
+
+
+```{r, Dot = 2, part = "Result", echo = F, eval = T}
+LETTERS[1:20]
+```
+
+```{julia, Dot = 2, part = "Result", echo = F, eval = T}
+using Plots
+x = 1:20; y = rand(20); # These are the plotting data
+plot(x, y)
+```
+
+
+

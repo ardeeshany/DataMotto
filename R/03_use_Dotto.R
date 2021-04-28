@@ -306,6 +306,8 @@ lang_icon_class <- function(lang, full_name = F) {
     icon <- "fab fa-python"
   } else if(tolower(lang) == "sql"){
     icon <- "icon-file-sql"
+  } else {
+    icon <- "fas fa-database"
   }
   return(icon)
 }

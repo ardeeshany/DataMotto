@@ -1,0 +1,45 @@
+{
+  "file_name": ["coffee-market-in-paris"],
+  "dir_name": ["D002-2021-04-28-coffee-market-in-paris"],
+  "cover_image_url": ["resources/images/default_dotto.jpg"],
+  "link": ["posts/Dotto/D002-2021-04-28-coffee-market-in-paris/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [2],
+  "dotto_label": ["D002"],
+  "dotto_id": ["3cec3bca-a81d-11eb-b8a7-acbc32baed85"],
+  "title": ["Coffee Market in Paris"],
+  "description": ["A short description of the Dotto.\n"],
+  "author": [
+    {
+      "name": ["Audrey Hepburn"],
+      "occupation": ["Actress"],
+      "affiliation": ["Warner Brothers"],
+      "url": ["https://en.wikipedia.org/wiki/Audrey_Hepburn"],
+      "img": ["audrey.jpeg"],
+      "lang": ["r", "julia"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": ["dplyr"]
+    },
+    {
+      "lang": ["julia"],
+      "pkgs": {}
+    }
+  ],
+  "date": {
+    "created": ["2021-04-28"],
+    "last_updated": ["2021-04-28"]
+  },
+  "categories": ["visualization"],
+  "applications": ["cinema"],
+  "cover_image": {},
+  "slug": ["coffee-market-in-paris"],
+  "output": ["DataMotto::Dotto"]
+}

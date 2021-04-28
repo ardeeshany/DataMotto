@@ -713,12 +713,36 @@ Dotto_footer(meta))
 
 
 # utility functions -------
-resolve_author_img <- function(img_path){
-  if(!is.null(img_path) && file.exists(img_path)){
-    return(img_path)
-  } else {
-    return("../../../assets/img/dotto.png")
+resolve_author_img <- function(img_path, rmd_path = NULL, default_img_path = "../../../assets/img/dotto.png"){
+
+  if(is.null(rmd_path)){
+    rmd_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
+    if(length(rmd_path) != 1){
+      stop("there is not a unique Rmd file in this path!")
+    }
   }
+
+  rmd_name <- stringr::str_remove(basename(rmd_path), pattern = "\\.Rmd$")
+  rmd_folder <- basename(dirname(rmd_path))
+  image_path <- glue::glue("{dirname(rmd_path)}/{rmd_name}_files/figure-html")
+  list_images <- list.files(image_path, full.names = F)
+
+  if(is.null(img_path)){
+    selected_image <- default_img_path
+  } else if((dirname(img_path) == ".") && file.exists(glue::glue("{image_path}/{img_path}"))) {
+    selected_image <- glue::glue("./posts/Dotto/{rmd_folder}/{rmd_name}_files/figure-html/{img_path}")
+  } else if(tryCatch(httr::GET(img_path),
+                     error = function(e) list(status_code = 404))$status_code == 200){
+    selected_image <- img_path
+  } else {
+    selected_image <- default_img_path
+  }
+  return(selected_image)
+  # if(!is.null(img_path) && file.exists(img_path)){
+  #   return(img_path)
+  # } else {
+  #   return("../../../assets/img/dotto.png")
+  # }
 }
 
 
