@@ -24,7 +24,7 @@
       "affiliation": ["Novartis"],
       "url": ["mirshani.com"],
       "img": ["files/ardalan.png"],
-      "lang": ["R"]
+      "lang": ["r"]
     },
     {
       "name": ["Amin Zamani"],
@@ -32,7 +32,7 @@
       "affiliation": ["DataMotto"],
       "url": ["Aminzamani.com"],
       "img": ["files/amin.jpg"],
-      "lang": ["python"]
+      "lang": ["python", "julia"]
     }
   ],
   "tech": [

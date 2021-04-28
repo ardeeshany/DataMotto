@@ -32,10 +32,7 @@ Dotto <- function(fig_width = 6,
                                      social_card_protocol_dotto()$twitter),
                        before_body = c(Dotto_top_header(),
                                        Dotto_sub_header()),
-                       #before_body = here::here("resources/header_post.html"),
                        after_body = Dotto_footer(),
-                       # after_body = c(discus_dotto(),
-                       #                here::here("resources/footer.html")),
                        ...) {
 
   html_document(#template = system.file("templates/Dotto.html", package = "DataMotto"),
@@ -72,17 +69,17 @@ Dotto <- function(fig_width = 6,
 }
 
 # Dependency added manually (not from a library)
-Dotto_dependency <- function() {
-  htmltools::htmlDependency(name = "Dotto",
-                            version = "0.1.0",
-                            src = system.file("templates/DataMotto", package = "DataMotto"),
-                            head = list(paste0(
-                              '<link rel="shortcut icon" href="../../',rmarkdown::site_config(input = here::here())$favicon,'">'
-                            )),
-                            script = c("Dotto.js"),
-                            stylesheet = "site.css",
-                            all_files = F)
-}
+# Dotto_dependency <- function() {
+#   htmltools::htmlDependency(name = "Dotto",
+#                             version = "0.1.0",
+#                             src = system.file("templates/DataMotto", package = "DataMotto"),
+#                             head = list(paste0(
+#                               '<link rel="shortcut icon" href="../../',rmarkdown::site_config(input = here::here())$favicon,'">'
+#                             )),
+#                             script = c("Dotto.js"),
+#                             stylesheet = "site.css",
+#                             all_files = F)
+# }
 
 # Open Graph Protocol
 social_card_protocol_dotto <- function() {
@@ -135,29 +132,29 @@ social_card_protocol_dotto <- function() {
 
 
 
-Make_Dotto <- function(Dotto_path = NULL){
-
-  if(is.null(Dotto_path)){
-    Dotto_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
-    if(length(Dotto_path) != 1){
-      stop("There is not a unique Dotto. Provide a path into `Dotto_path`.")
-    }
-  }
-
-  Dotto_folder <- dirname(Dotto_path)
-  rmarkdown::render(Dotto_path,
-                    html_document(self_contained = F))
-  con <- file(paste0(Dotto_folder,"/.json"), open = "w", encoding = "UTF-8")
-  xfun::write_utf8(Config_Dotto_to_json(Dotto_folder), con = con)
-  close(con)
-  #DataMotto::Dotto()
-  generated_Dotto <- generate_Dotto(Dotto_path)
-  print(generated_Dotto)
-  con <- file(paste0(Dotto_folder,"/index.html"), open = "w", encoding = "UTF-8")
-  xfun::write_utf8(generated_Dotto, con = con)
-  close(con)
-  utils::browseURL(paste0(Dotto_folder,"/index.html"))
-}
+# Make_Dotto <- function(Dotto_path = NULL){
+#
+#   if(is.null(Dotto_path)){
+#     Dotto_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
+#     if(length(Dotto_path) != 1){
+#       stop("There is not a unique Dotto. Provide a path into `Dotto_path`.")
+#     }
+#   }
+#
+#   Dotto_folder <- dirname(Dotto_path)
+#   rmarkdown::render(Dotto_path,
+#                     html_document(self_contained = F))
+#   con <- file(paste0(Dotto_folder,"/.json"), open = "w", encoding = "UTF-8")
+#   xfun::write_utf8(Config_Dotto_to_json(Dotto_folder), con = con)
+#   close(con)
+#   #DataMotto::Dotto()
+#   generated_Dotto <- generate_Dotto(Dotto_path)
+#   print(generated_Dotto)
+#   con <- file(paste0(Dotto_folder,"/index.html"), open = "w", encoding = "UTF-8")
+#   xfun::write_utf8(generated_Dotto, con = con)
+#   close(con)
+#   utils::browseURL(paste0(Dotto_folder,"/index.html"))
+# }
 
 
 
@@ -221,7 +218,7 @@ meta$dotto_id)
 
   # Authors -----------------------------------------------------------
   author_list <- meta$author %>%
-    mutate_all(~as.character(.))
+    mutate_at(vars(-"lang"),~as.character(.))
 
   sub_col_4 <- rep(list(NA), nrow(author_list))
   for(i in 1:nrow(author_list)){
@@ -230,7 +227,7 @@ meta$dotto_id)
 <div class="row">
 <div @click="%s = true" type="button"
 class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center dotto-header-user-icon">
-<img class="img-fluid user-image border-warning %s" src="%s" />
+<img class="img-fluid user-image %s" src="%s" />
 </div>
 </div>
 <h6 class="d-flex justify-content-end dotto-header-user-name">
@@ -239,7 +236,7 @@ class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-
 </div>
 ',
 authorModal(i),
-author_list[i, 'lang'],
+paste0("border-", lang_color(author_list[i, 'lang'])),
 resolve_author_img(author_list[i, 'img']),
 author_list[i, 'name']
 )
@@ -265,9 +262,11 @@ author_list[i, 'name']
 <h5 class="card-title mb-0">%s</h5>
 <p class="card-text mb-0">%s</p>
 <p class="card-text mb-0">%s</p>
-<p class="card-text">
-<small class="text-muted">%s</small>
+<p class="card-text mb-0">
+<a href="%s" target="_blank"><small class="text-muted mb-0">%s</small></a>
 </p>
+<hr class="mt-1 mb-1">
+<small class="card-text text-muted mb-0">Author: %s</small>
 </div>
 </div>
 </div>
@@ -281,7 +280,9 @@ resolve_author_img(author_list[i, 'img']),
 author_list[i, 'name'],
 author_list[i, 'occupation'],
 author_list[i, 'affiliation'],
-author_list[i, 'url']
+resolve_url(author_list[i, 'url']),
+resolve_url(author_list[i, 'url']),
+paste(author_list[[i, 'lang']], collapse = ", ")
 )
   }
 
@@ -332,12 +333,13 @@ sub_lang[[i]] <- sprintf("
 <div>
   <i type=\"button\" @click=\"activeLang = \'%s\'\"
 class=\"%s\"
-:class=\"{\'text-warning\': activeLang === \'%s\'}\" >
+:class=\"{\'%s\': activeLang === \'%s\'}\" >
   </i>
 </div>
 ",
 tech[i, "lang"],
 lang_icon_class(tech[i, "lang"]),
+paste0("text-", lang_color(tech[i, "lang"])),
 tech[i, "lang"]
 )
 }
@@ -590,7 +592,6 @@ return(temp_file)
 discus_Dotto <- function(meta) {
   # dir_name <- basename(getwd())
   disc_codes <- sprintf('
-<section class="mt-2 pt-2">
 <div class="container">
 <details class="comments-details">
 <summary class="col-sm-12 alert alert-info">
@@ -618,7 +619,6 @@ s.setAttribute("data-timestamp", +new Date());
 <script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
 </details>
 </div>
-</section>
 ',
 glue::glue("https://datamotto.com/{meta$link}"),
 meta$dotto_id,
@@ -731,5 +731,22 @@ authorModal <- function(i) {
   }
   if(i == 3){
     return("authorThreeModal")
+  }
+}
+
+
+lang_color = function(lang) {
+  if("r" %in% tolower(lang)){
+    return("primary")
+  } else if("python" %in% tolower(lang)){
+    return("warning")
+  } else if("julia" %in% tolower(lang)) {
+    return("danger")
+  } else if("sql" %in% tolower(lang)) {
+    return("dark")
+  } else if("node" %in% tolower(lang)) {
+    return("info")
+  } else {
+    return("light")
   }
 }

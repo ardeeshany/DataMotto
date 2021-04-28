@@ -8,13 +8,13 @@ author:
     affiliation: "Novartis"
     url: "mirshani.com"
     img: "files/ardalan.png"
-    lang: "R"
+    lang: "r"
   - name: "Amin Zamani"
     occupation: "Software developer"
     affiliation: "DataMotto"
     url: "Aminzamani.com"
     img: "files/amin.jpg"
-    lang: "python"
+    lang: ["python", "julia"]
 tech:
   - lang: r
     pkgs: ["ggplot2", "dplyr"]
@@ -30,7 +30,7 @@ slug: "analyzing-palmer-penguins"
 output: DataMotto::Dotto
 ---
 
-```{r DataMotto, echo=FALSE}
+```{r DataMotto, echo=F}
 DataMotto::use_Dotto()
 ```
 
@@ -43,7 +43,20 @@ knitr::opts_chunk$set(echo = T,
 <!-- Dot 1, lang: R ------------------------------------------------>
 
 ```{block, Dot = 1, part = "Instruction", lang = 'r'}
-The palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. Here we want to check the missing values
+R ... The palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. Here we want to check the missing values
+
+- library(palmerpenguins)
+- library(ggplot2)
+- library(dplyr)
+- library(DT)
+
+More information.
+
+```
+
+```{block, Dot = 1, part = "Instruction", lang = 'python'}
+
+Python. The palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. Here we want to check the missing values
 
 - library(palmerpenguins)
 - library(ggplot2)
@@ -76,6 +89,9 @@ ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
 
+
+
+
 ```{r, Dot = 1, part = "Result", echo = F, eval = T}
 library(palmerpenguins)
 library(ggplot2)
@@ -102,31 +118,6 @@ ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 ```
 
 
-<!-- Dot 1, lang: python ------------------------------------------------>
-
-```{block, Dot = 1, part = "Instruction", lang = 'python'}
-
-Python. The palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. Here we want to check the missing values
-
-- library(palmerpenguins)
-- library(ggplot2)
-- library(dplyr)
-- library(DT)
-
-More information.
-
-```
-
-
-```{python, Dot = 1, part = "Code"}
-import matplotlib.pyplot as plt
-import numpy as np
-t = 1 + np.arange(0, 2, 0.01)
-s = 1 + np.sin(2*np.pi*t)
-plt.plot(t,s)
-plt.show()
-```
-
 ```{python, Dot = 1, part = "Result", echo = F, eval = T}
 import matplotlib.pyplot as plt
 import numpy as np
@@ -137,32 +128,48 @@ plt.show()
 ```
 
 
-
-
-<!-- Dot 2, lang: R ------------------------------------------------>
-
 ```{block, Dot = 2, part = "Instruction", lang = 'r'}
 These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. The data were imported directly from the Environmental Data Initiative (EDI) Data Portal, and are available for use by CC0 license (“No Rights Reserved”) in accordance with the Palmer Station Data Policy.
 
-## Instruction
 - Import Data from `CRAN`
 - Remove missing data
-- Visualize data with ![ggplot2](https://ggplot2.tidyverse.org/)
+- Visualize data with [ggplot2](https://ggplot2.tidyverse.org/)
 ```
+
+```{block, Dot = 2, part = "Instruction", lang = 'python'}
+
+Python
+
+- Import Data from `CRAN`
+- Remove missing data
+- Visualize data with [ggplot2](https://ggplot2.tidyverse.org/)
+```
+
 
 ```{r, Dot = 2, part = "Code"}
 DT::datatable(penguins)
 ```
 
+```{python, Dot = 2, part = "Code"}
+2+2
+```
+
+
 ```{r, Dot = 2, part = "Result", echo = F, eval = T}
 DT::datatable(penguins)
 ```
 
+```{python, Dot = 2, part = "Result", echo = F, eval = T}
+2+2
+```
 
-<!-- Dot 3, lang: R ------------------------------------------------>
 
 ```{block, Dot = 3, part = "Instruction", lang = 'r'}
 The palmerpenguins R package contains two datasets that we believe are a viable alternative to Anderson’s Iris data (see datasets::iris). In this introductory vignette, we’ll highlight some of the properties of these datasets that make them useful for statistics and data science education, as well as software documentation and testing.
+```
+
+```{block, Dot = 3, part = "Instruction", lang = 'python'}
+Here is the python code
 ```
 
 
@@ -175,6 +182,10 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
   scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
 
+```{python, Dot = 3, part = "Code"}
+3+3
+```
+
 ```{r, Dot = 3, part = "Result", echo = F, eval = T}
 # Scatterplot example 1: penguin flipper length versus body mass
 ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
@@ -184,12 +195,19 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
   scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
 
+```{python, Dot = 3, part = "Result", echo = F, eval = T}
+3+3
+```
 
-<!-- Dot 4, lang: R ------------------------------------------------>
 
 ```{block, Dot = 4, part = "Instruction", lang = 'r'}
 You can add color and/or shape aesthetics in ggplot2 to layer in factor levels like we did above. With three factor variables to work with, you can add another factor layer with facets, like the plot below.
 ```
+
+```{block, Dot = 4, part = "Instruction", lang = 'python'}
+Last `python` messages!
+```
+
 
 ```{r, Dot = 4, part = "Code"}
 # Jitter plot example: bill length by species
@@ -199,6 +217,10 @@ ggplot(data = penguins, aes(x = species, y = bill_length_mm)) +
               alpha = 0.7,
               show.legend = FALSE) +
   scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+
+```{python, Dot = 4, part = "Code"}
+4*2
 ```
 
 ```{r, Dot = 4, part = "Result", echo = F, eval = T}
@@ -211,3 +233,6 @@ ggplot(data = penguins, aes(x = species, y = bill_length_mm)) +
   scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
 
+```{python, Dot = 4, part = "Result", echo = F, eval = T}
+4*2
+```

@@ -35,9 +35,6 @@ use_Dotto <- function() {
   close(con)
   meta <- jsonlite::fromJSON(".json", simplifyDataFrame = T)
 
-  print("#######################")
-  print(knitr::all_labels())
-
   num_dot <- stringr::str_subset(lower_nospace(readLines(rmd_path)), pattern = "^```\\{.*dot.*") %>%
     stringr::str_extract(pattern = "(?<=dot=).") %>%
     max()
@@ -53,39 +50,106 @@ class="btn dotto-main-dot-shape"
 
   }
 
+  first_lang <- head(meta$tech$lang, n = 1)[[1]]
+  last_lang <-  tail(meta$tech$lang, n = 1)[[1]]
 
 
-  knitr::knit_hooks$set(Dot = function(before, options){
-    if(before){
-      # if(tolower(options$part) == tolower("Result")){
-      #   glue::glue("<!--dot-start; Dot: {options$Dot}, Part: Code, Lang: {options$engine}, ----->")
-      #   paste(
-      #     glue::glue("```\\{{options$engine}, echo = T, eval = F \\}"),
-      #     paste(options$source, collapse = "\n"),
-      #     "```",
-      #     sep = "\n"
-      #   )
-      #   glue::glue("<!--dot-end; Dot: {options$Dot}, Part: Code, Lang: {options$engine}, ----->")
-      #   # hook_source <- knitr::knit_hooks$get('source')
-      #   #   knitr::knit_hooks$set(source = function(x, options) {
-      #   #     x <- paste(
-      #   #       glue::glue("<!--dot-start; Dot: {options$Dot}, Part: Code, Lang: {options$engine}, ----->"),
-      #   #       paste(x, collapse = "\n"),
-      #   #       glue::glue("<!--dot-end; Dot: {options$Dot}, Part: Code, Lang: {options$engine}, ----->"))
-      #   #     hook_source(x, options)
-      #   #   })
-      #
-      # }
-        glue::glue("<!--dot-start; Dot: {options$Dot}, Part: {options$part}, Lang: {ifelse(options$engine == 'block', resolve_lang(options$lang), options$engine)}, ----->")
-      } else {
-      paste(
-        "\n",
-        glue::glue("<!--dot-end; Dot: {options$Dot}, Part: {options$part}, Lang: {ifelse(options$engine == 'block', resolve_lang(options$lang), options$engine)}, ----->"),
-        sep="\n")
-  }}
-  )
+knitr::knit_hooks$set(Dot = function(before, options){
 
-  knitr::asis_output(htmltools::htmlPreserve(sprintf('
+if(before){
+
+x1 <- "\n"
+x2 <- "\n"
+if(tolower(options$part) == "instruction"){
+if(tolower(options$lang) == tolower(first_lang)){
+x1 <- sprintf('
+<div v-if="activeMotto === \'%s\'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box dotto-main-intro">
+<h3>&nbsp;Instructions:</h3>
+', options$Dot)
+}
+
+x2 <- sprintf('
+<div v-if="activeLang === \'%s\'" class="mx-2">
+<p class="mx-2">
+',
+tolower(options$lang))
+}
+
+if(tolower(options$part) == "code"){
+
+if(tolower(options$engine) == tolower(first_lang)){
+x1 <- sprintf('
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main dotto-main-codes">
+<h3>&nbsp; Codes:</h3>
+')
+}
+
+x2 <- sprintf('
+<div v-if="activeLang === \'%s\'" class="mx-2">
+',
+tolower(options$engine))
+}
+
+if(tolower(options$part) == "result"){
+
+if(tolower(options$engine) == tolower(first_lang)){
+x1 <- sprintf('
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main dotto-main-output">
+<h3>&nbsp;Results:</h3>
+')
+}
+
+x2 <- sprintf('
+<div v-if="activeLang === \'%s\'" class="mx-2">
+',
+tolower(options$engine))
+}
+
+knitr::asis_output(htmltools::htmlPreserve(paste(x1, x2, collapse = "\n")))
+
+} else {
+
+x1 <- "\n"
+x2 <- "\n"
+if(tolower(options$part) == "instruction"){
+x1 <- sprintf('
+</p>
+</div>
+')
+}
+
+if(tolower(options$part) == "code"){
+x1 <- sprintf('
+</div>
+')
+}
+
+if(tolower(options$part) == "result"){
+x1 <- sprintf('
+</div>
+')
+
+if(tolower(options$engine) == tolower(last_lang)){
+x2 <- sprintf('
+</div>
+</div>
+</div>
+')
+}
+}
+knitr::asis_output(htmltools::htmlPreserve(paste(x1, x2, collapse = "\n")))
+}
+  }
+
+)
+
+knitr::asis_output(htmltools::htmlPreserve(sprintf('
 <section v-if="activeDotto === \'1\'"
 class="text-left d-flex flex-row flex-grow-1 flex-wrap" id="dotto-row-main">
 <div class="col-12 col-lg-1" id="dotto-main-dots">
