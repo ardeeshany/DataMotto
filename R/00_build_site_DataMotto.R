@@ -77,6 +77,22 @@ run_root_rmds_if_needed <- function(path){
   return(invisible(NULL))
 }
 
+# Create a site config file
+build_site_config <- function() {
+  path_all_jsons <- list.files(here::here("posts/Dotto"),
+                               all.files = T,  full.names = T,
+                               recursive = T, pattern = ".json$")
+  all_jsons <- rep(list(NA), length(path_all_jsons))
+  names(all_jsons) <- basename(dirname(path_all_jsons))
+   for(i in 1:length(path_all_jsons)){
+    all_jsons[[i]] <- jsonlite::fromJSON(txt = path_all_jsons[i])
+   }
+
+
+
+}
+
+
 #' Rename a Rmd file precedent with `_` to an html without the character.
 #' @noRd
 rmd_to_html <- function(path) {
