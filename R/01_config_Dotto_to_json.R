@@ -62,6 +62,7 @@ config_Dotto <- function(rmd_path) {
 
   file_name <- stringr::str_remove(basename(rmd_path), pattern = ".Rmd")
   dir_name <- basename(dirname(rmd_path))
+
   # identifiers from .yml -------
   list_ids_from_yml <- if(file.exists(paste0(dirname(rmd_path),"/.yml"))){
     yaml::read_yaml(paste0(dirname(rmd_path),"/.yml"))
@@ -70,7 +71,10 @@ config_Dotto <- function(rmd_path) {
   }
   # all metadata ----------------
   Dotto_metadata <- rmarkdown::yaml_front_matter(rmd_path)
-
+  for(i in 1:length(Dotto_metadata$author)){
+    Dotto_metadata$author[[i]] <- c(Dotto_metadata$author[[i]], list("profile_img" = resolve_author_img(rmd_path = rmd_path,
+                                                                    img_path = (Dotto_metadata$author[[i]])$img)))
+  }
   return(c(list(file_name = file_name,
                 dir_name = dir_name,
                 cover_image_url = resolve_cover_image(rmd_path),

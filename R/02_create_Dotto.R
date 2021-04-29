@@ -24,7 +24,7 @@ create_Dotto <- function(title = NULL, lang = "r", open = T) {
     stop('\n argument "title" is missing, with no default')
   }
 
-  lang <- resolve_lang(lang)
+  lang <- tolower(lang)
   if(is.null(lang)){
     return(invisible(NULL))
   }
@@ -99,16 +99,12 @@ body <-
 sprintf(
 '
 ```{r DataMotto, echo=FALSE}
-DataMotto::use_Dotto(rmarkdown::metadata)
+DataMotto::use_Dotto()
 ```
 
-```{r set-up, include=F}
-knitr::opts_chunk$set(echo = F,
-                      eval = T)
-```
 <!-- Dot 1, lang: %s ------------------------------------------------>
 
-```{block2, Dot = 1, part = "Instruction"}
+```{block, Dot = 1, part = "Instruction", lang = "%s"}
 
 ```
 
@@ -116,17 +112,14 @@ knitr::opts_chunk$set(echo = F,
 
 ```
 
-```{%s, Dot = 1, part = "Result"}
-
-```
-
-```{block2, Dot = 1, part = "Interpretation"}
+```{%s, Dot = 1, part = "Result", echo = F, eval = T}
 
 ```
 
 
 
-', lang, lang, lang)
+
+', lang, lang, lang, lang)
 
 con <- file(dotto_path, open = "w", encoding = "UTF-8")
 on.exit(close(con), add = TRUE)
