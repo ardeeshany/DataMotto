@@ -730,7 +730,7 @@ resolve_author_img <- function(img_path, rmd_path = NULL, default_img_path = "..
   if(is.null(img_path)){
     selected_image <- default_img_path
   } else if((dirname(img_path) == ".") && file.exists(glue::glue("{image_path}/{img_path}"))) {
-    selected_image <- glue::glue("./posts/Dotto/{rmd_folder}/{rmd_name}_files/figure-html/{img_path}")
+    selected_image <- glue::glue("./{rmd_name}_files/figure-html/{img_path}")
   } else if(tryCatch(httr::GET(img_path),
                      error = function(e) list(status_code = 404))$status_code == 200){
     selected_image <- img_path

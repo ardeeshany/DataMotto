@@ -23,16 +23,18 @@
       "occupation": ["Sr Expert Data Scientist"],
       "affiliation": ["Novartis"],
       "url": ["mirshani.com"],
-      "img": ["files/ardalan.png"],
-      "lang": ["r"]
+      "img": ["ArdalanMirshani.jpeg"],
+      "lang": ["r"],
+      "profile_img": ["./analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg"]
     },
     {
       "name": ["Amin Zamani"],
       "occupation": ["Software developer"],
       "affiliation": ["DataMotto"],
       "url": ["Aminzamani.com"],
-      "img": ["files/amin.jpg"],
-      "lang": ["python", "julia"]
+      "img": ["AminZamani.jpeg"],
+      "lang": ["python", "julia"],
+      "profile_img": ["./analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"]
     }
   ],
   "tech": [

@@ -20,7 +20,8 @@
       "affiliation": ["Warner Brothers"],
       "url": ["https://en.wikipedia.org/wiki/Audrey_Hepburn"],
       "img": ["audrey.jpeg"],
-      "lang": ["r", "julia"]
+      "lang": ["r", "julia"],
+      "profile_img": ["./coffee-market-in-paris_files/figure-html/audrey.jpeg"]
     }
   ],
   "tech": [

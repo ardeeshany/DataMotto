@@ -7,13 +7,13 @@ author:
     occupation: "Sr Expert Data Scientist"
     affiliation: "Novartis"
     url: "mirshani.com"
-    img: "files/ardalan.png"
+    img: "ArdalanMirshani.jpeg"
     lang: "r"
   - name: "Amin Zamani"
     occupation: "Software developer"
     affiliation: "DataMotto"
     url: "Aminzamani.com"
-    img: "files/amin.jpg"
+    img: "AminZamani.jpeg"
     lang: ["python", "julia"]
 tech:
   - lang: r
