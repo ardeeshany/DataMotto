@@ -364,15 +364,21 @@ style="margin-right: 7px; width: 146.3px">
 </span>
 </div>
 <div class="d-flex justify-content-around align-items-center bg-social-icons">
-<i class="fa fa-linkedin-square"></i>
-<i class="fab fa-twitter"></i>
+<a href="https://twitter.com/share?text=%s&amp;url=%s&amp;hashtags=%s" target="_blank" class="text-reset">
+<i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=%s" target="_blank" class="text-reset">
+<i class="fa fa-linkedin-square"></i></a>
 </div>
 <div class="text-nowrap d-flex justify-content-around align-items-center bg-social-icons bg-bugs-icons">
 <i class="fab fa-github header-social-icon"></i>
 <i class="fas fa-bug header-social-icon"></i>
 </div>
 </div>
-')
+',
+meta$title,
+paste0(meta$base_url,"/",meta$link),
+lang_hashtag(meta$tech$lang) %>% pull(hashtag) %>% paste0(collapse = ","),
+paste0(meta$base_url,"/",meta$link))
 
 
 # -------------------------------------------------------------------
@@ -773,4 +779,20 @@ lang_color = function(lang) {
   } else {
     return("light")
   }
+}
+
+
+
+# create relative hashtags
+lang_hashtag <- function(lang_df) {
+  lang_df %>%
+    unlist() %>%
+    data.frame() %>%
+    rename("lang" = ".") %>%
+    mutate(hashtag = dplyr::case_when(
+      tolower(lang) == "r" ~ "rstats",
+      tolower(lang) == "python" ~ "Python",
+      tolower(lang) == "julia" ~ "Julialang",
+      TRUE ~ tolower(lang)
+    ))
 }

@@ -89,6 +89,9 @@ build_site_config <- function() {
    }
 
 
+  con <- file(here::here("assets/config.json"), open = "w", encoding = "UTF-8")
+  xfun::write_utf8(jsonlite::toJSON(all_jsons, auto_unbox = F, pretty = T), con)
+  close(con)
 
 }
 
