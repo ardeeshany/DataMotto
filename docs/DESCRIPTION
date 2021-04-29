@@ -27,4 +27,5 @@ Imports:
     knitr,
     urltools,
     httr,
-    yaml
+    yaml,
+    utils
