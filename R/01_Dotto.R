@@ -352,17 +352,18 @@ scol_1 <- sprintf('
 </div>
 ', paste(sub_lang, collapse = "\n"))
 
-  # -------
-
-  scol_2 <- sprintf('
+# -------
+scol_2 <- sprintf('
 <div
 class="col-8 d-flex justify-content-end align-items-center" style="padding-right: 15px">
+<!--
 <div class="d-flex justify-content-center align-items-center align-content-center bg-social-icons"
 style="margin-right: 7px; width: 146.3px">
 <span class="d-flex justify-content-lg-center align-items-lg-center" style="width: 133.7px">
 <i class="fas fa-music" style="padding-right: 12px"> </i>
 </span>
 </div>
+---->
 <div class="d-flex justify-content-around align-items-center bg-social-icons">
 <a href="https://twitter.com/share?text=%s&amp;url=%s&amp;hashtags=%s" target="_blank" class="text-reset">
 <i class="fab fa-twitter"></i></a>
@@ -370,15 +371,20 @@ style="margin-right: 7px; width: 146.3px">
 <i class="fa fa-linkedin-square"></i></a>
 </div>
 <div class="text-nowrap d-flex justify-content-around align-items-center bg-social-icons bg-bugs-icons">
-<i class="fab fa-github header-social-icon"></i>
-<i class="fas fa-bug header-social-icon"></i>
+<a href="%s" target="_blank" class="text-reset">
+<i class="fab fa-github header-social-icon"></i></a>
+<a href="%s" target="_blank" class="text-reset">
+<i class="fas fa-bug header-social-icon"></i></a>
 </div>
 </div>
 ',
 meta$title,
 paste0(meta$base_url,"/",meta$link),
 lang_hashtag(meta$tech$lang) %>% pull(hashtag) %>% paste0(collapse = ","),
-paste0(meta$base_url,"/",meta$link))
+paste0(meta$base_url,"/",meta$link),
+paste0("https://github.com/DataMotto/DataMotto/blob/master/",
+      stringr::str_replace(meta$link, pattern = "index.html$", replacement = paste0(meta$file_name,".Rmd"))),
+"https://github.com/DataMotto/DataMotto/issues/new?assignees=&labels=bug&template=bug_report.md&title=")
 
 
 # -------------------------------------------------------------------
