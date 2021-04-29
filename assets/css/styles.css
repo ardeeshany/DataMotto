@@ -237,12 +237,11 @@ navbar-collapse {
 }
 
 .team-intro {
-  color: #6272a4;
+  color: #ff79c6;
   padding-top: 25px;
   font-size: 16px;
   width: 100vw;
   padding-bottom: 20px;
-  background: #f8f8f2;
 }
 
 #navbar-all {
@@ -266,7 +265,6 @@ navbar-collapse {
 .team-col-box {
   color: #282a36;
   border-radius: 0px;
-  background: #f8f8f2;
   padding-top: 25px;
   border: 0px solid #6272a4;
 }
@@ -275,7 +273,7 @@ navbar-collapse {
   font-size: 24px;
   font-weight: 300;
   font-style: normal;
-  color: rgb(93, 103, 139);
+  color: #ff79c6;
   filter: saturate(97%);
   padding-top: 5px;
   margin-right: 0px;
@@ -286,7 +284,7 @@ navbar-collapse {
   margin-bottom: 15px;
   font-size: 50px;
   font-family: bold;
-  color: rgb(65, 79, 123);
+  color: #ff79c6;
 }
 
 .team-description {
