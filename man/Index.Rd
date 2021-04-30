@@ -16,7 +16,7 @@ Index(
   self_contained = F,
   in_header = NULL,
   before_body = here::here("./resources/header.html"),
-  after_body = here::here("./resources/footer.html"),
+  after_body = NULL,
   ...
 )
 }

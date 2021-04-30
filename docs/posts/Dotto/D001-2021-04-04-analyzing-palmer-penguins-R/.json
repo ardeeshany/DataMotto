@@ -25,7 +25,8 @@
       "url": ["mirshani.com"],
       "img": ["ArdalanMirshani.jpeg"],
       "lang": ["r"],
-      "profile_img": ["./analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg"]
+      "profile_img_for_Dotto": ["./analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg"],
+      "profile_img": ["./posts/Dotto/analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg"]
     },
     {
       "name": ["Amin Zamani"],
@@ -34,7 +35,8 @@
       "url": ["Aminzamani.com"],
       "img": ["AminZamani.jpeg"],
       "lang": ["python", "julia"],
-      "profile_img": ["./analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"]
+      "profile_img_for_Dotto": ["./analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"],
+      "profile_img": ["./posts/Dotto/analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"]
     }
   ],
   "tech": [

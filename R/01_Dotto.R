@@ -647,80 +647,81 @@ meta$dotto_id)
 #' @description It generates Dotto page with all the DataMotto styles
 #'   from a config `.json` file
 #' @param Dotto_path the path of the Dotto `.Rmd` file
-generate_Dotto <- function(Dotto_path = NULL) {
-
-  if(is.null(Dotto_path)){
-    Dotto_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
-    if(length(Dotto_path) != 1){
-      stop("There is not a unique .Rmd file in the working directory. Explicitly provide the Dotto .Rmd path in the `Dotto_path` parameter.")
-    }
-  }
-
-  config_path <- paste0(dirname(Dotto_path),"/.json")
-  config <- jsonlite::fromJSON(config_path, simplifyDataFrame = T)
-
-  index_chunks <- which(names(config) %in% "dots_chunks")
-  meta <- config[-index_chunks]
-
-  dots <- config[[index_chunks]] %>%
-    dplyr::bind_rows() %>%
-    tibble::tibble()
-
-
-sprintf('
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-<title>Home</title>
-<link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Brands.css" />
-<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Free.css" />
-<link rel="stylesheet" href="../../../assets/css/icomoon.css" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
-<link rel="stylesheet" href="../../../assets/fonts/fontawesome-all.min.css" />
-<link rel="stylesheet" href="../../../assets/fonts/font-awesome.min.css" />
-<link rel="stylesheet" href="../../../assets/fonts/ionicons.min.css" />
-<link rel="stylesheet" href="../../../assets/fonts/fontawesome5-overrides.min.css" />
-<link rel="stylesheet" href="../../../assets/css/Footer-Basic.css" />
-<link rel="stylesheet" href="../../../assets/css/home-cards.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
-<link rel="stylesheet" href="../../../assets/css/site.css" />
-<link rel="stylesheet" href="../../../assets/css/style.css" />
-<link rel="stylesheet" href="../../../assets/css/styles.css" />
-<link rel="stylesheet" href="../../../assets/css/Team-Boxed.css" />
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
-<script src="../../../assets/js/vue.js"></script>
-</head>
-
-<body>
-<div class="d-flex flex-column" id="all_page">
-%s
-%s
-%s
-%s
-</div>
-<script src="../../../assets/js/vue.js"></script>
-<script src="../../../assets/js/post.js"></script>
-<script src="../../../assets/js/jquery.min.js"></script>
-<script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../../assets/js/bs-init.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="../../../assets/js/carts.js"></script>
-<script src="../../../assets/js/Index_page.js"></script>
-<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
-</body>
-</html>
-',
-Dotto_top_header(meta),
-Dotto_sub_header(meta),
-Dotto_main(dots),
-Dotto_footer(meta))
-
-}
+#' @noRd
+# generate_Dotto <- function(Dotto_path = NULL) {
+#
+#   if(is.null(Dotto_path)){
+#     Dotto_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
+#     if(length(Dotto_path) != 1){
+#       stop("There is not a unique .Rmd file in the working directory. Explicitly provide the Dotto .Rmd path in the `Dotto_path` parameter.")
+#     }
+#   }
+#
+#   config_path <- paste0(dirname(Dotto_path),"/.json")
+#   config <- jsonlite::fromJSON(config_path, simplifyDataFrame = T)
+#
+#   index_chunks <- which(names(config) %in% "dots_chunks")
+#   meta <- config[-index_chunks]
+#
+#   dots <- config[[index_chunks]] %>%
+#     dplyr::bind_rows() %>%
+#     tibble::tibble()
+#
+#
+# sprintf('
+# <!DOCTYPE html>
+# <html lang="en">
+# <head>
+# <meta charset="utf-8" />
+# <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+# <title>Home</title>
+# <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css" />
+# <link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Brands.css" />
+# <link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Free.css" />
+# <link rel="stylesheet" href="../../../assets/css/icomoon.css" />
+# <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
+# <link rel="stylesheet" href="../../../assets/fonts/fontawesome-all.min.css" />
+# <link rel="stylesheet" href="../../../assets/fonts/font-awesome.min.css" />
+# <link rel="stylesheet" href="../../../assets/fonts/ionicons.min.css" />
+# <link rel="stylesheet" href="../../../assets/fonts/fontawesome5-overrides.min.css" />
+# <link rel="stylesheet" href="../../../assets/css/Footer-Basic.css" />
+# <link rel="stylesheet" href="../../../assets/css/home-cards.css" />
+# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+# <link rel="stylesheet" href="../../../assets/css/site.css" />
+# <link rel="stylesheet" href="../../../assets/css/style.css" />
+# <link rel="stylesheet" href="../../../assets/css/styles.css" />
+# <link rel="stylesheet" href="../../../assets/css/Team-Boxed.css" />
+# <script async defer src="https://buttons.github.io/buttons.js"></script>
+# <script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+# <script src="../../../assets/js/vue.js"></script>
+# </head>
+#
+# <body>
+# <div class="d-flex flex-column" id="all_page">
+# %s
+# %s
+# %s
+# %s
+# </div>
+# <script src="../../../assets/js/vue.js"></script>
+# <script src="../../../assets/js/post.js"></script>
+# <script src="../../../assets/js/jquery.min.js"></script>
+# <script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
+# <script src="../../../assets/js/bs-init.js"></script>
+# <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+# <script src="../../../assets/js/carts.js"></script>
+# <script src="../../../assets/js/Index_page.js"></script>
+# <script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+# </body>
+# </html>
+# ',
+# Dotto_top_header(meta),
+# Dotto_sub_header(meta),
+# Dotto_main(dots),
+# Dotto_footer(meta))
+#
+# }
 
 
 

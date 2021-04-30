@@ -4,7 +4,10 @@
 \alias{build_site_DataMotto}
 \title{Build Data Motto Website}
 \usage{
-build_site_DataMotto()
+build_site_DataMotto(open = T)
+}
+\arguments{
+\item{open}{A logical value that opens the Index page of site in the browser. Default is \code{TRUE}.}
 }
 \description{
 Build Data Motto Website

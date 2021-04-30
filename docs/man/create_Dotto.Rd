@@ -16,14 +16,16 @@ case-sensitive.}
 \item{open}{If open the dotto file in Rstudio or not. Default is \code{TRUE}.}
 }
 \description{
-It creates a dotto (.Rmd) based on a default \code{slug}, created automatically based on title.
+It creates a \code{Dotto} (.Rmd) template based on a title and engine language.
 }
 \details{
-In the \code{yml} section, here is the avaialbe values for some tags:
+For the \code{yml} metadata, here are more details about some tags:
 \itemize{
-\item \code{lang}: \code{R}, \code{python}, \code{julia}, \code{sql}, \code{bash}, \code{js}, \code{node}, \code{d3}, \code{Rcpp}, \code{stan}
-\item \code{categories}: \code{Importing-Cleaning}, \code{Manipulation}, \code{Visualization}, \code{Machine-Learning}, \code{Statistical-Learning}, \code{Reporting}, \code{Data-Engineering}
-\item \code{url}: A personal url address that can be for: your persoanl website, twitter account, linkedin, etc.
-\item \code{applications}: Having an specific applications on files \code{Finance}, \code{Pharma}.
+\item \code{lang}: \code{R}, \code{python}, \code{julia}, \code{sql}, \code{bash}, \code{node}, etc.
+\item \code{categories}: \verb{Importing", "Cleaning}, \code{Manipulation}, \code{Visualization}, \code{Machine-Learning}, \code{Statistical-Learning}, \code{Reporting}, \code{Data-Engineering}
+\item \code{site}: A personal url address, e.g., a personal website, twitter account, linkedin, etc.
+\item \code{img_url}: A canonical link into your img that should be saved under \verb{_files} dir.
+\item \code{applications}: Sector specific application require domain knowledge expertise like \code{Finance}, \code{Healthcare}, \code{Insurance}, etc.
+\item \code{cover_image}: An external/internal link to the img that will be displayed in the cards.
 }
 }

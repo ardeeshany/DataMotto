@@ -14,10 +14,11 @@ Dotto(
   pandoc_args = NULL,
   md_extensions = "-autolink_bare_uris",
   self_contained = FALSE,
+  mathjax = TRUE,
   in_header = c(social_card_protocol_dotto()$open_graph,
     social_card_protocol_dotto()$twitter),
-  before_body = here::here("resources/header_post.html"),
-  after_body = c(discus_dotto(), here::here("resources/footer.html")),
+  before_body = c(Dotto_top_header(), Dotto_sub_header()),
+  after_body = Dotto_footer(),
   ...
 )
 }

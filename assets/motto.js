@@ -1,4 +1,4 @@
-{
+export default {
   "D001-2021-04-04-analyzing-palmer-penguins-R": {
     "file_name": ["analyzing-palmer-penguins-R"],
     "dir_name": ["D001-2021-04-04-analyzing-palmer-penguins-R"],
@@ -26,7 +26,8 @@
         "url": ["mirshani.com"],
         "img": ["ArdalanMirshani.jpeg"],
         "lang": ["r"],
-        "profile_img": ["./analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg"]
+        "profile_img_for_Dotto": ["./analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg"],
+        "profile_img": ["./posts/Dotto/analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg"]
       },
       {
         "name": ["Amin Zamani"],
@@ -35,7 +36,8 @@
         "url": ["Aminzamani.com"],
         "img": ["AminZamani.jpeg"],
         "lang": ["python", "julia"],
-        "profile_img": ["./analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"]
+        "profile_img_for_Dotto": ["./analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"],
+        "profile_img": ["./posts/Dotto/analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"]
       }
     ],
     "tech": [
@@ -81,7 +83,8 @@
         "url": ["https://en.wikipedia.org/wiki/Audrey_Hepburn"],
         "img": ["audrey.jpeg"],
         "lang": ["r", "julia"],
-        "profile_img": ["./coffee-market-in-paris_files/figure-html/audrey.jpeg"]
+        "profile_img_for_Dotto": ["./coffee-market-in-paris_files/figure-html/audrey.jpeg"],
+        "profile_img": ["./posts/Dotto/coffee-market-in-paris_files/figure-html/audrey.jpeg"]
       }
     ],
     "tech": [
@@ -105,3 +108,4 @@
     "output": ["DataMotto::Dotto"]
   }
 }
+

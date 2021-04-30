@@ -33,6 +33,10 @@ Index <- function(fig_width = 6,
                        #after_body = here::here("./resources/footer.html"),
                        ...) {
 
+  if(TRUE){
+    usethis::ui_warn("'Index' is deprecated.")
+    return(invisible(NULL))
+  }
   html_document(#template = system.file("templates/Dotto.html", package = "DataMotto"),
     template = here::here("inst/templates/Index_page.html"),
     includes = list(in_header = in_header,

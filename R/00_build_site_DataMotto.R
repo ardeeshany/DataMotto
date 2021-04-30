@@ -13,6 +13,10 @@ build_site_DataMotto <- function(open = T) {
 
   cli::cat_rule("Site is being created")
 
+  # create motto.js to config site -------------------------
+  build_site_config()
+
+  # render site --------------------------------------------
   suppressWarnings(suppressMessages(
     rmarkdown::render_site(input = here::here() ,
                            encoding = 'UTF-8',
@@ -77,24 +81,8 @@ run_root_rmds_if_needed <- function(path){
   return(invisible(NULL))
 }
 
-# Create a site config file
-build_site_config <- function() {
-  path_all_jsons <- list.files(here::here("posts/Dotto"),
-                               all.files = T,  full.names = T,
-                               recursive = T, pattern = ".json$")
-  all_jsons <- rep(list(NA), length(path_all_jsons))
-  names(all_jsons) <- basename(dirname(path_all_jsons))
-   for(i in 1:length(path_all_jsons)){
-    all_jsons[[i]] <- jsonlite::fromJSON(txt = path_all_jsons[i])
-   }
 
-
-  con <- file(here::here("assets/config.json"), open = "w", encoding = "UTF-8")
-  xfun::write_utf8(jsonlite::toJSON(all_jsons, auto_unbox = F, pretty = T), con)
-  close(con)
-
-}
-
+# Utilities ----------------------------------------------------------------
 
 #' Rename a Rmd file precedent with `_` to an html without the character.
 #' @noRd

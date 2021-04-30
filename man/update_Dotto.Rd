@@ -7,7 +7,8 @@
 update_Dotto(path = NULL, clean_dotto_deps = T)
 }
 \arguments{
-\item{path}{a path to the Dotto \code{.Rmd} file.}
+\item{path}{a path to the Dotto \code{.Rmd} file. IF the path is a rmd folder path, it automatically find the Rmd path
+if there is only one unique Rmd file in the folder.}
 
 \item{clean_Dotto_deps}{Delete all the files and folders in Dotto and only keep .Rmd file. Default is \code{FALSE}.}
 }
@@ -15,7 +16,7 @@ update_Dotto(path = NULL, clean_dotto_deps = T)
 The Dotto url is created based on the name on the Dotto folder, which
 follows the format \code{D#-date-slug}, e.g. \code{D112-2020-11-21-data-sampling}. As the Dotto
 file and folder names are created originally by \code{slug}, for changing the file/folder
-names, it is recommended to change \code{slug} first, then run \code{update_Dotto()}.
+names, it is recommended to change \code{slug} first, and then run \code{update_Dotto()}.
 }
 \details{
 for creating a valid \code{slug}, you can use \code{DataMotto::create_slug("foo")}

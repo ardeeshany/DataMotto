@@ -21,7 +21,8 @@
       "url": ["https://en.wikipedia.org/wiki/Audrey_Hepburn"],
       "img": ["audrey.jpeg"],
       "lang": ["r", "julia"],
-      "profile_img": ["./coffee-market-in-paris_files/figure-html/audrey.jpeg"]
+      "profile_img_for_Dotto": ["./coffee-market-in-paris_files/figure-html/audrey.jpeg"],
+      "profile_img": ["./posts/Dotto/coffee-market-in-paris_files/figure-html/audrey.jpeg"]
     }
   ],
   "tech": [
