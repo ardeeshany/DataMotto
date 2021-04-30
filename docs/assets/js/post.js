@@ -7,6 +7,7 @@ const app = Vue.createApp({
       authorTwoModal: false,
       authorThreeModal: false,
       activeDotto: "1",
+      commentOpen: false,
     };
   },
   methods: {},
