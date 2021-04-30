@@ -27,7 +27,7 @@ export default {
         "img": ["ArdalanMirshani.jpeg"],
         "lang": ["r"],
         "profile_img_for_Dotto": ["./analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg"],
-        "profile_img": ["./posts/Dotto/analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg"]
+        "profile_img": ["./posts/Dotto/D001-2021-04-04-analyzing-palmer-penguins-R/analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg"]
       },
       {
         "name": ["Amin Zamani"],
@@ -37,7 +37,7 @@ export default {
         "img": ["AminZamani.jpeg"],
         "lang": ["python", "julia"],
         "profile_img_for_Dotto": ["./analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"],
-        "profile_img": ["./posts/Dotto/analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"]
+        "profile_img": ["./posts/Dotto/D001-2021-04-04-analyzing-palmer-penguins-R/analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"]
       }
     ],
     "tech": [
@@ -84,7 +84,7 @@ export default {
         "img": ["audrey.jpeg"],
         "lang": ["r", "julia"],
         "profile_img_for_Dotto": ["./coffee-market-in-paris_files/figure-html/audrey.jpeg"],
-        "profile_img": ["./posts/Dotto/coffee-market-in-paris_files/figure-html/audrey.jpeg"]
+        "profile_img": ["./posts/Dotto/D002-2021-04-28-coffee-market-in-paris/coffee-market-in-paris_files/figure-html/audrey.jpeg"]
       }
     ],
     "tech": [

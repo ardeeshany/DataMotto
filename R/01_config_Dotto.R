@@ -24,7 +24,8 @@ config_Dotto <- function(rmd_path) {
 
     Dotto_metadata$author[[i]] <- c(Dotto_metadata$author[[i]],
                                     list("profile_img_for_Dotto" = img_path,
-                                         "profile_img" = paste0("./posts/Dotto",
+                                         "profile_img" = paste0("./posts/Dotto/",
+                                                                dir_name,
                                                                 stringr::str_remove(img_path, pattern = "^.")))
                                     )
   }
@@ -57,7 +58,7 @@ build_site_config <- function() {
 'export default %s
 ', jsonlite::toJSON(all_jsons, auto_unbox = F, pretty = T))
 
-  con <- file(here::here("assets/motto.js"), open = "w", encoding = "UTF-8")
+  con <- file(here::here("assets/mottos.js"), open = "w", encoding = "UTF-8")
   xfun::write_utf8(Mottojs, con)
   close(con)
 
