@@ -178,7 +178,7 @@ Dotto_top_header <- function(meta = NULL) {
   # Datamotto logo part ------------------------------------
 col_1 <- sprintf('
 <div class="col-1 d-flex justify-content-start align-items-center header-logo">
-<img id="logo" src="../../../assets/img/logo.svg" />
+<a href="/" class="text-muted"><img id="logo" src="../../../assets/img/logo.svg" /></a>
 </div>
 ')
 
