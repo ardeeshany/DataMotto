@@ -26,14 +26,14 @@ export default {
     ],
     author: [
       {
-        name: ["Ardalan Mirshani"],
+        name: ["Ardal Mirshani"],
         occupation: ["Sr Expert Data Scientist"],
         affiliation: ["Novartis"],
         url: ["mirshani.com"],
         img: ["ArdalanMirshani.jpeg"],
         lang: ["r"],
         profile_img: [
-          "./posts/Dotto/analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg",
+          "./posts/Dotto/D001-2021-04-04-analyzing-palmer-penguins-R/analyzing-palmer-penguins-R_files/figure-html/ArdalanMirshani.jpeg",
         ],
       },
       {
@@ -44,7 +44,7 @@ export default {
         img: ["AminZamani.jpeg"],
         lang: ["python", "julia"],
         profile_img: [
-          "./posts/Dotto/analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg",
+          "./posts/Dotto/D001-2021-04-04-analyzing-palmer-penguins-R/analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg",
         ],
       },
     ],
@@ -99,7 +99,7 @@ export default {
         url: ["https://en.wikipedia.org/wiki/Audrey_Hepburn"],
         img: ["audrey.jpeg"],
         lang: ["r", "julia"],
-        profile_img: ["./posts/Dotto/coffee-market-in-paris_files/figure-html/audrey.jpeg"],
+        profile_img: ["./posts/Dotto/D002-2021-04-28-coffee-market-in-paris/coffee-market-in-paris_files/figure-html/audrey.jpeg"],
       },
     ],
     tech: [
