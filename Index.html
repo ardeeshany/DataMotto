@@ -170,78 +170,20 @@
               </svg>
             </a>
           </li>
-          <li>
-            <a
-              href="https://datamotto.slack.com/"
-              class="nav-link py-3"
-              title=""
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              data-bs-original-title="Slack"
-            >
-              <svg class="bi white" width="24" height="24">
-                <use xlink:href="#community"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/DataMotto"
-              class="nav-link py-3"
-              title=""
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              data-bs-original-title="Twitter"
-            >
-              <svg class="bi white" width="24" height="24">
-                <use xlink:href="#twitter"></use>
-              </svg>
-            </a>
-          </li>
         </ul>
-        <div class="dropdown border-top">
-          <a
-            href="#"
-            class="white d-flex align-items-center justify-content-center p-3 link-light text-decoration-none dropdown-toggle"
-            id="dropdownUser3"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <img
-              src="assets/img/1.jpg"
-              alt="user"
-              width="24"
-              height="24"
-              class="rounded-circle"
-            />
-          </a>
-          <ul
-            class="dropdown-menu text-small shadow"
-            aria-labelledby="dropdownUser3"
-          >
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
-        </div>
       </div>
       <div class="content-view flex-column d-flex my-5 text-center">
-        <img class="img-fluid mb-5" src="assets/img/homepage.svg" />
+        <img class="img-fluid mb-3" src="assets/img/homepage.svg" />
         <h2 class="pink fw-bold">Share Efficiently Your Data Experience</h2>
-        <p class="my-5">
+        <p class="my-3">
           Data science is an inter-disciplinary field that uses scientific
           methods, processes, algorithms and systems to extract knowledge and
           insights from many structural and unstructured data. Data science is
           related to data mining, machine learning and big data.
         </p>
         <button type="button" class="btn btn-outline-light">Learn More</button>
-      </div>
-      <div class="cards-view flex-column d-flex text-center overflow-auto">
-        <div class="container">
-          <div class="my-5">
-            <h2 class="fw-bold">OUR DOTTOS</h2>
+        <div class="row mt-5">
+          <div class="col-sm">
             <a
               class="github-button"
               href="https://github.com/ardeeshany/DataMotto"
@@ -251,6 +193,28 @@
               aria-label="Star ardeeshany/DataMotto on GitHub"
               >Star</a
             >
+          </div>
+          <div
+            class="col-sm"
+            onclick="location.href='https://twitter.com/DataMotto';"
+          >
+            <i type="button" class="fab fa-twitter text-primary fs-2"></i>
+          </div>
+          <div
+            class="col-sm"
+            onclick="location.href='https://datamotto.slack.com/';"
+          >
+            <i type="button" class="fab fa-slack text-warning fs-2"></i>
+          </div>
+        </div>
+      </div>
+      <div
+        id="cards"
+        class="cards-view flex-column d-flex text-center overflow-auto"
+      >
+        <div class="container">
+          <div class="my-5">
+            <h2 class="fw-bold">OUR DOTTOS</h2>
           </div>
           <div class="row justify-content-center">
             <div class="dottos r-color"><i class="fab fa-r-project"></i></div>
@@ -265,124 +229,44 @@
           </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 g-4 m-2">
-          <div class="card-group">
-            <div class="card" onclick="location.href='./posts/dotto/d002-2021-04-28-coffee-market-in-paris/index.html';">
+          <div v-for="dotto in dottos" class="card-group">
+            <div class="card" @click="goToUrl(dotto.link[0])">
               <div class="card-body">
-                <h5 class="card-title fw-bold fs-5">
-                  Coffee Market in Paris
-                </h5>
-                <p class="card-text">
-                  The data for 344 penguins. There are 3 different species of
-                  penguins in this dataset, collected from 3 islands in the
-                  Palmer Archipelago, Antarctica.
-                </p>
+                <h5 class="card-title fw-bold fs-5">{{dotto.title[0]}}</h5>
+                <p class="card-text">{{dotto.description[0]}}</p>
               </div>
-              <div class="card-footer d-flex">
+              <div v-if="dotto.author.length > 1" class="card-footer d-flex">
                 <img
-                  src="./posts/Dotto/D002-2021-04-28-coffee-market-in-paris/coffee-market-in-paris_files/figure-html/audrey.jpeg"
-                  alt="user"
+                  v-for="author in dotto.author"
+                  :src="author.profile_img"
+                  :alt="author.name"
+                  width="50"
+                  height="50"
+                  class="rounded-circle mx-1"
+                />
+              </div>
+              <div v-else class="card-footer d-flex">
+                <img
+                  :src="dotto.author[0].profile_img[0]"
+                  :alt="dotto.author[0].name[0]"
                   width="50"
                   height="50"
                   class="rounded-circle"
                 />
                 <small class="text-muted text-start mx-2 mt-2">
-                  <a class="pink" href="#">Audrey Hepburn</a>
-                  <p>Data Scientist</p></small
+                  <a class="pink" :href="dotto.author[0].url[0]"
+                    >{{dotto.author[0].name[0]}}</a
+                  >
+                  <p>{{dotto.author[0].affiliation[0]}}</p></small
                 >
-              </div>
-            </div>
-          </div>
-          <div class="card-group">
-            <div class="card" onclick="location.href='#';">
-              <div class="card-body">
-                <h5 class="card-title fw-bold fs-5">
-                  Time Series Exploration with reticulate
-                </h5>
-                <p class="card-text">
-                  The reticulate package provides a comprehensive set of tools
-                  for interoperability between Python and R.
-                </p>
-              </div>
-              <div class="card-footer d-flex">
-                <img
-                  src="assets/img/1.jpg"
-                  alt="user"
-                  width="50"
-                  height="50"
-                  class="rounded-circle"
-                />
-                <small class="text-muted text-start mx-2 mt-2">
-                  <a class="pink" href="#">Woody Allen</a>
-                  <p>Frontend Developer</p></small
-                >
-              </div>
-            </div>
-          </div>
-          <div class="card-group">
-            <div class="card" onclick="location.href='#';">
-              <div class="card-body">
-                <h5 class="card-title fw-bold fs-5">
-                  Time Series Exploration with reticulate
-                </h5>
-                <p class="card-text">
-                  The reticulate package provides a comprehensive set of tools
-                  for interoperability between Python and R.
-                </p>
-              </div>
-              <div class="card-footer d-flex">
-                <img
-                  src="assets/img/1.jpg"
-                  alt="user"
-                  width="50"
-                  height="50"
-                  class="rounded-circle"
-                />
-                <small class="text-muted text-start mx-2 mt-2">
-                  <a class="pink" href="#">John Ford</a>
-                  <p>Director</p></small
-                >
-              </div>
-            </div>
-          </div>
-          <div class="card-group">
-            <div class="card" onclick="location.href='#';">
-              <div class="card-body">
-                <h5 class="card-title fw-bold fs-5">mandelbrot Exploration</h5>
-                <p class="card-text">
-                  Exploratory Data Analysis (EDA) is used for achieving a better
-                  understanding of data in terms of its main features, the
-                  significance of various variables, and the inter-variable
-                  relationships. The First step is to explore the dataset.
-                </p>
-              </div>
-              <div class="card-footer d-flex">
-                <img
-                  src="assets/img/1.jpg"
-                  alt="user"
-                  width="50"
-                  height="50"
-                  class="rounded-circle"
-                />
-                <img
-                  src="assets/img/1.jpg"
-                  alt="user"
-                  width="50"
-                  height="50"
-                  class="rounded-circle"
-                />
-                <img
-                  src="assets/img/1.jpg"
-                  alt="user"
-                  width="50"
-                  height="50"
-                  class="rounded-circle"
-                />
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="assets/js/vue.js"></script>
+    <script type="module" src="assets/js/index.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   </body>
