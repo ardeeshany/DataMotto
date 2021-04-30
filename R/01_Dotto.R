@@ -227,10 +227,10 @@ meta$dotto_id)
 <div class="row">
 <div @click="%s = true" type="button"
 class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center dotto-header-user-icon">
-<img class="img-fluid user-image %s" src="%s" />
+<img class="img-fluid user-image %s mx-auto" src="%s" />
 </div>
 </div>
-<h6 class="d-flex justify-content-end dotto-header-user-name">
+<h6 class="d-flex justify-content-end dotto-header-user-name mx-auto">
 %s
 </h6>
 </div>
@@ -298,12 +298,21 @@ top_header <- sprintf('
 </div>
 </section>
 %s
+<div v-if="commentOpen" class="modal">
+<div class="modal-content">
+<span @click="commentOpen = false" class="close">&times;</span>
+<div class="card" style="max-width: 540px">
+%s
+</div>
+</div>
+</div>
 ',
 col_1,
 col_2,
 col_3,
 col_4,
-modals)
+modals,
+discus_Dotto(meta))
 
 
 temp_file <- tempfile()
@@ -583,12 +592,13 @@ footer <- sprintf('
 </div>
 <div class="col-12 col-md-4" id="dotto-comment" style="padding-top: 13px">
 <div class="alert alert-danger dotto-alert-comment" role="alert">
-%s
+<span @click="commentOpen = true">
+<strong>Comments. Write Yours!</strong>
+</span>
 </div>
 </div>
 </section>
-',
-discus_Dotto(meta))
+')
 
 temp_file <- tempfile()
 con <- file(temp_file, open = "w", encoding = "UTF-8")

@@ -203,7 +203,7 @@
 .dotto-main-dot-shape {
   border-radius: 30px;
   min-width: 20px;
-  font-size: 14px;
+  font-size: 10px;
   min-height: 20px;
   border-width: 2px;
   border-style: solid;
@@ -459,11 +459,13 @@ navbar-collapse {
   box-sizing: border-box;
   flex: 1 1 auto;
   width: 33%;
+  height: 65vh;
 }
 .box2 {
   box-sizing: border-box;
   flex: 1 1 auto;
   width: 33%;
+  height: 65vh;
 }
 .handler {
   width: 10px;

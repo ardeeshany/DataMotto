@@ -8,6 +8,7 @@
 #' @importFrom here here
 #' @importFrom usethis ui_done
 #' @importFrom cli cat_rule
+#' @import dplyr
 #' @export
 build_site_DataMotto <- function(open = T) {
 

@@ -64,7 +64,7 @@ if(tolower(options$part) == "instruction"){
 if(tolower(options$lang) == tolower(first_lang)){
 x1 <- sprintf('
 <div v-if="activeMotto === \'%s\'" class="col-12 col-lg-11 d-flex p-0 wrapper">
-<div class="box dotto-main-intro">
+<div class="box overflow-auto dotto-main-intro">
 <h3>&nbsp;Instructions:</h3>
 ', options$Dot)
 }
@@ -83,7 +83,7 @@ x1 <- sprintf('
 </div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
-<div class="box2 dotto-main dotto-main-codes">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
 <h3>&nbsp; Codes:</h3>
 ')
 }
@@ -100,7 +100,7 @@ if(tolower(options$engine) == tolower(first_lang)){
 x1 <- sprintf('
 </div>
 <div class="handler2 dotto-main-output"></div>
-<div class="box2 dotto-main dotto-main-output">
+<div class="box2 dotto-main overflow-auto dotto-main-output">
 <h3>&nbsp;Results:</h3>
 ')
 }
