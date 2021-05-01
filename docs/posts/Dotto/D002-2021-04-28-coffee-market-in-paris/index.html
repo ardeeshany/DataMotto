@@ -73,6 +73,9 @@
 <link rel="stylesheet" href="../../../assets/css/Team-Boxed.css" />
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../../../assets/highlight/styles/dracula.css" />
+<script src="../../../assets/highlight/highlight.pack.js"></script>
+<script>hljs.highlightAll();</script>
 <script src="../../../assets/js/vue.js"></script>
 
 </head>
@@ -121,10 +124,10 @@ A short description of the Dotto.
 <div class="row">
 <div @click="authorOneModal = true" type="button"
 class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center dotto-header-user-icon">
-<img class="img-fluid user-image border-light" src="coffee-market-in-paris_files/figure-html/audrey.jpeg" />
+<img class="img-fluid user-image border-light mx-auto" src="coffee-market-in-paris_files/figure-html/audrey.jpeg" />
 </div>
 </div>
-<h6 class="d-flex justify-content-end dotto-header-user-name">
+<h6 class="d-flex justify-content-end dotto-header-user-name mx-auto">
 Audrey Hepburn
 </h6>
 </div>
@@ -158,6 +161,12 @@ Audrey Hepburn
 </div>
 </div>
 
+<div v-if="commentOpen" class="modal">
+<div class="modal-content">
+<span @click="commentOpen = false" class="close">&times;</span>
+<div id="disqus_thread"></div>
+</div>
+</div>
 
 
 <section>
@@ -233,8 +242,10 @@ class="btn dotto-main-dot-shape"
 <!-- Dot 1, lang: R ------------------------------------------------>
 
 <div v-if="activeMotto === '1'" class="col-12 col-lg-11 d-flex p-0 wrapper">
-<div class="box dotto-main-intro">
-<h3>&nbsp;Instructions:</h3>
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<br>
+<h1>&nbsp;Instructions:</h1>
+<br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
@@ -260,12 +271,14 @@ class="btn dotto-main-dot-shape"
 </div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
-<div class="box2 dotto-main dotto-main-codes">
-<h3>&nbsp; Codes:</h3>
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<br>
+<h1>&nbsp;Codes:</h1>
+<br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span></code></pre></div>
 
 </div>
  
@@ -274,7 +287,7 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'julia'" class="mx-2">
 
-<div class="sourceCode" id="cb2"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode julia dotto-dot-code"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">;</span> y <span class="op">=</span> rand(<span class="fl">10</span>)<span class="op">;</span> <span class="co"># These are the plotting data</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plot(x<span class="op">,</span> y)</span></code></pre></div>
 
@@ -284,12 +297,14 @@ class="btn dotto-main-dot-shape"
 
 </div>
 <div class="handler2 dotto-main-output"></div>
-<div class="box2 dotto-main dotto-main-output">
-<h3>&nbsp;Results:</h3>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<br>
+<h1>&nbsp;Results:</h1>
+<br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
  
@@ -299,17 +314,17 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'julia'" class="mx-2">
 
 <pre><code>## 10-element Array{Float64,1}:
-##  0.5637593220655421
-##  0.08752411978496344
-##  0.23547075854287747
-##  0.022317688487923037
-##  0.5426553901277364
-##  0.043071735014486245
-##  0.66743507863065
-##  0.29148706669334334
-##  0.417733889801424
-##  0.39402252334320265</code></pre>
-<p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-6-J1.png" width="300" /></p>
+##  0.5516000653569235
+##  0.4610215594618978
+##  0.5599198299397596
+##  0.16990003164922118
+##  0.044455819329396684
+##  0.8498050014623941
+##  0.6358918062428724
+##  0.4670655295487436
+##  0.7874016328921398
+##  0.6078580750857419</code></pre>
+<p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-6-J1.png" width="300" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
  
@@ -320,8 +335,10 @@ class="btn dotto-main-dot-shape"
 <!-- Dot 2, lang: R ------------------------------------------------>
 
 <div v-if="activeMotto === '2'" class="col-12 col-lg-11 d-flex p-0 wrapper">
-<div class="box dotto-main-intro">
-<h3>&nbsp;Instructions:</h3>
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<br>
+<h1>&nbsp;Instructions:</h1>
+<br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
@@ -347,12 +364,14 @@ class="btn dotto-main-dot-shape"
 </div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
-<div class="box2 dotto-main dotto-main-codes">
-<h3>&nbsp; Codes:</h3>
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<br>
+<h1>&nbsp;Codes:</h1>
+<br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>]</span></code></pre></div>
 
 </div>
  
@@ -361,7 +380,7 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'julia'" class="mx-2">
 
-<div class="sourceCode" id="cb5"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode julia dotto-dot-code"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">;</span> y <span class="op">=</span> rand(<span class="fl">20</span>)<span class="op">;</span> <span class="co"># These are the plotting data</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plot(x<span class="op">,</span> y)</span></code></pre></div>
 
@@ -371,12 +390,15 @@ class="btn dotto-main-dot-shape"
 
 </div>
 <div class="handler2 dotto-main-output"></div>
-<div class="box2 dotto-main dotto-main-output">
-<h3>&nbsp;Results:</h3>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<br>
+<h1>&nbsp;Results:</h1>
+<br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot; &quot;T&quot;</code></pre>
+<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot;
+## [16] &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot; &quot;T&quot;</code></pre>
 
 </div>
  
@@ -386,27 +408,27 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'julia'" class="mx-2">
 
 <pre><code>## 20-element Array{Float64,1}:
-##  0.21974797492576892
-##  0.20694191397315365
-##  0.480439597049384
-##  0.6488633927400742
-##  0.5459088091173638
-##  0.030634257386618513
-##  0.7569036415059398
-##  0.7297498419986976
-##  0.32839100851585235
-##  0.9485251431475457
-##  0.46621512796611686
-##  0.3736582841299625
-##  0.011914398229940337
-##  0.89805996249702
-##  0.6728262056152694
-##  0.35755804888445075
-##  0.08584584412457108
-##  0.6224822196627531
-##  0.7917187146606881
-##  0.8658823920712473</code></pre>
-<p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-12-J1.png" width="300" /></p>
+##  0.07220224620838911
+##  0.1591714619528415
+##  0.5909288204267484
+##  0.840435636457076
+##  0.3623749030708727
+##  0.8483050637736744
+##  0.055558668124659594
+##  0.794941345165409
+##  0.5929504855789882
+##  0.3930413765578771
+##  0.017410066879246067
+##  0.7863409659977754
+##  0.5945899251011795
+##  0.6144672266946152
+##  0.33713386398281875
+##  0.24863016414903316
+##  0.15784380382294305
+##  0.04134545952073254
+##  0.9223072521599838
+##  0.047614622390070194</code></pre>
+<p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-12-J1.png" width="300" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
  
@@ -426,17 +448,10 @@ class="btn dotto-main-dot-shape"
 </div>
 <div class="col-12 col-md-4" id="dotto-comment" style="padding-top: 13px">
 <div class="alert alert-danger dotto-alert-comment" role="alert">
+<span @click="commentOpen = true">
+<strong>Comments. Write Yours!</strong>
+</span>
 
-<div class="container">
-<details class="comments-details">
-<summary class="col-sm-12 alert alert-info">
-<strong><i class="fas fa-comments fa-lg"></i>
-<span class="disqus-comment-count" data-disqus-url="https://datamotto.com/posts/Dotto/D002-2021-04-28-coffee-market-in-paris/index.html" data-disqus-identifier="3cec3bca-a81d-11eb-b8a7-acbc32baed85"></span>
-</strong>
-<span class="pl-2">for this Dotto.</span>
-<span>Write yours here!</span>
-</summary>
-<div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
   this.page.url = "https://datamotto.com/posts/Dotto/D002-2021-04-28-coffee-market-in-paris/index.html";
@@ -452,8 +467,6 @@ s.setAttribute("data-timestamp", +new Date());
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
-</details>
-</div>
 
 </div>
 </div>

@@ -459,13 +459,13 @@ navbar-collapse {
   box-sizing: border-box;
   flex: 1 1 auto;
   width: 33%;
-  height: 65vh;
+  height: 80vh;
 }
 .box2 {
   box-sizing: border-box;
   flex: 1 1 auto;
   width: 33%;
-  height: 65vh;
+  height: 80vh;
 }
 .handler {
   width: 10px;
@@ -537,4 +537,24 @@ navbar-collapse {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+
+/* Dotto colors */
+
+.dotto-dot-instruction {
+  background-color: #fff9d7;
+  font-size: 18px;
+  border: 0px;
+}
+
+.dotto-dot-code {
+  background-color: #282b36;
+  font-size: 18px;
+  border: 0px;
+}
+
+.dotto-main img {
+   max-width: 100%;
+   height: auto;
 }
