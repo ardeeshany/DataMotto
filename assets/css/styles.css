@@ -553,3 +553,8 @@ navbar-collapse {
   font-size: 18px;
   border: 0px;
 }
+
+.dotto-main img {
+   max-width: 100%;
+   height: auto;
+}
