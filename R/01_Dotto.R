@@ -301,9 +301,7 @@ top_header <- sprintf('
 <div v-if="commentOpen" class="modal">
 <div class="modal-content">
 <span @click="commentOpen = false" class="close">&times;</span>
-<div class="card" style="max-width: 540px">
-%s
-</div>
+<div id="disqus_thread"></div>
 </div>
 </div>
 ',
@@ -311,8 +309,7 @@ col_1,
 col_2,
 col_3,
 col_4,
-modals,
-discus_Dotto(meta))
+modals)
 
 
 temp_file <- tempfile()
@@ -595,10 +592,11 @@ footer <- sprintf('
 <span @click="commentOpen = true">
 <strong>Comments. Write Yours!</strong>
 </span>
+%s
 </div>
 </div>
 </section>
-')
+', discus_Dotto1(meta))
 
 temp_file <- tempfile()
 con <- file(temp_file, open = "w", encoding = "UTF-8")
@@ -607,6 +605,31 @@ close(con)
 return(temp_file)
 
 
+}
+
+discus_Dotto1 <- function(meta) {
+  # dir_name <- basename(getwd())
+  disc_codes <- sprintf('
+<script>
+var disqus_config = function () {
+  this.page.url = "%s";
+  this.page.identifier = "%s";
+};
+
+(function() {
+var d = document, s = d.createElement("script");
+s.src = "https://datamotto-com.disqus.com/embed.js";
+s.setAttribute("data-timestamp", +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
+',
+glue::glue("https://datamotto.com/{meta$link}"),
+meta$dotto_id)
+
+  return(disc_codes)
 }
 
 

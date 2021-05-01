@@ -20,11 +20,10 @@ use_Dotto <- function() {
 
   #default_engines <- c("R", "python", "julia", "sql", "bash", "js", "node", "d3", "Rcpp", "stan")
 
-  # knitr::opts_chunk$set(Dot_title = NULL,
-  #                       Dot_active = FALSE,
-  #                       Dot_color = NULL,
-  #                       Dot_open = T,
-  #                       Dot_close = T)
+  knitr::opts_chunk$set(message = FALSE,
+                        warning = FALSE,
+                        class.source = "dotto-dot-code",
+                        fig.align = "left")
 
   rmd_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
   metadata <- config_Dotto(rmd_path) %>%
@@ -64,8 +63,10 @@ if(tolower(options$part) == "instruction"){
 if(tolower(options$lang) == tolower(first_lang)){
 x1 <- sprintf('
 <div v-if="activeMotto === \'%s\'" class="col-12 col-lg-11 d-flex p-0 wrapper">
-<div class="box overflow-auto dotto-main-intro">
-<h3>&nbsp;Instructions:</h3>
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<br>
+<h1>&nbsp;Instructions:</h1>
+<br>
 ', options$Dot)
 }
 
@@ -84,7 +85,9 @@ x1 <- sprintf('
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
 <div class="box2 dotto-main overflow-auto dotto-main-codes">
-<h3>&nbsp; Codes:</h3>
+<br>
+<h1>&nbsp;Codes:</h1>
+<br>
 ')
 }
 
@@ -101,7 +104,9 @@ x1 <- sprintf('
 </div>
 <div class="handler2 dotto-main-output"></div>
 <div class="box2 dotto-main overflow-auto dotto-main-output">
-<h3>&nbsp;Results:</h3>
+<br>
+<h1>&nbsp;Results:</h1>
+<br>
 ')
 }
 

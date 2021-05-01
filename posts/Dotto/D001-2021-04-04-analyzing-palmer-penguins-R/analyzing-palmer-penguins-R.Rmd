@@ -99,7 +99,8 @@ library(dplyr)
 library(DT)
 # Step 1 --------------------------
 penguins %>%
-  count(species)
+  count(species) %>%
+  knitr::kable()
 # Step 2 --------------------------
 ggplot(penguins, aes(x = island, fill = species)) +
   geom_bar(alpha = 0.8) +
