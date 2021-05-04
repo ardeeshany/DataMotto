@@ -558,3 +558,38 @@ navbar-collapse {
    max-width: 100%;
    height: auto;
 }
+
+
+/* Dracula Color */
+
+.drac-pink {
+  color: #ff79c6;
+}
+
+.drac-blue {
+  color: #6272a4;
+}
+
+.drac-bluelight {
+  color: #8be9fd;
+}
+
+.drac-yellow {
+  color: #f1fa8c;
+}
+
+.drac-green {
+  color: #50fa7b;
+}
+
+.drac-purple {
+  color: #bd93f9;
+}
+
+/* About Dotto page */
+.dotto-info-card {
+  padding: 0 5px;
+  font-size: 28px;
+  text-align: left;
+
+}
