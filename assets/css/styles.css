@@ -589,7 +589,24 @@ navbar-collapse {
 /* About Dotto page */
 .dotto-info-card {
   padding: 0 5px;
-  font-size: 28px;
+  font-size: 32px;
   text-align: left;
 
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scroll-bar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scroll-bar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.svg-in-center {
+  display: block;
+  margin: auto;
 }
