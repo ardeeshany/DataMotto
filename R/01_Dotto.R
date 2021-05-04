@@ -298,7 +298,7 @@ top_header <- sprintf('
 </div>
 </section>
 %s
-<div v-if="commentOpen" class="modal">
+<div v-show="commentOpen" class="modal">
 <div class="modal-content">
 <span @click="commentOpen = false" class="close">&times;</span>
 <div id="disqus_thread"></div>
@@ -581,22 +581,29 @@ Dotto_footer <- function(meta = NULL) {
 
 footer <- sprintf('
 <section id="dotto-footer">
-<div class="col-12 col-md-8">
+<div class="col-12 col-md-10">
 <div class="d-flex" id="dotto-row-lines">
 <i type="button" class="icon ion-ios-circle-filled d-sm-flex justify-content-sm-center dotto-lines-icons" >
 </i>
 </div>
 </div>
-<div class="col-12 col-md-4" id="dotto-comment" style="padding-top: 13px">
-<div class="alert alert-danger dotto-alert-comment" role="alert">
-<span @click="commentOpen = true">
-<strong>Comments. Write Yours!</strong>
+<div class="col-12 col-md-2 pt-2">
+<div class="alert alert-danger dotto-alert-comment text-center" role="alert">
+<span type="button" @click="commentOpen = true">
+<strong><i class="fas fa-comments fa-2x"></i>
+<span class="disqus-comment-count" data-disqus-url="%s" data-disqus-identifier="%s"></span>
+</strong>
+<span class="h5"> for this Dotto.</span>
+<span class="h5"> Write yours here!</span>
 </span>
 %s
 </div>
 </div>
 </section>
-', discus_Dotto1(meta))
+',
+glue::glue("https://datamotto.com/{meta$link}"),
+meta$dotto_id,
+discus_Dotto1(meta))
 
 temp_file <- tempfile()
 con <- file(temp_file, open = "w", encoding = "UTF-8")

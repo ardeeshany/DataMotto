@@ -100,6 +100,7 @@ const app = Vue.createApp({
       isHandlerDragging = false;
       isHandlerDragging2 = false;
     });
+    hljs.highlightAll();
   },
 });
 app.mount("body");

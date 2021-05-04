@@ -161,7 +161,7 @@ Audrey Hepburn
 </div>
 </div>
 
-<div v-if="commentOpen" class="modal">
+<div v-show="commentOpen" class="modal">
 <div class="modal-content">
 <span @click="commentOpen = false" class="close">&times;</span>
 <div id="disqus_thread"></div>
@@ -243,8 +243,9 @@ class="btn dotto-main-dot-shape"
 
 <div v-if="activeMotto === '1'" class="col-12 col-lg-11 d-flex p-0 wrapper">
 <div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
-<br>
+<div class="card-header">
 <h1>&nbsp;Instructions:</h1>
+</div>
 <br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
@@ -272,8 +273,9 @@ class="btn dotto-main-dot-shape"
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
 <div class="box2 dotto-main overflow-auto dotto-main-codes">
-<br>
+<div class="card-header">
 <h1>&nbsp;Codes:</h1>
+</div>
 <br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
@@ -298,8 +300,9 @@ class="btn dotto-main-dot-shape"
 </div>
 <div class="handler2 dotto-main-output"></div>
 <div class="box2 dotto-main overflow-auto dotto-main-output">
-<br>
+<div class="card-header">
 <h1>&nbsp;Results:</h1>
+</div>
 <br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
@@ -314,16 +317,16 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'julia'" class="mx-2">
 
 <pre><code>## 10-element Array{Float64,1}:
-##  0.5516000653569235
-##  0.4610215594618978
-##  0.5599198299397596
-##  0.16990003164922118
-##  0.044455819329396684
-##  0.8498050014623941
-##  0.6358918062428724
-##  0.4670655295487436
-##  0.7874016328921398
-##  0.6078580750857419</code></pre>
+##  0.2750141229125256
+##  0.4625676606336073
+##  0.40782362521015125
+##  0.9921305749684
+##  0.47108483562081704
+##  0.9873693629594704
+##  0.27712985591964867
+##  0.9835394378207925
+##  0.970243308062503
+##  0.7460727123898416</code></pre>
 <p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-6-J1.png" width="300" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
@@ -336,8 +339,9 @@ class="btn dotto-main-dot-shape"
 
 <div v-if="activeMotto === '2'" class="col-12 col-lg-11 d-flex p-0 wrapper">
 <div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
-<br>
+<div class="card-header">
 <h1>&nbsp;Instructions:</h1>
+</div>
 <br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
@@ -365,8 +369,9 @@ class="btn dotto-main-dot-shape"
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
 <div class="box2 dotto-main overflow-auto dotto-main-codes">
-<br>
+<div class="card-header">
 <h1>&nbsp;Codes:</h1>
+</div>
 <br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
@@ -391,14 +396,15 @@ class="btn dotto-main-dot-shape"
 </div>
 <div class="handler2 dotto-main-output"></div>
 <div class="box2 dotto-main overflow-auto dotto-main-output">
-<br>
+<div class="card-header">
 <h1>&nbsp;Results:</h1>
+</div>
 <br>
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot;
-## [16] &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot; &quot;T&quot;</code></pre>
+<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot;
+## [18] &quot;R&quot; &quot;S&quot; &quot;T&quot;</code></pre>
 
 </div>
  
@@ -408,26 +414,26 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'julia'" class="mx-2">
 
 <pre><code>## 20-element Array{Float64,1}:
-##  0.07220224620838911
-##  0.1591714619528415
-##  0.5909288204267484
-##  0.840435636457076
-##  0.3623749030708727
-##  0.8483050637736744
-##  0.055558668124659594
-##  0.794941345165409
-##  0.5929504855789882
-##  0.3930413765578771
-##  0.017410066879246067
-##  0.7863409659977754
-##  0.5945899251011795
-##  0.6144672266946152
-##  0.33713386398281875
-##  0.24863016414903316
-##  0.15784380382294305
-##  0.04134545952073254
-##  0.9223072521599838
-##  0.047614622390070194</code></pre>
+##  0.5653229421085768
+##  0.01529568788643787
+##  0.4485223500190354
+##  0.485498247459635
+##  0.3154523534109661
+##  0.3388665701692877
+##  0.8623171885212131
+##  0.602324400991288
+##  0.19122178467131468
+##  0.6394573210611925
+##  0.09443080686480143
+##  0.15341509949257293
+##  0.7011418320382972
+##  0.9304480509172994
+##  0.5123276991025671
+##  0.29743902685471424
+##  0.9093040798244421
+##  0.06106075509532971
+##  0.9923889394642749
+##  0.22370271210329884</code></pre>
 <p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-12-J1.png" width="300" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
@@ -440,16 +446,20 @@ class="btn dotto-main-dot-shape"
 <!-- Body Footer ----------------------------------->
 
 <section id="dotto-footer">
-<div class="col-12 col-md-8">
+<div class="col-12 col-md-10">
 <div class="d-flex" id="dotto-row-lines">
 <i type="button" class="icon ion-ios-circle-filled d-sm-flex justify-content-sm-center dotto-lines-icons" >
 </i>
 </div>
 </div>
-<div class="col-12 col-md-4" id="dotto-comment" style="padding-top: 13px">
-<div class="alert alert-danger dotto-alert-comment" role="alert">
-<span @click="commentOpen = true">
-<strong>Comments. Write Yours!</strong>
+<div class="col-12 col-md-2 pt-2">
+<div class="alert alert-danger dotto-alert-comment text-center" role="alert">
+<span type="button" @click="commentOpen = true">
+<strong><i class="fas fa-comments fa-2x"></i>
+<span class="disqus-comment-count" data-disqus-url="https://datamotto.com/posts/Dotto/D002-2021-04-28-coffee-market-in-paris/index.html" data-disqus-identifier="3cec3bca-a81d-11eb-b8a7-acbc32baed85"></span>
+</strong>
+<span class="h5"> for this Dotto.</span>
+<span class="h5"> Write yours here!</span>
 </span>
 
 <script>

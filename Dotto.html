@@ -24,26 +24,35 @@
       }
     </style>
     <link href="assets/homepage/sidebars.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/Font%20Awesome%205%20Brands.css" />
+    <link rel="stylesheet" href="assets/css/Font%20Awesome%205%20Free.css" />
     <link rel="stylesheet" href="assets/css/icomoon.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inconsolata"
+    />
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" />
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css" />
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css" />
+    <link rel="stylesheet" href="assets/css/home-cards.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
     <link rel="stylesheet" href="assets/css/site.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZMEMQM0Y2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WZMEMQM0Y2');
-</script>
-
-
-
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/Team-Boxed.css" />
   </head>
   <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+     <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
       <symbol id="home" viewBox="0 0 16 16">
         <path
           d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"
@@ -191,11 +200,11 @@
         <a href="/" class="d-block p-3 link-dark text-decoration-none" title="">
           <img class="img-fluid" src="assets/img/logo.svg" />
         </a>
-        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+         <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
           <li class="nav-item">
             <a
               href="/"
-              class="nav-link active-side py-3"
+              class="nav-link py-3"
               title=""
               data-bs-toggle="tooltip"
               data-bs-placement="right"
@@ -225,7 +234,7 @@
                     <li>
             <a
               href="/Dotto.html"
-              class="nav-link py-3"
+              class="nav-link active-side py-3"
               title=""
               data-bs-toggle="tooltip"
               data-bs-placement="right"
@@ -239,102 +248,21 @@
 
         </ul>
       </div>
-      <div class="content-view flex-column d-flex my-5 text-center">
-        <img class="img-fluid mb-3" src="assets/img/homepage.svg" />
-        <h2 class="pink fw-bold">Share Efficiently Your Data Experience</h2>
-        <p class="my-3">
-          Data science is an inter-disciplinary field that uses scientific
-          methods, processes, algorithms and systems to extract knowledge and
-          insights from many structural and unstructured data. Data science is
-          related to data mining, machine learning and big data.
-        </p>
-        <button type="button" class="btn btn-outline-light">Learn More</button>
-        <div class="row mt-5">
-          <div class="col-sm">
-            <a
-              class="github-button"
-              href="https://github.com/ardeeshany/DataMotto"
-              data-color-scheme="no-preference: light; light: light; dark: light;"
-              data-size="large"
-              data-show-count="true"
-              aria-label="Star ardeeshany/DataMotto on GitHub"
-              >Star</a
-            >
-          </div>
-          <div
-            class="col-sm"
-            onclick="location.href='https://twitter.com/DataMotto';"
-          >
-            <i type="button" class="fab fa-twitter text-primary fs-2"></i>
-          </div>
-          <div
-            class="col-sm"
-            onclick="location.href='https://datamotto.slack.com/';"
-          >
-            <i type="button" class="fab fa-slack text-warning fs-2"></i>
-          </div>
-        </div>
-      </div>
-      <div
-        id="cards"
-        class="cards-view flex-column d-flex text-center overflow-auto"
-      >
-        <div class="container">
-          <div class="my-5">
-            <h2 class="fw-bold">OUR DOTTOS</h2>
-          </div>
-          <div class="row justify-content-center">
-            <div class="dottos r-color"><i class="fab fa-r-project"></i></div>
-            <div class="dottos python-color"><i class="fab fa-python"></i></div>
-            <div class="dottos julia-color">
-              <i class="icon-julialang-icon"
-                ><i class="path1"></i><i class="path2"></i><i class="path3"></i
-              ></i>
+      <div class="mt-5">
+        <section class="text-white text-center">
+            <h1 class="text-center display-4 text-warning my-5">What is a Dotto?</h1>
+            <div class="d-flex">
+            <div class="col-6">
+            <p class="my-4 text-left" style="font-size: 24px; text-align: left;">
+Dotto is a minimal autonomous data-related material! by using best practices coding and state of the art packages, they aim to cover a data-science concept as efficient and effective as possible.
+            </p>
             </div>
-            <div class="dottos node-color"><i class="fab fa-node-js"></i></div>
-            <div class="dottos sql-color"><i class="icon-file-sql"></i></div>
-          </div>
-        </div>
-        <div class="row row-cols-1 row-cols-md-2 g-4 m-2">
-          <div v-for="dotto in dottos" class="card-group">
-            <div class="card" @click="goToUrl(dotto.link[0])">
-              <div class="card-body">
-                <h5 class="card-title fw-bold fs-5">{{dotto.title[0]}}</h5>
-                <p class="card-text">{{dotto.description[0]}}</p>
-              </div>
-              <div v-if="dotto.author.length > 1" class="card-footer d-flex">
-                <img
-                  v-for="author in dotto.author"
-                  :src="author.profile_img"
-                  :alt="author.name"
-                  width="50"
-                  height="50"
-                  class="rounded-circle mx-1"
-                />
-              </div>
-              <div v-else class="card-footer d-flex">
-                <img
-                  :src="dotto.author[0].profile_img[0]"
-                  :alt="dotto.author[0].name[0]"
-                  width="50"
-                  height="50"
-                  class="rounded-circle"
-                />
-                <small class="text-muted text-start mx-2 mt-2">
-                  <a class="pink" :href="dotto.author[0].url[0]"
-                    >{{dotto.author[0].name[0]}}</a
-                  >
-                  <p>{{dotto.author[0].affiliation[0]}}</p></small
-                >
-              </div>
+            <div class="col-6">
+              <img src="assets/img/dotto-to-dots.svg" alt="Dotto to Dots diagram" width="25%">
             </div>
-          </div>
-        </div>
+        </section>
       </div>
     </div>
-    <script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js"></script>
-    <script src="assets/js/vue.js"></script>
-    <script type="module" src="assets/js/index.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   </body>
