@@ -88,7 +88,7 @@
 }
 
 #dotto-row-header {
-  min-height: 80px;
+  /* min-height: 80px; */
 }
 
 .header-like-btn,
@@ -229,8 +229,6 @@
 navbar-collapse {
 }
 
-#about-team {
-}
 
 .description {
   text-align: center;
@@ -459,25 +457,27 @@ navbar-collapse {
   box-sizing: border-box;
   flex: 1 1 auto;
   width: 33%;
-  height: 80vh;
+  height: 79vh;
 }
 .box2 {
   box-sizing: border-box;
   flex: 1 1 auto;
   width: 33%;
-  height: 80vh;
+  height: 79vh;
 }
 .handler {
   width: 10px;
   padding: 0;
   cursor: ew-resize;
   flex: 0 0 auto;
+  background-color: #44475a;
 }
 .handler2 {
   width: 10px;
   padding: 0;
   cursor: ew-resize;
   flex: 0 0 auto;
+  background-color: #44475a;
 }
 #resizable {
   display: flex;
