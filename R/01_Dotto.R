@@ -596,7 +596,7 @@ footer <- sprintf('
 <section id="dotto-footer">
 <div class="col-12 col-md-9">
 <div class="d-flex" id="dotto-row-lines">
-<img src="../../../assets/img/Dotto.svg" width="45" height="45" type="button" class="icon d-sm-flex justify-content-sm-center dotto-lines-icons">
+<img src="../../../assets/img/Dotto.svg" width="35" height="35" type="button" class=" ml-5 icon d-sm-flex justify-content-sm-center dotto-lines-icons">
 </i>
 </div>
 </div>
