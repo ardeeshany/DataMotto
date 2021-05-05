@@ -1,3 +1,13 @@
+#content-mobile {display: none;}
+
+@media screen and (max-width: 768px) {
+
+#content-mobile {display: block;}
+#content-desktop {display: none;}
+#content-desktop-cards {display: none;}
+
+}
+
 .dotto-header {
   background-color: #282a36;
   color: rgb(255, 255, 255);
@@ -103,7 +113,7 @@
   max-height: 100px;
   max-width: 100px;
   min-height:50px;
-  min-width: 75px;
+  min-width: 80px;
 }
 
 #dotto-row-info {
