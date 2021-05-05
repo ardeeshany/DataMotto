@@ -35,7 +35,7 @@ export default {
         "affiliation": ["DataMotto"],
         "url": ["Aminzamani.com"],
         "img": ["AminZamani.jpeg"],
-        "lang": ["python", "julia"],
+        "lang": ["python"],
         "profile_img_for_Dotto": ["./analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"],
         "profile_img": ["./posts/Dotto/D001-2021-04-04-analyzing-palmer-penguins-R/analyzing-palmer-penguins-R_files/figure-html/AminZamani.jpeg"]
       }

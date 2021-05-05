@@ -93,16 +93,17 @@
 
 .header-like-btn,
 .header-like-btn:hover {
-  background: rgba(255, 255, 255, 0);
-  border-radius: 20px;
-  border-width: 2px;
-  border-color: #ff79c6;
+  background: #fff;
+  border-radius: 15px;
+  border-width: 3px;
+  border-color: #5a6078;
   border-bottom-style: solid;
-  font-size: 15px;
+  font-size: 16px;
   padding: 0px;
   max-height: 100px;
   max-width: 75px;
-  min-width: 50px;
+  min-height: 40px;
+  min-width: 40px;
 }
 
 #dotto-row-info {
@@ -532,8 +533,9 @@ navbar-collapse {
 /* The Close Button */
 .close {
   color: #aaa;
-  float: right;
-  font-size: 28px;
+  opacity: .8;
+  float: left;
+  font-size: 32px;
   font-weight: bold;
 }
 
@@ -552,6 +554,18 @@ navbar-collapse {
   font-size: 18px;
   border: 0px;
 }
+
+.dotto-dot-output {
+  background-color: #fff;
+  font-size: 18px;
+  border: 0px;
+}
+
+.dotto-dot-output pre {
+  border: 0;
+}
+
+
 
 .dotto-dot-code {
   background-color: #282b36;
@@ -631,11 +645,24 @@ navbar-collapse {
   font-size: 1.5rem;
 }
 
-.heart-beat {
-  	animation: pulse 1s infinite;
-}
 
 .flex-wrap {
   flex-wrap: wrap !important;
   height: 73%;
+}
+
+.modal-comment {
+  background-color: #fefefe;
+  margin: 10% auto;
+  margin-top: 5%;
+  margin-bottom: 0px;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  height: 68%;
+}
+
+
+.card-header.dot-codes {
+  background-color: #5a6078;
 }

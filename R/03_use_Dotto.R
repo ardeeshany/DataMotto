@@ -86,7 +86,7 @@ x1 <- sprintf('
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
 <div class="box2 dotto-main overflow-auto dotto-main-codes">
-<div class="card-header">
+<div class="card-header dot-codes">
 <h1>&nbsp;Codes:</h1>
 </div>
 <br>
@@ -114,7 +114,7 @@ x1 <- sprintf('
 }
 
 x2 <- sprintf('
-<div v-if="activeLang === \'%s\'" class="mx-2">
+<div v-if="activeLang === \'%s\'" class="mx-2 dotto-dot-output">
 ',
 tolower(options$engine))
 }

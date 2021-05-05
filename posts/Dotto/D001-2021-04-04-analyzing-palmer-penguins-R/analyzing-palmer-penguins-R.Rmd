@@ -14,7 +14,7 @@ author:
     affiliation: "DataMotto"
     url: "Aminzamani.com"
     img: "AminZamani.jpeg"
-    lang: ["python", "julia"]
+    lang: "python"
 tech:
   - lang: r
     pkgs: ["ggplot2", "dplyr"]

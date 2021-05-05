@@ -5,8 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="generator" content="pandoc" />
 
-    
-    
+
+
     <title>Coffee Market in Paris</title>
 
         <script src="coffee-market-in-paris_files/header-attrs-2.7.3/header-attrs.js"></script>
@@ -26,7 +26,7 @@
                code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
                pre:not([class]) { background-color: white }</style>
         <script src="coffee-market-in-paris_files/navigation-1.1/tabsets.js"></script>
-        
+
           <meta property="og:title" content="Coffee Market in Paris" />
           <meta property="og:type" content="article">
           <meta property="og:description" content="A short description of the Dotto.
@@ -35,16 +35,16 @@
           <meta property="og:locale" content="en_US">
           <meta property="og:site_name" content="Data Motto">
           <meta property="og:image" content="resources/images/default_dotto.jpg" />
-          
-        
+
+
           <meta property="twitter:card" content="summary_large_image">
           <meta property="twitter:title" content="Coffee Market in Paris">
           <meta property="twitter:description" content="A short description of the Dotto.
         ">
           <meta property="twitter:url" content="https://datamotto.com/posts/dotto/D002-2021-04-28-coffee-market-in-paris/">
           <meta property="twitter:image" content="resources/images/default_dotto.jpg">
-          
-    
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZMEMQM0Y2"></script>
 <script>
@@ -111,8 +111,9 @@ A short description of the Dotto.
 
 <div class="col-1 d-flex justify-content-center align-items-center">
 <button class="btn btn-outline-light btn-block header-like-btn" style="background-color:white" type="button">
+.
 <!-- LikeBtn.com BEGIN -->
-<span class="likebtn-wrapper" data-theme="nero" data-i18n_like="Like Dotto" data-white_label="true" data-identifier="3cec3bca-a81d-11eb-b8a7-acbc32baed85" data-addthis_service_codes="twitter, facebook, linkedin, gmail, email, slack, telegram" data-show_like_label="false" data-dislike_enabled="false" data-counter_frmt="comma" data-popup_html="I like the Dotto!" data-share_size="large" data-site_id="604e13966fd08bbf03672c5b" data-i18n_like_tooltip="Like Dotto"></span>
+<span class="likebtn-wrapper" data-theme="nero" btn_size="36" data-f_size="8" data-icon_l_url="https://datamotto.com/assets/img/red-circle.svg" data-i18n_like="Like Dotto" data-white_label="true" data-identifier="3cec3bca-a81d-11eb-b8a7-acbc32baed85" data-addthis_service_codes="twitter, facebook, linkedin, gmail, email, slack, telegram" data-show_like_label="false" data-dislike_enabled="false" data-counter_frmt="comma" data-popup_html="I like the Dotto!" data-share_size="large" data-site_id="604e13966fd08bbf03672c5b" data-i18n_like_tooltip="Like Dotto"></span>
 <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
 <!-- LikeBtn.com END -->
 </button>
@@ -160,8 +161,8 @@ Audrey Hepburn
 </div>
 </div>
 
-<div v-show="commentOpen" class="modal">
-<div class="modal-content">
+<div v-show="commentOpen" class="modal overflow-auto">
+<div class="modal-comment overflow-auto">
 <span @click="commentOpen = false" class="close">&times;</span>
 <div id="disqus_thread"></div>
 </div>
@@ -172,12 +173,12 @@ Audrey Hepburn
 <div id="dotto-row-info" class="d-flex">
 
 <div class="col-4 d-flex flex-grow-0 justify-content-start align-items-center align-items-xl-center">
-<div class="d-flex justify-content-around align-items-center bg-social-icons">
+<div class="d-flex mx-4 justify-content-around align-items-center bg-social-icons">
 
 <div>
   <i type="button" @click="activeLang = 'r'"
 class="fab fa-r-project"
-:class="{'text-primary': activeLang === 'r'}" >
+:class="{'text-info': activeLang === 'r'}" >
   </i>
 </div>
 
@@ -185,7 +186,7 @@ class="fab fa-r-project"
 <div>
   <i type="button" @click="activeLang = 'julia'"
 class="fas fa-database"
-:class="{'text-danger': activeLang === 'julia'}" >
+:class="{'text-dark': activeLang === 'julia'}" >
   </i>
 </div>
 
@@ -246,7 +247,7 @@ class="btn dotto-main-dot-shape"
 <h1>&nbsp;Instructions:</h1>
 </div>
 <br>
- 
+
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
@@ -254,10 +255,10 @@ class="btn dotto-main-dot-shape"
 
 </p>
 </div>
- 
 
 
- 
+
+
 <div v-if="activeLang === 'julia'" class="mx-2">
 <p class="mx-2">
 
@@ -265,27 +266,27 @@ class="btn dotto-main-dot-shape"
 
 </p>
 </div>
- 
+
 
 
 </div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
 <div class="box2 dotto-main overflow-auto dotto-main-codes">
-<div class="card-header">
+<div class="card-header dot-codes">
 <h1>&nbsp;Codes:</h1>
 </div>
 <br>
- 
+
 <div v-if="activeLang === 'r'" class="mx-2">
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span></code></pre></div>
 
 </div>
- 
 
 
- 
+
+
 <div v-if="activeLang === 'julia'" class="mx-2">
 
 <div class="sourceCode" id="cb2"><pre class="sourceCode julia dotto-dot-code"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
@@ -293,7 +294,7 @@ class="btn dotto-main-dot-shape"
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plot(x<span class="op">,</span> y)</span></code></pre></div>
 
 </div>
- 
+
 
 
 </div>
@@ -303,33 +304,33 @@ class="btn dotto-main-dot-shape"
 <h1>&nbsp;Results:</h1>
 </div>
 <br>
- 
-<div v-if="activeLang === 'r'" class="mx-2">
+
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
 <p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
- 
 
 
- 
-<div v-if="activeLang === 'julia'" class="mx-2">
+
+
+<div v-if="activeLang === 'julia'" class="mx-2 dotto-dot-output">
 
 <pre><code>## 10-element Array{Float64,1}:
-##  0.719688973227739
-##  0.8629622147307952
-##  0.09749630137384946
-##  0.5019581802972639
-##  0.14466251422600185
-##  0.4205778789499788
-##  0.34750293069697724
-##  0.09158179154967261
-##  0.7951024396170863
-##  0.15848596809423388</code></pre>
+##  0.34735739267355825
+##  0.9199404180021571
+##  0.30525447389137694
+##  0.15263891947688135
+##  0.194324729285285
+##  0.47259798388778385
+##  0.49808915844578405
+##  0.48691818330856695
+##  0.1178822929919714
+##  0.9383099522502727</code></pre>
 <p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-6-J1.png" width="300" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
- 
+
 </div>
 </div>
 </div>
@@ -342,7 +343,7 @@ class="btn dotto-main-dot-shape"
 <h1>&nbsp;Instructions:</h1>
 </div>
 <br>
- 
+
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
@@ -350,10 +351,10 @@ class="btn dotto-main-dot-shape"
 
 </p>
 </div>
- 
 
 
- 
+
+
 <div v-if="activeLang === 'julia'" class="mx-2">
 <p class="mx-2">
 
@@ -361,27 +362,27 @@ class="btn dotto-main-dot-shape"
 
 </p>
 </div>
- 
+
 
 
 </div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
 <div class="box2 dotto-main overflow-auto dotto-main-codes">
-<div class="card-header">
+<div class="card-header dot-codes">
 <h1>&nbsp;Codes:</h1>
 </div>
 <br>
- 
+
 <div v-if="activeLang === 'r'" class="mx-2">
 
 <div class="sourceCode" id="cb4"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>]</span></code></pre></div>
 
 </div>
- 
 
 
- 
+
+
 <div v-if="activeLang === 'julia'" class="mx-2">
 
 <div class="sourceCode" id="cb5"><pre class="sourceCode julia dotto-dot-code"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
@@ -389,7 +390,7 @@ class="btn dotto-main-dot-shape"
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plot(x<span class="op">,</span> y)</span></code></pre></div>
 
 </div>
- 
+
 
 
 </div>
@@ -399,44 +400,44 @@ class="btn dotto-main-dot-shape"
 <h1>&nbsp;Results:</h1>
 </div>
 <br>
- 
-<div v-if="activeLang === 'r'" class="mx-2">
+
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
 <pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot;
 ## [13] &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot; &quot;T&quot;</code></pre>
 
 </div>
- 
 
 
- 
-<div v-if="activeLang === 'julia'" class="mx-2">
+
+
+<div v-if="activeLang === 'julia'" class="mx-2 dotto-dot-output">
 
 <pre><code>## 20-element Array{Float64,1}:
-##  0.3742480034272675
-##  0.6297011572895481
-##  0.7335752864179397
-##  0.13751352963443253
-##  0.1750253889021227
-##  0.10212470228706949
-##  0.35560158124740693
-##  0.49964961127954055
-##  0.4394577436934659
-##  0.29941241132581853
-##  0.17463867704487357
-##  0.2215791470185977
-##  0.6737434194134835
-##  0.21483053092246251
-##  0.06367269820807775
-##  0.003561305371833523
-##  0.45756522728046
-##  0.217348393566134
-##  0.5803958362000561
-##  0.5471754806869487</code></pre>
+##  0.7223830802319087
+##  0.49878800968837544
+##  0.36054669887565094
+##  0.739111564079233
+##  0.6486491407489576
+##  0.26508336544475886
+##  0.462553919660055
+##  0.12280724312576297
+##  0.721270889107376
+##  0.7735564160011144
+##  0.08841353732958956
+##  0.9715330301556595
+##  0.7804899958300384
+##  0.15936276480920752
+##  0.27245271493553536
+##  0.4688877825160207
+##  0.2102450988277067
+##  0.1452844186986384
+##  0.6227212081359745
+##  0.06239795299255291</code></pre>
 <p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-12-J1.png" width="300" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
- 
+
 </div>
 </div>
 </div>

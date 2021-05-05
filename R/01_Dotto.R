@@ -206,6 +206,7 @@ paste0(meta$categories, collapse = ", "))
   col_3 <- sprintf('
 <div class="col-1 d-flex justify-content-center align-items-center">
 <button class="btn btn-outline-light btn-block header-like-btn" style="background-color:white" type="button">
+.
 <!-- LikeBtn.com BEGIN -->
 <span class="likebtn-wrapper" data-theme="nero" data-i18n_like="Like Dotto" data-white_label="true" data-identifier="%s" data-addthis_service_codes="twitter, facebook, linkedin, gmail, email, slack, telegram" data-show_like_label="false" data-dislike_enabled="false" data-counter_frmt="comma" data-popup_html="I like the Dotto!" data-share_size="large" data-site_id="604e13966fd08bbf03672c5b" data-i18n_like_tooltip="Like Dotto"></span>
 <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
@@ -297,8 +298,8 @@ top_header <- sprintf('
 </div>
 </section>
 %s
-<div v-show="commentOpen" class="modal">
-<div class="modal-content">
+<div v-show="commentOpen" class="modal overflow-auto">
+<div class="modal-comment overflow-auto">
 <span @click="commentOpen = false" class="close">&times;</span>
 <div id="disqus_thread"></div>
 </div>
@@ -351,7 +352,7 @@ tech[i, "lang"]
 
 scol_1 <- sprintf('
 <div class="col-4 d-flex flex-grow-0 justify-content-start align-items-center align-items-xl-center">
-<div class="d-flex justify-content-around align-items-center bg-social-icons">
+<div class="d-flex mx-4 justify-content-around align-items-center bg-social-icons">
 %s
 </div>
 </div>
@@ -681,89 +682,6 @@ meta$dotto_id)
 
 
 
-#' Generate Dotto
-#'
-#' @description It generates Dotto page with all the DataMotto styles
-#'   from a config `.json` file
-#' @param Dotto_path the path of the Dotto `.Rmd` file
-#' @noRd
-# generate_Dotto <- function(Dotto_path = NULL) {
-#
-#   if(is.null(Dotto_path)){
-#     Dotto_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
-#     if(length(Dotto_path) != 1){
-#       stop("There is not a unique .Rmd file in the working directory. Explicitly provide the Dotto .Rmd path in the `Dotto_path` parameter.")
-#     }
-#   }
-#
-#   config_path <- paste0(dirname(Dotto_path),"/.json")
-#   config <- jsonlite::fromJSON(config_path, simplifyDataFrame = T)
-#
-#   index_chunks <- which(names(config) %in% "dots_chunks")
-#   meta <- config[-index_chunks]
-#
-#   dots <- config[[index_chunks]] %>%
-#     dplyr::bind_rows() %>%
-#     tibble::tibble()
-#
-#
-# sprintf('
-# <!DOCTYPE html>
-# <html lang="en">
-# <head>
-# <meta charset="utf-8" />
-# <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-# <title>Home</title>
-# <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css" />
-# <link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Brands.css" />
-# <link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Free.css" />
-# <link rel="stylesheet" href="../../../assets/css/icomoon.css" />
-# <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
-# <link rel="stylesheet" href="../../../assets/fonts/fontawesome-all.min.css" />
-# <link rel="stylesheet" href="../../../assets/fonts/font-awesome.min.css" />
-# <link rel="stylesheet" href="../../../assets/fonts/ionicons.min.css" />
-# <link rel="stylesheet" href="../../../assets/fonts/fontawesome5-overrides.min.css" />
-# <link rel="stylesheet" href="../../../assets/css/Footer-Basic.css" />
-# <link rel="stylesheet" href="../../../assets/css/home-cards.css" />
-# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
-# <link rel="stylesheet" href="../../../assets/css/site.css" />
-# <link rel="stylesheet" href="../../../assets/css/style.css" />
-# <link rel="stylesheet" href="../../../assets/css/styles.css" />
-# <link rel="stylesheet" href="../../../assets/css/Team-Boxed.css" />
-# <script async defer src="https://buttons.github.io/buttons.js"></script>
-# <script src="../../../assets/js/jquery-3.5.1.min.js"></script>
-# <script src="../../../assets/js/vue.js"></script>
-# </head>
-#
-# <body>
-# <div class="d-flex flex-column" id="all_page">
-# %s
-# %s
-# %s
-# %s
-# </div>
-# <script src="../../../assets/js/vue.js"></script>
-# <script src="../../../assets/js/post.js"></script>
-# <script src="../../../assets/js/jquery.min.js"></script>
-# <script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
-# <script src="../../../assets/js/bs-init.js"></script>
-# <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-# <script src="../../../assets/js/carts.js"></script>
-# <script src="../../../assets/js/Index_page.js"></script>
-# <script src="../../../assets/js/jquery-3.5.1.min.js"></script>
-# </body>
-# </html>
-# ',
-# Dotto_top_header(meta),
-# Dotto_sub_header(meta),
-# Dotto_main(dots),
-# Dotto_footer(meta))
-#
-# }
-
-
-
 # utility functions -------
 resolve_author_img <- function(img_path, rmd_path = NULL, default_img_path = "../../../assets/img/dotto.png"){
 
@@ -813,15 +731,15 @@ authorModal <- function(i) {
 
 lang_color = function(lang) {
   if("r" %in% tolower(lang)){
-    return("primary")
+    return("info")
   } else if("python" %in% tolower(lang)){
     return("warning")
   } else if("julia" %in% tolower(lang)) {
-    return("danger")
+    return("dark")
   } else if("sql" %in% tolower(lang)) {
     return("dark")
   } else if("node" %in% tolower(lang)) {
-    return("info")
+    return("success")
   } else {
     return("light")
   }
