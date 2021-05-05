@@ -205,8 +205,7 @@ paste0(meta$categories, collapse = ", "))
   # Dotto Star ---------------------------------------------------------
   col_3 <- sprintf('
 <div class="col-1 d-flex justify-content-center align-items-center">
-<button class="btn btn-primary btn-block header-like-btn" type="button">
-<i class="fa fa-star"></i>&nbsp;
+<button class="btn btn-outline-light btn-block header-like-btn" style="background-color:white" type="button">
 <!-- LikeBtn.com BEGIN -->
 <span class="likebtn-wrapper" data-theme="nero" data-i18n_like="Like Dotto" data-white_label="true" data-identifier="%s" data-addthis_service_codes="twitter, facebook, linkedin, gmail, email, slack, telegram" data-show_like_label="false" data-dislike_enabled="false" data-counter_frmt="comma" data-popup_html="I like the Dotto!" data-share_size="large" data-site_id="604e13966fd08bbf03672c5b" data-i18n_like_tooltip="Like Dotto"></span>
 <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
@@ -581,20 +580,20 @@ Dotto_footer <- function(meta = NULL) {
 
 footer <- sprintf('
 <section id="dotto-footer">
-<div class="col-12 col-md-10">
+<div class="col-12 col-md-9">
 <div class="d-flex" id="dotto-row-lines">
 <i type="button" class="icon ion-ios-circle-filled d-sm-flex justify-content-sm-center dotto-lines-icons" >
 </i>
 </div>
 </div>
-<div class="col-12 col-md-2 pt-2">
+<div class="col-12 col-md-3 pt-2">
 <div class="alert alert-danger dotto-alert-comment text-center" role="alert">
-<span type="button" @click="commentOpen = true">
-<strong><i class="fas fa-comments fa-2x"></i>
+<span type="button" @click="commentOpen = true" class="footer-disqus-text">
+<strong><i class="fas fa-comments fa-1x" style="font-size: 21px"> </i>
 <span class="disqus-comment-count" data-disqus-url="%s" data-disqus-identifier="%s"></span>
 </strong>
-<span class="h5"> for this Dotto.</span>
-<span class="h5"> Write yours here!</span>
+<span> for this Dotto.</span>
+<span> Write yours here!</span>
 </span>
 %s
 </div>

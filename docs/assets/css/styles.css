@@ -163,7 +163,7 @@
 
 @media (min-width: 992px) {
   #all_page {
-    height: 100vh;
+    height: 100%;
   }
 }
 
@@ -398,6 +398,10 @@ navbar-collapse {
   margin: 0 auto;
 }
 
+.footer-disqus-text{
+  font-size: 18px;
+}
+
 @media (max-width: 576px) {
   #dotto-footer {
     background: #282a36;
@@ -451,19 +455,20 @@ navbar-collapse {
 
 .wrapper {
   display: flex;
+  height: 100%;
 }
 
 .box {
   box-sizing: border-box;
   flex: 1 1 auto;
   width: 33%;
-  height: 79vh;
+  height: 100%;
 }
 .box2 {
   box-sizing: border-box;
   flex: 1 1 auto;
   width: 33%;
-  height: 79vh;
+  height: 100%;
 }
 .handler {
   width: 10px;
@@ -609,4 +614,28 @@ navbar-collapse {
 .svg-in-center {
   display: block;
   margin: auto;
+}
+
+
+.support-us {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 2;
+}
+
+.display-7 {
+  font-size: 2rem;
+}
+
+.display-fs-8 {
+  font-size: 1.5rem;
+}
+
+.heart-beat {
+  	animation: pulse 1s infinite;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+  height: 73%;
 }
