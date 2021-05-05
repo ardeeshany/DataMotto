@@ -209,9 +209,8 @@ col_3 <- sprintf('
 <div class="col-1 d-flex justify-content-center align-items-center">
 <button class="btn btn-outline-light btn-block header-like-btn" style="background-color:white" type="button">
 <!-- LikeBtn.com BEGIN -->
-<span class="likebtn-wrapper" data-theme="custom" data-btn_size="30" data-f_size="14" data-icon_size="22" data-icon_l="hrt9" data-i18n_like=" " data-identifier="%s" data-dislike_enabled="false" data-counter_clickable="true" data-popup_disabled="true" data-share_enabled="false" data-site_id="604e13966fd08bbf03672c5b" data-tooltip_enabled="false"></span>
+<span class="likebtn-wrapper" data-theme="custom" data-btn_size="30" data-f_size="14" data-icon_size="22" data-icon_l="hrt13" data-icon_l_c="#ff79c6" data-icon_l_c_v="#ff5555" data-icon_d_c_v="#ff5555" data-label_c="#ff79c6" data-bg_c="#ffffff" data-brdr_c="#ffffff" data-i18n_like=" " data-identifier="%s" data-dislike_enabled="false" data-counter_clickable="true" data-popup_disabled="true" data-site_id="604e13966fd08bbf03672c5b" data-share_enabled="false" data-tooltip_enabled="false"></span>
 <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
-<!-- LikeBtn.com END -->
 </button>
 </div>
 ',
