@@ -99,11 +99,11 @@
   border-color: #5a6078;
   border-bottom-style: solid;
   font-size: 16px;
-  padding: 0px;
+  padding: 0px
   max-height: 100px;
-  max-width: 75px;
-  min-height: 55px;
-  min-width: 55px;
+  max-width: 100px;
+  min-height:50px;
+  min-width: 75px;
 }
 
 #dotto-row-info {
