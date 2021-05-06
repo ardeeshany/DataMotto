@@ -358,6 +358,9 @@
                   width="50"
                   height="50"
                   class="rounded-circle mx-1"
+                  data-toggle="popover"
+                  title="author.name"
+                  data-content="author.occupation \n author.occupation"
                 />
               </div>
               <div v-else class="card-footer d-flex">
@@ -367,6 +370,7 @@
                   width="50"
                   height="50"
                   class="rounded-circle"
+                  type="button"
                 />
                 <small class="text-muted text-start mx-2 mt-2">
                   <a class="pink" :href="dotto.author[0].url[0]"
