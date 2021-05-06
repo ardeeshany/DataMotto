@@ -116,12 +116,29 @@ body > * {
 }
 
 .cards-view {
-  height: 100%;
+  height: 100vh;
   width: 50vw;
   color: #f2f2f2 !important;
   margin-left: 0rem !important;
   background-color: rgb(56, 58, 89);
 }
+
+.cards-view-25 {
+  height: 25%;
+  width: 50vw;
+  color: #f2f2f2 !important;
+  margin-left: 0rem !important;
+  background-color: rgb(56, 58, 89);
+}
+
+.cards-view-75 {
+  height: 75%;
+  width: 50vw;
+  color: #f2f2f2 !important;
+  margin-left: 0rem !important;
+  background-color: rgb(56, 58, 89);
+}
+
 
 
 .card {
