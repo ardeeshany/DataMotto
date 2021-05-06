@@ -360,8 +360,9 @@
                   width="50"
                   height="50"
                   class="rounded-circle mx-1"
-                  data-toggle="tooltip"
-                  :title="<h4>author.name</h4> <div class='fs-6'>author.occupation</div>"
+                  data-bs-toggle="tooltip"
+                  data-bs-html="true"
+                  :title="<div class='fs-4'>author.name</div> <div class='text-muted fs-6'>author.occupation</div>"
                 />
               </div>
               <div v-else class="card-footer d-flex">
