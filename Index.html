@@ -360,9 +360,8 @@
                   width="50"
                   height="50"
                   class="rounded-circle mx-1"
-                  data-toggle="popover"
-                  :title="author.name"
-                  :data-content="author.occupation"
+                  data-toggle="tooltip"
+                  :title="<h4>author.name</h4> <div class='fs-6'>author.occupation</div>"
                 />
               </div>
               <div v-else class="card-footer d-flex">
