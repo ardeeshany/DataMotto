@@ -211,14 +211,29 @@
   }
 }
 
+@media (max-width: 992px) {
+  .dotto-main-dot-shape {
+  border-radius: 30px;
+  min-width: 35px;
+  font-size: 14px;
+  min-height: 35px;
+  border-width: 2px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-style: solid;
+  box-shadow: 0px 0px 3px;
+  text-align: center;
+}
+}
+
 .dotto-main-dot-shape {
   border-radius: 30px;
-  min-width: 20px;
-  font-size: 10px;
-  min-height: 20px;
+  min-width: 35px;
+  font-size: 14px;
+  min-height: 35px;
   border-width: 2px;
   border-style: solid;
-  box-shadow: 0px 0px 2px;
+  box-shadow: 0px 0px 3px;
   text-align: center;
 }
 
@@ -469,6 +484,7 @@ navbar-collapse {
   height: 100%;
 }
 
+
 .box {
   box-sizing: border-box;
   flex: 1 1 auto;
@@ -481,6 +497,9 @@ navbar-collapse {
   width: 33%;
   height: 100%;
 }
+
+
+
 .handler {
   width: 10px;
   padding: 0;
@@ -676,3 +695,30 @@ navbar-collapse {
 .card-header.dot-codes {
   background-color: #5a6078;
 }
+
+
+
+/* lang color */
+.lang-color-r{
+  color: #71a5d4;
+}
+
+.lang-color-python{
+  color: #f7ca3e;
+}
+
+.lang-color-julia{
+  color: #9259a3;
+}
+
+.lang-color-node{
+  color: #77b063;
+}
+
+.lang-color-sql{
+  color: #e48e03;
+}
+
+
+
+

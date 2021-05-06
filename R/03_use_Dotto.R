@@ -167,20 +167,6 @@ class="text-left d-flex flex-row flex-grow-1 flex-wrap" id="dotto-row-main">
 
 }
 
-# Utilities -------------------------------------------
-
-lang_icon_class <- function(lang, full_name = F) {
-  if(tolower(lang) == "r"){
-    icon <- "fab fa-r-project"
-  } else if(tolower(lang) == "python"){
-    icon <- "fab fa-python"
-  } else if(tolower(lang) == "sql"){
-    icon <- "icon-file-sql"
-  } else {
-    icon <- "fas fa-database"
-  }
-  return(icon)
-}
 
 #' Resolve url with embedding a valid schema
 #' @importFrom urltools url_parse

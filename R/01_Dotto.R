@@ -130,38 +130,6 @@ social_card_protocol_dotto <- function() {
 
 
 
-
-
-# Make_Dotto <- function(Dotto_path = NULL){
-#
-#   if(is.null(Dotto_path)){
-#     Dotto_path <- list.files(getwd(), pattern = "\\.Rmd$", full.names = T)
-#     if(length(Dotto_path) != 1){
-#       stop("There is not a unique Dotto. Provide a path into `Dotto_path`.")
-#     }
-#   }
-#
-#   Dotto_folder <- dirname(Dotto_path)
-#   rmarkdown::render(Dotto_path,
-#                     html_document(self_contained = F))
-#   con <- file(paste0(Dotto_folder,"/.json"), open = "w", encoding = "UTF-8")
-#   xfun::write_utf8(Config_Dotto_to_json(Dotto_folder), con = con)
-#   close(con)
-#   #DataMotto::Dotto()
-#   generated_Dotto <- generate_Dotto(Dotto_path)
-#   print(generated_Dotto)
-#   con <- file(paste0(Dotto_folder,"/index.html"), open = "w", encoding = "UTF-8")
-#   xfun::write_utf8(generated_Dotto, con = con)
-#   close(con)
-#   utils::browseURL(paste0(Dotto_folder,"/index.html"))
-# }
-
-
-
-
-
-
-
 ################################################################################
 #                                                                              #
 #                      Generate Dotto from a config json                       #
@@ -233,6 +201,9 @@ meta$dotto_id)
   author_list <- meta$author %>%
     mutate_at(vars(-"lang"),~as.character(.))
 
+  tech <- meta$tech %>%
+    mutate(lang = as.character(lang))
+
   sub_col_4 <- rep(list(NA), nrow(author_list))
   for(i in 1:nrow(author_list)){
     sub_col_4[[i]] <- sprintf('
@@ -249,7 +220,7 @@ class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-
 </div>
 ',
 authorModal(i),
-paste0("border-", lang_color(author_list[i, 'lang'])),
+paste0("lang-color-", tech[i, "lang"]),
 resolve_author_img(author_list[i, 'img']),
 author_list[i, 'name']
 )
@@ -334,7 +305,6 @@ return(temp_file)
 }
 
 
-
 Dotto_sub_header <- function(meta = NULL){
 
   if(is.null(meta)){
@@ -348,19 +318,20 @@ Dotto_sub_header <- function(meta = NULL){
   sub_lang <- rep(list(NA), nrow(tech))
 
 for(i in 1:length(sub_lang)){
-sub_lang[[i]] <- sprintf("
-<div>
-  <i type=\"button\" @click=\"activeLang = \'%s\'\"
-class=\"%s\"
-:class=\"{\'%s\': activeLang === \'%s\'}\" >
-  </i>
-</div>
-",
-tech[i, "lang"],
-lang_icon_class(tech[i, "lang"]),
-paste0("text-", lang_color(tech[i, "lang"])),
-tech[i, "lang"]
-)
+sub_lang[[i]] <-  create_lang_icon(tech[i, "lang"])
+# sub_lang[[i]] <- sprintf("
+# <div>
+#   <i type=\"button\" @click=\"activeLang = \'%s\'\"
+# class=\"%s\"
+# :class=\"{\'%s\': activeLang === \'%s\'}\" >
+#   </i>
+# </div>
+# ",
+# tech[i, "lang"],
+# lang_icon_class(tech[i, "lang"]),
+# paste0("lang-color-", tech[i, "lang"]),
+# tech[i, "lang"]
+# )
 }
 
 scol_1 <- sprintf('
@@ -695,7 +666,8 @@ meta$dotto_id)
 
 
 
-# utility functions -------
+# Utility -------------------------------------
+
 resolve_author_img <- function(img_path, rmd_path = NULL, default_img_path = "../../../assets/img/dotto.png"){
 
   if(is.null(rmd_path)){
@@ -721,11 +693,6 @@ resolve_author_img <- function(img_path, rmd_path = NULL, default_img_path = "..
     selected_image <- default_img_path
   }
   return(selected_image)
-  # if(!is.null(img_path) && file.exists(img_path)){
-  #   return(img_path)
-  # } else {
-  #   return("../../../assets/img/dotto.png")
-  # }
 }
 
 
@@ -742,23 +709,48 @@ authorModal <- function(i) {
 }
 
 
-lang_color = function(lang) {
-  if("r" %in% tolower(lang)){
-    return("info")
-  } else if("python" %in% tolower(lang)){
-    return("warning")
-  } else if("julia" %in% tolower(lang)) {
-    return("dark")
-  } else if("sql" %in% tolower(lang)) {
-    return("dark")
-  } else if("node" %in% tolower(lang)) {
-    return("success")
+create_lang_icon <- function(lang){
+  if(tolower(lang) != "julia"){
+    icon <- sprintf("
+<div>
+<i type=\"button\" @click=\"activeLang = \'%s\'\"
+class=\"%s\"
+:class=\"{\'%s\': activeLang === \'%s\'}\" >
+  </i>
+</div>
+",
+lang,
+lang_icon_class(lang),
+paste0("lang-color-", lang),
+lang)
   } else {
-    return("light")
+    icon <- sprintf("
+<div>
+<i type=\"button\" @click=\"activeLang = \'julia'\" class=\"icon-julialang-icon\"
+:class=\"{\'lang-color-julia\': activeLang === \'julia\'}\" >
+  <i class=\"path1\"></i><i class=\"path2\"></i><i class=\"path3\"></i>
+</i>
+</div>
+")
   }
+  return(icon)
 }
 
 
+lang_icon_class <- function(lang, full_name = F) {
+  if(tolower(lang) == "r"){
+    icon <- "fab fa-r-project"
+  } else if(tolower(lang) == "python"){
+    icon <- "fab fa-python"
+  } else if(tolower(lang) == "sql"){
+    icon <- "icon-file-sql"
+  } else if(tolower(lang) == "node") {
+    icon <- "fab fa-node-js"
+    } else {
+    icon <- "fas fa-database"
+  }
+  return(icon)
+}
 
 # create relative hashtags
 lang_hashtag <- function(lang_df) {

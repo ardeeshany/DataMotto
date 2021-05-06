@@ -44,6 +44,7 @@ config_Dotto <- function(rmd_path) {
 #'
 #' @description It generates a `Motto.js` file that comprises all Dotto config files
 #'   and save it in the `assets` folder.
+#' @noRd
 build_site_config <- function() {
   path_all_jsons <- list.files(here::here("posts/Dotto"),
                                all.files = T,  full.names = T,
