@@ -361,8 +361,7 @@
                   height="50"
                   class="rounded-circle mx-1"
                   data-bs-toggle="tooltip"
-                  data-bs-html="true"
-                  :title="<h4>author.name</h4> <h6>author.occupation</h6>"
+                  :title="author.name, author.occupation"
                 />
               </div>
               <div v-else class="card-footer d-flex">
