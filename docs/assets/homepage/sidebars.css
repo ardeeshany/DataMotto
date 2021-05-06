@@ -116,12 +116,13 @@ body > * {
 }
 
 .cards-view {
-  height: 100vh;
+  height: 100%;
   width: 50vw;
   color: #f2f2f2 !important;
   margin-left: 0rem !important;
   background-color: rgb(56, 58, 89);
 }
+
 
 .card {
   background-color: #282a36;
