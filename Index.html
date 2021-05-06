@@ -345,12 +345,10 @@
     <section>
         <div id="cards" class="cards-view row row-cols-1 row-cols-md-2 g-4 m-2 overflow-auto scroll-bar-hide">
           <div v-for="dotto in dottos" class="card-group">
-            <div class="card">
-              <div @click="goToUrl(dotto.link[0])">
+            <div class="card" @click="goToUrl(dotto.link[0])">
               <div class="card-body">
                 <h5 class="card-title fw-bold fs-5">{{dotto.title[0]}}</h5>
                 <p class="card-text">{{dotto.description[0]}}</p>
-              </div>
               </div>
               <div v-if="dotto.author.length > 1" class="card-footer d-flex">
                 <img
@@ -361,7 +359,7 @@
                   height="50"
                   class="rounded-circle mx-1"
                   data-toggle="tooltip"
-                  :title="author.name"
+                  :title="author.name, author.occupation"
                 />
               </div>
               <div v-else class="card-footer d-flex">
