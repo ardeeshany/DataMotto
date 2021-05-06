@@ -95,6 +95,10 @@ export default {
       {
         "lang": ["julia"],
         "pkgs": {}
+      },
+      {
+        "lang": ["sql"],
+        "pkgs": {}
       }
     ],
     "date": {

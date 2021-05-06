@@ -236,18 +236,18 @@ button.btn.gradient-button.text-white.rounded-pill.dropdown-toggle {
 
 .dottos {
   background: #44475a !important;
-  width: 104px;
-  height: 104px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   color: white;
-  line-height: 104px;
-  font-size: 40px;
+  line-height: 68px;
+  font-size: 30px;
   position: relative;
   margin: 5px;
 }
 
 .dottos i {
-  font-size: 45px!important;
+  font-size: 34px;
   position: relative;
   top: 3px;
 }

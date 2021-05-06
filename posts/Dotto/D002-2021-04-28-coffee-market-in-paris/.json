@@ -33,6 +33,10 @@
     {
       "lang": ["julia"],
       "pkgs": {}
+    },
+    {
+      "lang": ["sql"],
+      "pkgs": {}
     }
   ],
   "date": {

@@ -719,6 +719,21 @@ navbar-collapse {
   color: #e48e03;
 }
 
+.icon-sql-size {
+  font-size: 40px;
+  padding-top: 4px;
+}
 
+.icon-sql-size-bg {
+  font-size: 50px !important;
+  top: 9px !important;
+}
 
+#more-about-dotto {
+  color: #efff3b;
+  border-color: #efff3b;
+}
 
+#more-about-dotto:hover {
+  background-color: inherit;
+}

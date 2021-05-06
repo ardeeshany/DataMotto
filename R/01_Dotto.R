@@ -710,11 +710,28 @@ authorModal <- function(i) {
 
 
 create_lang_icon <- function(lang){
-  if(tolower(lang) != "julia"){
+  if(tolower(lang) == "julia"){
+    icon <- sprintf("
+<div>
+<i type=\"button\" @click=\"activeLang = \'julia'\" class=\"icon-julialang-icon mx-2 mt-1\"
+:class=\"{\'lang-color-julia\': activeLang === \'julia\'}\" >
+  <i class=\"path1\"></i><i class=\"path2\"></i><i class=\"path3\"></i>
+</i>
+</div>
+")
+  } else if(tolower(lang) == "sql") {
+    icon <- sprintf("
+<div>
+<i type=\"button\" @click=\"activeLang = \'sql'\" class=\"icon-file-sql icon-sql-size mx-2\"
+:class=\"{\'lang-color-sql\': activeLang === \'sql\'}\" >
+</i>
+</div>
+")
+  } else{
     icon <- sprintf("
 <div>
 <i type=\"button\" @click=\"activeLang = \'%s\'\"
-class=\"%s\"
+class=\"%s mx-2\"
 :class=\"{\'%s\': activeLang === \'%s\'}\" >
   </i>
 </div>
@@ -723,15 +740,6 @@ lang,
 lang_icon_class(lang),
 paste0("lang-color-", lang),
 lang)
-  } else {
-    icon <- sprintf("
-<div>
-<i type=\"button\" @click=\"activeLang = \'julia'\" class=\"icon-julialang-icon\"
-:class=\"{\'lang-color-julia\': activeLang === \'julia\'}\" >
-  <i class=\"path1\"></i><i class=\"path2\"></i><i class=\"path3\"></i>
-</i>
-</div>
-")
   }
   return(icon)
 }

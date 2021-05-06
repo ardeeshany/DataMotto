@@ -170,3 +170,23 @@ body > * {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
+
+@media all and (max-width: 1400px) {
+.Dotto-info {
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.Dotto-info-w{
+  width: 68%;
+}
+
+}
+
+.Dotto-info {
+  background-color: rgba(40, 51, 64, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

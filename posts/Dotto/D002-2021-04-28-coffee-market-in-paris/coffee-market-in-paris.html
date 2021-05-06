@@ -5,8 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="generator" content="pandoc" />
 
-
-
+    
+    
     <title>Coffee Market in Paris</title>
 
         <script src="coffee-market-in-paris_files/header-attrs-2.7.3/header-attrs.js"></script>
@@ -26,7 +26,7 @@
                code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
                pre:not([class]) { background-color: white }</style>
         <script src="coffee-market-in-paris_files/navigation-1.1/tabsets.js"></script>
-
+        
           <meta property="og:title" content="Coffee Market in Paris" />
           <meta property="og:type" content="article">
           <meta property="og:description" content="A short description of the Dotto.
@@ -35,16 +35,16 @@
           <meta property="og:locale" content="en_US">
           <meta property="og:site_name" content="Data Motto">
           <meta property="og:image" content="resources/images/default_dotto.jpg" />
-
-
+          
+        
           <meta property="twitter:card" content="summary_large_image">
           <meta property="twitter:title" content="Coffee Market in Paris">
           <meta property="twitter:description" content="A short description of the Dotto.
         ">
           <meta property="twitter:url" content="https://datamotto.com/posts/dotto/D002-2021-04-28-coffee-market-in-paris/">
           <meta property="twitter:image" content="resources/images/default_dotto.jpg">
-
-
+          
+    
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZMEMQM0Y2"></script>
 <script>
@@ -66,9 +66,8 @@
 <link rel="stylesheet" href="../../../assets/fonts/fontawesome5-overrides.min.css" />
 <link rel="stylesheet" href="../../../assets/css/Footer-Basic.css" />
 <link rel="stylesheet" href="../../../assets/css/home-cards.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
 <link rel="stylesheet" href="../../../assets/css/site.css" />
+<link rel="stylesheet" href="../../../assets/css/style.css" />
 <link rel="stylesheet" href="../../../assets/css/styles.css" />
 <link rel="stylesheet" href="../../../assets/css/Team-Boxed.css" />
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -77,6 +76,7 @@
 <script src="../../../assets/highlight/highlight.pack.js"></script>
 <script>hljs.highlightAll();</script>
 <script src="../../../assets/js/vue.js"></script>
+
 </head>
 
 <body style="height: 100vh;">
@@ -175,28 +175,23 @@ Audrey Hepburn
 
 <div>
 <i type="button" @click="activeLang = 'r'"
-class="fab fa-r-project"
+class="fab fa-r-project mx-2"
 :class="{'lang-color-r': activeLang === 'r'}" >
   </i>
 </div>
 
-<div>
-<i type="button" @click="activeLang = 'r'"
-class="fab fa-node-js"
-:class="{'lang-color-r': activeLang === 'r'}" >
-  </i>
-</div>
 
 <div>
-<i type="button" @click="activeLang = 'python'"
-class="icon-file-sql"
-:class="{'lang-color-python': activeLang === 'python'}" >
-  </i>
-</div>
-
-<div type="button" @click="activeLang = 'julia'" :class="{'lang-color-julia': activeLang === 'julia'}">
-<i class="icon-julialang-icon">
+<i type="button" @click="activeLang = 'julia'" class="icon-julialang-icon mx-2 mt-1"
+:class="{'lang-color-julia': activeLang === 'julia'}" >
   <i class="path1"></i><i class="path2"></i><i class="path3"></i>
+</i>
+</div>
+
+
+<div>
+<i type="button" @click="activeLang = 'sql'" class="icon-file-sql icon-sql-size mx-2"
+:class="{'lang-color-sql': activeLang === 'sql'}" >
 </i>
 </div>
 
@@ -215,7 +210,7 @@ style="margin-right: 7px; width: 146.3px">
 </div>
 ---->
 <div class="d-flex justify-content-around align-items-center bg-social-icons">
-<a href="https://twitter.com/share?text=Coffee Market in Paris&amp;url=https://datamotto.com/posts/Dotto/D002-2021-04-28-coffee-market-in-paris/index.html&amp;hashtags=rstats,Julialang" target="_blank" class="text-reset">
+<a href="https://twitter.com/share?text=Coffee Market in Paris&amp;url=https://datamotto.com/posts/Dotto/D002-2021-04-28-coffee-market-in-paris/index.html&amp;hashtags=rstats,Julialang,sql" target="_blank" class="text-reset">
 <i class="fab fa-twitter"></i></a>
 <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://datamotto.com/posts/Dotto/D002-2021-04-28-coffee-market-in-paris/index.html" target="_blank" class="text-reset">
 <i class="fa fa-linkedin-square"></i></a>
@@ -257,18 +252,18 @@ class="btn dotto-main-dot-shape"
 <h1>&nbsp;Instructions:</h1>
 </div>
 <br>
-
+ 
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
 <p>Audrey Hepburn was born as Audrey Kathleen Ruston on May 4, 1929 in Ixelles, Brussels, Belgium. Her mother, Baroness Ella Van Heemstra, was a Dutch noblewoman, while her father, Joseph Victor Anthony Ruston, was born in Úzice, Bohemia, to English and Austrian parents. After her parents’ divorce, Audrey went to London with her mother where she went</p>
-<div class="dottos sql-color"><i class="icon-file-sql"></i></div>
+
 </p>
 </div>
+ 
 
 
-
-
+ 
 <div v-if="activeLang === 'julia'" class="mx-2">
 <p class="mx-2">
 
@@ -276,7 +271,7 @@ class="btn dotto-main-dot-shape"
 
 </p>
 </div>
-
+ 
 
 
 </div>
@@ -287,16 +282,16 @@ class="btn dotto-main-dot-shape"
 <h1>&nbsp;Codes:</h1>
 </div>
 <br>
-
+ 
 <div v-if="activeLang === 'r'" class="mx-2">
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span></code></pre></div>
 
 </div>
+ 
 
 
-
-
+ 
 <div v-if="activeLang === 'julia'" class="mx-2">
 
 <div class="sourceCode" id="cb2"><pre class="sourceCode julia dotto-dot-code"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
@@ -304,7 +299,7 @@ class="btn dotto-main-dot-shape"
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plot(x<span class="op">,</span> y)</span></code></pre></div>
 
 </div>
-
+ 
 
 
 </div>
@@ -314,36 +309,33 @@ class="btn dotto-main-dot-shape"
 <h1>&nbsp;Results:</h1>
 </div>
 <br>
-
+ 
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
 <p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
+ 
 
 
-
-
+ 
 <div v-if="activeLang === 'julia'" class="mx-2 dotto-dot-output">
 
 <pre><code>## 10-element Array{Float64,1}:
-##  0.5195012651427893
-##  0.23654201176410794
-##  0.05942991192167879
-##  0.6822300005649631
-##  0.8324078479395196
-##  0.9864491648825815
-##  0.5966050362072814
-##  0.6280744937957521
-##  0.7531881360206159
-##  0.5336257671673461</code></pre>
+##  0.07092309585103984
+##  0.1036756537540533
+##  0.5865758486928319
+##  0.5288723001800866
+##  0.52338542182056
+##  0.5700602623433628
+##  0.09272882010983796
+##  0.6982165984503879
+##  0.9707198424865824
+##  0.8301278205200755</code></pre>
 <p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-6-J1.png" width="300" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
-
-</div>
-</div>
-</div>
+ 
 
 <!-- Dot 2, lang: R ------------------------------------------------>
 
@@ -353,7 +345,7 @@ class="btn dotto-main-dot-shape"
 <h1>&nbsp;Instructions:</h1>
 </div>
 <br>
-
+ 
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
@@ -361,10 +353,10 @@ class="btn dotto-main-dot-shape"
 
 </p>
 </div>
+ 
 
 
-
-
+ 
 <div v-if="activeLang === 'julia'" class="mx-2">
 <p class="mx-2">
 
@@ -372,7 +364,7 @@ class="btn dotto-main-dot-shape"
 
 </p>
 </div>
-
+ 
 
 
 </div>
@@ -383,16 +375,16 @@ class="btn dotto-main-dot-shape"
 <h1>&nbsp;Codes:</h1>
 </div>
 <br>
-
+ 
 <div v-if="activeLang === 'r'" class="mx-2">
 
 <div class="sourceCode" id="cb4"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>]</span></code></pre></div>
 
 </div>
+ 
 
 
-
-
+ 
 <div v-if="activeLang === 'julia'" class="mx-2">
 
 <div class="sourceCode" id="cb5"><pre class="sourceCode julia dotto-dot-code"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Plots</span>
@@ -400,7 +392,7 @@ class="btn dotto-main-dot-shape"
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plot(x<span class="op">,</span> y)</span></code></pre></div>
 
 </div>
-
+ 
 
 
 </div>
@@ -410,47 +402,44 @@ class="btn dotto-main-dot-shape"
 <h1>&nbsp;Results:</h1>
 </div>
 <br>
-
+ 
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
 <pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot;
 ## [18] &quot;R&quot; &quot;S&quot; &quot;T&quot;</code></pre>
 
 </div>
+ 
 
 
-
-
+ 
 <div v-if="activeLang === 'julia'" class="mx-2 dotto-dot-output">
 
 <pre><code>## 20-element Array{Float64,1}:
-##  0.9269284437753296
-##  0.4250307034081564
-##  0.7832190088651578
-##  0.8921655585932782
-##  0.49466784578230416
-##  0.8452064258350853
-##  0.005421580848309571
-##  0.12583666601092292
-##  0.12332501911103
-##  0.20480911156706538
-##  0.5758297369542438
-##  0.4844502066044356
-##  0.22614679727377807
-##  0.5403935988788822
-##  0.8689824464379603
-##  0.35523684756790175
-##  0.023586385482379013
-##  0.011478547508404935
-##  0.9438631052254693
-##  0.5654331376144226</code></pre>
+##  0.5473507656976229
+##  0.9824368748562915
+##  0.3674677821916641
+##  0.32742555431827647
+##  0.6978925177468465
+##  0.6951701654268656
+##  0.10142837558946338
+##  0.909446962519397
+##  0.06752682344236471
+##  0.0348330988057175
+##  0.4708638377266441
+##  0.9594647901809237
+##  0.22307713326404577
+##  0.06464604503451854
+##  0.2797140028467038
+##  0.6711704882203569
+##  0.6480564856954576
+##  0.09897870136491194
+##  0.8968477902356167
+##  0.40868508871959675</code></pre>
 <p><img src="coffee-market-in-paris_files/figure-html/unnamed-chunk-12-J1.png" width="300" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
-
-</div>
-</div>
-</div>
+ 
 
 </section>
 <!-- Body Footer ----------------------------------->
@@ -495,12 +484,10 @@ s.setAttribute("data-timestamp", +new Date());
 
 </div>
 <!-- Don't indent these lines or it will mess pre blocks indentation -->
-<script src="../../../assets/js/vue.js"></script>
 <script src="../../../assets/js/post.js"></script>
 <script src="../../../assets/js/jquery.min.js"></script>
 <script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../../assets/js/bs-init.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="../../../assets/js/carts.js"></script>
 <script src="../../../assets/js/Index_page.js"></script>
 <script src="../../../assets/js/jquery-3.5.1.min.js"></script>
