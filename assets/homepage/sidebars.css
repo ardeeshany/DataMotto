@@ -115,7 +115,7 @@ body > * {
   color: #f8f8f2 !important;
 }
 
-.cards-view {
+.right-view {
   height: 100vh;
   width: 50vw;
   color: #f2f2f2 !important;
@@ -123,20 +123,8 @@ body > * {
   background-color: rgb(56, 58, 89);
 }
 
-.cards-view-25 {
-  height: 25%;
-  width: 50vw;
-  color: #f2f2f2 !important;
-  margin-left: 0rem !important;
-  background-color: rgb(56, 58, 89);
-}
-
-.cards-view-75 {
-  height: 75%;
-  width: 50vw;
-  color: #f2f2f2 !important;
-  margin-left: 0rem !important;
-  background-color: rgb(56, 58, 89);
+.cards-view {
+  max-height: 100vh;
 }
 
 
