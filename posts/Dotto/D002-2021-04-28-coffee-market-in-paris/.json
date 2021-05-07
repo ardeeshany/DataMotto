@@ -1,7 +1,7 @@
 {
   "file_name": ["coffee-market-in-paris"],
   "dir_name": ["D002-2021-04-28-coffee-market-in-paris"],
-  "cover_image_url": ["resources/images/default_dotto.jpg"],
+  "cover_image_url": ["./posts/Dotto/D002-2021-04-28-coffee-market-in-paris/coffee-market-in-paris_files/figure-html/audrey.jpeg"],
   "link": ["posts/Dotto/D002-2021-04-28-coffee-market-in-paris/index.html"],
   "base_url": ["https://datamotto.com"],
   "social_networks_datamotto": {
@@ -45,7 +45,7 @@
   },
   "categories": ["visualization"],
   "applications": ["cinema"],
-  "cover_image": {},
+  "cover_image": ["audrey.jpeg"],
   "slug": ["coffee-market-in-paris"],
   "output": ["DataMotto::Dotto"]
 }

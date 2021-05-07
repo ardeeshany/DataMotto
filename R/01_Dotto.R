@@ -91,7 +91,7 @@ social_card_protocol_dotto <- function() {
   canonical_link = paste0(base_url, glue::glue("/posts/dotto/{dir_name}/"))
   # ---
   cover_image_url <- resolve_cover_image(rmd_path) %>% stringr::str_remove("^\\.")
-  canonical_img_url <- ifelse(stringr::str_detect(cover_image_url, pattern = "^posts"),
+  canonical_img_url <- ifelse(stringr::str_detect(cover_image_url, pattern = "^/posts"),
                               paste0(base_url, cover_image_url),
                               cover_image_url)
 
@@ -207,7 +207,7 @@ meta$dotto_id)
   sub_col_4 <- rep(list(NA), nrow(author_list))
   for(i in 1:nrow(author_list)){
     sub_col_4[[i]] <- sprintf('
-<div class="col-1 d-flex flex-column mx-auto dotto-header-user">
+<div class="d-flex flex-column mx-3">
 <div class="row">
 <div @click="%s = true" type="button"
 class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center dotto-header-user-icon">
@@ -226,7 +226,11 @@ author_list[i, 'name']
 )
 }
 
-  col_4 <- paste(sub_col_4, collapse = "\n")
+col_4 <- sprintf('
+<div class="col-3 d-flex justify-content-end dotto-header-user">
+%s
+</div>
+', paste(sub_col_4, collapse = "\n"))
 
   # Author Modals -------------------------------------------------------
   sub_modals <- rep(list(NA), nrow(author_list))

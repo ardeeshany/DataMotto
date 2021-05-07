@@ -21,7 +21,7 @@ date:
   last_updated: "2021-04-28"
 categories: "visualization"
 applications: "cinema"
-cover_image: NULL
+cover_image: "audrey.jpeg"
 slug: "coffee-market-in-paris"
 output: DataMotto::Dotto
 ---

@@ -25,7 +25,7 @@ date:
   last_update: "2021-04-12"
 categories: ["Importing", "Cleaning", "Manipulation", "Visualization", "Reporting"]
 applications: ["Finance", "Pharma"]
-cover_image: "https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png"
+cover_image: NULL
 slug: "analyzing-palmer-penguins"
 output: DataMotto::Dotto
 ---
