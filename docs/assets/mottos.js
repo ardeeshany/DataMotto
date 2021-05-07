@@ -2,7 +2,7 @@ export default {
   "D001-2021-04-04-analyzing-palmer-penguins-R": {
     "file_name": ["analyzing-palmer-penguins-R"],
     "dir_name": ["D001-2021-04-04-analyzing-palmer-penguins-R"],
-    "cover_image_url": ["assets/img/logo.svg"],
+    "cover_image_url": ["../../../assets/img/logo.svg"],
     "link": ["posts/Dotto/D001-2021-04-04-analyzing-palmer-penguins-R/index.html"],
     "base_url": ["https://datamotto.com"],
     "social_networks_datamotto": {
@@ -63,7 +63,7 @@ export default {
   "D002-2021-04-28-coffee-market-in-paris": {
     "file_name": ["coffee-market-in-paris"],
     "dir_name": ["D002-2021-04-28-coffee-market-in-paris"],
-    "cover_image_url": ["assets/img/logo.svg"],
+    "cover_image_url": ["./posts/Dotto/D002-2021-04-28-coffee-market-in-paris/coffee-market-in-paris_files/figure-html/audrey.jpeg"],
     "link": ["posts/Dotto/D002-2021-04-28-coffee-market-in-paris/index.html"],
     "base_url": ["https://datamotto.com"],
     "social_networks_datamotto": {
@@ -107,7 +107,7 @@ export default {
     },
     "categories": ["visualization"],
     "applications": ["cinema"],
-    "cover_image": {},
+    "cover_image": ["audrey.jpeg"],
     "slug": ["coffee-market-in-paris"],
     "output": ["DataMotto::Dotto"]
   }
