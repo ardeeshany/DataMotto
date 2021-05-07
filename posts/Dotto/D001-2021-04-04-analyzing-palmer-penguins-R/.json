@@ -1,7 +1,7 @@
 {
   "file_name": ["analyzing-palmer-penguins-R"],
   "dir_name": ["D001-2021-04-04-analyzing-palmer-penguins-R"],
-  "cover_image_url": ["https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png"],
+  "cover_image_url": ["assets/img/logo.svg"],
   "link": ["posts/Dotto/D001-2021-04-04-analyzing-palmer-penguins-R/index.html"],
   "base_url": ["https://datamotto.com"],
   "social_networks_datamotto": {
@@ -55,7 +55,7 @@
   },
   "categories": ["Importing", "Cleaning", "Manipulation", "Visualization", "Reporting"],
   "applications": ["Finance", "Pharma"],
-  "cover_image": ["https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png"],
+  "cover_image": {},
   "slug": ["analyzing-palmer-penguins"],
   "output": ["DataMotto::Dotto"]
 }
