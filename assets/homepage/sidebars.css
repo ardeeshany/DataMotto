@@ -140,16 +140,13 @@ body > * {
 
 .dotto-index-support-us {
   background-color: #283340;
-  margin-top: 5rem;
-  padding-bottom: 3rem;
-  display: flex;
-  flex: 1 0 0px;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-
+.support-icon-spance {
+  margin-bottom: -1.5rem;
+}
 .hearbeat {
   animation: pulse-black 4s infinite;
 }
