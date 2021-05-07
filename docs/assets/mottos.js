@@ -2,7 +2,7 @@ export default {
   "D001-2021-04-04-analyzing-palmer-penguins-R": {
     "file_name": ["analyzing-palmer-penguins-R"],
     "dir_name": ["D001-2021-04-04-analyzing-palmer-penguins-R"],
-    "cover_image_url": ["https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png"],
+    "cover_image_url": ["assets/img/logo.svg"],
     "link": ["posts/Dotto/D001-2021-04-04-analyzing-palmer-penguins-R/index.html"],
     "base_url": ["https://datamotto.com"],
     "social_networks_datamotto": {
@@ -56,14 +56,14 @@ export default {
     },
     "categories": ["Importing", "Cleaning", "Manipulation", "Visualization", "Reporting"],
     "applications": ["Finance", "Pharma"],
-    "cover_image": ["https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png"],
+    "cover_image": {},
     "slug": ["analyzing-palmer-penguins"],
     "output": ["DataMotto::Dotto"]
   },
   "D002-2021-04-28-coffee-market-in-paris": {
     "file_name": ["coffee-market-in-paris"],
     "dir_name": ["D002-2021-04-28-coffee-market-in-paris"],
-    "cover_image_url": ["resources/images/default_dotto.jpg"],
+    "cover_image_url": ["assets/img/logo.svg"],
     "link": ["posts/Dotto/D002-2021-04-28-coffee-market-in-paris/index.html"],
     "base_url": ["https://datamotto.com"],
     "social_networks_datamotto": {

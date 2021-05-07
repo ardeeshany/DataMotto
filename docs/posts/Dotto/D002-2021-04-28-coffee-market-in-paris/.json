@@ -1,7 +1,7 @@
 {
   "file_name": ["coffee-market-in-paris"],
   "dir_name": ["D002-2021-04-28-coffee-market-in-paris"],
-  "cover_image_url": ["resources/images/default_dotto.jpg"],
+  "cover_image_url": ["assets/img/logo.svg"],
   "link": ["posts/Dotto/D002-2021-04-28-coffee-market-in-paris/index.html"],
   "base_url": ["https://datamotto.com"],
   "social_networks_datamotto": {
