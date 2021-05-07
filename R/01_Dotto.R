@@ -243,14 +243,9 @@ author_list[i, 'name']
 </div>
 <div class="col-md-8">
 <div class="card-body">
-<h5 class="card-title mb-0">%s</h5>
-<p class="card-text mb-0">%s</p>
-<p class="card-text mb-0">%s</p>
-<p class="card-text mb-0">
-<a href="%s" target="_blank"><small class="text-muted mb-0">%s</small></a>
-</p>
-<hr class="mt-1 mb-1">
-<small class="card-text text-muted mb-0">Author: %s</small>
+<ins><a href="%s" class="text-dark" target="_blank"><h3 class="card-title mb-0">%s</h3></a></ins>
+<div class="card-text fs-4 my-2">%s, %s</div>
+<small class="card-text text-muted my-2 fs-4">Language: %s</small>
 </div>
 </div>
 </div>
@@ -261,11 +256,10 @@ author_list[i, 'name']
 authorModal(i),
 authorModal(i),
 resolve_author_img(author_list[i, 'img']),
+resolve_url(author_list[i, 'url']),
 author_list[i, 'name'],
 author_list[i, 'occupation'],
 author_list[i, 'affiliation'],
-resolve_url(author_list[i, 'url']),
-resolve_url(author_list[i, 'url']),
 paste(author_list[[i, 'lang']], collapse = ", ")
 )
   }
