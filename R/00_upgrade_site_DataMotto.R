@@ -22,7 +22,7 @@ upgrade_site_DataMotto <- function(path = NULL, keep_original_site_libs = T, ope
   }
 
   folder_name <- basename(dirname(path))
-  fs::dir_copy(path = dirname(path),
+  dir_copy(path = dirname(path),
                new_path = paste0(here::here("docs/posts/Dotto/"), folder_name),
                overwrite = T)
 
@@ -53,7 +53,7 @@ upgrade_site_DataMotto <- function(path = NULL, keep_original_site_libs = T, ope
                     output_dir = here::here("docs"))
 
   if(keep_original_site_libs){
-  fs::dir_delete(here::here("docs/site_libs"))
+  dir_delete(here::here("docs/site_libs"))
   file.rename(from = here::here("docs/site_libs_temp"), to = here::here("docs/site_libs"))
   }
 

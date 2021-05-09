@@ -1,5 +1,5 @@
 Package: DataMotto
-Title: Exploring Data for Data Scientists, by Data Scientists
+Title: DataMotto
 Version: 0.1.0
 Authors@R: 
     person(given = "Ardalan",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "ardeeshany@gmail.com",
            comment = c(ORCID = "https://orcid.org/0000-0003-1917-0491"))
-Description: High Quality Minimal Multi-lingual Data Science Resources
+Description: A data science educational website
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
 Encoding: UTF-8
@@ -29,3 +29,6 @@ Imports:
     httr,
     yaml,
     utils
+VignetteBuilder: knitr
+URL: https://github.com/DataMotto/DataMotto
+BugReports: https://github.com/DataMotto/DataMotto/issues
