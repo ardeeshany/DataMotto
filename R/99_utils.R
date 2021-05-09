@@ -119,7 +119,12 @@ resolve_cover_image <- function(rmd_path, default_img_path = "https://datamotto.
 
 
 
-
+# DataMotto Hex Sticker
+library(hexSticker)
+sticker(subplot = here::here("assets/img/logo.svg"),
+        package = "DataMotto", h_fill = "white",p_color = "#44475a",
+        p_size=8, s_x=1, s_y=.8, s_width=.4, s_height=.4,h_color = "#44475a",
+        filename= here::here("assets/img/hex-logo.png"))
 
 
 

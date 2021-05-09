@@ -1,0 +1,8 @@
+template:
+  params:
+    bootswatch: cerulean
+authors:
+  Ardalan Mirshani:
+    href: "http://mirshani.com"
+    html: "<img src='/assets/img/logo.svg' height=24>"
+url: https://DataMotto.com

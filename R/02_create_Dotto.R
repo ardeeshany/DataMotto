@@ -108,7 +108,7 @@ DataMotto::use_Dotto()
 
 ```
 
-```{%s, echo = T, eval = F, Dot = 1, part = "Code"}
+```{%s, Dot = 1, part = "Code", echo = T, eval = F, }
 
 ```
 

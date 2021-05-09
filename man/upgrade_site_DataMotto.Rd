@@ -11,7 +11,7 @@ upgrade_site_DataMotto(path = NULL, keep_original_site_libs = T, open = T)
 and there exists only one \code{.Rmd} there, it automatically update the path to
 select the Dotto Rmd file. Default is \code{NULL} that selects the current working directory.}
 
-\item{keep_original_site_libs}{a logical value that keeps the original \code{site_libs} folder, created by \link\link{build_site_DataMotto}
+\item{keep_original_site_libs}{a logical value that keeps the original \code{site_libs} folder, created by \code{\link{build_site_DataMotto}}
 rather than adding a new \code{site_libs} created by rendering \code{Index.Rmd}. Default is \code{TRUE}.}
 
 \item{open}{A logical value that opens the Index page of site in the browser. Default is \code{TRUE}.}

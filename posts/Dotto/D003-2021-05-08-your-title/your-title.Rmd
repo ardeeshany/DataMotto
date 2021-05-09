@@ -1,0 +1,46 @@
+---
+title: "Your Title"
+description: |
+  A short description of the Dotto.
+author:
+  - name: "First Last"
+    occupation: NULL
+    affiliation: NULL
+    url: NULL
+    img: NULL
+    lang: r
+tech:
+  - lang: r
+    pkgs: NULL
+date:
+  created: "2021-05-08"
+  last_updated: "2021-05-08"
+categories: NULL
+applications: NULL
+cover_image: NULL
+slug: "your-title"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto()
+```
+
+<!-- Dot 1, lang: r ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = "r"}
+
+```
+
+```{r, echo = T, eval = F, Dot = 1, part = "Code"}
+
+```
+
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
+
+```
+
+
+
+
+

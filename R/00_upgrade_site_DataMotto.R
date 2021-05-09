@@ -5,7 +5,7 @@
 #' @param path The path into the Dotto `.Rmd`. If the path directs to the Dotto folder
 #'   and there exists only one `.Rmd` there, it automatically update the path to
 #'   select the Dotto Rmd file. Default is `NULL` that selects the current working directory.
-#' @param keep_original_site_libs a logical value that keeps the original `site_libs` folder, created by \link[build_site_DataMotto]
+#' @param keep_original_site_libs a logical value that keeps the original `site_libs` folder, created by \code{\link{build_site_DataMotto}}
 #'   rather than adding a new `site_libs` created by rendering `Index.Rmd`. Default is `TRUE`.
 #' @param open A logical value that opens the Index page of site in the browser. Default is `TRUE`.
 #' @importFrom fs dir_copy dir_delete
