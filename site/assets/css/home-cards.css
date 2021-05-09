@@ -1,0 +1,36 @@
+.icon-back {
+  height: 40px;
+  width: 40px;
+  color: #ffff;
+  background-color: #908bca;
+  border-radius: 53%;
+  display: inline-block;
+  margin-right: 8px;
+  line-height: 40px;
+  padding-left: 12px;
+}
+
+.imag-border {
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+}
+
+.bag-css {
+  /*-webkit-font-smoothing: antialiased;*/
+  font-family: Studio-Feixen-Sans, Arial;
+  font-style: normal;
+  font-weight: 800;
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: #d8d5fb;
+  color: rgb(5, 25, 45);
+  font-size: 14px;
+  line-height: 18px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+

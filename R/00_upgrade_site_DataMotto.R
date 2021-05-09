@@ -23,51 +23,51 @@ upgrade_site_DataMotto <- function(path = NULL, keep_original_site_libs = T, ope
 
   folder_name <- basename(dirname(path))
   dir_copy(path = dirname(path),
-               new_path = paste0(here::here("docs/posts/Dotto/"), folder_name),
+               new_path = paste0(here::here("site/posts/Dotto/"), folder_name),
                overwrite = T)
 
   # rename *.html to index.html
-  html_file <- list.files(paste0(here::here("docs/posts/Dotto/"),folder_name),
+  html_file <- list.files(paste0(here::here("site/posts/Dotto/"),folder_name),
                           full.names = T,
                           pattern = "\\.html$")
 
   file.rename(from = html_file,
-              to = paste0(here::here("docs/posts/Dotto/"),folder_name, "/index.html"))
+              to = paste0(here::here("site/posts/Dotto/"),folder_name, "/index.html"))
 
   # delete .Rmd files -------------------------------------
-  list_all_rmds <- list.files(paste0(here::here("docs/posts/Dotto/"),folder_name),
+  list_all_rmds <- list.files(paste0(here::here("site/posts/Dotto/"),folder_name),
                               pattern = "\\.Rmd$",
                               full.names = T,
                               recursive = T)
   file.remove(list_all_rmds)
 
   if(keep_original_site_libs){
-  usethis::ui_done("The Dotto is added into docs/posts/Dotto")
+  usethis::ui_done("The Dotto is added into site/posts/Dotto")
   }
   # render index.Rmd page ===============
-  file.rename(from = here::here("docs/site_libs"), to = here::here("docs/site_libs_temp"))
+  file.rename(from = here::here("site/site_libs"), to = here::here("site/site_libs_temp"))
   rmarkdown::render(input = here::here("Index.Rmd"),
-                    output_format = DataMotto::Index(lib_dir = "docs/site_libs"),
+                    output_format = DataMotto::Index(lib_dir = "site/site_libs"),
                     output_file = "index.html",
                     quiet = T,
-                    output_dir = here::here("docs"))
+                    output_dir = here::here("site"))
 
   if(keep_original_site_libs){
-  dir_delete(here::here("docs/site_libs"))
-  file.rename(from = here::here("docs/site_libs_temp"), to = here::here("docs/site_libs"))
+  dir_delete(here::here("site/site_libs"))
+  file.rename(from = here::here("site/site_libs_temp"), to = here::here("site/site_libs"))
   }
 
   if(TRUE){ # copy site_libs into root folder for dev purposes
-    file.copy(from = here::here("docs/site_libs"),
+    file.copy(from = here::here("site/site_libs"),
               to = here::here(""),
               recursive = T,
               overwrite = T)
   }
 
-  usethis::ui_done(glue::glue("Index page is rendered and the site is ready at {usethis::ui_path('docs')}."))
+  usethis::ui_done(glue::glue("Index page is rendered and the site is ready at {usethis::ui_path('site')}."))
 
   if(open){
-    browseURL(here::here("docs/Index.html"))
+    browseURL(here::here("site/Index.html"))
   }
 
 }

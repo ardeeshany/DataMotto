@@ -9,4 +9,5 @@ run_root_rmds_if_needed(path)
 \description{
 @description This function compares the \verb{_} Rmd and \code{html} created time. If the html time is behind,
 it runs the Rmd (and deleted the \verb{_} from the beginning of the name).
+@noRd
 }

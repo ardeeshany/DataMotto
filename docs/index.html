@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DataMotto • DataMotto</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -81,7 +81,103 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<p>sdf</p>
+
+<hr>
+<p>title: “DataMotto” output: github_document —</p>
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<style type="text/css">
+body {
+  background-color: #282a36;
+  color: white;
+  font-size: 18px;
+}
+.drac-pink {
+  color: #ff79c6;
+}
+
+.drac-green {
+  color: #50fa7b;
+}
+
+.drac-orange {
+  color: #ffb86c;
+}
+
+.drac-cyan {
+  color: #8be9fd;
+}
+
+.drac-yellow {
+  color: #f1fa8c;
+}
+
+.dotto-dot-code {
+  background-color: #f1faf0;
+  font-size: 13px;
+  border: 0px;
+}
+
+.verbatim-codes pre {
+  background-color: #f1faf0;
+  font-size: 14px;
+  border: 0px;
+}
+</style>
+<div id="datamotto-" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#datamotto-" class="anchor"></a><span class="drac-pink">DataMotto</span> <a href="https://datamotto.com"><img src="assets/img/hex-logo.png" target="_blank" align="right" height="138"></a>
+</h1></div>
+<!-- badges: start -->
+<p><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a> <!-- badges: end --></p>
+<p>DataMotto is a data science educational website formatted as an <span class="drac-orange">R-pkg</span>, where users can learn, build, and share multilingual data skills efficiently. Putting <span class="drac-orange">minimality</span> as the heart of DataMotto’s philosophy, we aim to build high-quality data resources in a conventional format called <span class="drac-pink">Dotto</span>. The Dottos are developed based on the best practice coding and state-of-the-art packages to efficiently solve a data science problem. For each of Dotto’s problems, we develop the solutions in different popular programming languages that everyone can enjoy no matter what language they are comfortable with. The core languages we cover <span class="drac-cyan">R</span>, <span class="drac-cyan">Python</span>, <span class="drac-cyan">Julia</span>, <span class="drac-cyan">SQL</span>, and <span class="drac-cyan">nodeJS</span>.</p>
+<div id="datamotto-structure" class="section level2">
+<h2 class="hasAnchor">
+<a href="#datamotto-structure" class="anchor"></a>DataMotto <span class="drac-green">Structure</span>
+</h2>
+<center class="h2 drac-green">
+<code>Dot</code> &gt; <code>Dotto</code> &gt; <code>Line</code> &gt; <code>Space</code>
+</center>
+<div id="dotto-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#dotto-" class="anchor"></a>Dotto: <img src="./assets/img/red-circle.svg" width='3.5%"/'>
+</h3>
+<p>Dottos are the critical elements of DataMotto that aims to create <span class="drac-orange">dynamic modularized</span> data science educational materials. They are self-explanatory, autonomous, <span class="drac-pink">multilingual</span> data resources designed to be right to the point and solve a problem concisely. To clarify more, everyone can think of Dotto as a high-quality summary of an online course, an overview of a book chapter, a review of a package or group of packages, a technical summary of a paper, a real-world case study, Interview preparation materials, and many other scenarios.</p>
+</div>
+<div id="dot-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#dot-" class="anchor"></a>Dot: <img src="./assets/img/dotto-to-dots.svg" width='7%"/'>
+</h3>
+<p>Dottos are composed of Dots, which are the smallest component of DataMotto. All Dots has three parts: Instruction, Code, and Result. Our conventional framework has some rules for creating Dots:</p>
+<ol>
+<li><p>The <span class="drac-pink">Instruction</span> part has a limit of 560 characters. They introduce briefly the problem, instruction, or other resources you may need to check</p></li>
+<li><p>The <span class="drac-pink">Code</span> part has a limit of 15 lines, including comments.</p></li>
+<li><p>The <span class="drac-pink">Result</span> part includes only one table, figure, or list. You may see an interpretation of the results here as well (up to 280 characters).</p></li>
+</ol>
+</div>
+<div id="line-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#line-" class="anchor"></a>Line: <img src="./assets/img/red-line-chart.svg" width='9%"/'>
+</h3>
+<p>Considering DataMotto as a modularized platform with having Dottos as the building blocks, Dottos can team up, be connected together and create a <span class="drac-pink">Line</span> that can cover a comprehensive concept in data science efficiently. As each line is created from (multilingual) Dottos, they are covering different programming language. Lines can be considered as a dynamic educational materials that their length may be altered in the future.</p>
+</div>
+<div id="creating-a-dotto" class="section level3">
+<h3 class="hasAnchor">
+<a href="#creating-a-dotto" class="anchor"></a>Creating a Dotto</h3>
+<p>To create a Dotto, please check <a href="./articles/Creating_Dotto.html">this article</a> that explains the technical structure of a Dotto and the process of creating a new Dotto or adding a new language to an existing Dotto.</p>
+</div>
+</div>
+<div id="-do-you-have-an-idea-for-a-dotto" class="section level2">
+<h2 class="hasAnchor">
+<a href="#-do-you-have-an-idea-for-a-dotto" class="anchor"></a>🧨 Do you have an idea for a Dotto?</h2>
+<p>If you have a proposal for creating a new <span class="drac-pink">Dotto</span>, you should fill out a <a href="https://github.com/DataMotto/DataMotto/issues/new?assignees=ardeeshany&amp;labels=Dotto+Request&amp;template=dotto-request.md&amp;title="><span class="drac-yellow">Dotto request</span></a>. Then, we review your request, create a branch for you, and help you to build your Dotto and publish it on the <a href="https://DataMotto.com">DataMotto</a> website.</p>
+</div>
+<div id="-do-you-want-to-add-a-new-language-to-an-existing-dotto" class="section level2">
+<h2 class="hasAnchor">
+<a href="#-do-you-want-to-add-a-new-language-to-an-existing-dotto" class="anchor"></a>🏎 Do you want to add a new language to an existing Dotto?</h2>
+<p>If you are willing to add a new <span class="drac-green">language</span> to an existing Dotto, you should fill out a <a href="https://github.com/DataMotto/DataMotto/issues/new?assignees=&amp;labels=Lang+Request&amp;template=language-request.md&amp;title="><span class="drac-yellow">Language request</span></a>. Then, we review your request, get you to connect with the primary author(s), create a branch for you, and help you to upgrade the Dotto and update <a href="https://DataMotto.com">DataMotto</a> website.</p>
+</div>
+</div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -92,20 +188,22 @@
 </li>
 <li>Report a bug at <br><a href="https://github.com/DataMotto/DataMotto/issues">https://​github.com/​DataMotto/​DataMotto/​issues</a>
 </li>
+<li>Website at <br><a href="https://DataMotto.com">https://​DataMotto.com</a>
+</li>
 </ul>
 </div>
 <div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
-<li>`use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license</li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a></small></li>
 </ul>
 </div>
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>
-<a href="http://mirshani.com"><img src="/assets/img/logo.svg" height="24"></a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/https://orcid.org/0000-0003-1917-0491" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<a href="http://mirshani.com"> Ardalan Mirshani  <img src="assets/img/ArdalanMirshani.jpeg" height="48" style="border-radius: 50%"></a> <br><small class="roles"> Author, maintainer, funder </small> <a href="https://orcid.org/https://orcid.org/0000-0003-1917-0491" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
 
@@ -114,7 +212,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="http://mirshani.com"><img src="/assets/img/logo.svg" height="24"></a>.</p>
+  <p>Developed by <a href="http://mirshani.com"> Ardalan Mirshani  <img src="assets/img/ArdalanMirshani.jpeg" height="48" style="border-radius: 50%"></a>.</p>
 </div>
 
 <div class="pkgdown">

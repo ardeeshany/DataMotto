@@ -19,13 +19,12 @@ build_site_DataMotto <- function(open = T) {
 
   # render site --------------------------------------------
   suppressWarnings(suppressMessages(
-    rmarkdown::render_site(input = here::here() ,
-                           encoding = 'UTF-8',
+    rmarkdown::render_site(input = here::here(),
                            quiet = T)
   ))
 
   # rename all foo.html to index.html ----------------------
-  list_all_htmls <- list.files(here::here("docs/posts/Dotto"),
+  list_all_htmls <- list.files(here::here("site/posts/Dotto"),
                                pattern = "\\.html$",
                                full.names = T,
                                recursive = T)
@@ -33,7 +32,7 @@ build_site_DataMotto <- function(open = T) {
   purrr::walk(list_all_htmls, ~ file.rename(.x, paste0(dirname(.x),"/","index.html")))
 
   # delete .Rmd files -------------------------------------
-  list_all_rmds <- list.files(here::here("docs/posts/Dotto"),
+  list_all_rmds <- list.files(here::here("site/posts/Dotto"),
                                pattern = "\\.Rmd$",
                                full.names = T,
                                recursive = T)
@@ -41,7 +40,7 @@ build_site_DataMotto <- function(open = T) {
   purrr::walk(list_all_rmds, ~ file.remove(.x))
 
   # if(TRUE){ # copy site_libs deps into root folder for dev purposes
-  #   file.copy(from = here::here("docs/site_libs"),
+  #   file.copy(from = here::here("site/site_libs"),
   #             to = here::here(""),
   #             recursive = T,
   #             overwrite = T)
@@ -50,10 +49,10 @@ build_site_DataMotto <- function(open = T) {
   # run static _foo.Rmd in the root path ------------------
   # run_root_rmds_if_needed(here::here())
 
-  usethis::ui_done(glue::glue('Data Motto website is generated at "docs" folder.'))
+  usethis::ui_done(glue::glue('Data Motto website is generated at "site" folder.'))
 
   if(open){
-    browseURL(here::here("docs/Index.html"))
+    browseURL(here::here("site/Index.html"))
   }
 
 }
@@ -63,6 +62,7 @@ build_site_DataMotto <- function(open = T) {
 #'
 #'  @description This function compares the `_` Rmd and `html` created time. If the html time is behind,
 #'    it runs the Rmd (and deleted the `_` from the beginning of the name).
+#'  @noRd
 run_root_rmds_if_needed <- function(path){
 
   all_special_rmds <- list.files(path = path, pattern = "(^_.*\\.Rmd$)", full.names = T)

@@ -1,0 +1,739 @@
+#content-mobile {display: none;}
+
+@media screen and (max-width: 768px) {
+
+#content-mobile {display: block;}
+#content-desktop {display: none;}
+#content-desktop-cards {display: none;}
+
+}
+
+.dotto-header {
+  background-color: #282a36;
+  color: rgb(255, 255, 255);
+  margin: 0px;
+}
+
+#logo {
+  min-height: 25px;
+  max-height: 50px;
+  max-width: 50px;
+}
+
+@media (min-width: 992px) {
+  #logo {
+    min-height: 25px;
+    max-height: 55px;
+    max-width: 65px;
+  }
+}
+
+.header-logo {
+  margin: auto 0;
+  padding-left: 18px;
+}
+
+.header-title {
+  color: rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 8px;
+  padding-top: 10px;
+  margin-left: 8px;
+  padding-left: 29px;
+}
+
+@media (min-width: 576px) {
+  .header-title {
+    color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 8px;
+    padding-top: 10px;
+    margin-left: -5px;
+  }
+}
+
+.dotto-header-description {
+  font-size: 13px;
+  color: white;
+  margin: 4px 0px 5px 0px;
+}
+
+.dotto-header-user {
+  margin: auto 0;
+  padding-top: 30px;
+}
+
+@media (min-width: 576px) {
+  .dotto-header-user {
+    /* padding-right: 24px; */
+    margin: auto 0;
+    padding-top: 17px;
+  }
+}
+
+.dotto-header-user-arrow {
+  padding-left: 0px;
+  margin: 0px;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-left: 0px;
+}
+
+.dotto-header-user-name {
+  font-size: 10px;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  margin-left: 0px;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+.user-image {
+  max-height: 48px;
+  border-radius: 50%;
+  border: 2px solid;
+  margin-right: 5px;
+}
+
+#dotto-row-header {
+  /* min-height: 80px; */
+}
+
+.header-like-btn,
+.header-like-btn:hover {
+  background: #fff;
+  border-radius: 15px;
+  border-width: 3px;
+  border-color: #5a6078;
+  border-bottom-style: solid;
+  font-size: 16px;
+  padding: 0px
+  max-height: 100px;
+  max-width: 100px;
+  min-height:50px;
+  min-width: 80px;
+}
+
+#dotto-row-info {
+  background: #44475a;
+  height: 48px;
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  color: white;
+}
+
+.bg-social-icons {
+  background: #586484;
+  border-width: 0px;
+  border-style: solid;
+  filter: brightness(103%) saturate(103%);
+  height: 32px;
+  margin: 0px;
+  border-radius: 4px;
+  min-width: 89px;
+}
+
+.bg-bugs-icons {
+  width: 138.3px;
+  margin: 0px 5px;
+  margin-right: 0px;
+  font-size: 20px;
+  min-width: 124px;
+}
+
+#dotto-row-lines {
+  background: #282a36;
+  min-height: 40px;
+  margin-left: 0px;
+  padding-left: 10px;
+}
+
+.dotto-main {
+  background: #6272a4;
+  padding: 0px;
+  min-height: 320px;
+}
+
+@media (min-width: 992px) {
+  .dotto-main {
+    background: #6272a4;
+    padding: 0px;
+  }
+}
+
+.dotto-lines-icons {
+  font-size: 35px;
+  text-align: center;
+  margin-right: 8px;
+  color: #ff79c6;
+}
+
+@media (min-width: 992px) {
+  #all_page {
+    height: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  #dotto-main-dots {
+    padding: 0px;
+    padding-top: 5px;
+    background: #383a48;
+    border: 1px none white;
+    border-right-style: solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    max-height: 75px;
+    color: white;
+  }
+}
+
+@media (min-width: 992px) {
+  #dotto-main-dots {
+    padding: 0px;
+    padding-top: 5px;
+    background: #383a48;
+    border: 1px none white;
+    border-right-style: solid;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+  }
+}
+
+@media (max-width: 992px) {
+  .dotto-main-dot-shape {
+  border-radius: 30px;
+  min-width: 35px;
+  font-size: 14px;
+  min-height: 35px;
+  border-width: 2px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-style: solid;
+  box-shadow: 0px 0px 3px;
+  text-align: center;
+}
+}
+
+.dotto-main-dot-shape {
+  border-radius: 30px;
+  min-width: 35px;
+  font-size: 14px;
+  min-height: 35px;
+  border-width: 2px;
+  border-style: solid;
+  box-shadow: 0px 0px 3px;
+  text-align: center;
+}
+
+.navbar-brand {
+  background: url("../../assets/img/logo.svg") center / 90% no-repeat;
+  min-height: 90px;
+  min-width: 90px;
+}
+
+#logo-text {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: -5px;
+  color: white;
+}
+
+navbar-collapse {
+}
+
+
+.description {
+  text-align: center;
+}
+
+.team-intro {
+  color: #ff79c6;
+  padding-top: 25px;
+  font-size: 16px;
+  width: 100vw;
+  padding-bottom: 20px;
+}
+
+#navbar-all {
+  background: #44475a;
+}
+
+.toggle-icon {
+  color: white;
+  font-size: 32px;
+}
+
+.nav-togle-style {
+  border-width: 0px;
+}
+
+#nav-middle {
+  max-width: 350px;
+  width: 100%;
+}
+
+.team-col-box {
+  color: #282a36;
+  border-radius: 0px;
+  padding-top: 25px;
+  border: 0px solid #6272a4;
+}
+
+#team-sub-title {
+  font-size: 24px;
+  font-weight: 300;
+  font-style: normal;
+  color: #ff79c6;
+  filter: saturate(97%);
+  padding-top: 5px;
+  margin-right: 0px;
+}
+
+#team-title {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 50px;
+  font-family: bold;
+  color: #ff79c6;
+}
+
+.team-description {
+  width: 90%;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  min-height: 120px;
+}
+
+#logo-link {
+  text-decoration: none;
+}
+
+@media (min-width: 577px) {
+  .home-welcome {
+    background: #282a36;
+    margin-top: 0px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    display: flex;
+    min-height: 650px;
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-welcome {
+    background: #282a36;
+    margin-top: 0px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    flex-direction: column;
+    min-height: 650px;
+  }
+}
+
+#home-welcome-langs {
+  background: url("../../assets/img/resources/images/splash-main.jpg") center /
+    75% no-repeat;
+  min-height: 350px;
+}
+
+@media (max-width: 576px) {
+  #welcome-title {
+    color: white;
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 577px) {
+  #welcome-title {
+    color: white;
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 65px;
+  }
+}
+
+@media (max-width: 576px) {
+  #welcome-sub-title {
+    color: rgb(238, 244, 245);
+    font-size: 22px;
+    font-weight: 400;
+    padding: 0px 13px;
+  }
+}
+
+@media (min-width: 577px) {
+  #welcome-sub-title {
+    color: rgb(238, 244, 245);
+    font-size: 24px;
+    font-weight: 400;
+    padding: 0px 13px;
+  }
+}
+
+#home-support-sections {
+  width: 100%;
+  margin-top: 22px;
+  padding-top: 0px;
+  min-height: 100px;
+  color: #f1fa8c;
+}
+
+#home-suppport-us {
+  background: #6272a4;
+  height: 250px;
+  color: white;
+  border: 2px solid #424b65;
+  border-radius: 0px;
+}
+
+.support-us-header {
+  margin-bottom: 15px;
+  margin-top: 10px;
+  color: white;
+}
+
+.home-support-cards {
+  border-right-style: solid;
+  border-right-color: rgb(128, 112, 156);
+}
+
+#home-cards-section {
+  background: #f2f4fd;
+  padding: 30px 0px;
+}
+
+.icon-box {
+  min-height: 250px;
+  margin: 0 auto;
+}
+
+.footer-disqus-text{
+  font-size: 18px;
+}
+
+@media (max-width: 576px) {
+  #dotto-footer {
+    background: #282a36;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 577px) {
+  #dotto-footer {
+    background: #282a36;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.dotto-header-tags {
+  font-size: 10px;
+  color: #f8f8f2b6;
+  margin: 3px 0px 10px 0px;
+}
+
+.dotto-header-maintitle {
+  font-size: 19px;
+}
+
+.dotto-main-output {
+  background-color: white;
+}
+
+.dotto-main-codes {
+  background-color: #282a36;
+  color: #f2f2f2;
+  font-family: Source Sans Pro;
+  font-weight: 300;
+}
+
+.dotto-main-intro {
+  background-color: rgb(255, 249, 215);
+}
+
+.dotto-alert-comment {
+  background-color: rgb(67, 71, 90);
+  color: white;
+  border: 1px solid rgb(255, 121, 198);
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+}
+
+
+.box {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  width: 33%;
+  height: 100%;
+}
+.box2 {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  width: 33%;
+  height: 100%;
+}
+
+
+
+.handler {
+  width: 10px;
+  padding: 0;
+  cursor: ew-resize;
+  flex: 0 0 auto;
+  background-color: #44475a;
+}
+.handler2 {
+  width: 10px;
+  padding: 0;
+  cursor: ew-resize;
+  flex: 0 0 auto;
+  background-color: #44475a;
+}
+#resizable {
+  display: flex;
+  flex-direction: row;
+  width: 66%;
+  left: 0 !important;
+  position: relative !important;
+}
+
+.comment {
+  color: #6272a4;
+}
+
+.param {
+  color: #ff5555;
+}
+
+.number {
+  color: #8be9fd;
+}
+
+.bool {
+  color: #50fa7b;
+}
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1 !important; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  opacity: .8;
+  float: left;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Dotto colors */
+
+.dotto-dot-instruction {
+  background-color: #fff9d7;
+  font-size: 18px;
+  border: 0px;
+}
+
+.dotto-dot-output {
+  background-color: #fff;
+  font-size: 18px;
+  border: 0px;
+}
+
+.dotto-dot-output pre {
+  border: 0;
+}
+
+
+
+.dotto-dot-code {
+  background-color: #282b36;
+  font-size: 18px;
+  border: 0px;
+}
+
+.dotto-main img {
+   max-width: 100%;
+   height: auto;
+}
+
+
+/* Dracula Color */
+
+.drac-pink {
+  color: #ff79c6;
+}
+
+.drac-blue {
+  color: #6272a4;
+}
+
+.drac-bluelight {
+  color: #8be9fd;
+}
+
+.drac-yellow {
+  color: #f1fa8c;
+}
+
+.drac-green {
+  color: #50fa7b;
+}
+
+.drac-purple {
+  color: #bd93f9;
+}
+
+/* About Dotto page */
+.dotto-info-card {
+  padding: 0 5px;
+  font-size: 32px;
+  text-align: left;
+
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scroll-bar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scroll-bar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.svg-in-center {
+  display: block;
+  margin: auto;
+}
+
+
+.support-us {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 2;
+}
+
+.display-7 {
+  font-size: 2rem;
+}
+
+.display-fs-8 {
+  font-size: 1.5rem;
+}
+
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+  height: 73%;
+}
+
+.modal-comment {
+  background-color: #fefefe;
+  margin: 10% auto;
+  margin-top: 5%;
+  margin-bottom: 0px;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  height: 68%;
+}
+
+
+.card-header.dot-codes {
+  background-color: #5a6078;
+}
+
+
+
+/* lang color */
+.lang-color-r{
+  color: #71a5d4;
+}
+
+.lang-color-python{
+  color: #f7ca3e;
+}
+
+.lang-color-julia{
+  color: #9259a3;
+}
+
+.lang-color-node{
+  color: #77b063;
+}
+
+.lang-color-sql{
+  color: #e48e03;
+}
+
+.icon-sql-size {
+  font-size: 40px;
+  padding-top: 4px;
+}
+
+.icon-sql-size-bg {
+  font-size: 50px !important;
+  top: 9px !important;
+}
+
+#more-about-dotto {
+  color: #efff3b;
+  border-color: #efff3b;
+}
+
+#more-about-dotto:hover {
+  background-color: inherit;
+}

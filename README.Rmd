@@ -1,4 +1,5 @@
 ---
+title: "DataMotto"
 output: github_document
 ---
 
@@ -85,13 +86,12 @@ Considering DataMotto as a modularized platform with having Dottos as the buildi
 
 ### Creating a Dotto
 
-To create a Dotto, we have a separate article explains the technical structure of a Dotto Here.
+To create a Dotto, please check [this article](./articles/Creating_Dotto.html) that explains the technical structure of a Dotto and the process of creating a new Dotto or adding a new language to an existing Dotto.
 
-## Installation
+## 🧨 Do you have an idea for a Dotto?
 
-You can install the development version from [GitHub](https://github.com/) with:
+If you have a proposal for creating a new <span class="drac-pink">Dotto</span>, you should fill out a [<span class="drac-yellow">Dotto request</span>](https://github.com/DataMotto/DataMotto/issues/new?assignees=ardeeshany&labels=Dotto+Request&template=dotto-request.md&title=). Then, we review your request, create a branch for you, and help you to build your Dotto and publish it on the [DataMotto](https://DataMotto.com) website.
 
-``` r
-# install.packages("devtools")
-devtools::install_github("ardeeshany/DataMotto")
-```
+## 🏎 Do you want to add a new language to an existing Dotto?
+
+If you are willing to add a new <span class="drac-green">language</span> to an existing Dotto, you should fill out a [<span class="drac-yellow">Language request</span>](https://github.com/DataMotto/DataMotto/issues/new?assignees=&labels=Lang+Request&template=language-request.md&title=). Then, we review your request, get you to connect with the primary author(s), create a branch for you, and help you to upgrade the Dotto and update [DataMotto](https://DataMotto.com) website.

@@ -1,68 +1,13 @@
 name: "Datamotto"
 title: "Data Motto"
 description: |
-  A web platform to create high quality summary of
-  experiencing with Data!
-output_dir: "docs"
-exclude: ["README.md", "inst", "R"]
+  A data science educational website
+output_dir: "site"
+exclude: ["README.md", "README.Rmd", "inst", "R", "NEWS.md", "docs", "NAMESPACE", "DESCRIPTION", "vignettes", "man", "resources"]
 #include: "_posts"
 base_url: https://datamotto.com
-favicon: resources/images/datamotto_logo.png
-collections:
-  posts:
-    # creative_commons: CC BY-NC; # will be incuded in _assets/article_header.Rmd
-    categories: true
-    categories_metadata: true
-    authors_metadata: true
-    feed_items_max: 20
-    citations: false
-    share: [twitter, linkedin, facebook] # facebook
-    # subscribe: _subscribe.html
-    # custom: custom.html
-    # disqus:
-    #   shortname: reproducible-finance-with-r
-    #   hidden: false
-rss:
-  full_content: true
-    # categories:   # to create dedicated feeds that map to particular categories
-    # - portfolios
-    # - forecasting
 social_networks:
   twitter: "https://twitter.com/DataMotto"
   linkedin: "https://www.linkedin.com/company/datamotto"
-# twitter:
-#   site: "@DataMotto"
-#   creator: "@DataMotto"
-#navbar:
-#  title: "Data Motto"
-#   logo:
-#     image: images/logo.gif
-#     href: https://www.datamotto.com
-#   search: false
-#   source_url: false # https://github.com/ardeeshany/DataMotto
-#   right:
-#     - text: "The Whole game!"
-#       href: about.html
-#     # - text: "All"
-#     #   href: index.html
-#     - text: "R"
-#       href: R.html
-#     - text: "Python"
-#       href: Python.html
-#     - icon: fa fa-slack fa-1x
-#       href: https://datamotto.slack.com
-#     - icon: fa fa-github fa-1x
-#       href: https://github.com/ardeeshany/DataMotto
-#     - icon: fa fa-rss fa-1x
-#       href: index.xml
 output:
   rmarkdown::html_document:
-    # self_contained: false
-    # toc: true
-    # toc_depth: 2
-    # toc_float: false
-    #css: inst/templates/Dotto/Dotto.css
-    # includes:
-    #   in_header: header.html
-    #   before_body: doc_prefix.html
-    #   after_body: doc_suffix.html
