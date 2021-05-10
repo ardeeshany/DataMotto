@@ -1,7 +1,4 @@
----
-title: "DataMotto"
-output: github_document
----
+# <span class="drac-pink">DataMotto</span> <a href='https://datamotto.com'><img src='./assets/img/hex-logo.png' target="_blank" align="right" height="138" /></a>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -45,8 +42,6 @@ body {
   border: 0px;
 }
 </style>
-
-# <span class="drac-pink">DataMotto</span> <a href='https://datamotto.com'><img src='assets/img/hex-logo.png' target="_blank" align="right" height="138" /></a>
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
