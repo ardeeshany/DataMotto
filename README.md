@@ -41,6 +41,10 @@ body {
   font-size: 14px;
   border: 0px;
 }
+
+.copyright img {
+  display: none;
+}
 </style>
 
 <!-- badges: start -->
