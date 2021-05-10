@@ -1,3 +1,6 @@
+---
+output: github_document
+---
 # <span class="drac-pink">DataMotto</span> <a href='https://datamotto.com'><img src='assets/img/hex-logo.png' target="_blank" align="right" height="138" /></a>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
