@@ -18,6 +18,7 @@
 #' @import rmarkdown
 #' @importFrom htmltools htmlDependency
 #' @export
+#' @noRd
 Index <- function(fig_width = 6,
                        fig_height = 6,
                        fig_caption = TRUE,

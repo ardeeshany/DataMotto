@@ -38,6 +38,7 @@ resolve_date_prefix <- function(date) {
 #' Yes/No question in console
 #' @param question the question will be appeared on the console.
 #' @importFrom cli cli_alert_info
+#' @noRd
 YN <- function(question) {
   cli::cli_alert_info(question)
   utils::menu(c("Yes", "No")) == 1
@@ -46,6 +47,7 @@ YN <- function(question) {
 
 
 #' Create a folder if not exist
+#' @noRd
 create_path_if_not_exist <- function(path){
   lets_create_path <- T
   if(dir.exists(path)){
@@ -61,6 +63,7 @@ create_path_if_not_exist <- function(path){
 
 
 #' Create a folder if not exist
+#' @noRd
 create_file_if_not_exist <- function(path){
   lets_create_file <- T
   if(file.exists(path)){

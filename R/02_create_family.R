@@ -11,6 +11,7 @@
 #' @importFrom here here
 #' @importFrom glue glue
 #' @export
+#' @noRd
 create_family <- function(Dotto_base_label, lang = NULL, open = T) {
 
   if(TRUE){
