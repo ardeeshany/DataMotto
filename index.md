@@ -1,7 +1,6 @@
 ---
 output: github_document
 ---
-
 # <span class="drac-pink">DataMotto</span> <a href='https://datamotto.com'><img src='assets/img/hex-logo.png' target="_blank" align="right" height="138" /></a>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -57,7 +56,7 @@ body {
 
 DataMotto is a data science educational website formatted as an <span class="drac-orange">R-pkg</span>, where users can learn, build, and share multilingual data skills efficiently. Putting <span class="drac-orange">minimality</span> as the heart of DataMotto’s philosophy, we aim to build high-quality data resources in a conventional format called <span class="drac-pink">Dotto</span>. The Dottos are developed based on the best practice coding and state-of-the-art packages to efficiently solve a data science problem. For each of Dotto’s problems, we develop the solutions in different popular programming languages that everyone can enjoy no matter what language they are comfortable with. The core languages we cover <span class="drac-cyan">R</span>, <span class="drac-cyan">Python</span>, <span class="drac-cyan">Julia</span>, <span class="drac-cyan">SQL</span>, and <span class="drac-cyan">nodeJS</span>.
 
-<h2> DataMotto <span class="drac-green">Structure</span> </h2>
+## DataMotto <span class="drac-green">Structure</span>
 
 <center class="h2 drac-green"> `Dot` > `Dotto` > `Line` > `Space` </center>
 
