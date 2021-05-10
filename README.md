@@ -1,4 +1,4 @@
-# <span class="drac-pink">DataMotto</span> <a href='https://datamotto.com'><img src='./assets/img/hex-logo.png' target="_blank" align="right" height="138" /></a>
+# <span class="drac-pink">DataMotto</span> <a href='https://datamotto.com'><img src='assets/img/hex-logo.png' target="_blank" align="right" height="138" /></a>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -53,10 +53,10 @@ DataMotto is a data science educational website formatted as an <span class="dra
 
 <center class="h2 drac-green"> `Dot` > `Dotto` > `Line` > `Space` </center>
 
-### Dotto: <img src="./assets/img/red-circle.svg" width=3.5%"/>
+### Dotto: <img src="assets/img/red-circle.svg" width=3.5%"/>
 Dottos are the critical elements of DataMotto that aims to create <span class="drac-orange">dynamic modularized</span> data science educational materials. They are self-explanatory, autonomous, <span class="drac-pink">multilingual</span> data resources designed to be right to the point and solve a problem concisely. To clarify more, everyone can think of Dotto as a high-quality summary of an online course, an overview of a book chapter, a review of a package or group of packages, a technical summary of a paper, a real-world case study, Interview preparation materials, and many other scenarios.
 
-### Dot: <img src="./assets/img/dotto-to-dots.svg" width=7%"/>
+### Dot: <img src="assets/img/dotto-to-dots.svg" width=7%"/>
 
 Dottos are composed of Dots, which are the smallest component of DataMotto. All Dots has three parts: Instruction, Code, and Result. Our conventional framework has some rules for creating Dots:
 
@@ -67,7 +67,7 @@ Dottos are composed of Dots, which are the smallest component of DataMotto. All 
 1. The <span class="drac-pink">Result</span> part includes only one table, figure, or list. You may see an interpretation of the results here as well (up to 280 characters).
 
 
-### Line: <img src="./assets/img/red-line-chart.svg" width=9%"/>
+### Line: <img src="assets/img/red-line-chart.svg" width=9%"/>
 
 Considering DataMotto as a modularized platform with having Dottos as the building blocks, Dottos can team up, be connected together and create a <span class="drac-pink">Line</span> that can cover a comprehensive concept in data science efficiently. As each line is created from (multilingual) Dottos, they are covering different programming language. Lines can be considered as a dynamic educational materials that their length may be altered in the future.
 
