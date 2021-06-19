@@ -3,7 +3,7 @@ title: "Import various data file"
 description: |
   A short description of the Dotto.
 author:
-  - name: "First Last"
+  - name: "Mohsen Jalali"
     occupation: NULL
     affiliation: NULL
     url: NULL
