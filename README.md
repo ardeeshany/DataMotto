@@ -9,7 +9,8 @@
 <br>
 <hr>
 
-### For a complete documentation, check the [pkgdown](https://datamotto.netlify.app) website.
+### For a complete documentation, check [pkgdown](https://datamotto.netlify.app) website.
+
 
 <hr>
 
