@@ -1,0 +1,46 @@
+---
+title: "Import various data file"
+description: |
+  A short description of the Dotto.
+author:
+  - name: "First Last"
+    occupation: NULL
+    affiliation: NULL
+    url: NULL
+    img: NULL
+    lang: python
+tech:
+  - lang: python
+    pkgs: NULL
+date:
+  created: "2021-06-19"
+  last_updated: "2021-06-19"
+categories: NULL
+applications: NULL
+cover_image: NULL
+slug: "import-various-data-file"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto()
+```
+
+<!-- Dot 1, lang: python ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = "python"}
+
+```
+
+```{python, Dot = 1, part = "Code", echo = T, eval = F, }
+
+```
+
+```{python, Dot = 1, part = "Result", echo = F, eval = T}
+
+```
+
+
+
+
+
