@@ -9,16 +9,23 @@
     
     <title>Simple Data Visualization</title>
 
-        <script src="simple-data-visualization_files/header-attrs-2.5/header-attrs.js"></script>
+        <script src="simple-data-visualization_files/header-attrs-2.7.3/header-attrs.js"></script>
         <script src="simple-data-visualization_files/jquery-1.11.3/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="simple-data-visualization_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
         <script src="simple-data-visualization_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
         <script src="simple-data-visualization_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
         <script src="simple-data-visualization_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+        <style>h1 {font-size: 34px;}
+               h1.title {font-size: 38px;}
+               h2 {font-size: 30px;}
+               h3 {font-size: 24px;}
+               h4 {font-size: 18px;}
+               h5 {font-size: 16px;}
+               h6 {font-size: 12px;}
+               code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+               pre:not([class]) { background-color: white }</style>
         <script src="simple-data-visualization_files/navigation-1.1/tabsets.js"></script>
-        <link href="simple-data-visualization_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-        <script src="simple-data-visualization_files/anchor-sections-1.0/anchor-sections.js"></script>
         
           <meta property="og:title" content="Simple Data Visualization" />
           <meta property="og:type" content="article">
@@ -250,7 +257,7 @@ class="btn dotto-main-dot-shape"
 </div>
 
 <!-- Dot 1, lang: r, python ------------------------------------------------>
-<p>
+
 <div v-if="activeMotto === '1'" class="col-12 col-lg-11 d-flex p-0 wrapper">
 <div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
 <div class="card-header">
@@ -260,33 +267,8 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
-<a href="https://seaborn.pydata.org/index.html#">Seaborn</a> is a Python data visualization library based on <a href="https://matplotlib.org/">matplotlib</a>. It provides a high-level interface for drawing attractive and informative statistical graphics.</p>
-<p>Since it’s not always easy to decide how to best tell the story behind your data, we’ve broken the chart types into three broad categories to help with this.</p>
-<ul>
-<li><strong>Trends:</strong> A trend is defined as a pattern of change.
-<ul>
-<li><code>sns.lineplot</code></li>
-</ul></li>
-<li><strong>Relationship:</strong> Understand relationships between variables in your data.
-<ul>
-<li><code>sns.barplot</code></li>
-<li><code>sns.heatmap</code></li>
-<li><code>sns.scatterplot</code></li>
-</ul></li>
-<li><strong>Distribution:</strong> We visualize distributions to show the possible values that we can expect to see in a variable, along with how likely they are.
-<ul>
-<li><code>sns.histplot</code> 
-</p>
-</div>
- 
-</li>
-</ul></li>
-</ul>
-<p>
- 
-<div v-if="activeLang === 'python'" class="mx-2">
-<p class="mx-2">
-<a href="https://seaborn.pydata.org/index.html#">Seaborn</a> is a Python data visualization library based on <a href="https://matplotlib.org/">matplotlib</a>. It provides a high-level interface for drawing attractive and informative statistical graphics.</p>
+
+<p><a href="https://seaborn.pydata.org/index.html#">Seaborn</a> is a Python data visualization library based on <a href="https://matplotlib.org/">matplotlib</a>. It provides a high-level interface for drawing attractive and informative statistical graphics.</p>
 <p>Since it’s not always easy to decide how to best tell the story behind your data, we’ve broken the chart types into three broad categories to help with this.</p>
 <ul>
 <li><strong>Trends:</strong> A trend is defined as a pattern of change.
@@ -306,14 +288,48 @@ class="btn dotto-main-dot-shape"
 <ul>
 <li><code>sns.histplot</code></li>
 <li><code>sns.kdeplot</code></li>
-<li><code>sns.jointplot</code>
+<li><code>sns.jointplot</code></li>
+</ul></li>
+</ul>
+
 </p>
 </div>
  
-</li>
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><a href="https://seaborn.pydata.org/index.html#">Seaborn</a> is a Python data visualization library based on <a href="https://matplotlib.org/">matplotlib</a>. It provides a high-level interface for drawing attractive and informative statistical graphics.</p>
+<p>Since it’s not always easy to decide how to best tell the story behind your data, we’ve broken the chart types into three broad categories to help with this.</p>
+<ul>
+<li><strong>Trends:</strong> A trend is defined as a pattern of change.
+<ul>
+<li><code>sns.lineplot</code></li>
+</ul></li>
+<li><strong>Relationship:</strong> Understand relationships between variables in your data.
+<ul>
+<li><code>sns.barplot</code></li>
+<li><code>sns.heatmap</code></li>
+<li><code>sns.scatterplot</code></li>
+<li><code>sns.regplot</code></li>
+<li><code>sns.lmplot</code></li>
+<li><code>sns.swarmplot</code></li>
+</ul></li>
+<li><strong>Distribution:</strong> We visualize distributions to show the possible values that we can expect to see in a variable, along with how likely they are.
+<ul>
+<li><code>sns.histplot</code></li>
+<li><code>sns.kdeplot</code></li>
+<li><code>sns.jointplot</code></li>
 </ul></li>
 </ul>
-<p>
+
+</p>
+</div>
+ 
+
+
 </div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
@@ -325,33 +341,35 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
+<div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>asdf</span></code></pre></div>
+
 </div>
  
-</p>
+
 
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># There are a few lines of code that you&#39;ll need to run at the top of every notebook to set up your coding environment.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pd.plotting.register_matplotlib_converters()</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Path of the file to read</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>auto_filepath <span class="op">=</span> <span class="st">&quot;data/Automobile_data.csv&quot;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the file into a variable Automobile_data.csv</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># The dataset consist of data From 1985 Ward&#39;s Automotive Yearbook.</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>auto <span class="op">=</span> pd.read_csv(auto_filepath)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the five random rows of the data</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>auto.sample(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># There are a few lines of code that you&#39;ll need to run at the top of every notebook to set up your coding environment.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pd.plotting.register_matplotlib_converters()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Path of the file to read</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>auto_filepath <span class="op">=</span> <span class="st">&quot;data/Automobile_data.csv&quot;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the file into a variable Automobile_data.csv</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># The dataset consist of data From 1985 Ward&#39;s Automotive Yearbook.</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>auto <span class="op">=</span> pd.read_csv(auto_filepath)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the five random rows of the data</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>auto.sample(<span class="dv">5</span>)</span></code></pre></div>
 
 </div>
  
 
-<p>
+
 </div>
 <div class="handler2 dotto-main-output"></div>
 <div class="box2 dotto-main overflow-auto dotto-main-output">
@@ -362,19 +380,21 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
 </div>
  
-</p>
+
 
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
 
-<pre><code>##      symboling normalized-losses     make  ... city-mpg highway-mpg  price
-## 136          3               150     saab  ...       19          26  18150
-## 111          0               161   peugot  ...       19          24  15580
-## 129          1                 ?  porsche  ...       17          28      ?
-## 158          0                91   toyota  ...       34          36   7898
-## 100          0               106   nissan  ...       27          34   9549
+<pre><code>##      symboling normalized-losses        make  ... city-mpg highway-mpg  price
+## 41           0                85       honda  ...       24          28  12945
+## 83           3                 ?  mitsubishi  ...       19          24  14869
+## 177         -1                65      toyota  ...       27          32  11248
+## 78           2               161  mitsubishi  ...       31          38   6669
+## 134          3               150        saab  ...       21          28  15040
 ## 
 ## [5 rows x 26 columns]</code></pre>
 
@@ -385,7 +405,7 @@ class="btn dotto-main-dot-shape"
 </div>
 
 <!-- Dot 2, lang: r, python ------------------------------------------------>
-<p>
+
 <div v-if="activeMotto === '2'" class="col-12 col-lg-11 d-flex p-0 wrapper">
 <div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
 <div class="card-header">
@@ -395,21 +415,25 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
-<code>sns.lineplot</code> - <strong>Line charts</strong> are best to show trends over a period of time, and multiple lines can be used to show trends in more than one group. The relationship between x and y can be shown for different subsets of the data using the <code>hue</code>, <code>size</code>, and <code>style</code> parameters. Check the <a href="https://seaborn.pydata.org/generated/seaborn.lineplot.html">documentation</a> for more details.
+
+<p><code>sns.lineplot</code> - <strong>Line charts</strong> are best to show trends over a period of time, and multiple lines can be used to show trends in more than one group. The relationship between x and y can be shown for different subsets of the data using the <code>hue</code>, <code>size</code>, and <code>style</code> parameters. Check the <a href="https://seaborn.pydata.org/generated/seaborn.lineplot.html">documentation</a> for more details.</p>
+
 </p>
 </div>
  
-</p>
-<p>
+
+
  
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
-<code>sns.lineplot</code> - <strong>Line charts</strong> are best to show trends over a period of time, and multiple lines can be used to show trends in more than one group. The relationship between x and y can be shown for different subsets of the data using the <code>hue</code>, <code>size</code>, and <code>style</code> parameters. Check the <a href="https://seaborn.pydata.org/generated/seaborn.lineplot.html">documentation</a> for more details.
+
+<p><code>sns.lineplot</code> - <strong>Line charts</strong> are best to show trends over a period of time, and multiple lines can be used to show trends in more than one group. The relationship between x and y can be shown for different subsets of the data using the <code>hue</code>, <code>size</code>, and <code>style</code> parameters. Check the <a href="https://seaborn.pydata.org/generated/seaborn.lineplot.html">documentation</a> for more details.</p>
+
 </p>
 </div>
  
-</p>
-<p>
+
+
 </div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
@@ -421,20 +445,21 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
+
 </div>
  
-</p>
+
 
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb3"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group variable using &quot;hue&quot; that will produce lines with different colors</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&quot;wheel-base&quot;</span>, y<span class="op">=</span><span class="st">&quot;engine-size&quot;</span>, hue<span class="op">=</span><span class="st">&quot;fuel-type&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group variable using &quot;hue&quot; that will produce lines with different colors</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&quot;wheel-base&quot;</span>, y<span class="op">=</span><span class="st">&quot;engine-size&quot;</span>, hue<span class="op">=</span><span class="st">&quot;fuel-type&quot;</span>)</span></code></pre></div>
 
 </div>
  
 
-<p>
+
 </div>
 <div class="handler2 dotto-main-output"></div>
 <div class="box2 dotto-main overflow-auto dotto-main-output">
@@ -445,21 +470,24 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
+
 </div>
  
-</p>
-<p>
+
+
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
 </div>
  
 </div>
 </div>
 </div>
-</p>
+
 <!-- Dot 3, lang: r, python ------------------------------------------------>
-<p>
+
 <div v-if="activeMotto === '3'" class="col-12 col-lg-11 d-flex p-0 wrapper">
 <div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
 <div class="card-header">
@@ -469,21 +497,25 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
-<code>sns.barplot</code> - <strong>Bar charts</strong> are useful for comparing quantities corresponding to different groups. Show point estimates and confidence intervals as rectangular bars. Check the <a href="https://seaborn.pydata.org/generated/seaborn.barplot.html">documentation</a> for more details.
+
+<p><code>sns.barplot</code> - <strong>Bar charts</strong> are useful for comparing quantities corresponding to different groups. Show point estimates and confidence intervals as rectangular bars. Check the <a href="https://seaborn.pydata.org/generated/seaborn.barplot.html">documentation</a> for more details.</p>
+
 </p>
 </div>
  
-</p>
-<p>
+
+
  
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
-<code>sns.barplot</code> - <strong>Bar charts</strong> are useful for comparing quantities corresponding to different groups. Show point estimates and confidence intervals as rectangular bars. Check the <a href="https://seaborn.pydata.org/generated/seaborn.barplot.html">documentation</a> for more details.
+
+<p><code>sns.barplot</code> - <strong>Bar charts</strong> are useful for comparing quantities corresponding to different groups. Show point estimates and confidence intervals as rectangular bars. Check the <a href="https://seaborn.pydata.org/generated/seaborn.barplot.html">documentation</a> for more details.</p>
+
 </p>
 </div>
  
-</p>
-<p>
+
+
 </div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
@@ -495,20 +527,21 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
+
 </div>
  
-</p>
+
 
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb4"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw a set of vertical bars with nested grouping by a two variables</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>auto[<span class="st">&#39;body-style&#39;</span>], y<span class="op">=</span>auto[<span class="st">&#39;city-mpg&#39;</span>], hue<span class="op">=</span>auto[<span class="st">&#39;fuel-type&#39;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw a set of vertical bars with nested grouping by a two variables</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>auto[<span class="st">&#39;body-style&#39;</span>], y<span class="op">=</span>auto[<span class="st">&#39;city-mpg&#39;</span>], hue<span class="op">=</span>auto[<span class="st">&#39;fuel-type&#39;</span>])</span></code></pre></div>
 
 </div>
  
 
-<p>
+
 </div>
 <div class="handler2 dotto-main-output"></div>
 <div class="box2 dotto-main overflow-auto dotto-main-output">
@@ -519,21 +552,24 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
+
 </div>
  
-</p>
-<p>
+
+
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
 </div>
  
 </div>
 </div>
 </div>
-</p>
+
 <!-- Dot 4, lang: r, python ------------------------------------------------>
-<p>
+
 <div v-if="activeMotto === '4'" class="col-12 col-lg-11 d-flex p-0 wrapper">
 <div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
 <div class="card-header">
@@ -543,23 +579,25 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
-<code>sns.heatmap</code> - <strong>Heatmaps</strong> can be used to find color-coded patterns in tables of numbers. A heat map is a data visualization technique that shows magnitude of a phenomenon as color in two dimensions. The variation in color may be by hue or intensity, giving obvious visual cues to the reader about how the phenomenon is clustered or varies over space. Check the <a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html">documentation</a> for more details.</p>
+
+<p><code>sns.heatmap</code> - <strong>Heatmaps</strong> can be used to find color-coded patterns in tables of numbers. A heat map is a data visualization technique that shows magnitude of a phenomenon as color in two dimensions. The variation in color may be by hue or intensity, giving obvious visual cues to the reader about how the phenomenon is clustered or varies over space. Check the <a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html">documentation</a> for more details.</p>
 
 </p>
 </div>
  
 
-<p>
+
  
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
-<code>sns.heatmap</code> - <strong>Heatmaps</strong> can be used to find color-coded patterns in tables of numbers. A heat map is a data visualization technique that shows magnitude of a phenomenon as color in two dimensions. The variation in color may be by hue or intensity, giving obvious visual cues to the reader about how the phenomenon is clustered or varies over space. Check the <a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html">documentation</a> for more details.</p>
+
+<p><code>sns.heatmap</code> - <strong>Heatmaps</strong> can be used to find color-coded patterns in tables of numbers. A heat map is a data visualization technique that shows magnitude of a phenomenon as color in two dimensions. The variation in color may be by hue or intensity, giving obvious visual cues to the reader about how the phenomenon is clustered or varies over space. Check the <a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html">documentation</a> for more details.</p>
 
 </p>
 </div>
  
 
-<p>
+
 </div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
@@ -571,24 +609,25 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
+
 </div>
  
-</p>
+
 
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb5"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute pairwise correlation of columns, excluding NA/null values.</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> auto.corr()</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># annot: Annotate each cell with the numeric value</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># linewidths: Add lines between each cell</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>, linewidths<span class="op">=</span><span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute pairwise correlation of columns, excluding NA/null values.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> auto.corr()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># annot: Annotate each cell with the numeric value</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># linewidths: Add lines between each cell</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>, linewidths<span class="op">=</span><span class="fl">.1</span>)</span></code></pre></div>
 
 </div>
  
 
-<p>
+
 </div>
 <div class="handler2 dotto-main-output"></div>
 <div class="box2 dotto-main overflow-auto dotto-main-output">
@@ -599,21 +638,24 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
+
 </div>
  
-</p>
-<p>
+
+
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
 </div>
  
 </div>
 </div>
 </div>
-</p>
+
 <!-- Dot 5, lang: r, python ------------------------------------------------>
-<p>
+
 <div v-if="activeMotto === '5'" class="col-12 col-lg-11 d-flex p-0 wrapper">
 <div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
 <div class="card-header">
@@ -623,21 +665,25 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
-<code>sns.scatterplot</code> - <strong>Scatter plots</strong> show the relationship between two continuous variables; if color-coded, we can also show the relationship with a third <a href="https://en.wikipedia.org/wiki/Categorical_variable">categorical variable</a>. The relationship between <code>x</code> and <code>y</code> can be shown for different subsets of the data using the <code>hue</code>, <code>size</code>, and <code>style</code> parameters. These parameters control what visual semantics are used to identify the different subsets. Check the <a href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html">documentation</a> for more details.
+
+<p><code>sns.scatterplot</code> - <strong>Scatter plots</strong> show the relationship between two continuous variables; if color-coded, we can also show the relationship with a third <a href="https://en.wikipedia.org/wiki/Categorical_variable">categorical variable</a>. The relationship between <code>x</code> and <code>y</code> can be shown for different subsets of the data using the <code>hue</code>, <code>size</code>, and <code>style</code> parameters. These parameters control what visual semantics are used to identify the different subsets. Check the <a href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html">documentation</a> for more details.</p>
+
 </p>
 </div>
  
-</p>
-<p>
+
+
  
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
-<code>sns.scatterplot</code> - <strong>Scatter plots</strong> show the relationship between two continuous variables; if color-coded, we can also show the relationship with a third <a href="https://en.wikipedia.org/wiki/Categorical_variable">categorical variable</a>. The relationship between <code>x</code> and <code>y</code> can be shown for different subsets of the data using the <code>hue</code>, <code>size</code>, and <code>style</code> parameters. These parameters control what visual semantics are used to identify the different subsets. Check the <a href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html">documentation</a> for more details.
+
+<p><code>sns.scatterplot</code> - <strong>Scatter plots</strong> show the relationship between two continuous variables; if color-coded, we can also show the relationship with a third <a href="https://en.wikipedia.org/wiki/Categorical_variable">categorical variable</a>. The relationship between <code>x</code> and <code>y</code> can be shown for different subsets of the data using the <code>hue</code>, <code>size</code>, and <code>style</code> parameters. These parameters control what visual semantics are used to identify the different subsets. Check the <a href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html">documentation</a> for more details.</p>
+
 </p>
 </div>
  
-</p>
-<p>
+
+
 </div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
@@ -649,21 +695,22 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
+
 </div>
  
-</p>
+
 
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb6"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Showing two different grouping variables using &quot;hue&quot; amd &quot;style&quot; parameter</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&#39;engine-size&#39;</span>, y<span class="op">=</span><span class="st">&#39;wheel-base&#39;</span>, hue<span class="op">=</span><span class="st">&#39;fuel-type&#39;</span>,style<span class="op">=</span><span class="st">&#39;num-of-cylinders&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Showing two different grouping variables using &quot;hue&quot; amd &quot;style&quot; parameter</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&#39;engine-size&#39;</span>, y<span class="op">=</span><span class="st">&#39;wheel-base&#39;</span>, hue<span class="op">=</span><span class="st">&#39;fuel-type&#39;</span>,style<span class="op">=</span><span class="st">&#39;num-of-cylinders&#39;</span>)</span></code></pre></div>
 
 </div>
  
 
-<p>
+
 </div>
 <div class="handler2 dotto-main-output"></div>
 <div class="box2 dotto-main overflow-auto dotto-main-output">
@@ -674,21 +721,24 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
+
 </div>
  
-</p>
-<p>
+
+
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
 </div>
  
 </div>
 </div>
 </div>
-</p>
+
 <!-- Dot 6, lang: r, python ------------------------------------------------>
-<p>
+
 <div v-if="activeMotto === '6'" class="col-12 col-lg-11 d-flex p-0 wrapper">
 <div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
 <div class="card-header">
@@ -698,23 +748,27 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
-<code>sns.distplot</code> - <strong>Histograms</strong> Plot univariate or bivariate histograms to show distributions of datasets. A histogram is a classic visualization tool that represents the distribution of one or more variables by counting the number of observations that fall within disrete bins.</p>
-<p>This function can normalize the statistic computed within each bin to estimate frequency, density or probability mass, and it can add a smooth curve obtained using a kernel density estimate, similar to <a href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html#seaborn.kdeplot"><code>kdeplot()</code></a>. Check the <a href="https://seaborn.pydata.org/generated/seaborn.histplot.html">documentation</a> for more details.
+
+<p><code>sns.distplot</code> - <strong>Histograms</strong> Plot univariate or bivariate histograms to show distributions of datasets. A histogram is a classic visualization tool that represents the distribution of one or more variables by counting the number of observations that fall within disrete bins.</p>
+<p>This function can normalize the statistic computed within each bin to estimate frequency, density or probability mass, and it can add a smooth curve obtained using a kernel density estimate, similar to <a href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html#seaborn.kdeplot"><code>kdeplot()</code></a>. Check the <a href="https://seaborn.pydata.org/generated/seaborn.histplot.html">documentation</a> for more details.</p>
+
 </p>
 </div>
  
-</p>
-<p>
+
+
  
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
-<code>sns.distplot</code> - <strong>Histograms</strong> Plot univariate or bivariate histograms to show distributions of datasets. A histogram is a classic visualization tool that represents the distribution of one or more variables by counting the number of observations that fall within disrete bins.</p>
-<p>This function can normalize the statistic computed within each bin to estimate frequency, density or probability mass, and it can add a smooth curve obtained using a kernel density estimate, similar to <a href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html#seaborn.kdeplot"><code>kdeplot()</code></a>. Check the <a href="https://seaborn.pydata.org/generated/seaborn.histplot.html">documentation</a> for more details.
+
+<p><code>sns.distplot</code> - <strong>Histograms</strong> Plot univariate or bivariate histograms to show distributions of datasets. A histogram is a classic visualization tool that represents the distribution of one or more variables by counting the number of observations that fall within disrete bins.</p>
+<p>This function can normalize the statistic computed within each bin to estimate frequency, density or probability mass, and it can add a smooth curve obtained using a kernel density estimate, similar to <a href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html#seaborn.kdeplot"><code>kdeplot()</code></a>. Check the <a href="https://seaborn.pydata.org/generated/seaborn.histplot.html">documentation</a> for more details.</p>
+
 </p>
 </div>
  
-</p>
-<p>
+
+
 </div>
 <div class="handler dotto-main-intro"></div>
 <div id="resizable">
@@ -726,20 +780,21 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
+
 </div>
  
-</p>
+
 
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb7"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># kde:If True, smooth the distribution and show as line</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&quot;city-mpg&quot;</span>, kde<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># kde:If True, smooth the distribution and show as line</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&quot;city-mpg&quot;</span>, kde<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 
 </div>
  
 
-<p>
+
 </div>
 <div class="handler2 dotto-main-output"></div>
 <div class="box2 dotto-main overflow-auto dotto-main-output">
@@ -750,19 +805,21 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
+
 </div>
  
-</p>
-<p>
+
+
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
 </div>
  
 </div>
 </div>
 </div>
-</p>
 
 </section>
 <!-- Body Footer ----------------------------------->
