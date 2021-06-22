@@ -1,22 +1,23 @@
 ---
 title: "How does Finland become the happiest country?"
 description: |
-  A short description of the Dotto.
+  The World Happiness dataset contains six factors to measure global happiness: life expectancy, economics, social support, absence of corruption, freedom, and generosity. These factors were reported for 155 countries around the world from 2005 to 2020. In this Dotto, we want to find the top five happiest countries then plot the happiness rate for these countries for the 2010s.
+
 author:
-  - name: "First Last"
-    occupation: NULL
-    affiliation: NULL
+  - name: "Mahyar Sharifi"
+    occupation: Content Developer Intern
+    affiliation: DattaMotto
     url: NULL
     img: NULL
-    lang: r
+    lang: python
 tech:
-  - lang: r
-    pkgs: NULL
+  - lang: python
+    pkgs: pandas, seaborn, matplotlob
 date:
   created: "2021-06-22"
   last_updated: "2021-06-22"
-categories: NULL
-applications: NULL
+categories: Storyteller
+applications: Governance
 cover_image: NULL
 slug: "how-does-finland-become-the-happiest-country-"
 output: DataMotto::Dotto
@@ -26,21 +27,86 @@ output: DataMotto::Dotto
 DataMotto::use_Dotto()
 ```
 
-<!-- Dot 1, lang: r ------------------------------------------------>
+<!-- Dot 1, lang: python ------------------------------------------------>
 
-```{block, Dot = 1, part = "Instruction", lang = "r"}
+```{block, Dot = 1, part = "Instruction", lang = "python"}
+In this Dot, we import packages and World Happiness dataset.
+```
+
+```{python, Dot = 1, part = "Code", echo = T, eval = F, }
+# Import Packacges
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load World Happiness Dataset
+data = pd.read_csv('D:/world-happiness-report.csv')
+data.head(5)
+```
+
+```{python, Dot = 1, part = "Result", echo = F, eval = T}
 
 ```
 
-```{r, Dot = 1, part = "Code", echo = T, eval = F, }
+
+<!-- Dot 2, lang: python ------------------------------------------------>
+
+```{block, Dot = 2, part = "Instruction", lang = "python"}
+After we import dataset, we drop 2 unnecessery columns ('Positive affect' , 'Negative affect'), and select rows after 2015.
+```
+
+```{python, Dot = 2, part = "Code", echo = T, eval = F, }
+# Drop Unnecessery Columns
+data = data.drop(['Positive affect' , 'Negative affect'],axis=1)
+
+# Select Dataset from 2016-2020
+data = data[data['year'] > 2015]
+```
+
+```{python, Dot = 2, part = "Result", echo = F, eval = T}
 
 ```
 
-```{r, Dot = 1, part = "Result", echo = F, eval = T}
+
+
+<!-- Dot 3, lang: python ------------------------------------------------>
+```{block, Dot = 3, part = "Instruction", lang = "python"}
+Now we have a dataset for 2015 to 2020 for all country. In this dot, we want calculate the mean Life Ladder for each country, and find the top happiest country in the world.
+```
+
+```{python, Dot = 3, part = "Code", echo = T, eval = F, }
+# Grouping Data by Country
+data_grouped_country = data.groupby('Country name').mean()
+data_grouped_country.head(5)
+
+# Sort the New Dataset by Life Ladder column
+data_grouped_country.sort_values(['Life Ladder'],ascending=False).head(5)
+```
+
+```{python, Dot = 3, part = "Result", echo = F, eval = T}
 
 ```
 
+<!-- Dot 4, lang: python ------------------------------------------------>
+```{block, Dot = 4, part = "Instruction", lang = "python"}
+In the last dot we identified that Finland, Denmark, Switzerland, Iceland,
+and Netherlands are the top-five happiest country in the world. Now, we want plot the Life Ladder to show how does Finland become the happiest country since 2015.
+```
 
+```{python, Dot = 4, part = "Code", echo = T, eval = F, }
+# Select New Dataset for the Top-five Happiest Country
+data_top_five = data[data['Country name'].isin(
+  ['Finland', 'Denmark', 'Switzerland', 'Iceland','Netherlands'])]
 
+# Plot a catplot for the top-5 Happiest Country
+sns.catplot(data = data_top_five ,
+  x='year',y= 'Life Ladder' ,hue='Country name' ,
+  kind = 'point')
+plt.show()
+```
+
+```{python, Dot = 4, part = "Result", echo = F, eval = T}
+
+```
 
 
