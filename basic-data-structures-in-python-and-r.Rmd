@@ -24,9 +24,15 @@ slug: "basic-data-structures-in-python-and-r"
 output: DataMotto::Dotto
 ---
 
-```{r DataMotto, echo=FALSE}
+```{r DataMotto, echo=F}
 DataMotto::use_Dotto()
 ```
+
+```{r set-up, include=F}
+knitr::opts_chunk$set(echo = T,
+                      eval = F)
+```
+
 
 <!-- Dot 1, lang: python ------------------------------------------------>
 
@@ -60,7 +66,6 @@ x = int(x)
 print("new x class type:",type(x))
 #chained assignmen:
 n = m = x
-print(n,m,x)
 print("n=",n," m=",m," x=",x)
 ```
 
