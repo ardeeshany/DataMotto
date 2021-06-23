@@ -31,28 +31,26 @@ DataMotto::use_Dotto()
 <!-- Dot 1, lang: r, python ------------------------------------------------>
 
 ```{block, Dot = 1, part = "Instruction", lang = "r"}
-[Seaborn](https://seaborn.pydata.org/index.html#) is a Python data visualization library based on [matplotlib](https://matplotlib.org/). It provides a high-level interface for drawing attractive and informative statistical graphics.
+[ggplot2](https://ggplot2.tidyverse.org/) is a system for declaratively creating graphics, based on [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448/ref=as_li_ss_tl). You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.
 
 Since it's not always easy to decide how to best tell the story behind your data, we've broken the chart types into three broad categories to help with this.
 
 - **Trends:** A trend is defined as a pattern of change.
-  - `sns.lineplot`
+  - `geom_line`
 - **Relationship:** Understand relationships between variables in your data.
-  - `sns.barplot`
-  - `sns.heatmap`
-  - `sns.scatterplot`
-  - `sns.regplot`
-  - `sns.lmplot`
-  - `sns.swarmplot`
+  - `geom_bar`
+  - `geom_tile`
+  - `geom_point`
+  - `geom_smooth`
 - **Distribution:** We visualize distributions to show the possible values that we can expect to see in a variable, along with how likely they are.
-  - `sns.histplot`
-  - `sns.kdeplot`
-  - `sns.jointplot`
+  - `geom_histogram`
+  - `geom_density`
+  - `geom_vline`
 
 ```
 
 ```{block, Dot = 1, part = "Instruction", lang = "python"}
-[Seaborn](https://seaborn.pydata.org/index.html#) is a Python data visualization library based on [matplotlib](https://matplotlib.org/). It provides a high-level interface for drawing attractive and informative statistical graphics.
+[seaborn](https://seaborn.pydata.org/index.html#) is a Python data visualization library based on [matplotlib](https://matplotlib.org/). It provides a high-level interface for drawing attractive and informative statistical graphics.
 
 Since it's not always easy to decide how to best tell the story behind your data, we've broken the chart types into three broad categories to help with this.
 
@@ -73,7 +71,22 @@ Since it's not always easy to decide how to best tell the story behind your data
 ```
 
 ```{r, Dot = 1, part = "Code", echo = T, eval = F }
-asdf
+# There are a few lines of code that you'll need to run at the top of every notebook to set up your coding environment.
+library(readr)   # Read tabular data.
+library(dplyr)   # General data frame manipulation.
+library(ggplot2) # Flexible plotting.
+
+
+# Path of the file to read
+auto_filepath <-"data/Automobile_data.csv"
+
+# Read the file into a variable Automobile_data.csv
+# The dataset consist of data From 1985 Ward's Automotive Yearbook.
+auto <- read.csv(auto_filepath)
+
+# Print the five random rows of the data
+sample_n(auto, 5)
+
 ```
 
 ```{python, Dot = 1, part = "Code", echo = T, eval = F }
@@ -96,7 +109,22 @@ auto.sample(5)
 ```
 
 ```{r, Dot = 1, part = "Result", echo = F, eval = T}
-plot(1:10, 1:10)
+# There are a few lines of code that you'll need to run at the top of every notebook to set up your coding environment.
+library(readr)   # Read tabular data.
+library(dplyr)   # General data frame manipulation.
+library(ggplot2) # Flexible plotting.
+
+
+# Path of the file to read
+auto_filepath <-"data/Automobile_data.csv"
+
+# Read the file into a variable Automobile_data.csv
+# The dataset consist of data From 1985 Ward's Automotive Yearbook.
+auto <- read.csv(auto_filepath)
+
+# Print the five random rows of the data
+sample_n(auto, 5)
+
 ```
 
 ```{python, Dot = 1, part = "Result", echo = F, eval = T}
@@ -120,7 +148,7 @@ auto.sample(5)
 <!-- Dot 2, lang: r, python ------------------------------------------------>
 
 ```{block, Dot = 2, part = "Instruction", lang = "r"}
-`sns.lineplot` - **Line charts** are best to show trends over a period of time, and multiple lines can be used to show trends in more than one group. The relationship between x and y can be shown for different subsets of the data using the `hue`, `size`, and `style` parameters. Check the [documentation](https://seaborn.pydata.org/generated/seaborn.lineplot.html) for more details.
+**Line charts** are best to show trends over a period of time, and multiple lines can be used to show trends in more than one group. `geom_path()` connects the observations in the order in which they appear in the data. `geom_line()` connects them in order of the variable on the x axis. `geom_step()` creates a stairstep plot, highlighting exactly when changes occur. The `group` aesthetic determines which cases are connected together. Check the [documentation](https://ggplot2.tidyverse.org/reference/geom_path.html) for more details.
 
 ```
 
@@ -130,15 +158,25 @@ auto.sample(5)
 ```
 
 ```{r, Dot = 2, part = "Code", echo = T, eval = F }
+# Group variable will produce lines with different colors
+ggplot(data=auto, 
+       aes(x=wheel.base,
+           y=engine.size)) + 
+  geom_line(
+      aes(group=fuel.type,
+          color=fuel.type))
 
 ```
 
 ```{python, Dot = 2, part = "Code", echo = T, eval = F }
 # Group variable using "hue" that will produce lines with different colors
 sns.lineplot(data=auto, x="wheel-base", y="engine-size", hue="fuel-type")
+
 ```
 
 ```{r, Dot = 2, part = "Result", echo = F, eval = T}
+# Group variable will produce lines with different colors
+ggplot(data=auto, aes(x=wheel.base, y=engine.size)) + geom_line(aes(group=fuel.type, color=fuel.type))
 
 ```
 
@@ -146,13 +184,14 @@ sns.lineplot(data=auto, x="wheel-base", y="engine-size", hue="fuel-type")
 
 # Group variable using "hue" that will produce lines with different colors
 sns.lineplot(data=auto, x="wheel-base", y="engine-size", hue="fuel-type")
+
 ```
 
 
 <!-- Dot 3, lang: r, python ------------------------------------------------>
 
 ```{block, Dot = 3, part = "Instruction", lang = "r"}
-`sns.barplot` - **Bar charts** are useful for comparing quantities corresponding to different groups. Show point estimates and confidence intervals as rectangular bars. Check the [documentation](https://seaborn.pydata.org/generated/seaborn.barplot.html) for more details.
+**Bar charts** are useful for comparing quantities corresponding to different groups. There are two types of bar charts: `geom_bar()` and `geom_col()`. `geom_bar()` makes the height of the bar proportional to the number of cases in each group (or if the `weight` aesthetic is supplied, the sum of the weights). If you want the heights of the bars to represent values in the data, use `geom_col()` instead. Check the [documentation](https://ggplot2.tidyverse.org/reference/geom_bar.html) for more details.
 
 ```
 
@@ -162,15 +201,23 @@ sns.lineplot(data=auto, x="wheel-base", y="engine-size", hue="fuel-type")
 ```
 
 ```{r, Dot = 3, part = "Code", echo = T, eval = F }
+# Draw a set of vertical bars with nested grouping by a two variables
+ggplot(data=auto,
+       aes(x=body.style,
+           y=city.mpg)) +
+  geom_col(aes(fill=fuel.type))
 
 ```
 
 ```{python, Dot = 3, part = "Code", echo = T, eval = F }
 # Draw a set of vertical bars with nested grouping by a two variables
 sns.barplot(x=auto['body-style'], y=auto['city-mpg'], hue=auto['fuel-type'])
+
 ```
 
 ```{r, Dot = 3, part = "Result", echo = F, eval = T}
+# Draw a set of vertical bars with nested grouping by a two variables
+ggplot(data=auto, aes(x=body.style, y=city.mpg)) + geom_col(aes(fill=fuel.type))
 
 ```
 
