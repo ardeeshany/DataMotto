@@ -1,0 +1,47 @@
+{
+  "file_name": ["simple-data-visualization"],
+  "dir_name": ["D004-2021-06-22-simple-data-visualization"],
+  "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+  "link": ["posts/Dotto/D004-2021-06-22-simple-data-visualization/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [4],
+  "dotto_label": ["D004"],
+  "dotto_id": ["dd87b3a2-d342-11eb-a85d-acbc32baed85"],
+  "title": ["Simple Data Visualization"],
+  "description": ["Make great data visualizations. A great way to see the power of coding!\n"],
+  "author": [
+    {
+      "name": ["Mohammad Hossein Malekpour"],
+      "occupation": ["Data Scientist"],
+      "affiliation": ["DataMotto"],
+      "url": ["https://www.linkedin.com/in/mohammadhossein-malekpour/"],
+      "img": ["MalekpourAvatar.jpg"],
+      "lang": ["python", "R"],
+      "profile_img_for_Dotto": ["./simple-data-visualization_files/figure-html/MalekpourAvatar.jpg"],
+      "profile_img": ["./posts/Dotto/D004-2021-06-22-simple-data-visualization/simple-data-visualization_files/figure-html/MalekpourAvatar.jpg"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": ["ggplot2", "dplyr"]
+    },
+    {
+      "lang": ["python"],
+      "pkgs": ["seaborn", "pands"]
+    }
+  ],
+  "date": {
+    "created": ["2021-06-22"],
+    "last_updated": ["2021-06-22"]
+  },
+  "categories": ["Visualizer"],
+  "applications": ["Other"],
+  "cover_image": {},
+  "slug": ["simple-data-visualization"],
+  "output": ["DataMotto::Dotto"]
+}
