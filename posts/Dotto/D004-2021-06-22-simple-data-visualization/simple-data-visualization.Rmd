@@ -26,6 +26,7 @@ output: DataMotto::Dotto
 
 ```{r DataMotto, echo=FALSE}
 DataMotto::use_Dotto()
+
 ```
 
 <!-- Dot 1, lang: r, python ------------------------------------------------>
@@ -78,7 +79,7 @@ library(ggplot2) # Flexible plotting.
 
 
 # Path of the file to read
-auto_filepath <-"data/Automobile_data.csv"
+auto_filepath <- "data/Automobile_data.csv"
 
 # Read the file into a variable Automobile_data.csv
 # The dataset consist of data From 1985 Ward's Automotive Yearbook.
@@ -116,7 +117,7 @@ library(ggplot2) # Flexible plotting.
 
 
 # Path of the file to read
-auto_filepath <-"data/Automobile_data.csv"
+auto_filepath <- "data/Automobile_data.csv"
 
 # Read the file into a variable Automobile_data.csv
 # The dataset consist of data From 1985 Ward's Automotive Yearbook.
@@ -142,6 +143,7 @@ auto = pd.read_csv(auto_filepath)
 
 # Print the five random rows of the data
 auto.sample(5)
+
 ```
 
 
@@ -159,12 +161,9 @@ auto.sample(5)
 
 ```{r, Dot = 2, part = "Code", echo = T, eval = F }
 # Group variable will produce lines with different colors
-ggplot(data=auto, 
-       aes(x=wheel.base,
-           y=engine.size)) + 
-  geom_line(
-      aes(group=fuel.type,
-          color=fuel.type))
+ggplot(data = auto, aes(x = wheel.base, y = engine.size)) +
+  geom_line(aes(group = fuel.type,
+                color = fuel.type))
 
 ```
 
@@ -176,7 +175,9 @@ sns.lineplot(data=auto, x="wheel-base", y="engine-size", hue="fuel-type")
 
 ```{r, Dot = 2, part = "Result", echo = F, eval = T}
 # Group variable will produce lines with different colors
-ggplot(data=auto, aes(x=wheel.base, y=engine.size)) + geom_line(aes(group=fuel.type, color=fuel.type))
+ggplot(data = auto, aes(x = wheel.base, y = engine.size)) +
+  geom_line(aes(group = fuel.type,
+                color = fuel.type))
 
 ```
 
@@ -202,10 +203,8 @@ sns.lineplot(data=auto, x="wheel-base", y="engine-size", hue="fuel-type")
 
 ```{r, Dot = 3, part = "Code", echo = T, eval = F }
 # Draw a set of vertical bars with nested grouping by a two variables
-ggplot(data=auto,
-       aes(x=body.style,
-           y=city.mpg)) +
-  geom_col(aes(fill=fuel.type))
+ggplot(data = auto, aes(x = body.style, y = city.mpg)) +
+  geom_col(aes(fill = fuel.type))
 
 ```
 
@@ -217,36 +216,55 @@ sns.barplot(x=auto['body-style'], y=auto['city-mpg'], hue=auto['fuel-type'])
 
 ```{r, Dot = 3, part = "Result", echo = F, eval = T}
 # Draw a set of vertical bars with nested grouping by a two variables
-ggplot(data=auto, aes(x=body.style, y=city.mpg)) + geom_col(aes(fill=fuel.type))
+ggplot(data = auto, aes(x = body.style, y = city.mpg)) +
+  geom_col(aes(fill = fuel.type))
 
 ```
 
 ```{python, Dot = 3, part = "Result", echo = F, eval = T}
 # Draw a set of vertical bars with nested grouping by a two variables
 sns.barplot(x=auto['body-style'], y=auto['city-mpg'], hue=auto['fuel-type'])
+
 ```
 
 
 <!-- Dot 4, lang: r, python ------------------------------------------------>
 
 ```{block, Dot = 4, part = "Instruction", lang = "r"}
-`sns.heatmap` - **Heatmaps** can be used to find color-coded patterns in tables of numbers. A heat map is a data visualization technique that shows magnitude of a phenomenon as color in two dimensions. The variation in color may be by hue or intensity, giving obvious visual cues to the reader about how the phenomenon is clustered or varies over space.  Check the [documentation](https://seaborn.pydata.org/generated/seaborn.heatmap.html) for more details.
-
+**Heatmaps** can be used to find color-coded patterns in tables of numbers. This section describes how to reorder the correlation matrix according to the correlation coefficient. This is useful to identify the hidden pattern in the matrix. `geom_tile()` uses the center of the tile and its size (`x`, `y`, `width`, `height`).  Check the [documentation](https://ggplot2.tidyverse.org/reference/geom_tile.html) for more details.
 
 ```
 
 ```{block, Dot = 4, part = "Instruction", lang = "python"}
 `sns.heatmap` - **Heatmaps** can be used to find color-coded patterns in tables of numbers. A heat map is a data visualization technique that shows magnitude of a phenomenon as color in two dimensions. The variation in color may be by hue or intensity, giving obvious visual cues to the reader about how the phenomenon is clustered or varies over space.  Check the [documentation](https://seaborn.pydata.org/generated/seaborn.heatmap.html) for more details.
 
-
 ```
 
 ```{r, Dot = 4, part = "Code", echo = T, eval = F }
+# reshape data
+library(reshape2)
+
+# Selecting only numeric columns from a data frame
+numeric_cols <- select_if(auto, is.numeric)
+
+# Compute pairwise correlation of columns
+corr <- melt(cor(numeric_cols))
+
+# geom_text: insert corresponding cell values in plot
+# theme: Rotating and spacing x axis labels
+ggplot(data = corr, aes(x = Var1, y = Var2)) +
+  geom_tile(aes(fill = value)) +
+  geom_text(aes(label = round(value, 1))) +
+  theme(axis.text.x = element_text(
+    angle = 90,
+    vjust = 0.5,
+    hjust = 1
+  )) 
 
 ```
 
 ```{python, Dot = 4, part = "Code", echo = T, eval = F }
-# Compute pairwise correlation of columns, excluding NA/null values.
+# Compute pairwise correlation of columns
 corr = auto.corr()
 
 # annot: Annotate each cell with the numeric value
@@ -256,23 +274,43 @@ sns.heatmap(corr, annot=True, linewidths=.1)
 ```
 
 ```{r, Dot = 4, part = "Result", echo = F, eval = T}
+# reshape data
+library(reshape2)
+
+# Selecting only numeric columns from a data frame
+numeric_cols <- select_if(auto, is.numeric)
+
+# Compute pairwise correlation of columns
+corr <- melt(cor(numeric_cols))
+
+# geom_text: insert corresponding cell values in plot
+# theme: Rotating and spacing x axis labels
+ggplot(data = corr, aes(x = Var1, y = Var2)) +
+  geom_tile(aes(fill = value)) +
+  geom_text(aes(label = round(value, 1))) +
+  theme(axis.text.x = element_text(
+    angle = 90,
+    vjust = 0.5,
+    hjust = 1
+  )) 
 
 ```
 
 ```{python, Dot = 4, part = "Result", echo = F, eval = T}
-# Compute pairwise correlation of columns, excluding NA/null values.
+# Compute pairwise correlation of columns
 corr = auto.corr()
 
 # annot: Annotate each cell with the numeric value
 # linewidths: Add lines between each cell
 sns.heatmap(corr, annot=True, linewidths=.1)
+
 ```
 
 
 <!-- Dot 5, lang: r, python ------------------------------------------------>
 
 ```{block, Dot = 5, part = "Instruction", lang = "r"}
-`sns.scatterplot` - **Scatter plots** show the relationship between two continuous variables; if color-coded, we can also show the relationship with a third [categorical variable](https://en.wikipedia.org/wiki/Categorical_variable). The relationship between `x` and `y` can be shown for different subsets of the data using the `hue`, `size`, and `style` parameters. These parameters control what visual semantics are used to identify the different subsets. Check the [documentation](https://seaborn.pydata.org/generated/seaborn.scatterplot.html) for more details.
+**Scatter plot** is most useful for displaying the relationship between two continuous variables.  It can be used to compare one continuous and one categorical variable, or two categorical variables. The `geom_point()` is used to create scatterplots. A *bubblechart* is a scatterplot with a third variable mapped to the size of points.  Check the [documentation](https://ggplot2.tidyverse.org/reference/geom_point.html) for more details.
 
 ```
 
@@ -282,6 +320,14 @@ sns.heatmap(corr, annot=True, linewidths=.1)
 ```
 
 ```{r, Dot = 5, part = "Code", echo = T, eval = F }
+# Showing two different grouping variables using "colour" amd "shape" parameter
+
+ggplot(data = auto, aes(x = engine.size, y = wheel.base)) +
+  geom_point(aes(
+    colour = factor(fuel.type),
+    shape = factor(num.of.cylinders)
+  ))
+  
 
 ```
 
@@ -293,6 +339,13 @@ sns.scatterplot(data=auto, x='engine-size', y='wheel-base', hue='fuel-type',styl
 ```
 
 ```{r, Dot = 5, part = "Result", echo = F, eval = T}
+# Showing two different grouping variables using "colour" amd "shape" parameter
+
+ggplot(data = auto, aes(x = engine.size, y = wheel.base)) +
+  geom_point(aes(
+    colour = factor(fuel.type),
+    shape = factor(num.of.cylinders)
+  ))
 
 ```
 
@@ -307,9 +360,7 @@ sns.scatterplot(data=auto, x='engine-size', y='wheel-base', hue='fuel-type',styl
 <!-- Dot 6, lang: r, python ------------------------------------------------>
 
 ```{block, Dot = 6, part = "Instruction", lang = "r"}
-`sns.distplot` - **Histograms** Plot univariate or bivariate histograms to show distributions of datasets. A histogram is a classic visualization tool that represents the distribution of one or more variables by counting the number of observations that fall within disrete bins.
-
-This function can normalize the statistic computed within each bin to estimate frequency, density or probability mass, and it can add a smooth curve obtained using a kernel density estimate, similar to [`kdeplot()`](https://seaborn.pydata.org/generated/seaborn.kdeplot.html#seaborn.kdeplot). Check the [documentation](https://seaborn.pydata.org/generated/seaborn.histplot.html) for more details.
+Visualise the distribution of a single continuous variable by dividing the x axis into bins and counting the number of observations in each bin. **Histograms** (`geom_histogram()`) display the counts with bars; frequency polygons (`geom_freqpoly()`) display the counts with lines. Frequency polygons are more suitable when you want to compare the distribution across the levels of a categorical variable. Check the [documentation](https://ggplot2.tidyverse.org/reference/geom_histogram.html) for more details.
 
 ```
 
@@ -321,6 +372,13 @@ This function can normalize the statistic computed within each bin to estimate f
 ```
 
 ```{r, Dot = 6, part = "Code", echo = T, eval = F }
+ggplot(auto, aes(city.mpg)) +
+  geom_histogram(
+    linetype = "dashed",
+    colour = "black",
+    fill = "red",
+    alpha = 3.0
+  )
 
 ```
 
@@ -331,6 +389,13 @@ sns.histplot(data=auto, x="city-mpg", kde=True)
 ```
 
 ```{r, Dot = 6, part = "Result", echo = F, eval = T}
+ggplot(auto, aes(city.mpg)) +
+  geom_histogram(
+    linetype = "dashed",
+    colour = "black",
+    fill = "red",
+    alpha = 3.0
+  )
 
 ```
 
