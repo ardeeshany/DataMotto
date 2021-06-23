@@ -40,7 +40,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Load World Happiness Dataset
-data = pd.read_csv('D:/world-happiness-report.csv')
+data = pd.read_csv('https://github.com/DataMotto/DataMotto/blob/4d5932881f01c2b6678bb19644a201d4138f37e0/Dataset/world-happiness-report.csv')
 data.head(5)
 
 <<<<<<< HEAD
