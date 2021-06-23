@@ -43,18 +43,24 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('D:/world-happiness-report.csv')
 data.head(5)
 
+<<<<<<< HEAD
 ```
 
 ```{python, Dot = 1, part = "Result", echo = F, eval = T}
 
 ```
 
+=======
+>>>>>>> cfc2305f4b110a552b007669464fc4094f17c065
 
 <!-- Dot 2, lang: python ------------------------------------------------>
 
 ```{block, Dot = 2, part = "Instruction", lang = "python"}
 After we import dataset, we drop 2 unnecessery columns ('Positive affect' , 'Negative affect'), and select rows after 2015.
+<<<<<<< HEAD
 
+=======
+>>>>>>> cfc2305f4b110a552b007669464fc4094f17c065
 ```
 
 ```{python, Dot = 2, part = "Code", echo = T, eval = F, }
@@ -63,7 +69,10 @@ data = data.drop(['Positive affect' , 'Negative affect'],axis=1)
 
 # Select Dataset from 2016-2020
 data = data[data['year'] > 2015]
+<<<<<<< HEAD
 
+=======
+>>>>>>> cfc2305f4b110a552b007669464fc4094f17c065
 ```
 
 ```{python, Dot = 2, part = "Result", echo = F, eval = T}
@@ -109,7 +118,10 @@ sns.catplot(data = data_top_five ,
   x='year',y= 'Life Ladder' ,hue='Country name' ,
   kind = 'point')
 plt.show()
+<<<<<<< HEAD
 
+=======
+>>>>>>> cfc2305f4b110a552b007669464fc4094f17c065
 ```
 
 ```{python, Dot = 4, part = "Result", echo = F, eval = T}
