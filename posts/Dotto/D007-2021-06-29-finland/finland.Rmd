@@ -63,6 +63,34 @@ data <- filter(data,year %in% c(2015:2019))
 
 ```
 
+```{python, Dot = 1, part = "Code"}
+#Import Packages
+import pandas as pd
+import seaborn as sns
+
+#read world happiness dataset
+data = pd.read_csv('D:/world-happiness-report.csv')
+data.shape
+
+# Select Dataset from 2015-2019
+data = data[data['year'].isin(range(2015,2020))]
+
+```
+
+```{python, Dot = 1, part = "Result", echo = F, eval = T}
+#Import Packages
+import pandas as pd
+import seaborn as sns
+
+#read world happiness dataset
+data = pd.read_csv('D:/world-happiness-report.csv')
+data.shape
+
+# Select Dataset from 2015-2019
+data = data[data['year'].isin(range(2015,2020))]
+
+```
+
 ```{block, Dot = 2, part = "Instruction", lang = "r"}
 After we select the dataset, the average of Life Ladder calculates for each country. Then the top five happiest countries will be identified by sorting the dataset by Life Ladder columns.
 
@@ -73,10 +101,11 @@ After we select the dataset, the average of Life Ladder calculates for each coun
 data_grouped_country <- group_by(data, Country.name)
 data_grouped_country <- summarise(data_grouped_country, Mean.Life.Ladder = mean(Life.Ladder))
 
-# Sort the New Dataset by Life Ladder column
+# Sort the New data_grouped_country by Life Ladder column
 happiest_country <- arrange(data_grouped_country, desc(Mean.Life.Ladder))
 head(happiest_country, 8)
 
+#Identify and select five-top country
 as.vector(t(happiest_country[1:5,1]))
 
 ```
@@ -91,6 +120,29 @@ happiest_country <- arrange(data_grouped_country, desc(Mean.Life.Ladder))
 head(happiest_country, 8)
 
 as.vector(t(happiest_country[1:5,1]))
+
+```
+
+```{python, Dot = 2, part = "Code"}
+#Calculate Mean of Life Ladder for Each Country during 2015-2019
+data_grouped = data.groupby('Country name').mean()
+data_grouped
+
+#Sort data_grouped by Life Ladder Column
+sorted_data = data_grouped.sort_values(['Life Ladder'],
+          ascending = False)
+
+```
+
+```{python, Dot = 2, part = "Result", echo = F, eval = T}
+#Calculate Mean of Life Ladder for Each Country during 2015-2019
+data_grouped = data.groupby('Country name').mean()
+data_grouped
+
+#Sort data_grouped by Life Ladder Column
+sorted_data = data_grouped.sort_values(['Life Ladder'],
+          ascending = False)
+
 
 ```
 
@@ -112,6 +164,18 @@ head(data_top_five, 50)
 data_top_five = filter(data, Country.name %in% 
                          as.vector(t(happiest_country[1:5,1])))
 head(data_top_five, 50)
+
+```
+
+```{python, Dot = 3, part = "Code"}
+# Select New Dataset for the Top-five Happiest Country
+data_top_five = df[(df['Country name'].isin(sorted_data.index[:5]))]
+
+```
+
+```{python, Dot = 3, part = "Result", echo = F, eval = T}
+# Select New Dataset for the Top-five Happiest Country
+data_top_five = df[(df['Country name'].isin(sorted_data.index[:5]))]
 
 ```
 
@@ -152,4 +216,14 @@ ggplot(data = data_top_five,
 
 ```
 
+```{python, Dot = 4, part = "Code"}
+# Plot a catplot for the top-5 Happiest Country
+sns.catplot(data = data_top_five , x ='year',y = 'Life Ladder' , hue ='Country name' , kind = 'point')
 
+```
+
+```{python, Dot = 4, part = "Result", echo = F, eval = T}
+# Plot a catplot for the top-5 Happiest Country
+sns.catplot(data = data_top_five , x ='year',y = 'Life Ladder' , hue = 'Country name' , kind = 'point')
+
+```
