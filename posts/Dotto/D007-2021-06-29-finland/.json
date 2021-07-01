@@ -1,0 +1,43 @@
+{
+  "file_name": ["finland"],
+  "dir_name": ["D007-2021-06-29-finland"],
+  "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+  "link": ["posts/Dotto/D007-2021-06-29-finland/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [7],
+  "dotto_label": ["D007"],
+  "dotto_id": ["71fa02cc-d85e-11eb-977d-7dcf67d959f1"],
+  "title": ["Finland"],
+  "description": ["The World Happiness dataset contains six factors to measure global happiness: life expectancy, economics, social support, absence of corruption, freedom, and generosity. These factors were reported for 166 countries around the world from 2005 to 2020. In this Dotto, we want to find the top five happiest countries then plot the happiness rate for these countries from 2015 to 2019.\n"],
+  "author": [
+    {
+      "name": ["Mahyar Sharifi"],
+      "occupation": ["Internship"],
+      "affiliation": ["DataMotto"],
+      "url": {},
+      "img": {},
+      "lang": ["r"],
+      "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+      "profile_img": ["./posts/Dotto/D007-2021-06-29-finland./../../assets/img/dotto.png"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": ["dplyer, ggplot2"]
+    }
+  ],
+  "date": {
+    "created": ["2021-06-29"],
+    "last_updated": ["2021-06-29"]
+  },
+  "categories": ["Storyteller"],
+  "applications": ["Governance"],
+  "cover_image": {},
+  "slug": ["finland"],
+  "output": ["DataMotto::Dotto"]
+}
