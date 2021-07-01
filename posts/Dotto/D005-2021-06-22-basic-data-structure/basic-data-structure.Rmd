@@ -4,10 +4,10 @@ description: |
   A short description of the Dotto.
 author:
   - name: "First Last"
-    occupation: NULL
-    affiliation: NULL
-    url: NULL
-    img: NULL
+    occupation: "Occupation"
+    affiliation: "Affiliation"
+    url: "https://your_url"
+    img: "path_to_image"
     lang: r
 tech:
   - lang: r
@@ -29,15 +29,16 @@ DataMotto::use_Dotto()
 <!-- Dot 1, lang: r ------------------------------------------------>
 
 ```{block, Dot = 1, part = "Instruction", lang = "r"}
+Comment
 
 ```
 
 ```{r, Dot = 1, part = "Code", echo = T, eval = F, }
-
+# Code
 ```
 
 ```{r, Dot = 1, part = "Result", echo = F, eval = T}
-
+# Result
 ```
 
 

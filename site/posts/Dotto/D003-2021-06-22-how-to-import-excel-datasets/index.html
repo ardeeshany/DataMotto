@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+    
+    
+    <title>How to import excel datasets</title>
+
+        <script src="how-to-import-excel-datasets_files/header-attrs-2.7.3/header-attrs.js"></script>
+        <script src="how-to-import-excel-datasets_files/jquery-1.11.3/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="how-to-import-excel-datasets_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="how-to-import-excel-datasets_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+        <script src="how-to-import-excel-datasets_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+        <script src="how-to-import-excel-datasets_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+        <style>h1 {font-size: 34px;}
+               h1.title {font-size: 38px;}
+               h2 {font-size: 30px;}
+               h3 {font-size: 24px;}
+               h4 {font-size: 18px;}
+               h5 {font-size: 16px;}
+               h6 {font-size: 12px;}
+               code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+               pre:not([class]) { background-color: white }</style>
+        <script src="how-to-import-excel-datasets_files/navigation-1.1/tabsets.js"></script>
+        
+          <meta property="og:title" content="How to import excel datasets" />
+          <meta property="og:type" content="article">
+          <meta property="og:description" content="A short description of the Dotto.
+        " />
+          <meta property="og:url" content="https://datamotto.com/posts/dotto/D003-2021-06-22-how-to-import-excel-datasets/" />
+          <meta property="og:locale" content="en_US">
+          <meta property="og:site_name" content="Data Motto">
+          <meta property="og:image" content="https://datamotto.com/assets/img/logo.svg" />
+          
+        
+          <meta property="twitter:card" content="summary_large_image">
+          <meta property="twitter:title" content="How to import excel datasets">
+          <meta property="twitter:description" content="A short description of the Dotto.
+        ">
+          <meta property="twitter:url" content="https://datamotto.com/posts/dotto/D003-2021-06-22-how-to-import-excel-datasets/">
+          <meta property="twitter:image" content="https://datamotto.com/assets/img/logo.svg">
+          
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZMEMQM0Y2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZMEMQM0Y2');
+</script>
+<link rel="shortcut icon" href="../../../assets/img/favicon/favicon-32x32.png" />
+<link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Brands.css" />
+<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Free.css" />
+<link rel="stylesheet" href="../../../assets/css/icomoon.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
+<link rel="stylesheet" href="../../../assets/fonts/fontawesome-all.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/font-awesome.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/ionicons.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/fontawesome5-overrides.min.css" />
+<link rel="stylesheet" href="../../../assets/css/Footer-Basic.css" />
+<link rel="stylesheet" href="../../../assets/css/home-cards.css" />
+<link rel="stylesheet" href="../../../assets/css/site.css" />
+<link rel="stylesheet" href="../../../assets/css/style.css" />
+<link rel="stylesheet" href="../../../assets/css/styles.css" />
+<link rel="stylesheet" href="../../../assets/css/Team-Boxed.css" />
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../../../assets/highlight/styles/dracula.css" />
+<script src="../../../assets/highlight/highlight.pack.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="../../../assets/js/vue.js"></script>
+
+</head>
+
+<body style="height: 100vh;">
+<div class="d-flex flex-column" id="all_page">
+
+<!-- Body Header ------------------------------>
+
+<section id="dotto-row-header">
+<div class="row dotto-header">
+
+<div class="col-1 d-flex justify-content-start align-items-center header-logo">
+<a href="/" class="text-muted"><img id="logo" src="../../../assets/img/logo.svg" /></a>
+</div>
+
+
+<div class="col-6 col-sm-7">
+<div class="header-title">
+<h6 class="dotto-header-maintitle">
+How to import excel datasets
+</h6>
+<p class="dotto-header-description">
+A short description of the Dotto.
+
+</p>
+<p class="dotto-header-tags">
+<i class="fas fa-tags"></i>&nbsp; 
+</p>
+</div>
+</div>
+
+
+<div class="col-1 d-flex justify-content-center align-items-center">
+<button class="btn btn-outline-light btn-block header-like-btn" style="background-color:white" type="button">
+<!-- LikeBtn.com BEGIN -->
+<span class="likebtn-wrapper" data-theme="custom" data-btn_size="30" data-f_size="18" data-icon_size="30" data-icon_l="hrt13" data-icon_l_c="rgba(255,121,198,0.68)" data-icon_l_c_v="#ff79c6" data-icon_d_c_v="green" data-label_c="red" data-label_c_v="yellow" data-bg_c="#ffffff" data-bg_c_v="#ffffff" data-brdr_c="#ffffff" data-label_fs="r" data-i18n_like="  " data-identifier="9b093546-d342-11eb-a85d-acbc32baed85" data-dislike_enabled="false" data-site_id="604e13966fd08bbf03672c5b" data-counter_clickable="true" data-popup_disabled="true" data-share_enabled="false" data-tooltip_enabled="false"></span>
+<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+<!-- LikeBtn.com END -->
+</button>
+</div>
+
+
+<div class="col-3 d-flex justify-content-end dotto-header-user">
+
+<div class="d-flex flex-column mx-3">
+<div class="row">
+<div @click="authorOneModal = true" type="button"
+class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center dotto-header-user-icon">
+<img class="img-fluid user-image lang-color-r mx-auto" src="../../../assets/img/dotto.png" />
+</div>
+</div>
+<h6 class="d-flex justify-content-end dotto-header-user-name mx-auto">
+First Last
+</h6>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<div v-if="authorOneModal" class="modal">
+<!-- Modal content -->
+<div class="modal-content">
+<span @click="authorOneModal = false" class="close">&times;</span>
+<div class="card" style="max-width: 540px">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="../../../assets/img/dotto.png" class="img-fluid" />
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<ins><a href="https://your_url" class="text-dark" target="_blank"><h3 class="card-title mb-0">First Last</h3></a></ins>
+<div class="card-text fs-4 my-2">Occupation, Affiliation</div>
+<small class="card-text text-muted my-2 fs-4">Language: r, python</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div v-show="commentOpen" class="modal overflow-auto">
+<div class="modal-comment overflow-auto">
+<span @click="commentOpen = false" class="close">&times;</span>
+<div id="disqus_thread"></div>
+</div>
+</div>
+
+
+<section>
+<div id="dotto-row-info" class="d-flex">
+
+<div class="col-4 d-flex flex-grow-0 justify-content-start align-items-center align-items-xl-center">
+<div class="d-flex mx-4 justify-content-around align-items-center bg-social-icons">
+
+<div>
+<i type="button" @click="activeLang = 'r'"
+class="fab fa-r-project mx-2"
+:class="{'lang-color-r': activeLang === 'r'}" >
+  </i>
+</div>
+
+
+<div>
+<i type="button" @click="activeLang = 'python'"
+class="fab fa-python mx-2"
+:class="{'lang-color-python': activeLang === 'python'}" >
+  </i>
+</div>
+
+</div>
+</div>
+
+
+<div
+class="col-8 d-flex justify-content-end align-items-center" style="padding-right: 15px">
+<!--
+<div class="d-flex justify-content-center align-items-center align-content-center bg-social-icons"
+style="margin-right: 7px; width: 146.3px">
+<span class="d-flex justify-content-lg-center align-items-lg-center" style="width: 133.7px">
+<i class="fas fa-music" style="padding-right: 12px"> </i>
+</span>
+</div>
+---->
+<div class="d-flex justify-content-around align-items-center bg-social-icons">
+<a href="https://twitter.com/share?text=How to import excel datasets&amp;url=https://datamotto.com/posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html&amp;hashtags=rstats,Python" target="_blank" class="text-reset">
+<i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://datamotto.com/posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html" target="_blank" class="text-reset">
+<i class="fa fa-linkedin-square"></i></a>
+</div>
+<div class="text-nowrap d-flex justify-content-around align-items-center bg-social-icons bg-bugs-icons">
+<a href="https://github.com/DataMotto/DataMotto/blob/master/posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/how-to-import-excel-datasets.Rmd" target="_blank" class="text-reset">
+<i class="fab fa-github header-social-icon"></i></a>
+<a href="https://github.com/DataMotto/DataMotto/issues/new?assignees=&labels=bug&template=bug_report.md&title=" target="_blank" class="text-reset">
+<i class="fas fa-bug header-social-icon"></i></a>
+</div>
+</div>
+
+</div>
+</section>
+
+
+
+
+<section v-if="activeDotto === '1'"
+class="text-left d-flex flex-row flex-grow-1 flex-wrap" id="dotto-row-main">
+<div class="col-12 col-lg-1" id="dotto-main-dots">
+
+<button type="button" @click="activeMotto = '1'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '1', 'btn-outline-light': activeMotto !== '1'}">1</button>
+
+</div>
+
+<!-- Dot 1, lang: r ------------------------------------------------>
+
+<div v-if="activeMotto === '1'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+
+</div>
+ 
+
+</section>
+<!-- Body Footer ----------------------------------->
+
+<section id="dotto-footer">
+<div class="col-12 col-md-9">
+<div class="d-flex" id="dotto-row-lines">
+<img src="../../../assets/img/Dotto.svg" width="35" height="35" type="button" class=" ml-5 icon d-sm-flex justify-content-sm-center dotto-lines-icons">
+</i>
+</div>
+</div>
+<div class="col-12 col-md-3 pt-2">
+<div class="alert alert-danger dotto-alert-comment text-center" role="alert">
+<span type="button" @click="commentOpen = true" class="footer-disqus-text">
+<strong><i class="fas fa-comments fa-1x" style="font-size: 21px"> </i>
+<span class="disqus-comment-count" data-disqus-url="https://datamotto.com/posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html" data-disqus-identifier="9b093546-d342-11eb-a85d-acbc32baed85"></span>
+</strong>
+<span> for this Dotto.</span>
+<span> Write yours here!</span>
+</span>
+
+<script>
+var disqus_config = function () {
+  this.page.url = "https://datamotto.com/posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html";
+  this.page.identifier = "9b093546-d342-11eb-a85d-acbc32baed85";
+};
+
+(function() {
+var d = document, s = d.createElement("script");
+s.src = "https://datamotto-com.disqus.com/embed.js";
+s.setAttribute("data-timestamp", +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
+
+</div>
+</div>
+</section>
+
+
+</div>
+<!-- Don't indent these lines or it will mess pre blocks indentation -->
+<script src="../../../assets/js/post.js"></script>
+<script src="../../../assets/js/jquery.min.js"></script>
+<script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/bs-init.js"></script>
+<script src="../../../assets/js/carts.js"></script>
+<script src="../../../assets/js/Index_page.js"></script>
+<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+</body>
+</html>

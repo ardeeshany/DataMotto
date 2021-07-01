@@ -1,0 +1,47 @@
+{
+  "file_name": ["how-to-import-excel-datasets"],
+  "dir_name": ["D003-2021-06-22-how-to-import-excel-datasets"],
+  "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+  "link": ["posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [3],
+  "dotto_label": ["D003"],
+  "dotto_id": ["9b093546-d342-11eb-a85d-acbc32baed85"],
+  "title": ["How to import excel datasets"],
+  "description": ["A short description of the Dotto.\n"],
+  "author": [
+    {
+      "name": ["First Last"],
+      "occupation": ["Occupation"],
+      "affiliation": ["Affiliation"],
+      "url": ["https://your_url"],
+      "img": ["path_to_image"],
+      "lang": ["r", "python"],
+      "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+      "profile_img": ["./posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets./../../assets/img/dotto.png"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": {}
+    },
+    {
+      "lang": ["python"],
+      "pkgs": ["pandas"]
+    }
+  ],
+  "date": {
+    "created": ["2021-06-22"],
+    "last_updated": ["2021-06-22"]
+  },
+  "categories": {},
+  "applications": {},
+  "cover_image": {},
+  "slug": ["how-to-import-excel-datasets"],
+  "output": ["DataMotto::Dotto"]
+}

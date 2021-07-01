@@ -111,6 +111,53 @@ export default {
     "slug": ["coffee-market-in-paris"],
     "output": ["DataMotto::Dotto"]
   },
+  "D003-2021-06-22-how-to-import-excel-datasets": {
+    "file_name": ["how-to-import-excel-datasets"],
+    "dir_name": ["D003-2021-06-22-how-to-import-excel-datasets"],
+    "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+    "link": ["posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html"],
+    "base_url": ["https://datamotto.com"],
+    "social_networks_datamotto": {
+      "twitter": ["https://twitter.com/DataMotto"],
+      "linkedin": ["https://www.linkedin.com/company/datamotto"]
+    },
+    "dotto_number": [3],
+    "dotto_label": ["D003"],
+    "dotto_id": ["9b093546-d342-11eb-a85d-acbc32baed85"],
+    "title": ["How to import excel datasets"],
+    "description": ["A short description of the Dotto.\n"],
+    "author": [
+      {
+        "name": ["First Last"],
+        "occupation": ["Occupation"],
+        "affiliation": ["Affiliation"],
+        "url": ["https://your_url"],
+        "img": ["path_to_image"],
+        "lang": ["r", "python"],
+        "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+        "profile_img": ["./posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets./../../assets/img/dotto.png"]
+      }
+    ],
+    "tech": [
+      {
+        "lang": ["r"],
+        "pkgs": {}
+      },
+      {
+        "lang": ["python"],
+        "pkgs": ["pandas"]
+      }
+    ],
+    "date": {
+      "created": ["2021-06-22"],
+      "last_updated": ["2021-06-22"]
+    },
+    "categories": {},
+    "applications": {},
+    "cover_image": {},
+    "slug": ["how-to-import-excel-datasets"],
+    "output": ["DataMotto::Dotto"]
+  },
   "D004-2021-06-22-simple-data-visualization": {
     "file_name": ["simple-data-visualization"],
     "dir_name": ["D004-2021-06-22-simple-data-visualization"],
@@ -156,6 +203,92 @@ export default {
     "applications": ["Other"],
     "cover_image": {},
     "slug": ["simple-data-visualization"],
+    "output": ["DataMotto::Dotto"]
+  },
+  "D005-2021-06-22-basic-data-structure": {
+    "file_name": ["basic-data-structure"],
+    "dir_name": ["D005-2021-06-22-basic-data-structure"],
+    "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+    "link": ["posts/Dotto/D005-2021-06-22-basic-data-structure/index.html"],
+    "base_url": ["https://datamotto.com"],
+    "social_networks_datamotto": {
+      "twitter": ["https://twitter.com/DataMotto"],
+      "linkedin": ["https://www.linkedin.com/company/datamotto"]
+    },
+    "dotto_number": [5],
+    "dotto_label": ["D005"],
+    "dotto_id": ["ea4a8d12-d342-11eb-a85d-acbc32baed85"],
+    "title": ["Basic Data Structure"],
+    "description": ["A short description of the Dotto.\n"],
+    "author": [
+      {
+        "name": ["First Last"],
+        "occupation": ["Occupation"],
+        "affiliation": ["Affiliation"],
+        "url": ["https://your_url"],
+        "img": ["path_to_image"],
+        "lang": ["r"],
+        "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+        "profile_img": ["./posts/Dotto/D005-2021-06-22-basic-data-structure./../../assets/img/dotto.png"]
+      }
+    ],
+    "tech": [
+      {
+        "lang": ["r"],
+        "pkgs": {}
+      }
+    ],
+    "date": {
+      "created": ["2021-06-22"],
+      "last_updated": ["2021-06-22"]
+    },
+    "categories": {},
+    "applications": {},
+    "cover_image": {},
+    "slug": ["basic-data-structure"],
+    "output": ["DataMotto::Dotto"]
+  },
+  "D006-2021-06-22-how-does-finland-become-the-happiest-country-": {
+    "file_name": ["how-does-finland-become-the-happiest-country-"],
+    "dir_name": ["D006-2021-06-22-how-does-finland-become-the-happiest-country-"],
+    "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+    "link": ["posts/Dotto/D006-2021-06-22-how-does-finland-become-the-happiest-country-/index.html"],
+    "base_url": ["https://datamotto.com"],
+    "social_networks_datamotto": {
+      "twitter": ["https://twitter.com/DataMotto"],
+      "linkedin": ["https://www.linkedin.com/company/datamotto"]
+    },
+    "dotto_number": [6],
+    "dotto_label": ["D006"],
+    "dotto_id": ["ffd13e06-d342-11eb-a85d-acbc32baed85"],
+    "title": ["How does Finland become the happiest country?"],
+    "description": ["A short description of the Dotto.\n"],
+    "author": [
+      {
+        "name": ["First Last"],
+        "occupation": ["Occupation"],
+        "affiliation": ["Affiliation"],
+        "url": ["https://your_url"],
+        "img": ["path_to_image"],
+        "lang": ["r", "python"],
+        "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+        "profile_img": ["./posts/Dotto/D006-2021-06-22-how-does-finland-become-the-happiest-country-./../../assets/img/dotto.png"]
+      }
+    ],
+    "tech": [
+      {
+        "lang": ["r"],
+        "pkgs": {}
+      }
+    ],
+    "date": {
+      "created": ["2021-06-22"],
+      "last_updated": ["2021-06-22"]
+    },
+    "categories": {},
+    "applications": {},
+    "cover_image": {},
+    "slug": ["how-does-finland-become-the-happiest-country-"],
     "output": ["DataMotto::Dotto"]
   }
 }
