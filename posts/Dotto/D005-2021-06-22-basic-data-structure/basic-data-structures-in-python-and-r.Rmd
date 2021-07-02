@@ -8,7 +8,7 @@ author:
     affiliation: "DataMotto"
     url: "https://www.linkedin.com/in/parnian-jahangiri-rad-4603611b4"
     img: "Parnian-Jahangiri-Rad.jpg"
-    lang: "r"
+    lang: "r , python"
 tech:
   - lang: r
     pkgs: NULL
