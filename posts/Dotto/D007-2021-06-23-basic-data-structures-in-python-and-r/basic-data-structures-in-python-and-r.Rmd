@@ -448,10 +448,7 @@ for number in dict1.keys():
 R. Data Frame is a special case of a list where all elements are the same 
 length.The main usage of data frame is storing tabular data.
 Data Frames can be created using data.frame().
-you can also see https://www.datam#create data frame using data.frame():
-df1 <- data.frame("SN"=1:2,"Age"=c(21,15),"Name"=c("John","Dora"))
-View(df1) #Invoke a spreadsheet-style data viewer on a matrix-like R object.
-dim(df1) #number of rentor.io/r-programming/data-frame/
+you can also see https://www.datamentor.io/r-programming/data-frame/
 
 ```
 
