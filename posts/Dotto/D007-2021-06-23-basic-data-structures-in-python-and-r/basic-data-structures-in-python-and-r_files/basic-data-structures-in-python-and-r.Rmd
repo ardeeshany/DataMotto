@@ -520,17 +520,18 @@ data_frame1.iloc[1:3,1] #select columns based on column number(column 1)
 ```{r, Dot = 6, part = "Result", echo = F, eval = T}
  #create data frame using data.frame():
 df1 <- data.frame("SN"=1:2,"Age"=c(21,15),"Name"=c("John","Dora"))
-View(df1) #Invoke a spreadsheet-style data viewer on a matrix-like R object.
+df1
 dim(df1) #number of rows and columns
 df1[["Name"]] #access column "Name"
+print("***********************")
 df1[1, ] #access 1st row of df1(Matrix subsetting)
 df1[, 2 ] #access 2nd column of df1(Matrix subsetting)
 df1[2,"Age"] <- 30 #modify one component of data frame
 df1
 print("***********************")
-df1 <-rbind(df1,list(1,16,"Paul")) #add a new record to data frame using rbind()
-df1 <- cbind(df1,State=c("NY","FL")) #add a new column to data frame
-df1
+rbind(df1,list(1,16,"Paul")) #add a new record to data frame using rbind()
+print("***********************")
+cbind(df1,State=c("NY","FL")) #add a new column to data frame
 print("***********************")
 df1$State <- NULL #delete column "state" of df1
 df1 <- df1[-1,] #delete rows using reassignments
