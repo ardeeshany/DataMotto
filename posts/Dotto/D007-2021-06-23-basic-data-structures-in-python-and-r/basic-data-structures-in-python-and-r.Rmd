@@ -199,13 +199,10 @@ You can't change tuple atfer defining it(unlike list).
 #create a factor using factor():
 factor1 <- factor(c("male","female","female","male"))
 levels(factor1) #shows levels of factor1
-print("***********************")
 table(factor1) #returns number of each level
-print("***********************")
 #we can determine the order of levels:
 factor2 <- factor(c("pass","pass","fail","pass","fail"), levels = c("pass" , "fail"))
 factor2
-print("***********************")
 factor2[c(3,4)] #access 3rd and 4th element of factor2
 #illustrate how to modify elements(CANNOT assign values outside levels):
 factor1[1] <- "female"
@@ -237,13 +234,10 @@ print("new a :",a," ,new c :",c)
 #create a factor using factor():
 factor1 <- factor(c("male","female","female","male"))
 levels(factor1) #shows levels of factor1
-print("***********************")
 table(factor1) #returns number of each level
-print("***********************")
 #we can determine the order of levels:
 factor2 <- factor(c("pass","pass","fail","pass","fail"), levels = c("pass" , "fail"))
 factor2
-print("***********************")
 factor2[c(3,4)] #access 3rd and 4th element of factor2
 #illustrate how to modify elements(CANNOT assign values outside levels):
 factor1[1] <- "female"
@@ -292,17 +286,13 @@ and has no duplicate values.
 matrix1 <- matrix(1:9,nrow=3,byrow=TRUE,dimnames=list(c("X","Y","Z"),
                                                       c("A","B","C")))
 matrix1
-print("***********************")
 #create matrix using cbind() ( and rbind() ):
 matrix2 <- cbind(c( 4, 5, 6) , c( 7, 8, 9))
 matrix2
-print("***********************")
 matrix2[3,2] #select an element
 matrix2[3, ] #select 3rd row of matrix2
 matrix2[ ,2] #select 2nd column of matrix2
-print("***********************")
 t(matrix2) #transpose of matrix2
-print("***********************")
 matrix1 %*% matrix2 #matrix multiplication
 
 ```
@@ -330,17 +320,13 @@ else :
 matrix1 <- matrix(1:9,nrow=3,byrow=TRUE,dimnames=list(c("X","Y","Z"),
                                                       c("A","B","C")))
 matrix1
-print("***********************")
 #create matrix using cbind() ( and rbind() ):
 matrix2 <- cbind(c( 4, 5, 6) , c( 7, 8, 9))
 matrix2
-print("***********************")
 matrix2[3,2] #select an element
 matrix2[3, ] #select 3rd row of matrix2
 matrix2[ ,2] #select 2nd column of matrix2
-print("***********************")
 t(matrix2) #transpose of matrix2
-print("***********************")
 matrix1 %*% matrix2 #matrix multiplication
 
 ```
@@ -384,18 +370,15 @@ When you provide a key, Python returns the value associated with that key.
 ```{r, Dot = 5, part = "Code", echo = T, eval = F, }
 list1 <- list(TRUE,"hello",1:4)
 list1
-print("***********************")
 #We can also set tags(a,b,c are tags here) for list elements.Doing this,
 #our list will be like dictionary in Python:
 list2 <- list("a" = TRUE, "b" = "hello", "c" = 1:4)
 list2
-print("***********************")
 list2[[1]] #access 1st element of list2
 list2$b #access element of list2 named b
 list2$b <- "bye!" #modify 2nd element of list2(element named "b")
 list2$d <- 10.5 #add new element to list
 list2
-print("***********************")
 list2$c <- NULL #delete element named c from list2
 list2
 
@@ -425,18 +408,15 @@ for number in dict1.keys():
 ```{r, Dot = 5, part = "Result", echo = F, eval = T}
 list1 <- list(TRUE,"hello",1:4)
 list1
-print("***********************")
 #We can also set tags(a,b,c are tags here) for list elements.Doing this,
 #our list will be like dictionary in Python:
 list2 <- list("a" = TRUE, "b" = "hello", "c" = 1:4)
 list2
-print("***********************")
 list2[[1]] #access 1st element of list2
 list2$b #access element of list2 named b
 list2$b <- "bye!" #modify 2nd element of list2(element named "b")
 list2$d <- 10.5 #add new element to list
 list2
-print("***********************")
 list2$c <- NULL #delete element named c from list2
 list2
 
@@ -491,11 +471,9 @@ df1[1, ] #access 1st row of df1(Matrix subsetting)
 df1[, 2 ] #access 2nd column of df1(Matrix subsetting)
 df1[2,"Age"] <- 30 #modify one component of data frame
 df1
-print("***********************")
 df1 <-rbind(df1,list(1,16,"Paul")) #add a new record to data frame using rbind()
 df1 <- cbind(df1,State=c("NY","FL")) #add a new column to data frame
 df1
-print("***********************")
 df1$State <- NULL #delete column "state" of df1
 df1 <- df1[-1,] #delete rows using reassignments
 
@@ -525,16 +503,12 @@ df1 <- data.frame("SN"=1:2,"Age"=c(21,15),"Name"=c("John","Dora"))
 df1
 dim(df1) #number of rows and columns
 df1[["Name"]] #access column "Name"
-print("***********************")
 df1[1, ] #access 1st row of df1(Matrix subsetting)
 df1[, 2 ] #access 2nd column of df1(Matrix subsetting)
 df1[2,"Age"] <- 30 #modify one component of data frame
 df1
-print("***********************")
 rbind(df1,list(1,16,"Paul")) #add a new record to data frame using rbind()
-print("***********************")
 cbind(df1,State=c("NY","FL")) #add a new column to data frame
-print("***********************")
 df1$State <- NULL #delete column "state" of df1
 df1 <- df1[-1,] #delete rows using reassignments
 
