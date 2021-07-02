@@ -7,9 +7,9 @@ author:
   - name: "Mahyar Sharifi"
     occupation: "Internship"
     affiliation: "DataMotto"
-    url: NULL
+    url: "https://www.linkedin.com/in/mahyar-sharifi-06126616a"
     img: NULL
-    lang: "r"
+    lang: ["python", "r"]
   - name: "Mahyar Sharifi"
     occupation: "Internship"
     affiliation: "DataMotto"
