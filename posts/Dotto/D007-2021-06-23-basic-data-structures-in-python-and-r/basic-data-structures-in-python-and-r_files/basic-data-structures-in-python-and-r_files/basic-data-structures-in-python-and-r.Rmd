@@ -483,7 +483,9 @@ Data frame is one of the most commonly used pandas objects.
 ```
 
 ```{r, Dot = 6, part = "Code", echo = T, eval = F, }
-ows and columns
+#create data frame using data.frame():
+df1 <- data.frame("SN"=1:2,"Age"=c(21,15),"Name"=c("John","Dora"))
+dim(df1) #number of rows and columns
 df1[["Name"]] #access column "Name"
 df1[1, ] #access 1st row of df1(Matrix subsetting)
 df1[, 2 ] #access 2nd column of df1(Matrix subsetting)

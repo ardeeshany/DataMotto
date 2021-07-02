@@ -872,19 +872,21 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb80"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a>ows and columns</span>
-<span id="cb80-2"><a href="#cb80-2"></a>df1[[<span class="st">&quot;Name&quot;</span>]] <span class="co">#access column &quot;Name&quot;</span></span>
-<span id="cb80-3"><a href="#cb80-3"></a>df1[<span class="dv">1</span>, ] <span class="co">#access 1st row of df1(Matrix subsetting)</span></span>
-<span id="cb80-4"><a href="#cb80-4"></a>df1[, <span class="dv">2</span> ] <span class="co">#access 2nd column of df1(Matrix subsetting)</span></span>
-<span id="cb80-5"><a href="#cb80-5"></a>df1[<span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>] &lt;-<span class="st"> </span><span class="dv">30</span> <span class="co">#modify one component of data frame</span></span>
-<span id="cb80-6"><a href="#cb80-6"></a>df1</span>
-<span id="cb80-7"><a href="#cb80-7"></a><span class="kw">print</span>(<span class="st">&quot;***********************&quot;</span>)</span>
-<span id="cb80-8"><a href="#cb80-8"></a>df1 &lt;-<span class="kw">rbind</span>(df1,<span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">16</span>,<span class="st">&quot;Paul&quot;</span>)) <span class="co">#add a new record to data frame using rbind()</span></span>
-<span id="cb80-9"><a href="#cb80-9"></a>df1 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1,<span class="dt">State=</span><span class="kw">c</span>(<span class="st">&quot;NY&quot;</span>,<span class="st">&quot;FL&quot;</span>)) <span class="co">#add a new column to data frame</span></span>
-<span id="cb80-10"><a href="#cb80-10"></a>df1</span>
-<span id="cb80-11"><a href="#cb80-11"></a><span class="kw">print</span>(<span class="st">&quot;***********************&quot;</span>)</span>
-<span id="cb80-12"><a href="#cb80-12"></a>df1<span class="op">$</span>State &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co">#delete column &quot;state&quot; of df1</span></span>
-<span id="cb80-13"><a href="#cb80-13"></a>df1 &lt;-<span class="st"> </span>df1[<span class="op">-</span><span class="dv">1</span>,] <span class="co">#delete rows using reassignments</span></span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a><span class="co">#create data frame using data.frame():</span></span>
+<span id="cb80-2"><a href="#cb80-2"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="st">&quot;SN&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>=<span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">15</span>),<span class="st">&quot;Name&quot;</span>=<span class="kw">c</span>(<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Dora&quot;</span>))</span>
+<span id="cb80-3"><a href="#cb80-3"></a><span class="kw">dim</span>(df1) <span class="co">#number of rows and columns</span></span>
+<span id="cb80-4"><a href="#cb80-4"></a>df1[[<span class="st">&quot;Name&quot;</span>]] <span class="co">#access column &quot;Name&quot;</span></span>
+<span id="cb80-5"><a href="#cb80-5"></a>df1[<span class="dv">1</span>, ] <span class="co">#access 1st row of df1(Matrix subsetting)</span></span>
+<span id="cb80-6"><a href="#cb80-6"></a>df1[, <span class="dv">2</span> ] <span class="co">#access 2nd column of df1(Matrix subsetting)</span></span>
+<span id="cb80-7"><a href="#cb80-7"></a>df1[<span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>] &lt;-<span class="st"> </span><span class="dv">30</span> <span class="co">#modify one component of data frame</span></span>
+<span id="cb80-8"><a href="#cb80-8"></a>df1</span>
+<span id="cb80-9"><a href="#cb80-9"></a><span class="kw">print</span>(<span class="st">&quot;***********************&quot;</span>)</span>
+<span id="cb80-10"><a href="#cb80-10"></a>df1 &lt;-<span class="kw">rbind</span>(df1,<span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">16</span>,<span class="st">&quot;Paul&quot;</span>)) <span class="co">#add a new record to data frame using rbind()</span></span>
+<span id="cb80-11"><a href="#cb80-11"></a>df1 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1,<span class="dt">State=</span><span class="kw">c</span>(<span class="st">&quot;NY&quot;</span>,<span class="st">&quot;FL&quot;</span>)) <span class="co">#add a new column to data frame</span></span>
+<span id="cb80-12"><a href="#cb80-12"></a>df1</span>
+<span id="cb80-13"><a href="#cb80-13"></a><span class="kw">print</span>(<span class="st">&quot;***********************&quot;</span>)</span>
+<span id="cb80-14"><a href="#cb80-14"></a>df1<span class="op">$</span>State &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co">#delete column &quot;state&quot; of df1</span></span>
+<span id="cb80-15"><a href="#cb80-15"></a>df1 &lt;-<span class="st"> </span>df1[<span class="op">-</span><span class="dv">1</span>,] <span class="co">#delete rows using reassignments</span></span></code></pre></div>
 
 </div>
  
