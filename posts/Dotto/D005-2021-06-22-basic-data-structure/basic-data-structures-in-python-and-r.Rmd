@@ -11,7 +11,7 @@ author:
     lang: "r"
 tech:
   - lang: r
-    pkgs: []
+    pkgs: NULL
   - lang: python
     pkgs: ["pandas"]
 date:
