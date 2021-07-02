@@ -110,6 +110,143 @@ export default {
     "cover_image": ["audrey.jpeg"],
     "slug": ["coffee-market-in-paris"],
     "output": ["DataMotto::Dotto"]
+  },
+  "D007-2021-06-23-basic-data-structures-in-python-and-r": {
+    "file_name": ["basic-data-structures-in-python-and-r"],
+    "dir_name": ["D007-2021-06-23-basic-data-structures-in-python-and-r"],
+    "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+    "link": ["posts/Dotto/D007-2021-06-23-basic-data-structures-in-python-and-r/index.html"],
+    "base_url": ["https://datamotto.com"],
+    "social_networks_datamotto": {
+      "twitter": ["https://twitter.com/DataMotto"],
+      "linkedin": ["https://www.linkedin.com/company/datamotto"]
+    },
+    "dotto_number": [7],
+    "dotto_label": ["D007"],
+    "dotto_id": ["2a8fa9ea-d404-11eb-9950-c8b29b64e24a"],
+    "title": ["Basic Data structures in Python and R"],
+    "description": ["introducing some basic data structures in Python and R.\n"],
+    "author": [
+      {
+        "name": ["Parnian Jahangiri Rad"],
+        "occupation": ["Data science intern"],
+        "affiliation": ["DataMotto"],
+        "url": ["https://www.linkedin.com/in/parnian-jahangiri-rad-4603611b4"],
+        "img": ["Parnian-Jahangiri-Rad.jpg"],
+        "lang": ["r"],
+        "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+        "profile_img": ["./posts/Dotto/D007-2021-06-23-basic-data-structures-in-python-and-r./../../assets/img/dotto.png"]
+      }
+    ],
+    "tech": [
+      {
+        "lang": ["r"],
+        "pkgs": []
+      },
+      {
+        "lang": ["python"],
+        "pkgs": ["pandas"]
+      }
+    ],
+    "date": {
+      "created": ["2021-06-23"],
+      "last_updated": ["2021-06-23"]
+    },
+    "categories": ["General"],
+    "applications": ["General"],
+    "cover_image": {},
+    "slug": ["basic-data-structures-in-python-and-r"],
+    "output": ["DataMotto::Dotto"]
+  },
+  "basic-data-structures-in-python-and-r_files": {
+    "file_name": ["basic-data-structures-in-python-and-r"],
+    "dir_name": ["basic-data-structures-in-python-and-r_files"],
+    "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+    "link": ["posts/Dotto/basic-data-structures-in-python-and-r_files/index.html"],
+    "base_url": ["https://datamotto.com"],
+    "social_networks_datamotto": {
+      "twitter": ["https://twitter.com/DataMotto"],
+      "linkedin": ["https://www.linkedin.com/company/datamotto"]
+    },
+    "dotto_id": {},
+    "title": ["Basic Data structures in Python and R"],
+    "description": ["introducing some basic data structures in Python and R.\n"],
+    "author": [
+      {
+        "name": ["Parnian Jahangiri Rad"],
+        "occupation": ["Data science intern"],
+        "affiliation": ["DataMotto"],
+        "url": ["https://www.linkedin.com/in/parnian-jahangiri-rad-4603611b4"],
+        "img": ["Parnian-Jahangiri-Rad.jpg"],
+        "lang": ["r"],
+        "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+        "profile_img": ["./posts/Dotto/basic-data-structures-in-python-and-r_files./../../assets/img/dotto.png"]
+      }
+    ],
+    "tech": [
+      {
+        "lang": ["r"],
+        "pkgs": []
+      },
+      {
+        "lang": ["python"],
+        "pkgs": ["pandas"]
+      }
+    ],
+    "date": {
+      "created": ["2021-06-23"],
+      "last_updated": ["2021-06-23"]
+    },
+    "categories": ["General"],
+    "applications": ["General"],
+    "cover_image": {},
+    "slug": ["basic-data-structures-in-python-and-r"],
+    "output": ["DataMotto::Dotto"]
+  },
+  "basic-data-structures-in-python-and-r_files.1": {
+    "file_name": ["basic-data-structures-in-python-and-r"],
+    "dir_name": ["basic-data-structures-in-python-and-r_files"],
+    "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+    "link": ["posts/Dotto/basic-data-structures-in-python-and-r_files/index.html"],
+    "base_url": ["https://datamotto.com"],
+    "social_networks_datamotto": {
+      "twitter": ["https://twitter.com/DataMotto"],
+      "linkedin": ["https://www.linkedin.com/company/datamotto"]
+    },
+    "dotto_id": {},
+    "title": ["Basic Data structures in Python and R"],
+    "description": ["introducing some basic data structures in Python and R.\n"],
+    "author": [
+      {
+        "name": ["Parnian Jahangiri Rad"],
+        "occupation": ["Data science intern"],
+        "affiliation": ["DataMotto"],
+        "url": ["https://www.linkedin.com/in/parnian-jahangiri-rad-4603611b4"],
+        "img": ["Parnian-Jahangiri-Rad.jpg"],
+        "lang": ["r"],
+        "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+        "profile_img": ["./posts/Dotto/basic-data-structures-in-python-and-r_files./../../assets/img/dotto.png"]
+      }
+    ],
+    "tech": [
+      {
+        "lang": ["r"],
+        "pkgs": []
+      },
+      {
+        "lang": ["python"],
+        "pkgs": ["pandas"]
+      }
+    ],
+    "date": {
+      "created": ["2021-06-23"],
+      "last_updated": ["2021-06-23"]
+    },
+    "categories": ["General"],
+    "applications": ["General"],
+    "cover_image": {},
+    "slug": ["basic-data-structures-in-python-and-r"],
+    "output": ["DataMotto::Dotto"]
   }
 }
 

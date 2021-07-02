@@ -1,0 +1,56 @@
+---
+title: "Basic Data structures in R and Python"
+description: |
+  introducing some basic data structures in R and Python.
+author:
+  - name: "Parnian Jahangiri Rad"
+    url: "https://www.linkedin.com/in/parnian-jahangiri-rad-4603611b4"
+# preview: https://www.jfkairport.com/static/JFK/image/jfk_taxi_new.jpg
+date: 2020-12-03
+tech: [["R"],["Python"]]
+packages: []
+categories: [Visualization]
+base_url: https://datamotto.com
+output: DataMotto::Dotto
+preview: "https://bookdown.org/kdonovan125/ibis_data_analysis_r4/_main_files/figure-html/ggplot_ex_4_1-2.png"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<li class="nav-item">
+<a class="nav-link dm-dot-title">Report</a>
+<div class="dm-dot-content">
+
+Write your `Dotto` Here
+
+```{r, echo = T, out.width="30%"}
+x <- "apple"
+x
+#chaning assignment in R
+y <- z <- x
+# Assignment using equal operator
+a = "orange"
+a
+
+```
+</div>
+</li>
+
+<li class="nav-item">
+<a class="nav-link dm-dot-title">Summary</a>
+<div class="dm-dot-content">
+```{r, echo = F, out.width="30%"}
+x <- c(1, 5, 4, 9, 0) #create vector using c()
+y <- vector(mode = "logical",length = 5)#create vector using vector()
+y
+x[c(1,2)] #access first and second element of vector
+x [x > 4] #filtering elements of x based on condition
+x[2] <- 10 #modify 2nd element of x from 5 to 10
+x [x < 3] <- 3 #modify elements less than 3 to 3
+y <- NULL #delete vector
+y
+```
+</div>
+</li>
