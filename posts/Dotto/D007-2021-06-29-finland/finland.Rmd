@@ -35,7 +35,7 @@ output: DataMotto::Dotto
 DataMotto::use_Dotto()
 ```
 
-<!-- Dot 1, lang: r ------------------------------------------------>
+<!-- Dot 1, lang: r, python ------------------------------------------------>
 
 ```{block, Dot = 1, part = "Instruction", lang = "r"}
 In the first DOT, we import two packages: pandas: importing and wrangling dataset seaborn: plotting a line-plot Then we import the World Happiness dataset and select rows for 2015 to 2019 for all countries.
@@ -105,6 +105,8 @@ data = data[data['year'].isin(range(2015, 2020))]
 
 ```
 
+<!-- Dot 2, lang: r, python ------------------------------------------------>
+
 ```{block, Dot = 2, part = "Instruction", lang = "r"}
 After we select the dataset, the average of Life Ladder calculates for each country. Then the top five happiest countries will be identified by sorting the dataset by Life Ladder columns.
 
@@ -165,6 +167,8 @@ sorted_data = data_grouped.sort_values(['Life Ladder'],
 
 ```
 
+<!-- Dot 3, lang: r, python ------------------------------------------------>
+
 ```{block, Dot = 3, part = "Instruction", lang = "r"}
 Finland, Denmark, Switzerland, Norway, and Iceland were identified as the happiest country in a row from 2015 to 2019. In this Dot, the new dataset will create for these countries which name is "top-five". As we can see in the top-five dataset, Iceland has no information for 2018.
 
@@ -202,6 +206,8 @@ data_top_five = data[(data['Country name'].isin(sorted_data.index[:5]))]
 data_top_five = data[(data['Country name'].isin(sorted_data.index[:5]))]
 
 ```
+
+<!-- Dot 4, lang: r, python ------------------------------------------------>
 
 ```{block, Dot = 4, part = "Instruction", lang = "r"}
 The final Dot is to plot the trend of Life Ladder from 2015 to 2019. 
