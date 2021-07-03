@@ -18,9 +18,19 @@
       "name": ["Mahyar Sharifi"],
       "occupation": ["Internship"],
       "affiliation": ["DataMotto"],
+      "url": ["https://www.linkedin.com/in/mahyar-sharifi-06126616a"],
+      "img": {},
+      "lang": ["python", "r"],
+      "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+      "profile_img": ["./posts/Dotto/D007-2021-06-29-finland./../../assets/img/dotto.png"]
+    },
+    {
+      "name": ["Mahyar Sharifi"],
+      "occupation": ["Internship"],
+      "affiliation": ["DataMotto"],
       "url": {},
       "img": {},
-      "lang": ["r"],
+      "lang": ["python"],
       "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
       "profile_img": ["./posts/Dotto/D007-2021-06-29-finland./../../assets/img/dotto.png"]
     }
@@ -28,7 +38,11 @@
   "tech": [
     {
       "lang": ["r"],
-      "pkgs": ["dplyer, ggplot2"]
+      "pkgs": ["dplyr", "ggplot2"]
+    },
+    {
+      "lang": ["python"],
+      "pkgs": ["pandas", "seaborn"]
     }
   ],
   "date": {
