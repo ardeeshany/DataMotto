@@ -134,8 +134,8 @@ export default {
         "url": ["https://www.linkedin.com/in/parnian-jahangiri-rad-4603611b4"],
         "img": ["Parnian-Jahangiri-Rad.jpg"],
         "lang": ["r , python"],
-        "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
-        "profile_img": ["./posts/Dotto/D005-2021-06-22-basic-data-structure./../../assets/img/dotto.png"]
+        "profile_img_for_Dotto": ["./basic-data-structure_files/figure-html/Parnian-Jahangiri-Rad.jpg"],
+        "profile_img": ["./posts/Dotto/D005-2021-06-22-basic-data-structure/basic-data-structure_files/figure-html/Parnian-Jahangiri-Rad.jpg"]
       }
     ],
     "tech": [
