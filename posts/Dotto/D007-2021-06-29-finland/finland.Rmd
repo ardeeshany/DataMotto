@@ -8,14 +8,8 @@ author:
     occupation: "Internship"
     affiliation: "DataMotto"
     url: "https://www.linkedin.com/in/mahyar-sharifi-06126616a"
-    img: NULL
+    img: "Mahyar.jpg"
     lang: ["python", "r"]
-  - name: "Mahyar Sharifi"
-    occupation: "Internship"
-    affiliation: "DataMotto"
-    url: NULL
-    img: NULL
-    lang: "python"
 tech:
   - lang: r
     pkgs: ["dplyr", "ggplot2"]
@@ -26,7 +20,7 @@ date:
   last_updated: "2021-06-29"
 categories: "Storyteller"
 applications: "Governance"
-cover_image: NULL
+cover_image: "Mahyar.jpg"
 slug: "finland"
 output: DataMotto::Dotto
 ---
