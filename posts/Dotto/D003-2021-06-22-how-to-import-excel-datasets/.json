@@ -1,0 +1,47 @@
+{
+  "file_name": ["how-to-import-excel-datasets-"],
+  "dir_name": ["D003-2021-06-22-how-to-import-excel-datasets"],
+  "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+  "link": ["posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [3],
+  "dotto_label": ["D003"],
+  "dotto_id": ["9b093546-d342-11eb-a85d-acbc32baed85"],
+  "title": ["How to import excel datasets?"],
+  "description": ["Import data from Excel file.\n"],
+  "author": [
+    {
+      "name": ["Mohsen Jalali"],
+      "occupation": ["Data Scientist"],
+      "affiliation": ["DataMotto"],
+      "url": ["mohsenjalali.ir"],
+      "img": ["Mohsen-Jalali.JPG"],
+      "lang": ["Python"],
+      "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+      "profile_img": ["./posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets./../../assets/img/dotto.png"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": ["readxl"]
+    },
+    {
+      "lang": ["python"],
+      "pkgs": ["pandas"]
+    }
+  ],
+  "date": {
+    "created": ["2021-07-02"],
+    "last_updated": ["2021-07-02"]
+  },
+  "categories": ["Importing"],
+  "applications": ["General"],
+  "cover_image": {},
+  "slug": ["how-to-import-excel-datasets-"],
+  "output": ["DataMotto::Dotto"]
+}
