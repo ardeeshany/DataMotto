@@ -96,7 +96,7 @@ print("n=",n," m=",m," x=",x)
 ```{block, Dot = 2, part = "Instruction", lang = "r"}
 R.Vector is a basic data structure in R which contains element of the same type.
 The data types can be logical, integer, double, character, complex or raw.
-for more information,visit[here](https://www.datamentor.io/r-programming/vector/)
+for more information,visit [here](https://www.datamentor.io/r-programming/vector/)
 ```
 
 <!-- Dot 2, lang: python ------------------------------------------------>
@@ -178,7 +178,7 @@ One of the most important uses of factors is in statistical modeling; since
 categorical variables enter into statistical models differently than continuous 
 variables, storing data as factors insures that the modeling functions will 
 treat such data correctly.
-for more information,see[this](https://www.datamentor.io/r-programming/factor/)
+for more information,see [this](https://www.datamentor.io/r-programming/factor/)
 ```
 <!-- Dot 3, lang: python ------------------------------------------------>
 ```{block, Dot = 3, part = "Instruction", lang = "python"}
@@ -427,7 +427,7 @@ for number in dict1.keys():
 R. Data Frame is a special case of a list where all elements are the same 
 length.The main usage of data frame is storing tabular data.
 Data Frames can be created using data.frame().
-you can also see https://www.datamentor.io/r-programming/data-frame/
+you can also see [here](https://www.datamentor.io/r-programming/data-frame/)
 ```
 
 <!-- Dot 6, lang: python ------------------------------------------------>
