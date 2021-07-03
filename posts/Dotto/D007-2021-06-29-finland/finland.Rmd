@@ -122,7 +122,7 @@ data_grouped_country <- summarise(data_grouped_country, Mean.Life.Ladder = mean(
 
 # Sort the New data_grouped_country by Life Ladder column
 happiest_country <- arrange(data_grouped_country, desc(Mean.Life.Ladder))
-head(happiest_country, 8)
+head(happiest_country, 5)
 
 #Identify and select five-top country
 as.vector(t(happiest_country[1:5,1]))
@@ -136,7 +136,7 @@ data_grouped_country <- summarise(data_grouped_country, Mean.Life.Ladder = mean(
 
 # Sort the New Dataset by Life Ladder column
 happiest_country <- arrange(data_grouped_country, desc(Mean.Life.Ladder))
-head(happiest_country, 8)
+head(happiest_country, 5)
 
 as.vector(t(happiest_country[1:5,1]))
 
@@ -179,7 +179,7 @@ Finland, Denmark, Switzerland, Norway, and Iceland were identified as the happie
 # Select New Dataset for the Top-five Happiest Country
 data_top_five = filter(data, Country.name %in% 
                          as.vector(t(happiest_country[1:5,1])))
-head(data_top_five, 50)
+head(data_top_five, 5)
 
 ```
 
@@ -187,7 +187,7 @@ head(data_top_five, 50)
 # Select New Dataset for the Top-five Happiest Country
 data_top_five = filter(data, Country.name %in% 
                          as.vector(t(happiest_country[1:5,1])))
-head(data_top_five, 50)
+head(data_top_five, 5)
 
 ```
 
