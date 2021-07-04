@@ -13,7 +13,7 @@ tech:
   - lang: r
     pkgs: ["ggplot2", "dplyr"]
   - lang: python
-    pkgs: ["seaborn", "pands"]
+    pkgs: ["seaborn", "pandas"]
 date:
   created: "2021-06-22"
   last_updated: "2021-06-22"
