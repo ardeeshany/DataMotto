@@ -211,14 +211,14 @@ covidDatasetLocal.head(10)
 ```{block, Dot = 4, part = "Instruction", lang = "r"}
 - **How Does It Work?**
 
-In some situations, we want to import some columns or import specific sheet of excel. Now we want to handle this when we importing the excel file.
+In some situations, we want to import some columns or a specific sheet of excel. Now we want to handle this when we import the excel file.
 
 ```
 
 ```{block, Dot = 4, part = "Instruction", lang = "python"}
 - **How Does It Work?**
 
-In some situations, we want to import some columns or import specific sheet of excel. Now we want to handle this when we importing the excel file.
+In some situations, we want to import some columns or a specific sheet of excel. Now we want to handle this when we import the excel file.
 
 ```
 
@@ -261,14 +261,14 @@ covidDatasetLocal.head(10)
 ```{block, Dot = 5, part = "Instruction", lang = "r"}
 - **How Does It Work?**
 
-when our dataset is so big we can load specific number of row in our project.
+when our dataset is so big we can load a specific number of rows in our project.
 
 ```
 
 ```{block, Dot = 5, part = "Instruction", lang = "python"}
 - **How Does It Work?**
 
-when our dataset is so big we can load specific number of row in our project.
+when our dataset is so big we can load a specific number of rows in our project.
 
 ```
 
