@@ -1,5 +1,5 @@
 ---
-title: "Finland"
+title: "How does Finland become the happiest country"
 description: |
   The World Happiness dataset contains six factors to measure global happiness: life expectancy, economics, social support, absence of corruption, freedom, and generosity. These factors were reported for 166 countries around the world from 2005 to 2020. In this Dotto, we want to find the top five happiest countries then plot the happiness rate for these countries from 2015 to 2019.
   
@@ -48,26 +48,15 @@ library(dplyr)
 library(ggplot2)
 
 #read world happiness dataset
-data <- read.csv('Dataset/world-happiness-report.csv', fileEncoding="UTF-8-BOM")
+path = 'Dataset/world-happiness-report.csv'
+
+data <- read.csv(path,
+                 fileEncoding = "UTF-8-BOM")
 head(data)
 
 # Select Dataset from 2015-2019
-data <- filter(data,year %in% c(2015:2019))
-
-```
-
-```{r, Dot = 1, part = "Result", echo = F, eval = T}
-#load library
-library(dplyr)
-library(ggplot2)
-
-#read world happiness dataset
-data <- read.csv('Dataset/world-happiness-report.csv', fileEncoding="UTF-8-BOM")
-head(data)
-
-# Select Dataset from 2015-2019
-data <- filter(data,year %in% c(2015:2019))
-
+data <- filter(data, 
+               year %in% c(2015:2019))
 
 ```
 
@@ -77,11 +66,32 @@ import pandas as pd
 import seaborn as sns
 
 #read world happiness dataset
-data = pd.read_csv('Dataset/world-happiness-report.csv')
+path = 'Dataset/world-happiness-report.csv'
+
+data = pd.read_csv(path)
 data.shape
 
 # Select Dataset from 2015-2019
-data = data[data['year'].isin(range(2015,2020))]
+data = data[data['year'].isin(range(2015, 2020))]
+
+```
+
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
+#load library
+library(dplyr)
+library(ggplot2)
+
+#read world happiness dataset
+path = 'Dataset/world-happiness-report.csv'
+
+data <- read.csv(path,
+                 fileEncoding = "UTF-8-BOM")
+
+head(data)
+
+# Select Dataset from 2015-2019
+data <- filter(data,
+               year %in% c(2015:2019))
 
 ```
 
@@ -91,7 +101,9 @@ import pandas as pd
 import seaborn as sns
 
 #read world happiness dataset
-data = pd.read_csv('Dataset/world-happiness-report.csv')
+path = 'Dataset/world-happiness-report.csv'
+
+data = pd.read_csv(path)
 data.shape
 
 # Select Dataset from 2015-2019
@@ -125,6 +137,17 @@ as.vector(t(happiest_country[1:5,1]))
 
 ```
 
+```{python, Dot = 2, part = "Code", echo = T, eval = F}
+#Calculate Mean of Life Ladder for Each Country during 2015-2019
+data_grouped = data.groupby('Country name').mean()
+data_grouped
+
+#Sort data_grouped by Life Ladder Column
+sorted_data = data_grouped.sort_values(['Life Ladder'],
+          ascending = False)
+
+```
+
 ```{r, Dot = 2, part = "Result", echo = F, eval = T}
 # Grouping Data by Country
 data_grouped_country <- group_by(data, Country.name)
@@ -135,17 +158,6 @@ happiest_country <- arrange(data_grouped_country, desc(Mean.Life.Ladder))
 head(happiest_country, 5)
 
 as.vector(t(happiest_country[1:5,1]))
-
-```
-
-```{python, Dot = 2, part = "Code", echo = T, eval = F}
-#Calculate Mean of Life Ladder for Each Country during 2015-2019
-data_grouped = data.groupby('Country name').mean()
-data_grouped
-
-#Sort data_grouped by Life Ladder Column
-sorted_data = data_grouped.sort_values(['Life Ladder'],
-          ascending = False)
 
 ```
 
@@ -181,17 +193,17 @@ head(data_top_five, 5)
 
 ```
 
+```{python, Dot = 3, part = "Code", echo = T, eval = F}
+# Select New Dataset for the Top-five Happiest Country
+data_top_five = data[(data['Country name'].isin(sorted_data.index[:5]))]
+
+```
+
 ```{r, Dot = 3, part = "Result", echo = F, eval = T}
 # Select New Dataset for the Top-five Happiest Country
 data_top_five = filter(data, Country.name %in% 
                          as.vector(t(happiest_country[1:5,1])))
 head(data_top_five, 5)
-
-```
-
-```{python, Dot = 3, part = "Code", echo = T, eval = F}
-# Select New Dataset for the Top-five Happiest Country
-data_top_five = data[(data['Country name'].isin(sorted_data.index[:5]))]
 
 ```
 
@@ -228,6 +240,16 @@ ggplot(data = data_top_five,
 
 ```
 
+```{python, Dot = 4, part = "Code", echo = T, eval = F}
+# Plot a catplot for the top-5 Happiest Country
+sns.catplot(data = data_top_five,
+            x ='year',
+            y = 'Life Ladder',
+            hue ='Country name',
+            kind = 'point')
+
+```
+
 ```{r, Dot = 4, part = "Result", echo = F, eval = T}
 # Plot a catplot for the top-5 Happiest Country
 ggplot(data = data_top_five,
@@ -237,24 +259,14 @@ ggplot(data = data_top_five,
   geom_line(mapping = aes())+
   geom_path(size = 0.9)
 
-# Plot a catplot for the top-5 Happiest Country
-ggplot(data = data_top_five,
-       mapping = aes(x = year, y=Life.Ladder, 
-                     color=Country.name))+
-  geom_point(mapping = aes(),size=3)+
-  geom_line(mapping = aes())+
-  geom_path(size = 0.9)
-
-```
-
-```{python, Dot = 4, part = "Code", echo = T, eval = F}
-# Plot a catplot for the top-5 Happiest Country
-sns.catplot(data = data_top_five , x ='year',y = 'Life Ladder' , hue ='Country name' , kind = 'point')
-
 ```
 
 ```{python, Dot = 4, part = "Result", echo = F, eval = T}
 # Plot a catplot for the top-5 Happiest Country
-sns.catplot(data = data_top_five , x ='year',y = 'Life Ladder' , hue = 'Country name' , kind = 'point')
+sns.catplot(data = data_top_five,
+            x ='year',
+            y = 'Life Ladder',
+            hue ='Country name',
+            kind = 'point')
 
 ```

@@ -11,7 +11,7 @@
   "dotto_number": [7],
   "dotto_label": ["D007"],
   "dotto_id": ["71fa02cc-d85e-11eb-977d-7dcf67d959f1"],
-  "title": ["Finland"],
+  "title": ["How does Finland become the happiest country"],
   "description": ["The World Happiness dataset contains six factors to measure global happiness: life expectancy, economics, social support, absence of corruption, freedom, and generosity. These factors were reported for 166 countries around the world from 2005 to 2020. In this Dotto, we want to find the top five happiest countries then plot the happiness rate for these countries from 2015 to 2019.\n"],
   "author": [
     {
@@ -19,18 +19,8 @@
       "occupation": ["Internship"],
       "affiliation": ["DataMotto"],
       "url": ["https://www.linkedin.com/in/mahyar-sharifi-06126616a"],
-      "img": {},
+      "img": ["Mahyar.jpg"],
       "lang": ["python", "r"],
-      "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
-      "profile_img": ["./posts/Dotto/D007-2021-06-29-finland./../../assets/img/dotto.png"]
-    },
-    {
-      "name": ["Mahyar Sharifi"],
-      "occupation": ["Internship"],
-      "affiliation": ["DataMotto"],
-      "url": {},
-      "img": {},
-      "lang": ["python"],
       "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
       "profile_img": ["./posts/Dotto/D007-2021-06-29-finland./../../assets/img/dotto.png"]
     }
@@ -51,7 +41,7 @@
   },
   "categories": ["Storyteller"],
   "applications": ["Governance"],
-  "cover_image": {},
+  "cover_image": ["Mahyar.jpg"],
   "slug": ["finland"],
   "output": ["DataMotto::Dotto"]
 }
