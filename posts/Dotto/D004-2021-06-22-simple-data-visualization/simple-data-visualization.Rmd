@@ -1,7 +1,7 @@
 ---
 title: "Simple Data Visualization"
 description: |
-  Make great data visualizations. A great way to see the power of coding!
+  We've broken the chart types into three broad categories to help with this.
 author:
   - name: "Mohammad Hossein Malekpour"
     occupation: "Data Scientist"
