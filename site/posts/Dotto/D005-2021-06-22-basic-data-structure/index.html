@@ -1017,30 +1017,34 @@ Please visit <a href="https://medium.com/swlh/data-structure-conversion-f99d3ff9
 <div v-if="activeLang === 'r'" class="mx-2">
 
 <div class="sourceCode" id="cb70"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="co">#create data frame using data.frame():</span></span>
-<span id="cb70-2"><a href="#cb70-2"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="st">&quot;SN&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>=<span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">15</span>),<span class="st">&quot;Name&quot;</span>=<span class="kw">c</span>(<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Dora&quot;</span>))</span>
-<span id="cb70-3"><a href="#cb70-3"></a><span class="co">#number of rows and columns :</span></span>
-<span id="cb70-4"><a href="#cb70-4"></a><span class="kw">dim</span>(df1) </span>
-<span id="cb70-5"><a href="#cb70-5"></a><span class="co">#access column &quot;Name&quot; :</span></span>
-<span id="cb70-6"><a href="#cb70-6"></a>df1[[<span class="st">&quot;Name&quot;</span>]] </span>
-<span id="cb70-7"><a href="#cb70-7"></a><span class="co">#access 1st row of df1(Matrix subsetting) :</span></span>
-<span id="cb70-8"><a href="#cb70-8"></a>df1[<span class="dv">1</span>, ]</span>
-<span id="cb70-9"><a href="#cb70-9"></a><span class="co">#access 2nd column of df1(Matrix subsetting) :</span></span>
-<span id="cb70-10"><a href="#cb70-10"></a>df1[, <span class="dv">2</span> ]</span>
-<span id="cb70-11"><a href="#cb70-11"></a><span class="co">#modify one component of data frame :</span></span>
-<span id="cb70-12"><a href="#cb70-12"></a>df1[<span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>] &lt;-<span class="st"> </span><span class="dv">30</span> </span>
-<span id="cb70-13"><a href="#cb70-13"></a><span class="co">#add a new record to data frame using rbind():</span></span>
-<span id="cb70-14"><a href="#cb70-14"></a>df1 &lt;-<span class="kw">rbind</span>(df1,<span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">16</span>,<span class="st">&quot;Paul&quot;</span>)) </span>
-<span id="cb70-15"><a href="#cb70-15"></a>df1 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1,<span class="dt">State=</span><span class="kw">c</span>(<span class="st">&quot;NY&quot;</span>,<span class="st">&quot;FL&quot;</span>)) <span class="co">#add a new column to data frame</span></span>
-<span id="cb70-16"><a href="#cb70-16"></a>df1</span>
-<span id="cb70-17"><a href="#cb70-17"></a><span class="co">#delete column &quot;state&quot; of df1 :</span></span>
-<span id="cb70-18"><a href="#cb70-18"></a>df1<span class="op">$</span>State &lt;-<span class="st"> </span><span class="ot">NULL</span> </span>
-<span id="cb70-19"><a href="#cb70-19"></a><span class="co">#delete rows using reassignments :</span></span>
-<span id="cb70-20"><a href="#cb70-20"></a>df1 &lt;-<span class="st"> </span>df1[<span class="op">-</span><span class="dv">1</span>,]</span>
-<span id="cb70-21"><a href="#cb70-21"></a><span class="co"># Convert list to dataframe :</span></span>
-<span id="cb70-22"><a href="#cb70-22"></a>lis1 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;a&quot;</span> =<span class="st"> </span><span class="ot">TRUE</span>, <span class="st">&quot;b&quot;</span> =<span class="st"> &quot;hello&quot;</span>, <span class="st">&quot;c&quot;</span> =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb70-23"><a href="#cb70-23"></a><span class="kw">as.data.frame</span>(lis1)</span>
-<span id="cb70-24"><a href="#cb70-24"></a><span class="co"># convert dataframe to numeric matrix :</span></span>
-<span id="cb70-25"><a href="#cb70-25"></a><span class="kw">as.matrix</span>(df1)</span></code></pre></div>
+<span id="cb70-2"><a href="#cb70-2"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="st">&quot;SN&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">2</span></span>
+<span id="cb70-3"><a href="#cb70-3"></a>                  ,<span class="st">&quot;Age&quot;</span>=<span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">15</span>)</span>
+<span id="cb70-4"><a href="#cb70-4"></a>                  ,<span class="st">&quot;Name&quot;</span>=<span class="kw">c</span>(<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Dora&quot;</span>))</span>
+<span id="cb70-5"><a href="#cb70-5"></a><span class="co">#number of rows and columns :</span></span>
+<span id="cb70-6"><a href="#cb70-6"></a><span class="kw">dim</span>(df1) </span>
+<span id="cb70-7"><a href="#cb70-7"></a><span class="co">#access column &quot;Name&quot; :</span></span>
+<span id="cb70-8"><a href="#cb70-8"></a>df1[[<span class="st">&quot;Name&quot;</span>]] </span>
+<span id="cb70-9"><a href="#cb70-9"></a><span class="co">#access 1st row of df1(Matrix subsetting) :</span></span>
+<span id="cb70-10"><a href="#cb70-10"></a>df1[<span class="dv">1</span>, ]</span>
+<span id="cb70-11"><a href="#cb70-11"></a><span class="co">#access 2nd column of df1(Matrix subsetting) :</span></span>
+<span id="cb70-12"><a href="#cb70-12"></a>df1[, <span class="dv">2</span> ]</span>
+<span id="cb70-13"><a href="#cb70-13"></a><span class="co">#modify one component of data frame :</span></span>
+<span id="cb70-14"><a href="#cb70-14"></a>df1[<span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>] &lt;-<span class="st"> </span><span class="dv">30</span> </span>
+<span id="cb70-15"><a href="#cb70-15"></a><span class="co">#add a new record to data frame using rbind():</span></span>
+<span id="cb70-16"><a href="#cb70-16"></a>df1 &lt;-<span class="kw">rbind</span>(df1,</span>
+<span id="cb70-17"><a href="#cb70-17"></a>            <span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">16</span>,<span class="st">&quot;Paul&quot;</span>)) </span>
+<span id="cb70-18"><a href="#cb70-18"></a>df1 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1,</span>
+<span id="cb70-19"><a href="#cb70-19"></a>             <span class="dt">State=</span><span class="kw">c</span>(<span class="st">&quot;NY&quot;</span>,<span class="st">&quot;FL&quot;</span>)) <span class="co">#add a new column to data frame</span></span>
+<span id="cb70-20"><a href="#cb70-20"></a>df1</span>
+<span id="cb70-21"><a href="#cb70-21"></a><span class="co">#delete column &quot;state&quot; of df1 :</span></span>
+<span id="cb70-22"><a href="#cb70-22"></a>df1<span class="op">$</span>State &lt;-<span class="st"> </span><span class="ot">NULL</span> </span>
+<span id="cb70-23"><a href="#cb70-23"></a><span class="co">#delete rows using reassignments :</span></span>
+<span id="cb70-24"><a href="#cb70-24"></a>df1 &lt;-<span class="st"> </span>df1[<span class="op">-</span><span class="dv">1</span>,]</span>
+<span id="cb70-25"><a href="#cb70-25"></a><span class="co"># Convert list to dataframe :</span></span>
+<span id="cb70-26"><a href="#cb70-26"></a>lis1 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;a&quot;</span> =<span class="st"> </span><span class="ot">TRUE</span>, <span class="st">&quot;b&quot;</span> =<span class="st"> &quot;hello&quot;</span>, <span class="st">&quot;c&quot;</span> =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
+<span id="cb70-27"><a href="#cb70-27"></a><span class="kw">as.data.frame</span>(lis1)</span>
+<span id="cb70-28"><a href="#cb70-28"></a><span class="co"># convert dataframe to numeric matrix :</span></span>
+<span id="cb70-29"><a href="#cb70-29"></a><span class="kw">as.matrix</span>(df1)</span></code></pre></div>
 
 </div>
  
@@ -1050,25 +1054,30 @@ Please visit <a href="https://medium.com/swlh/data-structure-conversion-f99d3ff9
 <div v-if="activeLang === 'python'" class="mx-2">
 
 <div class="sourceCode" id="cb71"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb71-2"><a href="#cb71-2"></a>data_frame1 <span class="op">=</span> pd.DataFrame({<span class="st">&quot;apple&quot;</span> :[<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>],<span class="st">&quot;orange&quot;</span> :[<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>],</span>
-<span id="cb71-3"><a href="#cb71-3"></a><span class="st">&quot;lemon&quot;</span>:[<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">11</span>,<span class="dv">12</span>]},index<span class="op">=</span>[<span class="st">&quot;Joe&quot;</span>,<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Matt&quot;</span>,<span class="st">&quot;Hannah&quot;</span>])</span>
-<span id="cb71-4"><a href="#cb71-4"></a><span class="bu">print</span>(data_frame1)</span>
-<span id="cb71-5"><a href="#cb71-5"></a>data_frame1.head(<span class="dv">2</span>)<span class="co">#rows 1 and 2 of data_frame1</span></span>
-<span id="cb71-6"><a href="#cb71-6"></a>data_frame1.tail(<span class="dv">1</span>)</span>
-<span id="cb71-7"><a href="#cb71-7"></a>data_frame1.describe()</span>
-<span id="cb71-8"><a href="#cb71-8"></a><span class="co">#choose column :</span></span>
-<span id="cb71-9"><a href="#cb71-9"></a>data_frame1 [ [<span class="st">&quot;apple&quot;</span> , <span class="st">&quot;lemon&quot;</span>] ] </span>
-<span id="cb71-10"><a href="#cb71-10"></a><span class="co">#choose row :</span></span>
-<span id="cb71-11"><a href="#cb71-11"></a>data_frame1 [<span class="dv">0</span>:<span class="dv">2</span>] </span>
-<span id="cb71-12"><a href="#cb71-12"></a><span class="co">#number of apples and lemons of people with 8 oranges:</span></span>
-<span id="cb71-13"><a href="#cb71-13"></a>data_frame1 [ data_frame1.orange <span class="op">==</span> <span class="dv">8</span>][ [<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;lemon&quot;</span>] ]</span>
-<span id="cb71-14"><a href="#cb71-14"></a><span class="co">#convert list to dataframe :</span></span>
-<span id="cb71-15"><a href="#cb71-15"></a>lis1 <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
-<span id="cb71-16"><a href="#cb71-16"></a>dataframe_from_lis1 <span class="op">=</span> pd.DataFrame(lis1)</span>
-<span id="cb71-17"><a href="#cb71-17"></a><span class="co">#convert dictionary to dataframe :</span></span>
-<span id="cb71-18"><a href="#cb71-18"></a>dic1 <span class="op">=</span> {<span class="st">&quot;col_1&quot;</span> : [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span> ] , <span class="st">&quot;col_2&quot;</span> : [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span> ]}</span>
-<span id="cb71-19"><a href="#cb71-19"></a><span class="co"># parameter &#39;orient&#39; :If the keys of the passed dict should be the columns of the resulting # DataFrame, pass ‘columns’ (default). Otherwise if the keys should be rows, pass ‘index’.</span></span>
-<span id="cb71-20"><a href="#cb71-20"></a>pd.DataFrame.from_dict(dic1, orient<span class="op">=</span><span class="st">&#39;columns&#39;</span> , dtype<span class="op">=</span><span class="va">None</span>, columns<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
+<span id="cb71-2"><a href="#cb71-2"></a>data_frame1 <span class="op">=</span> pd.DataFrame({<span class="st">&quot;apple&quot;</span> :[<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>],</span>
+<span id="cb71-3"><a href="#cb71-3"></a><span class="st">&quot;orange&quot;</span> :[<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>],</span>
+<span id="cb71-4"><a href="#cb71-4"></a><span class="st">&quot;lemon&quot;</span>:[<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">11</span>,<span class="dv">12</span>]},</span>
+<span id="cb71-5"><a href="#cb71-5"></a>index<span class="op">=</span>[<span class="st">&quot;Joe&quot;</span>,<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Matt&quot;</span>,<span class="st">&quot;Hannah&quot;</span>])</span>
+<span id="cb71-6"><a href="#cb71-6"></a><span class="bu">print</span>(data_frame1)</span>
+<span id="cb71-7"><a href="#cb71-7"></a>data_frame1.head(<span class="dv">2</span>)<span class="co">#rows 1 and 2 of data_frame1</span></span>
+<span id="cb71-8"><a href="#cb71-8"></a>data_frame1.tail(<span class="dv">1</span>)</span>
+<span id="cb71-9"><a href="#cb71-9"></a>data_frame1.describe()</span>
+<span id="cb71-10"><a href="#cb71-10"></a><span class="co">#choose column :</span></span>
+<span id="cb71-11"><a href="#cb71-11"></a>data_frame1 [ [<span class="st">&quot;apple&quot;</span> , <span class="st">&quot;lemon&quot;</span>] ] </span>
+<span id="cb71-12"><a href="#cb71-12"></a><span class="co">#choose row :</span></span>
+<span id="cb71-13"><a href="#cb71-13"></a>data_frame1 [<span class="dv">0</span>:<span class="dv">2</span>] </span>
+<span id="cb71-14"><a href="#cb71-14"></a><span class="co">#number of apples and lemons of people with 8 oranges:</span></span>
+<span id="cb71-15"><a href="#cb71-15"></a>data_frame1 [ data_frame1.orange <span class="op">==</span> <span class="dv">8</span>][ [<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;lemon&quot;</span>] ]</span>
+<span id="cb71-16"><a href="#cb71-16"></a><span class="co">#convert list to dataframe :</span></span>
+<span id="cb71-17"><a href="#cb71-17"></a>lis1 <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
+<span id="cb71-18"><a href="#cb71-18"></a>dataframe_from_lis1 <span class="op">=</span> pd.DataFrame(lis1)</span>
+<span id="cb71-19"><a href="#cb71-19"></a><span class="co">#convert dictionary to dataframe :</span></span>
+<span id="cb71-20"><a href="#cb71-20"></a>dic1 <span class="op">=</span> {<span class="st">&quot;col_1&quot;</span> : [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span> ] , <span class="st">&quot;col_2&quot;</span> : [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span> ]}</span>
+<span id="cb71-21"><a href="#cb71-21"></a><span class="co"># parameter &#39;orient&#39; :If the keys of the passed dict should be the columns of the resulting # DataFrame, pass ‘columns’ (default). Otherwise if the keys should be rows, pass ‘index’.</span></span>
+<span id="cb71-22"><a href="#cb71-22"></a>pd.DataFrame.from_dict(dic1, </span>
+<span id="cb71-23"><a href="#cb71-23"></a>    orient<span class="op">=</span><span class="st">&#39;columns&#39;</span> , </span>
+<span id="cb71-24"><a href="#cb71-24"></a>    dtype<span class="op">=</span><span class="va">None</span>, </span>
+<span id="cb71-25"><a href="#cb71-25"></a>    columns<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
 
 </div>
  
