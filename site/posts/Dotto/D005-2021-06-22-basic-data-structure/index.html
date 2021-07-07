@@ -29,7 +29,9 @@
         
       <meta property="og:title" content="Basic Data structures in Python and R" />
       <meta property="og:type" content="article">
-      <meta property="og:description" content="introducing some basic data structures in Python and R.
+      <meta property="og:description" content="This Dotto illustrates how to create , modify and convert data structures
+    like vector,factor,matrix,list and data frame in R, and list, tuple, set,
+    dictionary and data frame in Python.
     " />
       <meta property="og:url" content="https://datamotto.com/posts/dotto/D005-2021-06-22-basic-data-structure/" />
       <meta property="og:locale" content="en_US">
@@ -38,7 +40,9 @@
         
       <meta property="twitter:card" content="summary_large_image">
       <meta property="twitter:title" content="Basic Data structures in Python and R">
-      <meta property="twitter:description" content="introducing some basic data structures in Python and R.
+      <meta property="twitter:description" content="This Dotto illustrates how to create , modify and convert data structures
+    like vector,factor,matrix,list and data frame in R, and list, tuple, set,
+    dictionary and data frame in Python.
     ">
       <meta property="twitter:url" content="https://datamotto.com/posts/dotto/D005-2021-06-22-basic-data-structure/">
       <meta property="twitter:image" content="https://datamotto.com/assets/img/logo.svg">
@@ -96,7 +100,9 @@
 Basic Data structures in Python and R
 </h6>
 <p class="dotto-header-description">
-introducing some basic data structures in Python and R.
+This Dotto illustrates how to create , modify and convert data structures
+like vector,factor,matrix,list and data frame in R, and list, tuple, set,
+dictionary and data frame in Python.
 
 </p>
 <p class="dotto-header-tags">
@@ -264,7 +270,7 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
-<p>R.This Dot illustrates how to define a variable , change variable type and chaning assignment in R.</p>
+<p>This Dot illustrates how to define a variable , change variable type and chaning assignment in R.</p>
 
 </p>
 </div>
@@ -276,7 +282,7 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
 
-<p>Python. This Dot illustrates how to define a variable , change variable type and chaning assignment in Python.</p>
+<p>This Dot illustrates how to define a variable , change variable type and chaning assignment in Python.</p>
 
 </p>
 </div>
@@ -296,14 +302,17 @@ class="btn dotto-main-dot-shape"
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>x &lt;-<span class="st"> &quot;apple&quot;</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>x</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">class</span>(x)<span class="co">#type of object x</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>x &lt;-<span class="st"> </span><span class="dv">10</span> <span class="co">#reassignment</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">class</span>(x) <span class="co">#new type of object x</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co">#chaning assignment in R</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a>y &lt;-<span class="st"> </span>z &lt;-<span class="st"> </span>x</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># Assignment using equal operator</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a>a =<span class="st"> &quot;orange&quot;</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a>a</span></code></pre></div>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#type of object x :</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">class</span>(x)</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#reassignment :</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>x &lt;-<span class="st"> </span><span class="dv">10</span> </span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co">#new type of object x :</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">class</span>(x)</span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co">#chaning assignment in R :</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>y &lt;-<span class="st"> </span>z &lt;-<span class="st"> </span>x</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># Assignment using equal operator</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>a =<span class="st"> &quot;orange&quot;</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>a</span></code></pre></div>
 
 </div>
  
@@ -316,13 +325,14 @@ class="btn dotto-main-dot-shape"
 <span id="cb2-2"><a href="#cb2-2"></a>x <span class="op">=</span> <span class="st">&#39;300&#39;</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="bu">print</span>(<span class="st">&quot;x is :&quot;</span>,x)</span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="bu">print</span>(<span class="st">&quot;x class type:&quot;</span>,<span class="bu">type</span>(x))</span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#change variable type from str to int</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#change variable type from str to int :</span></span>
 <span id="cb2-6"><a href="#cb2-6"></a>x <span class="op">=</span> <span class="bu">int</span>(x)</span>
 <span id="cb2-7"><a href="#cb2-7"></a><span class="bu">print</span>(<span class="st">&quot;new x class type:&quot;</span>,<span class="bu">type</span>(x))</span>
 <span id="cb2-8"><a href="#cb2-8"></a><span class="co">#chained assignmen:</span></span>
 <span id="cb2-9"><a href="#cb2-9"></a>n <span class="op">=</span> m <span class="op">=</span> x</span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="bu">print</span>(n,m,x)</span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="bu">print</span>(<span class="st">&quot;n=&quot;</span>,n,<span class="st">&quot; m=&quot;</span>,m,<span class="st">&quot; x=&quot;</span>,x)</span></code></pre></div>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="bu">print</span>(<span class="st">&quot;n = &quot;</span>,n</span>
+<span id="cb2-11"><a href="#cb2-11"></a>    ,<span class="st">&quot; m = &quot;</span>, m</span>
+<span id="cb2-12"><a href="#cb2-12"></a>    ,<span class="st">&quot; x = &quot;</span>,x)</span></code></pre></div>
 
 </div>
  
@@ -353,8 +363,7 @@ class="btn dotto-main-dot-shape"
 <pre><code>## x is : 300</code></pre>
 <pre><code>## x class type: &lt;class &#39;str&#39;&gt;</code></pre>
 <pre><code>## new x class type: &lt;class &#39;int&#39;&gt;</code></pre>
-<pre><code>## 300 300 300</code></pre>
-<pre><code>## n= 300  m= 300  x= 300</code></pre>
+<pre><code>## n =  300  m =  300  x =  300</code></pre>
 
 </div>
  
@@ -374,7 +383,9 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
-<p>R.Vector is a basic data structure in R which contains element of the same type. The data types can be logical, integer, double, character, complex or raw. for more information,visit <a href="https://www.datamentor.io/r-programming/vector/">here</a></p>
+<p>Vector is a basic data structure in R which contains element of the same type.<br />
+The data types can be logical, integer, double, character, complex or raw.<br />
+for more information,visit <a href="https://www.datamentor.io/r-programming/vector/">here</a></p>
 
 </p>
 </div>
@@ -386,7 +397,8 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
 
-<p>Python. List is a mutable built_in data structure in python that allows us to store sets of information in one place. Lists are one of Python’s most powerful features readily accessible to new programmers, and they tie together many important concepts in programming.</p>
+<p>List is a mutable built_in data structure in python that allows us to store sets of information in one place.<br />
+Lists are one of Python’s most powerful features readily accessible to new programmers, and they tie together many important concepts in programming.</p>
 
 </p>
 </div>
@@ -404,15 +416,15 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb12"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">0</span>) <span class="co">#create vector using c()</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>y &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;logical&quot;</span>,<span class="dt">length =</span> <span class="dv">5</span>)<span class="co">#create vector using vector()</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>y</span>
-<span id="cb12-4"><a href="#cb12-4"></a>x[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co">#access first and second element of vector</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>x [x <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>] <span class="co">#filtering elements of x based on condition</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a>x[<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="dv">10</span> <span class="co">#modify 2nd element of x from 5 to 10</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a>x [x <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span>] &lt;-<span class="st"> </span><span class="dv">3</span> <span class="co">#modify elements less than 3 to 3</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a>y &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co">#delete vector</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a>y</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">0</span>) <span class="co">#create vector using c()</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>y &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;logical&quot;</span>,<span class="dt">length =</span> <span class="dv">5</span>)<span class="co">#create vector using vector()</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>y</span>
+<span id="cb11-4"><a href="#cb11-4"></a>x[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co">#access first and second element of vector</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>x [x <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>] <span class="co">#filtering elements of x based on condition</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>x[<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="dv">10</span> <span class="co">#modify 2nd element of x from 5 to 10</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>x [x <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span>] &lt;-<span class="st"> </span><span class="dv">3</span> <span class="co">#modify elements less than 3 to 3</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>y &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co">#delete vector</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a>y</span></code></pre></div>
 
 </div>
  
@@ -421,22 +433,23 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb13"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>A<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">&quot;Hi&quot;</span>]</span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="bu">print</span>(<span class="st">&quot;last element od list A:&quot;</span>,A[<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb13-3"><a href="#cb13-3"></a>A <span class="op">=</span> [i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">5</span>)]</span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="bu">print</span>(<span class="st">&#39;new list A is:&#39;</span> , A)</span>
-<span id="cb13-5"><a href="#cb13-5"></a>A.insert(<span class="dv">2</span>,<span class="dv">12</span>)<span class="co"># add 12 at position 2 in list</span></span>
-<span id="cb13-6"><a href="#cb13-6"></a>A.append(<span class="dv">4</span>) <span class="co">#add 4 to the end of the list</span></span>
-<span id="cb13-7"><a href="#cb13-7"></a><span class="bu">print</span>(<span class="st">&quot;A after adding 12 at position 2 and appending 4:&quot;</span>,A)</span>
-<span id="cb13-8"><a href="#cb13-8"></a>A.reverse()</span>
-<span id="cb13-9"><a href="#cb13-9"></a><span class="bu">print</span>(<span class="st">&#39;A after reversing:&#39;</span>,A)</span>
-<span id="cb13-10"><a href="#cb13-10"></a><span class="bu">print</span>(<span class="st">&quot;index of element 16 is :&quot;</span>,A.index(<span class="dv">16</span>))</span>
-<span id="cb13-11"><a href="#cb13-11"></a>A.sort(reverse <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb13-12"><a href="#cb13-12"></a><span class="bu">print</span>(<span class="st">&quot;sorted A descending order:&quot;</span>,A)</span>
-<span id="cb13-13"><a href="#cb13-13"></a><span class="bu">print</span>(<span class="st">&quot;number of element 4 in list A:&quot;</span>,A.count(<span class="dv">4</span>))</span>
-<span id="cb13-14"><a href="#cb13-14"></a><span class="bu">print</span>(<span class="st">&quot;A.pop(0) will remove the first element in list A and return it&#39;s value:&quot;</span>)</span>
-<span id="cb13-15"><a href="#cb13-15"></a>A.pop(<span class="dv">0</span>)</span>
-<span id="cb13-16"><a href="#cb13-16"></a><span class="bu">print</span>(<span class="st">&quot;list A after removing it&#39;s first element:&quot;</span>,A)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>A<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">&quot;Hi&quot;</span>]</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="bu">print</span>(<span class="st">&quot;last element od list A:&quot;</span>,A[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb12-3"><a href="#cb12-3"></a>A <span class="op">=</span> [i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">5</span>)]</span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="bu">print</span>(<span class="st">&#39;new list A is:&#39;</span> , A)</span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="co"># add 12 at position 2 in list :</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>A.insert(<span class="dv">2</span>,<span class="dv">12</span>)</span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="co">#add 4 to the end of the list :</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a>A.append(<span class="dv">4</span>)</span>
+<span id="cb12-9"><a href="#cb12-9"></a>A.reverse()</span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="bu">print</span>(<span class="st">&#39;A after reversing:&#39;</span>, A )</span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="bu">print</span>(<span class="st">&quot;index of element 16 is :&quot;</span>, A.index(<span class="dv">16</span>))</span>
+<span id="cb12-12"><a href="#cb12-12"></a>A.sort(reverse <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="bu">print</span>(<span class="st">&quot;sorted A descending order:&quot;</span>, A)</span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="bu">print</span>(<span class="st">&quot;number of element 4 in list A:&quot;</span>, A.count(<span class="dv">4</span>))</span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="bu">print</span>(<span class="st">&quot; A.pop(0) will remove the first element in list A and return it&#39;s value : &quot;</span>)</span>
+<span id="cb12-16"><a href="#cb12-16"></a>A.pop(<span class="dv">0</span>)</span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="bu">print</span>(<span class="st">&quot;list A after removing it&#39;s first element:&quot;</span>, A)</span></code></pre></div>
 
 </div>
  
@@ -464,9 +477,8 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
 
-<pre><code>## last element of list A: Hi</code></pre>
+<pre><code>## last element od list A: Hi</code></pre>
 <pre><code>## new list A is: [1, 4, 9, 16]</code></pre>
-<pre><code>## A after adding 12 at position 2 and appending 4: [1, 4, 12, 9, 16, 4]</code></pre>
 <pre><code>## A after reversing: [4, 16, 9, 12, 4, 1]</code></pre>
 <pre><code>## index of element 16 is : 1</code></pre>
 <pre><code>## sorted A descending order: [16, 12, 9, 4, 4, 1]</code></pre>
@@ -493,7 +505,10 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
-<p>R.Factor is a data structure used to represent categorical data.For example, a data field like gender will contain only values of male,female or other. Factors in R are stored as a vector of integer that each integer has a label. One of the most important uses of factors is in statistical modeling; since categorical variables enter into statistical models differently than continuous variables, storing data as factors insures that the modeling functions will treat such data correctly. for more information,see <a href="https://www.datamentor.io/r-programming/factor/">this</a></p>
+<p>Factor is a data structure used to represent categorical data.<br />
+For example, a data field like gender will contain only values of male,female or other. Factors in R are stored as a vector of integer that each integer has a label.<br />
+One of the most important uses of factors is in statistical modeling; since categorical variables enter into statistical models differently than continuous variables, storing data as factors insures that the modeling functions will treat such data correctly.<br />
+for more information,visit <a href="https://www.datamentor.io/r-programming/factor/">here</a>.</p>
 
 </p>
 </div>
@@ -505,7 +520,8 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
 
-<p>Python. Tuple is an ordered collection of objects in Python. You can’t change tuple atfer defining it(unlike list).</p>
+<p>Tuple is an ordered collection of objects in Python.<br />
+You can’t change tuple atfer defining it(unlike list).</p>
 
 </p>
 </div>
@@ -523,19 +539,25 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb28"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">#create a factor using factor():</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>factor1 &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;male&quot;</span>,<span class="st">&quot;female&quot;</span>,<span class="st">&quot;female&quot;</span>,<span class="st">&quot;male&quot;</span>))</span>
-<span id="cb28-3"><a href="#cb28-3"></a><span class="kw">levels</span>(factor1) <span class="co">#shows levels of factor1</span></span>
-<span id="cb28-4"><a href="#cb28-4"></a><span class="kw">table</span>(factor1) <span class="co">#returns number of each level</span></span>
-<span id="cb28-5"><a href="#cb28-5"></a><span class="co">#we can determine the order of levels:</span></span>
-<span id="cb28-6"><a href="#cb28-6"></a>factor2 &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;fail&quot;</span>,<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;fail&quot;</span>), <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;pass&quot;</span> , <span class="st">&quot;fail&quot;</span>))</span>
-<span id="cb28-7"><a href="#cb28-7"></a>factor2</span>
-<span id="cb28-8"><a href="#cb28-8"></a>factor2[<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>)] <span class="co">#access 3rd and 4th element of factor2</span></span>
-<span id="cb28-9"><a href="#cb28-9"></a><span class="co">#illustrate how to modify elements(CANNOT assign values outside levels):</span></span>
-<span id="cb28-10"><a href="#cb28-10"></a>factor1[<span class="dv">1</span>] &lt;-<span class="st"> &quot;female&quot;</span></span>
-<span id="cb28-11"><a href="#cb28-11"></a><span class="kw">levels</span>(factor1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">levels</span>(factor1),<span class="st">&quot;other&quot;</span>) <span class="co">#adding new level</span></span>
-<span id="cb28-12"><a href="#cb28-12"></a>factor1[<span class="dv">2</span>] &lt;-<span class="st"> &quot;other&quot;</span> <span class="co">#modify 2nd element of factor1</span></span>
-<span id="cb28-13"><a href="#cb28-13"></a>factor1</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co">#create a factor using factor():</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>factor1 &lt;-<span class="st"> </span><span class="kw">factor</span>( <span class="kw">c</span> (<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span> , <span class="st">&quot;female&quot;</span> , <span class="st">&quot;male&quot;</span>) )</span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="co">#shows levels of factor1 :</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="kw">levels</span>(factor1) </span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="co">#returns number of each level :</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="kw">table</span>(factor1) </span>
+<span id="cb26-7"><a href="#cb26-7"></a><span class="co">#we can determine the order of levels:</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a>factor2 &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;fail&quot;</span>,<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;fail&quot;</span>),</span>
+<span id="cb26-9"><a href="#cb26-9"></a>                  <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;pass&quot;</span> , <span class="st">&quot;fail&quot;</span>))</span>
+<span id="cb26-10"><a href="#cb26-10"></a>factor2</span>
+<span id="cb26-11"><a href="#cb26-11"></a><span class="co">#access 3rd and 4th element of factor2 :</span></span>
+<span id="cb26-12"><a href="#cb26-12"></a>factor2[<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>)] </span>
+<span id="cb26-13"><a href="#cb26-13"></a><span class="co">#illustrate how to modify elements(CANNOT assign values outside levels):</span></span>
+<span id="cb26-14"><a href="#cb26-14"></a>factor1[<span class="dv">1</span>] &lt;-<span class="st"> &quot;female&quot;</span></span>
+<span id="cb26-15"><a href="#cb26-15"></a><span class="co">#adding new level :</span></span>
+<span id="cb26-16"><a href="#cb26-16"></a><span class="kw">levels</span>(factor1) &lt;-<span class="st"> </span><span class="kw">c</span>( <span class="kw">levels</span> (factor1) , <span class="st">&quot;other&quot;</span>) </span>
+<span id="cb26-17"><a href="#cb26-17"></a><span class="co">#modify 2nd element of factor1 :</span></span>
+<span id="cb26-18"><a href="#cb26-18"></a>factor1[<span class="dv">2</span>] &lt;-<span class="st"> &quot;other&quot;</span> </span>
+<span id="cb26-19"><a href="#cb26-19"></a>factor1</span></code></pre></div>
 
 </div>
  
@@ -544,20 +566,22 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb29"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>t1 <span class="op">=</span> (<span class="st">&quot;hello&quot;</span>,<span class="dv">5</span>,<span class="dv">4</span>)</span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="bu">print</span>(<span class="st">&quot;second elemnt of tuple t1:&quot;</span>,t1[<span class="dv">1</span>])</span>
-<span id="cb29-3"><a href="#cb29-3"></a><span class="cf">try</span>:</span>
-<span id="cb29-4"><a href="#cb29-4"></a>  t1[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&quot;good&quot;</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a><span class="cf">except</span> <span class="pp">TypeError</span>:</span>
-<span id="cb29-6"><a href="#cb29-6"></a>  <span class="bu">print</span>(<span class="st">&quot;&#39;tuple&#39; object does not support item assignment(immutable)&quot;</span>)</span>
-<span id="cb29-7"><a href="#cb29-7"></a>t2 <span class="op">=</span>  t1 <span class="op">+</span> (<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>)</span>
-<span id="cb29-8"><a href="#cb29-8"></a><span class="bu">print</span>(<span class="st">&quot;t2 is :&quot;</span>,t2)</span>
-<span id="cb29-9"><a href="#cb29-9"></a><span class="co">#showing packing and unpacking variables with tuple</span></span>
-<span id="cb29-10"><a href="#cb29-10"></a><span class="bu">print</span>(<span class="st">&quot;t2 is : &quot;</span>,t2)</span>
-<span id="cb29-11"><a href="#cb29-11"></a>(a,b,c) <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">11</span>,<span class="st">&quot;apple&quot;</span>)</span>
-<span id="cb29-12"><a href="#cb29-12"></a><span class="bu">print</span>(<span class="st">&quot;a :&quot;</span>,a,<span class="st">&quot; ,b :&quot;</span>,b ,<span class="st">&quot; ,c :&quot;</span>,c)</span>
-<span id="cb29-13"><a href="#cb29-13"></a>a , c <span class="op">=</span> c, a</span>
-<span id="cb29-14"><a href="#cb29-14"></a><span class="bu">print</span>(<span class="st">&quot;new a :&quot;</span>,a,<span class="st">&quot; ,new c :&quot;</span>,c)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>t1 <span class="op">=</span> (<span class="st">&quot;hello&quot;</span>,<span class="dv">5</span>,<span class="dv">4</span>)</span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="bu">print</span>(<span class="st">&quot;second elemnt of tuple t1:&quot;</span> , t1[<span class="dv">1</span>])</span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="cf">try</span>:</span>
+<span id="cb27-4"><a href="#cb27-4"></a>  t1[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&quot;good&quot;</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="cf">except</span> <span class="pp">TypeError</span>:</span>
+<span id="cb27-6"><a href="#cb27-6"></a>  <span class="bu">print</span>(<span class="st">&quot;&#39;tuple&#39; object does not support item assignment(immutable)&quot;</span>)</span>
+<span id="cb27-7"><a href="#cb27-7"></a>t2 <span class="op">=</span>  t1 <span class="op">+</span> (<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>)</span>
+<span id="cb27-8"><a href="#cb27-8"></a><span class="bu">print</span>(<span class="st">&quot;t2 is :&quot;</span> ,  t2)</span>
+<span id="cb27-9"><a href="#cb27-9"></a><span class="co">#showing packing and unpacking variables with tuple</span></span>
+<span id="cb27-10"><a href="#cb27-10"></a><span class="bu">print</span>(<span class="st">&quot;t2 is : &quot;</span> , t2)</span>
+<span id="cb27-11"><a href="#cb27-11"></a>(a , b , c) <span class="op">=</span> ( <span class="dv">10</span> , <span class="dv">11</span> , <span class="st">&quot;apple&quot;</span> )</span>
+<span id="cb27-12"><a href="#cb27-12"></a><span class="bu">print</span>(<span class="st">&quot;a :&quot;</span>,a</span>
+<span id="cb27-13"><a href="#cb27-13"></a>      ,<span class="st">&quot; ,b :&quot;</span>,b </span>
+<span id="cb27-14"><a href="#cb27-14"></a>      ,<span class="st">&quot; ,c :&quot;</span>,c)</span>
+<span id="cb27-15"><a href="#cb27-15"></a>a , c <span class="op">=</span> c, a</span>
+<span id="cb27-16"><a href="#cb27-16"></a><span class="bu">print</span>(<span class="st">&quot;new a :&quot;</span>,a,<span class="st">&quot; ,new c :&quot;</span>,c)</span></code></pre></div>
 
 </div>
  
@@ -616,7 +640,11 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
-<p>R.Matrix is a two dimensional data structure in R programming. Matrix is similar to vector but additionally contains the dimension attribute. All attributes of an object can be checked with the attributes() function (dimension can be checked directly with the dim() function). for more information ,see <a href="https://www.datamentor.io/r-programming/matrix/">this</a></p>
+<p>Matrix is a two dimensional data structure in R programming.<br />
+Matrix is similar to vector but additionally contains the dimension attribute.<br />
+All attributes of an object can be checked with the attributes() function (dimension can be checked directly with the <code>dim()</code> function ).<br />
+<code>as.matrix()</code> is used to convert an object into a matrix.<br />
+for more information ,see <a href="https://www.datamentor.io/r-programming/matrix/">this</a>.</p>
 
 </p>
 </div>
@@ -628,7 +656,7 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
 
-<p>Python. Set is a built_in data structure in Python which is unordered , and has no duplicate values.</p>
+<p>Set is a built_in data structure in Python which is unordered , and has no duplicate values.</p>
 
 </p>
 </div>
@@ -646,17 +674,25 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb41"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>matrix1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>,<span class="dt">nrow=</span><span class="dv">3</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>,<span class="dt">dimnames=</span><span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;X&quot;</span>,<span class="st">&quot;Y&quot;</span>,<span class="st">&quot;Z&quot;</span>),</span>
-<span id="cb41-2"><a href="#cb41-2"></a>                                                      <span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)))</span>
-<span id="cb41-3"><a href="#cb41-3"></a>matrix1</span>
-<span id="cb41-4"><a href="#cb41-4"></a><span class="co">#create matrix using cbind() ( and rbind() ):</span></span>
-<span id="cb41-5"><a href="#cb41-5"></a>matrix2 &lt;-<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>( <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>) , <span class="kw">c</span>( <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>))</span>
-<span id="cb41-6"><a href="#cb41-6"></a>matrix2</span>
-<span id="cb41-7"><a href="#cb41-7"></a>matrix2[<span class="dv">3</span>,<span class="dv">2</span>] <span class="co">#select an element</span></span>
-<span id="cb41-8"><a href="#cb41-8"></a>matrix2[<span class="dv">3</span>, ] <span class="co">#select 3rd row of matrix2</span></span>
-<span id="cb41-9"><a href="#cb41-9"></a>matrix2[ ,<span class="dv">2</span>] <span class="co">#select 2nd column of matrix2</span></span>
-<span id="cb41-10"><a href="#cb41-10"></a><span class="kw">t</span>(matrix2) <span class="co">#transpose of matrix2</span></span>
-<span id="cb41-11"><a href="#cb41-11"></a>matrix1 <span class="op">%*%</span><span class="st"> </span>matrix2 <span class="co">#matrix multiplication</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>matrix1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>,</span>
+<span id="cb39-2"><a href="#cb39-2"></a>                  <span class="dt">nrow=</span><span class="dv">3</span>,</span>
+<span id="cb39-3"><a href="#cb39-3"></a>                  <span class="dt">byrow=</span><span class="ot">TRUE</span>,</span>
+<span id="cb39-4"><a href="#cb39-4"></a>                  <span class="dt">dimnames=</span><span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;X&quot;</span>,<span class="st">&quot;Y&quot;</span>,<span class="st">&quot;Z&quot;</span>),</span>
+<span id="cb39-5"><a href="#cb39-5"></a>                                            <span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)))</span>
+<span id="cb39-6"><a href="#cb39-6"></a>matrix1</span>
+<span id="cb39-7"><a href="#cb39-7"></a><span class="co">#create matrix using cbind() ( and rbind() ):</span></span>
+<span id="cb39-8"><a href="#cb39-8"></a>matrix2 &lt;-<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>( <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>) , <span class="kw">c</span>( <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>))</span>
+<span id="cb39-9"><a href="#cb39-9"></a>matrix2</span>
+<span id="cb39-10"><a href="#cb39-10"></a><span class="co">#select an element :</span></span>
+<span id="cb39-11"><a href="#cb39-11"></a>matrix2[<span class="dv">3</span>,<span class="dv">2</span>] </span>
+<span id="cb39-12"><a href="#cb39-12"></a><span class="co">#select 3rd row of matrix2 :</span></span>
+<span id="cb39-13"><a href="#cb39-13"></a>matrix2[<span class="dv">3</span>, ] </span>
+<span id="cb39-14"><a href="#cb39-14"></a><span class="co">#select 2nd column of matrix2 :</span></span>
+<span id="cb39-15"><a href="#cb39-15"></a>matrix2[ ,<span class="dv">2</span>]</span>
+<span id="cb39-16"><a href="#cb39-16"></a><span class="co">#transpose of matrix2 :</span></span>
+<span id="cb39-17"><a href="#cb39-17"></a><span class="kw">t</span>(matrix2)</span>
+<span id="cb39-18"><a href="#cb39-18"></a><span class="co">#matrix multiplication :</span></span>
+<span id="cb39-19"><a href="#cb39-19"></a>matrix1 <span class="op">%*%</span><span class="st"> </span>matrix2 </span></code></pre></div>
 
 </div>
  
@@ -665,21 +701,21 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb42"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>A <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>}</span>
-<span id="cb42-2"><a href="#cb42-2"></a><span class="bu">print</span>(<span class="st">&quot;set A is :&quot;</span>,A)</span>
-<span id="cb42-3"><a href="#cb42-3"></a>empty_set <span class="op">=</span> <span class="bu">set</span>()</span>
-<span id="cb42-4"><a href="#cb42-4"></a>A.add(<span class="dv">20</span>)</span>
-<span id="cb42-5"><a href="#cb42-5"></a>A.remove(<span class="dv">3</span>)</span>
-<span id="cb42-6"><a href="#cb42-6"></a><span class="bu">print</span>(<span class="st">&quot;set A after adding 20 and removing 3:&quot;</span>,A)</span>
-<span id="cb42-7"><a href="#cb42-7"></a>B <span class="op">=</span> {<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>}</span>
-<span id="cb42-8"><a href="#cb42-8"></a><span class="bu">print</span>(<span class="st">&quot;(A union B) is:&quot;</span>,A<span class="op">|</span>B)</span>
-<span id="cb42-9"><a href="#cb42-9"></a><span class="bu">print</span>(<span class="st">&quot;A intersection b is: &quot;</span>,A <span class="op">&amp;</span> B)</span>
-<span id="cb42-10"><a href="#cb42-10"></a><span class="bu">print</span>(<span class="st">&quot;A minus B is:&quot;</span>,A <span class="op">-</span> B)</span>
-<span id="cb42-11"><a href="#cb42-11"></a><span class="bu">print</span>(<span class="st">&quot;symmetric diffrence of A and B:&quot;</span>,A <span class="op">^</span> B)</span>
-<span id="cb42-12"><a href="#cb42-12"></a><span class="cf">if</span> empty_set <span class="op">&lt;=</span> A :</span>
-<span id="cb42-13"><a href="#cb42-13"></a>  <span class="bu">print</span>(<span class="st">&quot;emty set is a subset of A&quot;</span>)</span>
-<span id="cb42-14"><a href="#cb42-14"></a><span class="cf">else</span> : </span>
-<span id="cb42-15"><a href="#cb42-15"></a>  <span class="bu">print</span>(<span class="st">&quot;emty set is not a subset of A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>A <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>}</span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="bu">print</span>(<span class="st">&quot;set A is :&quot;</span>,A)</span>
+<span id="cb40-3"><a href="#cb40-3"></a>empty_set <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb40-4"><a href="#cb40-4"></a>A.add(<span class="dv">20</span>)</span>
+<span id="cb40-5"><a href="#cb40-5"></a>A.remove(<span class="dv">3</span>)</span>
+<span id="cb40-6"><a href="#cb40-6"></a><span class="bu">print</span>(<span class="st">&quot;set A after adding 20 and removing 3:&quot;</span>,A)</span>
+<span id="cb40-7"><a href="#cb40-7"></a>B <span class="op">=</span> {<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>}</span>
+<span id="cb40-8"><a href="#cb40-8"></a><span class="bu">print</span>(<span class="st">&quot;(A union B) is:&quot;</span>, A<span class="op">|</span>B)</span>
+<span id="cb40-9"><a href="#cb40-9"></a><span class="bu">print</span>(<span class="st">&quot;A intersection b is: &quot;</span>, A <span class="op">&amp;</span> B)</span>
+<span id="cb40-10"><a href="#cb40-10"></a><span class="bu">print</span>(<span class="st">&quot;A minus B is:&quot;</span>,A <span class="op">-</span> B)</span>
+<span id="cb40-11"><a href="#cb40-11"></a><span class="bu">print</span>(<span class="st">&quot;symmetric diffrence of A and B:&quot;</span>, A <span class="op">^</span> B)</span>
+<span id="cb40-12"><a href="#cb40-12"></a><span class="cf">if</span> empty_set <span class="op">&lt;=</span> A :</span>
+<span id="cb40-13"><a href="#cb40-13"></a>  <span class="bu">print</span>(<span class="st">&quot;emty set is a subset of A&quot;</span>)</span>
+<span id="cb40-14"><a href="#cb40-14"></a><span class="cf">else</span> : </span>
+<span id="cb40-15"><a href="#cb40-15"></a>  <span class="bu">print</span>(<span class="st">&quot;emty set is not a subset of A&quot;</span>)</span></code></pre></div>
 
 </div>
  
@@ -747,7 +783,11 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
-<p>R. A list is a collection of elements which can be of different types. A vector having all elements of the same type is called atomic vector(vector) but a vector having elements of diffrent types is called list. You can also see <a href="https://www.datamentor.io/r-programming/list/">this</a></p>
+<p>A list is a collection of elements which can be of different types.<br />
+A vector having all elements of the same type is called atomic vector(vector) but a vector having elements of diffrent types is called list.<br />
+We can also set tags(a,b,c are tags here) for list elements.Doing this, our list will be like <code>dictionary</code> in Python.<br />
+<code>as.list()</code> is used to convert an object to list. These objects can be Vectors, Matrices, Factors, and data frames.<br />
+You can also see <a href="https://www.datamentor.io/r-programming/list/">this</a> and <a href="https://www.geeksforgeeks.org/convert-an-object-to-list-in-r-programming-as-list-function/">this</a> for more information.</p>
 
 </p>
 </div>
@@ -759,7 +799,10 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
 
-<p>Python. Python’s dictionaries allow you to connect pieces of related information.Each piece of information in a dictionary is stored as a key-value pair. When you provide a key, Python returns the value associated with that key.</p>
+<p>Python’s dictionaries allow you to connect pieces of related information.Each piece of information in a dictionary is stored as a key-value pair.<br />
+When you provide a key, Python returns the value associated with that key.<br />
+You can convert <code>list</code> to <code>dict</code> using list <code>index</code> as the <code>keys</code>.<br />
+Please check <a href="https://medium.com/swlh/data-structure-conversion-f99d3ff9eaf5">here</a> for details.</p>
 
 </p>
 </div>
@@ -777,19 +820,25 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb57"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>list1 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="ot">TRUE</span>,<span class="st">&quot;hello&quot;</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb57-2"><a href="#cb57-2"></a>list1</span>
-<span id="cb57-3"><a href="#cb57-3"></a><span class="co">#We can also set tags(a,b,c are tags here) for list elements.Doing this,</span></span>
-<span id="cb57-4"><a href="#cb57-4"></a><span class="co">#our list will be like dictionary in Python:</span></span>
-<span id="cb57-5"><a href="#cb57-5"></a>list2 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;a&quot;</span> =<span class="st"> </span><span class="ot">TRUE</span>, <span class="st">&quot;b&quot;</span> =<span class="st"> &quot;hello&quot;</span>, <span class="st">&quot;c&quot;</span> =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb57-6"><a href="#cb57-6"></a>list2</span>
-<span id="cb57-7"><a href="#cb57-7"></a>list2[[<span class="dv">1</span>]] <span class="co">#access 1st element of list2</span></span>
-<span id="cb57-8"><a href="#cb57-8"></a>list2<span class="op">$</span>b <span class="co">#access element of list2 named b</span></span>
-<span id="cb57-9"><a href="#cb57-9"></a>list2<span class="op">$</span>b &lt;-<span class="st"> &quot;bye!&quot;</span> <span class="co">#modify 2nd element of list2(element named &quot;b&quot;)</span></span>
-<span id="cb57-10"><a href="#cb57-10"></a>list2<span class="op">$</span>d &lt;-<span class="st"> </span><span class="fl">10.5</span> <span class="co">#add new element to list</span></span>
-<span id="cb57-11"><a href="#cb57-11"></a>list2</span>
-<span id="cb57-12"><a href="#cb57-12"></a>list2<span class="op">$</span>c &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co">#delete element named c from list2</span></span>
-<span id="cb57-13"><a href="#cb57-13"></a>list2</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>list1 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="ot">TRUE</span>,<span class="st">&quot;hello&quot;</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
+<span id="cb55-2"><a href="#cb55-2"></a>list1</span>
+<span id="cb55-3"><a href="#cb55-3"></a><span class="co"># list with tags :</span></span>
+<span id="cb55-4"><a href="#cb55-4"></a>list2 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;a&quot;</span> =<span class="st"> </span><span class="ot">TRUE</span>, <span class="st">&quot;b&quot;</span> =<span class="st"> &quot;hello&quot;</span>, <span class="st">&quot;c&quot;</span> =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
+<span id="cb55-5"><a href="#cb55-5"></a>list2</span>
+<span id="cb55-6"><a href="#cb55-6"></a><span class="co">#access 1st element of list2 :</span></span>
+<span id="cb55-7"><a href="#cb55-7"></a>list2[[<span class="dv">1</span>]] </span>
+<span id="cb55-8"><a href="#cb55-8"></a><span class="co">#access element of list2 named b :</span></span>
+<span id="cb55-9"><a href="#cb55-9"></a>list2<span class="op">$</span>b </span>
+<span id="cb55-10"><a href="#cb55-10"></a><span class="co">#modify 2nd element of list2(element named &quot;b&quot;) :</span></span>
+<span id="cb55-11"><a href="#cb55-11"></a>list2<span class="op">$</span>b &lt;-<span class="st"> &quot;bye!&quot;</span> </span>
+<span id="cb55-12"><a href="#cb55-12"></a>list2<span class="op">$</span>d &lt;-<span class="st"> </span><span class="fl">10.5</span> <span class="co">#add new element to list</span></span>
+<span id="cb55-13"><a href="#cb55-13"></a>list2</span>
+<span id="cb55-14"><a href="#cb55-14"></a><span class="co">#delete element named c from list2 :</span></span>
+<span id="cb55-15"><a href="#cb55-15"></a>list2<span class="op">$</span>c &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb55-16"><a href="#cb55-16"></a><span class="co"># convert vector to list :</span></span>
+<span id="cb55-17"><a href="#cb55-17"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb55-18"><a href="#cb55-18"></a>list_from_vec1 &lt;-<span class="st"> </span><span class="kw">as.list</span>(vec1)</span>
+<span id="cb55-19"><a href="#cb55-19"></a>list_from_vec1</span></code></pre></div>
 
 </div>
  
@@ -798,23 +847,34 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb58"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a>dict1 <span class="op">=</span> {<span class="st">&quot;a&quot;</span>:<span class="dv">1</span>,<span class="st">&quot;b&quot;</span>:<span class="dv">2</span>,<span class="st">&quot;c&quot;</span>:<span class="dv">3</span>} <span class="co">#define a dictionary</span></span>
-<span id="cb58-2"><a href="#cb58-2"></a><span class="bu">print</span>(<span class="st">&quot;a is a key and it&#39;s value is :&quot;</span>,dict1.get(<span class="st">&quot;a&quot;</span>))</span>
-<span id="cb58-3"><a href="#cb58-3"></a><span class="bu">print</span>(<span class="st">&quot;True&quot;</span>) <span class="cf">if</span> <span class="st">&quot;b&quot;</span> <span class="kw">in</span> dict1 <span class="cf">else</span> <span class="bu">print</span>(<span class="st">&quot;False&quot;</span>)<span class="co">#search in dictionary</span></span>
-<span id="cb58-4"><a href="#cb58-4"></a>dict1[<span class="st">&quot;d&quot;</span>] <span class="op">=</span> <span class="dv">4</span> <span class="co">#add a new pair to dictionary</span></span>
-<span id="cb58-5"><a href="#cb58-5"></a>dict1[<span class="st">&quot;c&quot;</span>] <span class="op">=</span> <span class="st">&quot;10&quot;</span> <span class="co">#modify c&#39;s value</span></span>
-<span id="cb58-6"><a href="#cb58-6"></a><span class="kw">del</span> dict1[<span class="st">&quot;a&quot;</span>]</span>
-<span id="cb58-7"><a href="#cb58-7"></a><span class="bu">print</span>(<span class="st">&quot;dict1 after deleting a_1 pair :&quot;</span>,dict1)</span>
-<span id="cb58-8"><a href="#cb58-8"></a><span class="bu">print</span>(<span class="st">&quot;length of dict1 :&quot;</span>,<span class="bu">len</span>(dict1))</span>
-<span id="cb58-9"><a href="#cb58-9"></a><span class="co">#Looping through all key-value pairs:</span></span>
-<span id="cb58-10"><a href="#cb58-10"></a><span class="cf">for</span> alphabet,number <span class="kw">in</span> dict1.items():</span>
-<span id="cb58-11"><a href="#cb58-11"></a>  <span class="bu">print</span>(alphabet<span class="op">+</span><span class="st">&quot; : &quot;</span>,number)</span>
-<span id="cb58-12"><a href="#cb58-12"></a><span class="co">#looping through all the keys:</span></span>
-<span id="cb58-13"><a href="#cb58-13"></a><span class="cf">for</span> alphabet <span class="kw">in</span> dict1.keys():</span>
-<span id="cb58-14"><a href="#cb58-14"></a>  <span class="bu">print</span>(alphabet)</span>
-<span id="cb58-15"><a href="#cb58-15"></a><span class="co">#looping through all values:</span></span>
-<span id="cb58-16"><a href="#cb58-16"></a><span class="cf">for</span> number <span class="kw">in</span> dict1.keys():</span>
-<span id="cb58-17"><a href="#cb58-17"></a>  <span class="bu">print</span>(number)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a><span class="co">#define a dictionary :</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a>dict1 <span class="op">=</span> { <span class="st">&quot;a&quot;</span>:<span class="dv">1</span> , <span class="st">&quot;b&quot;</span>:<span class="dv">2</span> , <span class="st">&quot;c&quot;</span>:<span class="dv">3</span> }  </span>
+<span id="cb56-3"><a href="#cb56-3"></a><span class="bu">print</span>(<span class="st">&quot;a is a key and it&#39;s value is :&quot;</span> , dict1.get ( <span class="st">&quot;a&quot;</span> ) )</span>
+<span id="cb56-4"><a href="#cb56-4"></a></span>
+<span id="cb56-5"><a href="#cb56-5"></a><span class="co">#Search in dictionary :</span></span>
+<span id="cb56-6"><a href="#cb56-6"></a><span class="bu">print</span>(<span class="st">&quot;True&quot;</span>) <span class="cf">if</span> <span class="st">&quot;b&quot;</span> <span class="kw">in</span> dict1 <span class="cf">else</span> <span class="bu">print</span>(<span class="st">&quot;False&quot;</span>)</span>
+<span id="cb56-7"><a href="#cb56-7"></a><span class="co">#add a new pair to dictionary :</span></span>
+<span id="cb56-8"><a href="#cb56-8"></a>dict1[<span class="st">&quot;d&quot;</span>] <span class="op">=</span> <span class="dv">4</span> </span>
+<span id="cb56-9"><a href="#cb56-9"></a> <span class="co">#modify c&#39;s value :</span></span>
+<span id="cb56-10"><a href="#cb56-10"></a>dict1[<span class="st">&quot;c&quot;</span>] <span class="op">=</span> <span class="st">&quot;10&quot;</span></span>
+<span id="cb56-11"><a href="#cb56-11"></a><span class="kw">del</span> dict1[<span class="st">&quot;a&quot;</span>]</span>
+<span id="cb56-12"><a href="#cb56-12"></a></span>
+<span id="cb56-13"><a href="#cb56-13"></a><span class="co">#Looping through all key-value pairs:</span></span>
+<span id="cb56-14"><a href="#cb56-14"></a><span class="cf">for</span> alphabet,number <span class="kw">in</span> dict1.items():</span>
+<span id="cb56-15"><a href="#cb56-15"></a>  <span class="bu">print</span>(alphabet<span class="op">+</span><span class="st">&quot; : &quot;</span>,number)</span>
+<span id="cb56-16"><a href="#cb56-16"></a></span>
+<span id="cb56-17"><a href="#cb56-17"></a><span class="co">#looping through all the keys:</span></span>
+<span id="cb56-18"><a href="#cb56-18"></a><span class="cf">for</span> alphabet <span class="kw">in</span> dict1.keys():</span>
+<span id="cb56-19"><a href="#cb56-19"></a>  <span class="bu">print</span>(alphabet)</span>
+<span id="cb56-20"><a href="#cb56-20"></a></span>
+<span id="cb56-21"><a href="#cb56-21"></a><span class="co">#looping through all values:</span></span>
+<span id="cb56-22"><a href="#cb56-22"></a><span class="cf">for</span> number <span class="kw">in</span> dict1.keys():</span>
+<span id="cb56-23"><a href="#cb56-23"></a>  <span class="bu">print</span>(number)</span>
+<span id="cb56-24"><a href="#cb56-24"></a></span>
+<span id="cb56-25"><a href="#cb56-25"></a><span class="co">#convert list to dictionary :</span></span>
+<span id="cb56-26"><a href="#cb56-26"></a>list1 <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">5</span>)]</span>
+<span id="cb56-27"><a href="#cb56-27"></a>dict_from_list1 <span class="op">=</span> { i:k <span class="cf">for</span> i,k <span class="kw">in</span> <span class="bu">enumerate</span>(list1) }</span>
+<span id="cb56-28"><a href="#cb56-28"></a>dict_from_list1</span></code></pre></div>
 
 </div>
  
@@ -867,6 +927,17 @@ class="btn dotto-main-dot-shape"
 ## 
 ## $d
 ## [1] 10.5</code></pre>
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 2
+## 
+## [[3]]
+## [1] 3
+## 
+## [[4]]
+## [1] 4</code></pre>
 
 </div>
  
@@ -877,8 +948,6 @@ class="btn dotto-main-dot-shape"
 
 <pre><code>## a is a key and it&#39;s value is : 1</code></pre>
 <pre><code>## True</code></pre>
-<pre><code>## dict1 after deleting a_1 pair : {&#39;b&#39;: 2, &#39;c&#39;: &#39;10&#39;, &#39;d&#39;: 4}</code></pre>
-<pre><code>## length of dict1 : 3</code></pre>
 <pre><code>## b :  2
 ## c :  10
 ## d :  4</code></pre>
@@ -888,6 +957,7 @@ class="btn dotto-main-dot-shape"
 <pre><code>## b
 ## c
 ## d</code></pre>
+<pre><code>## {0: 1, 1: 2, 2: 3, 3: 4}</code></pre>
 
 </div>
  
@@ -907,7 +977,10 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
-<p>R. Data Frame is a special case of a list where all elements are the same length.The main usage of data frame is storing tabular data. Data Frames can be created using data.frame(). you can also see <a href="https://www.datamentor.io/r-programming/data-frame/">here</a></p>
+<p>Data Frame is a special case of a list where all elements are the same length.The main usage of data frame is storing tabular data.<br />
+Data Frames can be created using data.frame().<br />
+<code>as.data.frame()</code> function in R Language is used to convert an object to data frame. These objects can be Vectors, Lists, Matrices, and Factors.<br />
+you can also see <a href="https://www.datamentor.io/r-programming/data-frame/">here</a></p>
 
 </p>
 </div>
@@ -919,7 +992,13 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
 
-<p>Puthon. A DataFrame is a table. It contains an array of individual entries, each of which has a certain value. Each entry corresponds to a row (or record) and a column. Data frame is one of the most commonly used pandas objects.</p>
+<p>A DataFrame is a table. It contains an array of individual entries, each of which has a certain value. Each entry corresponds to a row (or record) and a column. Data frame is one of the most commonly used pandas objects.<br />
+<code>df.head(n)</code> returns first n rows of data frame.<br />
+<code>df.tail(n)</code> returns last n rows from data frame.<br />
+<code>pandas.DataFrame(list)</code> converts the list to data frame.<br />
+<code>as.matrix(df)</code> converts dataframe to a numeric matrix.<br />
+you can also convert dictionary to dataframe using <code>pandas.DataFrame.from_dict(data, orient = { 'columns','index'} , dtype=None, columns=None)</code>.<br />
+Please visit <a href="https://medium.com/swlh/data-structure-conversion-f99d3ff9eaf5">here</a> for details.</p>
 
 </p>
 </div>
@@ -937,19 +1016,31 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb72"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="co">#create data frame using data.frame():</span></span>
-<span id="cb72-2"><a href="#cb72-2"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="st">&quot;SN&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>=<span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">15</span>),<span class="st">&quot;Name&quot;</span>=<span class="kw">c</span>(<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Dora&quot;</span>))</span>
-<span id="cb72-3"><a href="#cb72-3"></a><span class="kw">dim</span>(df1) <span class="co">#number of rows and columns</span></span>
-<span id="cb72-4"><a href="#cb72-4"></a>df1[[<span class="st">&quot;Name&quot;</span>]] <span class="co">#access column &quot;Name&quot;</span></span>
-<span id="cb72-5"><a href="#cb72-5"></a>df1[<span class="dv">1</span>, ] <span class="co">#access 1st row of df1(Matrix subsetting)</span></span>
-<span id="cb72-6"><a href="#cb72-6"></a>df1[, <span class="dv">2</span> ] <span class="co">#access 2nd column of df1(Matrix subsetting)</span></span>
-<span id="cb72-7"><a href="#cb72-7"></a>df1[<span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>] &lt;-<span class="st"> </span><span class="dv">30</span> <span class="co">#modify one component of data frame</span></span>
-<span id="cb72-8"><a href="#cb72-8"></a>df1</span>
-<span id="cb72-9"><a href="#cb72-9"></a>df1 &lt;-<span class="kw">rbind</span>(df1,<span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">16</span>,<span class="st">&quot;Paul&quot;</span>)) <span class="co">#add a new record to data frame using rbind()</span></span>
-<span id="cb72-10"><a href="#cb72-10"></a>df1 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1,<span class="dt">State=</span><span class="kw">c</span>(<span class="st">&quot;NY&quot;</span>,<span class="st">&quot;FL&quot;</span>)) <span class="co">#add a new column to data frame</span></span>
-<span id="cb72-11"><a href="#cb72-11"></a>df1</span>
-<span id="cb72-12"><a href="#cb72-12"></a>df1<span class="op">$</span>State &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co">#delete column &quot;state&quot; of df1</span></span>
-<span id="cb72-13"><a href="#cb72-13"></a>df1 &lt;-<span class="st"> </span>df1[<span class="op">-</span><span class="dv">1</span>,] <span class="co">#delete rows using reassignments</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="co">#create data frame using data.frame():</span></span>
+<span id="cb70-2"><a href="#cb70-2"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="st">&quot;SN&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>=<span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">15</span>),<span class="st">&quot;Name&quot;</span>=<span class="kw">c</span>(<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Dora&quot;</span>))</span>
+<span id="cb70-3"><a href="#cb70-3"></a><span class="co">#number of rows and columns :</span></span>
+<span id="cb70-4"><a href="#cb70-4"></a><span class="kw">dim</span>(df1) </span>
+<span id="cb70-5"><a href="#cb70-5"></a><span class="co">#access column &quot;Name&quot; :</span></span>
+<span id="cb70-6"><a href="#cb70-6"></a>df1[[<span class="st">&quot;Name&quot;</span>]] </span>
+<span id="cb70-7"><a href="#cb70-7"></a><span class="co">#access 1st row of df1(Matrix subsetting) :</span></span>
+<span id="cb70-8"><a href="#cb70-8"></a>df1[<span class="dv">1</span>, ]</span>
+<span id="cb70-9"><a href="#cb70-9"></a><span class="co">#access 2nd column of df1(Matrix subsetting) :</span></span>
+<span id="cb70-10"><a href="#cb70-10"></a>df1[, <span class="dv">2</span> ]</span>
+<span id="cb70-11"><a href="#cb70-11"></a><span class="co">#modify one component of data frame :</span></span>
+<span id="cb70-12"><a href="#cb70-12"></a>df1[<span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>] &lt;-<span class="st"> </span><span class="dv">30</span> </span>
+<span id="cb70-13"><a href="#cb70-13"></a><span class="co">#add a new record to data frame using rbind():</span></span>
+<span id="cb70-14"><a href="#cb70-14"></a>df1 &lt;-<span class="kw">rbind</span>(df1,<span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">16</span>,<span class="st">&quot;Paul&quot;</span>)) </span>
+<span id="cb70-15"><a href="#cb70-15"></a>df1 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1,<span class="dt">State=</span><span class="kw">c</span>(<span class="st">&quot;NY&quot;</span>,<span class="st">&quot;FL&quot;</span>)) <span class="co">#add a new column to data frame</span></span>
+<span id="cb70-16"><a href="#cb70-16"></a>df1</span>
+<span id="cb70-17"><a href="#cb70-17"></a><span class="co">#delete column &quot;state&quot; of df1 :</span></span>
+<span id="cb70-18"><a href="#cb70-18"></a>df1<span class="op">$</span>State &lt;-<span class="st"> </span><span class="ot">NULL</span> </span>
+<span id="cb70-19"><a href="#cb70-19"></a><span class="co">#delete rows using reassignments :</span></span>
+<span id="cb70-20"><a href="#cb70-20"></a>df1 &lt;-<span class="st"> </span>df1[<span class="op">-</span><span class="dv">1</span>,]</span>
+<span id="cb70-21"><a href="#cb70-21"></a><span class="co"># Convert list to dataframe :</span></span>
+<span id="cb70-22"><a href="#cb70-22"></a>lis1 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;a&quot;</span> =<span class="st"> </span><span class="ot">TRUE</span>, <span class="st">&quot;b&quot;</span> =<span class="st"> &quot;hello&quot;</span>, <span class="st">&quot;c&quot;</span> =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
+<span id="cb70-23"><a href="#cb70-23"></a><span class="kw">as.data.frame</span>(lis1)</span>
+<span id="cb70-24"><a href="#cb70-24"></a><span class="co"># convert dataframe to numeric matrix :</span></span>
+<span id="cb70-25"><a href="#cb70-25"></a><span class="kw">as.matrix</span>(df1)</span></code></pre></div>
 
 </div>
  
@@ -958,20 +1049,26 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb73"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb73-2"><a href="#cb73-2"></a>data_frame1 <span class="op">=</span> pd.DataFrame({<span class="st">&quot;apple&quot;</span> :[<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>],<span class="st">&quot;orange&quot;</span> :[<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>],</span>
-<span id="cb73-3"><a href="#cb73-3"></a><span class="st">&quot;lemon&quot;</span>:[<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">11</span>,<span class="dv">12</span>]},index<span class="op">=</span>[<span class="st">&quot;Joe&quot;</span>,<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Matt&quot;</span>,<span class="st">&quot;Hannah&quot;</span>])</span>
-<span id="cb73-4"><a href="#cb73-4"></a><span class="bu">print</span>(data_frame1)</span>
-<span id="cb73-5"><a href="#cb73-5"></a>data_frame1.head(<span class="dv">2</span>)<span class="co">#rows 1 and 2 of data_frame1</span></span>
-<span id="cb73-6"><a href="#cb73-6"></a>data_frame1.tail(<span class="dv">1</span>)</span>
-<span id="cb73-7"><a href="#cb73-7"></a>data_frame1.describe()</span>
-<span id="cb73-8"><a href="#cb73-8"></a>data_frame1.sort_index()<span class="co">#sort data frame based on indices</span></span>
-<span id="cb73-9"><a href="#cb73-9"></a>data_frame1.sort_values(<span class="st">&quot;lemon&quot;</span>,ascending <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb73-10"><a href="#cb73-10"></a>data_frame1[[<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;lemon&quot;</span>]] <span class="co">#choose column</span></span>
-<span id="cb73-11"><a href="#cb73-11"></a>data_frame1[<span class="dv">0</span>:<span class="dv">2</span>] <span class="co">#choose row</span></span>
-<span id="cb73-12"><a href="#cb73-12"></a><span class="co">#number of apples and lemons of people with 8 oranges:</span></span>
-<span id="cb73-13"><a href="#cb73-13"></a>data_frame1[data_frame1.orange <span class="op">==</span> <span class="dv">8</span>][[<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;lemon&quot;</span>]]</span>
-<span id="cb73-14"><a href="#cb73-14"></a>data_frame1.iloc[<span class="dv">1</span>:<span class="dv">3</span>,<span class="dv">1</span>] <span class="co">#select columns based on column number(column 1)</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb71-2"><a href="#cb71-2"></a>data_frame1 <span class="op">=</span> pd.DataFrame({<span class="st">&quot;apple&quot;</span> :[<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>],<span class="st">&quot;orange&quot;</span> :[<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>],</span>
+<span id="cb71-3"><a href="#cb71-3"></a><span class="st">&quot;lemon&quot;</span>:[<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">11</span>,<span class="dv">12</span>]},index<span class="op">=</span>[<span class="st">&quot;Joe&quot;</span>,<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Matt&quot;</span>,<span class="st">&quot;Hannah&quot;</span>])</span>
+<span id="cb71-4"><a href="#cb71-4"></a><span class="bu">print</span>(data_frame1)</span>
+<span id="cb71-5"><a href="#cb71-5"></a>data_frame1.head(<span class="dv">2</span>)<span class="co">#rows 1 and 2 of data_frame1</span></span>
+<span id="cb71-6"><a href="#cb71-6"></a>data_frame1.tail(<span class="dv">1</span>)</span>
+<span id="cb71-7"><a href="#cb71-7"></a>data_frame1.describe()</span>
+<span id="cb71-8"><a href="#cb71-8"></a><span class="co">#choose column :</span></span>
+<span id="cb71-9"><a href="#cb71-9"></a>data_frame1 [ [<span class="st">&quot;apple&quot;</span> , <span class="st">&quot;lemon&quot;</span>] ] </span>
+<span id="cb71-10"><a href="#cb71-10"></a><span class="co">#choose row :</span></span>
+<span id="cb71-11"><a href="#cb71-11"></a>data_frame1 [<span class="dv">0</span>:<span class="dv">2</span>] </span>
+<span id="cb71-12"><a href="#cb71-12"></a><span class="co">#number of apples and lemons of people with 8 oranges:</span></span>
+<span id="cb71-13"><a href="#cb71-13"></a>data_frame1 [ data_frame1.orange <span class="op">==</span> <span class="dv">8</span>][ [<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;lemon&quot;</span>] ]</span>
+<span id="cb71-14"><a href="#cb71-14"></a><span class="co">#convert list to dataframe :</span></span>
+<span id="cb71-15"><a href="#cb71-15"></a>lis1 <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
+<span id="cb71-16"><a href="#cb71-16"></a>dataframe_from_lis1 <span class="op">=</span> pd.DataFrame(lis1)</span>
+<span id="cb71-17"><a href="#cb71-17"></a><span class="co">#convert dictionary to dataframe :</span></span>
+<span id="cb71-18"><a href="#cb71-18"></a>dic1 <span class="op">=</span> {<span class="st">&quot;col_1&quot;</span> : [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span> ] , <span class="st">&quot;col_2&quot;</span> : [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span> ]}</span>
+<span id="cb71-19"><a href="#cb71-19"></a><span class="co"># parameter &#39;orient&#39; :If the keys of the passed dict should be the columns of the resulting # DataFrame, pass ‘columns’ (default). Otherwise if the keys should be rows, pass ‘index’.</span></span>
+<span id="cb71-20"><a href="#cb71-20"></a>pd.DataFrame.from_dict(dic1, orient<span class="op">=</span><span class="st">&#39;columns&#39;</span> , dtype<span class="op">=</span><span class="va">None</span>, columns<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
 
 </div>
  
@@ -997,14 +1094,21 @@ class="btn dotto-main-dot-shape"
 <pre><code>## [1] 21 15</code></pre>
 <pre><code>##   SN Age Name
 ## 1  1  21 John
-## 2  2  30 Dora</code></pre>
-<pre><code>##   SN Age Name
-## 1  1  21 John
 ## 2  2  30 Dora
 ## 3  1  16 Paul</code></pre>
 <pre><code>##   SN Age Name State
 ## 1  1  21 John    NY
 ## 2  2  30 Dora    FL</code></pre>
+<pre><code>##   SN Age Name
+## 1  1  21 John
+## 2  2  30 Dora</code></pre>
+<pre><code>##      a     b c
+## 1 TRUE hello 1
+## 2 TRUE hello 2
+## 3 TRUE hello 3
+## 4 TRUE hello 4</code></pre>
+<pre><code>##   SN  Age  Name  
+## 2 &quot;2&quot; &quot;30&quot; &quot;Dora&quot;</code></pre>
 
 </div>
  
@@ -1032,16 +1136,6 @@ class="btn dotto-main-dot-shape"
 ## 50%    2.500000  7.500000  10.500000
 ## 75%    3.250000  8.000000  11.250000
 ## max    4.000000  8.000000  12.000000</code></pre>
-<pre><code>##         apple  orange  lemon
-## Hannah      4       6     12
-## Joe         3       8     10
-## John        2       7      9
-## Matt        1       8     11</code></pre>
-<pre><code>##         apple  orange  lemon
-## John        2       7      9
-## Joe         3       8     10
-## Matt        1       8     11
-## Hannah      4       6     12</code></pre>
 <pre><code>##         apple  lemon
 ## Joe         3     10
 ## John        2      9
@@ -1053,9 +1147,10 @@ class="btn dotto-main-dot-shape"
 <pre><code>##       apple  lemon
 ## Joe       3     10
 ## Matt      1     11</code></pre>
-<pre><code>## John    7
-## Matt    8
-## Name: orange, dtype: int64</code></pre>
+<pre><code>##    col_1  col_2
+## 0      1      4
+## 1      2      5
+## 2      3      6</code></pre>
 
 </div>
  

@@ -12,7 +12,7 @@
   "dotto_label": ["D005"],
   "dotto_id": ["ea4a8d12-d342-11eb-a85d-acbc32baed85"],
   "title": ["Basic Data structures in Python and R"],
-  "description": ["introducing some basic data structures in Python and R.\n"],
+  "description": ["This Dotto illustrates how to create , modify and convert data structures\nlike vector,factor,matrix,list and data frame in R, and list, tuple, set,\ndictionary and data frame in Python.\n"],
   "author": [
     {
       "name": ["Parnian Jahangiri Rad"],
