@@ -161,7 +161,8 @@ auto.sample(5)
 
 ```{r, Dot = 2, part = "Code", echo = T, eval = F }
 # Group variable will produce lines with different colors
-ggplot(data = auto, aes(x = wheel.base, y = engine.size)) +
+ggplot(data = auto, 
+       aes(x = wheel.base, y = engine.size)) +
   geom_line(aes(group = fuel.type,
                 color = fuel.type))
 
@@ -203,7 +204,9 @@ sns.lineplot(data=auto, x="wheel-base", y="engine-size", hue="fuel-type")
 
 ```{r, Dot = 3, part = "Code", echo = T, eval = F }
 # Draw a set of vertical bars with nested grouping by a two variables
-ggplot(data = auto, aes(x = body.style, y = city.mpg)) +
+ggplot(data = auto,
+       aes(x = body.style,
+           y = city.mpg)) +
   geom_col(aes(fill = fuel.type))
 
 ```
@@ -285,7 +288,8 @@ corr <- melt(cor(numeric_cols))
 
 # geom_text: insert corresponding cell values in plot
 # theme: Rotating and spacing x axis labels
-ggplot(data = corr, aes(x = Var1, y = Var2)) +
+ggplot(data = corr,
+       aes(x = Var1, y = Var2)) +
   geom_tile(aes(fill = value)) +
   geom_text(aes(label = round(value, 1))) +
   theme(axis.text.x = element_text(
@@ -322,11 +326,12 @@ sns.heatmap(corr, annot=True, linewidths=.1)
 ```{r, Dot = 5, part = "Code", echo = T, eval = F }
 # Showing two different grouping variables using "colour" amd "shape" parameter
 
-ggplot(data = auto, aes(x = engine.size, y = wheel.base)) +
-  geom_point(aes(
-    colour = factor(fuel.type),
-    shape = factor(num.of.cylinders)
-  ))
+ggplot(data = auto,
+       aes(x = engine.size,
+           y = wheel.base)) +
+  geom_point(aes(colour = factor(fuel.type),
+                 shape = factor(num.of.cylinders)
+                 ))
   
 
 ```
@@ -384,17 +389,17 @@ ggplot(auto, aes(city.mpg)) +
 
 ```{python, Dot = 6, part = "Code", echo = T, eval = F }
 # kde:If True, smooth the distribution and show as line
-sns.histplot(data=auto, x="city-mpg", kde=True)
+sns.histplot(data=auto,x="city-mpg", kde=True)
 
 ```
 
 ```{r, Dot = 6, part = "Result", echo = F, eval = T}
-ggplot(auto, aes(city.mpg)) +
-  geom_histogram(
-    linetype = "dashed",
-    colour = "black",
-    fill = "red",
-    alpha = 3.0
+ggplot(auto,
+       aes(city.mpg)) +
+  geom_histogram(linetype = "dashed",
+                 colour = "black",
+                 fill = "red",
+                 alpha = 3.0
   )
 
 ```
