@@ -172,7 +172,7 @@ export default {
     "dotto_label": ["D004"],
     "dotto_id": ["dd87b3a2-d342-11eb-a85d-acbc32baed85"],
     "title": ["Simple Data Visualization"],
-    "description": ["Make great data visualizations. A great way to see the power of coding!\n"],
+    "description": ["We've broken the chart types into three broad categories to help with this.\n"],
     "author": [
       {
         "name": ["Mohammad Hossein Malekpour"],
@@ -192,7 +192,7 @@ export default {
       },
       {
         "lang": ["python"],
-        "pkgs": ["seaborn", "pands"]
+        "pkgs": ["seaborn", "pandas"]
       }
     ],
     "date": {

@@ -255,7 +255,8 @@ corr <- melt(cor(numeric_cols))
 
 # geom_text: insert corresponding cell values in plot
 # theme: Rotating and spacing x axis labels
-ggplot(data = corr, aes(x = Var1, y = Var2)) +
+ggplot(data = corr,
+       aes(x = Var1, y = Var2)) +
   geom_tile(aes(fill = value)) +
   geom_text(aes(label = round(value, 1))) +
   theme(axis.text.x = element_text(
@@ -263,7 +264,6 @@ ggplot(data = corr, aes(x = Var1, y = Var2)) +
     vjust = 0.5,
     hjust = 1
   )) 
-
 ```
 
 ```{python, Dot = 4, part = "Code", echo = T, eval = F }
@@ -377,13 +377,14 @@ This function can normalize the statistic computed within each bin to estimate f
 ```
 
 ```{r, Dot = 6, part = "Code", echo = T, eval = F }
-ggplot(auto, aes(city.mpg)) +
-  geom_histogram(
-    linetype = "dashed",
-    colour = "black",
-    fill = "red",
-    alpha = 3.0
+ggplot(auto,
+       aes(city.mpg)) +
+  geom_histogram(linetype = "dashed",
+                 colour = "black",
+                 fill = "red",
+                 alpha = 3.0
   )
+
 
 ```
 
