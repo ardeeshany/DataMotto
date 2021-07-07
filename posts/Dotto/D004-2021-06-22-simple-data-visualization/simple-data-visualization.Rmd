@@ -124,7 +124,8 @@ auto_filepath <- "data/Automobile_data.csv"
 auto <- read.csv(auto_filepath)
 
 # Print the five random rows of the data
-sample_n(auto, 5)
+knitr::kable(sample_n(auto, 5))
+
 
 ```
 
@@ -134,6 +135,7 @@ import pandas as pd
 pd.plotting.register_matplotlib_converters()
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 
 # Path of the file to read
 auto_filepath = "data/Automobile_data.csv"
