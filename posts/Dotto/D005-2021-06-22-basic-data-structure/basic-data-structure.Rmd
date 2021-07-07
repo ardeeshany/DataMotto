@@ -1,7 +1,9 @@
 ---
 title: "Basic Data structures in Python and R"
 description: |
-  introducing some basic data structures in Python and R.
+  This Dotto illustrates how to create , modify and convert data structures
+  like vector,factor,matrix,list and data frame in R, and list, tuple, set,
+  dictionary and data frame in Python.
 author:
   - name: "Parnian Jahangiri Rad"
     occupation: "Data science intern"
@@ -29,22 +31,25 @@ DataMotto::use_Dotto()
 ```
 <!-- Dot 1, lang: r ------------------------------------------------>
 ```{block, Dot = 1, part = "Instruction", lang = "r"}
-R.This Dot illustrates how to define a variable , change variable type and
+This Dot illustrates how to define a variable , change variable type and
 chaning assignment in R.
 ```
 <!-- Dot 1, lang: python ------------------------------------------------>
 ```{block, Dot = 1, part = "Instruction", lang = "python"}
-Python. This Dot illustrates how to define a variable , change variable type and 
+This Dot illustrates how to define a variable , change variable type and 
 chaning assignment in Python.
 ```
 
 ```{r, Dot = 1, part = "Code", echo = T, eval = F, }
 x <- "apple"
 x
-class(x)#type of object x
-x <- 10 #reassignment
-class(x) #new type of object x
-#chaning assignment in R
+#type of object x :
+class(x)
+#reassignment :
+x <- 10 
+#new type of object x :
+class(x)
+#chaning assignment in R :
 y <- z <- x
 # Assignment using equal operator
 a = "orange"
@@ -56,22 +61,26 @@ a
 x = '300'
 print("x is :",x)
 print("x class type:",type(x))
-#change variable type from str to int
+#change variable type from str to int :
 x = int(x)
 print("new x class type:",type(x))
 #chained assignmen:
 n = m = x
-print(n,m,x)
-print("n=",n," m=",m," x=",x)
+print("n = ",n
+    ," m = ", m
+    ," x = ",x)
 ```
 
 ```{r, Dot = 1, part = "Result", echo = F, eval = T}
 x <- "apple"
 x
-class(x)#type of object x
-x <- 10 #reassignment
-class(x) #new type of object x
-#chaning assignment in R
+#type of object x :
+class(x)
+#reassignment :
+x <- 10 
+#new type of object x :
+class(x)
+#chaning assignment in R :
 y <- z <- x
 # Assignment using equal operator
 a = "orange"
@@ -83,27 +92,28 @@ a
 x = '300'
 print("x is :",x)
 print("x class type:",type(x))
-#change variable type from str to int
+#change variable type from str to int :
 x = int(x)
 print("new x class type:",type(x))
 #chained assignmen:
 n = m = x
-print(n,m,x)
-print("n=",n," m=",m," x=",x)
+print("n = ",n
+    ," m = ", m
+    ," x = ",x)
 ```
 
 <!-- Dot 2, lang: r ------------------------------------------------>
 ```{block, Dot = 2, part = "Instruction", lang = "r"}
-R.Vector is a basic data structure in R which contains element of the same type.
-The data types can be logical, integer, double, character, complex or raw.
+Vector is a basic data structure in R which contains element of the same type.  
+The data types can be logical, integer, double, character, complex or raw.  
 for more information,visit [here](https://www.datamentor.io/r-programming/vector/)
 ```
 
 <!-- Dot 2, lang: python ------------------------------------------------>
 
 ```{block, Dot = 2, part = "Instruction", lang = "python"}
-Python. List is a mutable built_in data structure in python that allows us to store 
-sets of information in one place.
+List is a mutable built_in data structure in python that allows us to store 
+sets of information in one place.  
 Lists are one of Python's most powerful features readily accessible to new programmers,
 and they tie together many important concepts in programming.
 ```
@@ -125,18 +135,19 @@ A=[1,2,"Hi"]
 print("last element od list A:",A[-1])
 A = [i**2 for i in range(1,5)]
 print('new list A is:' , A)
-A.insert(2,12)# add 12 at position 2 in list
-A.append(4) #add 4 to the end of the list
-print("A after adding 12 at position 2 and appending 4:",A)
+# add 12 at position 2 in list :
+A.insert(2,12)
+#add 4 to the end of the list :
+A.append(4)
 A.reverse()
-print('A after reversing:',A)
-print("index of element 16 is :",A.index(16))
+print('A after reversing:', A )
+print("index of element 16 is :", A.index(16))
 A.sort(reverse = True)
-print("sorted A descending order:",A)
-print("number of element 4 in list A:",A.count(4))
-print("A.pop(0) will remove the first element in list A and return it's value:")
+print("sorted A descending order:", A)
+print("number of element 4 in list A:", A.count(4))
+print(" A.pop(0) will remove the first element in list A and return it's value : ")
 A.pop(0)
-print("list A after removing it's first element:",A)
+print("list A after removing it's first element:", A)
 ```
 
 ```{r, Dot = 2, part = "Result", echo = F, eval = T}
@@ -153,12 +164,13 @@ y
 
 ```{python, Dot = 2, part = "Result", echo = F, eval = T}
 A=[1,2,"Hi"]
-print("last element of list A:",A[-1])
+print("last element od list A:",A[-1])
 A = [i**2 for i in range(1,5)]
 print('new list A is:' , A)
-A.insert(2,12)# add 12 at position 2 in list
-A.append(4) #add 4 to the end of the list
-print("A after adding 12 at position 2 and appending 4:",A)
+# add 12 at position 2 in list :
+A.insert(2,12)
+#add 4 to the end of the list :
+A.append(4)
 A.reverse()
 print('A after reversing:',A)
 print("index of element 16 is :",A.index(16))
@@ -167,54 +179,62 @@ print("sorted A descending order:",A)
 print("number of element 4 in list A:",A.count(4))
 print("A.pop(0) will remove the first element in list A and return it's value:")
 A.pop(0)
-print("list A after removing it's first element:",A)
+print("list A after removing it's first element:", A)
 ```
 <!-- Dot 3, lang: r ------------------------------------------------>
 ```{block, Dot = 3, part = "Instruction", lang = "r"}
-R.Factor is a data structure used to represent categorical data.For example,
-a data field like gender will contain only values of male,female or other.
-Factors in R are stored as a vector of integer that each integer has a label.
+Factor is a data structure used to represent categorical data.  
+For example, a data field like gender will contain only values of male,female or other.
+Factors in R are stored as a vector of integer that each integer has a label.  
 One of the most important uses of factors is in statistical modeling; since 
 categorical variables enter into statistical models differently than continuous 
 variables, storing data as factors insures that the modeling functions will 
-treat such data correctly.
-for more information,see [this](https://www.datamentor.io/r-programming/factor/)
+treat such data correctly.  
+for more information,visit [here](https://www.datamentor.io/r-programming/factor/).
 ```
 <!-- Dot 3, lang: python ------------------------------------------------>
 ```{block, Dot = 3, part = "Instruction", lang = "python"}
-Python. Tuple is an ordered collection of objects in Python.
+Tuple is an ordered collection of objects in Python.  
 You can't change tuple atfer defining it(unlike list).
 ```
 
 ```{r, Dot = 3, part = "Code", echo = T, eval = F, }
 #create a factor using factor():
-factor1 <- factor(c("male","female","female","male"))
-levels(factor1) #shows levels of factor1
-table(factor1) #returns number of each level
+factor1 <- factor( c ("male", "female" , "female" , "male") )
+#shows levels of factor1 :
+levels(factor1) 
+#returns number of each level :
+table(factor1) 
 #we can determine the order of levels:
-factor2 <- factor(c("pass","pass","fail","pass","fail"), levels = c("pass" , "fail"))
+factor2 <- factor(c("pass","pass","fail","pass","fail"),
+                  levels = c("pass" , "fail"))
 factor2
-factor2[c(3,4)] #access 3rd and 4th element of factor2
+#access 3rd and 4th element of factor2 :
+factor2[c(3,4)] 
 #illustrate how to modify elements(CANNOT assign values outside levels):
 factor1[1] <- "female"
-levels(factor1) <- c(levels(factor1),"other") #adding new level
-factor1[2] <- "other" #modify 2nd element of factor1
+#adding new level :
+levels(factor1) <- c( levels (factor1) , "other") 
+#modify 2nd element of factor1 :
+factor1[2] <- "other" 
 factor1
 ```
 
 ```{python, Dot = 3, part = "Code", echo = T, eval = F, }
 t1 = ("hello",5,4)
-print("second elemnt of tuple t1:",t1[1])
+print("second elemnt of tuple t1:" , t1[1])
 try:
   t1[2] = "good"
 except TypeError:
   print("'tuple' object does not support item assignment(immutable)")
 t2 =  t1 + (6,7,8)
-print("t2 is :",t2)
+print("t2 is :" ,  t2)
 #showing packing and unpacking variables with tuple
-print("t2 is : ",t2)
-(a,b,c) = (10,11,"apple")
-print("a :",a," ,b :",b ," ,c :",c)
+print("t2 is : " , t2)
+(a , b , c) = ( 10 , 11 , "apple" )
+print("a :",a
+      ," ,b :",b 
+      ," ,c :",c)
 a , c = c, a
 print("new a :",a," ,new c :",c)
 ```
@@ -222,16 +242,21 @@ print("new a :",a," ,new c :",c)
 ```{r, Dot = 3, part = "Result", echo = F, eval = T}
 #create a factor using factor():
 factor1 <- factor(c("male","female","female","male"))
-levels(factor1) #shows levels of factor1
-table(factor1) #returns number of each level
+#shows levels of factor1 :
+levels(factor1) 
+#returns number of each level :
+table(factor1) 
 #we can determine the order of levels:
 factor2 <- factor(c("pass","pass","fail","pass","fail"), levels = c("pass" , "fail"))
 factor2
-factor2[c(3,4)] #access 3rd and 4th element of factor2
+#access 3rd and 4th element of factor2 :
+factor2[c(3,4)] 
 #illustrate how to modify elements(CANNOT assign values outside levels):
 factor1[1] <- "female"
-levels(factor1) <- c(levels(factor1),"other") #adding new level
-factor1[2] <- "other" #modify 2nd element of factor1
+#adding new level :
+levels(factor1) <- c(levels(factor1),"other") 
+#modify 2nd element of factor1 :
+factor1[2] <- "other" 
 factor1
 ```
 
@@ -253,32 +278,41 @@ print("new a :",a," ,new c :",c)
 ```
 <!-- Dot 4, lang: r ------------------------------------------------>
 ```{block, Dot = 4, part = "Instruction", lang = "r"}
-R.Matrix is a two dimensional data structure in R programming.
-Matrix is similar to vector but additionally contains the dimension attribute.
+Matrix is a two dimensional data structure in R programming.  
+Matrix is similar to vector but additionally contains the dimension attribute.  
 All attributes of an object can be checked with the attributes() function
-(dimension can be checked directly with the dim() function).
-for more information ,see [this](https://www.datamentor.io/r-programming/matrix/)
+(dimension can be checked directly with the `dim()` function ).  
+`as.matrix()` is used to convert an object into a matrix.  
+for more information ,see [this](https://www.datamentor.io/r-programming/matrix/).
 ```
 
 <!-- Dot 4, lang: python ------------------------------------------------>
 
 ```{block, Dot = 4, part = "Instruction", lang = "python"}
-Python. Set is a built_in data structure in Python which is unordered ,
+Set is a built_in data structure in Python which is unordered ,
 and has no duplicate values.
 ```
 
 ```{r, Dot = 4, part = "Code", echo = T, eval = F, }
-matrix1 <- matrix(1:9,nrow=3,byrow=TRUE,dimnames=list(c("X","Y","Z"),
-                                                      c("A","B","C")))
+matrix1 <- matrix(1:9,
+                  nrow=3,
+                  byrow=TRUE,
+                  dimnames=list(c("X","Y","Z"),
+                                            c("A","B","C")))
 matrix1
 #create matrix using cbind() ( and rbind() ):
 matrix2 <- cbind(c( 4, 5, 6) , c( 7, 8, 9))
 matrix2
-matrix2[3,2] #select an element
-matrix2[3, ] #select 3rd row of matrix2
-matrix2[ ,2] #select 2nd column of matrix2
-t(matrix2) #transpose of matrix2
-matrix1 %*% matrix2 #matrix multiplication
+#select an element :
+matrix2[3,2] 
+#select 3rd row of matrix2 :
+matrix2[3, ] 
+#select 2nd column of matrix2 :
+matrix2[ ,2]
+#transpose of matrix2 :
+t(matrix2)
+#matrix multiplication :
+matrix1 %*% matrix2 
 ```
 
 ```{python, Dot = 4, part = "Code", echo = T, eval = F, }
@@ -289,10 +323,10 @@ A.add(20)
 A.remove(3)
 print("set A after adding 20 and removing 3:",A)
 B = {2,3,5,7,8}
-print("(A union B) is:",A|B)
-print("A intersection b is: ",A & B)
+print("(A union B) is:", A|B)
+print("A intersection b is: ", A & B)
 print("A minus B is:",A - B)
-print("symmetric diffrence of A and B:",A ^ B)
+print("symmetric diffrence of A and B:", A ^ B)
 if empty_set <= A :
   print("emty set is a subset of A")
 else : 
@@ -301,17 +335,25 @@ else :
 ```
 
 ```{r, Dot = 4, part = "Result", echo = F, eval = T}
-matrix1 <- matrix(1:9,nrow=3,byrow=TRUE,dimnames=list(c("X","Y","Z"),
+matrix1 <- matrix(1:9,
+                  nrow=3,
+                  byrow=TRUE,
+                  dimnames=list(c("X","Y","Z"),
                                                       c("A","B","C")))
 matrix1
 #create matrix using cbind() ( and rbind() ):
 matrix2 <- cbind(c( 4, 5, 6) , c( 7, 8, 9))
 matrix2
-matrix2[3,2] #select an element
-matrix2[3, ] #select 3rd row of matrix2
-matrix2[ ,2] #select 2nd column of matrix2
-t(matrix2) #transpose of matrix2
-matrix1 %*% matrix2 #matrix multiplication
+#select an element :
+matrix2[3,2] 
+#select 3rd row of matrix2 :
+matrix2[3, ] 
+#select 2nd column of matrix2 :
+matrix2[ ,2]
+#transpose of matrix2 :
+t(matrix2)
+#matrix multiplication :
+matrix1 %*% matrix2
 ```
 
 ```{python, Dot = 4, part = "Result", echo = F, eval = T}
@@ -335,54 +377,78 @@ else :
 
 <!-- Dot 5, lang: python ------------------------------------------------>
 ```{block, Dot = 5, part = "Instruction", lang = "r"}
-R. A list is a collection of elements which can be of different types.
+A list is a collection of elements which can be of different types.  
 A vector  having all elements of the same type is called atomic vector(vector)
-but a vector having elements of diffrent types is called list.
-You can also see [this](https://www.datamentor.io/r-programming/list/)
+but a vector having elements of diffrent types is called list.  
+We can also set tags(a,b,c are tags here) for list elements.Doing this,
+our list will be like `dictionary` in Python.  
+`as.list()` is used to convert an object to list. These objects can be
+Vectors, Matrices, Factors, and data frames.  
+You can also see [this](https://www.datamentor.io/r-programming/list/) and
+[this](https://www.geeksforgeeks.org/convert-an-object-to-list-in-r-programming-as-list-function/) for more information.
 ```
 <!-- Dot 5, lang: python ------------------------------------------------>
 
 ```{block, Dot = 5, part = "Instruction", lang = "python"}
-Python. Python's dictionaries allow you to connect pieces of related
-information.Each piece of information in a dictionary is stored as a key-value pair.
-When you provide a key, Python returns the value associated with that key.
+Python's dictionaries allow you to connect pieces of related
+information.Each piece of information in a dictionary is stored as a key-value pair.  
+When you provide a key, Python returns the value associated with that key.  
+You can convert `list` to `dict` using list `index` as the `keys`.  
+Please check [here](https://medium.com/swlh/data-structure-conversion-f99d3ff9eaf5) 
+for details.
 ```
 
 ```{r, Dot = 5, part = "Code", echo = T, eval = F, }
 list1 <- list(TRUE,"hello",1:4)
 list1
-#We can also set tags(a,b,c are tags here) for list elements.Doing this,
-#our list will be like dictionary in Python:
+# list with tags :
 list2 <- list("a" = TRUE, "b" = "hello", "c" = 1:4)
 list2
-list2[[1]] #access 1st element of list2
-list2$b #access element of list2 named b
-list2$b <- "bye!" #modify 2nd element of list2(element named "b")
+#access 1st element of list2 :
+list2[[1]] 
+#access element of list2 named b :
+list2$b 
+#modify 2nd element of list2(element named "b") :
+list2$b <- "bye!" 
 list2$d <- 10.5 #add new element to list
 list2
-list2$c <- NULL #delete element named c from list2
-list2
+#delete element named c from list2 :
+list2$c <- NULL
+# convert vector to list :
+vec1 <- c(1, 2, 3, 4)
+list_from_vec1 <- as.list(vec1)
+list_from_vec1
 ```
 
 ```{python, Dot = 5, part = "Code", echo = T, eval = F, }
-dict1 = {"a":1,"b":2,"c":3} #define a dictionary
-print("a is a key and it's value is :",dict1.get("a"))
-print("True") if "b" in dict1 else print("False")#search in dictionary
-dict1["d"] = 4 #add a new pair to dictionary
-dict1["c"] = "10" #modify c's value
+#define a dictionary :
+dict1 = { "a":1 , "b":2 , "c":3 }  
+print("a is a key and it's value is :" , dict1.get ( "a" ) )
+
+#Search in dictionary :
+print("True") if "b" in dict1 else print("False")
+#add a new pair to dictionary :
+dict1["d"] = 4 
+ #modify c's value :
+dict1["c"] = "10"
 del dict1["a"]
-print("dict1 after deleting a_1 pair :",dict1)
-print("length of dict1 :",len(dict1))
+
 #Looping through all key-value pairs:
 for alphabet,number in dict1.items():
   print(alphabet+" : ",number)
+
 #looping through all the keys:
 for alphabet in dict1.keys():
   print(alphabet)
+
 #looping through all values:
 for number in dict1.keys():
   print(number)
-  
+
+#convert list to dictionary :
+list1 = [i for i in range(1,5)]
+dict_from_list1 = { i:k for i,k in enumerate(list1) }
+dict_from_list1
 ```
 
 ```{r, Dot = 5, part = "Result", echo = F, eval = T}
@@ -399,57 +465,93 @@ list2$d <- 10.5 #add new element to list
 list2
 list2$c <- NULL #delete element named c from list2
 list2
+# convert vector to list :
+vec1 <- c(1, 2, 3, 4)
+list_from_vec1 <- as.list(vec1)
+list_from_vec1
 ```
 
 ```{python, Dot = 5, part = "Result", echo = F, eval = T}
-dict1 = {"a":1,"b":2,"c":3} #define a dictionary
-print("a is a key and it's value is :",dict1.get("a"))
-print("True") if "b" in dict1 else print("False")#search in dictionary
-dict1["d"] = 4 #add a new pair to dictionary
-dict1["c"] = "10" #modify c's value
+#define a dictionary :
+dict1 = { "a":1 , "b":2 , "c":3 }  
+print("a is a key and it's value is :" , dict1.get ( "a" ) )
+
+#Search in dictionary :
+print("True") if "b" in dict1 else print("False")
+#add a new pair to dictionary :
+dict1["d"] = 4 
+ #modify c's value :
+dict1["c"] = "10"
 del dict1["a"]
-print("dict1 after deleting a_1 pair :",dict1)
-print("length of dict1 :",len(dict1))
+
 #Looping through all key-value pairs:
 for alphabet,number in dict1.items():
   print(alphabet+" : ",number)
+
 #looping through all the keys:
 for alphabet in dict1.keys():
   print(alphabet)
+
 #looping through all values:
 for number in dict1.keys():
   print(number)
-  
+
+#convert list to dictionary :
+list1 = [i for i in range(1,5)]
+dict_from_list1 = { i:k for i,k in enumerate(list1) }
+dict_from_list1
 ```
 
 <!-- Dot 6, lang: r ------------------------------------------------>
 ```{block, Dot = 6, part = "Instruction", lang = "r"}
-R. Data Frame is a special case of a list where all elements are the same 
-length.The main usage of data frame is storing tabular data.
-Data Frames can be created using data.frame().
+Data Frame is a special case of a list where all elements are the same 
+length.The main usage of data frame is storing tabular data.  
+Data Frames can be created using data.frame().  
+`as.data.frame()` function in R Language is used to convert an object to data frame.
+These objects can be Vectors, Lists, Matrices, and Factors.  
 you can also see [here](https://www.datamentor.io/r-programming/data-frame/)
 ```
 
 <!-- Dot 6, lang: python ------------------------------------------------>
 ```{block, Dot = 6, part = "Instruction", lang = "python"}
-Puthon. A DataFrame is a table. It contains an array of individual entries, each of which has a certain value. Each entry corresponds to a row (or record) and a column.
-Data frame is one of the most commonly used pandas objects.
+A DataFrame is a table. It contains an array of individual entries, each of which has a certain value. Each entry corresponds to a row (or record) and a column.
+Data frame is one of the most commonly used pandas objects.  
+`df.head(n)` returns first n rows of data frame.  
+`df.tail(n)` returns last n rows from data frame.  
+`pandas.DataFrame(list)` converts the list to data frame.  
+`as.matrix(df)` converts dataframe to a numeric matrix.  
+you can also convert dictionary to dataframe using 
+`pandas.DataFrame.from_dict(data, orient = { 'columns','index'} , dtype=None, columns=None)`.  
+Please visit [here](https://medium.com/swlh/data-structure-conversion-f99d3ff9eaf5)
+for details.
 ```
 
 ```{r, Dot = 6, part = "Code", echo = T, eval = F, }
 #create data frame using data.frame():
 df1 <- data.frame("SN"=1:2,"Age"=c(21,15),"Name"=c("John","Dora"))
-dim(df1) #number of rows and columns
-df1[["Name"]] #access column "Name"
-df1[1, ] #access 1st row of df1(Matrix subsetting)
-df1[, 2 ] #access 2nd column of df1(Matrix subsetting)
-df1[2,"Age"] <- 30 #modify one component of data frame
-df1
-df1 <-rbind(df1,list(1,16,"Paul")) #add a new record to data frame using rbind()
+#number of rows and columns :
+dim(df1) 
+#access column "Name" :
+df1[["Name"]] 
+#access 1st row of df1(Matrix subsetting) :
+df1[1, ]
+#access 2nd column of df1(Matrix subsetting) :
+df1[, 2 ]
+#modify one component of data frame :
+df1[2,"Age"] <- 30 
+#add a new record to data frame using rbind():
+df1 <-rbind(df1,list(1,16,"Paul")) 
 df1 <- cbind(df1,State=c("NY","FL")) #add a new column to data frame
 df1
-df1$State <- NULL #delete column "state" of df1
-df1 <- df1[-1,] #delete rows using reassignments
+#delete column "state" of df1 :
+df1$State <- NULL 
+#delete rows using reassignments :
+df1 <- df1[-1,]
+# Convert list to dataframe :
+lis1 <- list("a" = TRUE, "b" = "hello", "c" = 1:4)
+as.data.frame(lis1)
+# convert dataframe to numeric matrix :
+as.matrix(df1)
 ```
 
 ```{python, Dot = 6, part = "Code", echo = T, eval = F, }
@@ -460,29 +562,47 @@ print(data_frame1)
 data_frame1.head(2)#rows 1 and 2 of data_frame1
 data_frame1.tail(1)
 data_frame1.describe()
-data_frame1.sort_index()#sort data frame based on indices
-data_frame1.sort_values("lemon",ascending = True)
-data_frame1[["apple","lemon"]] #choose column
-data_frame1[0:2] #choose row
+#choose column :
+data_frame1 [ ["apple" , "lemon"] ] 
+#choose row :
+data_frame1 [0:2] 
 #number of apples and lemons of people with 8 oranges:
-data_frame1[data_frame1.orange == 8][["apple","lemon"]]
-data_frame1.iloc[1:3,1] #select columns based on column number(column 1)
+data_frame1 [ data_frame1.orange == 8][ ["apple","lemon"] ]
+#convert list to dataframe :
+lis1 = [i for i in range(5)]
+dataframe_from_lis1 = pd.DataFrame(lis1)
+#convert dictionary to dataframe :
+dic1 = {"col_1" : [1, 2, 3 ] , "col_2" : [4, 5, 6 ]}
+# parameter 'orient' :If the keys of the passed dict should be the columns of the resulting # DataFrame, pass ‘columns’ (default). Otherwise if the keys should be rows, pass ‘index’.
+pd.DataFrame.from_dict(dic1, orient='columns' , dtype=None, columns=None)
 ```
 
 ```{r, Dot = 6, part = "Result", echo = F, eval = T}
  #create data frame using data.frame():
 df1 <- data.frame("SN"=1:2,"Age"=c(21,15),"Name"=c("John","Dora"))
 df1
-dim(df1) #number of rows and columns
-df1[["Name"]] #access column "Name"
-df1[1, ] #access 1st row of df1(Matrix subsetting)
-df1[, 2 ] #access 2nd column of df1(Matrix subsetting)
-df1[2,"Age"] <- 30 #modify one component of data frame
+#number of rows and columns :
+dim(df1) 
+#access column "Name" :
+df1[["Name"]]
+#access 1st row of df1(Matrix subsetting) :
+df1[1, ] 
+#access 2nd column of df1(Matrix subsetting) :
+df1[, 2 ] 
+#modify one component of data frame :
+df1[2,"Age"] <- 30 
+#add a new record to data frame using rbind() :
+rbind(df1,list(1,16,"Paul"))
+#add a new column to data frame :
+cbind(df1,State=c("NY","FL")) 
 df1
-rbind(df1,list(1,16,"Paul")) #add a new record to data frame using rbind()
-cbind(df1,State=c("NY","FL")) #add a new column to data frame
 df1$State <- NULL #delete column "state" of df1
 df1 <- df1[-1,] #delete rows using reassignments
+# Convert list to dataframe :
+lis1 <- list("a" = TRUE, "b" = "hello", "c" = 1:4)
+as.data.frame(lis1)
+# convert dataframe to numeric matrix :
+as.matrix(df1)
 ```
 
 ```{python, Dot = 6, part = "Result", echo = F, eval = T}
@@ -490,14 +610,20 @@ import pandas as pd
 data_frame1 = pd.DataFrame({"apple" :[3,2,1,4],"orange" :[8,7,8,6],
 "lemon":[10,9,11,12]},index=["Joe","John","Matt","Hannah"])
 print(data_frame1)
-data_frame1.head(2)#rows 1 and 2 of data_frame1
+data_frame1.head(2)
 data_frame1.tail(1)
 data_frame1.describe()
-data_frame1.sort_index()#sort data frame based on indices
-data_frame1.sort_values("lemon",ascending = True)
-data_frame1[["apple","lemon"]] #choose column
-data_frame1[0:2] #choose row
+#choose column :
+data_frame1 [ ["apple" , "lemon"] ] 
+#choose row :
+data_frame1 [0:2] 
 #number of apples and lemons of people with 8 oranges:
-data_frame1[data_frame1.orange == 8][["apple","lemon"]]
-data_frame1.iloc[1:3,1] #select columns based on column number(column 1)
+data_frame1 [ data_frame1.orange == 8][ ["apple","lemon"] ]
+#convert list to dataframe :
+lis1 = [i for i in range(5)]
+dataframe_from_lis1 = pd.DataFrame(lis1)
+#convert dictionary to dataframe :
+dic1 = {"col_1" : [1, 2, 3 ] , "col_2" : [4, 5, 6 ]}
+# parameter 'orient' :If the keys of the passed dict should be the columns of the resulting # DataFrame, pass ‘columns’ (default). Otherwise if the keys should be rows, pass ‘index’.
+pd.DataFrame.from_dict(dic1, orient='columns' , dtype=None, columns=None)
 ```
