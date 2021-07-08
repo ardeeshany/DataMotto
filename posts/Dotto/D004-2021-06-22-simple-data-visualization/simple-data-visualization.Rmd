@@ -144,7 +144,8 @@ auto_filepath = "data/Automobile_data.csv"
 auto = pd.read_csv(auto_filepath)
 
 # Print the five random rows of the data
-auto.sample(5)
+pd.set_option('display.max_columns', 3)
+auto.sample(5).T
 
 ```
 
