@@ -26,8 +26,6 @@
            pre:not([class]) { background-color: white }</style>
     <script src="basic-data-structure_files/navigation-1.1/tabsets.js"></script>
     <script src="basic-data-structure_files/accessible-code-block-0.0.1/empty-anchor.js"></script>
-    <script src="basic-data-structure_files/kePrint-0.0.1/kePrint.js"></script>
-    <link href="basic-data-structure_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         
       <meta property="og:title" content="Basic Data structures in Python and R" />
       <meta property="og:type" content="article">
@@ -1018,52 +1016,35 @@ Please visit <a href="https://medium.com/swlh/data-structure-conversion-f99d3ff9
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb70"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="kw">library</span>(kableExtra)</span>
-<span id="cb70-2"><a href="#cb70-2"></a> <span class="co">#create data frame using data.frame():</span></span>
-<span id="cb70-3"><a href="#cb70-3"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="st">&quot;SN&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>=<span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">15</span>),<span class="st">&quot;Name&quot;</span>=<span class="kw">c</span>(<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Dora&quot;</span>))</span>
-<span id="cb70-4"><a href="#cb70-4"></a>df1 <span class="op">%&gt;%</span></span>
-<span id="cb70-5"><a href="#cb70-5"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-6"><a href="#cb70-6"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="co">#create data frame using data.frame():</span></span>
+<span id="cb70-2"><a href="#cb70-2"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="st">&quot;SN&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">2</span></span>
+<span id="cb70-3"><a href="#cb70-3"></a>                  ,<span class="st">&quot;Age&quot;</span>=<span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">15</span>)</span>
+<span id="cb70-4"><a href="#cb70-4"></a>                  ,<span class="st">&quot;Name&quot;</span>=<span class="kw">c</span>(<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Dora&quot;</span>))</span>
+<span id="cb70-5"><a href="#cb70-5"></a><span class="co">#number of rows and columns :</span></span>
+<span id="cb70-6"><a href="#cb70-6"></a><span class="kw">dim</span>(df1) </span>
 <span id="cb70-7"><a href="#cb70-7"></a><span class="co">#access column &quot;Name&quot; :</span></span>
-<span id="cb70-8"><a href="#cb70-8"></a>df2 &lt;-<span class="st"> </span>df1[[<span class="st">&quot;Name&quot;</span>]]</span>
-<span id="cb70-9"><a href="#cb70-9"></a>df2 <span class="op">%&gt;%</span></span>
-<span id="cb70-10"><a href="#cb70-10"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-11"><a href="#cb70-11"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-12"><a href="#cb70-12"></a><span class="co">#access 1st row of df1(Matrix subsetting) :</span></span>
-<span id="cb70-13"><a href="#cb70-13"></a>df2 &lt;-<span class="st"> </span>df1[<span class="dv">1</span>, ] </span>
-<span id="cb70-14"><a href="#cb70-14"></a>df2 <span class="op">%&gt;%</span></span>
-<span id="cb70-15"><a href="#cb70-15"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-16"><a href="#cb70-16"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-17"><a href="#cb70-17"></a><span class="co">#access 2nd column of df1(Matrix subsetting) :</span></span>
-<span id="cb70-18"><a href="#cb70-18"></a>df2 &lt;-<span class="st"> </span>df1[, <span class="dv">2</span> ] </span>
-<span id="cb70-19"><a href="#cb70-19"></a>df2 <span class="op">%&gt;%</span></span>
-<span id="cb70-20"><a href="#cb70-20"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-21"><a href="#cb70-21"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-22"><a href="#cb70-22"></a><span class="co">#modify one component of data frame :</span></span>
-<span id="cb70-23"><a href="#cb70-23"></a>df1[<span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>] &lt;-<span class="st"> </span><span class="dv">30</span></span>
-<span id="cb70-24"><a href="#cb70-24"></a>df1 <span class="op">%&gt;%</span></span>
-<span id="cb70-25"><a href="#cb70-25"></a><span class="st">  </span><span class="kw">kbl</span>(<span class="dt">caption =</span> <span class="st">&quot;df1 after modification&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb70-26"><a href="#cb70-26"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-27"><a href="#cb70-27"></a><span class="co">#add a new record to data frame using rbind() :</span></span>
-<span id="cb70-28"><a href="#cb70-28"></a>df2 &lt;-<span class="st"> </span><span class="kw">rbind</span>(df1,<span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">16</span>,<span class="st">&quot;Paul&quot;</span>))</span>
-<span id="cb70-29"><a href="#cb70-29"></a>df2 <span class="op">%&gt;%</span></span>
-<span id="cb70-30"><a href="#cb70-30"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-31"><a href="#cb70-31"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-32"><a href="#cb70-32"></a><span class="co">#add a new column to data frame :</span></span>
-<span id="cb70-33"><a href="#cb70-33"></a>df2 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1,<span class="dt">State=</span><span class="kw">c</span>(<span class="st">&quot;NY&quot;</span>,<span class="st">&quot;FL&quot;</span>)) </span>
-<span id="cb70-34"><a href="#cb70-34"></a>df2 <span class="op">%&gt;%</span></span>
-<span id="cb70-35"><a href="#cb70-35"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-36"><a href="#cb70-36"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-37"><a href="#cb70-37"></a>df1<span class="op">$</span>State &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co">#delete column &quot;state&quot; of df1</span></span>
-<span id="cb70-38"><a href="#cb70-38"></a>df1 &lt;-<span class="st"> </span>df1[<span class="op">-</span><span class="dv">1</span>,] <span class="co">#delete rows using reassignments</span></span>
-<span id="cb70-39"><a href="#cb70-39"></a><span class="co"># Convert list to dataframe :</span></span>
-<span id="cb70-40"><a href="#cb70-40"></a>lis1 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;a&quot;</span> =<span class="st"> </span><span class="ot">TRUE</span>, <span class="st">&quot;b&quot;</span> =<span class="st"> &quot;hello&quot;</span>, <span class="st">&quot;c&quot;</span> =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb70-41"><a href="#cb70-41"></a>df_from_lis1 &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(lis1)</span>
-<span id="cb70-42"><a href="#cb70-42"></a>df_from_lis1 <span class="op">%&gt;%</span></span>
-<span id="cb70-43"><a href="#cb70-43"></a><span class="st">  </span><span class="kw">kbl</span>(<span class="dt">caption =</span> <span class="st">&quot;data frame from lis1&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb70-44"><a href="#cb70-44"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-45"><a href="#cb70-45"></a><span class="co"># convert dataframe to numeric matrix :</span></span>
-<span id="cb70-46"><a href="#cb70-46"></a><span class="kw">as.matrix</span>(df1)</span></code></pre></div>
+<span id="cb70-8"><a href="#cb70-8"></a>df1[[<span class="st">&quot;Name&quot;</span>]] </span>
+<span id="cb70-9"><a href="#cb70-9"></a><span class="co">#access 1st row of df1(Matrix subsetting) :</span></span>
+<span id="cb70-10"><a href="#cb70-10"></a>df1[<span class="dv">1</span>, ]</span>
+<span id="cb70-11"><a href="#cb70-11"></a><span class="co">#access 2nd column of df1(Matrix subsetting) :</span></span>
+<span id="cb70-12"><a href="#cb70-12"></a>df1[, <span class="dv">2</span> ]</span>
+<span id="cb70-13"><a href="#cb70-13"></a><span class="co">#modify one component of data frame :</span></span>
+<span id="cb70-14"><a href="#cb70-14"></a>df1[<span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>] &lt;-<span class="st"> </span><span class="dv">30</span> </span>
+<span id="cb70-15"><a href="#cb70-15"></a><span class="co">#add a new record to data frame using rbind():</span></span>
+<span id="cb70-16"><a href="#cb70-16"></a>df1 &lt;-<span class="kw">rbind</span>(df1,</span>
+<span id="cb70-17"><a href="#cb70-17"></a>            <span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">16</span>,<span class="st">&quot;Paul&quot;</span>)) </span>
+<span id="cb70-18"><a href="#cb70-18"></a>df1 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1,</span>
+<span id="cb70-19"><a href="#cb70-19"></a>             <span class="dt">State=</span><span class="kw">c</span>(<span class="st">&quot;NY&quot;</span>,<span class="st">&quot;FL&quot;</span>)) <span class="co">#add a new column to data frame</span></span>
+<span id="cb70-20"><a href="#cb70-20"></a>df1</span>
+<span id="cb70-21"><a href="#cb70-21"></a><span class="co">#delete column &quot;state&quot; of df1 :</span></span>
+<span id="cb70-22"><a href="#cb70-22"></a>df1<span class="op">$</span>State &lt;-<span class="st"> </span><span class="ot">NULL</span> </span>
+<span id="cb70-23"><a href="#cb70-23"></a><span class="co">#delete rows using reassignments :</span></span>
+<span id="cb70-24"><a href="#cb70-24"></a>df1 &lt;-<span class="st"> </span>df1[<span class="op">-</span><span class="dv">1</span>,]</span>
+<span id="cb70-25"><a href="#cb70-25"></a><span class="co"># Convert list to dataframe :</span></span>
+<span id="cb70-26"><a href="#cb70-26"></a>lis1 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;a&quot;</span> =<span class="st"> </span><span class="ot">TRUE</span>, <span class="st">&quot;b&quot;</span> =<span class="st"> &quot;hello&quot;</span>, <span class="st">&quot;c&quot;</span> =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
+<span id="cb70-27"><a href="#cb70-27"></a><span class="kw">as.data.frame</span>(lis1)</span>
+<span id="cb70-28"><a href="#cb70-28"></a><span class="co"># convert dataframe to numeric matrix :</span></span>
+<span id="cb70-29"><a href="#cb70-29"></a><span class="kw">as.matrix</span>(df1)</span></code></pre></div>
 
 </div>
  
@@ -1112,319 +1093,29 @@ Please visit <a href="https://medium.com/swlh/data-structure-conversion-f99d3ff9
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
-<thead>
-<tr>
-<th style="text-align:right;">
-SN
-</th>
-<th style="text-align:right;">
-Age
-</th>
-<th style="text-align:left;">
-Name
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:left;">
-John
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-15
-</td>
-<td style="text-align:left;">
-Dora
-</td>
-</tr>
-</tbody>
-</table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
-<thead>
-<tr>
-<th style="text-align:left;">
-x
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-John
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Dora
-</td>
-</tr>
-</tbody>
-</table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
-<thead>
-<tr>
-<th style="text-align:right;">
-SN
-</th>
-<th style="text-align:right;">
-Age
-</th>
-<th style="text-align:left;">
-Name
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:left;">
-John
-</td>
-</tr>
-</tbody>
-</table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
-<thead>
-<tr>
-<th style="text-align:right;">
-x
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-21
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-15
-</td>
-</tr>
-</tbody>
-</table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
-<caption>
-df1 after modification
-</caption>
-<thead>
-<tr>
-<th style="text-align:right;">
-SN
-</th>
-<th style="text-align:right;">
-Age
-</th>
-<th style="text-align:left;">
-Name
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:left;">
-John
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-30
-</td>
-<td style="text-align:left;">
-Dora
-</td>
-</tr>
-</tbody>
-</table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
-<thead>
-<tr>
-<th style="text-align:right;">
-SN
-</th>
-<th style="text-align:right;">
-Age
-</th>
-<th style="text-align:left;">
-Name
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:left;">
-John
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-30
-</td>
-<td style="text-align:left;">
-Dora
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-16
-</td>
-<td style="text-align:left;">
-Paul
-</td>
-</tr>
-</tbody>
-</table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
-<thead>
-<tr>
-<th style="text-align:right;">
-SN
-</th>
-<th style="text-align:right;">
-Age
-</th>
-<th style="text-align:left;">
-Name
-</th>
-<th style="text-align:left;">
-State
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:left;">
-John
-</td>
-<td style="text-align:left;">
-NY
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-30
-</td>
-<td style="text-align:left;">
-Dora
-</td>
-<td style="text-align:left;">
-FL
-</td>
-</tr>
-</tbody>
-</table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
-<caption>
-data frame from lis1
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-a
-</th>
-<th style="text-align:left;">
-b
-</th>
-<th style="text-align:right;">
-c
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-hello
-</td>
-<td style="text-align:right;">
-1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-hello
-</td>
-<td style="text-align:right;">
-2
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-hello
-</td>
-<td style="text-align:right;">
-3
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-hello
-</td>
-<td style="text-align:right;">
-4
-</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##   SN Age Name
+## 1  1  21 John
+## 2  2  15 Dora</code></pre>
+<pre><code>## [1] 2 3</code></pre>
+<pre><code>## [1] &quot;John&quot; &quot;Dora&quot;</code></pre>
+<pre><code>##   SN Age Name
+## 1  1  21 John</code></pre>
+<pre><code>## [1] 21 15</code></pre>
+<pre><code>##   SN Age Name
+## 1  1  21 John
+## 2  2  30 Dora
+## 3  1  16 Paul</code></pre>
+<pre><code>##   SN Age Name State
+## 1  1  21 John    NY
+## 2  2  30 Dora    FL</code></pre>
+<pre><code>##   SN Age Name
+## 1  1  21 John
+## 2  2  30 Dora</code></pre>
+<pre><code>##      a     b c
+## 1 TRUE hello 1
+## 2 TRUE hello 2
+## 3 TRUE hello 3
+## 4 TRUE hello 4</code></pre>
 <pre><code>##   SN  Age  Name  
 ## 2 &quot;2&quot; &quot;30&quot; &quot;Dora&quot;</code></pre>
 
@@ -1465,6 +1156,10 @@ hello
 <pre><code>##       apple  lemon
 ## Joe       3     10
 ## Matt      1     11</code></pre>
+<pre><code>##    col_1  col_2
+## 0      1      4
+## 1      2      5
+## 2      3      6</code></pre>
 
 </div>
  
