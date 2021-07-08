@@ -1,0 +1,47 @@
+{
+  "file_name": ["basic-data-structure"],
+  "dir_name": ["D005-2021-06-22-basic-data-structure"],
+  "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+  "link": ["posts/Dotto/D005-2021-06-22-basic-data-structure/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [5],
+  "dotto_label": ["D005"],
+  "dotto_id": ["ea4a8d12-d342-11eb-a85d-acbc32baed85"],
+  "title": ["Basic Data structures in Python and R"],
+  "description": ["This Dotto illustrates how to create , modify and convert data structures\nlike vector,factor,matrix,list and data frame in R, and list, tuple, set,\ndictionary and data frame in Python.\n"],
+  "author": [
+    {
+      "name": ["Parnian Jahangiri Rad"],
+      "occupation": ["Data science intern"],
+      "affiliation": ["DataMotto"],
+      "url": ["https://www.linkedin.com/in/parnian-jahangiri-rad-4603611b4"],
+      "img": ["Parnian-Jahangiri-Rad.jpg"],
+      "lang": ["r , python"],
+      "profile_img_for_Dotto": ["./basic-data-structure_files/figure-html/Parnian-Jahangiri-Rad.jpg"],
+      "profile_img": ["./posts/Dotto/D005-2021-06-22-basic-data-structure/basic-data-structure_files/figure-html/Parnian-Jahangiri-Rad.jpg"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": {}
+    },
+    {
+      "lang": ["python"],
+      "pkgs": ["pandas"]
+    }
+  ],
+  "date": {
+    "created": ["2021-06-23"],
+    "last_updated": ["2021-06-23"]
+  },
+  "categories": ["General"],
+  "applications": ["General"],
+  "cover_image": {},
+  "slug": ["basic-data-structures-in-python-and-r"],
+  "output": ["DataMotto::Dotto"]
+}
