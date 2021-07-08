@@ -527,33 +527,50 @@ for details.
 ```
 
 ```{r, Dot = 6, part = "Code", echo = T, eval = F, }
-#create data frame using data.frame():
-df1 <- data.frame("SN"=1:2
-                  ,"Age"=c(21,15)
-                  ,"Name"=c("John","Dora"))
-#number of rows and columns :
-dim(df1) 
+library(kableExtra)
+ #create data frame using data.frame():
+df1 <- data.frame("SN"=1:2,"Age"=c(21,15),"Name"=c("John","Dora"))
+df1 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
 #access column "Name" :
-df1[["Name"]] 
+df2 <- df1[["Name"]]
+df2 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
 #access 1st row of df1(Matrix subsetting) :
-df1[1, ]
+df2 <- df1[1, ] 
+df2 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
 #access 2nd column of df1(Matrix subsetting) :
-df1[, 2 ]
+df2 <- df1[, 2 ] 
+df2 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
 #modify one component of data frame :
-df1[2,"Age"] <- 30 
-#add a new record to data frame using rbind():
-df1 <-rbind(df1,
-            list(1,16,"Paul")) 
-df1 <- cbind(df1,
-             State=c("NY","FL")) #add a new column to data frame
-df1
-#delete column "state" of df1 :
-df1$State <- NULL 
-#delete rows using reassignments :
-df1 <- df1[-1,]
+df1[2,"Age"] <- 30
+df1 %>%
+  kbl(caption = "df1 after modification") %>%
+  kable_material(c("striped", "hover"))
+#add a new record to data frame using rbind() :
+df2 <- rbind(df1,list(1,16,"Paul"))
+df2 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
+#add a new column to data frame :
+df2 <- cbind(df1,State=c("NY","FL")) 
+df2 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
+df1$State <- NULL #delete column "state" of df1
+df1 <- df1[-1,] #delete rows using reassignments
 # Convert list to dataframe :
 lis1 <- list("a" = TRUE, "b" = "hello", "c" = 1:4)
-as.data.frame(lis1)
+df_from_lis1 <- as.data.frame(lis1)
+df_from_lis1 %>%
+  kbl(caption = "data frame from lis1") %>%
+  kable_material(c("striped", "hover"))
 # convert dataframe to numeric matrix :
 as.matrix(df1)
 ```
@@ -587,29 +604,50 @@ pd.DataFrame.from_dict(dic1,
 ```
 
 ```{r, Dot = 6, part = "Result", echo = F, eval = T}
+library(kableExtra)
  #create data frame using data.frame():
 df1 <- data.frame("SN"=1:2,"Age"=c(21,15),"Name"=c("John","Dora"))
-df1
-#number of rows and columns :
-dim(df1) 
+df1 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
 #access column "Name" :
-df1[["Name"]]
+df2 <- df1[["Name"]]
+df2 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
 #access 1st row of df1(Matrix subsetting) :
-df1[1, ] 
+df2 <- df1[1, ] 
+df2 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
 #access 2nd column of df1(Matrix subsetting) :
-df1[, 2 ] 
+df2 <- df1[, 2 ] 
+df2 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
 #modify one component of data frame :
-df1[2,"Age"] <- 30 
+df1[2,"Age"] <- 30
+df1 %>%
+  kbl(caption = "df1 after modification") %>%
+  kable_material(c("striped", "hover"))
 #add a new record to data frame using rbind() :
-rbind(df1,list(1,16,"Paul"))
+df2 <- rbind(df1,list(1,16,"Paul"))
+df2 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
 #add a new column to data frame :
-cbind(df1,State=c("NY","FL")) 
-df1
+df2 <- cbind(df1,State=c("NY","FL")) 
+df2 %>%
+  kbl() %>%
+  kable_material(c("striped", "hover"))
 df1$State <- NULL #delete column "state" of df1
 df1 <- df1[-1,] #delete rows using reassignments
 # Convert list to dataframe :
 lis1 <- list("a" = TRUE, "b" = "hello", "c" = 1:4)
-as.data.frame(lis1)
+df_from_lis1 <- as.data.frame(lis1)
+df_from_lis1 %>%
+  kbl(caption = "data frame from lis1") %>%
+  kable_material(c("striped", "hover"))
 # convert dataframe to numeric matrix :
 as.matrix(df1)
 ```
@@ -634,5 +672,5 @@ dataframe_from_lis1 = pd.DataFrame(lis1)
 #convert dictionary to dataframe :
 dic1 = {"col_1" : [1, 2, 3 ] , "col_2" : [4, 5, 6 ]}
 # parameter 'orient' :If the keys of the passed dict should be the columns of the resulting # DataFrame, pass ‘columns’ (default). Otherwise if the keys should be rows, pass ‘index’.
-pd.DataFrame.from_dict(dic1, orient='columns' , dtype=None, columns=None)
+df_from_dic1 = pd.DataFrame.from_dict(dic1, orient='columns' , dtype=None, columns=None)
 ```
