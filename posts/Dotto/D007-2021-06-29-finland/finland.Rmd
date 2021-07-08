@@ -51,11 +51,11 @@ Then we import the [**World Happiness**](https://www.kaggle.com/ajaypalsinghlo/w
 
 
 ```{r, Dot = 1, part = "Code", echo = T, eval = F}
-#load library
+#Load library
 library(dplyr)
 library(ggplot2)
 
-#read world happiness dataset
+#Read world happiness dataset
 path = 'Dataset/world-happiness-report.csv'
 
 data <- read.csv(path,
@@ -74,11 +74,13 @@ data <- filter(data,
 import pandas as pd
 import seaborn as sns
 
-#read world happiness dataset
+#Read world happiness dataset
 path = 'Dataset/world-happiness-report.csv'
-
 data = pd.read_csv(path)
-data.sample(5)
+
+#Print five rows randomly
+pd.set_option("expand_frame_repr", True)
+data.sample(5).T
 
 # Select Dataset from 2015-2019
 data = data[data['year'].isin(range(2015, 2020))]
@@ -86,11 +88,11 @@ data = data[data['year'].isin(range(2015, 2020))]
 ```
 
 ```{r, Dot = 1, part = "Result", echo = F, eval = T}
-#load library
+#Load library
 library(dplyr)
 library(ggplot2)
 
-#read world happiness dataset
+#Read world happiness dataset
 path = 'Dataset/world-happiness-report.csv'
 
 data <- read.csv(path,
@@ -109,11 +111,13 @@ data <- filter(data,
 import pandas as pd
 import seaborn as sns
 
-#read world happiness dataset
+#Read world happiness dataset
 path = 'Dataset/world-happiness-report.csv'
-
 data = pd.read_csv(path)
-data.sample(5)
+
+#Print five rows randomly
+pd.set_option("expand_frame_repr", True)
+data.sample(5).T
 
 # Select Dataset from 2015-2019
 data = data[data['year'].isin(range(2015, 2020))]

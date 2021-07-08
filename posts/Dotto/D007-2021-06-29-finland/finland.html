@@ -289,11 +289,11 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#load library</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Load library</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#read world happiness dataset</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Read world happiness dataset</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>path <span class="ot">=</span> <span class="st">&#39;Dataset/world-happiness-report.csv&#39;</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(path,</span>
@@ -316,14 +316,16 @@ class="btn dotto-main-dot-shape"
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#read world happiness dataset</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Read world happiness dataset</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> <span class="st">&#39;Dataset/world-happiness-report.csv&#39;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(path)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>data.sample(<span class="dv">5</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Select Dataset from 2015-2019</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data[data[<span class="st">&#39;year&#39;</span>].isin(<span class="bu">range</span>(<span class="dv">2015</span>, <span class="dv">2020</span>))]</span></code></pre></div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(path)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Print five rows randomly</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">&quot;expand_frame_repr&quot;</span>, <span class="va">True</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>data.sample(<span class="dv">5</span>).T</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Select Dataset from 2015-2019</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data[data[<span class="st">&#39;year&#39;</span>].isin(<span class="bu">range</span>(<span class="dv">2015</span>, <span class="dv">2020</span>))]</span></code></pre></div>
 
 </div>
  
@@ -341,7 +343,7 @@ class="btn dotto-main-dot-shape"
 
 <table>
 <colgroup>
-<col width="6%" />
+<col width="7%" />
 <col width="2%" />
 <col width="6%" />
 <col width="9%" />
@@ -370,69 +372,69 @@ class="btn dotto-main-dot-shape"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Greece</td>
-<td align="right">2013</td>
-<td align="right">4.720</td>
-<td align="right">10.243</td>
-<td align="right">0.687</td>
-<td align="right">71.68</td>
-<td align="right">0.426</td>
-<td align="right">-0.272</td>
-<td align="right">0.941</td>
-<td align="right">0.689</td>
-<td align="right">0.482</td>
+<td align="left">United States</td>
+<td align="right">2009</td>
+<td align="right">7.158</td>
+<td align="right">10.888</td>
+<td align="right">0.912</td>
+<td align="right">68.54</td>
+<td align="right">0.831</td>
+<td align="right">0.201</td>
+<td align="right">0.665</td>
+<td align="right">0.843</td>
+<td align="right">0.262</td>
 </tr>
 <tr class="even">
-<td align="left">Yemen</td>
-<td align="right">2010</td>
-<td align="right">4.350</td>
-<td align="right">8.453</td>
-<td align="right">0.727</td>
-<td align="right">54.30</td>
-<td align="right">0.659</td>
-<td align="right">-0.104</td>
-<td align="right">0.853</td>
-<td align="right">0.582</td>
+<td align="left">Malaysia</td>
+<td align="right">2009</td>
+<td align="right">5.385</td>
+<td align="right">9.875</td>
+<td align="right">0.792</td>
+<td align="right">65.44</td>
+<td align="right">0.874</td>
+<td align="right">-0.009</td>
+<td align="right">0.858</td>
+<td align="right">0.822</td>
+<td align="right">0.164</td>
+</tr>
+<tr class="odd">
+<td align="left">Belize</td>
+<td align="right">2007</td>
+<td align="right">6.451</td>
+<td align="right">8.892</td>
+<td align="right">0.872</td>
+<td align="right">61.60</td>
+<td align="right">0.705</td>
+<td align="right">0.033</td>
+<td align="right">0.769</td>
+<td align="right">0.759</td>
+<td align="right">0.251</td>
+</tr>
+<tr class="even">
+<td align="left">Guatemala</td>
+<td align="right">2017</td>
+<td align="right">6.325</td>
+<td align="right">9.026</td>
+<td align="right">0.826</td>
+<td align="right">64.50</td>
+<td align="right">0.915</td>
+<td align="right">-0.059</td>
+<td align="right">0.800</td>
+<td align="right">0.846</td>
 <td align="right">0.308</td>
 </tr>
 <tr class="odd">
-<td align="left">Albania</td>
+<td align="left">Turkey</td>
 <td align="right">2009</td>
-<td align="right">5.485</td>
-<td align="right">9.262</td>
-<td align="right">0.833</td>
-<td align="right">66.20</td>
-<td align="right">0.525</td>
-<td align="right">-0.158</td>
-<td align="right">0.864</td>
-<td align="right">0.640</td>
-<td align="right">0.279</td>
-</tr>
-<tr class="even">
-<td align="left">Denmark</td>
-<td align="right">2014</td>
-<td align="right">7.508</td>
-<td align="right">10.862</td>
-<td align="right">0.956</td>
-<td align="right">71.28</td>
-<td align="right">0.942</td>
-<td align="right">0.118</td>
-<td align="right">0.237</td>
-<td align="right">0.832</td>
-<td align="right">0.233</td>
-</tr>
-<tr class="odd">
-<td align="left">Latvia</td>
-<td align="right">2020</td>
-<td align="right">6.229</td>
-<td align="right">10.300</td>
-<td align="right">0.928</td>
-<td align="right">67.40</td>
-<td align="right">0.820</td>
-<td align="right">-0.078</td>
-<td align="right">0.809</td>
-<td align="right">0.714</td>
-<td align="right">0.202</td>
+<td align="right">5.213</td>
+<td align="right">9.838</td>
+<td align="right">0.755</td>
+<td align="right">64.04</td>
+<td align="right">0.456</td>
+<td align="right">-0.227</td>
+<td align="right">0.853</td>
+<td align="right">0.598</td>
+<td align="right">0.316</td>
 </tr>
 </tbody>
 </table>
@@ -444,14 +446,20 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
 
-<pre><code>##                 Country name  year  ...  Positive affect  Negative affect
-## 1149                Mongolia  2019  ...            0.707            0.167
-## 958                   Latvia  2011  ...            0.563            0.222
-## 201   Bosnia and Herzegovina  2016  ...            0.641            0.304
-## 1609                   Spain  2015  ...            0.732            0.285
-## 1635               Swaziland  2018  ...            0.824            0.252
+<pre><code>##                                    826   ...    1083
+## Country name                      Italy  ...   Malta
+## year                               2017  ...    2016
+## Life Ladder                       6.199  ...   6.591
+## Log GDP per capita                10.64  ...  10.599
+## Social support                     0.92  ...    0.93
+## Healthy life expectancy at birth   73.4  ...    72.2
+## Freedom to make life choices      0.633  ...   0.916
+## Generosity                       -0.035  ...   0.345
+## Perceptions of corruption         0.867  ...   0.696
+## Positive affect                   0.661  ...   0.687
+## Negative affect                   0.323  ...   0.355
 ## 
-## [5 rows x 11 columns]</code></pre>
+## [11 rows x 5 columns]</code></pre>
 
 </div>
  
