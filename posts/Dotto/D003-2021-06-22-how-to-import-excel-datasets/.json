@@ -11,8 +11,8 @@
   "dotto_number": [3],
   "dotto_label": ["D003"],
   "dotto_id": ["9b093546-d342-11eb-a85d-acbc32baed85"],
-  "title": ["How to import excel datasets?"],
-  "description": ["Import data from Excel file.\n"],
+  "title": ["How to work with excel datasets?"],
+  "description": ["In this Dotto, we want to explain about importing and data wrangling at importing time in excel.\n"],
   "author": [
     {
       "name": ["Mohsen Jalali"],
@@ -28,11 +28,11 @@
   "tech": [
     {
       "lang": ["r"],
-      "pkgs": ["readxl"]
+      "pkgs": ["readxl", "janitor", "dplyr", "lubridate"]
     },
     {
       "lang": ["python"],
-      "pkgs": ["pandas"]
+      "pkgs": ["pandas", "pyjanitor"]
     }
   ],
   "date": {
