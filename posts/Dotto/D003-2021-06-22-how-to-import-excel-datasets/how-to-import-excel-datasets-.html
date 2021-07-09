@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+    
+    
+    <title>How to work with excel datasets?</title>
+
+        <script src="how-to-import-excel-datasets-_files/header-attrs-2.9/header-attrs.js"></script>
+        <script src="how-to-import-excel-datasets-_files/jquery-1.11.3/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="how-to-import-excel-datasets-_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="how-to-import-excel-datasets-_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+        <script src="how-to-import-excel-datasets-_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+        <script src="how-to-import-excel-datasets-_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+        <style>h1 {font-size: 34px;}
+               h1.title {font-size: 38px;}
+               h2 {font-size: 30px;}
+               h3 {font-size: 24px;}
+               h4 {font-size: 18px;}
+               h5 {font-size: 16px;}
+               h6 {font-size: 12px;}
+               code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+               pre:not([class]) { background-color: white }</style>
+        <script src="how-to-import-excel-datasets-_files/navigation-1.1/tabsets.js"></script>
+        
+          <meta property="og:title" content="How to work with excel datasets?" />
+          <meta property="og:type" content="article">
+          <meta property="og:description" content="In this Dotto, we want to explain about importing and data wrangling at importing time in excel.
+        " />
+          <meta property="og:url" content="https://datamotto.com/posts/dotto/D003-2021-06-22-how-to-import-excel-datasets/" />
+          <meta property="og:locale" content="en_US">
+          <meta property="og:site_name" content="Data Motto">
+          <meta property="og:image" content="https://datamotto.com/assets/img/logo.svg" />
+          
+        
+          <meta property="twitter:card" content="summary_large_image">
+          <meta property="twitter:title" content="How to work with excel datasets?">
+          <meta property="twitter:description" content="In this Dotto, we want to explain about importing and data wrangling at importing time in excel.
+        ">
+          <meta property="twitter:url" content="https://datamotto.com/posts/dotto/D003-2021-06-22-how-to-import-excel-datasets/">
+          <meta property="twitter:image" content="https://datamotto.com/assets/img/logo.svg">
+          
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZMEMQM0Y2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZMEMQM0Y2');
+</script>
+<link rel="shortcut icon" href="../../../assets/img/favicon/favicon-32x32.png" />
+<link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Brands.css" />
+<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Free.css" />
+<link rel="stylesheet" href="../../../assets/css/icomoon.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
+<link rel="stylesheet" href="../../../assets/fonts/fontawesome-all.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/font-awesome.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/ionicons.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/fontawesome5-overrides.min.css" />
+<link rel="stylesheet" href="../../../assets/css/Footer-Basic.css" />
+<link rel="stylesheet" href="../../../assets/css/home-cards.css" />
+<link rel="stylesheet" href="../../../assets/css/site.css" />
+<link rel="stylesheet" href="../../../assets/css/style.css" />
+<link rel="stylesheet" href="../../../assets/css/styles.css" />
+<link rel="stylesheet" href="../../../assets/css/Team-Boxed.css" />
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../../../assets/highlight/styles/dracula.css" />
+<script src="../../../assets/highlight/highlight.pack.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="../../../assets/js/vue.js"></script>
+
+</head>
+
+<body style="height: 100vh;">
+<div class="d-flex flex-column" id="all_page">
+
+<!-- Body Header ------------------------------>
+
+<section id="dotto-row-header">
+<div class="row dotto-header">
+
+<div class="col-1 d-flex justify-content-start align-items-center header-logo">
+<a href="/" class="text-muted"><img id="logo" src="../../../assets/img/logo.svg" /></a>
+</div>
+
+
+<div class="col-6 col-sm-7">
+<div class="header-title">
+<h6 class="dotto-header-maintitle">
+How to work with excel datasets?
+</h6>
+<p class="dotto-header-description">
+In this Dotto, we want to explain about importing and data wrangling at importing time in excel.
+
+</p>
+<p class="dotto-header-tags">
+<i class="fas fa-tags"></i>&nbsp; Importing
+</p>
+</div>
+</div>
+
+
+<div class="col-1 d-flex justify-content-center align-items-center">
+<button class="btn btn-outline-light btn-block header-like-btn" style="background-color:white" type="button">
+<!-- LikeBtn.com BEGIN -->
+<span class="likebtn-wrapper" data-theme="custom" data-btn_size="30" data-f_size="18" data-icon_size="30" data-icon_l="hrt13" data-icon_l_c="rgba(255,121,198,0.68)" data-icon_l_c_v="#ff79c6" data-icon_d_c_v="green" data-label_c="red" data-label_c_v="yellow" data-bg_c="#ffffff" data-bg_c_v="#ffffff" data-brdr_c="#ffffff" data-label_fs="r" data-i18n_like="  " data-identifier="9b093546-d342-11eb-a85d-acbc32baed85" data-dislike_enabled="false" data-site_id="604e13966fd08bbf03672c5b" data-counter_clickable="true" data-popup_disabled="true" data-share_enabled="false" data-tooltip_enabled="false"></span>
+<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+<!-- LikeBtn.com END -->
+</button>
+</div>
+
+
+<div class="col-3 d-flex justify-content-end dotto-header-user">
+
+<div class="d-flex flex-column mx-3">
+<div class="row">
+<div @click="authorOneModal = true" type="button"
+class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center dotto-header-user-icon">
+<img class="img-fluid user-image lang-color-r mx-auto" src="how-to-import-excel-datasets-_files/figure-html/Mohsen-Jalali.JPG" />
+</div>
+</div>
+<h6 class="d-flex justify-content-end dotto-header-user-name mx-auto">
+Mohsen Jalali
+</h6>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<div v-if="authorOneModal" class="modal">
+<!-- Modal content -->
+<div class="modal-content">
+<span @click="authorOneModal = false" class="close">&times;</span>
+<div class="card" style="max-width: 540px">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="how-to-import-excel-datasets-_files/figure-html/Mohsen-Jalali.JPG" class="img-fluid" />
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<ins><a href="https://mohsenjalali.ir" class="text-dark" target="_blank"><h3 class="card-title mb-0">Mohsen Jalali</h3></a></ins>
+<div class="card-text fs-4 my-2">Data Scientist, DataMotto</div>
+<small class="card-text text-muted my-2 fs-4">Language: Python</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div v-show="commentOpen" class="modal overflow-auto">
+<div class="modal-comment overflow-auto">
+<span @click="commentOpen = false" class="close">&times;</span>
+<div id="disqus_thread"></div>
+</div>
+</div>
+
+
+<section>
+<div id="dotto-row-info" class="d-flex">
+
+<div class="col-4 d-flex flex-grow-0 justify-content-start align-items-center align-items-xl-center">
+<div class="d-flex mx-4 justify-content-around align-items-center bg-social-icons">
+
+<div>
+<i type="button" @click="activeLang = 'r'"
+class="fab fa-r-project mx-2"
+:class="{'lang-color-r': activeLang === 'r'}" >
+  </i>
+</div>
+
+
+<div>
+<i type="button" @click="activeLang = 'python'"
+class="fab fa-python mx-2"
+:class="{'lang-color-python': activeLang === 'python'}" >
+  </i>
+</div>
+
+</div>
+</div>
+
+
+<div
+class="col-8 d-flex justify-content-end align-items-center" style="padding-right: 15px">
+<!--
+<div class="d-flex justify-content-center align-items-center align-content-center bg-social-icons"
+style="margin-right: 7px; width: 146.3px">
+<span class="d-flex justify-content-lg-center align-items-lg-center" style="width: 133.7px">
+<i class="fas fa-music" style="padding-right: 12px"> </i>
+</span>
+</div>
+---->
+<div class="d-flex justify-content-around align-items-center bg-social-icons">
+<a href="https://twitter.com/share?text=How to work with excel datasets?&amp;url=https://datamotto.com/posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html&amp;hashtags=rstats,Python" target="_blank" class="text-reset">
+<i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://datamotto.com/posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html" target="_blank" class="text-reset">
+<i class="fa fa-linkedin-square"></i></a>
+</div>
+<div class="text-nowrap d-flex justify-content-around align-items-center bg-social-icons bg-bugs-icons">
+<a href="https://github.com/DataMotto/DataMotto/blob/master/posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/how-to-import-excel-datasets-.Rmd" target="_blank" class="text-reset">
+<i class="fab fa-github header-social-icon"></i></a>
+<a href="https://github.com/DataMotto/DataMotto/issues/new?assignees=&labels=bug&template=bug_report.md&title=" target="_blank" class="text-reset">
+<i class="fas fa-bug header-social-icon"></i></a>
+</div>
+</div>
+
+</div>
+</section>
+
+
+
+
+<section v-if="activeDotto === '1'"
+class="text-left d-flex flex-row flex-grow-1 flex-wrap" id="dotto-row-main">
+<div class="col-12 col-lg-1" id="dotto-main-dots">
+
+<button type="button" @click="activeMotto = '1'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '1', 'btn-outline-light': activeMotto !== '1'}">1</button>
+
+
+<button type="button" @click="activeMotto = '2'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '2', 'btn-outline-light': activeMotto !== '2'}">2</button>
+
+
+<button type="button" @click="activeMotto = '3'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '3', 'btn-outline-light': activeMotto !== '3'}">3</button>
+
+
+<button type="button" @click="activeMotto = '4'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '4', 'btn-outline-light': activeMotto !== '4'}">4</button>
+
+
+<button type="button" @click="activeMotto = '5'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '5', 'btn-outline-light': activeMotto !== '5'}">5</button>
+
+
+<button type="button" @click="activeMotto = '6'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '6', 'btn-outline-light': activeMotto !== '6'}">6</button>
+
+
+<button type="button" @click="activeMotto = '7'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '7', 'btn-outline-light': activeMotto !== '7'}">7</button>
+
+</div>
+
+<!-- Dot 1, lang: r ------------------------------------------------>
+
+<div v-if="activeMotto === '1'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><p><strong>Description About Package</strong></p>
+<ul>
+<li><p>The <a href="https://readxl.tidyverse.org/">readxl package</a> makes it easy to get data out of Excel and into R.</p></li>
+<li><p><a href="https://dplyr.tidyverse.org/">dplyr</a> is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges</p></li>
+<li><p>The <a href="https://cran.r-project.org/web/packages/janitor/index.html">janitor package</a> is a R package that has simple functions for examining and cleaning dirty data.</p></li>
+<li><p>Date-time data can be frustrating to work with in R. R commands for date-times are generally unintuitive and change depending on the type of date-time object being used. <a href="https://lubridate.tidyverse.org/">Lubridate</a> makes it easier to do the things R does with date-times and possible to do the things R does not.</p></li>
+</ul></li>
+<li><p><strong>Description About Dataset</strong></p></li>
+</ul>
+<p>In this Dotto we use <a href="https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx">COVID-19 dataset</a>.</p>
+<ul>
+<li><p><strong>Prepare Environment</strong></p>
+<p>Install packages with below commands:</p>
+<p><code>install.packages("readxl")</code></p>
+<p><code>install.packages("lubridate")</code></p>
+<p><code>install.packages("dplyr")</code></p>
+<p><code>install.packages("janitor")</code></p></li>
+</ul>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><p><strong>Description About Package</strong></p>
+<ul>
+<li><p><a href="https://pandas.pydata.org/">pandas</a> is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.</p></li>
+<li><p><a href="https://pyjanitor.readthedocs.io/">pyjanitor</a> is a project that extends Pandas with a verb-based API, providing convenient data cleaning routines for repetitive tasks.</p></li>
+</ul></li>
+<li><p><strong>Description About Dataset</strong></p></li>
+</ul>
+<p>In this Dotto we use <a href="https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx">COVID-19 dataset</a>.</p>
+<ul>
+<li><p><strong>Prepare Environment</strong> Install packages with below commands: <code>pip install pandas</code></p>
+<p><code>pip install pyjanito</code></p></li>
+</ul>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Now check that libraries loaded or not</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="st">&#39;readxl&#39;</span> <span class="sc">%in%</span> (<span class="fu">.packages</span>()) <span class="sc">&amp;&amp;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>   <span class="st">&#39;janitor&#39;</span> <span class="sc">%in%</span> (<span class="fu">.packages</span>()) <span class="sc">&amp;&amp;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>   <span class="st">&#39;dplyr&#39;</span> <span class="sc">%in%</span> (<span class="fu">.packages</span>()) <span class="sc">&amp;&amp;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>   <span class="st">&#39;lubridate&#39;</span> <span class="sc">%in%</span> (<span class="fu">.packages</span>())</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>   )</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;all library have been loaded&quot;</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb2"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> janitor</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Now check that libraries loaded or not</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="st">&quot;pandas&quot;</span> <span class="kw">in</span> sys.modules) <span class="kw">and</span> (<span class="st">&quot;janitor&quot;</span> <span class="kw">in</span> sys.modules):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;all modules have been loaded&quot;</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<pre><code>## [1] &quot;all library have been loaded&quot;</code></pre>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>## all modules have been loaded</code></pre>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!--------------------Dot2-------------------------->
+
+<div v-if="activeMotto === '2'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Simple Importing</strong></li>
+</ul>
+<p>we can simple import excel file with <code>read_excel()</code> method and with <code>head()</code> method see the specific row of data.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Simple Importing</strong></li>
+</ul>
+<p>we can simple import excel file with <code>read_excel()</code> method and with <code>head()</code> method see the specific row of data.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb5"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read_excel() function get path of our data set to load it in our project</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&#39;./COVID-19-Dataset.xlsx&#39;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print 5 first rows of our data</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(<span class="fu">head</span>(covidDatasetLocal,<span class="dv">5</span>))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb6"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read_excel() function get path of our data set to load it in our project</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="op">=</span> pd.read_excel(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;./COVID-19-Dataset.xlsx&#39;</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># print 5 first rows of our data</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal.head(<span class="dv">5</span>).transpose()</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<pre><code>## Rows: 5
+## Columns: 12
+## $ dateRep                                                      &lt;dttm&gt; 2020-12-14, 2020-12-13, 2020…
+## $ day                                                          &lt;dbl&gt; 14, 13, 12, 11, 10
+## $ month                                                        &lt;dbl&gt; 12, 12, 12, 12, 12
+## $ year                                                         &lt;dbl&gt; 2020, 2020, 2020, 2020, 2020
+## $ cases                                                        &lt;dbl&gt; 746, 298, 113, 63, 202
+## $ deaths                                                       &lt;dbl&gt; 6, 9, 11, 10, 16
+## $ countriesAndTerritories                                      &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;,…
+## $ geoId                                                        &lt;chr&gt; &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;
+## $ countryterritoryCode                                         &lt;chr&gt; &quot;AFG&quot;, &quot;AFG&quot;, &quot;AFG&quot;, &quot;AFG&quot;, &quot;…
+## $ popData2019                                                  &lt;dbl&gt; 38041757, 38041757, 38041757,…
+## $ continentExp                                                 &lt;chr&gt; &quot;Asia&quot;, &quot;Asia&quot;, &quot;Asia&quot;, &quot;Asia…
+## $ `Cumulative_number_for_14_days_of_COVID-19_cases_per_100000` &lt;dbl&gt; 9.013779, 7.052776, 6.868768,…</code></pre>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>##                                                                       0  ...                    4
+## dateRep                                             2020-12-14 00:00:00  ...  2020-12-10 00:00:00
+## day                                                                  14  ...                   10
+## month                                                                12  ...                   12
+## year                                                               2020  ...                 2020
+## cases                                                               746  ...                  202
+## deaths                                                                6  ...                   16
+## countriesAndTerritories                                     Afghanistan  ...          Afghanistan
+## geoId                                                                AF  ...                   AF
+## countryterritoryCode                                                AFG  ...                  AFG
+## popData2019                                                 3.80418e+07  ...          3.80418e+07
+## continentExp                                                       Asia  ...                 Asia
+## Cumulative_number_for_14_days_of_COVID-19_cases...              9.01378  ...              6.96866
+## 
+## [12 rows x 5 columns]</code></pre>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!--------------Dot3---------------------------->
+
+<div v-if="activeMotto === '3'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Online Importing</strong></li>
+</ul>
+<p>Now we want to import an online excel file. In R language we first download the file as a temporary file and then import the excel file in the project.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Online Importing</strong></li>
+</ul>
+<p>Now we want to import an online excel file. In Python language, pandas library handles this by itself. we set the URL of the excel file then pandas download this file and import it to the project.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb9"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initial temporary file with xlsx extension</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>tempFile <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&#39;.xlsx&#39;</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># online excel file URL</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>excelFileURL <span class="ot">&lt;-</span> <span class="st">&#39;https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx&#39;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># download excel file </span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(excelFileURL, <span class="at">destfile =</span> tempFile, <span class="at">mode =</span> <span class="st">&#39;wb&#39;</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># import excel file in to our project</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>covidDatasetOnline <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(tempFile)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(<span class="fu">head</span>(covidDatasetLocal,<span class="dv">5</span>))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb10"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># online excel file URL</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>excelFileURL <span class="op">=</span> <span class="st">&#39;https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx&#39;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># download and import excel file </span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>covidDatasetOnline <span class="op">=</span> pd.read_excel(excelFileURL)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal.head(<span class="dv">5</span>).transpose()</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<pre><code>## Rows: 5
+## Columns: 12
+## $ dateRep                                                      &lt;dttm&gt; 2020-12-14, 2020-12-13, 2020…
+## $ day                                                          &lt;dbl&gt; 14, 13, 12, 11, 10
+## $ month                                                        &lt;dbl&gt; 12, 12, 12, 12, 12
+## $ year                                                         &lt;dbl&gt; 2020, 2020, 2020, 2020, 2020
+## $ cases                                                        &lt;dbl&gt; 746, 298, 113, 63, 202
+## $ deaths                                                       &lt;dbl&gt; 6, 9, 11, 10, 16
+## $ countriesAndTerritories                                      &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;,…
+## $ geoId                                                        &lt;chr&gt; &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;
+## $ countryterritoryCode                                         &lt;chr&gt; &quot;AFG&quot;, &quot;AFG&quot;, &quot;AFG&quot;, &quot;AFG&quot;, &quot;…
+## $ popData2019                                                  &lt;dbl&gt; 38041757, 38041757, 38041757,…
+## $ continentExp                                                 &lt;chr&gt; &quot;Asia&quot;, &quot;Asia&quot;, &quot;Asia&quot;, &quot;Asia…
+## $ `Cumulative_number_for_14_days_of_COVID-19_cases_per_100000` &lt;dbl&gt; 9.013779, 7.052776, 6.868768,…</code></pre>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>##                                                                       0  ...                    4
+## dateRep                                             2020-12-14 00:00:00  ...  2020-12-10 00:00:00
+## day                                                                  14  ...                   10
+## month                                                                12  ...                   12
+## year                                                               2020  ...                 2020
+## cases                                                               746  ...                  202
+## deaths                                                                6  ...                   16
+## countriesAndTerritories                                     Afghanistan  ...          Afghanistan
+## geoId                                                                AF  ...                   AF
+## countryterritoryCode                                                AFG  ...                  AFG
+## popData2019                                                 3.80418e+07  ...          3.80418e+07
+## continentExp                                                       Asia  ...                 Asia
+## Cumulative_number_for_14_days_of_COVID-19_cases...              9.01378  ...              6.96866
+## 
+## [12 rows x 5 columns]</code></pre>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-------------------- Dot4 ---------------------------->
+
+<div v-if="activeMotto === '4'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Advance Importing</strong></li>
+</ul>
+<p>In some situations, we want to import some columns, import specific sheets, or load a specific number of data. Now we want to handle this when we importing the excel file.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Advance Importing</strong></li>
+</ul>
+<p>In some situations, we want to import some columns, import specific sheets, or load a specific number of data. Now we want to handle this when we importing the excel file.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb13"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># col_names parameter if true mean that each column has name or label and read_excel handle this</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># range parameter gets a range of columns that we want to import to our project. Now we skip the A column because the range starts from B.</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># sheet parameter get index of sheet that we want to import. sheet index start from 1</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># n_max parameter get maximum number of row that you want to load </span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&#39;./COVID-19-Dataset.xlsx&#39;</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>                                <span class="at">col_names =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>                                <span class="at">range =</span> <span class="fu">cell_cols</span>(<span class="st">&quot;B:L&quot;</span>),</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>                                <span class="at">sheet =</span> <span class="dv">1</span>,</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>                                <span class="at">n_max =</span> <span class="dv">5</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(<span class="fu">head</span>(covidDatasetLocal,<span class="dv">5</span>))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb14"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># default value of header parameter is 0 and tell to python that first row is label of columns  </span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># usecols parameter gets a range of columns that we want to import to our project. Now we skip the A column because the range starts from B.</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># we can get specific sheet of excel file with sheet_name parameter this parameter can get int number(0-indexed), list, None(all sheets). The default value is 0 index(first sheet)</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># nrows parameter get maximum number of row that you want to load</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="op">=</span> pd.read_excel(</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;./COVID-19-Dataset.xlsx&#39;</span>,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    usecols <span class="op">=</span> <span class="st">&#39;B:L&#39;</span>, </span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    header <span class="op">=</span> <span class="dv">0</span>,</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    sheet_name <span class="op">=</span> <span class="dv">0</span>,</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    nrows <span class="op">=</span> <span class="dv">5</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal.head(<span class="dv">5</span>).transpose()</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<pre><code>## Rows: 5
+## Columns: 11
+## $ day                                                          &lt;dbl&gt; 14, 13, 12, 11, 10
+## $ month                                                        &lt;dbl&gt; 12, 12, 12, 12, 12
+## $ year                                                         &lt;dbl&gt; 2020, 2020, 2020, 2020, 2020
+## $ cases                                                        &lt;dbl&gt; 746, 298, 113, 63, 202
+## $ deaths                                                       &lt;dbl&gt; 6, 9, 11, 10, 16
+## $ countriesAndTerritories                                      &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;,…
+## $ geoId                                                        &lt;chr&gt; &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;
+## $ countryterritoryCode                                         &lt;chr&gt; &quot;AFG&quot;, &quot;AFG&quot;, &quot;AFG&quot;, &quot;AFG&quot;, &quot;…
+## $ popData2019                                                  &lt;dbl&gt; 38041757, 38041757, 38041757,…
+## $ continentExp                                                 &lt;chr&gt; &quot;Asia&quot;, &quot;Asia&quot;, &quot;Asia&quot;, &quot;Asia…
+## $ `Cumulative_number_for_14_days_of_COVID-19_cases_per_100000` &lt;dbl&gt; 9.013779, 7.052776, 6.868768,…</code></pre>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>##                                                               0  ...            4
+## day                                                          14  ...           10
+## month                                                        12  ...           12
+## year                                                       2020  ...         2020
+## cases                                                       746  ...          202
+## deaths                                                        6  ...           16
+## countriesAndTerritories                             Afghanistan  ...  Afghanistan
+## geoId                                                        AF  ...           AF
+## countryterritoryCode                                        AFG  ...          AFG
+## popData2019                                            38041757  ...     38041757
+## continentExp                                               Asia  ...         Asia
+## Cumulative_number_for_14_days_of_COVID-19_cases...      9.01378  ...      6.96866
+## 
+## [11 rows x 5 columns]</code></pre>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-------------------Dot5-------------------------->
+
+<div v-if="activeMotto === '5'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Combine Multiple Columns Into One Column</strong></li>
+</ul>
+<p>In our data set, we have a day, month, and year separately; Now we need to combine them as a single column and drop additional columns.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Combine Multiple Columns Into One Column</strong></li>
+</ul>
+<p>In our data set, we have a day, month, and year separately; Now we need to combine them as a single column and drop additional columns.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb17"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&#39;./COVID-19-Dataset.xlsx&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">New_Col_Date =</span> <span class="fu">make_date</span>(year,month,day)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>year,<span class="sc">-</span>month,<span class="sc">-</span>day)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(<span class="fu">head</span>(covidDatasetLocal,<span class="dv">5</span>))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb18"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="op">=</span> pd.read_excel(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;./COVID-19-Dataset.xlsx&#39;</span>, </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    parse_dates <span class="op">=</span> {<span class="st">&#39;New_Col_Date&#39;</span>: [<span class="st">&#39;day&#39;</span>,<span class="st">&#39;month&#39;</span>, <span class="st">&#39;year&#39;</span>]})</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal.head(<span class="dv">5</span>).transpose()</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<pre><code>## Rows: 5
+## Columns: 10
+## $ dateRep                                                      &lt;dttm&gt; 2020-12-14, 2020-12-13, 2020…
+## $ cases                                                        &lt;dbl&gt; 746, 298, 113, 63, 202
+## $ deaths                                                       &lt;dbl&gt; 6, 9, 11, 10, 16
+## $ countriesAndTerritories                                      &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;,…
+## $ geoId                                                        &lt;chr&gt; &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;, &quot;AF&quot;
+## $ countryterritoryCode                                         &lt;chr&gt; &quot;AFG&quot;, &quot;AFG&quot;, &quot;AFG&quot;, &quot;AFG&quot;, &quot;…
+## $ popData2019                                                  &lt;dbl&gt; 38041757, 38041757, 38041757,…
+## $ continentExp                                                 &lt;chr&gt; &quot;Asia&quot;, &quot;Asia&quot;, &quot;Asia&quot;, &quot;Asia…
+## $ `Cumulative_number_for_14_days_of_COVID-19_cases_per_100000` &lt;dbl&gt; 9.013779, 7.052776, 6.868768,…
+## $ New_Col_Date                                                 &lt;date&gt; 2020-12-14, 2020-12-13, 2020-…</code></pre>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>##                                                                       0  ...                    4
+## New_Col_Date                                        2020-12-14 00:00:00  ...  2020-10-12 00:00:00
+## dateRep                                             2020-12-14 00:00:00  ...  2020-12-10 00:00:00
+## cases                                                               746  ...                  202
+## deaths                                                                6  ...                   16
+## countriesAndTerritories                                     Afghanistan  ...          Afghanistan
+## geoId                                                                AF  ...                   AF
+## countryterritoryCode                                                AFG  ...                  AFG
+## popData2019                                                 3.80418e+07  ...          3.80418e+07
+## continentExp                                                       Asia  ...                 Asia
+## Cumulative_number_for_14_days_of_COVID-19_cases...              9.01378  ...              6.96866
+## 
+## [10 rows x 5 columns]</code></pre>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!--------------------------Dot6--------------------->
+
+<div v-if="activeMotto === '6'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Work With Date in Time stamp format</strong></li>
+</ul>
+<p>Maybe you saw data set that date column was in seconds format(or in another format). In this situation we should convert date column to valid format and then work with that data set. In our data set we don’t have this problem so we convert our date to <code>second</code> and work with that.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Work With Date in Time stamp format</strong></li>
+</ul>
+<p>Maybe you saw data set that date column was in seconds format(or in another format). In this situation we should convert date column to valid format and then work with that data set. In our data set we don’t have this problem so we convert our date to <code>second</code> and work with that.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb21"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Our data set</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&#39;./test.xlsx&#39;</span>,  <span class="at">range =</span> <span class="fu">cell_cols</span>(<span class="fu">c</span>(<span class="st">&quot;B&quot;</span>)))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(<span class="fu">head</span>(covidDatasetLocal,<span class="dv">5</span>))</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix date columns</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&#39;./test.xlsx&#39;</span>,  <span class="at">range =</span> <span class="fu">cell_cols</span>(<span class="fu">c</span>(<span class="st">&quot;B&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dateRep=</span><span class="fu">as_datetime</span>(dateRep))</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(<span class="fu">head</span>(covidDatasetLocal,<span class="dv">5</span>))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb22"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Our data set</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="op">=</span> pd.read_excel(</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;./test.xlsx&#39;</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    usecols <span class="op">=</span> [<span class="st">&#39;dateRep&#39;</span>])</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal.head(<span class="dv">5</span>).transpose()</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix date columns</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>custom_date_parser <span class="op">=</span> <span class="kw">lambda</span> x: pd.Timestamp(x, unit<span class="op">=</span><span class="st">&#39;s&#39;</span>)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="op">=</span> pd.read_excel(</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;./test.xlsx&#39;</span>,</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    usecols <span class="op">=</span> [<span class="st">&#39;dateRep&#39;</span>],</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    parse_dates <span class="op">=</span> [<span class="st">&#39;dateRep&#39;</span>],</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    date_parser <span class="op">=</span> custom_date_parser)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal.head(<span class="dv">5</span>).transpose()</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<pre><code>## Rows: 5
+## Columns: 1
+## $ dateRep &lt;dbl&gt; 1607904000, 1607817600, 1607731200, 1607644800, 1607558400</code></pre>
+<pre><code>## Rows: 5
+## Columns: 1
+## $ dateRep &lt;dttm&gt; 2020-12-14, 2020-12-13, 2020-12-12, 2020-12-11, 2020-12-10</code></pre>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>##                   0           1           2           3           4
+## dateRep  1607904000  1607817600  1607731200  1607644800  1607558400</code></pre>
+<pre><code>##                  0          1          2          3          4
+## dateRep 2020-12-14 2020-12-13 2020-12-12 2020-12-11 2020-12-10</code></pre>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!---------------------Dot7--------------------->
+
+<div v-if="activeMotto === '7'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Clean Columns’ Name</strong></li>
+</ul>
+<p>Sometimes you should work with data set that the name of the columns not standard or is dirty for example:</p>
+<ul>
+<li><code>age of student</code></li>
+</ul>
+<p>This name has space between words but it is correct when you want to work with that and it should be like <code>age_of_student</code>. Now we want to solve this problem. For this purpose we use <code>janitor</code> library.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<ul>
+<li><strong>Clean Columns’ Name</strong></li>
+</ul>
+<p>Sometimes you should work with data set that the name of the columns not standard or is dirty for example:</p>
+<ul>
+<li><code>age of student</code></li>
+</ul>
+<p>This name has space between words but it is correct when you want to work with that and it should be like <code>age_of_student</code>. Now we want to solve this problem. For this purpose we use <code>pyjanitor</code> library.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb27"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&#39;./COVID-19-Dataset.xlsx&#39;</span> ) <span class="sc">%&gt;%</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>(.,<span class="st">&#39;snake&#39;</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print our cleaned columns&#39; name</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">names</span>(covidDatasetLocal))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb28"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>covidDatasetLocal <span class="op">=</span> pd.read_excel(</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;./COVID-19-Dataset.xlsx&#39;</span>).clean_names(</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        case_type<span class="op">=</span><span class="st">&#39;snake&#39;</span>,</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        preserve_original_columns<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        truncate_limit<span class="op">=</span><span class="dv">25</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print our cleaned columns&#39; name</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(covidDatasetLocal.columns)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Print our original columns&#39; name</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(covidDatasetLocal.original_columns)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<pre><code>##  [1] &quot;date_rep&quot;                                                  
+##  [2] &quot;day&quot;                                                       
+##  [3] &quot;month&quot;                                                     
+##  [4] &quot;year&quot;                                                      
+##  [5] &quot;cases&quot;                                                     
+##  [6] &quot;deaths&quot;                                                    
+##  [7] &quot;countries_and_territories&quot;                                 
+##  [8] &quot;geo_id&quot;                                                    
+##  [9] &quot;countryterritory_code&quot;                                     
+## [10] &quot;pop_data2019&quot;                                              
+## [11] &quot;continent_exp&quot;                                             
+## [12] &quot;cumulative_number_for_14_days_of_covid_19_cases_per_100000&quot;</code></pre>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>## Index([&#39;date_rep&#39;, &#39;day&#39;, &#39;month&#39;, &#39;year&#39;, &#39;cases&#39;, &#39;deaths&#39;,
+##        &#39;countries_and_territories&#39;, &#39;geo_id&#39;, &#39;countryterritory_code&#39;,
+##        &#39;pop_data2019&#39;, &#39;continent_exp&#39;, &#39;cumulative_number_for_14_&#39;],
+##       dtype=&#39;object&#39;)</code></pre>
+<pre><code>## [&#39;dateRep&#39;, &#39;day&#39;, &#39;month&#39;, &#39;year&#39;, &#39;cases&#39;, &#39;deaths&#39;, &#39;countriesAndTerritories&#39;, &#39;geoId&#39;, &#39;countryterritoryCode&#39;, &#39;popData2019&#39;, &#39;continentExp&#39;, &#39;Cumulative_number_for_14_days_of_COVID-19_cases_per_100000&#39;]</code></pre>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+</section>
+<!-- Body Footer ----------------------------------->
+
+<section id="dotto-footer">
+<div class="col-12 col-md-9">
+<div class="d-flex" id="dotto-row-lines">
+<img src="../../../assets/img/Dotto.svg" width="35" height="35" type="button" class=" ml-5 icon d-sm-flex justify-content-sm-center dotto-lines-icons">
+</i>
+</div>
+</div>
+<div class="col-12 col-md-3 pt-2">
+<div class="alert alert-danger dotto-alert-comment text-center" role="alert">
+<span type="button" @click="commentOpen = true" class="footer-disqus-text">
+<strong><i class="fas fa-comments fa-1x" style="font-size: 21px"> </i>
+<span class="disqus-comment-count" data-disqus-url="https://datamotto.com/posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html" data-disqus-identifier="9b093546-d342-11eb-a85d-acbc32baed85"></span>
+</strong>
+<span> for this Dotto.</span>
+<span> Write yours here!</span>
+</span>
+
+<script>
+var disqus_config = function () {
+  this.page.url = "https://datamotto.com/posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html";
+  this.page.identifier = "9b093546-d342-11eb-a85d-acbc32baed85";
+};
+
+(function() {
+var d = document, s = d.createElement("script");
+s.src = "https://datamotto-com.disqus.com/embed.js";
+s.setAttribute("data-timestamp", +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
+
+</div>
+</div>
+</section>
+
+
+</div>
+<!-- Don't indent these lines or it will mess pre blocks indentation -->
+<script src="../../../assets/js/post.js"></script>
+<script src="../../../assets/js/jquery.min.js"></script>
+<script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/bs-init.js"></script>
+<script src="../../../assets/js/carts.js"></script>
+<script src="../../../assets/js/Index_page.js"></script>
+<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+</body>
+</html>

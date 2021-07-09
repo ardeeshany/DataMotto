@@ -1,0 +1,46 @@
+---
+title: "How does Finland become the happiest country?"
+description: |
+  A short description of the Dotto.
+author:
+  - name: "First Last"
+    occupation: NULL
+    affiliation: NULL
+    url: NULL
+    img: NULL
+    lang: r
+tech:
+  - lang: r
+    pkgs: NULL
+date:
+  created: "2021-06-22"
+  last_updated: "2021-06-22"
+categories: NULL
+applications: NULL
+cover_image: NULL
+slug: "how-does-finland-become-the-happiest-country-"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto()
+```
+
+<!-- Dot 1, lang: r ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = "r"}
+
+```
+
+```{r, Dot = 1, part = "Code", echo = T, eval = F, }
+
+```
+
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
+
+```
+
+
+
+
+

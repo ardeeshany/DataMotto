@@ -1,5 +1,5 @@
 ---
-title: "Impute Missing Data"
+title: "Basic Data Structure"
 description: |
   A short description of the Dotto.
 author:
@@ -13,12 +13,12 @@ tech:
   - lang: r
     pkgs: NULL
 date:
-  created: "2021-06-13"
-  last_updated: "2021-06-13"
+  created: "2021-06-22"
+  last_updated: "2021-06-22"
 categories: NULL
 applications: NULL
 cover_image: NULL
-slug: "impute-missing-data"
+slug: "basic-data-structure"
 output: DataMotto::Dotto
 ---
 
