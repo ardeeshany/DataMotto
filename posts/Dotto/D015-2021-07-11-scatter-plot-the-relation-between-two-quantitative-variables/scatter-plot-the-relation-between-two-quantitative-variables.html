@@ -234,7 +234,7 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
-In this Dotto, we will go over 7 points to customize a scatter plotin Seaborn library. Scatter plots are mainly used to visualize the relationship between two continuous variables. They provide an overview of the correlation between the variables. We will be creating several scatter plots using the Melbourne housing <a href="https://www.kaggle.com/dansbecker/melbourne-housing-snapshot">dataset</a> available on Kaggle. I have only selected a small sample from the dataset and also included only 6 columns. The last line filters out the rows which can be considered as outliers with regards to the land size. 
+ In this Dotto, we will go over 7 points to customize a scatter plotin Seaborn library. Scatter plots are mainly used to visualize the relationship between two continuous variables. They provide an overview of the correlation between the variables. We will be creating several scatter plots using the Melbourne housing <a href="https://www.kaggle.com/dansbecker/melbourne-housing-snapshot">dataset</a> available on Kaggle. I have only selected a small sample from the dataset and also included only 6 columns. The last line filters out the rows which can be considered as outliers with regards to the land size. 
 </p>
 </div>
  
@@ -249,7 +249,7 @@ In this Dotto, we will go over 7 points to customize a scatter plotin Seaborn li
  
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
-comment 
+ comment 
 </p>
 </div>
  
@@ -266,7 +266,7 @@ comment
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the dataset into a Pandas dataframe</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">&#39;Price&#39;</span>,<span class="st">&#39;Distance&#39;</span>,<span class="st">&#39;Rooms&#39;</span>,<span class="st">&#39;Type&#39;</span>,<span class="st">&#39;Landsize&#39;</span>,<span class="st">&#39;Regionname&#39;</span>]</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>melb <span class="op">=</span> pd.read_csv(<span class="st">&quot;/content/melb_data.csv&quot;</span>, </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>melb <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/melb_data.csv&quot;</span>, </span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                   usecols<span class="op">=</span>cols).sample(n<span class="op">=</span><span class="dv">300</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>melb <span class="op">=</span> melb[melb.Landsize <span class="op">&lt;</span> <span class="dv">3000</span>]</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
@@ -297,13 +297,13 @@ comment
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
 
-<pre><code>##                            9544   ...                  10116
-## Rooms                          3  ...                      2
-## Type                           u  ...                      u
-## Price                     855000  ...                 602000
-## Distance                     5.1  ...                    7.9
-## Landsize                       0  ...                   1129
-## Regionname  Western Metropolitan  ...  Southern Metropolitan
+<pre><code>##                              5330  ...                   2787
+## Rooms                           3  ...                      1
+## Type                            u  ...                      u
+## Price                      760000  ...                 291000
+## Distance                      2.6  ...                    9.2
+## Landsize                        0  ...                   1097
+## Regionname  Northern Metropolitan  ...  Southern Metropolitan
 ## 
 ## [6 rows x 5 columns]</code></pre>
 
@@ -332,7 +332,7 @@ comment
  
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
-Let’s create a simple scatter plot of the price and distance columns with the default settings. We can then go over some tips to make the scatter plots more informative and appealing. The distance column indicates the distance to the central business district (CBD). Each dot represents an observation (i.e. a house). We observe a negative correlation between the price and distance to CBD. 
+ Let’s create a simple scatter plot of the price and distance columns with the default settings. We can then go over some tips to make the scatter plots more informative and appealing. The distance column indicates the distance to the central business district (CBD). Each dot represents an observation (i.e. a house). We observe a negative correlation between the price and distance to CBD. 
 </p>
 </div>
  
@@ -381,7 +381,7 @@ comment
 <p>
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-<img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-13-1.png" width="252" style="display: block; margin: auto auto auto 0;" />
+<img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-11-1.png" width="252" style="display: block; margin: auto auto auto 0;" />
 </div>
  
 </div>

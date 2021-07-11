@@ -2,6 +2,7 @@
 title: "Scatter Plot: The relation between two quantitative variables"
 description: |
   You will learn what is scatter plot, when we are using it, how to make it more effective.
+  
 author:
   - name: "Mohammad Hossein Malekpour"
     occupation: "Data Scientist"
@@ -30,7 +31,8 @@ DataMotto::use_Dotto()
 
 <!-- Dot 1, lang: python, r ------------------------------------------------>
 
-```{block, Dot = 1, part = "Instruction", lang = "python"}
+```{block, Dot = 1, part = "Instruction", lang = 'python'}
+
 In this Dotto, we will go over 7 points to customize a scatter plotin Seaborn library. Scatter plots are mainly used to visualize the relationship between two continuous variables. They provide an overview of the correlation between the variables.
 We will be creating several scatter plots using the Melbourne housing [dataset](https://www.kaggle.com/dansbecker/melbourne-housing-snapshot) available on Kaggle.
 I have only selected a small sample from the dataset and also included only 6 columns. The last line filters out the rows which can be considered as outliers with regards to the land size.
@@ -39,12 +41,14 @@ I have only selected a small sample from the dataset and also included only 6 co
 
 
 ```{block, Dot = 1, part = "Instruction", lang = "r"}
+
 comment
 
 ```
 
 
 ```{python, Dot = 1, part = "Code", echo = T, eval = F, }
+
 # Import the libraries
 import numpy as np
 import pandas as pd
@@ -53,7 +57,7 @@ sns.set(style='darkgrid')
 
 # Read the dataset into a Pandas dataframe
 cols = ['Price','Distance','Rooms','Type','Landsize','Regionname']
-melb = pd.read_csv("/content/melb_data.csv", 
+melb = pd.read_csv("data/melb_data.csv", 
                    usecols=cols).sample(n=300)
 melb = melb[melb.Landsize < 3000]
 
@@ -64,12 +68,14 @@ melb.sample(5)
 
 
 ```{r, Dot = 1, part = "Code", echo = T, eval = F }
+
 # comment
 
 ```
 
 
 ```{python, Dot = 1, part = "Result", echo = F, eval = T}
+
 # import the libraries
 import numpy as np
 import pandas as pd
@@ -90,6 +96,7 @@ melb.sample(5).T
 
 
 ```{r, Dot = 1, part = "Result", echo = F, eval = T}
+
 # comment
 
 ```
@@ -98,6 +105,7 @@ melb.sample(5).T
 <!-- Dot 2, lang: python, r ------------------------------------------------>
 
 ```{block, Dot = 2, part = "Instruction", lang = "python"}
+
 Let’s create a simple scatter plot of the price and distance columns with the default settings. We can then go over some tips to make the scatter plots more informative and appealing.
 The distance column indicates the distance to the central business district (CBD). Each dot represents an observation (i.e. a house). We observe a negative correlation between the price and distance to CBD.
 
