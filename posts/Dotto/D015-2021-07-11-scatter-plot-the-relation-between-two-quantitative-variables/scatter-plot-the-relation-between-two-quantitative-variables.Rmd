@@ -1,0 +1,49 @@
+---
+title: "Scatter Plot: The relation between two quantitative variables"
+description: |
+  You will learn what is scatter plot, when we are using it, how to make it more effective.
+author:
+  - name: "Mohammad Hossein Malekpour"
+    occupation: "Data Scientist"
+    affiliation: "DataMotto"
+    url: "https://www.linkedin.com/in/mohammadhossein-malekpour/"
+    img: "MalekpourAvatar.jpg"
+    lang: ["python", "R"]
+tech:
+  - lang: r
+    pkgs: ["ggplot2", "dplyr"]
+  - lang: python
+    pkgs: ["seaborn", "pandas"]
+date:
+  created: "2021-07-11"
+  last_updated: "2021-07-11"
+categories: "Visualizer"
+applications: "Other"
+cover_image: NULL
+slug: "scatter-plot-the-relation-between-two-quantitative-variables"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto()
+```
+
+<!-- Dot 1, lang: python ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = "python"}
+print("test)
+
+```
+
+```{python, Dot = 1, part = "Code", echo = T, eval = F, }
+
+```
+
+```{python, Dot = 1, part = "Result", echo = F, eval = T}
+
+```
+
+
+
+
+
