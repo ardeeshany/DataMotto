@@ -222,34 +222,185 @@ class="text-left d-flex flex-row flex-grow-1 flex-wrap" id="dotto-row-main">
 class="btn dotto-main-dot-shape"
 :class="{'btn-light': activeMotto === '1', 'btn-outline-light': activeMotto !== '1'}">1</button>
 
+
+<button type="button" @click="activeMotto = '2'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '2', 'btn-outline-light': activeMotto !== '2'}">2</button>
+
 </div>
 
-<!-- Dot 1, lang: python ------------------------------------------------>
+<!-- Dot 1, lang: python, r ------------------------------------------------>
 <p>
  
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
-print("test) 
+In this Dotto, we will go over 7 points to customize a scatter plotin Seaborn library. Scatter plots are mainly used to visualize the relationship between two continuous variables. They provide an overview of the correlation between the variables. We will be creating several scatter plots using the Melbourne housing <a href="https://www.kaggle.com/dansbecker/melbourne-housing-snapshot">dataset</a> available on Kaggle. I have only selected a small sample from the dataset and also included only 6 columns. The last line filters out the rows which can be considered as outliers with regards to the land size. 
 </p>
 </div>
  
 </p>
 <p>
+<div v-if="activeMotto === '1'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+comment 
+</p>
+</div>
+ 
+</p>
+
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
+<div class="sourceCode" id="cb1"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">&#39;darkgrid&#39;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the dataset into a Pandas dataframe</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">&#39;Price&#39;</span>,<span class="st">&#39;Distance&#39;</span>,<span class="st">&#39;Rooms&#39;</span>,<span class="st">&#39;Type&#39;</span>,<span class="st">&#39;Landsize&#39;</span>,<span class="st">&#39;Regionname&#39;</span>]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>melb <span class="op">=</span> pd.read_csv(<span class="st">&quot;/content/melb_data.csv&quot;</span>, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                   usecols<span class="op">=</span>cols).sample(n<span class="op">=</span><span class="dv">300</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>melb <span class="op">=</span> melb[melb.Landsize <span class="op">&lt;</span> <span class="dv">3000</span>]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the five random rows of the data</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>melb.sample(<span class="dv">5</span>)</span></code></pre></div>
+
 </div>
  
-</p>
-<p>
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb2"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># comment</span></span></code></pre></div>
+
+</div>
+ 
+
+
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>##                            9544   ...                  10116
+## Rooms                          3  ...                      2
+## Type                           u  ...                      u
+## Price                     855000  ...                 602000
+## Distance                     5.1  ...                    7.9
+## Landsize                       0  ...                   1129
+## Regionname  Western Metropolitan  ...  Southern Metropolitan
+## 
+## [6 rows x 5 columns]</code></pre>
 
 </div>
  
 </div>
 </div>
 </div>
+
+<p>
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+</div>
+ 
+</p>
+<!-- Dot 2, lang: python, r ------------------------------------------------>
+<p>
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+Let’s create a simple scatter plot of the price and distance columns with the default settings. We can then go over some tips to make the scatter plots more informative and appealing. The distance column indicates the distance to the central business district (CBD). Each dot represents an observation (i.e. a house). We observe a negative correlation between the price and distance to CBD. 
+</p>
+</div>
+ 
+</p>
+<p>
+<div v-if="activeMotto === '2'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+comment 
+</p>
+</div>
+ 
+</p>
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb4"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>melb, x<span class="op">=</span><span class="st">&#39;Price&#39;</span>, y<span class="op">=</span><span class="st">&#39;Distance&#39;</span>, kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb5"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># comment</span></span></code></pre></div>
+
+</div>
+ 
+
+<p>
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+<img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-13-1.png" width="252" style="display: block; margin: auto auto auto 0;" />
+</div>
+ 
+</div>
+</div>
+</div>
+</p>
+<p>
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+</div>
+ 
 </p>
 
 </section>
