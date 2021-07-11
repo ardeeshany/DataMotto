@@ -1,0 +1,342 @@
+---
+title: "Interesting ways to select dataframe columns"
+description: |
+  You will learn how to select some specific columns of a tidy dataframe professionally.
+
+author:
+  - name: "Mahyar Sharifi"
+    occupation: "Internship"
+    affiliation: "DataMotto"
+    url: "https://www.linkedin.com/in/mahyar-sharifi-06126616a"
+    img: "Mahyar.jpg"
+    lang: ["python", "r"]
+tech:
+  - lang: r
+    pkgs: ["dyplyr", "palmerpenguins"]
+  - lang: python
+    pkgs: ["pandas", "seaborn"]
+date:
+  created: "2021-07-11"
+  last_updated: "2021-07-11"
+categories: "Wrangling"
+applications: "General"
+cover_image: NULL
+slug: "interesting-ways-to-select-dataframe-columns"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto()
+```
+
+<!-- Dot 1, lang: r,python ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = "r"}
+The Palmer Archipelago penguin dataset has been becoming famous, likes the Iris dataset. This dataset is a great intro dataset for data exploration & visualization. 
+
+The penguin dataset contains four numerical features, two categorical features, and a binary feature. These features are:
+
+  **1)bill_length_mm**
+  
+  **2)bill_depth_mm**
+  
+  **3)flipper_length_mm**
+  
+  **4)body_mass_g**
+  
+  **5)species:** (Chinstrap, Adélie, or Gentoo)
+  
+  **6)island:** (Dream, Torgersen, or Biscoe)
+  
+  **7)sex**
+
+
+To import this dataset, we use `palmerpenguins` packages.
+
+```
+
+```{block, Dot = 1, part = "Instruction", lang = "python"}
+The Palmer Archipelago penguin dataset has been becoming famous, likes the Iris dataset. This dataset is a great intro dataset for data exploration & visualization. 
+
+The penguin dataset contains four numerical features, two categorical features, and a binary feature. These features are:
+
+  **1)bill_length_mm**
+  
+  **2)bill_depth_mm**
+  
+  **3)flipper_length_mm**
+  
+  **4)body_mass_g**
+  
+  **5)species:** (Chinstrap, Adélie, or Gentoo)
+  
+  **6)island:** (Dream, Torgersen, or Biscoe)
+  
+  **7)sex**
+
+To import this dataset, we use `seaborn` packages.
+
+```
+
+```{r, Dot = 1, part = "Code", echo = T, eval = F }
+
+library("palmerpenguins")
+palmerpenguins :: penguins
+
+knitr::kable(sample_n(penguins, 5))
+
+```
+
+```{python, Dot = 1, part = "Code", echo = T, eval = F }
+
+import seaborn as sns
+
+penguins = sns.load_dataset("penguins")
+
+penguins.sample(5)
+
+```
+
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
+
+library("palmerpenguins")
+palmerpenguins :: penguins
+
+knitr::kable(sample_n(penguins, 5))
+
+```
+
+
+```{python, Dot = 1, part = "Result", echo = F, eval = T}
+
+import seaborn as sns
+
+penguins = sns.load_dataset("penguins")
+
+penguins.sample(5)
+
+```
+
+<!-- Dot 2, lang: r,python ------------------------------------------------>
+
+```{block, Dot = 2, part = "Instruction", lang = "r"}
+
+Sometimes we want to select single or multiple columns with the name. In this case, we need to write the column's name.
+
+For example, we need just the gender column or two bill columns.
+
+```
+
+```{block, Dot = 2, part = "Instruction", lang = "python"}
+
+Sometimes we want to select single or multiple columns with the name. In this case, we need to write the column's name.
+
+For example, we need just the gender column or two bill columns.
+
+```
+
+```{r, Dot = 2, part = "Code", echo = T, eval = F }
+
+# Select 'sex' column
+penguins[,'sex']
+
+# Select two bill columns
+penguins[, c('bill_length_mm',
+             'bill_depth_mm')]
+
+```
+
+```{python, Dot = 2, part = "Code", echo = T, eval = F }
+
+# Select 'sex' columns
+penguins[['sex']]
+
+# Select two bill columns
+penguins[['bill_length_mm',
+          'bill_depth_mm']]
+
+```
+
+```{r, Dot = 2, part = "Result", echo = F, eval = T }
+
+# Select 'sex' column
+penguins[,'sex']
+
+# Select two bill columns
+penguins[, c('bill_length_mm',
+             'bill_depth_mm')]
+
+```
+
+```{python, Dot = 2, part = "Result", echo = F, eval = T }
+
+# Select 'sex' column
+penguins[['sex']]
+
+# Select two bill columns
+penguins[['bill_length_mm',
+          'bill_depth_mm']]
+
+```
+
+<!-- Dot 3, lang: r,python ------------------------------------------------>
+
+```{block, Dot = 3, part = "Instruction", lang = "r"}
+
+Similar to the second Dotto, we have a list of columns name, and we want to select columns in this list or select columns not in this list.
+
+In this case, we use two function:
+    **%in%**
+    **! %in%**
+    
+For example, we need select a dataset that contains only two bill columns, and select a dataset that contains all columns except two bill columns. 
+```
+
+```{block, Dot = 3, part = "Instruction", lang = "python"}
+
+Similar to the second Dotto, we have a list of columns name, and we want to select columns in this list or select columns not in this list.
+
+In this case, we use two function:
+    **isin**
+    **difference** or **~isin**
+    
+For example, we need select a dataset that contains only two bill columns, and select a dataset that contains all columns except two bill columns. 
+
+```
+
+```{r, Dot = 3, part = "Code", echo = T, eval = F }
+# Select dataset that contains bill_length_mm & bill_depth_mm
+penguins[, (colnames(penguins) %in% c('bill_length_mm', 
+                                    'bill_depth_mm'))]
+
+# Select dataset that contains all columns except bill_length_mm & bill_depth_mm
+penguins[, ! (colnames(penguins) %in% c('bill_length_mm', 
+                                    'bill_depth_mm'))]
+
+```
+
+```{python, Dot = 3, part = "Code", echo = T, eval = F }
+# Select dataset that contains bill_length_mm & bill_depth_mm
+penguins[penguins.columns[
+                  penguins.columns.isin(['bill_length_mm',
+                                     'bill_depth_mm'])]]
+
+# Select dataset that contains all columns except bill_length_mm & bill_depth_mm _First Way
+penguins[penguins.columns.difference(
+                            ['bill_length_mm',
+                            'bill_depth_mm'])]
+                                           
+# Select dataset that contains all columns except bill_length_mm & bill_depth_mm _Second Way                                           
+penguins[penguins.columns[
+                  ~penguins.columns.isin(['bill_length_mm',
+                                       'bill_depth_mm'])]]
+                                     
+```
+
+```{r, Dot = 3, part = "Result", echo = F, eval = T }
+# Select dataset that contains bill_length_mm & bill_depth_mm
+penguins[, (colnames(penguins) %in% c('bill_length_mm', 
+                                    'bill_depth_mm'))]
+
+# Select dataset that contains all columns except bill_length_mm & bill_depth_mm
+penguins[, ! (colnames(penguins) %in% c('bill_length_mm', 
+                                    'bill_depth_mm'))]
+
+```
+
+```{python, Dot = 3, part = "Result", echo = F, eval = T }
+# Select dataset that contains bill_length_mm & bill_depth_mm
+penguins[penguins.columns[
+                  penguins.columns.isin(['bill_length_mm',
+                                     'bill_depth_mm'])]]
+
+# Select dataset that contains all columns except bill_length_mm & bill_depth_mm _First Way
+penguins[penguins.columns.difference(
+                            ['bill_length_mm',
+                            'bill_depth_mm'])]
+                                           
+# Select dataset that contains all columns except bill_length_mm & bill_depth_mm _Second Way                                           
+penguins[ penguins.columns[
+                  ~penguins.columns.isin(['bill_length_mm',
+                                       'bill_depth_mm'])]]
+                                       
+```
+
+<!-- Dot 4, lang: r,python ------------------------------------------------>
+
+```{block, Dot = 4, part = "Instruction", lang = "r"}
+
+```
+
+```{block, Dot = 4, part = "Instruction", lang = "python"}
+
+```
+
+```{r, Dot = 4, part = "Code", echo = T, eval = F }
+
+```
+
+```{python, Dot = 4, part = "Code", echo = T, eval = F }
+
+```
+
+```{r, Dot = 4, part = "Result", echo = F, eval = T }
+
+```
+
+```{python, Dot = 4, part = "Result", echo = F, eval = T }
+
+```
+
+<!-- Dot 5, lang: r,python ------------------------------------------------>
+
+```{block, Dot = 5, part = "Instruction", lang = "r"}
+
+```
+
+```{block, Dot = 5, part = "Instruction", lang = "python"}
+
+```
+
+```{r, Dot = 5, part = "Code", echo = T, eval = F }
+
+```
+
+```{python, Dot = 5, part = "Code", echo = T, eval = F }
+
+```
+
+```{r, Dot = 5, part = "Result", echo = F, eval = T }
+
+```
+
+```{python, Dot = 5, part = "Result", echo = F, eval = T }
+
+```
+
+<!-- Dot 6, lang: r,python ------------------------------------------------>
+
+```{block, Dot = 6, part = "Instruction", lang = "r"}
+
+```
+
+```{block, Dot = 6, part = "Instruction", lang = "python"}
+
+```
+
+```{r, Dot = 6, part = "Code", echo = T, eval = F }
+
+```
+
+```{python, Dot = 6, part = "Code", echo = T, eval = F }
+
+```
+
+```{r, Dot = 6, part = "Result", echo = F, eval = T }
+
+```
+
+```{python, Dot = 6, part = "Result", echo = F, eval = T }
+
+```
+
