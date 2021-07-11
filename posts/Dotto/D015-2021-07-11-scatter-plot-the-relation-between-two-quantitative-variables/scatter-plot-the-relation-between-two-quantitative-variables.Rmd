@@ -2,14 +2,13 @@
 title: "Scatter Plot: The relation between two quantitative variables"
 description: |
   You will learn what is scatter plot, when we are using it, how to make it more effective.
-  
 author:
   - name: "Mohammad Hossein Malekpour"
     occupation: "Data Scientist"
     affiliation: "DataMotto"
     url: "https://www.linkedin.com/in/mohammadhossein-malekpour/"
     img: "MalekpourAvatar.jpg"
-    lang: ["python", "R"]
+    lang: ["python", "r"]
 tech:
   - lang: r
     pkgs: ["ggplot2", "dplyr"]
@@ -29,16 +28,12 @@ output: DataMotto::Dotto
 DataMotto::use_Dotto()
 ```
 
-<!-- Dot 1, lang: python, r ------------------------------------------------>
-
-```{block, Dot = 1, part = "Instruction", lang = 'python'}
-
-In this Dotto, we will go over 7 points to customize a scatter plotin Seaborn library. Scatter plots are mainly used to visualize the relationship between two continuous variables. They provide an overview of the correlation between the variables.
-We will be creating several scatter plots using the Melbourne housing [dataset](https://www.kaggle.com/dansbecker/melbourne-housing-snapshot) available on Kaggle.
-I have only selected a small sample from the dataset and also included only 6 columns. The last line filters out the rows which can be considered as outliers with regards to the land size.
-
+```{r set-up, include=F}
+knitr::opts_chunk$set(echo = T,
+                      eval = F)
 ```
 
+<!-- Dot 1, lang: python, r ------------------------------------------------>
 
 ```{block, Dot = 1, part = "Instruction", lang = "r"}
 
@@ -46,8 +41,21 @@ comment
 
 ```
 
+```{block, Dot = 1, part = "Instruction", lang = 'python'}
+In this Dotto, we will go over 7 points to customize a scatter plotin Seaborn library. Scatter plots are mainly used to visualize the relationship between two continuous variables. They provide an overview of the correlation between the variables.
+We will be creating several scatter plots using the Melbourne housing [dataset](https://www.kaggle.com/dansbecker/melbourne-housing-snapshot) available on Kaggle.
+I have only selected a small sample from the dataset and also included only 6 columns. The last line filters out the rows which can be considered as outliers with regards to the land size.
 
-```{python, Dot = 1, part = "Code", echo = T, eval = F, }
+```
+
+
+```{r, Dot = 1, part = "Code"}
+
+# comment
+
+```
+
+```{python, Dot = 1, part = "Code"}
 
 # Import the libraries
 import numpy as np
@@ -67,12 +75,11 @@ melb.sample(5)
 ```
 
 
-```{r, Dot = 1, part = "Code", echo = T, eval = F }
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
 
 # comment
 
 ```
-
 
 ```{python, Dot = 1, part = "Result", echo = F, eval = T}
 
@@ -95,14 +102,12 @@ melb.sample(5).T
 ```
 
 
-```{r, Dot = 1, part = "Result", echo = F, eval = T}
+<!-- Dot 2, lang: python, r ------------------------------------------------>
 
-# comment
+```{block, Dot = 2, part = "Instruction", lang = "r"}
+comment
 
 ```
-
-
-<!-- Dot 2, lang: python, r ------------------------------------------------>
 
 ```{block, Dot = 2, part = "Instruction", lang = "python"}
 
@@ -111,34 +116,25 @@ The distance column indicates the distance to the central business district (CBD
 
 ```
 
-
-```{block, Dot = 2, part = "Instruction", lang = "r"}
-comment
-
-```
-
-
-```{python, Dot = 2, part = "Code", echo = T, eval = F, }
-sns.relplot(data=melb, x='Price', y='Distance', kind='scatter')
-
-```
-
-
-```{r, Dot = 2, part = "Code", echo = T, eval = F }
+```{r, Dot = 2, part = "Code"}
 # comment
 
 ```
 
+```{python, Dot = 2, part = "Code"}
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter')
+
+```
+
+```{r, Dot = 2, part = "Result", echo = F, eval = T}
+# comment
+
+```
 
 ```{python, Dot = 2, part = "Result", echo = F, eval = T}
 sns.relplot(data=melb, x='Price', y='Distance', kind='scatter')
 
 ```
 
-
-```{r, Dot = 2, part = "Result", echo = F, eval = T}
-# comment
-
-```
 
 
