@@ -1,0 +1,43 @@
+{
+  "file_name": ["basic-data-structure"],
+  "dir_name": ["D005-2021-06-22-basic-data-structure"],
+  "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+  "link": ["posts/Dotto/D005-2021-06-22-basic-data-structure/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [5],
+  "dotto_label": ["D005"],
+  "dotto_id": ["ea4a8d12-d342-11eb-a85d-acbc32baed85"],
+  "title": ["Basic Data Structure"],
+  "description": ["A short description of the Dotto.\n"],
+  "author": [
+    {
+      "name": ["First Last"],
+      "occupation": ["Occupation"],
+      "affiliation": ["Affiliation"],
+      "url": ["https://your_url"],
+      "img": ["path_to_image"],
+      "lang": ["r"],
+      "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+      "profile_img": ["./posts/Dotto/D005-2021-06-22-basic-data-structure./../../assets/img/dotto.png"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": {}
+    }
+  ],
+  "date": {
+    "created": ["2021-06-22"],
+    "last_updated": ["2021-06-22"]
+  },
+  "categories": {},
+  "applications": {},
+  "cover_image": {},
+  "slug": ["basic-data-structure"],
+  "output": ["DataMotto::Dotto"]
+}

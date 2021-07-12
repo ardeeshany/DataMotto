@@ -1,0 +1,428 @@
+---
+title: "Scatter Plot: The relation between two quantitative variables"
+description: |
+  You will learn what is scatter plot, when we are using it, how to make it more effective.
+author:
+  - name: "Mohammad Hossein Malekpour"
+    occupation: "Data Scientist"
+    affiliation: "DataMotto"
+    url: "https://www.linkedin.com/in/mohammadhossein-malekpour/"
+    img: "MalekpourAvatar.jpg"
+    lang: ["python", "r"]
+tech:
+  - lang: r
+    pkgs: ["ggplot2", "dplyr"]
+  - lang: python
+    pkgs: ["seaborn", "pandas"]
+date:
+  created: "2021-07-11"
+  last_updated: "2021-07-11"
+categories: "Visualizer"
+applications: "Other"
+cover_image: NULL
+slug: "scatter-plot-the-relation-between-two-quantitative-variables"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto()
+```
+
+```{r set-up, include=F}
+knitr::opts_chunk$set(echo = T,
+                      eval = F)
+```
+
+<!-- Dot 1, lang: python, r ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = "r"}
+In this Dotto, we will customize a scatter plot in [ggplot2](https://ggplot2.tidyverse.org) library. **Scatter plot** is most useful for displaying the relationship between two continuous variables.  It can be used to compare one continuous and one categorical variable, or two categorical variables. The `geom_point()` is used to create scatterplots.
+
+We will be creating several scatter plots using the Melbourne housing [dataset](https://www.kaggle.com/dansbecker/melbourne-housing-snapshot) available on Kaggle (I have only selected a small sample from the dataset and also included only 6 columns).
+
+Let’s create a simple scatter plot of the price and distance columns with the default settings. We can then go over some tips to make the scatter plots more informative and appealing.
+The distance column indicates the distance to the central business district (CBD). Each dot represents an observation (i.e. a house). We observe a negative correlation between the price and distance to CBD.
+
+```
+
+```{block, Dot = 1, part = "Instruction", lang = 'python'}
+In this Dotto, we will customize a scatter plot in [Seaborn](https://seaborn.pydata.org/index.html) library. **Scatter plots** are mainly used to visualize the relationship between two continuous variables. They provide an overview of the correlation between the variables.
+
+We will be creating several scatter plots using the Melbourne housing [dataset](https://www.kaggle.com/dansbecker/melbourne-housing-snapshot) available on Kaggle (I have only selected a small sample from the dataset and also included only 6 columns).
+
+Let’s create a simple scatter plot of the price and distance columns with the default settings. We can then go over some tips to make the scatter plots more informative and appealing.
+The distance column indicates the distance to the central business district (CBD). Each dot represents an observation (i.e. a house). We observe a negative correlation between the price and distance to CBD.
+
+```
+
+
+```{r, Dot = 1, part = "Code"}
+# Import the libraries
+library(readr)  
+library(dplyr)   
+library(ggplot2) 
+
+# Read the dataset into a Pandas dataframe
+melb <- read.csv( "data/melb_data.csv")
+
+# Print the five random rows of the data
+print(sample_n(melb, 5))
+
+# Create a simple scatter plot
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point()
+
+```
+
+```{python, Dot = 1, part = "Code"}
+# Import the libraries
+import numpy as np
+import pandas as pd
+import seaborn as sns
+
+# Read the dataset into a Pandas dataframe
+melb = pd.read_csv("data/melb_data.csv")
+
+# Print the five random rows of the data
+print(melb.sample(5))
+
+# Create a simple scatter plot
+# aspect parameter represents the ratio of the width and height
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', height=10, aspect=1.2)
+
+```
+
+
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
+# Import the libraries
+library(readr)  
+library(dplyr)   
+library(ggplot2) 
+
+# Read the dataset into a Pandas dataframe
+melb <- read.csv( "data/melb_data.csv")
+
+# Print the five random rows of the data
+knitr::kable(sample_n(melb, 5))
+
+# Create a simple scatter plot
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point()
+
+```
+
+```{python, Dot = 1, part = "Result", echo = F, eval = T}
+# Import the libraries
+import numpy as np
+import pandas as pd
+import seaborn as sns
+
+# Read the dataset into a Pandas dataframe
+melb = pd.read_csv("data/melb_data.csv")
+
+# Print the five random rows of the data
+print(melb.sample(5))
+
+# Create a simple scatter plot
+# aspect parameter represents the ratio of the width and height
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', height=10, aspect=1.2)
+
+```
+
+
+<!-- Dot 2, lang: python, r ------------------------------------------------>
+
+```{block, Dot = 2, part = "Instruction", lang = "r"}
+**Separating categories with colour**
+
+It can be more informative to represent different categories in a column separately. For instance, we can distinguish house types by using a different color for each type. Such tasks can be done with the colour parameter. 
+
+We clearly see that the housed with u (unit) type are closer to CDB and cheaper in general. The t (townhouse) type is kind of in the middle. As we move away from the CBD, the houses get more expensive and larger.
+
+```
+
+```{block, Dot = 2, part = "Instruction", lang = "python"}
+**Separating categories with hue**
+
+It can be more informative to represent different categories in a column separately. For instance, we can distinguish house types by using a different color for each type. Such tasks can be done with the hue parameter. 
+
+We clearly see that the housed with u (unit) type are closer to CDB and cheaper in general. The t (townhouse) type is kind of in the middle. As we move away from the CBD, the houses get more expensive and larger.
+
+```
+
+```{r, Dot = 2, part = "Code"}
+# colour: Grouping variable that will produce elements with different colors
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point(aes(colour = factor(Type)))
+
+```
+
+```{python, Dot = 2, part = "Code"}
+# hue: Grouping variable that will produce elements with different colors
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', height=10, aspect=1.2, hue='Type')
+
+```
+
+```{r, Dot = 2, part = "Result", echo = F, eval = T}
+# colour: Grouping variable that will produce elements with different colors
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point(aes(colour = factor(Type)))
+
+```
+
+```{python, Dot = 2, part = "Result", echo = F, eval = T}
+# hue: Grouping variable that will produce elements with different colors
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', height=10, aspect=1.2, hue='Type')
+
+
+```
+
+<!-- Dot 3, lang: python, r ------------------------------------------------>
+
+```{block, Dot = 3, part = "Instruction", lang = "r"}
+**Separating categories with facet_grid**
+
+We can also use multiple subplots to separate different categories.
+
+`facet_grid()` forms a matrix of panels defined by row and column faceting variables. It is most useful when you have two discrete variables, and all combinations of the variables exist in the data. If you have only one variable with many levels, try `facet_wrap()`.
+
+```
+
+```{block, Dot = 3, part = "Instruction", lang = "python"}
+**Separating categories with row or col**
+
+We can also use multiple subplots to separate different categories. The col parameter is used to represent each category as a new column. Similarly, the row parameter does the same using rows.
+
+```
+
+```{r, Dot = 3, part = "Code"}
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point() +
+  facet_wrap(~ Type)
+
+```
+
+```{python, Dot = 3, part = "Code"}
+# row, col: Variables that define subsets to plot on different facets.
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', col='Type')
+
+```
+
+```{r, Dot = 3, part = "Result", echo = F, eval = T}
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point() +
+  facet_wrap(~ Type)
+
+```
+
+```{python, Dot = 3, part = "Result", echo = F, eval = T}
+# row, col: Variables that define subsets to plot on different facets.
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', col='Type')
+
+```
+
+<!-- Dot 4, lang: python, r ------------------------------------------------>
+
+```{block, Dot = 4, part = "Instruction", lang = "r"}
+**Size**
+
+Scatter plots represent data points (i.e. rows) with dots. We can use the size of dots to deliver information as well. For instance, the rooms column is passed to the size parameter, the size of a dot becomes proportional to the number of rooms in a house. The general trend is to have larger houses as we move away from the CDB. It makes sense because the space becomes more of a concern in the city centre.
+
+**Style**
+
+Grouping variable that will produce elements with different styles. Can have a numeric dtype but will always be treated as categorical.
+
+```
+
+```{block, Dot = 4, part = "Instruction", lang = "python"}
+**Size**
+
+Scatter plots represent data points (i.e. rows) with dots. We can use the size of dots to deliver information as well. For instance, the rooms column is passed to the size parameter, the size of a dot becomes proportional to the number of rooms in a house. The general trend is to have larger houses as we move away from the CDB. It makes sense because the space becomes more of a concern in the city centre.
+
+**Style**
+
+Grouping variable that will produce elements with different styles. Can have a numeric dtype but will always be treated as categorical.
+
+```
+
+```{r, Dot = 4, part = "Code"}
+# Grouping variable with different sizes
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point(aes(size = factor(Rooms)))
+
+
+# Grouping variable with different styles and color
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point(aes(colour = factor(Type),
+                 shape = factor(Type)))
+
+```
+
+```{python, Dot = 4, part = "Code"}
+# Grouping variable with different sizes
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', height=10, aspect=1.2, size='Rooms')
+
+# Grouping variable with different styles and color
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', height=10, aspect=1.2, hue='Type', style='Type')
+
+```
+
+```{r, Dot = 4, part = "Result", echo = F, eval = T}
+# Grouping variable with different sizes
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point(aes(size = factor(Rooms)))
+
+
+# Grouping variable with different styles and color
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point(aes(colour = factor(Type),
+                 shape = factor(Type)))
+
+```
+
+```{python, Dot = 4, part = "Result", echo = F, eval = T}
+# Grouping variable with different sizes
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', height=10, aspect=1.2, size='Rooms')
+
+# Grouping variable with different styles and color
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', height=10, aspect=1.2, hue='Type', style='Type')
+
+```
+
+<!-- Dot 5, lang: python, r ------------------------------------------------>
+
+```{block, Dot = 5, part = "Instruction", lang = "r"}
+A pairs plot compactly plots every (numeric) variable in a dataset against every other one. In base plot, you would use the `pairs()` function. I’m interested in recreating this plot using my visualisation package of choice, ggplot2, and I found the best way to do this is using `ggpairs()` , part of the ggplot2 extension package [GGally](https://ggobi.github.io/ggally/reference/ggpairs.html).This function creates a similar plot to the base function ,with the added benefit of displaying the correlation coefficient (Pearson, by default) in the upper triangle, distributions on the diagonal, and all the fun flexibility that you would expect from ggplot2.
+
+```
+
+```{block, Dot = 5, part = "Instruction", lang = "python"}
+The `pairplot` function of Seaborn can be used to generate a grid of scatter plots to explore the pairwise relationships between variables. By default, it includes all the numerical variables. However, we can change it by selecting only the columns of interest. The pairplot function can also be customized to carry more information. For instance, we can add a hue variable just like we have done with the `relplot` function.
+
+```
+
+```{r, Dot = 5, part = "Code"}
+library(GGally)
+
+ggpairs(melb, 
+        columns = c('Price','Distance','Landsize'),
+        ggplot2::aes(colour=Type))
+
+```
+
+```{python, Dot = 5, part = "Code"}
+sns.pairplot(melb[['Price','Distance','Landsize','Type']], hue='Type', height=3)
+
+```
+
+```{r, Dot = 5, part = "Result", echo = F, eval = T}
+library(GGally)
+
+ggpairs(melb, 
+        columns = c('Price','Distance','Landsize'),
+        ggplot2::aes(colour=Type))
+
+```
+
+```{python, Dot = 5, part = "Result", echo = F, eval = T}
+sns.pairplot(melb[['Price','Distance','Landsize','Type']], hue='Type', height=3)
+
+```
+
+<!-- Dot 6, lang: python, r ------------------------------------------------>
+
+```{block, Dot = 6, part = "Instruction", lang = "r"}
+**Theme and colour your ggplot figures**
+
+There’s 8 built-in theme variations in the latest versions of ggplot2. Quickly change the default look of your figures by adding theme_XX() to the end of your plotting commands.
+
+The default look and feel can be adjusted by adding an in-build theme from ggplot2.
+
+- theme_gray() – signature ggplot2 theme
+- theme_bw() – dark on light ggplot2 theme
+- theme_linedraw() – uses black lines on white backgrounds only
+- theme_light() – similar to linedraw() but with grey lines aswell
+- theme_dark() – lines on a dark background instead of light
+- theme_minimal() – no background annotations, minimal feel.
+- theme_classic() – theme with no grid lines.
+- theme_void() – empty theme with no elements
+
+```
+
+```{block, Dot = 6, part = "Instruction", lang = "python"}
+**Data visualization Styling**
+
+When creating a data visualization, your goal is to communicate the insights found in the data. While visualizing communicates important information, styling will influence how your audience understands what you’re trying to convey. Styling is the process of customizing the overall look of your visualization, or figure.
+
+**Theme**
+
+We can quickly change the style of the figure to a different theme with only a single line of code. Seaborn has five different themes: `darkgrid`, `whitegrid`, `dark`, `white`, and `ticks`, and you need only use a command similar to the one in the code cell above (with the chosen theme filled in) to change it.
+
+**Color Palette**
+
+If you do not pass in a color palette to `sns.color_palette()` or `sns.set_palette()`, Seaborn will use a default set of colors.
+Seaborn has six variations of its default color palette: `deep`, `muted`, `pastel`, `bright`, `dark`, and `colorblind`.
+
+```
+
+```{r, Dot = 6, part = "Code"}
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point(aes(colour = factor(Type))) +
+  theme_dark()
+
+```
+
+```{python, Dot = 6, part = "Code"}
+# Change the style of the figure to the "ticks" theme
+sns.set_style("ticks")
+
+# Set the palette to the "pastel" default palette
+sns.set_palette("pastel")
+
+# Create scatterplot
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', height=10, aspect=1.2, hue='Type')
+
+```
+
+```{r, Dot = 6, part = "Result", echo = F, eval = T}
+ggplot(data = melb,
+       aes(x = Price,
+           y = Distance)) +
+  geom_point(aes(colour = factor(Type))) +
+  theme_dark()
+
+```
+
+```{python, Dot = 6, part = "Result", echo = F, eval = T}
+# Change the style of the figure to the "ticks" theme
+sns.set_style("ticks")
+
+# Set the palette to the "pastel" default palette
+sns.set_palette("pastel")
+
+# Create scatterplot
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter', height=10, aspect=1.2, hue='Type')
+
+```

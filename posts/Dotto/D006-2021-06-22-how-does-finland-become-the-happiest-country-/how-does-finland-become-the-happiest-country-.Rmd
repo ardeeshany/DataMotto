@@ -4,11 +4,11 @@ description: |
   A short description of the Dotto.
 author:
   - name: "First Last"
-    occupation: NULL
-    affiliation: NULL
-    url: NULL
-    img: NULL
-    lang: r
+    occupation: "Occupation"
+    affiliation: "Affiliation"
+    url: "https://your_url"
+    img: "path_to_image"
+    lang: ["r", "python"]
 tech:
   - lang: r
     pkgs: NULL

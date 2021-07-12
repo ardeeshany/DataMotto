@@ -111,6 +111,53 @@ export default {
     "slug": ["coffee-market-in-paris"],
     "output": ["DataMotto::Dotto"]
   },
+  "D003-2021-06-22-how-to-import-excel-datasets": {
+    "file_name": ["how-to-import-excel-datasets"],
+    "dir_name": ["D003-2021-06-22-how-to-import-excel-datasets"],
+    "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+    "link": ["posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets/index.html"],
+    "base_url": ["https://datamotto.com"],
+    "social_networks_datamotto": {
+      "twitter": ["https://twitter.com/DataMotto"],
+      "linkedin": ["https://www.linkedin.com/company/datamotto"]
+    },
+    "dotto_number": [3],
+    "dotto_label": ["D003"],
+    "dotto_id": ["9b093546-d342-11eb-a85d-acbc32baed85"],
+    "title": ["How to import excel datasets"],
+    "description": ["A short description of the Dotto.\n"],
+    "author": [
+      {
+        "name": ["First Last"],
+        "occupation": ["Occupation"],
+        "affiliation": ["Affiliation"],
+        "url": ["https://your_url"],
+        "img": ["path_to_image"],
+        "lang": ["r", "python"],
+        "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+        "profile_img": ["./posts/Dotto/D003-2021-06-22-how-to-import-excel-datasets./../../assets/img/dotto.png"]
+      }
+    ],
+    "tech": [
+      {
+        "lang": ["r"],
+        "pkgs": {}
+      },
+      {
+        "lang": ["python"],
+        "pkgs": ["pandas"]
+      }
+    ],
+    "date": {
+      "created": ["2021-06-22"],
+      "last_updated": ["2021-06-22"]
+    },
+    "categories": {},
+    "applications": {},
+    "cover_image": {},
+    "slug": ["how-to-import-excel-datasets"],
+    "output": ["DataMotto::Dotto"]
+  },
   "D004-2021-06-22-simple-data-visualization": {
     "file_name": ["simple-data-visualization"],
     "dir_name": ["D004-2021-06-22-simple-data-visualization"],
@@ -125,7 +172,7 @@ export default {
     "dotto_label": ["D004"],
     "dotto_id": ["dd87b3a2-d342-11eb-a85d-acbc32baed85"],
     "title": ["Simple Data Visualization"],
-    "description": ["Make great data visualizations. A great way to see the power of coding!\n"],
+    "description": ["We've broken the chart types into three broad categories to help with this.\n"],
     "author": [
       {
         "name": ["Mohammad Hossein Malekpour"],
@@ -145,7 +192,7 @@ export default {
       },
       {
         "lang": ["python"],
-        "pkgs": ["seaborn", "pands"]
+        "pkgs": ["seaborn", "pandas"]
       }
     ],
     "date": {
@@ -156,6 +203,139 @@ export default {
     "applications": ["Other"],
     "cover_image": {},
     "slug": ["simple-data-visualization"],
+    "output": ["DataMotto::Dotto"]
+  },
+  "D005-2021-06-22-basic-data-structure": {
+    "file_name": ["basic-data-structure"],
+    "dir_name": ["D005-2021-06-22-basic-data-structure"],
+    "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+    "link": ["posts/Dotto/D005-2021-06-22-basic-data-structure/index.html"],
+    "base_url": ["https://datamotto.com"],
+    "social_networks_datamotto": {
+      "twitter": ["https://twitter.com/DataMotto"],
+      "linkedin": ["https://www.linkedin.com/company/datamotto"]
+    },
+    "dotto_number": [5],
+    "dotto_label": ["D005"],
+    "dotto_id": ["ea4a8d12-d342-11eb-a85d-acbc32baed85"],
+    "title": ["Basic Data Structure"],
+    "description": ["A short description of the Dotto.\n"],
+    "author": [
+      {
+        "name": ["First Last"],
+        "occupation": ["Occupation"],
+        "affiliation": ["Affiliation"],
+        "url": ["https://your_url"],
+        "img": ["path_to_image"],
+        "lang": ["r"],
+        "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+        "profile_img": ["./posts/Dotto/D005-2021-06-22-basic-data-structure./../../assets/img/dotto.png"]
+      }
+    ],
+    "tech": [
+      {
+        "lang": ["r"],
+        "pkgs": {}
+      }
+    ],
+    "date": {
+      "created": ["2021-06-22"],
+      "last_updated": ["2021-06-22"]
+    },
+    "categories": {},
+    "applications": {},
+    "cover_image": {},
+    "slug": ["basic-data-structure"],
+    "output": ["DataMotto::Dotto"]
+  },
+  "D006-2021-06-22-how-does-finland-become-the-happiest-country-": {
+    "file_name": ["how-does-finland-become-the-happiest-country-"],
+    "dir_name": ["D006-2021-06-22-how-does-finland-become-the-happiest-country-"],
+    "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+    "link": ["posts/Dotto/D006-2021-06-22-how-does-finland-become-the-happiest-country-/index.html"],
+    "base_url": ["https://datamotto.com"],
+    "social_networks_datamotto": {
+      "twitter": ["https://twitter.com/DataMotto"],
+      "linkedin": ["https://www.linkedin.com/company/datamotto"]
+    },
+    "dotto_number": [6],
+    "dotto_label": ["D006"],
+    "dotto_id": ["ffd13e06-d342-11eb-a85d-acbc32baed85"],
+    "title": ["How does Finland become the happiest country?"],
+    "description": ["A short description of the Dotto.\n"],
+    "author": [
+      {
+        "name": ["First Last"],
+        "occupation": ["Occupation"],
+        "affiliation": ["Affiliation"],
+        "url": ["https://your_url"],
+        "img": ["path_to_image"],
+        "lang": ["r", "python"],
+        "profile_img_for_Dotto": ["../../../assets/img/dotto.png"],
+        "profile_img": ["./posts/Dotto/D006-2021-06-22-how-does-finland-become-the-happiest-country-./../../assets/img/dotto.png"]
+      }
+    ],
+    "tech": [
+      {
+        "lang": ["r"],
+        "pkgs": {}
+      }
+    ],
+    "date": {
+      "created": ["2021-06-22"],
+      "last_updated": ["2021-06-22"]
+    },
+    "categories": {},
+    "applications": {},
+    "cover_image": {},
+    "slug": ["how-does-finland-become-the-happiest-country-"],
+    "output": ["DataMotto::Dotto"]
+  },
+  "D015-2021-07-11-scatter-plot-the-relation-between-two-quantitative-variables": {
+    "file_name": ["scatter-plot-the-relation-between-two-quantitative-variables"],
+    "dir_name": ["D015-2021-07-11-scatter-plot-the-relation-between-two-quantitative-variables"],
+    "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+    "link": ["posts/Dotto/D015-2021-07-11-scatter-plot-the-relation-between-two-quantitative-variables/index.html"],
+    "base_url": ["https://datamotto.com"],
+    "social_networks_datamotto": {
+      "twitter": ["https://twitter.com/DataMotto"],
+      "linkedin": ["https://www.linkedin.com/company/datamotto"]
+    },
+    "dotto_number": [8],
+    "dotto_label": ["D008"],
+    "dotto_id": ["ef6fad02-e226-11eb-957c-f3c3bb04b83f"],
+    "title": ["Scatter Plot: The relation between two quantitative variables"],
+    "description": ["You will learn what is scatter plot, when we are using it, how to make it more effective.\n"],
+    "author": [
+      {
+        "name": ["Mohammad Hossein Malekpour"],
+        "occupation": ["Data Scientist"],
+        "affiliation": ["DataMotto"],
+        "url": ["https://www.linkedin.com/in/mohammadhossein-malekpour/"],
+        "img": ["MalekpourAvatar.jpg"],
+        "lang": ["python", "r"],
+        "profile_img_for_Dotto": ["./scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/MalekpourAvatar.jpg"],
+        "profile_img": ["./posts/Dotto/D015-2021-07-11-scatter-plot-the-relation-between-two-quantitative-variables/scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/MalekpourAvatar.jpg"]
+      }
+    ],
+    "tech": [
+      {
+        "lang": ["r"],
+        "pkgs": ["ggplot2", "dplyr"]
+      },
+      {
+        "lang": ["python"],
+        "pkgs": ["seaborn", "pandas"]
+      }
+    ],
+    "date": {
+      "created": ["2021-07-11"],
+      "last_updated": ["2021-07-11"]
+    },
+    "categories": ["Visualizer"],
+    "applications": ["Other"],
+    "cover_image": {},
+    "slug": ["scatter-plot-the-relation-between-two-quantitative-variables"],
     "output": ["DataMotto::Dotto"]
   }
 }

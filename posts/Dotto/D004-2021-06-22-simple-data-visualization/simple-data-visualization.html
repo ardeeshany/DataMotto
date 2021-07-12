@@ -22,7 +22,7 @@
         
           <meta property="og:title" content="Simple Data Visualization" />
           <meta property="og:type" content="article">
-          <meta property="og:description" content="Make great data visualizations. A great way to see the power of coding!
+          <meta property="og:description" content="We've broken the chart types into three broad categories to help with this.
         " />
           <meta property="og:url" content="https://datamotto.com/posts/dotto/D004-2021-06-22-simple-data-visualization/" />
           <meta property="og:locale" content="en_US">
@@ -32,7 +32,7 @@
         
           <meta property="twitter:card" content="summary_large_image">
           <meta property="twitter:title" content="Simple Data Visualization">
-          <meta property="twitter:description" content="Make great data visualizations. A great way to see the power of coding!
+          <meta property="twitter:description" content="We've broken the chart types into three broad categories to help with this.
         ">
           <meta property="twitter:url" content="https://datamotto.com/posts/dotto/D004-2021-06-22-simple-data-visualization/">
           <meta property="twitter:image" content="https://datamotto.com/assets/img/logo.svg">
@@ -91,7 +91,7 @@
 Simple Data Visualization
 </h6>
 <p class="dotto-header-description">
-Make great data visualizations. A great way to see the power of coding!
+We've broken the chart types into three broad categories to help with this.
 
 </p>
 <p class="dotto-header-tags">
@@ -381,24 +381,208 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
-<pre><code>##   symboling normalized.losses          make fuel.type aspiration num.of.doors body.style drive.wheels
-## 1         0               108        nissan       gas        std         four      wagon          fwd
-## 2         3                 ?    mitsubishi       gas      turbo          two  hatchback          fwd
-## 3         0                 ? mercedes-benz       gas        std         four      sedan          rwd
-## 4         0               106        nissan       gas        std         four  hatchback          fwd
-## 5         2               137         honda       gas        std          two  hatchback          fwd
-##   engine.location wheel.base length width height curb.weight engine.type num.of.cylinders engine.size
-## 1           front      100.4  184.6  66.5   56.1        3296        ohcv              six         181
-## 2           front       95.9  173.2  66.3   50.2        2921         ohc             four         156
-## 3           front      120.9  208.1  71.7   56.7        3900        ohcv            eight         308
-## 4           front       97.2  173.4  65.2   54.7        2324         ohc             four         120
-## 5           front       86.6  144.6  63.9   50.8        1819         ohc             four          92
-##   fuel.system bore stroke compression.ratio horsepower peak.rpm city.mpg highway.mpg price
-## 1        mpfi 3.43   3.27               9.0        152     5200       17          22 14399
-## 2        spdi 3.59   3.86               7.0        145     5000       19          24 14869
-## 3        mpfi  3.8   3.35               8.0        184     4500       14          16 40960
-## 4        2bbl 3.33   3.47               8.5         97     5200       27          34  8949
-## 5        1bbl 2.91   3.41               9.2         76     6000       31          38  6855</code></pre>
+<table style="width:100%;">
+<colgroup>
+<col width="3%" />
+<col width="6%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="5%" />
+<col width="3%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="4%" />
+<col width="4%" />
+<col width="5%" />
+<col width="4%" />
+<col width="4%" />
+<col width="1%" />
+<col width="2%" />
+<col width="6%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="4%" />
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">symboling</th>
+<th align="left">normalized.losses</th>
+<th align="left">make</th>
+<th align="left">fuel.type</th>
+<th align="left">aspiration</th>
+<th align="left">num.of.doors</th>
+<th align="left">body.style</th>
+<th align="left">drive.wheels</th>
+<th align="left">engine.location</th>
+<th align="right">wheel.base</th>
+<th align="right">length</th>
+<th align="right">width</th>
+<th align="right">height</th>
+<th align="right">curb.weight</th>
+<th align="left">engine.type</th>
+<th align="left">num.of.cylinders</th>
+<th align="right">engine.size</th>
+<th align="left">fuel.system</th>
+<th align="left">bore</th>
+<th align="left">stroke</th>
+<th align="right">compression.ratio</th>
+<th align="left">horsepower</th>
+<th align="left">peak.rpm</th>
+<th align="right">city.mpg</th>
+<th align="right">highway.mpg</th>
+<th align="left">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">134</td>
+<td align="left">toyota</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">convertible</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">98.4</td>
+<td align="right">176.2</td>
+<td align="right">65.6</td>
+<td align="right">53.0</td>
+<td align="right">2975</td>
+<td align="left">ohc</td>
+<td align="left">four</td>
+<td align="right">146</td>
+<td align="left">mpfi</td>
+<td align="left">3.62</td>
+<td align="left">3.5</td>
+<td align="right">9.3</td>
+<td align="left">116</td>
+<td align="left">4800</td>
+<td align="right">24</td>
+<td align="right">30</td>
+<td align="left">17669</td>
+</tr>
+<tr class="even">
+<td align="right">-1</td>
+<td align="left">95</td>
+<td align="left">volvo</td>
+<td align="left">diesel</td>
+<td align="left">turbo</td>
+<td align="left">four</td>
+<td align="left">sedan</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">109.1</td>
+<td align="right">188.8</td>
+<td align="right">68.9</td>
+<td align="right">55.5</td>
+<td align="right">3217</td>
+<td align="left">ohc</td>
+<td align="left">six</td>
+<td align="right">145</td>
+<td align="left">idi</td>
+<td align="left">3.01</td>
+<td align="left">3.4</td>
+<td align="right">23.0</td>
+<td align="left">106</td>
+<td align="left">4800</td>
+<td align="right">26</td>
+<td align="right">27</td>
+<td align="left">22470</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">150</td>
+<td align="left">mazda</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">hatchback</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">95.3</td>
+<td align="right">169.0</td>
+<td align="right">65.7</td>
+<td align="right">49.6</td>
+<td align="right">2380</td>
+<td align="left">rotor</td>
+<td align="left">two</td>
+<td align="right">70</td>
+<td align="left">4bbl</td>
+<td align="left">?</td>
+<td align="left">?</td>
+<td align="right">9.4</td>
+<td align="left">101</td>
+<td align="left">6000</td>
+<td align="right">17</td>
+<td align="right">23</td>
+<td align="left">10945</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">?</td>
+<td align="left">porsche</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">two</td>
+<td align="left">hatchback</td>
+<td align="left">rwd</td>
+<td align="left">front</td>
+<td align="right">98.4</td>
+<td align="right">175.7</td>
+<td align="right">72.3</td>
+<td align="right">50.5</td>
+<td align="right">3366</td>
+<td align="left">dohcv</td>
+<td align="left">eight</td>
+<td align="right">203</td>
+<td align="left">mpfi</td>
+<td align="left">3.94</td>
+<td align="left">3.11</td>
+<td align="right">10.0</td>
+<td align="left">288</td>
+<td align="left">5750</td>
+<td align="right">17</td>
+<td align="right">28</td>
+<td align="left">?</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">94</td>
+<td align="left">volkswagen</td>
+<td align="left">gas</td>
+<td align="left">std</td>
+<td align="left">four</td>
+<td align="left">sedan</td>
+<td align="left">fwd</td>
+<td align="left">front</td>
+<td align="right">97.3</td>
+<td align="right">171.7</td>
+<td align="right">65.5</td>
+<td align="right">55.7</td>
+<td align="right">2212</td>
+<td align="left">ohc</td>
+<td align="left">four</td>
+<td align="right">109</td>
+<td align="left">mpfi</td>
+<td align="left">3.19</td>
+<td align="left">3.4</td>
+<td align="right">9.0</td>
+<td align="left">85</td>
+<td align="left">5250</td>
+<td align="right">27</td>
+<td align="right">34</td>
+<td align="left">8195</td>
+</tr>
+</tbody>
+</table>
 
 </div>
  
@@ -407,14 +591,33 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
 
-<pre><code>##      symboling normalized-losses           make  ... city-mpg highway-mpg  price
-## 72           3               142  mercedes-benz  ...       16          18  35056
-## 69           0                93  mercedes-benz  ...       22          25  28176
-## 197         -1                74          volvo  ...       24          28  16515
-## 92           1               122         nissan  ...       31          37   6849
-## 136          3               150           saab  ...       19          26  18150
-## 
-## [5 rows x 26 columns]</code></pre>
+<pre><code>##                          169     112        51 
+## symboling                  2       0          1
+## normalized-losses        134     161        104
+## make                  toyota  peugot      mazda
+## fuel-type                gas  diesel        gas
+## aspiration               std   turbo        std
+## num-of-doors             two    four        two
+## body-style         hatchback   sedan  hatchback
+## drive-wheels             rwd     rwd        fwd
+## engine-location        front   front      front
+## wheel-base              98.4   107.9       93.1
+## length                 176.2   186.7      159.1
+## width                   65.6    68.4       64.2
+## height                    52    56.7       54.1
+## curb-weight             2551    3252       1900
+## engine-type              ohc       l        ohc
+## num-of-cylinders        four    four       four
+## engine-size              146     152         91
+## fuel-system             mpfi     idi       2bbl
+## bore                    3.62     3.7       3.03
+## stroke                   3.5    3.52       3.15
+## compression-ratio        9.3      21          9
+## horsepower               116      95         68
+## peak-rpm                4800    4150       5000
+## city-mpg                  24      28         31
+## highway-mpg               30      33         38
+## price                   9989   16900       6095</code></pre>
 
 </div>
  
@@ -459,10 +662,11 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb5"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group variable will produce lines with different colors</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> auto, <span class="fu">aes</span>(<span class="at">x =</span> wheel.base, <span class="at">y =</span> engine.size)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> fuel.type,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> fuel.type))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group variable will produce lines with different colors</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> auto, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> wheel.base, <span class="at">y =</span> engine.size)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> fuel.type,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> fuel.type))</span></code></pre></div>
 
 </div>
  
@@ -471,8 +675,8 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb6"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group variable using &quot;hue&quot; that will produce lines with different colors</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&quot;wheel-base&quot;</span>, y<span class="op">=</span><span class="st">&quot;engine-size&quot;</span>, hue<span class="op">=</span><span class="st">&quot;fuel-type&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group variable using &quot;hue&quot; that will produce lines with different colors</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&quot;wheel-base&quot;</span>, y<span class="op">=</span><span class="st">&quot;engine-size&quot;</span>, hue<span class="op">=</span><span class="st">&quot;fuel-type&quot;</span>)</span></code></pre></div>
 
 </div>
  
@@ -487,14 +691,14 @@ class="btn dotto-main-dot-shape"
 <br>
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+<img src="simple-data-visualization_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
 </div>
  
 </p>
 <p>
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+<img src="simple-data-visualization_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
 </div>
  
 </div>
@@ -538,9 +742,11 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb7"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw a set of vertical bars with nested grouping by a two variables</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> auto, <span class="fu">aes</span>(<span class="at">x =</span> body.style, <span class="at">y =</span> city.mpg)) <span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> fuel.type))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw a set of vertical bars with nested grouping by a two variables</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> auto,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> body.style,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> city.mpg)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> fuel.type))</span></code></pre></div>
 
 </div>
  
@@ -549,8 +755,8 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb8"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw a set of vertical bars with nested grouping by a two variables</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>auto[<span class="st">&#39;body-style&#39;</span>], y<span class="op">=</span>auto[<span class="st">&#39;city-mpg&#39;</span>], hue<span class="op">=</span>auto[<span class="st">&#39;fuel-type&#39;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw a set of vertical bars with nested grouping by a two variables</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>auto[<span class="st">&#39;body-style&#39;</span>], y<span class="op">=</span>auto[<span class="st">&#39;city-mpg&#39;</span>], hue<span class="op">=</span>auto[<span class="st">&#39;fuel-type&#39;</span>])</span></code></pre></div>
 
 </div>
  
@@ -565,14 +771,14 @@ class="btn dotto-main-dot-shape"
 <br>
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+<img src="simple-data-visualization_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
 </div>
  
 </p>
 <p>
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+<img src="simple-data-visualization_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
 </div>
  
 </div>
@@ -616,25 +822,26 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb9"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reshape data</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting only numeric columns from a data frame</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>numeric_cols <span class="ot">&lt;-</span> <span class="fu">select_if</span>(auto, is.numeric)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute pairwise correlation of columns</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>corr <span class="ot">&lt;-</span> <span class="fu">melt</span>(<span class="fu">cor</span>(numeric_cols))</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_text: insert corresponding cell values in plot</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># theme: Rotating and spacing x axis labels</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> corr, <span class="fu">aes</span>(<span class="at">x =</span> Var1, <span class="at">y =</span> Var2)) <span class="sc">+</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(value, <span class="dv">1</span>))) <span class="sc">+</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">angle =</span> <span class="dv">90</span>,</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">vjust =</span> <span class="fl">0.5</span>,</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">hjust =</span> <span class="dv">1</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  )) </span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reshape data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting only numeric columns from a data frame</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>numeric_cols <span class="ot">&lt;-</span> <span class="fu">select_if</span>(auto, is.numeric)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute pairwise correlation of columns</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>corr <span class="ot">&lt;-</span> <span class="fu">melt</span>(<span class="fu">cor</span>(numeric_cols))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_text: insert corresponding cell values in plot</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># theme: Rotating and spacing x axis labels</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> corr,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Var1, <span class="at">y =</span> Var2)) <span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(value, <span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">angle =</span> <span class="dv">90</span>,</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">vjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">hjust =</span> <span class="dv">1</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  )) </span></code></pre></div>
 
 </div>
  
@@ -643,12 +850,12 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb10"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute pairwise correlation of columns</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> auto.corr()</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># annot: Annotate each cell with the numeric value</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># linewidths: Add lines between each cell</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>, linewidths<span class="op">=</span><span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute pairwise correlation of columns</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> auto.corr()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># annot: Annotate each cell with the numeric value</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># linewidths: Add lines between each cell</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>, linewidths<span class="op">=</span><span class="fl">.1</span>)</span></code></pre></div>
 
 </div>
  
@@ -663,14 +870,14 @@ class="btn dotto-main-dot-shape"
 <br>
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-23-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+<img src="simple-data-visualization_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
 </div>
  
 </p>
 <p>
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+<img src="simple-data-visualization_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
 </div>
  
 </div>
@@ -714,13 +921,14 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb11"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Showing two different grouping variables using &quot;colour&quot; amd &quot;shape&quot; parameter</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> auto, <span class="fu">aes</span>(<span class="at">x =</span> engine.size, <span class="at">y =</span> wheel.base)) <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="fu">factor</span>(fuel.type),</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="fu">factor</span>(num.of.cylinders)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  ))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Showing two different grouping variables using &quot;colour&quot; amd &quot;shape&quot; parameter</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> auto,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> engine.size,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> wheel.base)) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="fu">factor</span>(fuel.type),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">shape =</span> <span class="fu">factor</span>(num.of.cylinders)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                 ))</span></code></pre></div>
 
 </div>
  
@@ -729,9 +937,9 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb12"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Showing two different grouping variables using &quot;hue&quot; amd &quot;style&quot; parameter</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&#39;engine-size&#39;</span>, y<span class="op">=</span><span class="st">&#39;wheel-base&#39;</span>, hue<span class="op">=</span><span class="st">&#39;fuel-type&#39;</span>,style<span class="op">=</span><span class="st">&#39;num-of-cylinders&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Showing two different grouping variables using &quot;hue&quot; amd &quot;style&quot; parameter</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&#39;engine-size&#39;</span>, y<span class="op">=</span><span class="st">&#39;wheel-base&#39;</span>, hue<span class="op">=</span><span class="st">&#39;fuel-type&#39;</span>,style<span class="op">=</span><span class="st">&#39;num-of-cylinders&#39;</span>)</span></code></pre></div>
 
 </div>
  
@@ -746,14 +954,14 @@ class="btn dotto-main-dot-shape"
 <br>
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+<img src="simple-data-visualization_files/figure-html/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
 </div>
  
 </p>
 <p>
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+<img src="simple-data-visualization_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
 </div>
  
 </div>
@@ -798,13 +1006,13 @@ Visualise the distribution of a single continuous variable by dividing the x axi
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb13"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(auto, <span class="fu">aes</span>(city.mpg)) <span class="sc">+</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>,</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">3.0</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(auto,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(city.mpg)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">3.0</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 
 </div>
  
@@ -813,8 +1021,8 @@ Visualise the distribution of a single continuous variable by dividing the x axi
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb14"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># kde:If True, smooth the distribution and show as line</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&quot;city-mpg&quot;</span>, kde<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># kde:If True, smooth the distribution and show as line</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>auto,x<span class="op">=</span><span class="st">&quot;city-mpg&quot;</span>, kde<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 
 </div>
  
@@ -829,14 +1037,14 @@ Visualise the distribution of a single continuous variable by dividing the x axi
 <br>
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-35-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+<img src="simple-data-visualization_files/figure-html/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
 </div>
  
 </p>
 <p>
  
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-<img src="simple-data-visualization_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
+<img src="simple-data-visualization_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto auto auto 0;" />
 </div>
  
 </div>
