@@ -42,9 +42,13 @@ comment
 ```
 
 ```{block, Dot = 1, part = "Instruction", lang = 'python'}
-In this Dotto, we will go over 7 points to customize a scatter plotin Seaborn library. Scatter plots are mainly used to visualize the relationship between two continuous variables. They provide an overview of the correlation between the variables.
-We will be creating several scatter plots using the Melbourne housing [dataset](https://www.kaggle.com/dansbecker/melbourne-housing-snapshot) available on Kaggle.
-I have only selected a small sample from the dataset and also included only 6 columns. The last line filters out the rows which can be considered as outliers with regards to the land size.
+# Create Better Scatter Plots with Seaborn
+In this Dotto, we will customize a scatter plot in [Seaborn](https://seaborn.pydata.org/index.html) library. Scatter plots are mainly used to visualize the relationship between two continuous variables. They provide an overview of the correlation between the variables.
+
+We will be creating several scatter plots using the Melbourne housing [dataset](https://www.kaggle.com/dansbecker/melbourne-housing-snapshot) available on Kaggle. I have only selected a small sample from the dataset and also included only 6 columns. The last line filters out the rows which can be considered as outliers with regards to the land size.
+
+Let’s create a simple scatter plot of the price and distance columns with the default settings. We can then go over some tips to make the scatter plots more informative and appealing.
+The distance column indicates the distance to the central business district (CBD). Each dot represents an observation (i.e. a house). We observe a negative correlation between the price and distance to CBD.
 
 ```
 
@@ -56,7 +60,6 @@ I have only selected a small sample from the dataset and also included only 6 co
 ```
 
 ```{python, Dot = 1, part = "Code"}
-
 # Import the libraries
 import numpy as np
 import pandas as pd
@@ -70,7 +73,12 @@ melb = pd.read_csv("data/melb_data.csv",
 melb = melb[melb.Landsize < 3000]
 
 # Print the five random rows of the data
-melb.sample(5)
+print(melb.sample(5))
+
+# Create a simple scatter plot
+# aspect parameter represents the ratio of the width and height
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=6, aspect=1.2)
 
 ```
 
@@ -82,22 +90,25 @@ melb.sample(5)
 ```
 
 ```{python, Dot = 1, part = "Result", echo = F, eval = T}
-
-# import the libraries
+# Import the libraries
 import numpy as np
 import pandas as pd
 import seaborn as sns
 sns.set(style='darkgrid')
 
-# read the dataset into a Pandas dataframe
+# Read the dataset into a Pandas dataframe
 cols = ['Price','Distance','Rooms','Type','Landsize','Regionname']
 melb = pd.read_csv("data/melb_data.csv", 
                    usecols=cols).sample(n=300)
 melb = melb[melb.Landsize < 3000]
 
 # Print the five random rows of the data
-pd.set_option('display.max_columns', 3)
-melb.sample(5).T
+print(melb.sample(5))
+
+# Create a simple scatter plot
+# aspect parameter represents the ratio of the width and height
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=6, aspect=1.2)
 
 ```
 
@@ -110,9 +121,8 @@ comment
 ```
 
 ```{block, Dot = 2, part = "Instruction", lang = "python"}
-
-Let’s create a simple scatter plot of the price and distance columns with the default settings. We can then go over some tips to make the scatter plots more informative and appealing.
-The distance column indicates the distance to the central business district (CBD). Each dot represents an observation (i.e. a house). We observe a negative correlation between the price and distance to CBD.
+# Separating categories with hue
+It can be more informative to represent different categories in a column separately. For instance, we can distinguish house types by using a different color for each type. Such tasks can be done with the hue parameter. We clearly see that the housed with u (unit) type are closer to CDB and cheaper in general. The t (townhouse) type is kind of in the middle. As we move away from the CBD, the houses get more expensive and larger.
 
 ```
 
@@ -122,7 +132,9 @@ The distance column indicates the distance to the central business district (CBD
 ```
 
 ```{python, Dot = 2, part = "Code"}
-sns.relplot(data=melb, x='Price', y='Distance', kind='scatter')
+# hue: Grouping variable that will produce elements with different colors.
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=6, aspect=1.2, hue='Type')
 
 ```
 
@@ -132,9 +144,181 @@ sns.relplot(data=melb, x='Price', y='Distance', kind='scatter')
 ```
 
 ```{python, Dot = 2, part = "Result", echo = F, eval = T}
-sns.relplot(data=melb, x='Price', y='Distance', kind='scatter')
+# hue: Grouping variable that will produce elements with different colors.
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=6, aspect=1.2, hue='Type')
 
 ```
 
+<!-- Dot 3, lang: python, r ------------------------------------------------>
 
+```{block, Dot = 3, part = "Instruction", lang = "r"}
+comment
 
+```
+
+```{block, Dot = 3, part = "Instruction", lang = "python"}
+# Separating categories with row or col
+We can also use multiple subplots to separate different categories. The col parameter is used to represent each category as a new column. Similarly, the row parameter does the same using rows.
+
+```
+
+```{r, Dot = 3, part = "Code"}
+# comment
+
+```
+
+```{python, Dot = 3, part = "Code"}
+# row, col: Variables that define subsets to plot on different facets.
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=4, aspect=1.5, col='Type')
+
+```
+
+```{r, Dot = 3, part = "Result", echo = F, eval = T}
+# comment
+
+```
+
+```{python, Dot = 3, part = "Result", echo = F, eval = T}
+# row, col: Variables that define subsets to plot on different facets.
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=4, aspect=1.5, col='Type')
+```
+
+<!-- Dot 4, lang: python, r ------------------------------------------------>
+
+```{block, Dot = 4, part = "Instruction", lang = "r"}
+comment
+
+```
+
+```{block, Dot = 4, part = "Instruction", lang = "python"}
+# Size
+Scatter plots represent data points (i.e. rows) with dots. We can use the size of dots to deliver information as well. For instance, the rooms column is passed to the size parameter, the size of a dot becomes proportional to the number of rooms in a house. The general trend is to have larger houses as we move away from the CDB. It makes sense because the space becomes more of a concern in the city centre.
+
+# Style
+Grouping variable that will produce elements with different styles. Can have a numeric dtype but will always be treated as categorical.
+
+```
+
+```{r, Dot = 4, part = "Code"}
+# comment
+
+```
+
+```{python, Dot = 4, part = "Code"}
+# size: Grouping variable that will produce elements with different sizes
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=6, aspect=1.2, size='Rooms')
+
+# Grouping variable with different styles and color
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=6, aspect=1.2, hue='Type', style='Type', palette='cool')
+
+```
+
+```{r, Dot = 4, part = "Result", echo = F, eval = T}
+# comment
+
+```
+
+```{python, Dot = 4, part = "Result", echo = F, eval = T}
+# size: Grouping variable that will produce elements with different sizes
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=6, aspect=1.2, size='Rooms')
+
+# Grouping variable with different styles and color
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=6, aspect=1.2, hue='Type', style='Type', palette='cool')
+
+```
+
+<!-- Dot 5, lang: python, r ------------------------------------------------>
+
+```{block, Dot = 5, part = "Instruction", lang = "r"}
+comment
+
+```
+
+```{block, Dot = 5, part = "Instruction", lang = "python"}
+# Pairwise relationships
+The pairplot function of Seaborn can be used to generate a grid of scatter plots to explore the pairwise relationships between variables. By default, it includes all the numerical variables. However, we can change it by selecting only the columns of interest. The pairplot function can also be customized to carry more information. For instance, we can add a hue variable just like we have done with the `relplot` function.
+
+```
+
+```{r, Dot = 5, part = "Code"}
+# comment
+
+```
+
+```{python, Dot = 5, part = "Code"}
+sns.pairplot(melb[['Price','Distance','Landsize','Type']], hue='Type', height=3)
+
+```
+
+```{r, Dot = 5, part = "Result", echo = F, eval = T}
+# comment
+
+```
+
+```{python, Dot = 5, part = "Result", echo = F, eval = T}
+sns.pairplot(melb[['Price','Distance','Landsize','Type']], hue='Type', height=3)
+
+```
+
+<!-- Dot 666666666, lang: python, r ------------------------------------------------>
+
+```{block, Dot = 6, part = "Instruction", lang = "r"}
+comment
+
+```
+
+```{block, Dot = 6, part = "Instruction", lang = "python"}
+# Data visualization Styling
+When creating a data visualization, your goal is to communicate the insights found in the data. While visualizing communicates important information, styling will influence how your audience understands what you’re trying to convey. Styling is the process of customizing the overall look of your visualization, or figure.
+
+## Theme
+We can quickly change the style of the figure to a different theme with only a single line of code. Seaborn has five different themes: `darkgrid`, `whitegrid`, `dark`, `white`, and `ticks`, and you need only use a command similar to the one in the code cell above (with the chosen theme filled in) to change it.
+
+## Color Palette
+If you do not pass in a color palette to `sns.color_palette()` or `sns.set_palette()`, Seaborn will use a default set of colors.
+Seaborn has six variations of its default color palette: `deep`, `muted`, `pastel`, `bright`, `dark`, and `colorblind`.
+
+```
+
+```{r, Dot = 6, part = "Code"}
+# comment
+
+```
+
+```{python, Dot = 6, part = "Code"}
+# Change the style of the figure to the "ticks" theme
+sns.set_style("ticks")
+
+# Set the palette to the "pastel" default palette
+sns.set_palette("pastel")
+
+# Create scatterplot
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=6, aspect=1.2, hue='Type')
+
+```
+
+```{r, Dot = 6, part = "Result", echo = F, eval = T}
+# comment
+
+```
+
+```{python, Dot = 6, part = "Result", echo = F, eval = T}
+# Change the style of the figure to the "ticks" theme
+sns.set_style("ticks")
+
+# Set the palette to the "pastel" default palette
+sns.set_palette("pastel")
+
+# Create scatterplot
+sns.relplot(data=melb, x='Price', y='Distance', kind='scatter',
+            height=6, aspect=1.2, hue='Type')
+
+```
