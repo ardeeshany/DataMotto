@@ -1,0 +1,47 @@
+{
+  "file_name": ["how-to-work-with-excel-datasets-"],
+  "dir_name": ["D004-2021-07-14-how-to-work-with-excel-datasets-"],
+  "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+  "link": ["posts/Dotto/D004-2021-07-14-how-to-work-with-excel-datasets-/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [4],
+  "dotto_label": ["D004"],
+  "dotto_id": ["1dd723f8-e4f4-11eb-b8c2-acbc32baed85"],
+  "title": ["How to work with excel datasets?"],
+  "description": ["In this Dotto, we want to explain about importing and data wrangling at importing time in excel.\n"],
+  "author": [
+    {
+      "name": ["Mohsen Jalali"],
+      "occupation": ["Data Scientist"],
+      "affiliation": ["DataMotto"],
+      "url": ["mohsenjalali.ir"],
+      "img": ["Mohsen-Jalali.jpeg"],
+      "lang": ["Python"],
+      "profile_img_for_Dotto": ["./how-to-work-with-excel-datasets-_files/figure-html/Mohsen-Jalali.jpeg"],
+      "profile_img": ["./posts/Dotto/D004-2021-07-14-how-to-work-with-excel-datasets-/how-to-work-with-excel-datasets-_files/figure-html/Mohsen-Jalali.jpeg"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": ["readxl", "janitor", "dplyr", "lubridate"]
+    },
+    {
+      "lang": ["python"],
+      "pkgs": ["pandas", "pyjanitor"]
+    }
+  ],
+  "date": {
+    "created": ["2021-07-02"],
+    "last_updated": ["2021-07-02"]
+  },
+  "categories": ["Importing"],
+  "applications": ["General"],
+  "cover_image": {},
+  "slug": ["how-to-import-excel-datasets-"],
+  "output": ["DataMotto::Dotto"]
+}

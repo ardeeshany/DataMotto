@@ -110,6 +110,53 @@ export default {
     "cover_image": ["audrey.jpeg"],
     "slug": ["coffee-market-in-paris"],
     "output": ["DataMotto::Dotto"]
+  },
+  "D003-2021-07-14-basic-data-structure": {
+    "file_name": ["basic-data-structure"],
+    "dir_name": ["D003-2021-07-14-basic-data-structure"],
+    "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+    "link": ["posts/Dotto/D003-2021-07-14-basic-data-structure/index.html"],
+    "base_url": ["https://datamotto.com"],
+    "social_networks_datamotto": {
+      "twitter": ["https://twitter.com/DataMotto"],
+      "linkedin": ["https://www.linkedin.com/company/datamotto"]
+    },
+    "dotto_number": [3],
+    "dotto_label": ["D003"],
+    "dotto_id": ["a60a503a-e4f2-11eb-b8c2-acbc32baed85"],
+    "title": ["Basic Data structures in Python and R"],
+    "description": ["This Dotto illustrates how to create , modify and convert data structures\nlike vector,factor,matrix,list and data frame in R, and list, tuple, set,\ndictionary and data frame in Python.\n"],
+    "author": [
+      {
+        "name": ["Parnian Jahangiri Rad"],
+        "occupation": ["Data science intern"],
+        "affiliation": ["DataMotto"],
+        "url": ["https://www.linkedin.com/in/parnian-jahangiri-rad-4603611b4"],
+        "img": ["Parnian-Jahangiri-Rad.jpeg"],
+        "lang": ["r , python"],
+        "profile_img_for_Dotto": ["./basic-data-structure_files/figure-html/Parnian-Jahangiri-Rad.jpeg"],
+        "profile_img": ["./posts/Dotto/D003-2021-07-14-basic-data-structure/basic-data-structure_files/figure-html/Parnian-Jahangiri-Rad.jpeg"]
+      }
+    ],
+    "tech": [
+      {
+        "lang": ["r"],
+        "pkgs": {}
+      },
+      {
+        "lang": ["python"],
+        "pkgs": ["pandas"]
+      }
+    ],
+    "date": {
+      "created": ["2021-06-23"],
+      "last_updated": ["2021-06-23"]
+    },
+    "categories": ["General"],
+    "applications": ["General"],
+    "cover_image": {},
+    "slug": ["basic-data-structures-in-python-and-r"],
+    "output": ["DataMotto::Dotto"]
   }
 }
 
