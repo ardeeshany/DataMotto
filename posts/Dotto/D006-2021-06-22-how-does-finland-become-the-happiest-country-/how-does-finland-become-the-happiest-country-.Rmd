@@ -1,0 +1,61 @@
+---
+title: "How does Finland become the happiest country?"
+description: |
+  The World Happiness dataset contains six factors to measure global happiness: life expectancy, economics, social support, absence of corruption, freedom, and generosity. These factors were reported for 166 countries around the world from 2005 to 2020. In this Dotto, we want to find the top five happiest countries then plot the happiness rate for these countries from 2015 to 2019.
+
+author:
+  - name: "Mahyar Sharifi"
+    occupation: Content Developer Intern
+    affiliation: DattaMotto
+    url: NULL
+    img: NULL
+    lang: python
+tech:
+  - lang: python
+    pkgs: pandas, seaborn, matplotlob
+date:
+  created: "2021-06-22"
+  last_updated: "2021-06-22"
+categories: Storyteller
+applications: Governance
+cover_image: NULL
+slug: "how-does-finland-become-the-happiest-country-"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto()
+```
+
+<!-- Dot 1, lang: python ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = "python"}
+In this Dot, we import packages and World Happiness dataset.
+```
+
+```{python, Dot = 1, part = "Code" }
+# Import Packacges
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load World Happiness Dataset
+data = pd.read_csv('https://github.com/DataMotto/DataMotto/blob/4d5932881f01c2b6678bb19644a201d4138f37e0/Dataset/world-happiness-report.csv')
+data.head(5)
+
+```
+
+```{python, Dot = 1, part = "Result", echo = F, eval = T}
+# Import Packacges
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load World Happiness Dataset
+data = pd.read_csv('https://github.com/DataMotto/DataMotto/blob/4d5932881f01c2b6678bb19644a201d4138f37e0/Dataset/world-happiness-report.csv')
+data.head(5)
+
+```
+
+
+
