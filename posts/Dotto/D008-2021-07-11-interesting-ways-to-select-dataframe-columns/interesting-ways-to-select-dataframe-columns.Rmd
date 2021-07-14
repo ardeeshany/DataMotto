@@ -60,21 +60,24 @@ The Palmer Archipelago penguin dataset has been becoming famous, likes the Iris 
 
 The penguin dataset contains four numerical features, two categorical features, and a binary feature. These features are:
 
-  **1)bill_length_mm**
+   1. **bill_length_mm**.
   
-  **2)bill_depth_mm**
+   2. **bill_depth_mm**
   
-  **3)flipper_length_mm**
+   3. **flipper_length_mm**
   
-  **4)body_mass_g**
+   4. **body_mass_g**
   
-  **5)species:** (Chinstrap, Adélie, or Gentoo)
+   5. **species:** (Chinstrap, Adélie, or Gentoo)
   
-  **6)island:** (Dream, Torgersen, or Biscoe)
+   6. **island:** (Dream, Torgersen, or Biscoe)
   
-  **7)sex**
+   7. **sex**
 
-To import this dataset, we use `seaborn` packages.
+
+To import this dataset, we use `palmerpenguins` packages.
+
+After the **penguins** dataset imported, we try some intresting ways to select columns in pandas packages.
 
 ```
 
@@ -273,24 +276,38 @@ penguins[ penguins.columns[
 ```
 
 ```{r, Dot = 4, part = "Code", echo = T, eval = F }
+#Select dataset that contains numeric value
+penguins <- penguins %>%
+          select_if(is.numeric)
 
 ```
 
 ```{python, Dot = 4, part = "Code", echo = T, eval = F }
 
+#Select dataset that contains numeric value
+penguins.loc[:,(penguins.dtypes=='float64').values]
+
 ```
 
 ```{r, Dot = 4, part = "Result", echo = F, eval = T }
 
+#Select dataset that contains numeric value
+penguins <- penguins %>%
+          select_if(is.numeric)
+
 ```
 
 ```{python, Dot = 4, part = "Result", echo = F, eval = T }
+
+#Select dataset that contains numeric value
+penguins.loc[:,(penguins.dtypes=='float64').values]
 
 ```
 
 <!-- Dot 5, lang: r,python ------------------------------------------------>
 
 ```{block, Dot = 5, part = "Instruction", lang = "r"}
+
 
 ```
 
