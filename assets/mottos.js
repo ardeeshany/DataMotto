@@ -266,7 +266,7 @@ export default {
     "dotto_label": ["D006"],
     "dotto_id": ["0e9f3390-e4f8-11eb-b8c2-acbc32baed85"],
     "title": ["How does Finland become the happiest country"],
-    "description": ["The World Happiness dataset contains six factors to measure global happiness: life expectancy, economics, social support, absence of corruption, freedom, and generosity. These factors were reported for 166 countries around the world from 2005 to 2020. In this Dotto, we want to find the top five happiest countries then plot the happiness rate for these countries from 2015 to 2019.\n"],
+    "description": ["Using the World Happiness dataset, we aim to find the most happiest country in the period of 2015-2019.\n"],
     "author": [
       {
         "name": ["Mahyar Sharifi"],
