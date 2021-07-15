@@ -1,0 +1,306 @@
+---
+title: "Introduction to filter DataFrame Rows "
+description: |
+  Using best practices, you can learn how to cut the data  and filter specific rows/observations.
+author:
+  - name: "Parnian Jahangiri Rad"
+    occupation: "Data science intern"
+    affiliation: "DataMotto"
+    url: "https://www.linkedin.com/in/parnian-jahangiri-rad-4603611b4"
+    img: "Parnian-Jahangiri-Rad.jpg"
+    lang: "r , python"
+tech:
+  - lang: r
+    pkgs: ["dplyr"]
+  - lang: python
+    pkgs: ["pandas"]
+date:
+  created: "2021-07-15"
+  last_updated: "2021-07-15"
+categories: ["Wrangling"]
+applications: ["General"]
+cover_image: NULL
+slug: "introduction-to-filter-dataframe-rows-"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto()
+```
+
+<!-- Dot 1, lang: r ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = "r"}
+In this dot,we are using dataset `penguins_raw` from `palmerpenguins` package.
+`palmerpenguins` contains 2 datasets,`penguins` and `penguins_raw` about 344 penguins.
+You can install this package with :  
+* install.packages("palmerpenguins")  
+Access `penguins_raw` dataset with :  
+*library(palmerpenguins)  
+*data_penguin <- penguins_raw
+  
+This dataset includes nesting observations, penguin size data, and isotope measurements from blood samples for adult Adélie, Chinstrap, and Gentoo penguins.It has 344 rows and 17 columns.However , we only need columns:  
+*`individual_id`  
+*`date_egg`  
+*`body-mass-g`  
+*`sex`
+  
+Here, we use `janitor` package ,`clean_names()` function to clean data frame names.
+`clean_name()` works in `%>%` (pipe).  
+```
+
+<!-- Dot 1, lang: Python ------------------------------------------------>
+```{block, Dot = 1, part = "Instruction", lang = "python"}
+In this dot,we are using dataset `penguins_raw` ,that can be downloded from
+[here](site address).
+This dataset includes nesting observations, penguin size data, and isotope measurements from blood samples for adult Adélie, Chinstrap, and Gentoo penguins.It has 344 rows and 17 columns.  
+However , we only need columns:  
+*`individual_id`    
+*`date_egg`    
+*`body-mass-g`    
+*`sex`    
+
+Here, we use `janitor` package ,`clean_names()` function to clean dataframe names.
+```
+
+```{r, Dot = 1, part = "Code", echo = T, eval = F, }
+library(dplyr)
+library(palmerpenguins)
+library(janitor)
+penguins_data <- penguins_raw %>%
+  clean_names() %>%
+  select(individual_id , date_egg , body_mass_g , sex)
+```
+
+```{python, Dot = 1, part = "Code", echo = T, eval = F, }
+import pandas as pd
+import janitor
+
+penguins_raw = pd.read_csv("/home/parnian/Documents/sprint3/penguins_raw.csv")
+penguine_data = penguins_raw.clean_names()
+penguins_data = penguine_data[["individual_id" , "date_egg" ,"body_mass_g_" , "sex" ]]
+```
+
+
+
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
+library(dplyr)
+library(palmerpenguins)
+library(janitor)
+library(kableExtra)
+penguins_data <- penguins_raw %>%
+  clean_names() %>% 
+  select(individual_id , date_egg , body_mass_g , sex)
+penguins_data %>%
+  head(5) %>% 
+  kbl(caption = "first 5 records of penguins_data") %>%
+  kable_material(c("striped", "hover"))
+```
+
+```{python, Dot = 1, part = "Result", echo = F, eval = T}
+import pandas as pd
+import janitor
+
+penguins_raw = pd.read_csv("/home/parnian/Documents/sprint3/penguins_raw.csv")
+penguine_data = penguins_raw.clean_names()
+penguins_data = penguine_data[["individual_id" , "date_egg" ,"body_mass_g_" , "sex" ]]
+penguins_data
+```
+
+<!-- Dot 2, lang: r ------------------------------------------------>
+```{block, Dot = 2, part = "Instruction", lang = "r"}
+`filter()` function, from `dplyr` package, helps us to filter data frame rows
+based on conditions.  
+* Useful filter functions:
+  + `==` , `<` , `>` , etc.  
+  + `&` , `|` , `!` , `xor()`  
+  + `is.na()`  
+  + `between()` , `near()`  
+
+`filter()` (and other `dplyr` functions) work with pipes `%>%` and expect tidy data.   
+In tidy data:  
+* Each variable is in its own column.  
+* Each observation, or case, is in its own row.  
+`%>%` makes code shorter and more readable. It also makes debugging much easier.
+for example , `x %>% f(y)` is equivalent to `f(x, y)`.
+```
+<!-- Dot 2, lang: python ------------------------------------------------>
+```{block, Dot = 2, part = "Instruction", lang = "python"}
+We can use logical operators like `==` , `<` and `>` on columns to filter
+dataframe rows.  
+For examle , `df[df.col1 == 3800]` will select rows with `col1` = 3800.  
+```
+
+```{r, Dot = 2, part = "Code", echo = T, eval = F, }
+data <- penguins_data %>%
+  filter(body_mass_g == 3800)
+
+MAX_BODY_MASS <- penguins_data %>%
+  filter(!is.na(body_mass_g)) %>%
+  filter(body_mass_g == max(body_mass_g))
+```
+
+```{python, Dot = 2, part = "Code", echo = T, eval = F, }
+penguins_data [ penguins_data.body_mass_g_ ==  3800 ]
+```
+
+```{r, Dot = 2, part = "Result", echo = F, eval = T}
+penguin_body_3800 <- penguins_data %>%
+  filter(body_mass_g == 3800)
+
+MAX_BODY_MASS <- penguins_data %>%
+  filter(!is.na(body_mass_g)) %>%
+  filter(body_mass_g == max(body_mass_g))
+penguin_body_3800 %>%
+   kbl(caption = "penguin(s) with maximum body_mass") %>%
+  kable_material(c("striped", "hover"))
+```
+
+```{python, Dot = 2, part = "Result", echo = F, eval = T}
+penguins_data [ penguins_data.body_mass_g_ ==  3800 ]
+```
+
+<!-- Dot 3, lang: r ------------------------------------------------>
+```{block, Dot = 3, part = "Instruction", lang = "r"}
+We can use `==` , `<` and  `>` operators with strings as well.  
+For example , `A == "ABC"` checks whether string A is equal to `"ABC"`,
+or `A < "ABC"` checks if string A comes before "ABC" (in alphabetical order).
+```
+
+<!-- Dot 3, lang: python ------------------------------------------------>
+```{block, Dot = 3, part = "Instruction", lang = "python"}
+We can also use logical operators on strings.  
+For example, `penguins_data [penguins_data.individual_id < "N1A2" ]` will 
+select strings  that come before `N1A2` in alphabetical order.
+```
+
+```{r, Dot = 3, part = "Code", echo = T, eval = F, }
+N1A2_penguin <- penguins_data %>%
+  filter(individual_id == "N1A2")
+```
+
+```{python, Dot = 3, part = "Code", echo = T, eval = F, }
+penguins_data [penguins_data.individual_id == "N1A2" ]
+```
+
+```{r, Dot = 3, part = "Result", echo = F, eval = T}
+N1A2_penguin <- penguins_data %>%
+  filter(individual_id == "N1A2")
+N1A2_penguin %>%
+   kbl(caption = "penguin with individual_id = N1A2") %>%
+   kable_material(c("striped", "hover"))
+```
+
+```{python, Dot = 3, part = "Result", echo = F, eval = T}
+penguins_data [penguins_data.individual_id == "N1A2" ]
+```
+
+<!-- Dot 4, lang: r ------------------------------------------------>
+```{block, Dot = 4, part = "Instruction", lang = "r"}
+We can filter dataframe rows using Dates.  
+For example , `penguins_data %>% filter(Date_Egg < "2007-11-10")` filters
+rows with Date_Egg before 2007-11-10.
+```
+
+<!-- Dot 4, lang: python ------------------------------------------------>
+```{block, Dot = 4, part = "Instruction", lang = "python"}
+We can filter dataframe rows using Dates.   
+For example , `penguins_data [penguins_data.date_egg < "2007-11-10" ]` will 
+select rows with date_egg before '2007-11-10'.  
+```
+
+```{r, Dot = 4, part = "Code", echo = T, eval = F, }
+penguin_2007_11_10 <- penguins_data %>%
+  filter(date_egg < "2007-11-10")
+```
+
+```{python, Dot = 4, part = "Code", echo = T, eval = F, }
+penguins_data [penguins_data.date_egg < "2007-11-10" ]
+```
+
+```{r, Dot = 4, part = "Result", echo = F, eval = T}
+penguin_2007_11_10 <- penguins_data %>%
+  filter(date_egg< "2007-11-10")
+penguin_2007_11_10 %>%
+  kbl(caption = "penguin with individual_id = N1A2") %>%
+   kable_material(c("striped", "hover"))
+```
+
+```{python, Dot = 4, part = "Result", echo = F, eval = T}
+penguins_data [penguins_data.date_egg < "2007-11-10" ]
+```
+
+<!-- Dot 5, lang: r ------------------------------------------------>
+```{block, Dot = 5, part = "Instruction", lang = "r"}
+We can use `%in%` is a way to apply multiple conditions on data frame rows.
+```
+<!-- Dot 5, lang: python ------------------------------------------------>
+```{block, Dot = 5, part = "Instruction", lang = "python"}
+isin` method helps us to apply multiple conditions for row filtering.    
+For example , `df[df.col_1 isin list1]` selects rows that their `col_1` exists
+in `list1`. 
+```
+
+```{r, Dot = 5, part = "Code", echo = T, eval = F, }
+IDs = c("N2N1" , "N2A2" , "N5A1")
+
+IDs_penguins <- penguins_data %>%
+  filter(individual_id %in% IDs)
+```
+
+```{python, Dot = 5, part = "Code", echo = T, eval = F, }
+IDs = [ "N2N1" , "N2A2" , "N5A1" ]
+
+penguins_data [penguins_data.individual_id.isin(IDs) ]
+```
+
+```{r, Dot = 5, part = "Result", echo = F, eval = T}
+IDs = c("N2N1" , "N2A2" , "N5A1")
+
+IDs_penguins <- penguins_data %>%
+  filter(individual_id %in% IDs)
+IDs_penguins %>%
+   kbl(caption = "penguins with IDs listed in vector 'IDs'") %>%
+   kable_material(c("striped", "hover"))
+```
+
+```{python, Dot = 5, part = "Result", echo = F, eval = T}
+IDs = [ "N2N1" , "N2A2" , "N5A1" ]
+
+penguins_data [penguins_data.individual_id.isin(IDs) ]
+```
+
+<!-- Dot 6, lang: r ------------------------------------------------>
+```{block, Dot = 6, part = "Instruction", lang = "r"}
+Combining logical operators like `&` (and) and `|` (or) makes it possible to
+apply multiple conditions on data frame rows.  
+In R language , `!` operator is used as `not`.
+```
+<!-- Dot 6, lang: python ------------------------------------------------>
+```{block, Dot = 6, part = "Instruction", lang = "python"}
+Combining logical operators like `&` (and) and `|` (or) makes it possible to
+apply multiple conditions on data frame rows.  
+In R language , `~` operator is used  for `not` logic in filtering. 
+```
+
+```{r, Dot = 6, part = "Code", echo = T, eval = F, }
+multiple_conditions <- penguins_data %>%
+  filter(!body_mass_g < 2800 & sex == "FEMALE")
+```
+
+```{python, Dot = 6, part = "Code", echo = T, eval = F, }
+penguins_data [~(penguins_data.body_mass_g_ > 2800) & (penguins_data.sex == "FEMALE" )]
+```
+
+```{r, Dot = 6, part = "Result", echo = F, eval = T}
+multiple_conditions <- penguins_data %>%
+  filter((body_mass_g < 2800 & sex == "FEMALE" ) | !body_mass_g < 6200)
+
+multiple_conditions %>%
+   kbl() %>%
+   kable_material(c("striped", "hover"))
+```
+
+```{python, Dot = 6, part = "Result", echo = F, eval = T}
+penguins_data [~(penguins_data.body_mass_g_ > 2800) & (penguins_data.sex == "FEMALE" )]
+```

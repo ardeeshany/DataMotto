@@ -9,45 +9,47 @@
     
     <title>Basic Data structures in Python and R</title>
 
+        <script src="basic-data-structure_files/header-attrs-2.9/header-attrs.js"></script>
         <script src="basic-data-structure_files/jquery-1.11.3/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="basic-data-structure_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="basic-data-structure_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="basic-data-structure_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-    <script src="basic-data-structure_files/bootstrap-3.3.5/shim/respond.min.js"></script>
-    <style>h1 {font-size: 34px;}
-           h1.title {font-size: 38px;}
-           h2 {font-size: 30px;}
-           h3 {font-size: 24px;}
-           h4 {font-size: 18px;}
-           h5 {font-size: 16px;}
-           h6 {font-size: 12px;}
-           code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-           pre:not([class]) { background-color: white }</style>
-    <script src="basic-data-structure_files/navigation-1.1/tabsets.js"></script>
-    <script src="basic-data-structure_files/accessible-code-block-0.0.1/empty-anchor.js"></script>
-    <script src="basic-data-structure_files/kePrint-0.0.1/kePrint.js"></script>
-    <link href="basic-data-structure_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="basic-data-structure_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="basic-data-structure_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+        <script src="basic-data-structure_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+        <script src="basic-data-structure_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+        <style>h1 {font-size: 34px;}
+               h1.title {font-size: 38px;}
+               h2 {font-size: 30px;}
+               h3 {font-size: 24px;}
+               h4 {font-size: 18px;}
+               h5 {font-size: 16px;}
+               h6 {font-size: 12px;}
+               code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+               pre:not([class]) { background-color: white }</style>
+        <script src="basic-data-structure_files/navigation-1.1/tabsets.js"></script>
+        <script src="basic-data-structure_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="basic-data-structure_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         
-      <meta property="og:title" content="Basic Data structures in Python and R" />
-      <meta property="og:type" content="article">
-      <meta property="og:description" content="This Dotto illustrates how to create , modify and convert data structures
-    like vector,factor,matrix,list and data frame in R, and list, tuple, set,
-    dictionary and data frame in Python.
-    " />
-      <meta property="og:url" content="https://datamotto.com/posts/dotto/D005-2021-06-22-basic-data-structure/" />
-      <meta property="og:locale" content="en_US">
-      <meta property="og:site_name" content="Data Motto">
-      <meta property="og:image" content="https://datamotto.com/assets/img/logo.svg" />
+          <meta property="og:title" content="Basic Data structures in Python and R" />
+          <meta property="og:type" content="article">
+          <meta property="og:description" content="This Dotto illustrates how to create , modify and convert data structures
+        like vector,factor,matrix,list and data frame in R, and list, tuple, set,
+        dictionary and data frame in Python.
+        " />
+          <meta property="og:url" content="https://datamotto.com/posts/dotto/D005-2021-06-22-basic-data-structure/" />
+          <meta property="og:locale" content="en_US">
+          <meta property="og:site_name" content="Data Motto">
+          <meta property="og:image" content="https://datamotto.com/assets/img/logo.svg" />
+          
         
-      <meta property="twitter:card" content="summary_large_image">
-      <meta property="twitter:title" content="Basic Data structures in Python and R">
-      <meta property="twitter:description" content="This Dotto illustrates how to create , modify and convert data structures
-    like vector,factor,matrix,list and data frame in R, and list, tuple, set,
-    dictionary and data frame in Python.
-    ">
-      <meta property="twitter:url" content="https://datamotto.com/posts/dotto/D005-2021-06-22-basic-data-structure/">
-      <meta property="twitter:image" content="https://datamotto.com/assets/img/logo.svg">
+          <meta property="twitter:card" content="summary_large_image">
+          <meta property="twitter:title" content="Basic Data structures in Python and R">
+          <meta property="twitter:description" content="This Dotto illustrates how to create , modify and convert data structures
+        like vector,factor,matrix,list and data frame in R, and list, tuple, set,
+        dictionary and data frame in Python.
+        ">
+          <meta property="twitter:url" content="https://datamotto.com/posts/dotto/D005-2021-06-22-basic-data-structure/">
+          <meta property="twitter:image" content="https://datamotto.com/assets/img/logo.svg">
+          
     
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZMEMQM0Y2"></script>
@@ -171,6 +173,7 @@ Parnian Jahangiri Rad
 </div>
 </div>
 
+
 <section>
 <div id="dotto-row-info" class="d-flex">
 
@@ -222,6 +225,7 @@ style="margin-right: 7px; width: 146.3px">
 
 </div>
 </section>
+
 
 
 
@@ -302,19 +306,19 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>x &lt;-<span class="st"> &quot;apple&quot;</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>x</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#type of object x :</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">class</span>(x)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#reassignment :</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>x &lt;-<span class="st"> </span><span class="dv">10</span> </span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="co">#new type of object x :</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">class</span>(x)</span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co">#chaning assignment in R :</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a>y &lt;-<span class="st"> </span>z &lt;-<span class="st"> </span>x</span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># Assignment using equal operator</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a>a =<span class="st"> &quot;orange&quot;</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a>a</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;apple&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#type of object x :</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#reassignment :</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#new type of object x :</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#chaning assignment in R :</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> z <span class="ot">&lt;-</span> x</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Assignment using equal operator</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="st">&quot;orange&quot;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
 
 </div>
  
@@ -323,18 +327,18 @@ class="btn dotto-main-dot-shape"
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb2"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#variable assignment</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>x <span class="op">=</span> <span class="st">&#39;300&#39;</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="bu">print</span>(<span class="st">&quot;x is :&quot;</span>,x)</span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="bu">print</span>(<span class="st">&quot;x class type:&quot;</span>,<span class="bu">type</span>(x))</span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#change variable type from str to int :</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>x <span class="op">=</span> <span class="bu">int</span>(x)</span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="bu">print</span>(<span class="st">&quot;new x class type:&quot;</span>,<span class="bu">type</span>(x))</span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="co">#chained assignmen:</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a>n <span class="op">=</span> m <span class="op">=</span> x</span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="bu">print</span>(<span class="st">&quot;n = &quot;</span>,n</span>
-<span id="cb2-11"><a href="#cb2-11"></a>    ,<span class="st">&quot; m = &quot;</span>, m</span>
-<span id="cb2-12"><a href="#cb2-12"></a>    ,<span class="st">&quot; x = &quot;</span>,x)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#variable assignment</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">&#39;300&#39;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;x is :&quot;</span>,x)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;x class type:&quot;</span>,<span class="bu">type</span>(x))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#change variable type from str to int :</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(x)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;new x class type:&quot;</span>,<span class="bu">type</span>(x))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#chained assignmen:</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> m <span class="op">=</span> x</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;n = &quot;</span>,n</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    ,<span class="st">&quot; m = &quot;</span>, m</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    ,<span class="st">&quot; x = &quot;</span>,x)</span></code></pre></div>
 
 </div>
  
@@ -418,15 +422,15 @@ Lists are one of Python’s most powerful features readily accessible to new pro
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb11"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">0</span>) <span class="co">#create vector using c()</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>y &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;logical&quot;</span>,<span class="dt">length =</span> <span class="dv">5</span>)<span class="co">#create vector using vector()</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>y</span>
-<span id="cb11-4"><a href="#cb11-4"></a>x[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co">#access first and second element of vector</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>x [x <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>] <span class="co">#filtering elements of x based on condition</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a>x[<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="dv">10</span> <span class="co">#modify 2nd element of x from 5 to 10</span></span>
-<span id="cb11-7"><a href="#cb11-7"></a>x [x <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span>] &lt;-<span class="st"> </span><span class="dv">3</span> <span class="co">#modify elements less than 3 to 3</span></span>
-<span id="cb11-8"><a href="#cb11-8"></a>y &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co">#delete vector</span></span>
-<span id="cb11-9"><a href="#cb11-9"></a>y</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">0</span>) <span class="co">#create vector using c()</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">&quot;logical&quot;</span>,<span class="at">length =</span> <span class="dv">5</span>)<span class="co">#create vector using vector()</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>y</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co">#access first and second element of vector</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>x [x <span class="sc">&gt;</span> <span class="dv">4</span>] <span class="co">#filtering elements of x based on condition</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co">#modify 2nd element of x from 5 to 10</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>x [x <span class="sc">&lt;</span> <span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co">#modify elements less than 3 to 3</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="cn">NULL</span> <span class="co">#delete vector</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
 
 </div>
  
@@ -435,23 +439,23 @@ Lists are one of Python’s most powerful features readily accessible to new pro
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb12"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>A<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">&quot;Hi&quot;</span>]</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="bu">print</span>(<span class="st">&quot;last element od list A:&quot;</span>,A[<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb12-3"><a href="#cb12-3"></a>A <span class="op">=</span> [i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">5</span>)]</span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="bu">print</span>(<span class="st">&#39;new list A is:&#39;</span> , A)</span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="co"># add 12 at position 2 in list :</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a>A.insert(<span class="dv">2</span>,<span class="dv">12</span>)</span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="co">#add 4 to the end of the list :</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a>A.append(<span class="dv">4</span>)</span>
-<span id="cb12-9"><a href="#cb12-9"></a>A.reverse()</span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="bu">print</span>(<span class="st">&#39;A after reversing:&#39;</span>, A )</span>
-<span id="cb12-11"><a href="#cb12-11"></a><span class="bu">print</span>(<span class="st">&quot;index of element 16 is :&quot;</span>, A.index(<span class="dv">16</span>))</span>
-<span id="cb12-12"><a href="#cb12-12"></a>A.sort(reverse <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb12-13"><a href="#cb12-13"></a><span class="bu">print</span>(<span class="st">&quot;sorted A descending order:&quot;</span>, A)</span>
-<span id="cb12-14"><a href="#cb12-14"></a><span class="bu">print</span>(<span class="st">&quot;number of element 4 in list A:&quot;</span>, A.count(<span class="dv">4</span>))</span>
-<span id="cb12-15"><a href="#cb12-15"></a><span class="bu">print</span>(<span class="st">&quot; A.pop(0) will remove the first element in list A and return it&#39;s value : &quot;</span>)</span>
-<span id="cb12-16"><a href="#cb12-16"></a>A.pop(<span class="dv">0</span>)</span>
-<span id="cb12-17"><a href="#cb12-17"></a><span class="bu">print</span>(<span class="st">&quot;list A after removing it&#39;s first element:&quot;</span>, A)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>A<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">&quot;Hi&quot;</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;last element od list A:&quot;</span>,A[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">5</span>)]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;new list A is:&#39;</span> , A)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># add 12 at position 2 in list :</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>A.insert(<span class="dv">2</span>,<span class="dv">12</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#add 4 to the end of the list :</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>A.append(<span class="dv">4</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>A.reverse()</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;A after reversing:&#39;</span>, A )</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;index of element 16 is :&quot;</span>, A.index(<span class="dv">16</span>))</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>A.sort(reverse <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;sorted A descending order:&quot;</span>, A)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;number of element 4 in list A:&quot;</span>, A.count(<span class="dv">4</span>))</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot; A.pop(0) will remove the first element in list A and return it&#39;s value : &quot;</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>A.pop(<span class="dv">0</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;list A after removing it&#39;s first element:&quot;</span>, A)</span></code></pre></div>
 
 </div>
  
@@ -541,25 +545,25 @@ You can’t change tuple atfer defining it(unlike list).</p>
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb26"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co">#create a factor using factor():</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a>factor1 &lt;-<span class="st"> </span><span class="kw">factor</span>( <span class="kw">c</span> (<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span> , <span class="st">&quot;female&quot;</span> , <span class="st">&quot;male&quot;</span>) )</span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="co">#shows levels of factor1 :</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="kw">levels</span>(factor1) </span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="co">#returns number of each level :</span></span>
-<span id="cb26-6"><a href="#cb26-6"></a><span class="kw">table</span>(factor1) </span>
-<span id="cb26-7"><a href="#cb26-7"></a><span class="co">#we can determine the order of levels:</span></span>
-<span id="cb26-8"><a href="#cb26-8"></a>factor2 &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;fail&quot;</span>,<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;fail&quot;</span>),</span>
-<span id="cb26-9"><a href="#cb26-9"></a>                  <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;pass&quot;</span> , <span class="st">&quot;fail&quot;</span>))</span>
-<span id="cb26-10"><a href="#cb26-10"></a>factor2</span>
-<span id="cb26-11"><a href="#cb26-11"></a><span class="co">#access 3rd and 4th element of factor2 :</span></span>
-<span id="cb26-12"><a href="#cb26-12"></a>factor2[<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>)] </span>
-<span id="cb26-13"><a href="#cb26-13"></a><span class="co">#illustrate how to modify elements(CANNOT assign values outside levels):</span></span>
-<span id="cb26-14"><a href="#cb26-14"></a>factor1[<span class="dv">1</span>] &lt;-<span class="st"> &quot;female&quot;</span></span>
-<span id="cb26-15"><a href="#cb26-15"></a><span class="co">#adding new level :</span></span>
-<span id="cb26-16"><a href="#cb26-16"></a><span class="kw">levels</span>(factor1) &lt;-<span class="st"> </span><span class="kw">c</span>( <span class="kw">levels</span> (factor1) , <span class="st">&quot;other&quot;</span>) </span>
-<span id="cb26-17"><a href="#cb26-17"></a><span class="co">#modify 2nd element of factor1 :</span></span>
-<span id="cb26-18"><a href="#cb26-18"></a>factor1[<span class="dv">2</span>] &lt;-<span class="st"> &quot;other&quot;</span> </span>
-<span id="cb26-19"><a href="#cb26-19"></a>factor1</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create a factor using factor():</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>factor1 <span class="ot">&lt;-</span> <span class="fu">factor</span>( <span class="fu">c</span> (<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span> , <span class="st">&quot;female&quot;</span> , <span class="st">&quot;male&quot;</span>) )</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">#shows levels of factor1 :</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(factor1) </span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co">#returns number of each level :</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(factor1) </span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">#we can determine the order of levels:</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>factor2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;fail&quot;</span>,<span class="st">&quot;pass&quot;</span>,<span class="st">&quot;fail&quot;</span>),</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;pass&quot;</span> , <span class="st">&quot;fail&quot;</span>))</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>factor2</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co">#access 3rd and 4th element of factor2 :</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>factor2[<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>)] </span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="co">#illustrate how to modify elements(CANNOT assign values outside levels):</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>factor1[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;female&quot;</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="co">#adding new level :</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(factor1) <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="fu">levels</span> (factor1) , <span class="st">&quot;other&quot;</span>) </span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="co">#modify 2nd element of factor1 :</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>factor1[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;other&quot;</span> </span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>factor1</span></code></pre></div>
 
 </div>
  
@@ -568,22 +572,22 @@ You can’t change tuple atfer defining it(unlike list).</p>
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb27"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>t1 <span class="op">=</span> (<span class="st">&quot;hello&quot;</span>,<span class="dv">5</span>,<span class="dv">4</span>)</span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="bu">print</span>(<span class="st">&quot;second elemnt of tuple t1:&quot;</span> , t1[<span class="dv">1</span>])</span>
-<span id="cb27-3"><a href="#cb27-3"></a><span class="cf">try</span>:</span>
-<span id="cb27-4"><a href="#cb27-4"></a>  t1[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&quot;good&quot;</span></span>
-<span id="cb27-5"><a href="#cb27-5"></a><span class="cf">except</span> <span class="pp">TypeError</span>:</span>
-<span id="cb27-6"><a href="#cb27-6"></a>  <span class="bu">print</span>(<span class="st">&quot;&#39;tuple&#39; object does not support item assignment(immutable)&quot;</span>)</span>
-<span id="cb27-7"><a href="#cb27-7"></a>t2 <span class="op">=</span>  t1 <span class="op">+</span> (<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>)</span>
-<span id="cb27-8"><a href="#cb27-8"></a><span class="bu">print</span>(<span class="st">&quot;t2 is :&quot;</span> ,  t2)</span>
-<span id="cb27-9"><a href="#cb27-9"></a><span class="co">#showing packing and unpacking variables with tuple</span></span>
-<span id="cb27-10"><a href="#cb27-10"></a><span class="bu">print</span>(<span class="st">&quot;t2 is : &quot;</span> , t2)</span>
-<span id="cb27-11"><a href="#cb27-11"></a>(a , b , c) <span class="op">=</span> ( <span class="dv">10</span> , <span class="dv">11</span> , <span class="st">&quot;apple&quot;</span> )</span>
-<span id="cb27-12"><a href="#cb27-12"></a><span class="bu">print</span>(<span class="st">&quot;a :&quot;</span>,a</span>
-<span id="cb27-13"><a href="#cb27-13"></a>      ,<span class="st">&quot; ,b :&quot;</span>,b </span>
-<span id="cb27-14"><a href="#cb27-14"></a>      ,<span class="st">&quot; ,c :&quot;</span>,c)</span>
-<span id="cb27-15"><a href="#cb27-15"></a>a , c <span class="op">=</span> c, a</span>
-<span id="cb27-16"><a href="#cb27-16"></a><span class="bu">print</span>(<span class="st">&quot;new a :&quot;</span>,a,<span class="st">&quot; ,new c :&quot;</span>,c)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> (<span class="st">&quot;hello&quot;</span>,<span class="dv">5</span>,<span class="dv">4</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;second elemnt of tuple t1:&quot;</span> , t1[<span class="dv">1</span>])</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  t1[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&quot;good&quot;</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">TypeError</span>:</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;&#39;tuple&#39; object does not support item assignment(immutable)&quot;</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span>  t1 <span class="op">+</span> (<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;t2 is :&quot;</span> ,  t2)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co">#showing packing and unpacking variables with tuple</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;t2 is : &quot;</span> , t2)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>(a , b , c) <span class="op">=</span> ( <span class="dv">10</span> , <span class="dv">11</span> , <span class="st">&quot;apple&quot;</span> )</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;a :&quot;</span>,a</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>      ,<span class="st">&quot; ,b :&quot;</span>,b </span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>      ,<span class="st">&quot; ,c :&quot;</span>,c)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>a , c <span class="op">=</span> c, a</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;new a :&quot;</span>,a,<span class="st">&quot; ,new c :&quot;</span>,c)</span></code></pre></div>
 
 </div>
  
@@ -676,25 +680,25 @@ for more information ,see <a href="https://www.datamentor.io/r-programming/matri
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb39"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>matrix1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>,</span>
-<span id="cb39-2"><a href="#cb39-2"></a>                  <span class="dt">nrow=</span><span class="dv">3</span>,</span>
-<span id="cb39-3"><a href="#cb39-3"></a>                  <span class="dt">byrow=</span><span class="ot">TRUE</span>,</span>
-<span id="cb39-4"><a href="#cb39-4"></a>                  <span class="dt">dimnames=</span><span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;X&quot;</span>,<span class="st">&quot;Y&quot;</span>,<span class="st">&quot;Z&quot;</span>),</span>
-<span id="cb39-5"><a href="#cb39-5"></a>                                            <span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)))</span>
-<span id="cb39-6"><a href="#cb39-6"></a>matrix1</span>
-<span id="cb39-7"><a href="#cb39-7"></a><span class="co">#create matrix using cbind() ( and rbind() ):</span></span>
-<span id="cb39-8"><a href="#cb39-8"></a>matrix2 &lt;-<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>( <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>) , <span class="kw">c</span>( <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>))</span>
-<span id="cb39-9"><a href="#cb39-9"></a>matrix2</span>
-<span id="cb39-10"><a href="#cb39-10"></a><span class="co">#select an element :</span></span>
-<span id="cb39-11"><a href="#cb39-11"></a>matrix2[<span class="dv">3</span>,<span class="dv">2</span>] </span>
-<span id="cb39-12"><a href="#cb39-12"></a><span class="co">#select 3rd row of matrix2 :</span></span>
-<span id="cb39-13"><a href="#cb39-13"></a>matrix2[<span class="dv">3</span>, ] </span>
-<span id="cb39-14"><a href="#cb39-14"></a><span class="co">#select 2nd column of matrix2 :</span></span>
-<span id="cb39-15"><a href="#cb39-15"></a>matrix2[ ,<span class="dv">2</span>]</span>
-<span id="cb39-16"><a href="#cb39-16"></a><span class="co">#transpose of matrix2 :</span></span>
-<span id="cb39-17"><a href="#cb39-17"></a><span class="kw">t</span>(matrix2)</span>
-<span id="cb39-18"><a href="#cb39-18"></a><span class="co">#matrix multiplication :</span></span>
-<span id="cb39-19"><a href="#cb39-19"></a>matrix1 <span class="op">%*%</span><span class="st"> </span>matrix2 </span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>matrix1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">nrow=</span><span class="dv">3</span>,</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">byrow=</span><span class="cn">TRUE</span>,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dimnames=</span><span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;X&quot;</span>,<span class="st">&quot;Y&quot;</span>,<span class="st">&quot;Z&quot;</span>),</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>                                            <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)))</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>matrix1</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="co">#create matrix using cbind() ( and rbind() ):</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>matrix2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">c</span>( <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>) , <span class="fu">c</span>( <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>))</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>matrix2</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="co">#select an element :</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>matrix2[<span class="dv">3</span>,<span class="dv">2</span>] </span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co">#select 3rd row of matrix2 :</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>matrix2[<span class="dv">3</span>, ] </span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co">#select 2nd column of matrix2 :</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>matrix2[ ,<span class="dv">2</span>]</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="co">#transpose of matrix2 :</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(matrix2)</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="co">#matrix multiplication :</span></span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>matrix1 <span class="sc">%*%</span> matrix2 </span></code></pre></div>
 
 </div>
  
@@ -703,21 +707,21 @@ for more information ,see <a href="https://www.datamentor.io/r-programming/matri
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb40"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>A <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>}</span>
-<span id="cb40-2"><a href="#cb40-2"></a><span class="bu">print</span>(<span class="st">&quot;set A is :&quot;</span>,A)</span>
-<span id="cb40-3"><a href="#cb40-3"></a>empty_set <span class="op">=</span> <span class="bu">set</span>()</span>
-<span id="cb40-4"><a href="#cb40-4"></a>A.add(<span class="dv">20</span>)</span>
-<span id="cb40-5"><a href="#cb40-5"></a>A.remove(<span class="dv">3</span>)</span>
-<span id="cb40-6"><a href="#cb40-6"></a><span class="bu">print</span>(<span class="st">&quot;set A after adding 20 and removing 3:&quot;</span>,A)</span>
-<span id="cb40-7"><a href="#cb40-7"></a>B <span class="op">=</span> {<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>}</span>
-<span id="cb40-8"><a href="#cb40-8"></a><span class="bu">print</span>(<span class="st">&quot;(A union B) is:&quot;</span>, A<span class="op">|</span>B)</span>
-<span id="cb40-9"><a href="#cb40-9"></a><span class="bu">print</span>(<span class="st">&quot;A intersection b is: &quot;</span>, A <span class="op">&amp;</span> B)</span>
-<span id="cb40-10"><a href="#cb40-10"></a><span class="bu">print</span>(<span class="st">&quot;A minus B is:&quot;</span>,A <span class="op">-</span> B)</span>
-<span id="cb40-11"><a href="#cb40-11"></a><span class="bu">print</span>(<span class="st">&quot;symmetric diffrence of A and B:&quot;</span>, A <span class="op">^</span> B)</span>
-<span id="cb40-12"><a href="#cb40-12"></a><span class="cf">if</span> empty_set <span class="op">&lt;=</span> A :</span>
-<span id="cb40-13"><a href="#cb40-13"></a>  <span class="bu">print</span>(<span class="st">&quot;emty set is a subset of A&quot;</span>)</span>
-<span id="cb40-14"><a href="#cb40-14"></a><span class="cf">else</span> : </span>
-<span id="cb40-15"><a href="#cb40-15"></a>  <span class="bu">print</span>(<span class="st">&quot;emty set is not a subset of A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>}</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;set A is :&quot;</span>,A)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>empty_set <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>A.add(<span class="dv">20</span>)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>A.remove(<span class="dv">3</span>)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;set A after adding 20 and removing 3:&quot;</span>,A)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> {<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>}</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;(A union B) is:&quot;</span>, A<span class="op">|</span>B)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;A intersection b is: &quot;</span>, A <span class="op">&amp;</span> B)</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;A minus B is:&quot;</span>,A <span class="op">-</span> B)</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;symmetric diffrence of A and B:&quot;</span>, A <span class="op">^</span> B)</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> empty_set <span class="op">&lt;=</span> A :</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;emty set is a subset of A&quot;</span>)</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span> : </span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;emty set is not a subset of A&quot;</span>)</span></code></pre></div>
 
 </div>
  
@@ -822,25 +826,25 @@ Please check <a href="https://medium.com/swlh/data-structure-conversion-f99d3ff9
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb55"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>list1 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="ot">TRUE</span>,<span class="st">&quot;hello&quot;</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb55-2"><a href="#cb55-2"></a>list1</span>
-<span id="cb55-3"><a href="#cb55-3"></a><span class="co"># list with tags :</span></span>
-<span id="cb55-4"><a href="#cb55-4"></a>list2 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;a&quot;</span> =<span class="st"> </span><span class="ot">TRUE</span>, <span class="st">&quot;b&quot;</span> =<span class="st"> &quot;hello&quot;</span>, <span class="st">&quot;c&quot;</span> =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb55-5"><a href="#cb55-5"></a>list2</span>
-<span id="cb55-6"><a href="#cb55-6"></a><span class="co">#access 1st element of list2 :</span></span>
-<span id="cb55-7"><a href="#cb55-7"></a>list2[[<span class="dv">1</span>]] </span>
-<span id="cb55-8"><a href="#cb55-8"></a><span class="co">#access element of list2 named b :</span></span>
-<span id="cb55-9"><a href="#cb55-9"></a>list2<span class="op">$</span>b </span>
-<span id="cb55-10"><a href="#cb55-10"></a><span class="co">#modify 2nd element of list2(element named &quot;b&quot;) :</span></span>
-<span id="cb55-11"><a href="#cb55-11"></a>list2<span class="op">$</span>b &lt;-<span class="st"> &quot;bye!&quot;</span> </span>
-<span id="cb55-12"><a href="#cb55-12"></a>list2<span class="op">$</span>d &lt;-<span class="st"> </span><span class="fl">10.5</span> <span class="co">#add new element to list</span></span>
-<span id="cb55-13"><a href="#cb55-13"></a>list2</span>
-<span id="cb55-14"><a href="#cb55-14"></a><span class="co">#delete element named c from list2 :</span></span>
-<span id="cb55-15"><a href="#cb55-15"></a>list2<span class="op">$</span>c &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb55-16"><a href="#cb55-16"></a><span class="co"># convert vector to list :</span></span>
-<span id="cb55-17"><a href="#cb55-17"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb55-18"><a href="#cb55-18"></a>list_from_vec1 &lt;-<span class="st"> </span><span class="kw">as.list</span>(vec1)</span>
-<span id="cb55-19"><a href="#cb55-19"></a>list_from_vec1</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>list1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="cn">TRUE</span>,<span class="st">&quot;hello&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>list1</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co"># list with tags :</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>list2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;a&quot;</span> <span class="ot">=</span> <span class="cn">TRUE</span>, <span class="st">&quot;b&quot;</span> <span class="ot">=</span> <span class="st">&quot;hello&quot;</span>, <span class="st">&quot;c&quot;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>list2</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="co">#access 1st element of list2 :</span></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>list2[[<span class="dv">1</span>]] </span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="co">#access element of list2 named b :</span></span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>list2<span class="sc">$</span>b </span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a><span class="co">#modify 2nd element of list2(element named &quot;b&quot;) :</span></span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>list2<span class="sc">$</span>b <span class="ot">&lt;-</span> <span class="st">&quot;bye!&quot;</span> </span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>list2<span class="sc">$</span>d <span class="ot">&lt;-</span> <span class="fl">10.5</span> <span class="co">#add new element to list</span></span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>list2</span>
+<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a><span class="co">#delete element named c from list2 :</span></span>
+<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a>list2<span class="sc">$</span>c <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a><span class="co"># convert vector to list :</span></span>
+<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a>vec1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>list_from_vec1 <span class="ot">&lt;-</span> <span class="fu">as.list</span>(vec1)</span>
+<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a>list_from_vec1</span></code></pre></div>
 
 </div>
  
@@ -849,34 +853,34 @@ Please check <a href="https://medium.com/swlh/data-structure-conversion-f99d3ff9
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb56"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a><span class="co">#define a dictionary :</span></span>
-<span id="cb56-2"><a href="#cb56-2"></a>dict1 <span class="op">=</span> { <span class="st">&quot;a&quot;</span>:<span class="dv">1</span> , <span class="st">&quot;b&quot;</span>:<span class="dv">2</span> , <span class="st">&quot;c&quot;</span>:<span class="dv">3</span> }  </span>
-<span id="cb56-3"><a href="#cb56-3"></a><span class="bu">print</span>(<span class="st">&quot;a is a key and it&#39;s value is :&quot;</span> , dict1.get ( <span class="st">&quot;a&quot;</span> ) )</span>
-<span id="cb56-4"><a href="#cb56-4"></a></span>
-<span id="cb56-5"><a href="#cb56-5"></a><span class="co">#Search in dictionary :</span></span>
-<span id="cb56-6"><a href="#cb56-6"></a><span class="bu">print</span>(<span class="st">&quot;True&quot;</span>) <span class="cf">if</span> <span class="st">&quot;b&quot;</span> <span class="kw">in</span> dict1 <span class="cf">else</span> <span class="bu">print</span>(<span class="st">&quot;False&quot;</span>)</span>
-<span id="cb56-7"><a href="#cb56-7"></a><span class="co">#add a new pair to dictionary :</span></span>
-<span id="cb56-8"><a href="#cb56-8"></a>dict1[<span class="st">&quot;d&quot;</span>] <span class="op">=</span> <span class="dv">4</span> </span>
-<span id="cb56-9"><a href="#cb56-9"></a> <span class="co">#modify c&#39;s value :</span></span>
-<span id="cb56-10"><a href="#cb56-10"></a>dict1[<span class="st">&quot;c&quot;</span>] <span class="op">=</span> <span class="st">&quot;10&quot;</span></span>
-<span id="cb56-11"><a href="#cb56-11"></a><span class="kw">del</span> dict1[<span class="st">&quot;a&quot;</span>]</span>
-<span id="cb56-12"><a href="#cb56-12"></a></span>
-<span id="cb56-13"><a href="#cb56-13"></a><span class="co">#Looping through all key-value pairs:</span></span>
-<span id="cb56-14"><a href="#cb56-14"></a><span class="cf">for</span> alphabet,number <span class="kw">in</span> dict1.items():</span>
-<span id="cb56-15"><a href="#cb56-15"></a>  <span class="bu">print</span>(alphabet<span class="op">+</span><span class="st">&quot; : &quot;</span>,number)</span>
-<span id="cb56-16"><a href="#cb56-16"></a></span>
-<span id="cb56-17"><a href="#cb56-17"></a><span class="co">#looping through all the keys:</span></span>
-<span id="cb56-18"><a href="#cb56-18"></a><span class="cf">for</span> alphabet <span class="kw">in</span> dict1.keys():</span>
-<span id="cb56-19"><a href="#cb56-19"></a>  <span class="bu">print</span>(alphabet)</span>
-<span id="cb56-20"><a href="#cb56-20"></a></span>
-<span id="cb56-21"><a href="#cb56-21"></a><span class="co">#looping through all values:</span></span>
-<span id="cb56-22"><a href="#cb56-22"></a><span class="cf">for</span> number <span class="kw">in</span> dict1.keys():</span>
-<span id="cb56-23"><a href="#cb56-23"></a>  <span class="bu">print</span>(number)</span>
-<span id="cb56-24"><a href="#cb56-24"></a></span>
-<span id="cb56-25"><a href="#cb56-25"></a><span class="co">#convert list to dictionary :</span></span>
-<span id="cb56-26"><a href="#cb56-26"></a>list1 <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">5</span>)]</span>
-<span id="cb56-27"><a href="#cb56-27"></a>dict_from_list1 <span class="op">=</span> { i:k <span class="cf">for</span> i,k <span class="kw">in</span> <span class="bu">enumerate</span>(list1) }</span>
-<span id="cb56-28"><a href="#cb56-28"></a>dict_from_list1</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#define a dictionary :</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>dict1 <span class="op">=</span> { <span class="st">&quot;a&quot;</span>:<span class="dv">1</span> , <span class="st">&quot;b&quot;</span>:<span class="dv">2</span> , <span class="st">&quot;c&quot;</span>:<span class="dv">3</span> }  </span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;a is a key and it&#39;s value is :&quot;</span> , dict1.get ( <span class="st">&quot;a&quot;</span> ) )</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Search in dictionary :</span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;True&quot;</span>) <span class="cf">if</span> <span class="st">&quot;b&quot;</span> <span class="kw">in</span> dict1 <span class="cf">else</span> <span class="bu">print</span>(<span class="st">&quot;False&quot;</span>)</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co">#add a new pair to dictionary :</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>dict1[<span class="st">&quot;d&quot;</span>] <span class="op">=</span> <span class="dv">4</span> </span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a> <span class="co">#modify c&#39;s value :</span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>dict1[<span class="st">&quot;c&quot;</span>] <span class="op">=</span> <span class="st">&quot;10&quot;</span></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> dict1[<span class="st">&quot;a&quot;</span>]</span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Looping through all key-value pairs:</span></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alphabet,number <span class="kw">in</span> dict1.items():</span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(alphabet<span class="op">+</span><span class="st">&quot; : &quot;</span>,number)</span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a><span class="co">#looping through all the keys:</span></span>
+<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alphabet <span class="kw">in</span> dict1.keys():</span>
+<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(alphabet)</span>
+<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a><span class="co">#looping through all values:</span></span>
+<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> dict1.keys():</span>
+<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(number)</span>
+<span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a><span class="co">#convert list to dictionary :</span></span>
+<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">5</span>)]</span>
+<span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a>dict_from_list1 <span class="op">=</span> { i:k <span class="cf">for</span> i,k <span class="kw">in</span> <span class="bu">enumerate</span>(list1) }</span>
+<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a>dict_from_list1</span></code></pre></div>
 
 </div>
  
@@ -1018,52 +1022,52 @@ Please visit <a href="https://medium.com/swlh/data-structure-conversion-f99d3ff9
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb70"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="kw">library</span>(kableExtra)</span>
-<span id="cb70-2"><a href="#cb70-2"></a> <span class="co">#create data frame using data.frame():</span></span>
-<span id="cb70-3"><a href="#cb70-3"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="st">&quot;SN&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>=<span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">15</span>),<span class="st">&quot;Name&quot;</span>=<span class="kw">c</span>(<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Dora&quot;</span>))</span>
-<span id="cb70-4"><a href="#cb70-4"></a>df1 <span class="op">%&gt;%</span></span>
-<span id="cb70-5"><a href="#cb70-5"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-6"><a href="#cb70-6"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-7"><a href="#cb70-7"></a><span class="co">#access column &quot;Name&quot; :</span></span>
-<span id="cb70-8"><a href="#cb70-8"></a>df2 &lt;-<span class="st"> </span>df1[[<span class="st">&quot;Name&quot;</span>]]</span>
-<span id="cb70-9"><a href="#cb70-9"></a>df2 <span class="op">%&gt;%</span></span>
-<span id="cb70-10"><a href="#cb70-10"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-11"><a href="#cb70-11"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-12"><a href="#cb70-12"></a><span class="co">#access 1st row of df1(Matrix subsetting) :</span></span>
-<span id="cb70-13"><a href="#cb70-13"></a>df2 &lt;-<span class="st"> </span>df1[<span class="dv">1</span>, ] </span>
-<span id="cb70-14"><a href="#cb70-14"></a>df2 <span class="op">%&gt;%</span></span>
-<span id="cb70-15"><a href="#cb70-15"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-16"><a href="#cb70-16"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-17"><a href="#cb70-17"></a><span class="co">#access 2nd column of df1(Matrix subsetting) :</span></span>
-<span id="cb70-18"><a href="#cb70-18"></a>df2 &lt;-<span class="st"> </span>df1[, <span class="dv">2</span> ] </span>
-<span id="cb70-19"><a href="#cb70-19"></a>df2 <span class="op">%&gt;%</span></span>
-<span id="cb70-20"><a href="#cb70-20"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-21"><a href="#cb70-21"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-22"><a href="#cb70-22"></a><span class="co">#modify one component of data frame :</span></span>
-<span id="cb70-23"><a href="#cb70-23"></a>df1[<span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>] &lt;-<span class="st"> </span><span class="dv">30</span></span>
-<span id="cb70-24"><a href="#cb70-24"></a>df1 <span class="op">%&gt;%</span></span>
-<span id="cb70-25"><a href="#cb70-25"></a><span class="st">  </span><span class="kw">kbl</span>(<span class="dt">caption =</span> <span class="st">&quot;df1 after modification&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb70-26"><a href="#cb70-26"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-27"><a href="#cb70-27"></a><span class="co">#add a new record to data frame using rbind() :</span></span>
-<span id="cb70-28"><a href="#cb70-28"></a>df2 &lt;-<span class="st"> </span><span class="kw">rbind</span>(df1,<span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">16</span>,<span class="st">&quot;Paul&quot;</span>))</span>
-<span id="cb70-29"><a href="#cb70-29"></a>df2 <span class="op">%&gt;%</span></span>
-<span id="cb70-30"><a href="#cb70-30"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-31"><a href="#cb70-31"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-32"><a href="#cb70-32"></a><span class="co">#add a new column to data frame :</span></span>
-<span id="cb70-33"><a href="#cb70-33"></a>df2 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1,<span class="dt">State=</span><span class="kw">c</span>(<span class="st">&quot;NY&quot;</span>,<span class="st">&quot;FL&quot;</span>)) </span>
-<span id="cb70-34"><a href="#cb70-34"></a>df2 <span class="op">%&gt;%</span></span>
-<span id="cb70-35"><a href="#cb70-35"></a><span class="st">  </span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb70-36"><a href="#cb70-36"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-37"><a href="#cb70-37"></a>df1<span class="op">$</span>State &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co">#delete column &quot;state&quot; of df1</span></span>
-<span id="cb70-38"><a href="#cb70-38"></a>df1 &lt;-<span class="st"> </span>df1[<span class="op">-</span><span class="dv">1</span>,] <span class="co">#delete rows using reassignments</span></span>
-<span id="cb70-39"><a href="#cb70-39"></a><span class="co"># Convert list to dataframe :</span></span>
-<span id="cb70-40"><a href="#cb70-40"></a>lis1 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;a&quot;</span> =<span class="st"> </span><span class="ot">TRUE</span>, <span class="st">&quot;b&quot;</span> =<span class="st"> &quot;hello&quot;</span>, <span class="st">&quot;c&quot;</span> =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb70-41"><a href="#cb70-41"></a>df_from_lis1 &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(lis1)</span>
-<span id="cb70-42"><a href="#cb70-42"></a>df_from_lis1 <span class="op">%&gt;%</span></span>
-<span id="cb70-43"><a href="#cb70-43"></a><span class="st">  </span><span class="kw">kbl</span>(<span class="dt">caption =</span> <span class="st">&quot;data frame from lis1&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb70-44"><a href="#cb70-44"></a><span class="st">  </span><span class="kw">kable_material</span>(<span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
-<span id="cb70-45"><a href="#cb70-45"></a><span class="co"># convert dataframe to numeric matrix :</span></span>
-<span id="cb70-46"><a href="#cb70-46"></a><span class="kw">as.matrix</span>(df1)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a> <span class="co">#create data frame using data.frame():</span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;SN&quot;</span><span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="st">&quot;Age&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">21</span>,<span class="dv">15</span>),<span class="st">&quot;Name&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Dora&quot;</span>))</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="co">#access column &quot;Name&quot; :</span></span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df1[[<span class="st">&quot;Name&quot;</span>]]</span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>df2 <span class="sc">%&gt;%</span></span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a><span class="co">#access 1st row of df1(Matrix subsetting) :</span></span>
+<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df1[<span class="dv">1</span>, ] </span>
+<span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a>df2 <span class="sc">%&gt;%</span></span>
+<span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb70-16"><a href="#cb70-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
+<span id="cb70-17"><a href="#cb70-17" aria-hidden="true" tabindex="-1"></a><span class="co">#access 2nd column of df1(Matrix subsetting) :</span></span>
+<span id="cb70-18"><a href="#cb70-18" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df1[, <span class="dv">2</span> ] </span>
+<span id="cb70-19"><a href="#cb70-19" aria-hidden="true" tabindex="-1"></a>df2 <span class="sc">%&gt;%</span></span>
+<span id="cb70-20"><a href="#cb70-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb70-21"><a href="#cb70-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
+<span id="cb70-22"><a href="#cb70-22" aria-hidden="true" tabindex="-1"></a><span class="co">#modify one component of data frame :</span></span>
+<span id="cb70-23"><a href="#cb70-23" aria-hidden="true" tabindex="-1"></a>df1[<span class="dv">2</span>,<span class="st">&quot;Age&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb70-24"><a href="#cb70-24" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb70-25"><a href="#cb70-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">&quot;df1 after modification&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb70-26"><a href="#cb70-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
+<span id="cb70-27"><a href="#cb70-27" aria-hidden="true" tabindex="-1"></a><span class="co">#add a new record to data frame using rbind() :</span></span>
+<span id="cb70-28"><a href="#cb70-28" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df1,<span class="fu">list</span>(<span class="dv">1</span>,<span class="dv">16</span>,<span class="st">&quot;Paul&quot;</span>))</span>
+<span id="cb70-29"><a href="#cb70-29" aria-hidden="true" tabindex="-1"></a>df2 <span class="sc">%&gt;%</span></span>
+<span id="cb70-30"><a href="#cb70-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb70-31"><a href="#cb70-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
+<span id="cb70-32"><a href="#cb70-32" aria-hidden="true" tabindex="-1"></a><span class="co">#add a new column to data frame :</span></span>
+<span id="cb70-33"><a href="#cb70-33" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df1,<span class="at">State=</span><span class="fu">c</span>(<span class="st">&quot;NY&quot;</span>,<span class="st">&quot;FL&quot;</span>)) </span>
+<span id="cb70-34"><a href="#cb70-34" aria-hidden="true" tabindex="-1"></a>df2 <span class="sc">%&gt;%</span></span>
+<span id="cb70-35"><a href="#cb70-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb70-36"><a href="#cb70-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
+<span id="cb70-37"><a href="#cb70-37" aria-hidden="true" tabindex="-1"></a>df1<span class="sc">$</span>State <span class="ot">&lt;-</span> <span class="cn">NULL</span> <span class="co">#delete column &quot;state&quot; of df1</span></span>
+<span id="cb70-38"><a href="#cb70-38" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> df1[<span class="sc">-</span><span class="dv">1</span>,] <span class="co">#delete rows using reassignments</span></span>
+<span id="cb70-39"><a href="#cb70-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert list to dataframe :</span></span>
+<span id="cb70-40"><a href="#cb70-40" aria-hidden="true" tabindex="-1"></a>lis1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;a&quot;</span> <span class="ot">=</span> <span class="cn">TRUE</span>, <span class="st">&quot;b&quot;</span> <span class="ot">=</span> <span class="st">&quot;hello&quot;</span>, <span class="st">&quot;c&quot;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb70-41"><a href="#cb70-41" aria-hidden="true" tabindex="-1"></a>df_from_lis1 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(lis1)</span>
+<span id="cb70-42"><a href="#cb70-42" aria-hidden="true" tabindex="-1"></a>df_from_lis1 <span class="sc">%&gt;%</span></span>
+<span id="cb70-43"><a href="#cb70-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">&quot;data frame from lis1&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb70-44"><a href="#cb70-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span>
+<span id="cb70-45"><a href="#cb70-45" aria-hidden="true" tabindex="-1"></a><span class="co"># convert dataframe to numeric matrix :</span></span>
+<span id="cb70-46"><a href="#cb70-46" aria-hidden="true" tabindex="-1"></a><span class="fu">as.matrix</span>(df1)</span></code></pre></div>
 
 </div>
  
@@ -1072,31 +1076,31 @@ Please visit <a href="https://medium.com/swlh/data-structure-conversion-f99d3ff9
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb71"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb71-2"><a href="#cb71-2"></a>data_frame1 <span class="op">=</span> pd.DataFrame({<span class="st">&quot;apple&quot;</span> :[<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>],</span>
-<span id="cb71-3"><a href="#cb71-3"></a><span class="st">&quot;orange&quot;</span> :[<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>],</span>
-<span id="cb71-4"><a href="#cb71-4"></a><span class="st">&quot;lemon&quot;</span>:[<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">11</span>,<span class="dv">12</span>]},</span>
-<span id="cb71-5"><a href="#cb71-5"></a>index<span class="op">=</span>[<span class="st">&quot;Joe&quot;</span>,<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Matt&quot;</span>,<span class="st">&quot;Hannah&quot;</span>])</span>
-<span id="cb71-6"><a href="#cb71-6"></a><span class="bu">print</span>(data_frame1)</span>
-<span id="cb71-7"><a href="#cb71-7"></a>data_frame1.head(<span class="dv">2</span>)<span class="co">#rows 1 and 2 of data_frame1</span></span>
-<span id="cb71-8"><a href="#cb71-8"></a>data_frame1.tail(<span class="dv">1</span>)</span>
-<span id="cb71-9"><a href="#cb71-9"></a>data_frame1.describe()</span>
-<span id="cb71-10"><a href="#cb71-10"></a><span class="co">#choose column :</span></span>
-<span id="cb71-11"><a href="#cb71-11"></a>data_frame1 [ [<span class="st">&quot;apple&quot;</span> , <span class="st">&quot;lemon&quot;</span>] ] </span>
-<span id="cb71-12"><a href="#cb71-12"></a><span class="co">#choose row :</span></span>
-<span id="cb71-13"><a href="#cb71-13"></a>data_frame1 [<span class="dv">0</span>:<span class="dv">2</span>] </span>
-<span id="cb71-14"><a href="#cb71-14"></a><span class="co">#number of apples and lemons of people with 8 oranges:</span></span>
-<span id="cb71-15"><a href="#cb71-15"></a>data_frame1 [ data_frame1.orange <span class="op">==</span> <span class="dv">8</span>][ [<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;lemon&quot;</span>] ]</span>
-<span id="cb71-16"><a href="#cb71-16"></a><span class="co">#convert list to dataframe :</span></span>
-<span id="cb71-17"><a href="#cb71-17"></a>lis1 <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
-<span id="cb71-18"><a href="#cb71-18"></a>dataframe_from_lis1 <span class="op">=</span> pd.DataFrame(lis1)</span>
-<span id="cb71-19"><a href="#cb71-19"></a><span class="co">#convert dictionary to dataframe :</span></span>
-<span id="cb71-20"><a href="#cb71-20"></a>dic1 <span class="op">=</span> {<span class="st">&quot;col_1&quot;</span> : [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span> ] , <span class="st">&quot;col_2&quot;</span> : [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span> ]}</span>
-<span id="cb71-21"><a href="#cb71-21"></a><span class="co"># parameter &#39;orient&#39; :If the keys of the passed dict should be the columns of the resulting # DataFrame, pass ‘columns’ (default). Otherwise if the keys should be rows, pass ‘index’.</span></span>
-<span id="cb71-22"><a href="#cb71-22"></a>pd.DataFrame.from_dict(dic1, </span>
-<span id="cb71-23"><a href="#cb71-23"></a>    orient<span class="op">=</span><span class="st">&#39;columns&#39;</span> , </span>
-<span id="cb71-24"><a href="#cb71-24"></a>    dtype<span class="op">=</span><span class="va">None</span>, </span>
-<span id="cb71-25"><a href="#cb71-25"></a>    columns<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>data_frame1 <span class="op">=</span> pd.DataFrame({<span class="st">&quot;apple&quot;</span> :[<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>],</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;orange&quot;</span> :[<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>],</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;lemon&quot;</span>:[<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">11</span>,<span class="dv">12</span>]},</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>index<span class="op">=</span>[<span class="st">&quot;Joe&quot;</span>,<span class="st">&quot;John&quot;</span>,<span class="st">&quot;Matt&quot;</span>,<span class="st">&quot;Hannah&quot;</span>])</span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_frame1)</span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>data_frame1.head(<span class="dv">2</span>)<span class="co">#rows 1 and 2 of data_frame1</span></span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>data_frame1.tail(<span class="dv">1</span>)</span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a>data_frame1.describe()</span>
+<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a><span class="co">#choose column :</span></span>
+<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a>data_frame1 [ [<span class="st">&quot;apple&quot;</span> , <span class="st">&quot;lemon&quot;</span>] ] </span>
+<span id="cb71-12"><a href="#cb71-12" aria-hidden="true" tabindex="-1"></a><span class="co">#choose row :</span></span>
+<span id="cb71-13"><a href="#cb71-13" aria-hidden="true" tabindex="-1"></a>data_frame1 [<span class="dv">0</span>:<span class="dv">2</span>] </span>
+<span id="cb71-14"><a href="#cb71-14" aria-hidden="true" tabindex="-1"></a><span class="co">#number of apples and lemons of people with 8 oranges:</span></span>
+<span id="cb71-15"><a href="#cb71-15" aria-hidden="true" tabindex="-1"></a>data_frame1 [ data_frame1.orange <span class="op">==</span> <span class="dv">8</span>][ [<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;lemon&quot;</span>] ]</span>
+<span id="cb71-16"><a href="#cb71-16" aria-hidden="true" tabindex="-1"></a><span class="co">#convert list to dataframe :</span></span>
+<span id="cb71-17"><a href="#cb71-17" aria-hidden="true" tabindex="-1"></a>lis1 <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
+<span id="cb71-18"><a href="#cb71-18" aria-hidden="true" tabindex="-1"></a>dataframe_from_lis1 <span class="op">=</span> pd.DataFrame(lis1)</span>
+<span id="cb71-19"><a href="#cb71-19" aria-hidden="true" tabindex="-1"></a><span class="co">#convert dictionary to dataframe :</span></span>
+<span id="cb71-20"><a href="#cb71-20" aria-hidden="true" tabindex="-1"></a>dic1 <span class="op">=</span> {<span class="st">&quot;col_1&quot;</span> : [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span> ] , <span class="st">&quot;col_2&quot;</span> : [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span> ]}</span>
+<span id="cb71-21"><a href="#cb71-21" aria-hidden="true" tabindex="-1"></a><span class="co"># parameter &#39;orient&#39; :If the keys of the passed dict should be the columns of the resulting # DataFrame, pass ‘columns’ (default). Otherwise if the keys should be rows, pass ‘index’.</span></span>
+<span id="cb71-22"><a href="#cb71-22" aria-hidden="true" tabindex="-1"></a>pd.DataFrame.from_dict(dic1, </span>
+<span id="cb71-23"><a href="#cb71-23" aria-hidden="true" tabindex="-1"></a>    orient<span class="op">=</span><span class="st">&#39;columns&#39;</span> , </span>
+<span id="cb71-24"><a href="#cb71-24" aria-hidden="true" tabindex="-1"></a>    dtype<span class="op">=</span><span class="va">None</span>, </span>
+<span id="cb71-25"><a href="#cb71-25" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
 
 </div>
  
@@ -1112,7 +1116,7 @@ Please visit <a href="https://medium.com/swlh/data-structure-conversion-f99d3ff9
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:right;">
@@ -1151,7 +1155,7 @@ Dora
 </tr>
 </tbody>
 </table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -1172,7 +1176,7 @@ Dora
 </tr>
 </tbody>
 </table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:right;">
@@ -1200,7 +1204,7 @@ John
 </tr>
 </tbody>
 </table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:right;">
@@ -1221,7 +1225,7 @@ x
 </tr>
 </tbody>
 </table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 df1 after modification
 </caption>
@@ -1263,7 +1267,7 @@ Dora
 </tr>
 </tbody>
 </table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:right;">
@@ -1313,7 +1317,7 @@ Paul
 </tr>
 </tbody>
 </table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:right;">
@@ -1361,7 +1365,7 @@ FL
 </tr>
 </tbody>
 </table>
-<table class=" lightable-material lightable-striped lightable-hover" style='font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 data frame from lis1
 </caption>
@@ -1511,6 +1515,7 @@ s.setAttribute("data-timestamp", +new Date());
 </div>
 </div>
 </section>
+
 
 </div>
 <!-- Don't indent these lines or it will mess pre blocks indentation -->

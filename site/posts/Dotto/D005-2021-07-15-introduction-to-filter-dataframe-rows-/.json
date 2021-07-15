@@ -1,0 +1,47 @@
+{
+  "file_name": ["introduction-to-filter-dataframe-rows-"],
+  "dir_name": ["D005-2021-07-15-introduction-to-filter-dataframe-rows-"],
+  "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+  "link": ["posts/Dotto/D005-2021-07-15-introduction-to-filter-dataframe-rows-/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [5],
+  "dotto_label": ["D005"],
+  "dotto_id": ["58d55c54-e55d-11eb-8d82-c8b29b64e24a"],
+  "title": ["Introduction to filter DataFrame Rows "],
+  "description": ["Using best practices, you can learn how to cut the data  and filter specific rows/observations.\n"],
+  "author": [
+    {
+      "name": ["Parnian Jahangiri Rad"],
+      "occupation": ["Data science intern"],
+      "affiliation": ["DataMotto"],
+      "url": ["https://www.linkedin.com/in/parnian-jahangiri-rad-4603611b4"],
+      "img": ["Parnian-Jahangiri-Rad.jpg"],
+      "lang": ["r , python"],
+      "profile_img_for_Dotto": ["./introduction-to-filter-dataframe-rows-_files/figure-html/Parnian-Jahangiri-Rad.jpg"],
+      "profile_img": ["./posts/Dotto/D005-2021-07-15-introduction-to-filter-dataframe-rows-/introduction-to-filter-dataframe-rows-_files/figure-html/Parnian-Jahangiri-Rad.jpg"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": ["dplyr"]
+    },
+    {
+      "lang": ["python"],
+      "pkgs": ["pandas"]
+    }
+  ],
+  "date": {
+    "created": ["2021-07-15"],
+    "last_updated": ["2021-07-15"]
+  },
+  "categories": ["Wrangling"],
+  "applications": ["General"],
+  "cover_image": {},
+  "slug": ["introduction-to-filter-dataframe-rows-"],
+  "output": ["DataMotto::Dotto"]
+}
