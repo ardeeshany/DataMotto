@@ -256,6 +256,16 @@ class="btn dotto-main-dot-shape"
 class="btn dotto-main-dot-shape"
 :class="{'btn-light': activeMotto === '6', 'btn-outline-light': activeMotto !== '6'}">6</button>
 
+
+<button type="button" @click="activeMotto = '7'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '7', 'btn-outline-light': activeMotto !== '7'}">7</button>
+
+
+<button type="button" @click="activeMotto = '8'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '8', 'btn-outline-light': activeMotto !== '8'}">8</button>
+
 </div>
 
 <!-- Dot 1, lang: r ------------------------------------------------>
@@ -270,16 +280,17 @@ class="btn dotto-main-dot-shape"
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
-<p>In this dot,we are using dataset <code>penguins_raw</code> from <code>palmerpenguins</code> package. <code>palmerpenguins</code> contains 2 datasets,<code>penguins</code> and <code>penguins_raw</code> about 344 penguins. You can install this package with :<br />
-* install.packages(“palmerpenguins”)<br />
-Access <code>penguins_raw</code> dataset with :<br />
-<em>library(palmerpenguins)<br />
-</em>data_penguin &lt;- penguins_raw</p>
+<p>In this dot,we are using dataset <code>penguins_raw</code> from <code>palmerpenguins</code> package. <code>palmerpenguins</code> contains 2 datasets,<code>penguins</code> and <code>penguins_raw</code> which is about 344 penguins.<br />
+You can install this package with :<br />
+install.packages(“palmerpenguins”)<br />
+Access <code>penguins_raw</code> dataset with :</p>
+<p>library(palmerpenguins)<br />
+data_penguin &lt;- penguins_raw</p>
 <p>This dataset includes nesting observations, penguin size data, and isotope measurements from blood samples for adult Adélie, Chinstrap, and Gentoo penguins.It has 344 rows and 17 columns.However , we only need columns:<br />
-<em><code>individual_id</code><br />
-</em><code>date_egg</code><br />
-<em><code>body-mass-g</code><br />
-</em><code>sex</code></p>
+<code>individual_id</code><br />
+<code>date_egg</code><br />
+<code>body-mass-g</code><br />
+<code>sex</code></p>
 <p>Here, we use <code>janitor</code> package ,<code>clean_names()</code> function to clean data frame names. <code>clean_name()</code> works in <code>%&gt;%</code> (pipe).</p>
 
 </p>
@@ -294,10 +305,10 @@ Access <code>penguins_raw</code> dataset with :<br />
 
 <p>In this dot,we are using dataset <code>penguins_raw</code> ,that can be downloded from <a href="site%20address">here</a>. This dataset includes nesting observations, penguin size data, and isotope measurements from blood samples for adult Adélie, Chinstrap, and Gentoo penguins.It has 344 rows and 17 columns.<br />
 However , we only need columns:<br />
-<em><code>individual_id</code><br />
-</em><code>date_egg</code><br />
-<em><code>body-mass-g</code><br />
-</em><code>sex</code></p>
+<code>individual_id</code><br />
+<code>date_egg</code><br />
+<code>body-mass-g</code><br />
+<code>sex</code></p>
 <p>Here, we use <code>janitor</code> package ,<code>clean_names()</code> function to clean dataframe names.</p>
 
 </p>
@@ -486,10 +497,10 @@ FEMALE
 <p class="mx-2">
 
 <p><code>filter()</code> function, from <code>dplyr</code> package, helps us to filter data frame rows based on conditions.<br />
-* Useful filter functions: + <code>==</code> , <code>&lt;</code> , <code>&gt;</code> , etc.<br />
-+ <code>&amp;</code> , <code>|</code> , <code>!</code> , <code>xor()</code><br />
-+ <code>is.na()</code><br />
-+ <code>between()</code> , <code>near()</code></p>
+Useful filter functions: <code>==</code> , <code>&lt;</code> , <code>&gt;</code> , etc.<br />
+<code>&amp;</code> , <code>|</code> , <code>!</code> , <code>xor()</code><br />
+<code>is.na()</code><br />
+<code>between()</code> , <code>near()</code></p>
 <p><code>filter()</code> (and other <code>dplyr</code> functions) work with pipes <code>%&gt;%</code> and expect tidy data.<br />
 In tidy data:<br />
 * Each variable is in its own column.<br />
@@ -539,7 +550,9 @@ For examle , <code>df[df.col1 == 3800]</code> will select rows with <code>col1</
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb5"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>penguins_data [ penguins_data.body_mass_g_ <span class="op">==</span>  <span class="dv">3800</span> ]</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>penguins_data [ penguins_data.body_mass_g_ <span class="op">==</span>  <span class="dv">3800</span> ]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>penguins_data [ penguins_data.body_mass_g_ <span class="op">==</span>  <span class="bu">max</span>(penguins_data.body_mass_g_)]</span></code></pre></div>
 
 </div>
  
@@ -557,7 +570,7 @@ For examle , <code>df[df.col1 == 3800]</code> will select rows with <code>col1</
 
 <table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
-penguin(s) with maximum body_mass
+penguins with body_mass = 3800
 </caption>
 <thead>
 <tr>
@@ -746,6 +759,43 @@ MALE
 </tr>
 </tbody>
 </table>
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+penguin(s) with maximum body_mass
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+individual_id
+</th>
+<th style="text-align:left;">
+date_egg
+</th>
+<th style="text-align:right;">
+body_mass_g
+</th>
+<th style="text-align:left;">
+sex
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+N39A2
+</td>
+<td style="text-align:left;">
+2007-11-27
+</td>
+<td style="text-align:right;">
+6300
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+</tbody>
+</table>
 
 </div>
  
@@ -767,6 +817,8 @@ MALE
 ## 175         N85A2  11/28/07        3800.0    MALE
 ## 179         N61A2  11/25/08        3800.0    MALE
 ## 210         N95A1  11/21/09        3800.0    MALE</code></pre>
+<pre><code>##     individual_id  date_egg  body_mass_g_   sex
+## 237         N39A2  11/27/07        6300.0  MALE</code></pre>
 
 </div>
  
@@ -788,6 +840,8 @@ MALE
 
 <p>We can use <code>==</code> , <code>&lt;</code> and <code>&gt;</code> operators with strings as well.<br />
 For example , <code>A == "ABC"</code> checks whether string A is equal to <code>"ABC"</code>, or <code>A &lt; "ABC"</code> checks if string A comes before “ABC” (in alphabetical order).</p>
+<p>We can also filter data frame rows using Dates.<br />
+For example , <code>penguins_data %&gt;% filter(Date_Egg &lt; "2007-11-10")</code> filters rows with Date_Egg before 2007-11-10.</p>
 
 </p>
 </div>
@@ -801,6 +855,8 @@ For example , <code>A == "ABC"</code> checks whether string A is equal to <code>
 
 <p>We can also use logical operators on strings.<br />
 For example, <code>penguins_data [penguins_data.individual_id &lt; "N1A2" ]</code> will select strings that come before <code>N1A2</code> in alphabetical order.</p>
+<p>We can also filter data frame rows using Dates.<br />
+For example , <code>penguins_data [penguins_data.date_egg &lt; "2007-11-10" ]</code> will select rows with date_egg before ‘2007-11-10’.</p>
 
 </p>
 </div>
@@ -818,8 +874,11 @@ For example, <code>penguins_data [penguins_data.individual_id &lt; "N1A2" ]</cod
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb7"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>N1A2_penguin <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(individual_id <span class="sc">==</span> <span class="st">&quot;N1A2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>N1A2_penguin <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(individual_id <span class="sc">==</span> <span class="st">&quot;N1A2&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>penguin_2007_11_10 <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(date_egg <span class="sc">&lt;</span> <span class="st">&quot;2007-11-10&quot;</span>)</span></code></pre></div>
 
 </div>
  
@@ -828,7 +887,9 @@ For example, <code>penguins_data [penguins_data.individual_id &lt; "N1A2" ]</cod
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb8"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>penguins_data [penguins_data.individual_id <span class="op">==</span> <span class="st">&quot;N1A2&quot;</span> ]</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>penguins_data [penguins_data.individual_id <span class="op">==</span> <span class="st">&quot;N1A2&quot;</span> ]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>penguins_data [penguins_data.date_egg <span class="op">&lt;</span> <span class="st">&quot;2007-11-10&quot;</span> ]</span></code></pre></div>
 
 </div>
  
@@ -895,97 +956,9 @@ MALE
 </tr>
 </tbody>
 </table>
-
-</div>
- 
-
-
- 
-<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
-
-<pre><code>##     individual_id  date_egg  body_mass_g_     sex
-## 1            N1A2  11/11/07        3800.0  FEMALE
-## 301          N1A2  11/18/09        5450.0    MALE</code></pre>
-
-</div>
- 
-</div>
-</div>
-</div>
-
-<!-- Dot 4, lang: r ------------------------------------------------>
-
-<div v-if="activeMotto === '4'" class="col-12 col-lg-11 d-flex p-0 wrapper">
-<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
-<div class="card-header">
-<h1>&nbsp;Instructions:</h1>
-</div>
-<br>
- 
-<div v-if="activeLang === 'r'" class="mx-2">
-<p class="mx-2">
-
-<p>We can filter dataframe rows using Dates.<br />
-For example , <code>penguins_data %&gt;% filter(Date_Egg &lt; "2007-11-10")</code> filters rows with Date_Egg before 2007-11-10.</p>
-
-</p>
-</div>
- 
-
-<!-- Dot 4, lang: python ------------------------------------------------>
-
- 
-<div v-if="activeLang === 'python'" class="mx-2">
-<p class="mx-2">
-
-<p>We can filter dataframe rows using Dates.<br />
-For example , <code>penguins_data [penguins_data.date_egg &lt; "2007-11-10" ]</code> will select rows with date_egg before ‘2007-11-10’.</p>
-
-</p>
-</div>
- 
-
-
-</div>
-<div class="handler dotto-main-intro"></div>
-<div id="resizable">
-<div class="box2 dotto-main overflow-auto dotto-main-codes">
-<div class="card-header dot-codes">
-<h1>&nbsp;Codes:</h1>
-</div>
-<br>
- 
-<div v-if="activeLang === 'r'" class="mx-2">
-
-<div class="sourceCode" id="cb10"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>penguin_2007_11_10 <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(date_egg <span class="sc">&lt;</span> <span class="st">&quot;2007-11-10&quot;</span>)</span></code></pre></div>
-
-</div>
- 
-
-
- 
-<div v-if="activeLang === 'python'" class="mx-2">
-
-<div class="sourceCode" id="cb11"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>penguins_data [penguins_data.date_egg <span class="op">&lt;</span> <span class="st">&quot;2007-11-10&quot;</span> ]</span></code></pre></div>
-
-</div>
- 
-
-
-</div>
-<div class="handler2 dotto-main-output"></div>
-<div class="box2 dotto-main overflow-auto dotto-main-output">
-<div class="card-header">
-<h1>&nbsp;Results:</h1>
-</div>
-<br>
- 
-<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
-
 <table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
-penguin with individual_id = N1A2
+penguin with date_egg before ‘2007-11-10’
 </caption>
 <thead>
 <tr>
@@ -1127,6 +1100,9 @@ MALE
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
 
 <pre><code>##     individual_id  date_egg  body_mass_g_     sex
+## 1            N1A2  11/11/07        3800.0  FEMALE
+## 301          N1A2  11/18/09        5450.0    MALE</code></pre>
+<pre><code>##     individual_id  date_egg  body_mass_g_     sex
 ## 0            N1A1  11/11/07        3750.0    MALE
 ## 1            N1A2  11/11/07        3800.0  FEMALE
 ## 2            N2A1  11/16/07        3250.0  FEMALE
@@ -1147,9 +1123,9 @@ MALE
 </div>
 </div>
 
-<!-- Dot 5, lang: r ------------------------------------------------>
+<!-- Dot 4, lang: r ------------------------------------------------>
 
-<div v-if="activeMotto === '5'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div v-if="activeMotto === '4'" class="col-12 col-lg-11 d-flex p-0 wrapper">
 <div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
 <div class="card-header">
 <h1>&nbsp;Instructions:</h1>
@@ -1159,19 +1135,24 @@ MALE
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
-<p>We can use <code>%in%</code> is a way to apply multiple conditions on data frame rows.</p>
+<p>Combining logical operators like <code>&amp;</code> (and) and <code>|</code> (or) makes it possible to apply multiple conditions on data frame rows.<br />
+In R language , <code>!</code> operator is used as <code>not</code>.</p>
+<p>Using <code>%in%</code> is another way to apply multiple conditions on data frame rows.</p>
 
 </p>
 </div>
  
 
-<!-- Dot 5, lang: python ------------------------------------------------>
+<!-- Dot 4, lang: python ------------------------------------------------>
 
  
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
 
-<p>isin<code>method helps us to apply multiple conditions for row filtering.     For example ,</code>df[df.col_1 isin list1]<code>selects rows that their</code>col_1<code>exists in</code>list1`.</p>
+<p>Combining logical operators like <code>&amp;</code> (and) and <code>|</code> (or) makes it possible to apply multiple conditions on data frame rows.<br />
+In python language , <code>~</code> operator is used for <code>not</code> logic in filtering.</p>
+<p><code>isin</code> method is another way that helps us to apply multiple conditions for row filtering.<br />
+For example , <code>df[df.col_1 isin list1]</code> selects rows that their <code>col_1</code> exists in <code>list1</code>.</p>
 
 </p>
 </div>
@@ -1189,10 +1170,14 @@ MALE
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb13"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>IDs <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;N2N1&quot;</span> , <span class="st">&quot;N2A2&quot;</span> , <span class="st">&quot;N5A1&quot;</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>IDs_penguins <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(individual_id <span class="sc">%in%</span> IDs)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>multiple_conditions <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>body_mass_g <span class="sc">&lt;</span> <span class="dv">2800</span> <span class="sc">&amp;</span> sex <span class="sc">==</span> <span class="st">&quot;FEMALE&quot;</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>IDs <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;N2N1&quot;</span> , <span class="st">&quot;N2A2&quot;</span> , <span class="st">&quot;N5A1&quot;</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>IDs_penguins <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(individual_id <span class="sc">%in%</span> IDs)</span></code></pre></div>
 
 </div>
  
@@ -1201,9 +1186,11 @@ MALE
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb14"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>IDs <span class="op">=</span> [ <span class="st">&quot;N2N1&quot;</span> , <span class="st">&quot;N2A2&quot;</span> , <span class="st">&quot;N5A1&quot;</span> ]</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>penguins_data [penguins_data.individual_id.isin(IDs) ]</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>penguins_data [<span class="op">~</span>(penguins_data.body_mass_g_ <span class="op">&gt;</span> <span class="dv">2800</span>) <span class="op">&amp;</span> (penguins_data.sex <span class="op">==</span> <span class="st">&quot;FEMALE&quot;</span> )]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>IDs <span class="op">=</span> [ <span class="st">&quot;N2N1&quot;</span> , <span class="st">&quot;N2A2&quot;</span> , <span class="st">&quot;N5A1&quot;</span> ]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>penguins_data [penguins_data.individual_id.isin(IDs) ]</span></code></pre></div>
 
 </div>
  
@@ -1219,6 +1206,57 @@ MALE
  
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+female penguins with body_mass equal to or more than 2800
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+individual_id
+</th>
+<th style="text-align:left;">
+date_egg
+</th>
+<th style="text-align:right;">
+body_mass_g
+</th>
+<th style="text-align:left;">
+sex
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+N39A2
+</td>
+<td style="text-align:left;">
+2007-11-27
+</td>
+<td style="text-align:right;">
+6300
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N72A1
+</td>
+<td style="text-align:left;">
+2008-11-24
+</td>
+<td style="text-align:right;">
+2700
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+</tbody>
+</table>
 <table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 penguins with IDs listed in vector ‘IDs’
@@ -1307,6 +1345,8 @@ FEMALE
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
 
 <pre><code>##     individual_id  date_egg  body_mass_g_     sex
+## 190         N72A1  11/24/08        2700.0  FEMALE</code></pre>
+<pre><code>##     individual_id  date_egg  body_mass_g_     sex
 ## 3            N2A2  11/16/07           NaN     NaN
 ## 8            N5A1   11/9/07        3475.0     NaN
 ## 255          N2A2  11/13/08        5400.0    MALE
@@ -1318,9 +1358,9 @@ FEMALE
 </div>
 </div>
 
-<!-- Dot 6, lang: r ------------------------------------------------>
+<!-- Dot 5, lang: r ------------------------------------------------>
 
-<div v-if="activeMotto === '6'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div v-if="activeMotto === '5'" class="col-12 col-lg-11 d-flex p-0 wrapper">
 <div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
 <div class="card-header">
 <h1>&nbsp;Instructions:</h1>
@@ -1330,21 +1370,23 @@ FEMALE
 <div v-if="activeLang === 'r'" class="mx-2">
 <p class="mx-2">
 
-<p>Combining logical operators like <code>&amp;</code> (and) and <code>|</code> (or) makes it possible to apply multiple conditions on data frame rows.<br />
-In R language , <code>!</code> operator is used as <code>not</code>.</p>
+<p>To access a n rows with largest (or smallest) values in a column , you should sort data frame based on that column using <code>arrange('col_name')</code> function.<br />
+For sorting in descending order , use <code>arrange(desc('col_name'))</code>.<br />
+Then you can select k first rows using <code>top_n(k)</code>.</p>
 
 </p>
 </div>
  
 
-<!-- Dot 6, lang: python ------------------------------------------------>
+<!-- Dot 5, lang: python ------------------------------------------------>
 
  
 <div v-if="activeLang === 'python'" class="mx-2">
 <p class="mx-2">
 
-<p>Combining logical operators like <code>&amp;</code> (and) and <code>|</code> (or) makes it possible to apply multiple conditions on data frame rows.<br />
-In R language , <code>~</code> operator is used for <code>not</code> logic in filtering.</p>
+<p>To access n rows with largest (or smallest) values in column ‘A’, we can use <code>df.nlargest(n , 'A')</code> (<code>df.nsmallest(n , 'A')</code>).<br />
+For exeample , this code returns 2 penguins the highest<br />
+<code>body-mass-g</code>.</p>
 
 </p>
 </div>
@@ -1362,8 +1404,12 @@ In R language , <code>~</code> operator is used for <code>not</code> logic in fi
  
 <div v-if="activeLang === 'r'" class="mx-2">
 
-<div class="sourceCode" id="cb16"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>multiple_conditions <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>body_mass_g <span class="sc">&lt;</span> <span class="dv">2800</span> <span class="sc">&amp;</span> sex <span class="sc">==</span> <span class="st">&quot;FEMALE&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>before_2007_11_10 <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(date_egg <span class="sc">&lt;</span> <span class="st">&quot;2007-11-10&quot;</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>ordered <span class="ot">&lt;-</span> before_2007_11_10 <span class="sc">%&gt;%</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(body_mass_g)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">2</span>)</span></code></pre></div>
 
 </div>
  
@@ -1372,7 +1418,7 @@ In R language , <code>~</code> operator is used for <code>not</code> logic in fi
  
 <div v-if="activeLang === 'python'" class="mx-2">
 
-<div class="sourceCode" id="cb17"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>penguins_data [<span class="op">~</span>(penguins_data.body_mass_g_ <span class="op">&gt;</span> <span class="dv">2800</span>) <span class="op">&amp;</span> (penguins_data.sex <span class="op">==</span> <span class="st">&quot;FEMALE&quot;</span> )]</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>penguins_data.nlargest(<span class="dv">2</span> , <span class="st">&#39;body_mass_g_&#39;</span>)</span></code></pre></div>
 
 </div>
  
@@ -1389,6 +1435,9 @@ In R language , <code>~</code> operator is used for <code>not</code> logic in fi
 <div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
 
 <table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+2 penguins with largest body_mass
+</caption>
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -1408,16 +1457,516 @@ sex
 <tbody>
 <tr>
 <td style="text-align:left;">
-N39A2
+N21A2
 </td>
 <td style="text-align:left;">
-2007-11-27
+2007-11-09
 </td>
 <td style="text-align:right;">
-6300
+3900
 </td>
 <td style="text-align:left;">
 MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N22A2
+</td>
+<td style="text-align:left;">
+2007-11-09
+</td>
+<td style="text-align:right;">
+3900
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>##     individual_id  date_egg  body_mass_g_   sex
+## 237         N39A2  11/27/07        6300.0  MALE
+## 253         N56A2   12/3/07        6050.0  MALE</code></pre>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 6, lang: r ------------------------------------------------>
+
+<div v-if="activeMotto === '6'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p>We can use <code>row_number()</code> to filter rows based on their indices.<br />
+<code>slice()</code> function can be used as well.</p>
+
+</p>
+</div>
+ 
+
+<!-- Dot 6, lang: python ------------------------------------------------>
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p>We can use <code>iloc</code> and <code>loc</code> methods for selecting rows based on index and lable:<br />
+<em><code>iloc</code> : select row (or column) , based on <code>index</code>.<br />
+</em><code>loc</code> : select row (or column ) , based on <code>lable</code>.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb19"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>row_1_2_5 <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">filter</span>(<span class="fu">row_number</span>() <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>))</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>first_5_rows <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb20"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#access rows with indices 0 , 1 and 2:</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>penguins_data.iloc[<span class="dv">0</span>:<span class="dv">3</span> , :]</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>first_5_rows <span class="op">=</span> penguins_data.head(<span class="dv">5</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co">#update data frame&#39;s indices to illustrate how &#39;loc&#39; works:</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>first_5_rows.index <span class="op">=</span> [<span class="st">&#39;a&#39;</span> , <span class="st">&#39;b&#39;</span> , <span class="st">&#39;c&#39;</span> , <span class="st">&#39;d&#39;</span> , <span class="st">&#39;e&#39;</span>]</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>first_5_rows.loc[<span class="st">&#39;a&#39;</span> : <span class="st">&#39;c&#39;</span> , :]</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+select first, second and fifth row of penguins_data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+individual_id
+</th>
+<th style="text-align:left;">
+date_egg
+</th>
+<th style="text-align:right;">
+body_mass_g
+</th>
+<th style="text-align:left;">
+sex
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+N1A1
+</td>
+<td style="text-align:left;">
+2007-11-11
+</td>
+<td style="text-align:right;">
+3750
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N1A2
+</td>
+<td style="text-align:left;">
+2007-11-11
+</td>
+<td style="text-align:right;">
+3800
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N3A1
+</td>
+<td style="text-align:left;">
+2007-11-16
+</td>
+<td style="text-align:right;">
+3450
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+first 5 rows from penguins_data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+individual_id
+</th>
+<th style="text-align:left;">
+date_egg
+</th>
+<th style="text-align:right;">
+body_mass_g
+</th>
+<th style="text-align:left;">
+sex
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+N1A1
+</td>
+<td style="text-align:left;">
+2007-11-11
+</td>
+<td style="text-align:right;">
+3750
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N1A2
+</td>
+<td style="text-align:left;">
+2007-11-11
+</td>
+<td style="text-align:right;">
+3800
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N2A1
+</td>
+<td style="text-align:left;">
+2007-11-16
+</td>
+<td style="text-align:right;">
+3250
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N2A2
+</td>
+<td style="text-align:left;">
+2007-11-16
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N3A1
+</td>
+<td style="text-align:left;">
+2007-11-16
+</td>
+<td style="text-align:right;">
+3450
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>##   individual_id  date_egg  body_mass_g_     sex
+## 0          N1A1  11/11/07        3750.0    MALE
+## 1          N1A2  11/11/07        3800.0  FEMALE
+## 2          N2A1  11/16/07        3250.0  FEMALE</code></pre>
+<pre><code>##   individual_id  date_egg  body_mass_g_     sex
+## a          N1A1  11/11/07        3750.0    MALE
+## b          N1A2  11/11/07        3800.0  FEMALE
+## c          N2A1  11/16/07        3250.0  FEMALE</code></pre>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 7, lang: r ------------------------------------------------>
+
+<div v-if="activeMotto === '7'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p><code>sqldf</code> package has a function , named <code>sqldf()</code> that Provides an easy way to perform SQL selects on R data frames.</p>
+<p>We can pass selecting conditions as string.</p>
+
+</p>
+</div>
+ 
+
+<!-- Dot 6, lang: python ------------------------------------------------>
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p>With <code>df.query()</code> , we can pass filtering conditions as string.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb23"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sqldf)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>selected_penguins <span class="ot">&lt;-</span> <span class="fu">sqldf</span>(<span class="st">&quot;select * from penguins_data where body_mass_g &lt; 3000 and date_egg &lt; &#39;2007-11-12&#39;&quot;</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb24"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>penguins_data.query(<span class="st">&#39;body_mass_g_ &lt; 3000 and date_egg &lt; &quot;2007-11-12&quot;&#39;</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+penguins wigh body_mass less than 3000 and date_egg before 2007-11-12
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+individual_id
+</th>
+<th style="text-align:left;">
+date_egg
+</th>
+<th style="text-align:right;">
+body_mass_g
+</th>
+<th style="text-align:left;">
+sex
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+N29A2
+</td>
+<td style="text-align:left;">
+2007-11-13
+</td>
+<td style="text-align:right;">
+2975
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N23A1
+</td>
+<td style="text-align:left;">
+2008-11-09
+</td>
+<td style="text-align:right;">
+2900
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N25A1
+</td>
+<td style="text-align:left;">
+2008-11-15
+</td>
+<td style="text-align:right;">
+2850
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N29A1
+</td>
+<td style="text-align:left;">
+2008-11-13
+</td>
+<td style="text-align:right;">
+2850
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N50A1
+</td>
+<td style="text-align:left;">
+2008-11-10
+</td>
+<td style="text-align:right;">
+2900
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N51A1
+</td>
+<td style="text-align:left;">
+2009-11-15
+</td>
+<td style="text-align:right;">
+2925
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N63A1
+</td>
+<td style="text-align:left;">
+2009-11-18
+</td>
+<td style="text-align:right;">
+2900
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N85A1
+</td>
+<td style="text-align:left;">
+2007-11-28
+</td>
+<td style="text-align:right;">
+2900
+</td>
+<td style="text-align:left;">
+FEMALE
 </td>
 </tr>
 <tr>
@@ -1445,7 +1994,820 @@ FEMALE
 <div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
 
 <pre><code>##     individual_id  date_egg  body_mass_g_     sex
+## 47          N29A2  11/13/07        2975.0     NaN
+## 54          N23A1   11/9/08        2900.0  FEMALE
+## 58          N25A1  11/15/08        2850.0  FEMALE
+## 64          N29A1  11/13/08        2850.0  FEMALE
+## 98          N50A1  11/10/08        2900.0  FEMALE
+## 104         N51A1  11/15/09        2925.0  FEMALE
+## 116         N63A1  11/18/09        2900.0  FEMALE
+## 174         N85A1  11/28/07        2900.0  FEMALE
 ## 190         N72A1  11/24/08        2700.0  FEMALE</code></pre>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 8, lang: r ------------------------------------------------>
+
+<div v-if="activeMotto === '8'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p>Suppose that we want to filter penguins which their “individual_id” contains <code>2A</code>. For this purpose , we can use <code>str_detect(string , pattern)</code> from <code>stringr</code> package.</p>
+<p>We can also use <code>regex</code> , which is a powerful tool for pattern matching. For example,we can use regex to filter penguins with individual_id that starts with <code>N1A</code>.</p>
+
+</p>
+</div>
+ 
+
+<!-- Dot 8, lang: python ------------------------------------------------>
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><code>pandas</code> library also works well with textual data.So , we can filter data frame row based on strings using <code>str accessor</code> methods like <code>str.startswith('A')</code> and <code>str.contains('A')</code>.</p>
+<p>We can also filter data frame rows with <code>regex</code> , using <code>str.match(pattern)</code> method.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb26"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>contains_2A <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(individual_id , <span class="st">&quot;2A&quot;</span>))</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>starts_with_N1A <span class="ot">&lt;-</span> penguins_data <span class="sc">%&gt;%</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(individual_id , <span class="st">&quot;^N1A&quot;</span>))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb27"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>penguins_data [penguins_data.individual_id.<span class="bu">str</span>.contains(<span class="st">&#39;2A&#39;</span>)]</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>penguins_data [penguins_data.individual_id.<span class="bu">str</span>.startswith(<span class="st">&#39;N1A&#39;</span>)]</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>penguins_data[penguins_data.individual_id.<span class="bu">str</span>.match(<span class="st">&#39;..1A.&#39;</span>)]</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+penguins that their indivilual_id contains ‘2A’
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+individual_id
+</th>
+<th style="text-align:left;">
+date_egg
+</th>
+<th style="text-align:right;">
+body_mass_g
+</th>
+<th style="text-align:left;">
+sex
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+N2A1
+</td>
+<td style="text-align:left;">
+2007-11-16
+</td>
+<td style="text-align:right;">
+3250
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N2A2
+</td>
+<td style="text-align:left;">
+2007-11-16
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N12A1
+</td>
+<td style="text-align:left;">
+2007-11-12
+</td>
+<td style="text-align:right;">
+3800
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N12A2
+</td>
+<td style="text-align:left;">
+2007-11-12
+</td>
+<td style="text-align:right;">
+3950
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N22A1
+</td>
+<td style="text-align:left;">
+2007-11-09
+</td>
+<td style="text-align:right;">
+3300
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N22A2
+</td>
+<td style="text-align:left;">
+2007-11-09
+</td>
+<td style="text-align:right;">
+3900
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N22A1
+</td>
+<td style="text-align:left;">
+2008-11-09
+</td>
+<td style="text-align:right;">
+3450
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N22A2
+</td>
+<td style="text-align:left;">
+2008-11-09
+</td>
+<td style="text-align:right;">
+4050
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N32A1
+</td>
+<td style="text-align:left;">
+2008-11-11
+</td>
+<td style="text-align:right;">
+3050
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N32A2
+</td>
+<td style="text-align:left;">
+2008-11-11
+</td>
+<td style="text-align:right;">
+4450
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N42A1
+</td>
+<td style="text-align:left;">
+2008-11-08
+</td>
+<td style="text-align:right;">
+3800
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N42A2
+</td>
+<td style="text-align:left;">
+2008-11-08
+</td>
+<td style="text-align:right;">
+3500
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N72A1
+</td>
+<td style="text-align:left;">
+2009-11-18
+</td>
+<td style="text-align:right;">
+3050
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N72A2
+</td>
+<td style="text-align:left;">
+2009-11-18
+</td>
+<td style="text-align:right;">
+4000
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N82A1
+</td>
+<td style="text-align:left;">
+2009-11-16
+</td>
+<td style="text-align:right;">
+3000
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N82A2
+</td>
+<td style="text-align:left;">
+2009-11-16
+</td>
+<td style="text-align:right;">
+3650
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N32A1
+</td>
+<td style="text-align:left;">
+2007-11-27
+</td>
+<td style="text-align:right;">
+4450
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N32A2
+</td>
+<td style="text-align:left;">
+2007-11-27
+</td>
+<td style="text-align:right;">
+5700
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N42A1
+</td>
+<td style="text-align:left;">
+2007-11-27
+</td>
+<td style="text-align:right;">
+4400
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N42A2
+</td>
+<td style="text-align:left;">
+2007-11-27
+</td>
+<td style="text-align:right;">
+5050
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N2A1
+</td>
+<td style="text-align:left;">
+2008-11-13
+</td>
+<td style="text-align:right;">
+5150
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N2A2
+</td>
+<td style="text-align:left;">
+2008-11-13
+</td>
+<td style="text-align:right;">
+5400
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N12A1
+</td>
+<td style="text-align:left;">
+2008-11-02
+</td>
+<td style="text-align:right;">
+5100
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N12A2
+</td>
+<td style="text-align:left;">
+2008-11-02
+</td>
+<td style="text-align:right;">
+5300
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N22A1
+</td>
+<td style="text-align:left;">
+2009-11-22
+</td>
+<td style="text-align:right;">
+4850
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N22A2
+</td>
+<td style="text-align:left;">
+2009-11-22
+</td>
+<td style="text-align:right;">
+5600
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N32A1
+</td>
+<td style="text-align:left;">
+2009-11-20
+</td>
+<td style="text-align:right;">
+5000
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N32A2
+</td>
+<td style="text-align:left;">
+2009-11-20
+</td>
+<td style="text-align:right;">
+5950
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N62A1
+</td>
+<td style="text-align:left;">
+2007-11-26
+</td>
+<td style="text-align:right;">
+3650
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N62A2
+</td>
+<td style="text-align:left;">
+2007-11-26
+</td>
+<td style="text-align:right;">
+3525
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N72A1
+</td>
+<td style="text-align:left;">
+2007-11-30
+</td>
+<td style="text-align:right;">
+3450
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N72A2
+</td>
+<td style="text-align:left;">
+2007-11-30
+</td>
+<td style="text-align:right;">
+4400
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N62A1
+</td>
+<td style="text-align:left;">
+2008-11-14
+</td>
+<td style="text-align:right;">
+3700
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N62A2
+</td>
+<td style="text-align:left;">
+2008-11-14
+</td>
+<td style="text-align:right;">
+4550
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N72A1
+</td>
+<td style="text-align:left;">
+2008-11-24
+</td>
+<td style="text-align:right;">
+2700
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N72A2
+</td>
+<td style="text-align:left;">
+2008-11-24
+</td>
+<td style="text-align:right;">
+4500
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N92A1
+</td>
+<td style="text-align:left;">
+2009-11-23
+</td>
+<td style="text-align:right;">
+3600
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N92A2
+</td>
+<td style="text-align:left;">
+2009-11-23
+</td>
+<td style="text-align:right;">
+4050
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+penguins that their individual_id starts with ‘N1A’
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+individual_id
+</th>
+<th style="text-align:left;">
+date_egg
+</th>
+<th style="text-align:right;">
+body_mass_g
+</th>
+<th style="text-align:left;">
+sex
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+N1A1
+</td>
+<td style="text-align:left;">
+2007-11-11
+</td>
+<td style="text-align:right;">
+3750
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N1A2
+</td>
+<td style="text-align:left;">
+2007-11-11
+</td>
+<td style="text-align:right;">
+3800
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N1A1
+</td>
+<td style="text-align:left;">
+2009-11-18
+</td>
+<td style="text-align:right;">
+4625
+</td>
+<td style="text-align:left;">
+FEMALE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N1A2
+</td>
+<td style="text-align:left;">
+2009-11-18
+</td>
+<td style="text-align:right;">
+5450
+</td>
+<td style="text-align:left;">
+MALE
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>##     individual_id  date_egg  body_mass_g_     sex
+## 2            N2A1  11/16/07        3250.0  FEMALE
+## 3            N2A2  11/16/07           NaN     NaN
+## 22          N12A1  11/12/07        3800.0  FEMALE
+## 23          N12A2  11/12/07        3950.0    MALE
+## 32          N22A1   11/9/07        3300.0  FEMALE
+## 33          N22A2   11/9/07        3900.0    MALE
+## 52          N22A1   11/9/08        3450.0  FEMALE
+## 53          N22A2   11/9/08        4050.0    MALE
+## 68          N32A1  11/11/08        3050.0  FEMALE
+## 69          N32A2  11/11/08        4450.0    MALE
+## 86          N42A1   11/8/08        3800.0    MALE
+## 87          N42A2   11/8/08        3500.0  FEMALE
+## 128         N72A1  11/18/09        3050.0  FEMALE
+## 129         N72A2  11/18/09        4000.0    MALE
+## 144         N82A1  11/16/09        3000.0  FEMALE
+## 145         N82A2  11/16/09        3650.0    MALE
+## 154         N62A1  11/26/07        3650.0    MALE
+## 155         N62A2  11/26/07        3525.0  FEMALE
+## 170         N72A1  11/30/07        3450.0  FEMALE
+## 171         N72A2  11/30/07        4400.0    MALE
+## 180         N62A1  11/14/08        3700.0  FEMALE
+## 181         N62A2  11/14/08        4550.0    MALE
+## 190         N72A1  11/24/08        2700.0  FEMALE
+## 191         N72A2  11/24/08        4500.0    MALE
+## 204         N92A1  11/23/09        3600.0  FEMALE
+## 205         N92A2  11/23/09        4050.0    MALE
+## 222         N32A1  11/27/07        4450.0  FEMALE
+## 223         N32A2  11/27/07        5700.0    MALE
+## 242         N42A1  11/27/07        4400.0  FEMALE
+## 243         N42A2  11/27/07        5050.0    MALE
+## 254          N2A1  11/13/08        5150.0  FEMALE
+## 255          N2A2  11/13/08        5400.0    MALE
+## 268         N12A1   11/2/08        5100.0  FEMALE
+## 269         N12A2   11/2/08        5300.0    MALE
+## 320         N22A1  11/22/09        4850.0  FEMALE
+## 321         N22A2  11/22/09        5600.0    MALE
+## 330         N32A1  11/20/09        5000.0  FEMALE
+## 331         N32A2  11/20/09        5950.0    MALE</code></pre>
+<pre><code>##     individual_id  date_egg  body_mass_g_     sex
+## 0            N1A1  11/11/07        3750.0    MALE
+## 1            N1A2  11/11/07        3800.0  FEMALE
+## 300          N1A1  11/18/09        4625.0  FEMALE
+## 301          N1A2  11/18/09        5450.0    MALE</code></pre>
+<pre><code>##     individual_id  date_egg  body_mass_g_     sex
+## 20          N11A1  11/12/07        3400.0  FEMALE
+## 21          N11A2  11/12/07        3600.0    MALE
+## 30          N21A1   11/9/07        3250.0  FEMALE
+## 31          N21A2   11/9/07        3900.0    MALE
+## 50          N21A1   11/6/08        3500.0  FEMALE
+## 51          N21A2   11/6/08        4300.0    MALE
+## 84          N41A1  11/17/08        3350.0  FEMALE
+## 85          N41A2  11/17/08        3550.0    MALE
+## 104         N51A1  11/15/09        2925.0  FEMALE
+## 105         N51A2  11/15/09        3550.0    MALE
+## 114         N61A1  11/17/09        3900.0  FEMALE
+## 115         N61A2  11/17/09        4075.0    MALE
+## 126         N71A1  11/21/09        3275.0  FEMALE
+## 127         N71A2  11/21/09        4300.0    MALE
+## 142         N81A1  11/16/09        3050.0  FEMALE
+## 143         N81A2  11/16/09        3725.0    MALE
+## 152         N61A1  11/19/07        3500.0  FEMALE
+## 153         N61A2  11/19/07        3900.0    MALE
+## 168         N71A1  11/30/07        3300.0    MALE
+## 169         N71A2  11/30/07        3700.0  FEMALE
+## 178         N61A1  11/25/08        3400.0  FEMALE
+## 179         N61A2  11/25/08        3800.0    MALE
+## 220         N31A1  11/27/07        4500.0  FEMALE
+## 221         N31A2  11/27/07        5700.0    MALE
+## 240         N41A1  11/27/07        5700.0    MALE
+## 241         N41A2  11/27/07        5000.0  FEMALE
+## 266         N11A1   11/9/08        4200.0  FEMALE
+## 267         N11A2   11/9/08        5400.0    MALE
+## 286         N51A1   11/9/08        4650.0     NaN
+## 287         N51A2   11/9/08        5800.0    MALE
+## 318         N21A1  11/18/09        4625.0  FEMALE
+## 319         N21A2  11/18/09        5250.0    MALE</code></pre>
 
 </div>
  
