@@ -1,0 +1,47 @@
+{
+  "file_name": ["scatter-plot-the-relation-between-two-quantitative-variables"],
+  "dir_name": ["D008-2021-07-14-scatter-plot-the-relation-between-two-quantitative-variables"],
+  "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+  "link": ["posts/Dotto/D008-2021-07-14-scatter-plot-the-relation-between-two-quantitative-variables/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [8],
+  "dotto_label": ["D008"],
+  "dotto_id": ["25f9a122-e4ff-11eb-b8c2-acbc32baed85"],
+  "title": ["Scatter Plot: The relation between two quantitative variables"],
+  "description": ["You will learn what is scatter plot, when we are using it, how to make it more effective.\n"],
+  "author": [
+    {
+      "name": ["Mohammad Hossein Malekpour"],
+      "occupation": ["Data Scientist"],
+      "affiliation": ["DataMotto"],
+      "url": ["https://www.linkedin.com/in/mohammadhossein-malekpour/"],
+      "img": ["MalekpourAvatar.jpeg"],
+      "lang": ["python", "r"],
+      "profile_img_for_Dotto": ["./scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/MalekpourAvatar.jpeg"],
+      "profile_img": ["./posts/Dotto/D008-2021-07-14-scatter-plot-the-relation-between-two-quantitative-variables/scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/MalekpourAvatar.jpeg"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": ["ggplot2", "dplyr"]
+    },
+    {
+      "lang": ["python"],
+      "pkgs": ["seaborn", "pandas"]
+    }
+  ],
+  "date": {
+    "created": ["2021-07-11"],
+    "last_updated": ["2021-07-11"]
+  },
+  "categories": ["Visualizer"],
+  "applications": ["Other"],
+  "cover_image": {},
+  "slug": ["scatter-plot-the-relation-between-two-quantitative-variables"],
+  "output": ["DataMotto::Dotto"]
+}

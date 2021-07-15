@@ -1,0 +1,248 @@
+---
+title: "How does Finland become the happiest country"
+description: |
+  Using the World Happiness dataset, we aim to find the most happiest country in the period of 2015-2019.
+  
+author:
+  - name: "Mahyar Sharifi"
+    occupation: "Internship"
+    affiliation: "DataMotto"
+    url: "https://www.linkedin.com/in/mahyar-sharifi-06126616a"
+    img: "Mahyar.jpeg"
+    lang: ["python", "r"]
+tech:
+  - lang: r
+    pkgs: ["dplyr", "ggplot2"]
+  - lang: python
+    pkgs: ["pandas", "seaborn"]
+date:
+  created: "2021-06-29"
+  last_updated: "2021-06-29"
+categories: "Storyteller"
+applications: "Governance"
+cover_image: "Mahyar.jpg"
+slug: null
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto()
+```
+
+<!-- Dot 1, lang: r, python ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = "r"}
+In the first DOT, we import two packages: 
+      **1.`dplyr`:** importing and wrangling dataset. 
+      **2.`ggplot2`:** plotting a line-plot. 
+    
+Then we import the [**World Happiness**](https://www.kaggle.com/ajaypalsinghlo/world-happiness-report-2021)  dataset and select rows for 2015 to 2019 for all countries.
+```
+
+```{block, Dot = 1, part = "Instruction", lang = "python"}
+In the first DOT, we import two packages: 
+      **1.`pandas`:** importing and wrangling dataset. 
+      **2.`seaborn`:** plotting a line-plot. 
+    
+Then we import the [**World Happiness**](https://www.kaggle.com/ajaypalsinghlo/world-happiness-report-2021) dataset and select rows for 2015 to 2019 for all countries.
+```
+
+
+```{r, Dot = 1, part = "Code", echo = T, eval = F}
+#Load library
+library(dplyr)
+library(ggplot2)
+#Read world happiness dataset
+path = 'Dataset/world-happiness-report.csv'
+data <- read.csv(path,
+                 fileEncoding = "UTF-8-BOM")
+knitr::kable(sample_n(data, 5))
+# Select Dataset from 2015-2019
+data <- filter(data, 
+               year %in% c(2015:2019))
+```
+
+```{python, Dot = 1, part = "Code", echo = T, eval = F}
+#Import Packages
+import pandas as pd
+import seaborn as sns
+#Read world happiness dataset
+path = 'Dataset/world-happiness-report.csv'
+data = pd.read_csv(path)
+#Print five rows randomly
+pd.set_option("expand_frame_repr", True)
+data.sample(5).T
+# Select Dataset from 2015-2019
+data = data[data['year'].isin(range(2015, 2020))]
+```
+
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
+#Load library
+library(dplyr)
+library(ggplot2)
+#Read world happiness dataset
+path = 'Dataset/world-happiness-report.csv'
+data <- read.csv(path,
+                 fileEncoding = "UTF-8-BOM")
+knitr::kable(sample_n(data, 5))
+# Select Dataset from 2015-2019
+data <- filter(data,
+               year %in% c(2015:2019))
+```
+
+```{python, Dot = 1, part = "Result", echo = F, eval = T}
+#Import Packages
+import pandas as pd
+import seaborn as sns
+#Read world happiness dataset
+path = 'Dataset/world-happiness-report.csv'
+data = pd.read_csv(path)
+#Print five rows randomly
+pd.set_option("expand_frame_repr", True)
+data.sample(5).T
+# Select Dataset from 2015-2019
+data = data.query('(year >= "2015") & (year <= "2020")')
+```
+
+<!-- Dot 2, lang: r, python ------------------------------------------------>
+
+```{block, Dot = 2, part = "Instruction", lang = "r"}
+After we select the dataset, the average of **Life Ladder** calculates for each country. Then the top five happiest countries will be identified by sorting the dataset by Life Ladder columns.
+```
+
+```{block, Dot = 2, part = "Instruction", lang = "python"}
+After we select the dataset, the average of **Life Ladder** calculates for each country. Then the top five happiest countries will be identified by sorting the dataset by Life Ladder columns.
+```
+
+```{r, Dot = 2, part = "Code", echo = T, eval = F}
+# Grouping Data by Country
+data_grouped_country <- data %>%
+                          group_by(Country.name) %>%
+                          summarise(Mean.Life.Ladder = 
+                                      mean(Life.Ladder))
+# Sort the New data_grouped_country by Life Ladder column
+happiest_country <- arrange(data_grouped_country, desc(Mean.Life.Ladder))
+#Identify the five happiest country
+as.vector(t(happiest_country[1:5, 1]))
+```
+
+```{python, Dot = 2, part = "Code", echo = T, eval = F}
+#Calculate Mean of Life Ladder for Each Country during 2015-2019
+data_grouped_country = data.groupby('Country name').mean()
+#Sort data_grouped by Life Ladder Column
+sorted_data_country = data_grouped.sort_values(['Life Ladder'],
+          ascending = False)
+#Identify the five happiest country
+print(sorted_data.index[:5])
+```
+
+```{r, Dot = 2, part = "Result", echo = F, eval = T}
+# Grouping Data by Country
+data_grouped_country <- data %>%
+                          group_by(Country.name) %>%
+                          summarise(Mean.Life.Ladder =
+                                      mean(Life.Ladder))
+# Sort the New data_grouped_country by Life Ladder column
+happiest_country <- arrange(data_grouped_country, desc(Mean.Life.Ladder))
+#Identify the five happiest country
+as.vector(t(happiest_country[1:5, 1]))
+```
+
+```{python, Dot = 2, part = "Result", echo = F, eval = T}
+#Calculate Mean of Life Ladder for Each Country during 2015-2019
+data_grouped = data.groupby('Country name').mean()
+#Sort data_grouped by Life Ladder Column
+sorted_data = data_grouped.sort_values(['Life Ladder'],
+          ascending = False)
+#Identify the five happiest country
+print(sorted_data.index[:5])
+```
+
+<!-- Dot 3, lang: r, python ------------------------------------------------>
+
+```{block, Dot = 3, part = "Instruction", lang = "r"}
+**Finland**, **Denmark**, **Switzerland**, **Norway**, and **Iceland** were identified as the happiest country in a row from 2015 to 2019. In this Dot, the new dataset will create for these countries which name is `five_happiest`. As we can see in the top-five dataset, Iceland has no information for 2018.
+```
+
+```{block, Dot = 3, part = "Instruction", lang = "python"}
+**Finland**, **Denmark**, **Switzerland**, **Norway**, and **Iceland** were identified as the happiest country in a row from 2015 to 2019. In this Dot, the new dataset will create for these countries which name is `five_happiest`. As we can see in the top-five dataset, Iceland has no information for 2018.
+```
+
+```{r, Dot = 3, part = "Code", echo = T, eval = F}
+# Select New Dataset for five Happiest Country
+five_happiest = filter(data, Country.name %in% 
+                         as.vector(t(happiest_country[1:5,1])))
+```
+
+```{python, Dot = 3, part = "Code", echo = T, eval = F}
+# Select New Dataset for five Happiest Country
+five_happiest = data[(data['Country name'].isin(sorted_data.index[:5]))]
+```
+
+```{r, Dot = 3, part = "Result", echo = F, eval = T}
+# Select New Dataset for five Happiest Country
+five_happiest = filter(data, Country.name %in% 
+                         as.vector(t(happiest_country[1:5,1])))
+```
+
+```{python, Dot = 3, part = "Result", echo = F, eval = T}
+# Select New Dataset for five Happiest Country
+five_happiest = data[(data['Country name'].isin(sorted_data.index[:5]))]
+```
+
+<!-- Dot 4, lang: r, python ------------------------------------------------>
+
+```{block, Dot = 4, part = "Instruction", lang = "r"}
+The final Dot is to plot the trend of Life Ladder from 2015 to 2019. 
+The line plot shows that **Finland** has been increasing considerably and reached its peak in 2018.
+For **Switzerland** and **Denmark**, we can see an increasing trend like Finland. On the other hand,  **Iceland** has a slight fluctuation, and  **Norway** has a decreasing trend in this period.
+```
+
+```{block, Dot = 4, part = "Instruction", lang = "python"}
+The final Dot is to plot the trend of Life Ladder from 2015 to 2019. 
+The line plot shows that **Finland** has been increasing considerably and reached its peak in 2018.
+For **Switzerland** and **Denmark**, we can see an increasing trend like Finland. On the other hand,  **Iceland** has a slight fluctuation, and  **Norway** has a decreasing trend in this period.
+```
+
+```{r, Dot = 4, part = "Code", echo = T, eval = F}
+# Plot a catplot for the top-5 Happiest Country
+ggplot(data = five_happiest,
+       mapping = aes(x = year, y=Life.Ladder, 
+                     color=Country.name))+
+  geom_point(mapping = aes(),size=3)+
+  geom_line(mapping = aes())+
+  geom_path(size = 0.9)+
+  ggtitle('Top Happiest Country (2015-2019)')
+```
+
+```{python, Dot = 4, part = "Code", echo = T, eval = F}
+# Plot a catplot for the top-5 Happiest Country
+sns.catplot(data = five_happiest,
+            x ='year',
+            y = 'Life Ladder',
+            hue ='Country name',
+            kind = 'point').set(title =
+            'Top Happiest Country (2015-2019)')
+```
+
+```{r, Dot = 4, part = "Result", echo = F, eval = T}
+# Plot a catplot for the top-5 Happiest Country
+ggplot(data = five_happiest,
+       mapping = aes(x = year, y=Life.Ladder, 
+                     color=Country.name))+
+  geom_point(size=3)+
+  geom_line()+
+  geom_path(size = 0.9)+
+  ggtitle('Top Happiest Country (2015-2019)')
+```
+
+```{python, Dot = 4, part = "Result", echo = F, eval = T, warning = F}
+# Plot a catplot for the top-5 Happiest Country
+sns.catplot(data = five_happiest,
+            x ='year',
+            y = 'Life Ladder',
+            hue ='Country name',
+            kind = 'point').set(title =
+            'Top Happiest Country (2015-2019)')
+plt.show()
+```

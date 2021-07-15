@@ -1,0 +1,47 @@
+{
+  "file_name": ["how-does-finland-become-the-happiest-country-"],
+  "dir_name": ["D006-2021-07-14-how-does-finland-become-the-happiest-country-"],
+  "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+  "link": ["posts/Dotto/D006-2021-07-14-how-does-finland-become-the-happiest-country-/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [6],
+  "dotto_label": ["D006"],
+  "dotto_id": ["0e9f3390-e4f8-11eb-b8c2-acbc32baed85"],
+  "title": ["How does Finland become the happiest country"],
+  "description": ["Using the World Happiness dataset, we aim to find the most happiest country in the period of 2015-2019.\n"],
+  "author": [
+    {
+      "name": ["Mahyar Sharifi"],
+      "occupation": ["Internship"],
+      "affiliation": ["DataMotto"],
+      "url": ["https://www.linkedin.com/in/mahyar-sharifi-06126616a"],
+      "img": ["Mahyar.jpeg"],
+      "lang": ["python", "r"],
+      "profile_img_for_Dotto": ["./how-does-finland-become-the-happiest-country-_files/figure-html/Mahyar.jpeg"],
+      "profile_img": ["./posts/Dotto/D006-2021-07-14-how-does-finland-become-the-happiest-country-/how-does-finland-become-the-happiest-country-_files/figure-html/Mahyar.jpeg"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": ["dplyr", "ggplot2"]
+    },
+    {
+      "lang": ["python"],
+      "pkgs": ["pandas", "seaborn"]
+    }
+  ],
+  "date": {
+    "created": ["2021-06-29"],
+    "last_updated": ["2021-06-29"]
+  },
+  "categories": ["Storyteller"],
+  "applications": ["Governance"],
+  "cover_image": ["Mahyar.jpg"],
+  "slug": {},
+  "output": ["DataMotto::Dotto"]
+}

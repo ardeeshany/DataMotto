@@ -1,0 +1,47 @@
+{
+  "file_name": ["simple-data-visualization"],
+  "dir_name": ["D005-2021-07-14-simple-data-visualization"],
+  "cover_image_url": ["https://datamotto.com/assets/img/logo.svg"],
+  "link": ["posts/Dotto/D005-2021-07-14-simple-data-visualization/index.html"],
+  "base_url": ["https://datamotto.com"],
+  "social_networks_datamotto": {
+    "twitter": ["https://twitter.com/DataMotto"],
+    "linkedin": ["https://www.linkedin.com/company/datamotto"]
+  },
+  "dotto_number": [5],
+  "dotto_label": ["D005"],
+  "dotto_id": ["d58dd526-e4f6-11eb-b8c2-acbc32baed85"],
+  "title": ["Simple Data Visualization"],
+  "description": ["We've broken the chart types into three broad categories to help with this.\n"],
+  "author": [
+    {
+      "name": ["Mohammad Hossein Malekpour"],
+      "occupation": ["Data Scientist"],
+      "affiliation": ["DataMotto"],
+      "url": ["https://www.linkedin.com/in/mohammadhossein-malekpour/"],
+      "img": ["MalekpourAvatar.jpeg"],
+      "lang": ["python", "R"],
+      "profile_img_for_Dotto": ["./simple-data-visualization_files/figure-html/MalekpourAvatar.jpeg"],
+      "profile_img": ["./posts/Dotto/D005-2021-07-14-simple-data-visualization/simple-data-visualization_files/figure-html/MalekpourAvatar.jpeg"]
+    }
+  ],
+  "tech": [
+    {
+      "lang": ["r"],
+      "pkgs": ["ggplot2", "dplyr"]
+    },
+    {
+      "lang": ["python"],
+      "pkgs": ["seaborn", "pandas"]
+    }
+  ],
+  "date": {
+    "created": ["2021-06-22"],
+    "last_updated": ["2021-06-22"]
+  },
+  "categories": ["Visualizer"],
+  "applications": ["Other"],
+  "cover_image": {},
+  "slug": ["simple-data-visualization"],
+  "output": ["DataMotto::Dotto"]
+}

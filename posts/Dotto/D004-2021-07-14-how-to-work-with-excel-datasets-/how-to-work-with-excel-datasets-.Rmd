@@ -1,0 +1,414 @@
+---
+title: "How to work with excel datasets?"
+description: |
+  In this Dotto, we want to explain about importing and data wrangling at importing time in excel.
+author:
+  - name: "Mohsen Jalali"
+    occupation: "Data Scientist"
+    affiliation: "DataMotto"
+    url: "mohsenjalali.ir"
+    img: "Mohsen-Jalali.jpeg"
+    lang: "Python"
+tech:
+  - lang: r
+    pkgs: ["readxl","janitor","dplyr","lubridate"]
+  - lang: python
+    pkgs: ["pandas", "pyjanitor"]
+date:
+  created: "2021-07-02"
+  last_updated: "2021-07-02"
+categories: ["Importing"]
+applications: ["General"]
+cover_image: NULL
+slug: "how-to-import-excel-datasets-"
+output: DataMotto::Dotto
+---
+
+```{r DataMotto, echo=FALSE}
+DataMotto::use_Dotto()
+```
+
+<!-- Dot 1, lang: r ------------------------------------------------>
+
+```{block, Dot = 1, part = "Instruction", lang = "r"}
+- **Description About Package**
+  - The [readxl package](https://readxl.tidyverse.org/) makes it easy to get data out of Excel     and into R.
+  - [dplyr](https://dplyr.tidyverse.org/) is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges
+  - The [janitor package](https://cran.r-project.org/web/packages/janitor/index.html) is a R package that has simple functions for examining and cleaning dirty data.
+  - Date-time data can be frustrating to work with in R. R commands for date-times are generally unintuitive and change depending on the type of date-time object being used. [Lubridate](https://lubridate.tidyverse.org/) makes it easier to do the things R does with date-times and possible to do the things R does not.
+- **Description About Dataset**
+In this Dotto we use [COVID-19 dataset](https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx).
+- **Prepare Environment**
+  Install packages with below commands:
+  `install.packages("readxl")`
+  
+  `install.packages("lubridate")`
+  
+  `install.packages("dplyr")`
+  
+  `install.packages("janitor")`
+
+```
+
+```{block, Dot = 1, part = "Instruction", lang = "python"}
+- **Description About Package**
+  - [pandas](https://pandas.pydata.org/) is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.
+  - [pyjanitor](https://pyjanitor.readthedocs.io/) is a project that extends Pandas with a verb-based API, providing convenient data cleaning routines for repetitive tasks.
+- **Description About Dataset**
+In this Dotto we use [COVID-19 dataset](https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx).
+- **Prepare Environment**
+  Install packages with below commands:
+  `pip install pandas`
+  `pip install pyjanitor`
+
+```
+
+```{r, Dot = 1, part = "Code", echo = T, eval = F, }
+library(readxl)
+library(janitor)
+library(dplyr)
+library(lubridate)
+# Now check that libraries loaded or not
+if('readxl' %in% (.packages()) &&
+   'janitor' %in% (.packages()) &&
+   'dplyr' %in% (.packages()) &&
+   'lubridate' %in% (.packages())
+   )
+  print("all library have been loaded")
+```
+
+```{python, Dot = 1, part = "Code", echo = T, eval = F, }
+import pandas as pd
+import janitor
+# Now check that libraries loaded or not
+if ("pandas" in sys.modules) and ("janitor" in sys.modules):
+  print("all modules have been loaded")
+```
+
+```{r, Dot = 1, part = "Result", echo = F, eval = T}
+library(readxl)
+library(janitor)
+library(dplyr)
+library(lubridate)
+# Now check that libraries loaded or not
+if('readxl' %in% (.packages()) &&
+   'janitor' %in% (.packages()) &&
+   'dplyr' %in% (.packages()) &&
+   'lubridate' %in% (.packages())
+   )
+  print("all library have been loaded")
+```
+
+```{python, Dot = 1, part = "Result", echo = F, eval = T}
+import pandas as pd
+import janitor
+# Now check that libraries loaded or not
+if ("pandas" in sys.modules) and ("janitor" in sys.modules):
+  print("all modules have been loaded")
+```
+
+<!--------------------Dot2-------------------------->
+
+```{block, Dot = 2, part = "Instruction", lang = "r"}
+- **Simple Importing**
+we can simple import excel file with `read_excel()` method and with `head()` method see the specific row of data.
+```
+
+```{block, Dot = 2, part = "Instruction", lang = "python"}
+- **Simple Importing**
+we can simple import excel file with `read_excel()` method and with `head()` method see the specific row of data.
+```
+
+
+```{r, Dot = 2, part = "Code", echo = T, eval = F, }
+# read_excel() function get path of our data set to load it in our project
+covidDatasetLocal <- read_excel('./COVID-19-Dataset.xlsx')
+# print 5 first rows of our data
+glimpse(head(covidDatasetLocal,5))
+```
+
+```{python, Dot = 2, part = "Code", echo = T, eval = F,}
+# read_excel() function get path of our data set to load it in our project
+covidDatasetLocal = pd.read_excel(
+    './COVID-19-Dataset.xlsx')
+# print 5 first rows of our data
+covidDatasetLocal.head(5).transpose()
+```
+
+```{r, Dot = 2, part = "Result", echo = F, eval = T}
+library(readxl)
+covidDatasetLocal <- read_excel('./COVID-19-Dataset.xlsx')
+glimpse(head(covidDatasetLocal,5))
+```
+
+```{python, Dot = 2, part = "Result", echo = F, eval = T}
+import pandas as pd
+covidDatasetLocal = pd.read_excel(
+    './COVID-19-Dataset.xlsx')
+covidDatasetLocal.head(5).transpose()
+```
+
+<!--------------Dot3---------------------------->
+```{block, Dot = 3, part = "Instruction", lang = "r"}
+- **Online Importing**
+Now we want to import an online excel file. In R language we first download the file as a temporary file and then import the excel file in the project.
+```
+
+```{block, Dot = 3, part = "Instruction", lang = "python"}
+- **Online Importing**
+Now we want to import an online excel file. In Python language, pandas library handles this by itself. we set the URL of the excel file then pandas download this file and import it to the project.
+```
+
+```{r, Dot = 3, part = "Code", echo = T, eval = F,}
+# initial temporary file with xlsx extension
+tempFile <- tempfile(fileext = '.xlsx')
+# online excel file URL
+excelFileURL <- 'https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx'
+# download excel file 
+download.file(excelFileURL, destfile = tempFile, mode = 'wb')
+# import excel file in to our project
+covidDatasetOnline <- read_excel(tempFile)
+glimpse(head(covidDatasetLocal,5))
+```
+
+```{python, Dot = 3, part = "Code", echo = T, eval = F,}
+# online excel file URL
+excelFileURL = 'https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx'
+# download and import excel file 
+covidDatasetOnline = pd.read_excel(excelFileURL)
+covidDatasetLocal.head(5).transpose()
+```
+
+```{r, Dot = 3, part = "Result", echo = F, eval = T}
+tempFile <- tempfile(fileext = '.xlsx')
+excelFileURL <- 'https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx'
+download.file(excelFileURL, destfile = tempFile, mode = 'wb')
+covidDatasetOnline <- read_excel(tempFile)
+glimpse(head(covidDatasetLocal,5))
+```
+
+```{python, Dot = 3, part = "Result", echo = F, eval = T}
+excelFileURL = 'https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx'
+# download and import excel file 
+covidDatasetOnline = pd.read_excel(excelFileURL)
+covidDatasetLocal.head(5).transpose()
+```
+
+<!-------------------- Dot4 ---------------------------->
+
+```{block, Dot = 4, part = "Instruction", lang = "r"}
+- **Advance Importing**
+In some situations, we want to import some columns, import specific sheets, or load a specific number of data. Now we want to handle this when we importing the excel file.
+```
+
+```{block, Dot = 4, part = "Instruction", lang = "python"}
+- **Advance Importing**
+In some situations, we want to import some columns, import specific sheets, or load a specific number of data. Now we want to handle this when we importing the excel file.
+```
+
+```{r, Dot = 4, part = "Code", echo = T, eval = F,}
+# col_names parameter if true mean that each column has name or label and read_excel handle this
+# range parameter gets a range of columns that we want to import to our project. Now we skip the A column because the range starts from B.
+# sheet parameter get index of sheet that we want to import. sheet index start from 1
+# n_max parameter get maximum number of row that you want to load 
+covidDatasetLocal <- read_excel('./COVID-19-Dataset.xlsx',
+                                col_names = TRUE,
+                                range = cell_cols("B:L"),
+                                sheet = 1,
+                                n_max = 5)
+glimpse(head(covidDatasetLocal,5))
+```
+
+```{python, Dot = 4, part = "Code", echo = T, eval = F,}
+# default value of header parameter is 0 and tell to python that first row is label of columns  
+# usecols parameter gets a range of columns that we want to import to our project. Now we skip the A column because the range starts from B.
+# we can get specific sheet of excel file with sheet_name parameter this parameter can get int number(0-indexed), list, None(all sheets). The default value is 0 index(first sheet)
+# nrows parameter get maximum number of row that you want to load
+covidDatasetLocal = pd.read_excel(
+    './COVID-19-Dataset.xlsx',
+    usecols = 'B:L', 
+    header = 0,
+    sheet_name = 0,
+    nrows = 5)
+covidDatasetLocal.head(5).transpose()
+```
+
+```{r, Dot = 4, part = "Result", echo = F, eval = T}
+covidDatasetLocal <- read_excel('./COVID-19-Dataset.xlsx',
+                                col_names = TRUE,
+                                range = cell_cols("B:L"),
+                                sheet = 1,
+                                n_max = 5)
+glimpse(head(covidDatasetLocal,5))
+```
+
+```{python, Dot = 4, part = "Result", echo = F, eval = T}
+covidDatasetLocal = pd.read_excel(
+    './COVID-19-Dataset.xlsx',
+    usecols = 'B:L', 
+    header = 0,
+    sheet_name = 0,
+    nrows = 5)
+covidDatasetLocal.head(5).transpose()
+```
+
+<!-------------------Dot5-------------------------->
+
+```{block, Dot = 5, part = "Instruction", lang = "r"}
+- **Combine Multiple Columns Into One Column**
+In our data set, we have a day, month, and year separately; Now we need to combine them as a single column and drop additional columns.
+```
+
+```{block, Dot = 5, part = "Instruction", lang = "python"}
+- **Combine Multiple Columns Into One Column**
+In our data set, we have a day, month, and year separately; Now we need to combine them as a single column and drop additional columns.
+```
+
+```{r, Dot = 5, part = "Code", echo = T, eval = F,}
+covidDatasetLocal <- read_excel('./COVID-19-Dataset.xlsx') %>%
+  mutate(New_Col_Date = make_date(year,month,day)) %>%
+  select(-year,-month,-day)
+glimpse(head(covidDatasetLocal,5))
+```
+
+```{python, Dot = 5, part = "Code", echo = T, eval = F,}
+covidDatasetLocal = pd.read_excel(
+    './COVID-19-Dataset.xlsx', 
+    parse_dates = {'New_Col_Date': ['day','month', 'year']})
+covidDatasetLocal.head(5).transpose()
+```
+
+```{r, Dot = 5, part = "Result", echo = F, eval = T}
+covidDatasetLocal <- read_excel('./COVID-19-Dataset.xlsx') %>%
+  mutate(New_Col_Date = make_date(year,month,day)) %>%
+  select(-year,-month,-day)
+glimpse(head(covidDatasetLocal,5))
+```
+
+```{python, Dot = 5, part = "Result", echo = F, eval = T}
+covidDatasetLocal = pd.read_excel(
+    './COVID-19-Dataset.xlsx', 
+    parse_dates = {'New_Col_Date': ['day','month', 'year']})
+covidDatasetLocal.head(5).transpose()
+```
+
+<!--------------------------Dot6--------------------->
+
+```{block, Dot = 6, part = "Instruction", lang = "r"}
+- **Work With Date in Time stamp format**
+Maybe you saw data set that date column was in seconds format(or in another format). In this situation we should convert date column to valid format and then work with that data set. In our data set we don't have this problem so we convert our date to `second` and work with that.
+```
+
+```{block, Dot = 6, part = "Instruction", lang = "python"}
+- **Work With Date in Time stamp format**
+Maybe you saw data set that date column was in seconds format(or in another format). In this situation we should convert date column to valid format and then work with that data set. In our data set we don't have this problem so we convert our date to `second` and work with that.
+```
+
+```{r, Dot = 6, part = "Code", echo = T, eval = F,}
+# Our data set
+covidDatasetLocal <- read_excel('./test.xlsx',  range = cell_cols(c("B")))
+glimpse(head(covidDatasetLocal,5))
+# Fix date columns
+covidDatasetLocal <- read_excel('./test.xlsx',  range = cell_cols(c("B"))) %>%
+  mutate(dateRep=as_datetime(dateRep))
+glimpse(head(covidDatasetLocal,5))
+```
+
+```{python, Dot = 6, part = "Code", echo = T, eval = F,}
+# Our data set
+covidDatasetLocal = pd.read_excel(
+    './test.xlsx',
+    usecols = ['dateRep'])
+covidDatasetLocal.head(5).transpose()
+# Fix date columns
+custom_date_parser = lambda x: pd.Timestamp(x, unit='s')
+covidDatasetLocal = pd.read_excel(
+    './test.xlsx',
+    usecols = ['dateRep'],
+    parse_dates = ['dateRep'],
+    date_parser = custom_date_parser)
+covidDatasetLocal.head(5).transpose()
+```
+
+```{r, Dot = 6, part = "Result", echo = F, eval = T}
+# Our data set
+covidDatasetLocal <- read_excel('./test.xlsx',  range = cell_cols(c("B")))
+glimpse(head(covidDatasetLocal,5))
+# Fix date columns
+covidDatasetLocal <- read_excel('./test.xlsx',  range = cell_cols(c("B"))) %>%
+  mutate(dateRep=as_datetime(dateRep))
+glimpse(head(covidDatasetLocal,5))
+```
+
+```{python, Dot = 6, part = "Result", echo = F, eval = T}
+# Our data set
+covidDatasetLocal = pd.read_excel(
+    './test.xlsx',
+    usecols = ['dateRep'])
+covidDatasetLocal.head(5).transpose()
+# Fix date columns
+custom_date_parser = lambda x: pd.Timestamp(x, unit='s')
+covidDatasetLocal = pd.read_excel(
+    './test.xlsx',
+    usecols = ['dateRep'],
+    parse_dates = ['dateRep'],
+    date_parser = custom_date_parser)
+covidDatasetLocal.head(5).transpose()
+```
+
+<!---------------------Dot7--------------------->
+
+```{block, Dot = 7, part = "Instruction", lang = "r"}
+- **Clean Columns' Name**
+Sometimes you should work with data set that the name of the columns not standard or is dirty for example:
+- `age of student`
+This name has space between words but it is correct when you want to work with that and it should be like `age_of_student`. Now we want to solve this problem. For this purpose we use `janitor` library.
+```
+
+```{block, Dot = 7, part = "Instruction", lang = "python"}
+- **Clean Columns' Name**
+Sometimes you should work with data set that the name of the columns not standard or is dirty for example:
+- `age of student`
+This name has space between words but it is correct when you want to work with that and it should be like `age_of_student`. Now we want to solve this problem. For this purpose we use `pyjanitor` library.
+```
+
+```{r, Dot = 7, part = "Code", echo = T, eval = F,}
+covidDatasetLocal <- read_excel('./COVID-19-Dataset.xlsx' ) %>%
+  clean_names(.,'snake')
+# Print our cleaned columns' name
+print(names(covidDatasetLocal))
+```
+
+```{python, Dot = 7, part = "Code", echo = T, eval = F,}
+covidDatasetLocal = pd.read_excel(
+    './COVID-19-Dataset.xlsx').clean_names(
+        case_type='snake',
+        preserve_original_columns=True,
+        truncate_limit=25
+    )
+# Print our cleaned columns' name
+print(covidDatasetLocal.columns)
+# Print our original columns' name
+print(covidDatasetLocal.original_columns)
+```
+
+```{r, Dot = 7, part = "Result", echo = F, eval = T}
+covidDatasetLocal <- read_excel('./COVID-19-Dataset.xlsx' ) %>%
+  clean_names(.,'snake')
+# Print our cleaned columns' name
+print(names(covidDatasetLocal))
+```
+
+```{python, Dot = 7, part = "Result", echo = F, eval = T}
+covidDatasetLocal = pd.read_excel(
+    './COVID-19-Dataset.xlsx').clean_names(
+        case_type='snake',
+        preserve_original_columns=True,
+        truncate_limit=25
+    )
+# Print our cleaned columns' name
+print(covidDatasetLocal.columns)
+# Print our original columns' name
+print(covidDatasetLocal.original_columns)
+```
+
