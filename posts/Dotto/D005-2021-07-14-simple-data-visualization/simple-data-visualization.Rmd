@@ -7,7 +7,7 @@ author:
     occupation: "Data Scientist"
     affiliation: "DataMotto"
     url: "https://www.linkedin.com/in/mohammadhossein-malekpour/"
-    img: "MalekpourAvatar.jpg"
+    img: "MalekpourAvatar.jpeg"
     lang: ["python", "R"]
 tech:
   - lang: r

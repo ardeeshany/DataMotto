@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+    
+    
+    <title>Simple Data Visualization</title>
+
+        <script src="simple-data-visualization_files/header-attrs-2.7.3/header-attrs.js"></script>
+        <script src="simple-data-visualization_files/jquery-1.11.3/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="simple-data-visualization_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="simple-data-visualization_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+        <script src="simple-data-visualization_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+        <script src="simple-data-visualization_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+        <style>h1 {font-size: 34px;}
+               h1.title {font-size: 38px;}
+               h2 {font-size: 30px;}
+               h3 {font-size: 24px;}
+               h4 {font-size: 18px;}
+               h5 {font-size: 16px;}
+               h6 {font-size: 12px;}
+               code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+               pre:not([class]) { background-color: white }</style>
+        <script src="simple-data-visualization_files/navigation-1.1/tabsets.js"></script>
+        
+          <meta property="og:title" content="Simple Data Visualization" />
+          <meta property="og:type" content="article">
+          <meta property="og:description" content="We've broken the chart types into three broad categories to help with this.
+        " />
+          <meta property="og:url" content="https://datamotto.com/posts/dotto/D005-2021-07-14-simple-data-visualization/" />
+          <meta property="og:locale" content="en_US">
+          <meta property="og:site_name" content="Data Motto">
+          <meta property="og:image" content="https://datamotto.com/assets/img/logo.svg" />
+          
+        
+          <meta property="twitter:card" content="summary_large_image">
+          <meta property="twitter:title" content="Simple Data Visualization">
+          <meta property="twitter:description" content="We've broken the chart types into three broad categories to help with this.
+        ">
+          <meta property="twitter:url" content="https://datamotto.com/posts/dotto/D005-2021-07-14-simple-data-visualization/">
+          <meta property="twitter:image" content="https://datamotto.com/assets/img/logo.svg">
+          
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZMEMQM0Y2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZMEMQM0Y2');
+</script>
+<link rel="shortcut icon" href="../../../assets/img/favicon/favicon-32x32.png" />
+<link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Brands.css" />
+<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Free.css" />
+<link rel="stylesheet" href="../../../assets/css/icomoon.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
+<link rel="stylesheet" href="../../../assets/fonts/fontawesome-all.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/font-awesome.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/ionicons.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/fontawesome5-overrides.min.css" />
+<link rel="stylesheet" href="../../../assets/css/Footer-Basic.css" />
+<link rel="stylesheet" href="../../../assets/css/home-cards.css" />
+<link rel="stylesheet" href="../../../assets/css/site.css" />
+<link rel="stylesheet" href="../../../assets/css/style.css" />
+<link rel="stylesheet" href="../../../assets/css/styles.css" />
+<link rel="stylesheet" href="../../../assets/css/Team-Boxed.css" />
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../../../assets/highlight/styles/dracula.css" />
+<script src="../../../assets/highlight/highlight.pack.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="../../../assets/js/vue.js"></script>
+
+</head>
+
+<body style="height: 100vh;">
+<div class="d-flex flex-column" id="all_page">
+
+<!-- Body Header ------------------------------>
+
+<section id="dotto-row-header">
+<div class="row dotto-header">
+
+<div class="col-1 d-flex justify-content-start align-items-center header-logo">
+<a href="/" class="text-muted"><img id="logo" src="../../../assets/img/logo.svg" /></a>
+</div>
+
+
+<div class="col-6 col-sm-7">
+<div class="header-title">
+<h6 class="dotto-header-maintitle">
+Simple Data Visualization
+</h6>
+<p class="dotto-header-description">
+We've broken the chart types into three broad categories to help with this.
+
+</p>
+<p class="dotto-header-tags">
+<i class="fas fa-tags"></i>&nbsp; Visualizer
+</p>
+</div>
+</div>
+
+
+<div class="col-1 d-flex justify-content-center align-items-center">
+<button class="btn btn-outline-light btn-block header-like-btn" style="background-color:white" type="button">
+<!-- LikeBtn.com BEGIN -->
+<span class="likebtn-wrapper" data-theme="custom" data-btn_size="30" data-f_size="18" data-icon_size="30" data-icon_l="hrt13" data-icon_l_c="rgba(255,121,198,0.68)" data-icon_l_c_v="#ff79c6" data-icon_d_c_v="green" data-label_c="red" data-label_c_v="yellow" data-bg_c="#ffffff" data-bg_c_v="#ffffff" data-brdr_c="#ffffff" data-label_fs="r" data-i18n_like="  " data-identifier="d58dd526-e4f6-11eb-b8c2-acbc32baed85" data-dislike_enabled="false" data-site_id="604e13966fd08bbf03672c5b" data-counter_clickable="true" data-popup_disabled="true" data-share_enabled="false" data-tooltip_enabled="false"></span>
+<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+<!-- LikeBtn.com END -->
+</button>
+</div>
+
+
+<div class="col-3 d-flex justify-content-end dotto-header-user">
+
+<div class="d-flex flex-column mx-3">
+<div class="row">
+<div @click="authorOneModal = true" type="button"
+class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center dotto-header-user-icon">
+<img class="img-fluid user-image lang-color-r mx-auto" src="simple-data-visualization_files/figure-html/MalekpourAvatar.jpeg" />
+</div>
+</div>
+<h6 class="d-flex justify-content-end dotto-header-user-name mx-auto">
+Mohammad Hossein Malekpour
+</h6>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<div v-if="authorOneModal" class="modal">
+<!-- Modal content -->
+<div class="modal-content">
+<span @click="authorOneModal = false" class="close">&times;</span>
+<div class="card" style="max-width: 540px">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="simple-data-visualization_files/figure-html/MalekpourAvatar.jpeg" class="img-fluid" />
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<ins><a href="https://www.linkedin.com/in/mohammadhossein-malekpour/" class="text-dark" target="_blank"><h3 class="card-title mb-0">Mohammad Hossein Malekpour</h3></a></ins>
+<div class="card-text fs-4 my-2">Data Scientist, DataMotto</div>
+<small class="card-text text-muted my-2 fs-4">Language: python, R</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div v-show="commentOpen" class="modal overflow-auto">
+<div class="modal-comment overflow-auto">
+<span @click="commentOpen = false" class="close">&times;</span>
+<div id="disqus_thread"></div>
+</div>
+</div>
+
+
+<section>
+<div id="dotto-row-info" class="d-flex">
+
+<div class="col-4 d-flex flex-grow-0 justify-content-start align-items-center align-items-xl-center">
+<div class="d-flex mx-4 justify-content-around align-items-center bg-social-icons">
+
+<div>
+<i type="button" @click="activeLang = 'r'"
+class="fab fa-r-project mx-2"
+:class="{'lang-color-r': activeLang === 'r'}" >
+  </i>
+</div>
+
+
+<div>
+<i type="button" @click="activeLang = 'python'"
+class="fab fa-python mx-2"
+:class="{'lang-color-python': activeLang === 'python'}" >
+  </i>
+</div>
+
+</div>
+</div>
+
+
+<div
+class="col-8 d-flex justify-content-end align-items-center" style="padding-right: 15px">
+<!--
+<div class="d-flex justify-content-center align-items-center align-content-center bg-social-icons"
+style="margin-right: 7px; width: 146.3px">
+<span class="d-flex justify-content-lg-center align-items-lg-center" style="width: 133.7px">
+<i class="fas fa-music" style="padding-right: 12px"> </i>
+</span>
+</div>
+---->
+<div class="d-flex justify-content-around align-items-center bg-social-icons">
+<a href="https://twitter.com/share?text=Simple Data Visualization&amp;url=https://datamotto.com/posts/Dotto/D005-2021-07-14-simple-data-visualization/index.html&amp;hashtags=rstats,Python" target="_blank" class="text-reset">
+<i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://datamotto.com/posts/Dotto/D005-2021-07-14-simple-data-visualization/index.html" target="_blank" class="text-reset">
+<i class="fa fa-linkedin-square"></i></a>
+</div>
+<div class="text-nowrap d-flex justify-content-around align-items-center bg-social-icons bg-bugs-icons">
+<a href="https://github.com/DataMotto/DataMotto/blob/master/posts/Dotto/D005-2021-07-14-simple-data-visualization/simple-data-visualization.Rmd" target="_blank" class="text-reset">
+<i class="fab fa-github header-social-icon"></i></a>
+<a href="https://github.com/DataMotto/DataMotto/issues/new?assignees=&labels=bug&template=bug_report.md&title=" target="_blank" class="text-reset">
+<i class="fas fa-bug header-social-icon"></i></a>
+</div>
+</div>
+
+</div>
+</section>
+
+
+
+
+<section v-if="activeDotto === '1'"
+class="text-left d-flex flex-row flex-grow-1 flex-wrap" id="dotto-row-main">
+<div class="col-12 col-lg-1" id="dotto-main-dots">
+
+<button type="button" @click="activeMotto = '1'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '1', 'btn-outline-light': activeMotto !== '1'}">1</button>
+
+
+<button type="button" @click="activeMotto = '2'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '2', 'btn-outline-light': activeMotto !== '2'}">2</button>
+
+
+<button type="button" @click="activeMotto = '3'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '3', 'btn-outline-light': activeMotto !== '3'}">3</button>
+
+
+<button type="button" @click="activeMotto = '4'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '4', 'btn-outline-light': activeMotto !== '4'}">4</button>
+
+
+<button type="button" @click="activeMotto = '5'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '5', 'btn-outline-light': activeMotto !== '5'}">5</button>
+
+
+<button type="button" @click="activeMotto = '6'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '6', 'btn-outline-light': activeMotto !== '6'}">6</button>
+
+</div>
+
+<!-- Dot 1, lang: r, python ------------------------------------------------>
+
+<div v-if="activeMotto === '1'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p><a href="https://ggplot2.tidyverse.org/">ggplot2</a> is a system for declaratively creating graphics, based on <a href="https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448/ref=as_li_ss_tl">The Grammar of Graphics</a>. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details. Since it’s not always easy to decide how to best tell the story behind your data, we’ve broken the chart types into three broad categories to help with this. - <strong>Trends:</strong> A trend is defined as a pattern of change. - <code>geom_line</code> - <strong>Relationship:</strong> Understand relationships between variables in your data. - <code>geom_bar</code> - <code>geom_tile</code> - <code>geom_point</code> - <code>geom_smooth</code> - <strong>Distribution:</strong> We visualize distributions to show the possible values that we can expect to see in a variable, along with how likely they are. - <code>geom_histogram</code> - <code>geom_density</code> - <code>geom_vline</code></p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><a href="https://seaborn.pydata.org/index.html#">seaborn</a> is a Python data visualization library based on <a href="https://matplotlib.org/">matplotlib</a>. It provides a high-level interface for drawing attractive and informative statistical graphics. Since it’s not always easy to decide how to best tell the story behind your data, we’ve broken the chart types into three broad categories to help with this. - <strong>Trends:</strong> A trend is defined as a pattern of change. - <code>sns.lineplot</code> - <strong>Relationship:</strong> Understand relationships between variables in your data. - <code>sns.barplot</code> - <code>sns.heatmap</code> - <code>sns.scatterplot</code> - <code>sns.regplot</code> - <code>sns.lmplot</code> - <code>sns.swarmplot</code> - <strong>Distribution:</strong> We visualize distributions to show the possible values that we can expect to see in a variable, along with how likely they are. - <code>sns.histplot</code> - <code>sns.kdeplot</code> - <code>sns.jointplot</code></p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># There are a few lines of code that you&#39;ll need to run at the top of every notebook to set up your coding environment.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)   <span class="co"># Read tabular data.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)   <span class="co"># General data frame manipulation.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># Flexible plotting.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Path of the file to read</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>auto_filepath <span class="ot">&lt;-</span> <span class="st">&quot;data/Automobile_data.csv&quot;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the file into a variable Automobile_data.csv</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># The dataset consist of data From 1985 Ward&#39;s Automotive Yearbook.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>auto <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(auto_filepath)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the five random rows of the data</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">sample_n</span>(auto, <span class="dv">5</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb2"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># There are a few lines of code that you&#39;ll need to run at the top of every notebook to set up your coding environment.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pd.plotting.register_matplotlib_converters()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Path of the file to read</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>auto_filepath <span class="op">=</span> <span class="st">&quot;data/Automobile_data.csv&quot;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the file into a variable Automobile_data.csv</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># The dataset consist of data From 1985 Ward&#39;s Automotive Yearbook.</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>auto <span class="op">=</span> pd.read_csv(auto_filepath)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the five random rows of the data</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>auto.sample(<span class="dv">5</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+symboling
+</th>
+<th style="text-align:left;">
+normalized.losses
+</th>
+<th style="text-align:left;">
+make
+</th>
+<th style="text-align:left;">
+fuel.type
+</th>
+<th style="text-align:left;">
+aspiration
+</th>
+<th style="text-align:left;">
+num.of.doors
+</th>
+<th style="text-align:left;">
+body.style
+</th>
+<th style="text-align:left;">
+drive.wheels
+</th>
+<th style="text-align:left;">
+engine.location
+</th>
+<th style="text-align:right;">
+wheel.base
+</th>
+<th style="text-align:right;">
+length
+</th>
+<th style="text-align:right;">
+width
+</th>
+<th style="text-align:right;">
+height
+</th>
+<th style="text-align:right;">
+curb.weight
+</th>
+<th style="text-align:left;">
+engine.type
+</th>
+<th style="text-align:left;">
+num.of.cylinders
+</th>
+<th style="text-align:right;">
+engine.size
+</th>
+<th style="text-align:left;">
+fuel.system
+</th>
+<th style="text-align:left;">
+bore
+</th>
+<th style="text-align:left;">
+stroke
+</th>
+<th style="text-align:right;">
+compression.ratio
+</th>
+<th style="text-align:left;">
+horsepower
+</th>
+<th style="text-align:left;">
+peak.rpm
+</th>
+<th style="text-align:right;">
+city.mpg
+</th>
+<th style="text-align:right;">
+highway.mpg
+</th>
+<th style="text-align:left;">
+price
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+186
+</td>
+<td style="text-align:left;">
+porsche
+</td>
+<td style="text-align:left;">
+gas
+</td>
+<td style="text-align:left;">
+std
+</td>
+<td style="text-align:left;">
+two
+</td>
+<td style="text-align:left;">
+hatchback
+</td>
+<td style="text-align:left;">
+rwd
+</td>
+<td style="text-align:left;">
+front
+</td>
+<td style="text-align:right;">
+94.5
+</td>
+<td style="text-align:right;">
+168.9
+</td>
+<td style="text-align:right;">
+68.3
+</td>
+<td style="text-align:right;">
+50.2
+</td>
+<td style="text-align:right;">
+2778
+</td>
+<td style="text-align:left;">
+ohc
+</td>
+<td style="text-align:left;">
+four
+</td>
+<td style="text-align:right;">
+151
+</td>
+<td style="text-align:left;">
+mpfi
+</td>
+<td style="text-align:left;">
+3.94
+</td>
+<td style="text-align:left;">
+3.11
+</td>
+<td style="text-align:right;">
+9.5
+</td>
+<td style="text-align:left;">
+143
+</td>
+<td style="text-align:left;">
+5500
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:left;">
+22018
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+168
+</td>
+<td style="text-align:left;">
+nissan
+</td>
+<td style="text-align:left;">
+gas
+</td>
+<td style="text-align:left;">
+std
+</td>
+<td style="text-align:left;">
+two
+</td>
+<td style="text-align:left;">
+hardtop
+</td>
+<td style="text-align:left;">
+fwd
+</td>
+<td style="text-align:left;">
+front
+</td>
+<td style="text-align:right;">
+95.1
+</td>
+<td style="text-align:right;">
+162.4
+</td>
+<td style="text-align:right;">
+63.8
+</td>
+<td style="text-align:right;">
+53.3
+</td>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:left;">
+ohc
+</td>
+<td style="text-align:left;">
+four
+</td>
+<td style="text-align:right;">
+97
+</td>
+<td style="text-align:left;">
+2bbl
+</td>
+<td style="text-align:left;">
+3.15
+</td>
+<td style="text-align:left;">
+3.29
+</td>
+<td style="text-align:right;">
+9.4
+</td>
+<td style="text-align:left;">
+69
+</td>
+<td style="text-align:left;">
+5200
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:left;">
+8249
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+?
+</td>
+<td style="text-align:left;">
+bmw
+</td>
+<td style="text-align:left;">
+gas
+</td>
+<td style="text-align:left;">
+std
+</td>
+<td style="text-align:left;">
+four
+</td>
+<td style="text-align:left;">
+sedan
+</td>
+<td style="text-align:left;">
+rwd
+</td>
+<td style="text-align:left;">
+front
+</td>
+<td style="text-align:right;">
+103.5
+</td>
+<td style="text-align:right;">
+189.0
+</td>
+<td style="text-align:right;">
+66.9
+</td>
+<td style="text-align:right;">
+55.7
+</td>
+<td style="text-align:right;">
+3230
+</td>
+<td style="text-align:left;">
+ohc
+</td>
+<td style="text-align:left;">
+six
+</td>
+<td style="text-align:right;">
+209
+</td>
+<td style="text-align:left;">
+mpfi
+</td>
+<td style="text-align:left;">
+3.62
+</td>
+<td style="text-align:left;">
+3.39
+</td>
+<td style="text-align:right;">
+8.0
+</td>
+<td style="text-align:left;">
+182
+</td>
+<td style="text-align:left;">
+5400
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:left;">
+30760
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+115
+</td>
+<td style="text-align:left;">
+mazda
+</td>
+<td style="text-align:left;">
+gas
+</td>
+<td style="text-align:left;">
+std
+</td>
+<td style="text-align:left;">
+four
+</td>
+<td style="text-align:left;">
+hatchback
+</td>
+<td style="text-align:left;">
+fwd
+</td>
+<td style="text-align:left;">
+front
+</td>
+<td style="text-align:right;">
+98.8
+</td>
+<td style="text-align:right;">
+177.8
+</td>
+<td style="text-align:right;">
+66.5
+</td>
+<td style="text-align:right;">
+55.5
+</td>
+<td style="text-align:right;">
+2425
+</td>
+<td style="text-align:left;">
+ohc
+</td>
+<td style="text-align:left;">
+four
+</td>
+<td style="text-align:right;">
+122
+</td>
+<td style="text-align:left;">
+2bbl
+</td>
+<td style="text-align:left;">
+3.39
+</td>
+<td style="text-align:left;">
+3.39
+</td>
+<td style="text-align:right;">
+8.6
+</td>
+<td style="text-align:left;">
+84
+</td>
+<td style="text-align:left;">
+4800
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:left;">
+11245
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+94
+</td>
+<td style="text-align:left;">
+volkswagen
+</td>
+<td style="text-align:left;">
+diesel
+</td>
+<td style="text-align:left;">
+std
+</td>
+<td style="text-align:left;">
+four
+</td>
+<td style="text-align:left;">
+sedan
+</td>
+<td style="text-align:left;">
+fwd
+</td>
+<td style="text-align:left;">
+front
+</td>
+<td style="text-align:right;">
+97.3
+</td>
+<td style="text-align:right;">
+171.7
+</td>
+<td style="text-align:right;">
+65.5
+</td>
+<td style="text-align:right;">
+55.7
+</td>
+<td style="text-align:right;">
+2264
+</td>
+<td style="text-align:left;">
+ohc
+</td>
+<td style="text-align:left;">
+four
+</td>
+<td style="text-align:right;">
+97
+</td>
+<td style="text-align:left;">
+idi
+</td>
+<td style="text-align:left;">
+3.01
+</td>
+<td style="text-align:left;">
+3.4
+</td>
+<td style="text-align:right;">
+23.0
+</td>
+<td style="text-align:left;">
+52
+</td>
+<td style="text-align:left;">
+4800
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:left;">
+7995
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>##                       142  ...        57 
+## symboling               0  ...          3
+## normalized-losses     102  ...        150
+## make               subaru  ...      mazda
+## fuel-type             gas  ...        gas
+## aspiration            std  ...        std
+## num-of-doors         four  ...        two
+## body-style          sedan  ...  hatchback
+## drive-wheels          fwd  ...        rwd
+## engine-location     front  ...      front
+## wheel-base           97.2  ...       95.3
+## length                172  ...        169
+## width                65.4  ...       65.7
+## height               52.5  ...       49.6
+## curb-weight          2190  ...       2385
+## engine-type          ohcf  ...      rotor
+## num-of-cylinders     four  ...        two
+## engine-size           108  ...         70
+## fuel-system          2bbl  ...       4bbl
+## bore                 3.62  ...          ?
+## stroke               2.64  ...          ?
+## compression-ratio     9.5  ...        9.4
+## horsepower             82  ...        101
+## peak-rpm             4400  ...       6000
+## city-mpg               28  ...         17
+## highway-mpg            33  ...         23
+## price                7775  ...      13645
+## 
+## [26 rows x 5 columns]</code></pre>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 2, lang: r, python ------------------------------------------------>
+
+<div v-if="activeMotto === '2'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Line charts</strong> are best to show trends over a period of time, and multiple lines can be used to show trends in more than one group. <code>geom_path()</code> connects the observations in the order in which they appear in the data. <code>geom_line()</code> connects them in order of the variable on the x axis. <code>geom_step()</code> creates a stairstep plot, highlighting exactly when changes occur. The <code>group</code> aesthetic determines which cases are connected together. Check the <a href="https://ggplot2.tidyverse.org/reference/geom_path.html">documentation</a> for more details.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><code>sns.lineplot</code> - <strong>Line charts</strong> are best to show trends over a period of time, and multiple lines can be used to show trends in more than one group. The relationship between x and y can be shown for different subsets of the data using the <code>hue</code>, <code>size</code>, and <code>style</code> parameters. Check the <a href="https://seaborn.pydata.org/generated/seaborn.lineplot.html">documentation</a> for more details.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb4"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group variable will produce lines with different colors</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> auto, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> wheel.base, <span class="at">y =</span> engine.size)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> fuel.type,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> fuel.type))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb5"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group variable using &quot;hue&quot; that will produce lines with different colors</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&quot;wheel-base&quot;</span>, y<span class="op">=</span><span class="st">&quot;engine-size&quot;</span>, hue<span class="op">=</span><span class="st">&quot;fuel-type&quot;</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 3, lang: r, python ------------------------------------------------>
+
+<div v-if="activeMotto === '3'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Bar charts</strong> are useful for comparing quantities corresponding to different groups. There are two types of bar charts: <code>geom_bar()</code> and <code>geom_col()</code>. <code>geom_bar()</code> makes the height of the bar proportional to the number of cases in each group (or if the <code>weight</code> aesthetic is supplied, the sum of the weights). If you want the heights of the bars to represent values in the data, use <code>geom_col()</code> instead. Check the <a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">documentation</a> for more details.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><code>sns.barplot</code> - <strong>Bar charts</strong> are useful for comparing quantities corresponding to different groups. Show point estimates and confidence intervals as rectangular bars. Check the <a href="https://seaborn.pydata.org/generated/seaborn.barplot.html">documentation</a> for more details.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb6"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw a set of vertical bars with nested grouping by a two variables</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> auto,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> body.style,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> city.mpg)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> fuel.type))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb7"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw a set of vertical bars with nested grouping by a two variables</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>auto[<span class="st">&#39;body-style&#39;</span>], y<span class="op">=</span>auto[<span class="st">&#39;city-mpg&#39;</span>], hue<span class="op">=</span>auto[<span class="st">&#39;fuel-type&#39;</span>])</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 4, lang: r, python ------------------------------------------------>
+
+<div v-if="activeMotto === '4'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Heatmaps</strong> can be used to find color-coded patterns in tables of numbers. This section describes how to reorder the correlation matrix according to the correlation coefficient. This is useful to identify the hidden pattern in the matrix. <code>geom_tile()</code> uses the center of the tile and its size (<code>x</code>, <code>y</code>, <code>width</code>, <code>height</code>). Check the <a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">documentation</a> for more details.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><code>sns.heatmap</code> - <strong>Heatmaps</strong> can be used to find color-coded patterns in tables of numbers. A heat map is a data visualization technique that shows magnitude of a phenomenon as color in two dimensions. The variation in color may be by hue or intensity, giving obvious visual cues to the reader about how the phenomenon is clustered or varies over space. Check the <a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html">documentation</a> for more details.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb8"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reshape data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting only numeric columns from a data frame</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>numeric_cols <span class="ot">&lt;-</span> <span class="fu">select_if</span>(auto, is.numeric)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute pairwise correlation of columns</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>corr <span class="ot">&lt;-</span> <span class="fu">melt</span>(<span class="fu">cor</span>(numeric_cols))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_text: insert corresponding cell values in plot</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># theme: Rotating and spacing x axis labels</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> corr,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Var1, <span class="at">y =</span> Var2)) <span class="sc">+</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(value, <span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">angle =</span> <span class="dv">90</span>,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">vjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">hjust =</span> <span class="dv">1</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  )) </span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb9"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute pairwise correlation of columns</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> auto.corr()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># annot: Annotate each cell with the numeric value</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># linewidths: Add lines between each cell</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>, linewidths<span class="op">=</span><span class="fl">.1</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-23-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 5, lang: r, python ------------------------------------------------>
+
+<div v-if="activeMotto === '5'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Scatter plot</strong> is most useful for displaying the relationship between two continuous variables. It can be used to compare one continuous and one categorical variable, or two categorical variables. The <code>geom_point()</code> is used to create scatterplots. A <em>bubblechart</em> is a scatterplot with a third variable mapped to the size of points. Check the <a href="https://ggplot2.tidyverse.org/reference/geom_point.html">documentation</a> for more details.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><code>sns.scatterplot</code> - <strong>Scatter plots</strong> show the relationship between two continuous variables; if color-coded, we can also show the relationship with a third <a href="https://en.wikipedia.org/wiki/Categorical_variable">categorical variable</a>. The relationship between <code>x</code> and <code>y</code> can be shown for different subsets of the data using the <code>hue</code>, <code>size</code>, and <code>style</code> parameters. These parameters control what visual semantics are used to identify the different subsets. Check the <a href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html">documentation</a> for more details.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb10"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Showing two different grouping variables using &quot;colour&quot; amd &quot;shape&quot; parameter</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> auto,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> engine.size,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> wheel.base)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="fu">factor</span>(fuel.type),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">shape =</span> <span class="fu">factor</span>(num.of.cylinders)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                 ))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb11"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Showing two different grouping variables using &quot;hue&quot; amd &quot;style&quot; parameter</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>auto, x<span class="op">=</span><span class="st">&#39;engine-size&#39;</span>, y<span class="op">=</span><span class="st">&#39;wheel-base&#39;</span>, hue<span class="op">=</span><span class="st">&#39;fuel-type&#39;</span>,style<span class="op">=</span><span class="st">&#39;num-of-cylinders&#39;</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 6, lang: r, python ------------------------------------------------>
+
+<div v-if="activeMotto === '6'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p>Visualise the distribution of a single continuous variable by dividing the x axis into bins and counting the number of observations in each bin. <strong>Histograms</strong> (<code>geom_histogram()</code>) display the counts with bars; frequency polygons (<code>geom_freqpoly()</code>) display the counts with lines. Frequency polygons are more suitable when you want to compare the distribution across the levels of a categorical variable. Check the <a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">documentation</a> for more details.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><code>sns.distplot</code> - <strong>Histograms</strong> Plot univariate or bivariate histograms to show distributions of datasets. A histogram is a classic visualization tool that represents the distribution of one or more variables by counting the number of observations that fall within disrete bins. This function can normalize the statistic computed within each bin to estimate frequency, density or probability mass, and it can add a smooth curve obtained using a kernel density estimate, similar to <a href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html#seaborn.kdeplot"><code>kdeplot()</code></a>. Check the <a href="https://seaborn.pydata.org/generated/seaborn.histplot.html">documentation</a> for more details.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb12"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(auto,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(city.mpg)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">3.0</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb13"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># kde:If True, smooth the distribution and show as line</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>auto,x<span class="op">=</span><span class="st">&quot;city-mpg&quot;</span>, kde<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-35-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<p><img src="simple-data-visualization_files/figure-html/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+</section>
+<!-- Body Footer ----------------------------------->
+
+<section id="dotto-footer">
+<div class="col-12 col-md-9">
+<div class="d-flex" id="dotto-row-lines">
+<img src="../../../assets/img/Dotto.svg" width="35" height="35" type="button" class=" ml-5 icon d-sm-flex justify-content-sm-center dotto-lines-icons">
+</i>
+</div>
+</div>
+<div class="col-12 col-md-3 pt-2">
+<div class="alert alert-danger dotto-alert-comment text-center" role="alert">
+<span type="button" @click="commentOpen = true" class="footer-disqus-text">
+<strong><i class="fas fa-comments fa-1x" style="font-size: 21px"> </i>
+<span class="disqus-comment-count" data-disqus-url="https://datamotto.com/posts/Dotto/D005-2021-07-14-simple-data-visualization/index.html" data-disqus-identifier="d58dd526-e4f6-11eb-b8c2-acbc32baed85"></span>
+</strong>
+<span> for this Dotto.</span>
+<span> Write yours here!</span>
+</span>
+
+<script>
+var disqus_config = function () {
+  this.page.url = "https://datamotto.com/posts/Dotto/D005-2021-07-14-simple-data-visualization/index.html";
+  this.page.identifier = "d58dd526-e4f6-11eb-b8c2-acbc32baed85";
+};
+
+(function() {
+var d = document, s = d.createElement("script");
+s.src = "https://datamotto-com.disqus.com/embed.js";
+s.setAttribute("data-timestamp", +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
+
+</div>
+</div>
+</section>
+
+
+</div>
+<!-- Don't indent these lines or it will mess pre blocks indentation -->
+<script src="../../../assets/js/post.js"></script>
+<script src="../../../assets/js/jquery.min.js"></script>
+<script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/bs-init.js"></script>
+<script src="../../../assets/js/carts.js"></script>
+<script src="../../../assets/js/Index_page.js"></script>
+<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+</body>
+</html>

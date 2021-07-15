@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+    
+    
+    <title>Scatter Plot: The relation between two quantitative variables</title>
+
+        <script src="scatter-plot-the-relation-between-two-quantitative-variables_files/header-attrs-2.7.3/header-attrs.js"></script>
+        <script src="scatter-plot-the-relation-between-two-quantitative-variables_files/jquery-1.11.3/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="scatter-plot-the-relation-between-two-quantitative-variables_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="scatter-plot-the-relation-between-two-quantitative-variables_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+        <script src="scatter-plot-the-relation-between-two-quantitative-variables_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+        <script src="scatter-plot-the-relation-between-two-quantitative-variables_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+        <style>h1 {font-size: 34px;}
+               h1.title {font-size: 38px;}
+               h2 {font-size: 30px;}
+               h3 {font-size: 24px;}
+               h4 {font-size: 18px;}
+               h5 {font-size: 16px;}
+               h6 {font-size: 12px;}
+               code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+               pre:not([class]) { background-color: white }</style>
+        <script src="scatter-plot-the-relation-between-two-quantitative-variables_files/navigation-1.1/tabsets.js"></script>
+        
+          <meta property="og:title" content="Scatter Plot: The relation between two quantitative variables" />
+          <meta property="og:type" content="article">
+          <meta property="og:description" content="You will learn what is scatter plot, when we are using it, how to make it more effective.
+        " />
+          <meta property="og:url" content="https://datamotto.com/posts/dotto/D008-2021-07-14-scatter-plot-the-relation-between-two-quantitative-variables/" />
+          <meta property="og:locale" content="en_US">
+          <meta property="og:site_name" content="Data Motto">
+          <meta property="og:image" content="https://datamotto.com/assets/img/logo.svg" />
+          
+        
+          <meta property="twitter:card" content="summary_large_image">
+          <meta property="twitter:title" content="Scatter Plot: The relation between two quantitative variables">
+          <meta property="twitter:description" content="You will learn what is scatter plot, when we are using it, how to make it more effective.
+        ">
+          <meta property="twitter:url" content="https://datamotto.com/posts/dotto/D008-2021-07-14-scatter-plot-the-relation-between-two-quantitative-variables/">
+          <meta property="twitter:image" content="https://datamotto.com/assets/img/logo.svg">
+          
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZMEMQM0Y2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZMEMQM0Y2');
+</script>
+<link rel="shortcut icon" href="../../../assets/img/favicon/favicon-32x32.png" />
+<link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Brands.css" />
+<link rel="stylesheet" href="../../../assets/css/Font-Awesome-5-Free.css" />
+<link rel="stylesheet" href="../../../assets/css/icomoon.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
+<link rel="stylesheet" href="../../../assets/fonts/fontawesome-all.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/font-awesome.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/ionicons.min.css" />
+<link rel="stylesheet" href="../../../assets/fonts/fontawesome5-overrides.min.css" />
+<link rel="stylesheet" href="../../../assets/css/Footer-Basic.css" />
+<link rel="stylesheet" href="../../../assets/css/home-cards.css" />
+<link rel="stylesheet" href="../../../assets/css/site.css" />
+<link rel="stylesheet" href="../../../assets/css/style.css" />
+<link rel="stylesheet" href="../../../assets/css/styles.css" />
+<link rel="stylesheet" href="../../../assets/css/Team-Boxed.css" />
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../../../assets/highlight/styles/dracula.css" />
+<script src="../../../assets/highlight/highlight.pack.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="../../../assets/js/vue.js"></script>
+
+</head>
+
+<body style="height: 100vh;">
+<div class="d-flex flex-column" id="all_page">
+
+<!-- Body Header ------------------------------>
+
+<section id="dotto-row-header">
+<div class="row dotto-header">
+
+<div class="col-1 d-flex justify-content-start align-items-center header-logo">
+<a href="/" class="text-muted"><img id="logo" src="../../../assets/img/logo.svg" /></a>
+</div>
+
+
+<div class="col-6 col-sm-7">
+<div class="header-title">
+<h6 class="dotto-header-maintitle">
+Scatter Plot: The relation between two quantitative variables
+</h6>
+<p class="dotto-header-description">
+You will learn what is scatter plot, when we are using it, how to make it more effective.
+
+</p>
+<p class="dotto-header-tags">
+<i class="fas fa-tags"></i>&nbsp; Visualizer
+</p>
+</div>
+</div>
+
+
+<div class="col-1 d-flex justify-content-center align-items-center">
+<button class="btn btn-outline-light btn-block header-like-btn" style="background-color:white" type="button">
+<!-- LikeBtn.com BEGIN -->
+<span class="likebtn-wrapper" data-theme="custom" data-btn_size="30" data-f_size="18" data-icon_size="30" data-icon_l="hrt13" data-icon_l_c="rgba(255,121,198,0.68)" data-icon_l_c_v="#ff79c6" data-icon_d_c_v="green" data-label_c="red" data-label_c_v="yellow" data-bg_c="#ffffff" data-bg_c_v="#ffffff" data-brdr_c="#ffffff" data-label_fs="r" data-i18n_like="  " data-identifier="25f9a122-e4ff-11eb-b8c2-acbc32baed85" data-dislike_enabled="false" data-site_id="604e13966fd08bbf03672c5b" data-counter_clickable="true" data-popup_disabled="true" data-share_enabled="false" data-tooltip_enabled="false"></span>
+<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+<!-- LikeBtn.com END -->
+</button>
+</div>
+
+
+<div class="col-3 d-flex justify-content-end dotto-header-user">
+
+<div class="d-flex flex-column mx-3">
+<div class="row">
+<div @click="authorOneModal = true" type="button"
+class="col d-flex d-md-flex flex-row flex-shrink-1 justify-content-sm-end align-items-sm-center justify-content-md-end align-items-md-center dotto-header-user-icon">
+<img class="img-fluid user-image lang-color-r mx-auto" src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/MalekpourAvatar.jpeg" />
+</div>
+</div>
+<h6 class="d-flex justify-content-end dotto-header-user-name mx-auto">
+Mohammad Hossein Malekpour
+</h6>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<div v-if="authorOneModal" class="modal">
+<!-- Modal content -->
+<div class="modal-content">
+<span @click="authorOneModal = false" class="close">&times;</span>
+<div class="card" style="max-width: 540px">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/MalekpourAvatar.jpeg" class="img-fluid" />
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<ins><a href="https://www.linkedin.com/in/mohammadhossein-malekpour/" class="text-dark" target="_blank"><h3 class="card-title mb-0">Mohammad Hossein Malekpour</h3></a></ins>
+<div class="card-text fs-4 my-2">Data Scientist, DataMotto</div>
+<small class="card-text text-muted my-2 fs-4">Language: python, r</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div v-show="commentOpen" class="modal overflow-auto">
+<div class="modal-comment overflow-auto">
+<span @click="commentOpen = false" class="close">&times;</span>
+<div id="disqus_thread"></div>
+</div>
+</div>
+
+
+<section>
+<div id="dotto-row-info" class="d-flex">
+
+<div class="col-4 d-flex flex-grow-0 justify-content-start align-items-center align-items-xl-center">
+<div class="d-flex mx-4 justify-content-around align-items-center bg-social-icons">
+
+<div>
+<i type="button" @click="activeLang = 'r'"
+class="fab fa-r-project mx-2"
+:class="{'lang-color-r': activeLang === 'r'}" >
+  </i>
+</div>
+
+
+<div>
+<i type="button" @click="activeLang = 'python'"
+class="fab fa-python mx-2"
+:class="{'lang-color-python': activeLang === 'python'}" >
+  </i>
+</div>
+
+</div>
+</div>
+
+
+<div
+class="col-8 d-flex justify-content-end align-items-center" style="padding-right: 15px">
+<!--
+<div class="d-flex justify-content-center align-items-center align-content-center bg-social-icons"
+style="margin-right: 7px; width: 146.3px">
+<span class="d-flex justify-content-lg-center align-items-lg-center" style="width: 133.7px">
+<i class="fas fa-music" style="padding-right: 12px"> </i>
+</span>
+</div>
+---->
+<div class="d-flex justify-content-around align-items-center bg-social-icons">
+<a href="https://twitter.com/share?text=Scatter Plot: The relation between two quantitative variables&amp;url=https://datamotto.com/posts/Dotto/D008-2021-07-14-scatter-plot-the-relation-between-two-quantitative-variables/index.html&amp;hashtags=rstats,Python" target="_blank" class="text-reset">
+<i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://datamotto.com/posts/Dotto/D008-2021-07-14-scatter-plot-the-relation-between-two-quantitative-variables/index.html" target="_blank" class="text-reset">
+<i class="fa fa-linkedin-square"></i></a>
+</div>
+<div class="text-nowrap d-flex justify-content-around align-items-center bg-social-icons bg-bugs-icons">
+<a href="https://github.com/DataMotto/DataMotto/blob/master/posts/Dotto/D008-2021-07-14-scatter-plot-the-relation-between-two-quantitative-variables/scatter-plot-the-relation-between-two-quantitative-variables.Rmd" target="_blank" class="text-reset">
+<i class="fab fa-github header-social-icon"></i></a>
+<a href="https://github.com/DataMotto/DataMotto/issues/new?assignees=&labels=bug&template=bug_report.md&title=" target="_blank" class="text-reset">
+<i class="fas fa-bug header-social-icon"></i></a>
+</div>
+</div>
+
+</div>
+</section>
+
+
+
+
+<section v-if="activeDotto === '1'"
+class="text-left d-flex flex-row flex-grow-1 flex-wrap" id="dotto-row-main">
+<div class="col-12 col-lg-1" id="dotto-main-dots">
+
+<button type="button" @click="activeMotto = '1'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '1', 'btn-outline-light': activeMotto !== '1'}">1</button>
+
+
+<button type="button" @click="activeMotto = '2'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '2', 'btn-outline-light': activeMotto !== '2'}">2</button>
+
+
+<button type="button" @click="activeMotto = '3'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '3', 'btn-outline-light': activeMotto !== '3'}">3</button>
+
+
+<button type="button" @click="activeMotto = '4'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '4', 'btn-outline-light': activeMotto !== '4'}">4</button>
+
+
+<button type="button" @click="activeMotto = '5'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '5', 'btn-outline-light': activeMotto !== '5'}">5</button>
+
+
+<button type="button" @click="activeMotto = '6'"
+class="btn dotto-main-dot-shape"
+:class="{'btn-light': activeMotto === '6', 'btn-outline-light': activeMotto !== '6'}">6</button>
+
+</div>
+
+<!-- Dot 1, lang: python, r ------------------------------------------------>
+
+<div v-if="activeMotto === '1'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p>In this Dotto, we will customize a scatter plot in <a href="https://ggplot2.tidyverse.org">ggplot2</a> library. <strong>Scatter plot</strong> is most useful for displaying the relationship between two continuous variables. It can be used to compare one continuous and one categorical variable, or two categorical variables. The <code>geom_point()</code> is used to create scatterplots. We will be creating several scatter plots using the Melbourne housing <a href="https://www.kaggle.com/dansbecker/melbourne-housing-snapshot">dataset</a> available on Kaggle (I have only selected a small sample from the dataset and also included only 6 columns). Let’s create a simple scatter plot of the price and distance columns with the default settings. We can then go over some tips to make the scatter plots more informative and appealing. The distance column indicates the distance to the central business district (CBD). Each dot represents an observation (i.e. a house). We observe a negative correlation between the price and distance to CBD.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p>In this Dotto, we will customize a scatter plot in <a href="https://seaborn.pydata.org/index.html">Seaborn</a> library. <strong>Scatter plots</strong> are mainly used to visualize the relationship between two continuous variables. They provide an overview of the correlation between the variables. We will be creating several scatter plots using the Melbourne housing <a href="https://www.kaggle.com/dansbecker/melbourne-housing-snapshot">dataset</a> available on Kaggle (I have only selected a small sample from the dataset and also included only 6 columns). Let’s create a simple scatter plot of the price and distance columns with the default settings. We can then go over some tips to make the scatter plots more informative and appealing. The distance column indicates the distance to the central business district (CBD). Each dot represents an observation (i.e. a house). We observe a negative correlation between the price and distance to CBD.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)  </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)   </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the dataset into a Pandas dataframe</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>melb <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="st">&quot;data/melb_data.csv&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the five random rows of the data</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">sample_n</span>(melb, <span class="dv">5</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a simple scatter plot</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> melb,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Price,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> Distance)) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb2"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the libraries</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the dataset into a Pandas dataframe</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>melb <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/melb_data.csv&quot;</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the five random rows of the data</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(melb.sample(<span class="dv">5</span>))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a simple scatter plot</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># aspect parameter represents the ratio of the width and height</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>melb, x<span class="op">=</span><span class="st">&#39;Price&#39;</span>, y<span class="op">=</span><span class="st">&#39;Distance&#39;</span>, kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>, height<span class="op">=</span><span class="dv">10</span>, aspect<span class="op">=</span><span class="fl">1.2</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>sns.show()</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+X
+</th>
+<th style="text-align:left;">
+Rooms
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:right;">
+Price
+</th>
+<th style="text-align:right;">
+Distance
+</th>
+<th style="text-align:right;">
+Landsize
+</th>
+<th style="text-align:left;">
+Regionname
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+8515
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+h
+</td>
+<td style="text-align:right;">
+855000
+</td>
+<td style="text-align:right;">
+8.0
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:left;">
+Western Metropolitan
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+974
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+h
+</td>
+<td style="text-align:right;">
+1715000
+</td>
+<td style="text-align:right;">
+13.1
+</td>
+<td style="text-align:right;">
+458
+</td>
+<td style="text-align:left;">
+Eastern Metropolitan
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12800
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+h
+</td>
+<td style="text-align:right;">
+792500
+</td>
+<td style="text-align:right;">
+34.1
+</td>
+<td style="text-align:right;">
+846
+</td>
+<td style="text-align:left;">
+South-Eastern Metropolitan
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12736
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+h
+</td>
+<td style="text-align:right;">
+605000
+</td>
+<td style="text-align:right;">
+11.2
+</td>
+<td style="text-align:right;">
+589
+</td>
+<td style="text-align:left;">
+Northern Metropolitan
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7006
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+h
+</td>
+<td style="text-align:right;">
+3020000
+</td>
+<td style="text-align:right;">
+7.5
+</td>
+<td style="text-align:right;">
+832
+</td>
+<td style="text-align:left;">
+Southern Metropolitan
+</td>
+</tr>
+</tbody>
+</table>
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>##     Unnamed: 0 Rooms Type      Price  Distance  Landsize             Regionname
+## 128       5411     2    u   712000.0       2.6       0.0  Northern Metropolitan
+## 123      12912     4    h  1300000.0      13.4     543.0   Eastern Metropolitan
+## 47       12461     3    h  1263000.0       1.6     110.0  Northern Metropolitan
+## 76        1280     3    h   910000.0       5.2     215.0  Northern Metropolitan
+## 58        8515     2    h   855000.0       8.0     160.0   Western Metropolitan</code></pre>
+<pre><code>## &lt;seaborn.axisgrid.FacetGrid object at 0x7fed9414ddd8&gt;</code></pre>
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-6-1.png" width="1152" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 2, lang: python, r ------------------------------------------------>
+
+<div v-if="activeMotto === '2'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Separating categories with colour</strong> It can be more informative to represent different categories in a column separately. For instance, we can distinguish house types by using a different color for each type. Such tasks can be done with the colour parameter. We clearly see that the housed with u (unit) type are closer to CDB and cheaper in general. The t (townhouse) type is kind of in the middle. As we move away from the CBD, the houses get more expensive and larger.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Separating categories with hue</strong> It can be more informative to represent different categories in a column separately. For instance, we can distinguish house types by using a different color for each type. Such tasks can be done with the hue parameter. We clearly see that the housed with u (unit) type are closer to CDB and cheaper in general. The t (townhouse) type is kind of in the middle. As we move away from the CBD, the houses get more expensive and larger.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb5"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># colour: Grouping variable that will produce elements with different colors</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> melb,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Price,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> Distance)) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="fu">factor</span>(Type)))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb6"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># hue: Grouping variable that will produce elements with different colors</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>melb, x<span class="op">=</span><span class="st">&#39;Price&#39;</span>, y<span class="op">=</span><span class="st">&#39;Distance&#39;</span>, kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>, height<span class="op">=</span><span class="dv">10</span>, aspect<span class="op">=</span><span class="fl">1.2</span>, hue<span class="op">=</span><span class="st">&#39;Type&#39;</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>## &lt;seaborn.axisgrid.FacetGrid object at 0x7fed95d24208&gt;</code></pre>
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-12-1.png" width="1207" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 3, lang: python, r ------------------------------------------------>
+
+<div v-if="activeMotto === '3'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Separating categories with facet_grid</strong> We can also use multiple subplots to separate different categories. <code>facet_grid()</code> forms a matrix of panels defined by row and column faceting variables. It is most useful when you have two discrete variables, and all combinations of the variables exist in the data. If you have only one variable with many levels, try <code>facet_wrap()</code>.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Separating categories with row or col</strong> We can also use multiple subplots to separate different categories. The col parameter is used to represent each category as a new column. Similarly, the row parameter does the same using rows.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb8"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> melb,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Price,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> Distance)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Type)</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb9"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># row, col: Variables that define subsets to plot on different facets.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>melb, x<span class="op">=</span><span class="st">&#39;Price&#39;</span>, y<span class="op">=</span><span class="st">&#39;Distance&#39;</span>, kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>, col<span class="op">=</span><span class="st">&#39;Type&#39;</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>## &lt;seaborn.axisgrid.FacetGrid object at 0x7fed96ad1d68&gt;</code></pre>
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-18-1.png" width="1440" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 4, lang: python, r ------------------------------------------------>
+
+<div v-if="activeMotto === '4'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Size</strong> Scatter plots represent data points (i.e. rows) with dots. We can use the size of dots to deliver information as well. For instance, the rooms column is passed to the size parameter, the size of a dot becomes proportional to the number of rooms in a house. The general trend is to have larger houses as we move away from the CDB. It makes sense because the space becomes more of a concern in the city centre. <strong>Style</strong> Grouping variable that will produce elements with different styles. Can have a numeric dtype but will always be treated as categorical.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Size</strong> Scatter plots represent data points (i.e. rows) with dots. We can use the size of dots to deliver information as well. For instance, the rooms column is passed to the size parameter, the size of a dot becomes proportional to the number of rooms in a house. The general trend is to have larger houses as we move away from the CDB. It makes sense because the space becomes more of a concern in the city centre. <strong>Style</strong> Grouping variable that will produce elements with different styles. Can have a numeric dtype but will always be treated as categorical.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb11"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grouping variable with different sizes</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> melb,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Price,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> Distance)) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> <span class="fu">factor</span>(Rooms)))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Grouping variable with different styles and color</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> melb,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Price,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> Distance)) <span class="sc">+</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="fu">factor</span>(Type),</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">shape =</span> <span class="fu">factor</span>(Type)))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb12"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grouping variable with different sizes</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>melb, x<span class="op">=</span><span class="st">&#39;Price&#39;</span>, y<span class="op">=</span><span class="st">&#39;Distance&#39;</span>, kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>, height<span class="op">=</span><span class="dv">10</span>, aspect<span class="op">=</span><span class="fl">1.2</span>, size<span class="op">=</span><span class="st">&#39;Rooms&#39;</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Grouping variable with different styles and color</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>melb, x<span class="op">=</span><span class="st">&#39;Price&#39;</span>, y<span class="op">=</span><span class="st">&#39;Distance&#39;</span>, kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>, height<span class="op">=</span><span class="dv">10</span>, aspect<span class="op">=</span><span class="fl">1.2</span>, hue<span class="op">=</span><span class="st">&#39;Type&#39;</span>, style<span class="op">=</span><span class="st">&#39;Type&#39;</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-23-1.png" width="672" style="display: block; margin: auto auto auto 0;" /><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-23-2.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>## &lt;seaborn.axisgrid.FacetGrid object at 0x7fed939a9780&gt;</code></pre>
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-24-1.png" width="1282" style="display: block; margin: auto auto auto 0;" /></p>
+<pre><code>## &lt;seaborn.axisgrid.FacetGrid object at 0x7fed981546a0&gt;</code></pre>
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-24-2.png" width="1207" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 5, lang: python, r ------------------------------------------------>
+
+<div v-if="activeMotto === '5'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p>A pairs plot compactly plots every (numeric) variable in a dataset against every other one. In base plot, you would use the <code>pairs()</code> function. I’m interested in recreating this plot using my visualisation package of choice, ggplot2, and I found the best way to do this is using <code>ggpairs()</code> , part of the ggplot2 extension package <a href="https://ggobi.github.io/ggally/reference/ggpairs.html">GGally</a>.This function creates a similar plot to the base function ,with the added benefit of displaying the correlation coefficient (Pearson, by default) in the upper triangle, distributions on the diagonal, and all the fun flexibility that you would expect from ggplot2.</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p>The <code>pairplot</code> function of Seaborn can be used to generate a grid of scatter plots to explore the pairwise relationships between variables. By default, it includes all the numerical variables. However, we can change it by selecting only the columns of interest. The pairplot function can also be customized to carry more information. For instance, we can add a hue variable just like we have done with the <code>relplot</code> function.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb15"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(melb, </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">&#39;Price&#39;</span>,<span class="st">&#39;Distance&#39;</span>,<span class="st">&#39;Landsize&#39;</span>),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">colour=</span>Type))</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb16"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(melb[[<span class="st">&#39;Price&#39;</span>,<span class="st">&#39;Distance&#39;</span>,<span class="st">&#39;Landsize&#39;</span>,<span class="st">&#39;Type&#39;</span>]], hue<span class="op">=</span><span class="st">&#39;Type&#39;</span>, height<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>## &lt;seaborn.axisgrid.PairGrid object at 0x7fedb334d4a8&gt;</code></pre>
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-30-1.png" width="919" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+<!-- Dot 6, lang: python, r ------------------------------------------------>
+
+<div v-if="activeMotto === '6'" class="col-12 col-lg-11 d-flex p-0 wrapper">
+<div class="box overflow-auto dotto-main-intro dotto-dot-instruction">
+<div class="card-header">
+<h1>&nbsp;Instructions:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Theme and colour your ggplot figures</strong> There’s 8 built-in theme variations in the latest versions of ggplot2. Quickly change the default look of your figures by adding theme_XX() to the end of your plotting commands. The default look and feel can be adjusted by adding an in-build theme from ggplot2. - theme_gray() – signature ggplot2 theme - theme_bw() – dark on light ggplot2 theme - theme_linedraw() – uses black lines on white backgrounds only - theme_light() – similar to linedraw() but with grey lines aswell - theme_dark() – lines on a dark background instead of light - theme_minimal() – no background annotations, minimal feel. - theme_classic() – theme with no grid lines. - theme_void() – empty theme with no elements</p>
+
+</p>
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+<p class="mx-2">
+
+<p><strong>Data visualization Styling</strong> When creating a data visualization, your goal is to communicate the insights found in the data. While visualizing communicates important information, styling will influence how your audience understands what you’re trying to convey. Styling is the process of customizing the overall look of your visualization, or figure. <strong>Theme</strong> We can quickly change the style of the figure to a different theme with only a single line of code. Seaborn has five different themes: <code>darkgrid</code>, <code>whitegrid</code>, <code>dark</code>, <code>white</code>, and <code>ticks</code>, and you need only use a command similar to the one in the code cell above (with the chosen theme filled in) to change it. <strong>Color Palette</strong> If you do not pass in a color palette to <code>sns.color_palette()</code> or <code>sns.set_palette()</code>, Seaborn will use a default set of colors. Seaborn has six variations of its default color palette: <code>deep</code>, <code>muted</code>, <code>pastel</code>, <code>bright</code>, <code>dark</code>, and <code>colorblind</code>.</p>
+
+</p>
+</div>
+ 
+
+
+</div>
+<div class="handler dotto-main-intro"></div>
+<div id="resizable">
+<div class="box2 dotto-main overflow-auto dotto-main-codes">
+<div class="card-header dot-codes">
+<h1>&nbsp;Codes:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2">
+
+<div class="sourceCode" id="cb18"><pre class="sourceCode r dotto-dot-code"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> melb,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Price,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> Distance)) <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="fu">factor</span>(Type))) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dark</span>()</span></code></pre></div>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2">
+
+<div class="sourceCode" id="cb19"><pre class="sourceCode python dotto-dot-code"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change the style of the figure to the &quot;ticks&quot; theme</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">&quot;ticks&quot;</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the palette to the &quot;pastel&quot; default palette</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>sns.set_palette(<span class="st">&quot;pastel&quot;</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatterplot</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>melb, x<span class="op">=</span><span class="st">&#39;Price&#39;</span>, y<span class="op">=</span><span class="st">&#39;Distance&#39;</span>, kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>, height<span class="op">=</span><span class="dv">10</span>, aspect<span class="op">=</span><span class="fl">1.2</span>, hue<span class="op">=</span><span class="st">&#39;Type&#39;</span>)</span></code></pre></div>
+
+</div>
+ 
+
+
+</div>
+<div class="handler2 dotto-main-output"></div>
+<div class="box2 dotto-main overflow-auto dotto-main-output">
+<div class="card-header">
+<h1>&nbsp;Results:</h1>
+</div>
+<br>
+ 
+<div v-if="activeLang === 'r'" class="mx-2 dotto-dot-output">
+
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-35-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+
+
+ 
+<div v-if="activeLang === 'python'" class="mx-2 dotto-dot-output">
+
+<pre><code>## &lt;seaborn.axisgrid.FacetGrid object at 0x7fed947bc9e8&gt;</code></pre>
+<p><img src="scatter-plot-the-relation-between-two-quantitative-variables_files/figure-html/unnamed-chunk-36-1.png" width="1207" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+ 
+</div>
+</div>
+</div>
+
+</section>
+<!-- Body Footer ----------------------------------->
+
+<section id="dotto-footer">
+<div class="col-12 col-md-9">
+<div class="d-flex" id="dotto-row-lines">
+<img src="../../../assets/img/Dotto.svg" width="35" height="35" type="button" class=" ml-5 icon d-sm-flex justify-content-sm-center dotto-lines-icons">
+</i>
+</div>
+</div>
+<div class="col-12 col-md-3 pt-2">
+<div class="alert alert-danger dotto-alert-comment text-center" role="alert">
+<span type="button" @click="commentOpen = true" class="footer-disqus-text">
+<strong><i class="fas fa-comments fa-1x" style="font-size: 21px"> </i>
+<span class="disqus-comment-count" data-disqus-url="https://datamotto.com/posts/Dotto/D008-2021-07-14-scatter-plot-the-relation-between-two-quantitative-variables/index.html" data-disqus-identifier="25f9a122-e4ff-11eb-b8c2-acbc32baed85"></span>
+</strong>
+<span> for this Dotto.</span>
+<span> Write yours here!</span>
+</span>
+
+<script>
+var disqus_config = function () {
+  this.page.url = "https://datamotto.com/posts/Dotto/D008-2021-07-14-scatter-plot-the-relation-between-two-quantitative-variables/index.html";
+  this.page.identifier = "25f9a122-e4ff-11eb-b8c2-acbc32baed85";
+};
+
+(function() {
+var d = document, s = d.createElement("script");
+s.src = "https://datamotto-com.disqus.com/embed.js";
+s.setAttribute("data-timestamp", +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//datamotto-com.disqus.com/count.js" async></script>
+
+</div>
+</div>
+</section>
+
+
+</div>
+<!-- Don't indent these lines or it will mess pre blocks indentation -->
+<script src="../../../assets/js/post.js"></script>
+<script src="../../../assets/js/jquery.min.js"></script>
+<script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/bs-init.js"></script>
+<script src="../../../assets/js/carts.js"></script>
+<script src="../../../assets/js/Index_page.js"></script>
+<script src="../../../assets/js/jquery-3.5.1.min.js"></script>
+</body>
+</html>
